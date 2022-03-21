@@ -44,6 +44,7 @@
 		F0C657D32772AFAC004AF802 /* LiveResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveResponse.swift; sourceTree = "<group>"; };
 		F0C657D527732690004AF802 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		F0D3AE6E27E81F9800FB28EC /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		F0D3AE7027E8241C00FB28EC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +97,7 @@
 				F0C657C02771F47C004AF802 /* Preview Content */,
 				F0C657D02771F71C004AF802 /* ViewModel */,
 				F0C657CA2771F4F3004AF802 /* Models */,
+				F0D3AE7027E8241C00FB28EC /* README.md */,
 			);
 			path = "holo-wtf";
 			sourceTree = "<group>";
