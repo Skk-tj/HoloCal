@@ -41,7 +41,7 @@ struct UpcomingView: View {
                         if (upcoming.dataStatus == .working) {
                             ProgressView()
                         } else {
-                            Text("\(upcoming.videoList.count) Upcoming Streams")
+                            Text("\(upcoming.videoList.count) Upcoming Streams in 48 hours")
                                 .foregroundColor(.secondary)
                         }
                     }
