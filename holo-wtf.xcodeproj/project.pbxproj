@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F04D101227E80C260083546C /* VideoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D101127E80C260083546C /* VideoListViewModel.swift */; };
+		F0673C0E27732BA3009C65C6 /* UpcomingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0673C0D27732BA3009C65C6 /* UpcomingView.swift */; };
+		F0673C1027732BFA009C65C6 /* UpcomingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0673C0F27732BFA009C65C6 /* UpcomingViewModel.swift */; };
+		F0673C1227732CE7009C65C6 /* UpcomingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0673C1127732CE7009C65C6 /* UpcomingCellView.swift */; };
+		F0673C152775F6AA009C65C6 /* MarqueeText in Frameworks */ = {isa = PBXBuildFile; productRef = F0673C142775F6AA009C65C6 /* MarqueeText */; };
+		F0673C172775F7FB009C65C6 /* LiveAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0673C162775F7FB009C65C6 /* LiveAvatarView.swift */; };
+		F0C657BB2771F47C004AF802 /* holo_wtfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657BA2771F47C004AF802 /* holo_wtfApp.swift */; };
+		F0C657BD2771F47C004AF802 /* LiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657BC2771F47C004AF802 /* LiveView.swift */; };
+		F0C657BF2771F47C004AF802 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C657BE2771F47C004AF802 /* Assets.xcassets */; };
+		F0C657C22771F47C004AF802 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C657C12771F47C004AF802 /* Preview Assets.xcassets */; };
+		F0C657C92771F4EF004AF802 /* LiveVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657C82771F4EF004AF802 /* LiveVideo.swift */; };
+		F0C657CC2771F603004AF802 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657CB2771F603004AF802 /* Channel.swift */; };
+		F0C657CE2771F70B004AF802 /* LiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657CD2771F70B004AF802 /* LiveViewModel.swift */; };
+		F0C657D22771F7CE004AF802 /* LiveCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657D12771F7CE004AF802 /* LiveCellView.swift */; };
+		F0C657D42772AFAC004AF802 /* LiveResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657D32772AFAC004AF802 /* LiveResponse.swift */; };
+		F0C657D627732690004AF802 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657D527732690004AF802 /* Util.swift */; };
+		F0D3AE6F27E81F9800FB28EC /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D3AE6E27E81F9800FB28EC /* AboutView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F04D101127E80C260083546C /* VideoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewModel.swift; sourceTree = "<group>"; };
+		F0673C0D27732BA3009C65C6 /* UpcomingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingView.swift; sourceTree = "<group>"; };
+		F0673C0F27732BFA009C65C6 /* UpcomingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewModel.swift; sourceTree = "<group>"; };
+		F0673C1127732CE7009C65C6 /* UpcomingCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingCellView.swift; sourceTree = "<group>"; };
+		F0673C162775F7FB009C65C6 /* LiveAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAvatarView.swift; sourceTree = "<group>"; };
+		F0C657B72771F47C004AF802 /* HoloCal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoloCal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0C657BA2771F47C004AF802 /* holo_wtfApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = holo_wtfApp.swift; sourceTree = "<group>"; };
+		F0C657BC2771F47C004AF802 /* LiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveView.swift; sourceTree = "<group>"; };
+		F0C657BE2771F47C004AF802 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0C657C12771F47C004AF802 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F0C657C82771F4EF004AF802 /* LiveVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveVideo.swift; sourceTree = "<group>"; };
+		F0C657CB2771F603004AF802 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
+		F0C657CD2771F70B004AF802 /* LiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewModel.swift; sourceTree = "<group>"; };
+		F0C657D12771F7CE004AF802 /* LiveCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCellView.swift; sourceTree = "<group>"; };
+		F0C657D32772AFAC004AF802 /* LiveResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveResponse.swift; sourceTree = "<group>"; };
+		F0C657D527732690004AF802 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		F0D3AE6E27E81F9800FB28EC /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F0C657B42771F47C004AF802 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0673C152775F6AA009C65C6 /* MarqueeText in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F0673C182775FE2B009C65C6 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				F0673C162775F7FB009C65C6 /* LiveAvatarView.swift */,
+				F0673C1127732CE7009C65C6 /* UpcomingCellView.swift */,
+				F0C657D12771F7CE004AF802 /* LiveCellView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		F0C657AE2771F47C004AF802 = {
+			isa = PBXGroup;
+			children = (
+				F0C657B92771F47C004AF802 /* holo-wtf */,
+				F0C657B82771F47C004AF802 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F0C657B82771F47C004AF802 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0C657B72771F47C004AF802 /* HoloCal.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F0C657B92771F47C004AF802 /* holo-wtf */ = {
+			isa = PBXGroup;
+			children = (
+				F0C657BA2771F47C004AF802 /* holo_wtfApp.swift */,
+				F0C657BC2771F47C004AF802 /* LiveView.swift */,
+				F0673C0D27732BA3009C65C6 /* UpcomingView.swift */,
+				F0C657D527732690004AF802 /* Util.swift */,
+				F0C657BE2771F47C004AF802 /* Assets.xcassets */,
+				F0673C182775FE2B009C65C6 /* Subviews */,
+				F0C657C02771F47C004AF802 /* Preview Content */,
+				F0C657D02771F71C004AF802 /* ViewModel */,
+				F0C657CA2771F4F3004AF802 /* Models */,
+			);
+			path = "holo-wtf";
+			sourceTree = "<group>";
+		};
+		F0C657C02771F47C004AF802 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F0C657C12771F47C004AF802 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F0C657CA2771F4F3004AF802 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F0C657CB2771F603004AF802 /* Channel.swift */,
+				F0C657C82771F4EF004AF802 /* LiveVideo.swift */,
+				F0C657D32772AFAC004AF802 /* LiveResponse.swift */,
+				F0D3AE6E27E81F9800FB28EC /* AboutView.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F0C657D02771F71C004AF802 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F0C657CD2771F70B004AF802 /* LiveViewModel.swift */,
+				F0673C0F27732BFA009C65C6 /* UpcomingViewModel.swift */,
+				F04D101127E80C260083546C /* VideoListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F0C657B62771F47C004AF802 /* holo-wtf */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0C657C52771F47C004AF802 /* Build configuration list for PBXNativeTarget "holo-wtf" */;
+			buildPhases = (
+				F0C657B32771F47C004AF802 /* Sources */,
+				F0C657B42771F47C004AF802 /* Frameworks */,
+				F0C657B52771F47C004AF802 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "holo-wtf";
+			packageProductDependencies = (
+				F0673C142775F6AA009C65C6 /* MarqueeText */,
+			);
+			productName = "holo-wtf";
+			productReference = F0C657B72771F47C004AF802 /* HoloCal.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F0C657AF2771F47C004AF802 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					F0C657B62771F47C004AF802 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = F0C657B22771F47C004AF802 /* Build configuration list for PBXProject "holo-wtf" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F0C657AE2771F47C004AF802;
+			packageReferences = (
+				F0673C132775F6AA009C65C6 /* XCRemoteSwiftPackageReference "MarqueeText" */,
+			);
+			productRefGroup = F0C657B82771F47C004AF802 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F0C657B62771F47C004AF802 /* holo-wtf */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F0C657B52771F47C004AF802 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0C657C22771F47C004AF802 /* Preview Assets.xcassets in Resources */,
+				F0C657BF2771F47C004AF802 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F0C657B32771F47C004AF802 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0C657D42772AFAC004AF802 /* LiveResponse.swift in Sources */,
+				F0673C172775F7FB009C65C6 /* LiveAvatarView.swift in Sources */,
+				F0C657BD2771F47C004AF802 /* LiveView.swift in Sources */,
+				F0673C1027732BFA009C65C6 /* UpcomingViewModel.swift in Sources */,
+				F0673C1227732CE7009C65C6 /* UpcomingCellView.swift in Sources */,
+				F0C657CC2771F603004AF802 /* Channel.swift in Sources */,
+				F0C657D627732690004AF802 /* Util.swift in Sources */,
+				F04D101227E80C260083546C /* VideoListViewModel.swift in Sources */,
+				F0D3AE6F27E81F9800FB28EC /* AboutView.swift in Sources */,
+				F0C657CE2771F70B004AF802 /* LiveViewModel.swift in Sources */,
+				F0C657C92771F4EF004AF802 /* LiveVideo.swift in Sources */,
+				F0C657D22771F7CE004AF802 /* LiveCellView.swift in Sources */,
+				F0C657BB2771F47C004AF802 /* holo_wtfApp.swift in Sources */,
+				F0673C0E27732BA3009C65C6 /* UpcomingView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F0C657C32771F47C004AF802 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F0C657C42771F47C004AF802 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F0C657C62771F47C004AF802 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
+				DEVELOPMENT_TEAM = NTH2V9C699;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf";
+				PRODUCT_NAME = HoloCal;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F0C657C72771F47C004AF802 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
+				DEVELOPMENT_TEAM = NTH2V9C699;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf";
+				PRODUCT_NAME = HoloCal;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F0C657B22771F47C004AF802 /* Build configuration list for PBXProject "holo-wtf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0C657C32771F47C004AF802 /* Debug */,
+				F0C657C42771F47C004AF802 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0C657C52771F47C004AF802 /* Build configuration list for PBXNativeTarget "holo-wtf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0C657C62771F47C004AF802 /* Debug */,
+				F0C657C72771F47C004AF802 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F0673C132775F6AA009C65C6 /* XCRemoteSwiftPackageReference "MarqueeText" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/joekndy/MarqueeText.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F0673C142775F6AA009C65C6 /* MarqueeText */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F0673C132775F6AA009C65C6 /* XCRemoteSwiftPackageReference "MarqueeText" */;
+			productName = MarqueeText;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = F0C657AF2771F47C004AF802 /* Project object */;
+}
