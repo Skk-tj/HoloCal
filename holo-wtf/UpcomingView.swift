@@ -38,8 +38,12 @@ struct UpcomingView: View {
                         Label("Failed to Retrive New Data", systemImage: "exclamationmark.circle.fill")
                             .foregroundColor(.secondary)
                     } else {
-                        Text("\(upcoming.videoList.count) Upcoming Streams")
-                            .foregroundColor(.secondary)
+                        if (upcoming.dataStatus == .working) {
+                            ProgressView()
+                        } else {
+                            Text("\(upcoming.videoList.count) Upcoming Streams")
+                                .foregroundColor(.secondary)
+                        }
                     }
                     Spacer()
                 }

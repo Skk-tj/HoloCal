@@ -38,8 +38,12 @@ struct LiveView: View {
                         Label("Failed to Retrive New Data", systemImage: "exclamationmark.circle.fill")
                             .foregroundColor(.secondary)
                     } else {
-                        Text("\(live.videoList.count) Currently Live on YouTube")
-                            .foregroundColor(.secondary)
+                        if (live.dataStatus == .working) {
+                            ProgressView()
+                        } else {
+                            Text("\(live.videoList.count) Currently Live")
+                                .foregroundColor(.secondary)
+                        }
                     }
                     Spacer()
                 }
@@ -61,6 +65,5 @@ struct ContentView_Previews: PreviewProvider {
             LiveView()
             LiveView().preferredColorScheme(.dark)
         }
-        
     }
 }
