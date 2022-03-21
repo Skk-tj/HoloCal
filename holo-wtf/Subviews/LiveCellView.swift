@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MarqueeText
+import HTMLString
 
 struct LiveCellView: View {
     let live: LiveVideo
@@ -15,7 +16,7 @@ struct LiveCellView: View {
         HStack {
             LiveAvatarView(url: live.channel.photo)
             VStack(alignment: .leading) {
-                MarqueeText(text: live.title, font: UIFont.preferredFont(forTextStyle: .headline), leftFade: 14, rightFade: 16, startDelay: 3.0)
+                MarqueeText(text: live.title.removingHTMLEntities(), font: UIFont.preferredFont(forTextStyle: .headline), leftFade: 14, rightFade: 16, startDelay: 3.0)
                 Text(live.channel.name)
                     .font(.subheadline)
                     .lineLimit(1)

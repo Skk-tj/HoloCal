@@ -13,6 +13,7 @@
 		F0673C1227732CE7009C65C6 /* UpcomingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0673C1127732CE7009C65C6 /* UpcomingCellView.swift */; };
 		F0673C152775F6AA009C65C6 /* MarqueeText in Frameworks */ = {isa = PBXBuildFile; productRef = F0673C142775F6AA009C65C6 /* MarqueeText */; };
 		F0673C172775F7FB009C65C6 /* LiveAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0673C162775F7FB009C65C6 /* LiveAvatarView.swift */; };
+		F0B8E1CD27E90EBA00DC7CF9 /* HTMLString in Frameworks */ = {isa = PBXBuildFile; productRef = F0B8E1CC27E90EBA00DC7CF9 /* HTMLString */; };
 		F0C657BB2771F47C004AF802 /* holo_wtfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657BA2771F47C004AF802 /* holo_wtfApp.swift */; };
 		F0C657BD2771F47C004AF802 /* LiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657BC2771F47C004AF802 /* LiveView.swift */; };
 		F0C657BF2771F47C004AF802 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C657BE2771F47C004AF802 /* Assets.xcassets */; };
@@ -23,7 +24,6 @@
 		F0C657D22771F7CE004AF802 /* LiveCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657D12771F7CE004AF802 /* LiveCellView.swift */; };
 		F0C657D42772AFAC004AF802 /* LiveResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657D32772AFAC004AF802 /* LiveResponse.swift */; };
 		F0C657D627732690004AF802 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657D527732690004AF802 /* Util.swift */; };
-		F0D3AE6F27E81F9800FB28EC /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D3AE6E27E81F9800FB28EC /* AboutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +43,6 @@
 		F0C657D12771F7CE004AF802 /* LiveCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCellView.swift; sourceTree = "<group>"; };
 		F0C657D32772AFAC004AF802 /* LiveResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveResponse.swift; sourceTree = "<group>"; };
 		F0C657D527732690004AF802 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
-		F0D3AE6E27E81F9800FB28EC /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		F0D3AE7027E8241C00FB28EC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0B8E1CD27E90EBA00DC7CF9 /* HTMLString in Frameworks */,
 				F0673C152775F6AA009C65C6 /* MarqueeText in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,7 +116,6 @@
 				F0C657CB2771F603004AF802 /* Channel.swift */,
 				F0C657C82771F4EF004AF802 /* LiveVideo.swift */,
 				F0C657D32772AFAC004AF802 /* LiveResponse.swift */,
-				F0D3AE6E27E81F9800FB28EC /* AboutView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -149,6 +148,7 @@
 			name = "holo-wtf";
 			packageProductDependencies = (
 				F0673C142775F6AA009C65C6 /* MarqueeText */,
+				F0B8E1CC27E90EBA00DC7CF9 /* HTMLString */,
 			);
 			productName = "holo-wtf";
 			productReference = F0C657B72771F47C004AF802 /* HoloCal.app */;
@@ -180,6 +180,7 @@
 			mainGroup = F0C657AE2771F47C004AF802;
 			packageReferences = (
 				F0673C132775F6AA009C65C6 /* XCRemoteSwiftPackageReference "MarqueeText" */,
+				F0B8E1CB27E90EBA00DC7CF9 /* XCRemoteSwiftPackageReference "HTMLString" */,
 			);
 			productRefGroup = F0C657B82771F47C004AF802 /* Products */;
 			projectDirPath = "";
@@ -215,7 +216,6 @@
 				F0C657CC2771F603004AF802 /* Channel.swift in Sources */,
 				F0C657D627732690004AF802 /* Util.swift in Sources */,
 				F04D101227E80C260083546C /* VideoListViewModel.swift in Sources */,
-				F0D3AE6F27E81F9800FB28EC /* AboutView.swift in Sources */,
 				F0C657CE2771F70B004AF802 /* LiveViewModel.swift in Sources */,
 				F0C657C92771F4EF004AF802 /* LiveVideo.swift in Sources */,
 				F0C657D22771F7CE004AF802 /* LiveCellView.swift in Sources */,
@@ -437,6 +437,14 @@
 				kind = branch;
 			};
 		};
+		F0B8E1CB27E90EBA00DC7CF9 /* XCRemoteSwiftPackageReference "HTMLString" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alexaubry/HTMLString";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -444,6 +452,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F0673C132775F6AA009C65C6 /* XCRemoteSwiftPackageReference "MarqueeText" */;
 			productName = MarqueeText;
+		};
+		F0B8E1CC27E90EBA00DC7CF9 /* HTMLString */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F0B8E1CB27E90EBA00DC7CF9 /* XCRemoteSwiftPackageReference "HTMLString" */;
+			productName = HTMLString;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
