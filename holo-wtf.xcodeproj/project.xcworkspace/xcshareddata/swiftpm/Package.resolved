@@ -1,16 +1,23 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "MarqueeText",
-        "repositoryURL": "https://github.com/joekndy/MarqueeText.git",
-        "state": {
-          "branch": "master",
-          "revision": "1138da10162958c7887d908f4196a9065dbc8f2b",
-          "version": null
-        }
+  "pins" : [
+    {
+      "identity" : "htmlstring",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/alexaubry/HTMLString",
+      "state" : {
+        "revision" : "04613a3b0f40a91e554b5174c0a10657f1a26357",
+        "version" : "6.0.1"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "marqueetext",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/joekndy/MarqueeText.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "1138da10162958c7887d908f4196a9065dbc8f2b"
+      }
+    }
+  ],
+  "version" : 2
 }
