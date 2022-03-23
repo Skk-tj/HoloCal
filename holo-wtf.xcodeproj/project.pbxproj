@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F0433C4E27E99F85000FEADD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0433C4D27E99F85000FEADD /* SettingsView.swift */; };
+		F0433C5027EADD16000FEADD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0433C4F27EADD16000FEADD /* Localizable.strings */; };
+		F0433C5227EAEDDB000FEADD /* OpenSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */; };
 		F04D101227E80C260083546C /* VideoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D101127E80C260083546C /* VideoListViewModel.swift */; };
 		F0673C0E27732BA3009C65C6 /* UpcomingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0673C0D27732BA3009C65C6 /* UpcomingView.swift */; };
 		F0673C1027732BFA009C65C6 /* UpcomingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0673C0F27732BFA009C65C6 /* UpcomingViewModel.swift */; };
@@ -29,6 +32,9 @@
 /* Begin PBXFileReference section */
 		F0204DB827E91A920083750F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F0204DB927E925220083750F /* PRIVACY-POLICY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "PRIVACY-POLICY.md"; sourceTree = "<group>"; };
+		F0433C4D27E99F85000FEADD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F0433C4F27EADD16000FEADD /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceView.swift; sourceTree = "<group>"; };
 		F04D101127E80C260083546C /* VideoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewModel.swift; sourceTree = "<group>"; };
 		F0673C0D27732BA3009C65C6 /* UpcomingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingView.swift; sourceTree = "<group>"; };
 		F0673C0F27732BFA009C65C6 /* UpcomingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewModel.swift; sourceTree = "<group>"; };
@@ -94,6 +100,9 @@
 				F0C657BA2771F47C004AF802 /* holo_wtfApp.swift */,
 				F0C657BC2771F47C004AF802 /* LiveView.swift */,
 				F0673C0D27732BA3009C65C6 /* UpcomingView.swift */,
+				F0433C4D27E99F85000FEADD /* SettingsView.swift */,
+				F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */,
+				F0433C4F27EADD16000FEADD /* Localizable.strings */,
 				F0C657D527732690004AF802 /* Util.swift */,
 				F0C657BE2771F47C004AF802 /* Assets.xcassets */,
 				F0673C182775FE2B009C65C6 /* Subviews */,
@@ -201,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0C657C22771F47C004AF802 /* Preview Assets.xcassets in Resources */,
+				F0433C5027EADD16000FEADD /* Localizable.strings in Resources */,
 				F0C657BF2771F47C004AF802 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,6 +229,8 @@
 				F0673C1227732CE7009C65C6 /* UpcomingCellView.swift in Sources */,
 				F0C657CC2771F603004AF802 /* Channel.swift in Sources */,
 				F0C657D627732690004AF802 /* Util.swift in Sources */,
+				F0433C4E27E99F85000FEADD /* SettingsView.swift in Sources */,
+				F0433C5227EAEDDB000FEADD /* OpenSourceView.swift in Sources */,
 				F04D101227E80C260083546C /* VideoListViewModel.swift in Sources */,
 				F0C657CE2771F70B004AF802 /* LiveViewModel.swift in Sources */,
 				F0C657C92771F4EF004AF802 /* LiveVideo.swift in Sources */,
@@ -353,7 +365,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -370,7 +382,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf";
 				PRODUCT_NAME = HoloCal;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -385,7 +397,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -402,7 +414,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf";
 				PRODUCT_NAME = HoloCal;
 				SWIFT_EMIT_LOC_STRINGS = YES;

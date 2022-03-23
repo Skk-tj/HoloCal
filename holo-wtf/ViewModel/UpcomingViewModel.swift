@@ -11,7 +11,9 @@ import OSLog
 @MainActor
 class UpcomingViewModel: VideoListViewModel {
     func getUpcoming() async {
-        guard let apiURL = URL(string: "https://api.holotools.app/v1/live?max_upcoming_hours=48") else {
+        let upcomingLookAhead = getUpcomingStreamLookAheadHoursFromUserDefaults()
+        
+        guard let apiURL = URL(string: "https://api.holotools.app/v1/live?max_upcoming_hours=\(upcomingLookAhead)") else {
             logger.critical("Live API URL is not valid")
             self.dataStatus = .fail
             return
@@ -20,13 +22,7 @@ class UpcomingViewModel: VideoListViewModel {
         do {
             let (data, _) = try await URLSession.shared.data(from: apiURL)
             
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSX"
-            
-            decoder.dateDecodingStrategy = .formatted(dateFormatter)
+            let decoder = getDateParser()
             
             let liveResponseResult: LiveResponse = try decoder.decode(LiveResponse.self, from: data)
             

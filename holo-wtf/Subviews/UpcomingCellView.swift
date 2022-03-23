@@ -24,12 +24,12 @@ struct UpcomingCellView: View {
                 HStack {
                     if let liveSchedule = upcoming.liveSchedule {
                         if let futureTimeString = getTimeIntervalStringFromReferenceDate(reference: liveSchedule) {
-                            Text("Starting in \(futureTimeString)")
+                            Text("UPCOMING_CELL_VIEW_STARTING_IN \(futureTimeString)")
                                 .font(.footnote)
                                 .foregroundColor(.secondary)
                         }
                     } else {
-                        Text("No Starting Time")
+                        Text("UNCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN")
                             .font(.footnote)
                             .foregroundColor(.secondary)
                     }

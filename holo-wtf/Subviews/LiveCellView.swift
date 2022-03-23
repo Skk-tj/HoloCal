@@ -24,23 +24,23 @@ struct LiveCellView: View {
                 Divider()
                 HStack {
                     if isLiveMengen(title: live.title) {
-                        Text("Member-only Stream")
+                        Text("LIVE_CELL_VIEW_MEMBER_ONLY_STREAM")
                             .font(.footnote)
                             .foregroundColor(.secondary)
                     } else {
-                        Text("\(live.liveViewers ?? 0) watching")
+                        Text("LIVE_CELL_VIEW_PEOPLE_WATCHING \(live.liveViewers ?? 0)")
                             .font(.footnote)
                             .foregroundColor(.secondary)
                     }
                     Spacer()
                     if let liveStart = live.liveStart {
                         if let elapsedTimeString = getTimeIntervalStringFromReferenceDate(reference: liveStart) {
-                            Text("Started \(elapsedTimeString) ago")
+                            Text("LIVE_CELL_VIEW_STARTED_AGO \(elapsedTimeString)")
                                 .font(.footnote)
                                 .foregroundColor(.secondary)
                         }
                     } else {
-                        Text("Waiting...")
+                        Text("LIVE_CELL_VIEW_WAITING")
                             .font(.footnote)
                             .foregroundColor(.secondary)
                     }
@@ -55,7 +55,10 @@ struct LiveCellView_Previews: PreviewProvider {
     
     static let previewLive = LiveVideo(id: 0, ytVideoKey: "testVideoId", title: "my debut live", thumbnail: nil, liveSchedule: nil, liveStart: nil, liveEnd: nil, liveViewers: 100, channel: testChannel)
     
+    static let previewLiveMemberOnly = LiveVideo(id: 0, ytVideoKey: "testVideoId", title: "my debut live member only", thumbnail: nil, liveSchedule: nil, liveStart: nil, liveEnd: nil, liveViewers: 100, channel: testChannel)
+    
     static var previews: some View {
         LiveCellView(live: previewLive)
+        LiveCellView(live: previewLiveMemberOnly)
     }
 }

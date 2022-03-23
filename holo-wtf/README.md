@@ -7,3 +7,4 @@ Report bug and suggest features at Issues above.
 ## Open Source Projects Used
 
 MarqueeText: https://github.com/joekndy/MarqueeText. MIT license. 
+HTMLString: https://github.com/alexaubry/HTMLString. MIT license. 

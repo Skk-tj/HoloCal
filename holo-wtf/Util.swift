@@ -18,12 +18,11 @@ func getTimeIntervalFormatter() -> DateComponentsFormatter {
 }
 
 func getTimeIntervalStringFromReferenceDate(reference date: Date) -> String? {
-    let referenceDate: TimeInterval = date.timeIntervalSince1970
-    let currentDate: TimeInterval = Date().timeIntervalSince1970
+    let dateDifference = date.timeIntervalSinceNow
     
     let formatter = getTimeIntervalFormatter()
     
-    return formatter.string(from: abs(currentDate - referenceDate))
+    return formatter.string(from: abs(dateDifference))
 }
 
 func isLiveMengen(title: String) -> Bool {
@@ -38,6 +37,25 @@ func isLiveMengen(title: String) -> Bool {
     }
     
     return false
+}
+
+func getUpcomingStreamLookAheadHoursFromUserDefaults() -> Int {
+    let defaults = UserDefaults.standard
+    
+    return defaults.integer(forKey: "upcomingLookAhead") == 0 ? 48 : defaults.integer(forKey: "upcomingLookAhead")
+}
+
+func getDateParser() -> JSONDecoder {
+    let decoder = JSONDecoder()
+    decoder.keyDecodingStrategy = .convertFromSnakeCase
+    
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSX"
+    dateFormatter.calendar = Calendar(identifier: .gregorian)
+    
+    decoder.dateDecodingStrategy = .formatted(dateFormatter)
+    
+    return decoder
 }
 
 enum DataStatus {

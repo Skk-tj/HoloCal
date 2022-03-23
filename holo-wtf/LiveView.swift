@@ -34,21 +34,21 @@ struct LiveView: View {
                 }
                 HStack {
                     Spacer()
-                    if (!live.isSuccess) {
-                        Label("Failed to Retrive New Data", systemImage: "exclamationmark.circle.fill")
+                    if (live.dataStatus == .fail) {
+                        Label("FAILED_TO_RETRIEVE_NEW_DATA", systemImage: "exclamationmark.circle.fill")
                             .foregroundColor(.secondary)
                     } else {
                         if (live.dataStatus == .working) {
                             ProgressView()
                         } else {
-                            Text("\(live.videoList.count) Currently Live")
+                            Text("LIVE_VIEW_CURRENT_COUNT \(live.videoList.count)")
                                 .foregroundColor(.secondary)
                         }
                     }
                     Spacer()
                 }
             }
-            .navigationTitle("Currently Live")
+            .navigationTitle("LIVE_VIEW_TITLE")
         }
         .task {
             await live.getLive()

@@ -20,13 +20,7 @@ class LiveViewModel: VideoListViewModel {
         do {
             let (data, _) = try await URLSession.shared.data(from: apiURL)
             
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSX"
-            
-            decoder.dateDecodingStrategy = .formatted(dateFormatter)
+            let decoder = getDateParser()
             
             let liveResponseResult: LiveResponse = try decoder.decode(LiveResponse.self, from: data)
             

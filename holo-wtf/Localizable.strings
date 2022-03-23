@@ -1,0 +1,49 @@
+/* 
+  Localizable.strings
+  holo-wtf
+
+  Created by Henry An on 2022-03-22.
+  
+*/
+
+// Settings
+
+"SETTINGS_TITLE" = "Settings"; 
+
+"SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER" = "Upcoming Schedule";
+"SETTINGS_UPCOMING_SCHEDULE_SECTION_FOOTER" = "This setting affects how far in the future will Upcoming Streams to be fetched. ";
+"SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT %lld" = "Upcoming stream look ahead %lld hours";
+
+"SETTINGS_ABOUT_SECTION_HEADER" = "About";
+"SETTINGS_ABOUT_BUG_REPORT" = "Bug report & Feature suggestions";
+"SETTINGS_OPEN_SOURCE" = "Open Source Projects used";
+
+// OpenSourceView
+
+"OPEN_SOURCE_VIEW_TITLE" = "Open Source";
+
+// Live Cell View
+
+"LIVE_CELL_VIEW_MEMBER_ONLY_STREAM" = "Member-only Stream";
+"LIVE_CELL_VIEW_PEOPLE_WATCHING %lld" = "%lld watching";
+"LIVE_CELL_VIEW_STARTED_AGO %@" = "Started %@ ago";
+"LIVE_CELL_VIEW_WAITING" = "Waiting...";
+
+// Upcoming Cell View
+
+"UPCOMING_CELL_VIEW_STARTING_IN %@" = "Starting in %@";
+"UNCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN" = "No Starting Time";
+
+// Common between LiveView and UpcomingView
+
+"FAILED_TO_RETRIEVE_NEW_DATA" = "Failed to Retrive New Data";
+
+// LiveView
+
+"LIVE_VIEW_TITLE" = "Currently Live";
+"LIVE_VIEW_CURRENT_COUNT %lld" = "%lld Currently Live"; 
+
+// UpcomingView
+
+"UPCOMING_VIEW_TITLE" = "Upcoming Streams";
+"UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld" = "%lld Upcoming Streams in %lld hours";
