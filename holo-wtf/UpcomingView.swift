@@ -34,20 +34,20 @@ struct UpcomingView: View {
                 }
                 HStack {
                     Spacer()
-                    if (!upcoming.isSuccess) {
-                        Label("Failed to Retrive New Data", systemImage: "exclamationmark.circle.fill")
+                    if (upcoming.dataStatus == .fail) {
+                        Label("FAILED_TO_RETRIEVE_NEW_DATA", systemImage: "exclamationmark.circle.fill")
                             .foregroundColor(.secondary)
                     } else {
                         if (upcoming.dataStatus == .working) {
                             ProgressView()
                         } else {
-                            Text("\(upcoming.videoList.count) Upcoming Streams in 48 hours")
+                            Text("UPCOMING_VIEW_STREAM_COUNT_IN_HOURS \(upcoming.videoList.count) \(getUpcomingStreamLookAheadHoursFromUserDefaults())")
                                 .foregroundColor(.secondary)
                         }
                     }
                     Spacer()
                 }
-            }.navigationTitle("Upcoming Streams")
+            }.navigationTitle("UPCOMING_VIEW_TITLE")
         }
         .task {
             await upcoming.getUpcoming()

@@ -20,6 +20,10 @@ struct holo_wtfApp: App {
                     .tabItem() {
                         Label("Upcoming", systemImage: "clock")
                     }
+                SettingsView()
+                    .tabItem {
+                        Label("Settings", systemImage: "gear")
+                    }
             }
         }
     }
