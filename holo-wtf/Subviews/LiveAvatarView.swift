@@ -9,13 +9,24 @@ import SwiftUI
 
 struct LiveAvatarView: View {
     let url: URL?
+    let avatarRadius: Double
+    
+    init(url: URL?) {
+        self.url = url
+        self.avatarRadius = 64.0
+    }
+    
+    init(url: URL?, avatarRadius: Double) {
+        self.url = url
+        self.avatarRadius = avatarRadius
+    }
     
     var body: some View {
         AsyncImage(url: url, content: { image in
             image
                 .resizable()
                 .aspectRatio(1, contentMode: .fill)
-                .frame(width: 64.0, height: 64.0)
+                .frame(width: avatarRadius, height: avatarRadius)
                 .clipShape(Circle())
                 .overlay {
                     Circle().stroke(.white, lineWidth: 2)
@@ -23,7 +34,7 @@ struct LiveAvatarView: View {
                 .shadow(radius: 4)
         }, placeholder: {
             ProgressView()
-                .frame(width: 64.0, height: 64.0)
+                .frame(width: avatarRadius, height: avatarRadius)
                 .clipShape(Circle())
                 .overlay {
                     Circle().stroke(.white, lineWidth: 2)

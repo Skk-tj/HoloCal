@@ -11,19 +11,41 @@ import SwiftUI
 struct holo_wtfApp: App {
     var body: some Scene {
         WindowGroup {
-            TabView {
-                LiveView()
-                    .tabItem {
-                        Label("Live", systemImage: "person.wave.2.fill")
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                // iPadOS
+                NavigationView {
+                    List {
+                        NavigationLink(destination: LiveiPadView()) {
+                            Label("Live", systemImage: "person.wave.2.fill")
+                        }
+                        NavigationLink(destination: UpcomingiPadView()) {
+                            Label("Upcoming", systemImage: "clock")
+                        }
+                        NavigationLink(destination: SettingsiPadView()) {
+                            Label("Settings", systemImage: "gear")
+                        }
                     }
-                UpcomingView()
-                    .tabItem() {
-                        Label("Upcoming", systemImage: "clock")
-                    }
-                SettingsView()
-                    .tabItem {
-                        Label("Settings", systemImage: "gear")
-                    }
+                    .listStyle(SidebarListStyle())
+                    .navigationTitle("HoloCal")
+                    
+                    LiveiPadView()
+                }
+            } else {
+                // iOS
+                TabView {
+                    LiveView()
+                        .tabItem {
+                            Label("Live", systemImage: "person.wave.2.fill")
+                        }
+                    UpcomingView()
+                        .tabItem() {
+                            Label("Upcoming", systemImage: "clock")
+                        }
+                    SettingsView()
+                        .tabItem {
+                            Label("Settings", systemImage: "gear")
+                        }
+                }
             }
         }
     }
