@@ -24,7 +24,7 @@
 
 // Live Cell View
 
-"LIVE_CELL_VIEW_MEMBER_ONLY_STREAM" = "Member-only Stream";
+"LIVE_CELL_VIEW_MEMBER_ONLY_STREAM" = "Member-only stream";
 "LIVE_CELL_VIEW_PEOPLE_WATCHING %lld" = "%lld watching";
 "LIVE_CELL_VIEW_STARTED_AGO %@" = "Started %@ ago";
 "LIVE_CELL_VIEW_WAITING" = "Waiting...";
@@ -32,11 +32,11 @@
 // Upcoming Cell View
 
 "UPCOMING_CELL_VIEW_STARTING_IN %@" = "Starting in %@";
-"UNCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN" = "No Starting Time";
+"UNCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN" = "No starting time";
 
 // Common between LiveView and UpcomingView
 
-"FAILED_TO_RETRIEVE_NEW_DATA" = "Failed to Retrive New Data";
+"FAILED_TO_RETRIEVE_NEW_DATA" = "Failed to retrive new data";
 
 // LiveView
 
