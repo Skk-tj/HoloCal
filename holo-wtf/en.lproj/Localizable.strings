@@ -5,17 +5,21 @@
   Created by Henry An on 2022-03-22.
   
 */
+// Root View
+
+"ROOT_VIEW_LIVE" = "Live";
+"ROOT_VIEW_UPCOMING" = "Upcoming";
+"ROOT_VIEW_SETTINGS" = "Settings";
 
 // Settings
 
 "SETTINGS_TITLE" = "Settings"; 
 
 "SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER" = "Upcoming Schedule";
-"SETTINGS_UPCOMING_SCHEDULE_SECTION_FOOTER" = "This setting affects how far in the future will Upcoming Streams to be fetched. ";
-"SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT %lld" = "Upcoming stream look ahead %lld hours";
+"SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT %lld" = "Show upcoming streams in %lld hours";
 
 "SETTINGS_ABOUT_SECTION_HEADER" = "About";
-"SETTINGS_ABOUT_BUG_REPORT" = "Bug report & Feature suggestions";
+"SETTINGS_ABOUT_BUG_REPORT" = "Feedback & Bug report";
 "SETTINGS_OPEN_SOURCE" = "Open Source Projects used";
 
 // OpenSourceView
@@ -28,15 +32,17 @@
 "LIVE_CELL_VIEW_PEOPLE_WATCHING %lld" = "%lld watching";
 "LIVE_CELL_VIEW_STARTED_AGO %@" = "Started %@ ago";
 "LIVE_CELL_VIEW_WAITING" = "Waiting...";
+"LIVE_CELL_VIEW_STARTED_AT %@" = "Started at %@";
 
 // Upcoming Cell View
 
 "UPCOMING_CELL_VIEW_STARTING_IN %@" = "Starting in %@";
-"UNCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN" = "No starting time";
+"UPCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN" = "No starting time";
+"UPCOMING_CELL_VIEW_STARTING_AT %@" = "Starting at %@";
 
 // Common between LiveView and UpcomingView
 
-"FAILED_TO_RETRIEVE_NEW_DATA" = "Failed to retrive new data";
+"FAILED_TO_RETRIEVE_NEW_DATA" = "Failed to retrieve new data";
 
 // LiveView
 
@@ -47,3 +53,7 @@
 
 "UPCOMING_VIEW_TITLE" = "Upcoming Streams";
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld" = "%lld Upcoming Streams in %lld hours";
+
+// LiveViewToolbar
+"LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE" = "Show absolute time";
+"LIVE_VIEW_TOOLBAR_SHOW_RELATIVE" = "Show relative time";

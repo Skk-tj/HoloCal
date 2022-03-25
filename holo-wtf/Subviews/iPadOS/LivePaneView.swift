@@ -11,6 +11,8 @@ import HTMLString
 struct LivePaneView: View {
     let live: LiveVideo
     
+    @Binding var isShowingAbsoluteTime: Bool
+    
     var body: some View {
         VStack {
             LiveAvatarView(url: live.channel.photo, avatarRadius: 128.0)
@@ -22,6 +24,7 @@ struct LivePaneView: View {
                     .font(.title)
                     .lineLimit(3)
                 Text(live.channel.name)
+                    .lineLimit(1)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                 Divider()
@@ -38,20 +41,9 @@ struct LivePaneView: View {
                     
                     Spacer()
                     
-                    if let liveStart = live.liveStart {
-                        if let elapsedTimeString = getTimeIntervalStringFromReferenceDate(reference: liveStart) {
-                            Text("LIVE_CELL_VIEW_STARTED_AGO \(elapsedTimeString)")
-                                .font(.footnote)
-                                .foregroundColor(.secondary)
-                        }
-                    } else {
-                        Text("LIVE_CELL_VIEW_WAITING")
-                            .font(.footnote)
-                            .foregroundColor(.secondary)
-                    }
+                    LiveTimeView(liveTime: live.liveStart, isShowingAbsoluteTime: $isShowingAbsoluteTime)
+                        .multilineTextAlignment(.trailing)
                 }
-                .font(.subheadline)
-                .foregroundColor(.secondary)
             }
         }
         .padding()
@@ -67,7 +59,7 @@ struct LivePaneView_Previews: PreviewProvider {
     static let previewLiveMemberOnly = LiveVideo(id: 0, ytVideoKey: "testVideoId", title: "my debut live member only", thumbnail: nil, liveSchedule: nil, liveStart: nil, liveEnd: nil, liveViewers: 100, channel: testChannel)
     
     static var previews: some View {
-        LivePaneView(live: previewLive)
-        LivePaneView(live: previewLive).preferredColorScheme(.dark)
+        LivePaneView(live: previewLive, isShowingAbsoluteTime: Binding.constant(true))
+        LivePaneView(live: previewLive, isShowingAbsoluteTime: Binding.constant(true)).preferredColorScheme(.dark)
     }
 }

@@ -13,7 +13,7 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER"), footer: Text("SETTINGS_UPCOMING_SCHEDULE_SECTION_FOOTER")) {
+                Section(header: Text("SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER")) {
                     
                     Text("SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT \(hoursLookAhead)")
                     

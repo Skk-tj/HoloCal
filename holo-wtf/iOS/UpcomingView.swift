@@ -10,6 +10,8 @@ import SwiftUI
 struct UpcomingView: View {
     @StateObject var upcoming: UpcomingViewModel
     
+    @State var isShowingAbsoluteTime = getIsShowingAbsoluteTimeInUpcomingViewFromUserDefaults()
+    
     init() {
         self._upcoming = StateObject(wrappedValue: UpcomingViewModel())
     }
@@ -18,18 +20,8 @@ struct UpcomingView: View {
         NavigationView {
             List {
                 ForEach(upcoming.videoList, id: \.self) { live in
-                    if let key = live.ytVideoKey {
-                        let url = "https://www.youtube.com/watch?v=\(key)"
-                        
-                        if let finalURL = URL(string: url) {
-                            Link(destination: finalURL) {
-                                UpcomingCellView(upcoming: live)
-                            }
-                        } else {
-                            UpcomingCellView(upcoming: live)
-                        }
-                    } else {
-                        UpcomingCellView(upcoming: live)
+                    LinkedVideoView(videoKey: live.ytVideoKey) {
+                        UpcomingCellView(upcoming: live, isShowingAbsoluteTime: $isShowingAbsoluteTime)
                     }
                 }
                 HStack {
@@ -47,7 +39,11 @@ struct UpcomingView: View {
                     }
                     Spacer()
                 }
-            }.navigationTitle("UPCOMING_VIEW_TITLE")
+            }
+            .navigationTitle("UPCOMING_VIEW_TITLE")
+            .toolbar {
+                VideoViewToolbar(userDefaultSettingsKey: "isShowingAbsoluteTimeInUpcomingView", isShowingAbsoluteTime: $isShowingAbsoluteTime)
+            }
         }
         .task {
             await upcoming.getUpcoming()

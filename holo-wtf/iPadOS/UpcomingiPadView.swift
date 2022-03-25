@@ -10,6 +10,8 @@ import SwiftUI
 struct UpcomingiPadView: View {
     @StateObject var upcoming: UpcomingViewModel
     
+    @State var isShowingAbsoluteTime = getIsShowingAbsoluteTimeInUpcomingViewFromUserDefaults()
+    
     let layout = [
         GridItem(.adaptive(minimum: 250), spacing: 20)
     ]
@@ -30,18 +32,8 @@ struct UpcomingiPadView: View {
             } else {
                 LazyVGrid(columns: layout, spacing: 50) {
                     ForEach(upcoming.videoList, id: \.self) { live in
-                        if let key = live.ytVideoKey {
-                            let url = "https://www.youtube.com/watch?v=\(key)"
-                            
-                            if let finalURL = URL(string: url) {
-                                Link(destination: finalURL) {
-                                    UpcomingPaneView(upcoming: live)
-                                }
-                            } else {
-                                UpcomingPaneView(upcoming: live)
-                            }
-                        } else {
-                            UpcomingPaneView(upcoming: live)
+                        LinkedVideoView(videoKey: live.ytVideoKey) {
+                            UpcomingPaneView(upcoming: live, isShowingAbsoluteTime: $isShowingAbsoluteTime)
                         }
                     }
                 }
@@ -56,6 +48,9 @@ struct UpcomingiPadView: View {
         }
         .task {
             await upcoming.getUpcoming()
+        }
+        .toolbar {
+            VideoViewToolbar(userDefaultSettingsKey: "isShowingAbsoluteTimeInUpcomingView", isShowingAbsoluteTime: $isShowingAbsoluteTime)
         }
         .navigationTitle("UPCOMING_VIEW_TITLE")
     }
