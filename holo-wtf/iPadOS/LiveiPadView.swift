@@ -30,7 +30,19 @@ struct LiveiPadView: View {
             } else {
                 LazyVGrid(columns: layout, spacing: 50) {
                     ForEach(live.videoList, id: \.self) { live in
-                        LivePaneView(live: live)
+                        if let key = live.ytVideoKey {
+                            let url = "https://www.youtube.com/watch?v=\(key)"
+                            
+                            if let finalURL = URL(string: url) {
+                                Link(destination: finalURL) {
+                                    LivePaneView(live: live)
+                                }
+                            } else {
+                                LivePaneView(live: live)
+                            }
+                        } else {
+                            LivePaneView(live: live)
+                        }
                     }
                 }
                 .padding(30)

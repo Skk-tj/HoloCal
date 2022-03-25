@@ -29,8 +29,20 @@ struct UpcomingiPadView: View {
                 Spacer()
             } else {
                 LazyVGrid(columns: layout, spacing: 50) {
-                    ForEach(upcoming.videoList, id: \.self) { upcoming in
-                        UpcomingPaneView(upcoming: upcoming)
+                    ForEach(upcoming.videoList, id: \.self) { live in
+                        if let key = live.ytVideoKey {
+                            let url = "https://www.youtube.com/watch?v=\(key)"
+                            
+                            if let finalURL = URL(string: url) {
+                                Link(destination: finalURL) {
+                                    UpcomingPaneView(upcoming: live)
+                                }
+                            } else {
+                                UpcomingPaneView(upcoming: live)
+                            }
+                        } else {
+                            UpcomingPaneView(upcoming: live)
+                        }
                     }
                 }
                 .padding(30)
