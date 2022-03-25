@@ -19,4 +19,30 @@ class VideoListViewModel: ObservableObject {
     }
     
     let logger = Logger()
+    
+    func getVideos(url: String, completion: @escaping (LiveResponse) -> Void) async {
+        guard let apiURL = URL(string: url) else {
+            logger.critical("API URL is not valid")
+            self.dataStatus = .fail
+            return
+        }
+        
+        do {
+            let (data, _) = try await URLSession.shared.data(from: apiURL)
+            
+            let decoder = getDateParser()
+            
+            let liveResponseResult: LiveResponse = try decoder.decode(LiveResponse.self, from: data)
+            
+            completion(liveResponseResult)
+            
+            self.dataStatus = .success
+        } catch {
+            logger.error("Netword request/JSON serialization failed when trying to get live data from API. ")
+            debugPrint(error)
+            logger.error("Error is: \(error.localizedDescription)")
+            self.dataStatus = .fail
+            return
+        }
+    }
 }
