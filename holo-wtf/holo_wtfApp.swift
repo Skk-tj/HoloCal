@@ -16,13 +16,13 @@ struct holo_wtfApp: App {
                 NavigationView {
                     List {
                         NavigationLink(destination: LiveiPadView()) {
-                            Label("Live", systemImage: "person.wave.2.fill")
+                            Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
                         }
                         NavigationLink(destination: UpcomingiPadView()) {
-                            Label("Upcoming", systemImage: "clock")
+                            Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
                         }
                         NavigationLink(destination: SettingsiPadView()) {
-                            Label("Settings", systemImage: "gear")
+                            Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
                         }
                     }
                     .listStyle(SidebarListStyle())
@@ -35,15 +35,15 @@ struct holo_wtfApp: App {
                 TabView {
                     LiveView()
                         .tabItem {
-                            Label("Live", systemImage: "person.wave.2.fill")
+                            Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
                         }
                     UpcomingView()
                         .tabItem() {
-                            Label("Upcoming", systemImage: "clock")
+                            Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
                         }
                     SettingsView()
                         .tabItem {
-                            Label("Settings", systemImage: "gear")
+                            Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
                         }
                 }
             }

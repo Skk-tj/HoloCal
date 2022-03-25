@@ -45,6 +45,26 @@ func getUpcomingStreamLookAheadHoursFromUserDefaults() -> Int {
     return defaults.integer(forKey: "upcomingLookAhead") == 0 ? 48 : defaults.integer(forKey: "upcomingLookAhead")
 }
 
+func getIsShowingAbsoluteTimeInLiveViewFromUserDefaults() -> Bool {
+    let defaults = UserDefaults.standard
+    
+    return defaults.bool(forKey: "isShowingAbsoluteTimeInLiveView")
+}
+
+func getIsShowingAbsoluteTimeInUpcomingViewFromUserDefaults() -> Bool {
+    let defaults = UserDefaults.standard
+    
+    return defaults.bool(forKey: "isShowingAbsoluteTimeInUpcomingView")
+}
+
+func getAbsoluteDateFormatter() -> DateFormatter {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .short
+    formatter.timeStyle = .short
+    
+    return formatter
+}
+
 func getDateParser() -> JSONDecoder {
     let decoder = JSONDecoder()
     decoder.keyDecodingStrategy = .convertFromSnakeCase

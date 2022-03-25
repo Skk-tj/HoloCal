@@ -1,0 +1,60 @@
+/* 
+  Localizable.strings
+  holo-wtf
+
+ 
+  
+*/
+// Root View
+
+"ROOT_VIEW_LIVE" = "ライブ配信中";
+"ROOT_VIEW_UPCOMING" = "今後のライブ配信";
+"ROOT_VIEW_SETTINGS" = "設定";
+
+// Settings
+
+"SETTINGS_TITLE" = "設定";
+
+"SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER" = "今後のライブ配信";
+"SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT %lld" = "%lld時間内のライブ配信を表示";
+
+"SETTINGS_ABOUT_SECTION_HEADER" = "このアプリについて";
+"SETTINGS_ABOUT_BUG_REPORT" = "フィードバック＆バグリポート";
+"SETTINGS_OPEN_SOURCE" = "オープンソース";
+
+// OpenSourceView
+
+"OPEN_SOURCE_VIEW_TITLE" = "オープンソース";
+
+// Live Cell View
+
+"LIVE_CELL_VIEW_MEMBER_ONLY_STREAM" = "メンバー限定";
+"LIVE_CELL_VIEW_PEOPLE_WATCHING %lld" = "%lld人が視聴中";
+"LIVE_CELL_VIEW_STARTED_AGO %@" = "%@前にライブ開始";
+"LIVE_CELL_VIEW_WAITING" = "待機中";
+
+"LIVE_CELL_VIEW_STARTED_AT %@" = "%@が開始";
+
+// Upcoming Cell View
+
+"UPCOMING_CELL_VIEW_STARTING_IN %@" = "%@後にライブ配信";
+"UPCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN" = "開始時間不明";
+"UPCOMING_CELL_VIEW_STARTING_AT %@" = "%@に予定";
+
+// Common between LiveView and UpcomingView
+
+"FAILED_TO_RETRIEVE_NEW_DATA" = "データの取得に失敗しました";
+
+// LiveView
+
+"LIVE_VIEW_TITLE" = "ライブ配信中";
+"LIVE_VIEW_CURRENT_COUNT %lld" = "%lld人がライブ配信中";
+
+// UpcomingView
+
+"UPCOMING_VIEW_TITLE" = "今後のライブ配信";
+"UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld" = "%lld時間内に%lld人がライブ配信予定";
+
+// LiveViewToolbar
+"LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE" = "絶対時間を表示";
+"LIVE_VIEW_TOOLBAR_SHOW_RELATIVE" = "相対時間を表示";

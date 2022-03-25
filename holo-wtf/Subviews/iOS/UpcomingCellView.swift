@@ -12,6 +12,8 @@ import HTMLString
 struct UpcomingCellView: View {
     var upcoming: LiveVideo
     
+    @Binding var isShowingAbsoluteTime: Bool
+    
     var body: some View {
         HStack {
             LiveAvatarView(url: upcoming.channel.photo)
@@ -22,17 +24,7 @@ struct UpcomingCellView: View {
                     .foregroundColor(.secondary)
                 Divider()
                 HStack {
-                    if let liveSchedule = upcoming.liveSchedule {
-                        if let futureTimeString = getTimeIntervalStringFromReferenceDate(reference: liveSchedule) {
-                            Text("UPCOMING_CELL_VIEW_STARTING_IN \(futureTimeString)")
-                                .font(.footnote)
-                                .foregroundColor(.secondary)
-                        }
-                    } else {
-                        Text("UNCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN")
-                            .font(.footnote)
-                            .foregroundColor(.secondary)
-                    }
+                    UpcomingTimeView(liveSchedule: upcoming.liveSchedule, isShowingAbsoluteTime: $isShowingAbsoluteTime)
                 }
             }
         }
@@ -45,6 +37,6 @@ struct UpcomingCellView_Previews: PreviewProvider {
     static let previewLive = LiveVideo(id: 0, ytVideoKey: "testVideoId", title: "my debut live", thumbnail: nil, liveSchedule: nil, liveStart: nil, liveEnd: nil, liveViewers: 100, channel: testChannel)
     
     static var previews: some View {
-        UpcomingCellView(upcoming: previewLive)
+        UpcomingCellView(upcoming: previewLive, isShowingAbsoluteTime: Binding.constant(true))
     }
 }

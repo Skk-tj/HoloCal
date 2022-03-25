@@ -9,9 +9,10 @@ import SwiftUI
 
 struct LiveiPadView: View {
     @StateObject var live: LiveViewModel
+    @State var isShowingAbsoluteTime: Bool = getIsShowingAbsoluteTimeInLiveViewFromUserDefaults()
     
     let layout = [
-        GridItem(.adaptive(minimum: 250), spacing: 20)
+        GridItem(.adaptive(minimum: 250), spacing: 15)
     ]
     
     init() {
@@ -30,18 +31,8 @@ struct LiveiPadView: View {
             } else {
                 LazyVGrid(columns: layout, spacing: 50) {
                     ForEach(live.videoList, id: \.self) { live in
-                        if let key = live.ytVideoKey {
-                            let url = "https://www.youtube.com/watch?v=\(key)"
-                            
-                            if let finalURL = URL(string: url) {
-                                Link(destination: finalURL) {
-                                    LivePaneView(live: live)
-                                }
-                            } else {
-                                LivePaneView(live: live)
-                            }
-                        } else {
-                            LivePaneView(live: live)
+                        LinkedVideoView(videoKey: live.ytVideoKey) {
+                            LivePaneView(live: live, isShowingAbsoluteTime: $isShowingAbsoluteTime)
                         }
                     }
                 }
@@ -58,6 +49,9 @@ struct LiveiPadView: View {
             await live.getLive()
         }
         .navigationTitle("LIVE_VIEW_TITLE")
+        .toolbar {
+            VideoViewToolbar(userDefaultSettingsKey: "isShowingAbsoluteTimeInLiveView", isShowingAbsoluteTime: $isShowingAbsoluteTime)
+        }
     }
 }
 

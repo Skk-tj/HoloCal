@@ -10,6 +10,8 @@ import SwiftUI
 struct LiveView: View {
     @StateObject var live: LiveViewModel
     
+    @State var isShowingAbsoluteTime: Bool = getIsShowingAbsoluteTimeInLiveViewFromUserDefaults()
+    
     init() {
         self._live = StateObject(wrappedValue: LiveViewModel())
     }
@@ -18,18 +20,8 @@ struct LiveView: View {
         NavigationView {
             List {
                 ForEach(live.videoList, id: \.self) { live in
-                    if let key = live.ytVideoKey {
-                        let url = "https://www.youtube.com/watch?v=\(key)"
-                        
-                        if let finalURL = URL(string: url) {
-                            Link(destination: finalURL) {
-                                LiveCellView(live: live)
-                            }
-                        } else {
-                            LiveCellView(live: live)
-                        }
-                    } else {
-                        LiveCellView(live: live)
+                    LinkedVideoView(videoKey: live.ytVideoKey) {
+                        LiveCellView(live: live, isShowingAbsoluteTime: $isShowingAbsoluteTime)
                     }
                 }
                 HStack {
@@ -49,6 +41,9 @@ struct LiveView: View {
                 }
             }
             .navigationTitle("LIVE_VIEW_TITLE")
+            .toolbar {
+                VideoViewToolbar(userDefaultSettingsKey: "isShowingAbsoluteTimeInLiveView", isShowingAbsoluteTime: $isShowingAbsoluteTime)
+            }
         }
         .task {
             await live.getLive()

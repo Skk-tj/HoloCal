@@ -11,6 +11,8 @@ import HTMLString
 struct UpcomingPaneView: View {
     var upcoming: LiveVideo
     
+    @Binding var isShowingAbsoluteTime: Bool
+    
     var body: some View {
         VStack {
             LiveAvatarView(url: upcoming.channel.photo, avatarRadius: 128.0)
@@ -24,22 +26,11 @@ struct UpcomingPaneView: View {
                 Text(upcoming.channel.name)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
+                    .lineLimit(1)
                 Divider()
                 HStack {
-                    if let liveSchedule = upcoming.liveSchedule {
-                        if let futureTimeString = getTimeIntervalStringFromReferenceDate(reference: liveSchedule) {
-                            Text("UPCOMING_CELL_VIEW_STARTING_IN \(futureTimeString)")
-                                .font(.footnote)
-                                .foregroundColor(.secondary)
-                        }
-                    } else {
-                        Text("UNCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN")
-                            .font(.footnote)
-                            .foregroundColor(.secondary)
-                    }
+                    UpcomingTimeView(liveSchedule: upcoming.liveSchedule, isShowingAbsoluteTime: $isShowingAbsoluteTime)
                 }
-                .font(.subheadline)
-                .foregroundColor(.secondary)
             }
         }
         .padding()
@@ -53,6 +44,6 @@ struct UpcomingPaneView_Previews: PreviewProvider {
     static let previewLive = LiveVideo(id: 0, ytVideoKey: "testVideoId", title: "my debut live", thumbnail: nil, liveSchedule: nil, liveStart: nil, liveEnd: nil, liveViewers: 100, channel: testChannel)
     
     static var previews: some View {
-        UpcomingPaneView(upcoming: previewLive)
+        UpcomingPaneView(upcoming: previewLive, isShowingAbsoluteTime: Binding.constant(true))
     }
 }

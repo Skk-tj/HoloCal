@@ -11,6 +11,7 @@ import HTMLString
 
 struct LiveCellView: View {
     let live: LiveVideo
+    @Binding var isShowingAbsoluteTime: Bool
     
     var body: some View {
         HStack {
@@ -33,17 +34,9 @@ struct LiveCellView: View {
                             .foregroundColor(.secondary)
                     }
                     Spacer()
-                    if let liveStart = live.liveStart {
-                        if let elapsedTimeString = getTimeIntervalStringFromReferenceDate(reference: liveStart) {
-                            Text("LIVE_CELL_VIEW_STARTED_AGO \(elapsedTimeString)")
-                                .font(.footnote)
-                                .foregroundColor(.secondary)
-                        }
-                    } else {
-                        Text("LIVE_CELL_VIEW_WAITING")
-                            .font(.footnote)
-                            .foregroundColor(.secondary)
-                    }
+                    
+                    LiveTimeView(liveTime: live.liveStart, isShowingAbsoluteTime: $isShowingAbsoluteTime)
+                        .multilineTextAlignment(.trailing)
                 }
             }
         }
@@ -58,7 +51,7 @@ struct LiveCellView_Previews: PreviewProvider {
     static let previewLiveMemberOnly = LiveVideo(id: 0, ytVideoKey: "testVideoId", title: "my debut live member only", thumbnail: nil, liveSchedule: nil, liveStart: nil, liveEnd: nil, liveViewers: 100, channel: testChannel)
     
     static var previews: some View {
-        LiveCellView(live: previewLive)
-        LiveCellView(live: previewLiveMemberOnly)
+        LiveCellView(live: previewLive, isShowingAbsoluteTime: Binding.constant(true))
+        LiveCellView(live: previewLiveMemberOnly, isShowingAbsoluteTime: Binding.constant(false))
     }
 }
