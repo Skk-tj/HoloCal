@@ -21,8 +21,9 @@ struct LivePaneView: View {
             
             VStack(alignment: .leading) {
                 Text(live.title.removingHTMLEntities())
-                    .font(.title)
-                    .lineLimit(3)
+                    .font(.headline)
+                    .lineLimit(2)
+                    .multilineTextAlignment(.leading)
                 Text(live.channel.name)
                     .lineLimit(1)
                     .font(.subheadline)
@@ -33,6 +34,7 @@ struct LivePaneView: View {
                         Text("LIVE_CELL_VIEW_MEMBER_ONLY_STREAM")
                             .font(.footnote)
                             .foregroundColor(.secondary)
+                            .multilineTextAlignment(.leading)
                     } else {
                         Text("LIVE_CELL_VIEW_PEOPLE_WATCHING \(live.liveViewers ?? 0)")
                             .font(.footnote)

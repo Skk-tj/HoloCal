@@ -17,7 +17,7 @@ struct SettingsiPadView: View {
                 Text("SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT \(hoursLookAhead)")
                 
                 Picker("Upcoming look ahead", selection: $hoursLookAhead) {
-                    ForEach(2...120, id: \.self) {
+                    ForEach([12, 24, 48, 72, 96, 120], id: \.self) {
                         Text("\($0)")
                     }
                 }

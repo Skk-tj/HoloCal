@@ -21,8 +21,9 @@ struct UpcomingPaneView: View {
             
             VStack(alignment: .leading) {
                 Text(upcoming.title.removingHTMLEntities())
-                    .font(.title)
-                    .lineLimit(3)
+                    .font(.headline)
+                    .lineLimit(2)
+                    .multilineTextAlignment(.leading)
                 Text(upcoming.channel.name)
                     .font(.subheadline)
                     .foregroundColor(.secondary)

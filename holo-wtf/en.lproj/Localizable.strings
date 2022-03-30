@@ -32,7 +32,7 @@
 "LIVE_CELL_VIEW_PEOPLE_WATCHING %lld" = "%lld watching";
 "LIVE_CELL_VIEW_STARTED_AGO %@" = "Started %@ ago";
 "LIVE_CELL_VIEW_WAITING" = "Waiting...";
-"LIVE_CELL_VIEW_STARTED_AT %@" = "Started at %@";
+"LIVE_CELL_VIEW_STARTED_AT %@" = "%@";
 
 // Upcoming Cell View
 
@@ -55,5 +55,10 @@
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld" = "%lld Upcoming Streams in %lld hours";
 
 // LiveViewToolbar
+
 "LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE" = "Show absolute time";
 "LIVE_VIEW_TOOLBAR_SHOW_RELATIVE" = "Show relative time";
+
+// VideoContextMenu
+"VIDEO_CONTEXT_MENU_TWITTER_PROFILE" = "Open Twitter profile";
+"VIDEO_CONTENT_MENU_YOUTUBE_CHANNEL" = "Open YouTube channel";
