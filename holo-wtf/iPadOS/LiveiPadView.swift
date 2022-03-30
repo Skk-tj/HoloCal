@@ -12,7 +12,7 @@ struct LiveiPadView: View {
     @State var isShowingAbsoluteTime: Bool = getIsShowingAbsoluteTimeInLiveViewFromUserDefaults()
     
     let layout = [
-        GridItem(.adaptive(minimum: 250), spacing: 15)
+        GridItem(.adaptive(minimum: 250), spacing: 10)
     ]
     
     init() {
@@ -34,11 +34,15 @@ struct LiveiPadView: View {
                         LinkedVideoView(videoKey: live.ytVideoKey) {
                             LivePaneView(live: live, isShowingAbsoluteTime: $isShowingAbsoluteTime)
                         }
+                        .contextMenu {
+                            VideoContextMenu(twitterLink: live.channel.twitterLink, ytChannelId: live.channel.ytChannelId)
+                        }
                     }
                 }
                 .padding(30)
                 
                 Divider()
+                    .padding(.horizontal)
                 
                 Text("LIVE_VIEW_CURRENT_COUNT \(live.videoList.count)")
                     .foregroundColor(.secondary)
@@ -46,6 +50,9 @@ struct LiveiPadView: View {
             }
         }
         .task {
+            await live.getLive()
+        }
+        .refreshable {
             await live.getLive()
         }
         .navigationTitle("LIVE_VIEW_TITLE")

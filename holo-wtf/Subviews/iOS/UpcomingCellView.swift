@@ -28,6 +28,9 @@ struct UpcomingCellView: View {
                 }
             }
         }
+        .contextMenu {
+            VideoContextMenu(twitterLink: upcoming.channel.twitterLink, ytChannelId: upcoming.channel.ytChannelId)
+        }
     }
 }
 

@@ -13,7 +13,7 @@ struct UpcomingiPadView: View {
     @State var isShowingAbsoluteTime = getIsShowingAbsoluteTimeInUpcomingViewFromUserDefaults()
     
     let layout = [
-        GridItem(.adaptive(minimum: 250), spacing: 20)
+        GridItem(.adaptive(minimum: 250), spacing: 10)
     ]
     
     init() {
@@ -21,7 +21,7 @@ struct UpcomingiPadView: View {
     }
     
     var body: some View {
-        ScrollView {
+        ScrollView() {
             if (upcoming.dataStatus == .working) {
                 ProgressView()
             } else if (upcoming.dataStatus == .fail) {
@@ -35,11 +35,15 @@ struct UpcomingiPadView: View {
                         LinkedVideoView(videoKey: live.ytVideoKey) {
                             UpcomingPaneView(upcoming: live, isShowingAbsoluteTime: $isShowingAbsoluteTime)
                         }
+                        .contextMenu {
+                            VideoContextMenu(twitterLink: live.channel.twitterLink, ytChannelId: live.channel.ytChannelId)
+                        }
                     }
                 }
                 .padding(30)
                 
                 Divider()
+                    .padding(.horizontal)
                 
                 Text("UPCOMING_VIEW_STREAM_COUNT_IN_HOURS \(upcoming.videoList.count) \(getUpcomingStreamLookAheadHoursFromUserDefaults())")
                     .foregroundColor(.secondary)

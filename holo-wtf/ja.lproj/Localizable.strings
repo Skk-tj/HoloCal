@@ -33,7 +33,7 @@
 "LIVE_CELL_VIEW_STARTED_AGO %@" = "%@前にライブ開始";
 "LIVE_CELL_VIEW_WAITING" = "待機中";
 
-"LIVE_CELL_VIEW_STARTED_AT %@" = "%@が開始";
+"LIVE_CELL_VIEW_STARTED_AT %@" = "%@";
 
 // Upcoming Cell View
 
@@ -58,3 +58,7 @@
 // LiveViewToolbar
 "LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE" = "絶対時間を表示";
 "LIVE_VIEW_TOOLBAR_SHOW_RELATIVE" = "相対時間を表示";
+
+// VideoContextMenu
+"VIDEO_CONTEXT_MENU_TWITTER_PROFILE" = "Twitter プロフィール";
+"VIDEO_CONTENT_MENU_YOUTUBE_CHANNEL" = "YouTube チャンネル";

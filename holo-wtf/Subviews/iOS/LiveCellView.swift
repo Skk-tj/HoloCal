@@ -40,6 +40,9 @@ struct LiveCellView: View {
                 }
             }
         }
+        .contextMenu {
+            VideoContextMenu(twitterLink: live.channel.twitterLink, ytChannelId: live.channel.ytChannelId)
+        }
     }
 }
 
