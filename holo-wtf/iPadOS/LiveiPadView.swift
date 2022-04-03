@@ -52,12 +52,16 @@ struct LiveiPadView: View {
         .task {
             await live.getLive()
         }
-        .refreshable {
-            await live.getLive()
-        }
         .navigationTitle("LIVE_VIEW_TITLE")
         .toolbar {
             VideoViewToolbar(userDefaultSettingsKey: "isShowingAbsoluteTimeInLiveView", isShowingAbsoluteTime: $isShowingAbsoluteTime)
+            Button(action: {
+                Task {
+                    await live.getLive()
+                }
+            }, label: {
+                Label("Refresh", systemImage: "arrow.triangle.2.circlepath")
+            })
         }
     }
 }
