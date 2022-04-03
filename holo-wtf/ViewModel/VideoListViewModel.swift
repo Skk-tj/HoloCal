@@ -21,6 +21,8 @@ class VideoListViewModel: ObservableObject {
     let logger = Logger()
     
     func getVideos(url: String, completion: @escaping (LiveResponse) -> Void) async {
+        self.dataStatus = .working
+        
         guard let apiURL = URL(string: url) else {
             logger.critical("API URL is not valid")
             self.dataStatus = .fail

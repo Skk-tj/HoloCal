@@ -14,8 +14,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/joekndy/MarqueeText.git",
       "state" : {
-        "branch" : "master",
-        "revision" : "1138da10162958c7887d908f4196a9065dbc8f2b"
+        "revision" : "c6214a470c2c7f2b9add671722b4bb402126bce9"
       }
     }
   ],

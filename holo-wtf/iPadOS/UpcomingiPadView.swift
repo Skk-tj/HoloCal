@@ -55,6 +55,13 @@ struct UpcomingiPadView: View {
         }
         .toolbar {
             VideoViewToolbar(userDefaultSettingsKey: "isShowingAbsoluteTimeInUpcomingView", isShowingAbsoluteTime: $isShowingAbsoluteTime)
+            Button(action: {
+                Task {
+                    await upcoming.getUpcoming()
+                }
+            }, label: {
+                Label("Refresh", systemImage: "arrow.triangle.2.circlepath")
+            })
         }
         .navigationTitle("UPCOMING_VIEW_TITLE")
     }
