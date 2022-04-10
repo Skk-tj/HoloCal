@@ -58,9 +58,9 @@ let talentsByGeneration = [
         generation: ["en": "Gamers", "ja": "ゲーマーズ"],
         talents: [
             Talent(id: 13, names: ["en": "Shirakami Fubuki", "ja": "白上フブキ"]),
-            Talent(id: 10, names: ["en": "Ookami Mio", "ja": "大神ミオ"]),
-            Talent(id: 33, names: ["en": "Nekomata Okayu", "ja": "猫又おかゆ"]),
-            Talent(id: 34, names: ["en": "Inugami Korone", "ja": "戌神ころね"]),
+            Talent(id: 11, names: ["en": "Ookami Mio", "ja": "大神ミオ"]),
+            Talent(id: 23, names: ["en": "Nekomata Okayu", "ja": "猫又おかゆ"]),
+            Talent(id: 4, names: ["en": "Inugami Korone", "ja": "戌神ころね"]),
         ]
     ),
     // MARK: - 3rd gen

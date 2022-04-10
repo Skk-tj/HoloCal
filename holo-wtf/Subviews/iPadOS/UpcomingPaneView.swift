@@ -11,6 +11,8 @@ import HTMLString
 struct UpcomingPaneView: View {
     var upcoming: LiveVideo
     
+    @AppStorage("favouritedChannel") var favourited = Favourited()
+    
     var body: some View {
         VStack {
             LiveAvatarView(url: upcoming.channel.photo, avatarRadius: 128.0)
@@ -22,10 +24,17 @@ struct UpcomingPaneView: View {
                     .font(.headline)
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
-                Text(upcoming.channel.name)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
+                HStack {
+                    if favourited.contains(where: {$0 == upcoming.channel.id}) {
+                        Image(systemName: "star.fill")
+                            .tint(.yellow)
+                    }
+                    
+                    Text(upcoming.channel.name)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
                     .lineLimit(1)
+                }
                 Divider()
                 HStack {
                     UpcomingTimeView(liveSchedule: upcoming.liveSchedule)
