@@ -11,25 +11,31 @@ import HTMLString
 
 struct UpcomingCellView: View {
     var upcoming: LiveVideo
-    
-    @Binding var isShowingAbsoluteTime: Bool
+    @AppStorage("favouritedChannel") var favourited = Favourited()
     
     var body: some View {
         HStack {
             LiveAvatarView(url: upcoming.channel.photo)
             VStack(alignment: .leading) {
                 MarqueeText(text: upcoming.title.removingHTMLEntities(), font: UIFont.preferredFont(forTextStyle: .headline), leftFade: 16, rightFade: 16, startDelay: 3.0)
-                Text(upcoming.channel.name)
-                    .font(.subheadline)
+                HStack {
+                    if favourited.contains(where: {$0 == upcoming.channel.id}) {
+                        Image(systemName: "star.fill")
+                            .tint(.yellow)
+                    }
+                    
+                    Text(upcoming.channel.name)
+                        .font(.subheadline)
                     .foregroundColor(.secondary)
+                }
                 Divider()
                 HStack {
-                    UpcomingTimeView(liveSchedule: upcoming.liveSchedule, isShowingAbsoluteTime: $isShowingAbsoluteTime)
+                    UpcomingTimeView(liveSchedule: upcoming.liveSchedule)
                 }
             }
         }
         .contextMenu {
-            VideoContextMenu(twitterLink: upcoming.channel.twitterLink, ytChannelId: upcoming.channel.ytChannelId)
+            VideoContextMenu(video: upcoming)
         }
     }
 }
@@ -40,6 +46,6 @@ struct UpcomingCellView_Previews: PreviewProvider {
     static let previewLive = LiveVideo(id: 0, ytVideoKey: "testVideoId", title: "my debut live", thumbnail: nil, liveSchedule: nil, liveStart: nil, liveEnd: nil, liveViewers: 100, channel: testChannel)
     
     static var previews: some View {
-        UpcomingCellView(upcoming: previewLive, isShowingAbsoluteTime: Binding.constant(true))
+        UpcomingCellView(upcoming: previewLive)
     }
 }

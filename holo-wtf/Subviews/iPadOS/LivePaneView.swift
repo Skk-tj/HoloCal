@@ -11,8 +11,6 @@ import HTMLString
 struct LivePaneView: View {
     let live: LiveVideo
     
-    @Binding var isShowingAbsoluteTime: Bool
-    
     var body: some View {
         VStack {
             LiveAvatarView(url: live.channel.photo, avatarRadius: 128.0)
@@ -43,7 +41,7 @@ struct LivePaneView: View {
                     
                     Spacer()
                     
-                    LiveTimeView(liveTime: live.liveStart, isShowingAbsoluteTime: $isShowingAbsoluteTime)
+                    LiveTimeView(liveTime: live.liveStart)
                         .multilineTextAlignment(.trailing)
                 }
             }
@@ -61,7 +59,7 @@ struct LivePaneView_Previews: PreviewProvider {
     static let previewLiveMemberOnly = LiveVideo(id: 0, ytVideoKey: "testVideoId", title: "my debut live member only", thumbnail: nil, liveSchedule: nil, liveStart: nil, liveEnd: nil, liveViewers: 100, channel: testChannel)
     
     static var previews: some View {
-        LivePaneView(live: previewLive, isShowingAbsoluteTime: Binding.constant(true))
-        LivePaneView(live: previewLive, isShowingAbsoluteTime: Binding.constant(true)).preferredColorScheme(.dark)
+        LivePaneView(live: previewLive)
+        LivePaneView(live: previewLive).preferredColorScheme(.dark)
     }
 }

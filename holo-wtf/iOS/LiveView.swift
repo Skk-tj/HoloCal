@@ -9,8 +9,7 @@ import SwiftUI
 
 struct LiveView: View {
     @StateObject var live: LiveViewModel
-    
-    @State var isShowingAbsoluteTime: Bool = getIsShowingAbsoluteTimeInLiveViewFromUserDefaults()
+    @AppStorage("favouritedChannel") var favourited = Favourited()
     
     init() {
         self._live = StateObject(wrappedValue: LiveViewModel())
@@ -19,30 +18,46 @@ struct LiveView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(live.videoList, id: \.self) { live in
-                    LinkedVideoView(videoKey: live.ytVideoKey) {
-                        LiveCellView(live: live, isShowingAbsoluteTime: $isShowingAbsoluteTime)
-                    }
-                }
-                HStack {
-                    Spacer()
-                    if (live.dataStatus == .fail) {
-                        Label("FAILED_TO_RETRIEVE_NEW_DATA", systemImage: "exclamationmark.circle.fill")
-                            .foregroundColor(.secondary)
-                    } else {
-                        if (live.dataStatus == .working) {
-                            ProgressView()
-                        } else {
-                            Text("LIVE_VIEW_CURRENT_COUNT \(live.videoList.count)")
-                                .foregroundColor(.secondary)
+                if favourited.count != 0 && live.dataStatus == .success {
+                    Section {
+                        ForEach(live.videoList.filter { video in
+                            favourited.contains(where: { video.channel.id == $0 })
+                        }) { live in
+                            SwipableLinkedCellView(video: live) {
+                                LiveCellView(live: live)
+                            }
                         }
                     }
-                    Spacer()
+                }
+                
+                Section {
+                    ForEach(live.videoList.filter { video in
+                        !favourited.contains(where: { video.channel.id == $0 })
+                    }, id: \.self) { live in
+                        SwipableLinkedCellView(video: live) {
+                            LiveCellView(live: live)
+                        }
+                    }
+                    HStack {
+                        Spacer()
+                        if (live.dataStatus == .fail) {
+                            Label("FAILED_TO_RETRIEVE_NEW_DATA", systemImage: "exclamationmark.circle.fill")
+                                .foregroundColor(.secondary)
+                        } else {
+                            if (live.dataStatus == .working) {
+                                ProgressView()
+                            } else {
+                                Text("LIVE_VIEW_CURRENT_COUNT \(live.videoList.count)")
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                        Spacer()
+                    }
                 }
             }
             .navigationTitle("LIVE_VIEW_TITLE")
             .toolbar {
-                VideoViewToolbar(userDefaultSettingsKey: "isShowingAbsoluteTimeInLiveView", isShowingAbsoluteTime: $isShowingAbsoluteTime)
+                LiveViewToolbar()
             }
         }
         .task {

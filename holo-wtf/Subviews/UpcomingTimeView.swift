@@ -10,7 +10,7 @@ import SwiftUI
 struct UpcomingTimeView: View {
     var liveSchedule: Date?
     
-    @Binding var isShowingAbsoluteTime: Bool
+    @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInUpcomingView) var isShowingAbsoluteTime: Bool = false
     
     var body: some View {
         if let liveSchedule = liveSchedule {
@@ -35,6 +35,6 @@ struct UpcomingTimeView: View {
 
 struct UpcomingTimeView_Previews: PreviewProvider {
     static var previews: some View {
-        UpcomingTimeView(liveSchedule: Date(), isShowingAbsoluteTime: Binding.constant(true))
+        UpcomingTimeView(liveSchedule: Date())
     }
 }

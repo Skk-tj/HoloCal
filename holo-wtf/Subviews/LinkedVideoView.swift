@@ -42,8 +42,7 @@ struct LinkedVideoView_Previews: PreviewProvider {
     
     static var previews: some View {
         LinkedVideoView(videoKey: "testVideoId") {
-            LiveCellView(live: previewLive, isShowingAbsoluteTime: Binding.constant(true))
-            LiveCellView(live: previewLiveMemberOnly, isShowingAbsoluteTime: Binding.constant(false))
+            LiveCellView(live: previewLive)
         }
     }
 }

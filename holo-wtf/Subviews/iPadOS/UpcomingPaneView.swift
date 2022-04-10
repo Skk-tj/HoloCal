@@ -11,8 +11,6 @@ import HTMLString
 struct UpcomingPaneView: View {
     var upcoming: LiveVideo
     
-    @Binding var isShowingAbsoluteTime: Bool
-    
     var body: some View {
         VStack {
             LiveAvatarView(url: upcoming.channel.photo, avatarRadius: 128.0)
@@ -30,7 +28,7 @@ struct UpcomingPaneView: View {
                     .lineLimit(1)
                 Divider()
                 HStack {
-                    UpcomingTimeView(liveSchedule: upcoming.liveSchedule, isShowingAbsoluteTime: $isShowingAbsoluteTime)
+                    UpcomingTimeView(liveSchedule: upcoming.liveSchedule)
                 }
             }
         }
@@ -45,6 +43,6 @@ struct UpcomingPaneView_Previews: PreviewProvider {
     static let previewLive = LiveVideo(id: 0, ytVideoKey: "testVideoId", title: "my debut live", thumbnail: nil, liveSchedule: nil, liveStart: nil, liveEnd: nil, liveViewers: 100, channel: testChannel)
     
     static var previews: some View {
-        UpcomingPaneView(upcoming: previewLive, isShowingAbsoluteTime: Binding.constant(true))
+        UpcomingPaneView(upcoming: previewLive)
     }
 }
