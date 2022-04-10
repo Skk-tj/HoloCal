@@ -10,7 +10,7 @@ import SwiftUI
 struct LiveTimeView: View {
     let liveTime: Date?
     
-    @Binding var isShowingAbsoluteTime: Bool
+    @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInLiveView) var isShowingAbsoluteTime: Bool = false
     
     var body: some View {
         if let liveStart = liveTime {
@@ -35,7 +35,6 @@ struct LiveTimeView: View {
 
 struct LiveTimeView_Previews: PreviewProvider {
     static var previews: some View {
-        LiveTimeView(liveTime: Date(), isShowingAbsoluteTime: Binding.constant(true))
-        LiveTimeView(liveTime: Date(), isShowingAbsoluteTime: Binding.constant(false))
+        LiveTimeView(liveTime: Date())
     }
 }

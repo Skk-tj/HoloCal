@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F009023827EDB6AE00E343B0 /* LiveTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009023727EDB6AE00E343B0 /* LiveTimeView.swift */; };
-		F009023A27EDB85100E343B0 /* VideoViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009023927EDB85100E343B0 /* VideoViewToolbar.swift */; };
+		F009023A27EDB85100E343B0 /* LiveViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009023927EDB85100E343B0 /* LiveViewToolbar.swift */; };
 		F009023B27EE255B00E343B0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F009023D27EE255B00E343B0 /* Localizable.strings */; };
 		F009024027EE57BA00E343B0 /* LinkedVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009023F27EE57BA00E343B0 /* LinkedVideoView.swift */; };
 		F009024427EE5F3100E343B0 /* UpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */; };
@@ -25,6 +25,13 @@
 		F0673C1227732CE7009C65C6 /* UpcomingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0673C1127732CE7009C65C6 /* UpcomingCellView.swift */; };
 		F0673C152775F6AA009C65C6 /* MarqueeText in Frameworks */ = {isa = PBXBuildFile; productRef = F0673C142775F6AA009C65C6 /* MarqueeText */; };
 		F0673C172775F7FB009C65C6 /* LiveAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0673C162775F7FB009C65C6 /* LiveAvatarView.swift */; };
+		F080A04F27F95D9E00DBC08D /* Talents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A04E27F95D9E00DBC08D /* Talents.swift */; };
+		F080A05127F993DC00DBC08D /* ManageFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A05027F993DC00DBC08D /* ManageFavoriteView.swift */; };
+		F09D25BE27FC2552001A7D71 /* SettingsTalentStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25BD27FC2552001A7D71 /* SettingsTalentStarView.swift */; };
+		F09D25C127FEBA2E001A7D71 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = F09D25C027FEBA2E001A7D71 /* Algorithms */; };
+		F09D25C327FEC12D001A7D71 /* SettingsFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */; };
+		F09D25C928020B12001A7D71 /* UpcomingViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25C828020B12001A7D71 /* UpcomingViewToolbar.swift */; };
+		F09D25E52802EA09001A7D71 /* SwipableLinkedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25E42802EA09001A7D71 /* SwipableLinkedCellView.swift */; };
 		F0B8E1CD27E90EBA00DC7CF9 /* HTMLString in Frameworks */ = {isa = PBXBuildFile; productRef = F0B8E1CC27E90EBA00DC7CF9 /* HTMLString */; };
 		F0BD611B27EC594300A2FBED /* UpcomingPaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BD611A27EC594300A2FBED /* UpcomingPaneView.swift */; };
 		F0C657BB2771F47C004AF802 /* holo_wtfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657BA2771F47C004AF802 /* holo_wtfApp.swift */; };
@@ -41,7 +48,7 @@
 
 /* Begin PBXFileReference section */
 		F009023727EDB6AE00E343B0 /* LiveTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTimeView.swift; sourceTree = "<group>"; };
-		F009023927EDB85100E343B0 /* VideoViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewToolbar.swift; sourceTree = "<group>"; };
+		F009023927EDB85100E343B0 /* LiveViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewToolbar.swift; sourceTree = "<group>"; };
 		F009023C27EE255B00E343B0 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F009023E27EE258500E343B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F009023F27EE57BA00E343B0 /* LinkedVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedVideoView.swift; sourceTree = "<group>"; };
@@ -60,6 +67,12 @@
 		F0673C0F27732BFA009C65C6 /* UpcomingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewModel.swift; sourceTree = "<group>"; };
 		F0673C1127732CE7009C65C6 /* UpcomingCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingCellView.swift; sourceTree = "<group>"; };
 		F0673C162775F7FB009C65C6 /* LiveAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAvatarView.swift; sourceTree = "<group>"; };
+		F080A04E27F95D9E00DBC08D /* Talents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talents.swift; sourceTree = "<group>"; };
+		F080A05027F993DC00DBC08D /* ManageFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageFavoriteView.swift; sourceTree = "<group>"; };
+		F09D25BD27FC2552001A7D71 /* SettingsTalentStarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTalentStarView.swift; sourceTree = "<group>"; };
+		F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFormView.swift; sourceTree = "<group>"; };
+		F09D25C828020B12001A7D71 /* UpcomingViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewToolbar.swift; sourceTree = "<group>"; };
+		F09D25E42802EA09001A7D71 /* SwipableLinkedCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipableLinkedCellView.swift; sourceTree = "<group>"; };
 		F0BD611A27EC594300A2FBED /* UpcomingPaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingPaneView.swift; sourceTree = "<group>"; };
 		F0C657B72771F47C004AF802 /* HoloCal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoloCal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0C657BA2771F47C004AF802 /* holo_wtfApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = holo_wtfApp.swift; sourceTree = "<group>"; };
@@ -80,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F09D25C127FEBA2E001A7D71 /* Algorithms in Frameworks */,
 				F0B8E1CD27E90EBA00DC7CF9 /* HTMLString in Frameworks */,
 				F0673C152775F6AA009C65C6 /* MarqueeText in Frameworks */,
 			);
@@ -132,9 +146,12 @@
 				F0673C162775F7FB009C65C6 /* LiveAvatarView.swift */,
 				F009023727EDB6AE00E343B0 /* LiveTimeView.swift */,
 				F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */,
-				F009023927EDB85100E343B0 /* VideoViewToolbar.swift */,
+				F009023927EDB85100E343B0 /* LiveViewToolbar.swift */,
+				F09D25C828020B12001A7D71 /* UpcomingViewToolbar.swift */,
 				F009023F27EE57BA00E343B0 /* LinkedVideoView.swift */,
+				F09D25E42802EA09001A7D71 /* SwipableLinkedCellView.swift */,
 				F009024527EE6A9F00E343B0 /* VideoContextMenu.swift */,
+				F09D25BD27FC2552001A7D71 /* SettingsTalentStarView.swift */,
 				F009024227EE5DF000E343B0 /* iOS */,
 				F009024127EE5DDC00E343B0 /* iPadOS */,
 			);
@@ -165,6 +182,8 @@
 				F05E9EB127EB27E800EF48DD /* iPadOS */,
 				F05E9EB027EB27D100EF48DD /* iOS */,
 				F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */,
+				F080A05027F993DC00DBC08D /* ManageFavoriteView.swift */,
+				F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */,
 				F0673C182775FE2B009C65C6 /* Subviews */,
 				F0C657D02771F71C004AF802 /* ViewModel */,
 				F0C657CA2771F4F3004AF802 /* Models */,
@@ -192,6 +211,7 @@
 				F0C657CB2771F603004AF802 /* Channel.swift */,
 				F0C657C82771F4EF004AF802 /* LiveVideo.swift */,
 				F0C657D32772AFAC004AF802 /* LiveResponse.swift */,
+				F080A04E27F95D9E00DBC08D /* Talents.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -225,6 +245,7 @@
 			packageProductDependencies = (
 				F0673C142775F6AA009C65C6 /* MarqueeText */,
 				F0B8E1CC27E90EBA00DC7CF9 /* HTMLString */,
+				F09D25C027FEBA2E001A7D71 /* Algorithms */,
 			);
 			productName = "holo-wtf";
 			productReference = F0C657B72771F47C004AF802 /* HoloCal.app */;
@@ -258,6 +279,7 @@
 			packageReferences = (
 				F0673C132775F6AA009C65C6 /* XCRemoteSwiftPackageReference "MarqueeText" */,
 				F0B8E1CB27E90EBA00DC7CF9 /* XCRemoteSwiftPackageReference "HTMLString" */,
+				F09D25BF27FEBA2E001A7D71 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
 			productRefGroup = F0C657B82771F47C004AF802 /* Products */;
 			projectDirPath = "";
@@ -286,20 +308,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F09D25E52802EA09001A7D71 /* SwipableLinkedCellView.swift in Sources */,
 				F0C657D42772AFAC004AF802 /* LiveResponse.swift in Sources */,
 				F009023827EDB6AE00E343B0 /* LiveTimeView.swift in Sources */,
 				F0673C172775F7FB009C65C6 /* LiveAvatarView.swift in Sources */,
 				F0BD611B27EC594300A2FBED /* UpcomingPaneView.swift in Sources */,
 				F0C657BD2771F47C004AF802 /* LiveView.swift in Sources */,
+				F09D25C928020B12001A7D71 /* UpcomingViewToolbar.swift in Sources */,
 				F009024027EE57BA00E343B0 /* LinkedVideoView.swift in Sources */,
 				F009024627EE6A9F00E343B0 /* VideoContextMenu.swift in Sources */,
+				F080A04F27F95D9E00DBC08D /* Talents.swift in Sources */,
+				F080A05127F993DC00DBC08D /* ManageFavoriteView.swift in Sources */,
 				F0673C1027732BFA009C65C6 /* UpcomingViewModel.swift in Sources */,
 				F05E9EB927EB3C6100EF48DD /* LivePaneView.swift in Sources */,
 				F0673C1227732CE7009C65C6 /* UpcomingCellView.swift in Sources */,
-				F009023A27EDB85100E343B0 /* VideoViewToolbar.swift in Sources */,
+				F009023A27EDB85100E343B0 /* LiveViewToolbar.swift in Sources */,
+				F09D25BE27FC2552001A7D71 /* SettingsTalentStarView.swift in Sources */,
 				F0C657CC2771F603004AF802 /* Channel.swift in Sources */,
 				F05E9EB327EB27F800EF48DD /* LiveiPadView.swift in Sources */,
 				F0C657D627732690004AF802 /* Util.swift in Sources */,
+				F09D25C327FEC12D001A7D71 /* SettingsFormView.swift in Sources */,
 				F05E9EB527EB290000EF48DD /* UpcomingiPadView.swift in Sources */,
 				F0433C4E27E99F85000FEADD /* SettingsView.swift in Sources */,
 				F0433C5227EAEDDB000FEADD /* OpenSourceView.swift in Sources */,
@@ -541,6 +569,14 @@
 				revision = c6214a470c2c7f2b9add671722b4bb402126bce9;
 			};
 		};
+		F09D25BF27FEBA2E001A7D71 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		F0B8E1CB27E90EBA00DC7CF9 /* XCRemoteSwiftPackageReference "HTMLString" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alexaubry/HTMLString";
@@ -556,6 +592,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F0673C132775F6AA009C65C6 /* XCRemoteSwiftPackageReference "MarqueeText" */;
 			productName = MarqueeText;
+		};
+		F09D25C027FEBA2E001A7D71 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F09D25BF27FEBA2E001A7D71 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
 		};
 		F0B8E1CC27E90EBA00DC7CF9 /* HTMLString */ = {
 			isa = XCSwiftPackageProductDependency;

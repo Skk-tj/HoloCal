@@ -18,6 +18,15 @@
 "SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER" = "Upcoming Schedule";
 "SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT %lld" = "Show upcoming streams in %lld hours";
 
+"SETTINGS_CHANNEL_MANAGEMENT_HEADER" = "Channels";
+"SETTINGS_MANAGE_FAVOURITE" = "Manage Favorites";
+"SETTINGS_MANAGE_FAVOURITE_VIEW_TITLE" = "Manage Favorites";
+"SETTINGS_MANAGE_FAVOURITE_RESET" = "Reset Favorites";
+
+"SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_TEXT" = "Favorites will be reset, are you sure?";
+"SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_CANCEL" = "Cancel";
+"SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_RESET" = "Reset";
+
 "SETTINGS_ABOUT_SECTION_HEADER" = "About";
 "SETTINGS_ABOUT_BUG_REPORT" = "Feedback & Bug report";
 "SETTINGS_OPEN_SOURCE" = "Open Source Projects used";
@@ -47,7 +56,7 @@
 // LiveView
 
 "LIVE_VIEW_TITLE" = "Currently Live";
-"LIVE_VIEW_CURRENT_COUNT %lld" = "%lld Currently Live"; 
+"LIVE_VIEW_CURRENT_COUNT %lld" = "%lld Currently Live";
 
 // UpcomingView
 
@@ -61,4 +70,12 @@
 
 // VideoContextMenu
 "VIDEO_CONTEXT_MENU_TWITTER_PROFILE" = "Open Twitter profile";
-"VIDEO_CONTENT_MENU_YOUTUBE_CHANNEL" = "Open YouTube channel";
+"VIDEO_CONTEXT_MENU_YOUTUBE_CHANNEL" = "Open YouTube channel";
+
+"VIDEO_CONTEXT_MENU_FAVOURITE_CHANNEL" = "Favorite channel";
+"VIDEO_CONTEXT_MENU_REMOVE_FAVOURITE" = "Remove favorite";
+
+// Swipe actions for LinkedVideo
+
+"LINKED_VIDEO_SWIPE_ACTIONS_FAVOURITE" = "Favourite";
+"LINKED_VIDEO_SWIPE_ACTIONS_UNFAVOURITE" = "Unfavourite";

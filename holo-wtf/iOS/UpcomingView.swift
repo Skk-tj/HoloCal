@@ -9,8 +9,7 @@ import SwiftUI
 
 struct UpcomingView: View {
     @StateObject var upcoming: UpcomingViewModel
-    
-    @State var isShowingAbsoluteTime = getIsShowingAbsoluteTimeInUpcomingViewFromUserDefaults()
+    @AppStorage("favouritedChannel") var favourited = Favourited()
     
     init() {
         self._upcoming = StateObject(wrappedValue: UpcomingViewModel())
@@ -19,30 +18,46 @@ struct UpcomingView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(upcoming.videoList, id: \.self) { live in
-                    LinkedVideoView(videoKey: live.ytVideoKey) {
-                        UpcomingCellView(upcoming: live, isShowingAbsoluteTime: $isShowingAbsoluteTime)
-                    }
-                }
-                HStack {
-                    Spacer()
-                    if (upcoming.dataStatus == .fail) {
-                        Label("FAILED_TO_RETRIEVE_NEW_DATA", systemImage: "exclamationmark.circle.fill")
-                            .foregroundColor(.secondary)
-                    } else {
-                        if (upcoming.dataStatus == .working) {
-                            ProgressView()
-                        } else {
-                            Text("UPCOMING_VIEW_STREAM_COUNT_IN_HOURS \(upcoming.videoList.count) \(getUpcomingStreamLookAheadHoursFromUserDefaults())")
-                                .foregroundColor(.secondary)
+                if favourited.count != 0 && upcoming.dataStatus == .success {
+                    Section {
+                        ForEach(upcoming.videoList.filter { video in
+                            favourited.contains(where: { video.channel.id == $0 })
+                        }) { live in
+                            SwipableLinkedCellView(video: live) {
+                                UpcomingCellView(upcoming: live)
+                            }
                         }
                     }
-                    Spacer()
+                }
+                
+                Section {
+                    ForEach(upcoming.videoList.filter { video in
+                        !favourited.contains(where: { video.channel.id == $0 })
+                    }, id: \.self) { live in
+                        SwipableLinkedCellView(video: live) {
+                            UpcomingCellView(upcoming: live)
+                        }
+                    }
+                    HStack {
+                        Spacer()
+                        if (upcoming.dataStatus == .fail) {
+                            Label("FAILED_TO_RETRIEVE_NEW_DATA", systemImage: "exclamationmark.circle.fill")
+                                .foregroundColor(.secondary)
+                        } else {
+                            if (upcoming.dataStatus == .working) {
+                                ProgressView()
+                            } else {
+                                Text("UPCOMING_VIEW_STREAM_COUNT_IN_HOURS \(upcoming.videoList.count) \(getUpcomingStreamLookAheadHoursFromUserDefaults())")
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                        Spacer()
+                    }
                 }
             }
             .navigationTitle("UPCOMING_VIEW_TITLE")
             .toolbar {
-                VideoViewToolbar(userDefaultSettingsKey: "isShowingAbsoluteTimeInUpcomingView", isShowingAbsoluteTime: $isShowingAbsoluteTime)
+                UpcomingViewToolbar()
             }
         }
         .task {

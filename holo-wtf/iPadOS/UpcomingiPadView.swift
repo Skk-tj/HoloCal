@@ -10,8 +10,6 @@ import SwiftUI
 struct UpcomingiPadView: View {
     @StateObject var upcoming: UpcomingViewModel
     
-    @State var isShowingAbsoluteTime = getIsShowingAbsoluteTimeInUpcomingViewFromUserDefaults()
-    
     let layout = [
         GridItem(.adaptive(minimum: 250), spacing: 10)
     ]
@@ -33,10 +31,10 @@ struct UpcomingiPadView: View {
                 LazyVGrid(columns: layout, spacing: 50) {
                     ForEach(upcoming.videoList, id: \.self) { live in
                         LinkedVideoView(videoKey: live.ytVideoKey) {
-                            UpcomingPaneView(upcoming: live, isShowingAbsoluteTime: $isShowingAbsoluteTime)
+                            UpcomingPaneView(upcoming: live)
                         }
                         .contextMenu {
-                            VideoContextMenu(twitterLink: live.channel.twitterLink, ytChannelId: live.channel.ytChannelId)
+                            VideoContextMenu(video: live)
                         }
                     }
                 }
@@ -54,7 +52,7 @@ struct UpcomingiPadView: View {
             await upcoming.getUpcoming()
         }
         .toolbar {
-            VideoViewToolbar(userDefaultSettingsKey: "isShowingAbsoluteTimeInUpcomingView", isShowingAbsoluteTime: $isShowingAbsoluteTime)
+            UpcomingViewToolbar()
             Button(action: {
                 Task {
                     await upcoming.getUpcoming()

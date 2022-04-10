@@ -11,17 +11,25 @@ import HTMLString
 
 struct LiveCellView: View {
     let live: LiveVideo
-    @Binding var isShowingAbsoluteTime: Bool
+    @AppStorage("favouritedChannel") var favourited = Favourited()
     
     var body: some View {
         HStack {
             LiveAvatarView(url: live.channel.photo)
             VStack(alignment: .leading) {
                 MarqueeText(text: live.title.removingHTMLEntities(), font: UIFont.preferredFont(forTextStyle: .headline), leftFade: 14, rightFade: 16, startDelay: 3.0)
-                Text(live.channel.name)
-                    .font(.subheadline)
-                    .lineLimit(1)
-                    .foregroundColor(.secondary)
+                HStack {
+                    if favourited.contains(where: {$0 == live.channel.id}) {
+                        Image(systemName: "star.fill")
+                            .tint(.yellow)
+                    }
+                    
+                    Text(live.channel.name)
+                        .font(.subheadline)
+                        .lineLimit(1)
+                        .foregroundColor(.secondary)
+                }
+                
                 Divider()
                 HStack {
                     if isLiveMengen(title: live.title) {
@@ -35,13 +43,13 @@ struct LiveCellView: View {
                     }
                     Spacer()
                     
-                    LiveTimeView(liveTime: live.liveStart, isShowingAbsoluteTime: $isShowingAbsoluteTime)
+                    LiveTimeView(liveTime: live.liveStart)
                         .multilineTextAlignment(.trailing)
                 }
             }
         }
         .contextMenu {
-            VideoContextMenu(twitterLink: live.channel.twitterLink, ytChannelId: live.channel.ytChannelId)
+            VideoContextMenu(video: live)
         }
     }
 }
@@ -54,7 +62,7 @@ struct LiveCellView_Previews: PreviewProvider {
     static let previewLiveMemberOnly = LiveVideo(id: 0, ytVideoKey: "testVideoId", title: "my debut live member only", thumbnail: nil, liveSchedule: nil, liveStart: nil, liveEnd: nil, liveViewers: 100, channel: testChannel)
     
     static var previews: some View {
-        LiveCellView(live: previewLive, isShowingAbsoluteTime: Binding.constant(true))
-        LiveCellView(live: previewLiveMemberOnly, isShowingAbsoluteTime: Binding.constant(false))
+        LiveCellView(live: previewLive)
+        LiveCellView(live: previewLiveMemberOnly)
     }
 }
