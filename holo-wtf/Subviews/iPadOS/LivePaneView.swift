@@ -11,6 +11,8 @@ import HTMLString
 struct LivePaneView: View {
     let live: LiveVideo
     
+    @AppStorage("favouritedChannel") var favourited = Favourited()
+    
     var body: some View {
         VStack {
             LiveAvatarView(url: live.channel.photo, avatarRadius: 128.0)
@@ -22,10 +24,17 @@ struct LivePaneView: View {
                     .font(.headline)
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
-                Text(live.channel.name)
-                    .lineLimit(1)
-                    .font(.subheadline)
+                HStack {
+                    if favourited.contains(where: {$0 == live.channel.id}) {
+                        Image(systemName: "star.fill")
+                            .tint(.yellow)
+                    }
+                    
+                    Text(live.channel.name)
+                        .lineLimit(1)
+                        .font(.subheadline)
                     .foregroundColor(.secondary)
+                }
                 Divider()
                 HStack {
                     if isLiveMengen(title: live.title) {

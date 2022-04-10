@@ -9,6 +9,7 @@ import SwiftUI
 
 struct UpcomingiPadView: View {
     @StateObject var upcoming: UpcomingViewModel
+    @AppStorage("favouritedChannel") var favourited = Favourited()
     
     let layout = [
         GridItem(.adaptive(minimum: 250), spacing: 10)
@@ -29,7 +30,20 @@ struct UpcomingiPadView: View {
                 Spacer()
             } else {
                 LazyVGrid(columns: layout, spacing: 50) {
-                    ForEach(upcoming.videoList, id: \.self) { live in
+                    ForEach(upcoming.videoList.filter { video in
+                        favourited.contains(where: { video.channel.id == $0 })
+                    }) { live in
+                        LinkedVideoView(videoKey: live.ytVideoKey) {
+                            UpcomingPaneView(upcoming: live)
+                        }
+                        .contextMenu {
+                            VideoContextMenu(video: live)
+                        }
+                    }
+                    
+                    ForEach(upcoming.videoList.filter { video in
+                        !favourited.contains(where: { video.channel.id == $0 })
+                    }, id: \.self) { live in
                         LinkedVideoView(videoKey: live.ytVideoKey) {
                             UpcomingPaneView(upcoming: live)
                         }

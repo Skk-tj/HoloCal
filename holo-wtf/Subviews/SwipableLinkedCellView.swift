@@ -37,6 +37,25 @@ struct SwipableLinkedCellView<Content: View>: View {
                 Label(isFavourited ? "LINKED_VIDEO_SWIPE_ACTIONS_UNFAVOURITE" : "LINKED_VIDEO_SWIPE_ACTIONS_FAVOURITE", systemImage: isFavourited ? "star.slash" : "star")
             }
             .tint(.yellow)
+            
+            Button(action: {
+                shareSheet(url: "https://www.youtube.com/watch?v=\(video.ytVideoKey!)")
+            }, label: {
+                Label("Share", systemImage: "square.and.arrow.up")
+            })
+            .tint(.blue)
+        }
+    }
+    
+    func shareSheet(url: String) {
+        let url = URL(string: url)
+        let activityView = UIActivityViewController(activityItems: [url!], applicationActivities: nil)
+        
+        let allScenes = UIApplication.shared.connectedScenes
+        let scene = allScenes.first { $0.activationState == .foregroundActive }
+        
+        if let windowScene = scene as? UIWindowScene {
+            windowScene.keyWindow?.rootViewController?.present(activityView, animated: true, completion: nil)
         }
     }
 }
@@ -49,9 +68,6 @@ struct SwipableLinkedCellView_Previews: PreviewProvider {
     static let previewLiveMemberOnly = LiveVideo(id: 0, ytVideoKey: "testVideoId", title: "my debut live member only", thumbnail: nil, liveSchedule: nil, liveStart: nil, liveEnd: nil, liveViewers: 100, channel: testChannel)
         
     static var previews: some View {
-        SwipableLinkedCellView(video: previewLive) {
-            LiveCellView(live: previewLive)
-        }
         SwipableLinkedCellView(video: previewLive) {
             LiveCellView(live: previewLive)
         }

@@ -32,6 +32,7 @@
 		F09D25C327FEC12D001A7D71 /* SettingsFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */; };
 		F09D25C928020B12001A7D71 /* UpcomingViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25C828020B12001A7D71 /* UpcomingViewToolbar.swift */; };
 		F09D25E52802EA09001A7D71 /* SwipableLinkedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25E42802EA09001A7D71 /* SwipableLinkedCellView.swift */; };
+		F09D25E728036C3F001A7D71 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25E628036C3F001A7D71 /* ActivityView.swift */; };
 		F0B8E1CD27E90EBA00DC7CF9 /* HTMLString in Frameworks */ = {isa = PBXBuildFile; productRef = F0B8E1CC27E90EBA00DC7CF9 /* HTMLString */; };
 		F0BD611B27EC594300A2FBED /* UpcomingPaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BD611A27EC594300A2FBED /* UpcomingPaneView.swift */; };
 		F0C657BB2771F47C004AF802 /* holo_wtfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657BA2771F47C004AF802 /* holo_wtfApp.swift */; };
@@ -73,6 +74,7 @@
 		F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFormView.swift; sourceTree = "<group>"; };
 		F09D25C828020B12001A7D71 /* UpcomingViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewToolbar.swift; sourceTree = "<group>"; };
 		F09D25E42802EA09001A7D71 /* SwipableLinkedCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipableLinkedCellView.swift; sourceTree = "<group>"; };
+		F09D25E628036C3F001A7D71 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		F0BD611A27EC594300A2FBED /* UpcomingPaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingPaneView.swift; sourceTree = "<group>"; };
 		F0C657B72771F47C004AF802 /* HoloCal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoloCal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0C657BA2771F47C004AF802 /* holo_wtfApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = holo_wtfApp.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				F0673C182775FE2B009C65C6 /* Subviews */,
 				F0C657D02771F71C004AF802 /* ViewModel */,
 				F0C657CA2771F4F3004AF802 /* Models */,
+				F09D25E628036C3F001A7D71 /* ActivityView.swift */,
 				F0C657C02771F47C004AF802 /* Preview Content */,
 				F0C657BE2771F47C004AF802 /* Assets.xcassets */,
 				F0204DB827E91A920083750F /* Info.plist */,
@@ -329,6 +332,7 @@
 				F0C657D627732690004AF802 /* Util.swift in Sources */,
 				F09D25C327FEC12D001A7D71 /* SettingsFormView.swift in Sources */,
 				F05E9EB527EB290000EF48DD /* UpcomingiPadView.swift in Sources */,
+				F09D25E728036C3F001A7D71 /* ActivityView.swift in Sources */,
 				F0433C4E27E99F85000FEADD /* SettingsView.swift in Sources */,
 				F0433C5227EAEDDB000FEADD /* OpenSourceView.swift in Sources */,
 				F04D101227E80C260083546C /* VideoListViewModel.swift in Sources */,
