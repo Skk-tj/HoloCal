@@ -33,6 +33,7 @@
 		F09D25C928020B12001A7D71 /* UpcomingViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25C828020B12001A7D71 /* UpcomingViewToolbar.swift */; };
 		F09D25E52802EA09001A7D71 /* SwipableLinkedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25E42802EA09001A7D71 /* SwipableLinkedCellView.swift */; };
 		F09D25E728036C3F001A7D71 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25E628036C3F001A7D71 /* ActivityView.swift */; };
+		F09D25F328041CC3001A7D71 /* iPadSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25F228041CC3001A7D71 /* iPadSidebarView.swift */; };
 		F0B8E1CD27E90EBA00DC7CF9 /* HTMLString in Frameworks */ = {isa = PBXBuildFile; productRef = F0B8E1CC27E90EBA00DC7CF9 /* HTMLString */; };
 		F0BD611B27EC594300A2FBED /* UpcomingPaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BD611A27EC594300A2FBED /* UpcomingPaneView.swift */; };
 		F0C657BB2771F47C004AF802 /* holo_wtfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657BA2771F47C004AF802 /* holo_wtfApp.swift */; };
@@ -75,6 +76,7 @@
 		F09D25C828020B12001A7D71 /* UpcomingViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewToolbar.swift; sourceTree = "<group>"; };
 		F09D25E42802EA09001A7D71 /* SwipableLinkedCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipableLinkedCellView.swift; sourceTree = "<group>"; };
 		F09D25E628036C3F001A7D71 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		F09D25F228041CC3001A7D71 /* iPadSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadSidebarView.swift; sourceTree = "<group>"; };
 		F0BD611A27EC594300A2FBED /* UpcomingPaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingPaneView.swift; sourceTree = "<group>"; };
 		F0C657B72771F47C004AF802 /* HoloCal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoloCal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0C657BA2771F47C004AF802 /* holo_wtfApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = holo_wtfApp.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				F05E9EB227EB27F800EF48DD /* LiveiPadView.swift */,
 				F05E9EB427EB290000EF48DD /* UpcomingiPadView.swift */,
 				F05E9EB627EB291900EF48DD /* SettingsiPadView.swift */,
+				F09D25F228041CC3001A7D71 /* iPadSidebarView.swift */,
 			);
 			path = iPadOS;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				F09D25E52802EA09001A7D71 /* SwipableLinkedCellView.swift in Sources */,
 				F0C657D42772AFAC004AF802 /* LiveResponse.swift in Sources */,
 				F009023827EDB6AE00E343B0 /* LiveTimeView.swift in Sources */,
+				F09D25F328041CC3001A7D71 /* iPadSidebarView.swift in Sources */,
 				F0673C172775F7FB009C65C6 /* LiveAvatarView.swift in Sources */,
 				F0BD611B27EC594300A2FBED /* UpcomingPaneView.swift in Sources */,
 				F0C657BD2771F47C004AF802 /* LiveView.swift in Sources */,
@@ -412,7 +416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -467,7 +471,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -483,7 +487,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -495,12 +499,12 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf";
 				PRODUCT_NAME = HoloCal;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -515,7 +519,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -527,12 +531,12 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf";
 				PRODUCT_NAME = HoloCal;
 				SWIFT_EMIT_LOC_STRINGS = YES;

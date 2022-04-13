@@ -14,19 +14,7 @@ struct holo_wtfApp: App {
             if UIDevice.current.userInterfaceIdiom == .pad {
                 // iPadOS
                 NavigationView {
-                    List {
-                        NavigationLink(destination: LiveiPadView()) {
-                            Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
-                        }
-                        NavigationLink(destination: UpcomingiPadView()) {
-                            Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
-                        }
-                        NavigationLink(destination: SettingsiPadView()) {
-                            Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
-                        }
-                    }
-                    .listStyle(SidebarListStyle())
-                    .navigationTitle("HoloCal")
+                    iPadSidebarView()
                     
                     LiveiPadView()
                 }

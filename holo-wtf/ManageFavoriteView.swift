@@ -29,7 +29,7 @@ struct ManageFavoriteView: View {
                 .alert("SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_TEXT", isPresented: $showResetAlert) {
                     Button("SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_CANCEL", role: .cancel) {}
                     Button("SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_RESET", role: .destructive) {
-                        resetFavouriteInUserDefault()
+                        favourited.removeAll()
                     }
                 }
             }

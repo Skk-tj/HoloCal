@@ -182,6 +182,15 @@ let talentsByGeneration = [
             Talent(id: 20, names: ["en": "Yukoku Roberu", "ja": "夕刻ロベル"]),
         ]
     ),
+    Generation(
+        generation: ["en": "Official Channels", "ja": "オフィシャルチャンネル"],
+        talents: [
+            Talent(id: 9, names: ["en": "hololive", "ja": "ホロライブ"]),
+            Talent(id: 200275, names: ["en": "hololive English", "ja": "hololive English"]),
+            Talent(id: 214950, names: ["en": "hololive Indonesia", "ja": "hololive Indonesia"]),
+            Talent(id: 214951, names: ["en": "holostar", "ja": "ホロスターズ"])
+        ]
+    ),
     // MARK: - holostars UPROAR!!
 //    [
 //        "generation": [
