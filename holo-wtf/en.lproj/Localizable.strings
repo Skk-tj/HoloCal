@@ -76,6 +76,7 @@
 "VIDEO_CONTEXT_MENU_REMOVE_FAVOURITE" = "Remove favorite";
 
 // Swipe actions for LinkedVideo
-
 "LINKED_VIDEO_SWIPE_ACTIONS_FAVOURITE" = "Favourite";
 "LINKED_VIDEO_SWIPE_ACTIONS_UNFAVOURITE" = "Unfavourite";
+
+"LINKED_VIDEO_SWIPE_ACTIONS_SHARE" = "Share";

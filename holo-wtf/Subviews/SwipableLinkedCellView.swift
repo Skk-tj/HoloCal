@@ -41,7 +41,7 @@ struct SwipableLinkedCellView<Content: View>: View {
             Button(action: {
                 shareSheet(url: "https://www.youtube.com/watch?v=\(video.ytVideoKey!)")
             }, label: {
-                Label("Share", systemImage: "square.and.arrow.up")
+                Label("LINKED_VIDEO_SWIPE_ACTIONS_SHARE", systemImage: "square.and.arrow.up")
             })
             .tint(.blue)
         }
@@ -55,7 +55,13 @@ struct SwipableLinkedCellView<Content: View>: View {
         let scene = allScenes.first { $0.activationState == .foregroundActive }
         
         if let windowScene = scene as? UIWindowScene {
-            windowScene.keyWindow?.rootViewController?.present(activityView, animated: true, completion: nil)
+            let rootViewController = (windowScene.windows).first(where: { $0.isKeyWindow })?.rootViewController
+            
+            // iPad stuff (fine to leave this in for all iOS devices, it will be effectively ignored when not needed)
+            activityView.popoverPresentationController?.sourceView = rootViewController?.view
+            activityView.popoverPresentationController?.sourceRect = .zero
+            
+            rootViewController?.present(activityView, animated: true, completion: nil)
         }
     }
 }
