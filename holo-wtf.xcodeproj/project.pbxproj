@@ -46,6 +46,9 @@
 		F0C657D22771F7CE004AF802 /* LiveCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657D12771F7CE004AF802 /* LiveCellView.swift */; };
 		F0C657D42772AFAC004AF802 /* LiveResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657D32772AFAC004AF802 /* LiveResponse.swift */; };
 		F0C657D627732690004AF802 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657D527732690004AF802 /* Util.swift */; };
+		F0ED2AE22806858300683E6C /* ChannelNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AE12806858300683E6C /* ChannelNew.swift */; };
+		F0ED2AE4280685FD00683E6C /* VideoNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AE3280685FD00683E6C /* VideoNew.swift */; };
+		F0ED2AE62808253700683E6C /* VideoThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AE52808253700683E6C /* VideoThumbnailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +93,9 @@
 		F0C657D32772AFAC004AF802 /* LiveResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveResponse.swift; sourceTree = "<group>"; };
 		F0C657D527732690004AF802 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		F0D3AE7027E8241C00FB28EC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F0ED2AE12806858300683E6C /* ChannelNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelNew.swift; sourceTree = "<group>"; };
+		F0ED2AE3280685FD00683E6C /* VideoNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoNew.swift; sourceTree = "<group>"; };
+		F0ED2AE52808253700683E6C /* VideoThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,7 @@
 			children = (
 				F05E9EB827EB3C6100EF48DD /* LivePaneView.swift */,
 				F0BD611A27EC594300A2FBED /* UpcomingPaneView.swift */,
+				F0ED2AE52808253700683E6C /* VideoThumbnailView.swift */,
 			);
 			path = iPadOS;
 			sourceTree = "<group>";
@@ -218,6 +225,8 @@
 				F0C657C82771F4EF004AF802 /* LiveVideo.swift */,
 				F0C657D32772AFAC004AF802 /* LiveResponse.swift */,
 				F080A04E27F95D9E00DBC08D /* Talents.swift */,
+				F0ED2AE12806858300683E6C /* ChannelNew.swift */,
+				F0ED2AE3280685FD00683E6C /* VideoNew.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -332,11 +341,14 @@
 				F009023A27EDB85100E343B0 /* LiveViewToolbar.swift in Sources */,
 				F09D25BE27FC2552001A7D71 /* SettingsTalentStarView.swift in Sources */,
 				F0C657CC2771F603004AF802 /* Channel.swift in Sources */,
+				F0ED2AE22806858300683E6C /* ChannelNew.swift in Sources */,
+				F0ED2AE4280685FD00683E6C /* VideoNew.swift in Sources */,
 				F05E9EB327EB27F800EF48DD /* LiveiPadView.swift in Sources */,
 				F0C657D627732690004AF802 /* Util.swift in Sources */,
 				F09D25C327FEC12D001A7D71 /* SettingsFormView.swift in Sources */,
 				F05E9EB527EB290000EF48DD /* UpcomingiPadView.swift in Sources */,
 				F09D25E728036C3F001A7D71 /* ActivityView.swift in Sources */,
+				F0ED2AE62808253700683E6C /* VideoThumbnailView.swift in Sources */,
 				F0433C4E27E99F85000FEADD /* SettingsView.swift in Sources */,
 				F0433C5227EAEDDB000FEADD /* OpenSourceView.swift in Sources */,
 				F04D101227E80C260083546C /* VideoListViewModel.swift in Sources */,
