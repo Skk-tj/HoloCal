@@ -15,9 +15,7 @@ struct UpcomingPaneView: View {
     
     var body: some View {
         VStack {
-            LiveAvatarView(url: upcoming.channel.photo, avatarRadius: 128.0)
-                .offset(x: 0, y: -35)
-                .padding(.bottom, -35)
+            VideoThumbnailView(ytVideoKey: upcoming.ytVideoKey)
             
             VStack(alignment: .leading) {
                 Text(upcoming.title.removingHTMLEntities())
@@ -30,19 +28,23 @@ struct UpcomingPaneView: View {
                             .tint(.yellow)
                     }
                     
+                    LiveAvatarView(url: upcoming.channel.photo, avatarRadius: 40.0)
+                    
                     Text(upcoming.channel.name)
                         .font(.subheadline)
                         .foregroundColor(.secondary)
-                    .lineLimit(1)
+                        .lineLimit(1)
                 }
                 Divider()
                 HStack {
                     UpcomingTimeView(liveSchedule: upcoming.liveSchedule)
                 }
             }
+            .padding(.horizontal)
         }
-        .padding()
+        .padding(.bottom)
         .background(.bar, in: RoundedRectangle(cornerRadius: 20))
+        .cornerRadius(20)
     }
 }
 
