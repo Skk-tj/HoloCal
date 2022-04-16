@@ -136,6 +136,8 @@ enum UserDefaultKeys {
     static let upcomingLookAhead = "upcomingLookAhead"
     static let isShowingAbsoluteTimeInLiveView = "isShowingAbsoluteTimeInLiveView"
     static let isShowingAbsoluteTimeInUpcomingView = "isShowingAbsoluteTimeInUpcomingView"
+    static let isShowingCompactInLiveView = "isShowingCompactInLiveView"
+    static let isShowingCompactInUpcomingView = "isShowingCompactInUpcomingView"
 }
 
 // MARK: - AppStorage Support for Arrays

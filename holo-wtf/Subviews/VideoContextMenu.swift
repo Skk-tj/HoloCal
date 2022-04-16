@@ -18,7 +18,7 @@ struct VideoContextMenu: View {
             
             if let finalURL = URL(string: url) {
                 Link(destination: finalURL) {
-                    Label("VIDEO_CONTEXT_MENU_TWITTER_PROFILE", systemImage: "link")
+                    Label("VIDEO_CONTEXT_MENU_TWITTER_PROFILE", systemImage: "bubble.left")
                 }
             }
         }
@@ -28,7 +28,7 @@ struct VideoContextMenu: View {
             
             if let finalURL = URL(string: url) {
                 Link(destination: finalURL) {
-                    Label("VIDEO_CONTEXT_MENU_YOUTUBE_CHANNEL", systemImage: "link")
+                    Label("VIDEO_CONTEXT_MENU_YOUTUBE_CHANNEL", systemImage: "play.rectangle")
                 }
             }
         }

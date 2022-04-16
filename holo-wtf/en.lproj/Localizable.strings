@@ -63,10 +63,12 @@
 "UPCOMING_VIEW_TITLE" = "Upcoming Streams";
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld" = "%lld Upcoming Streams in %lld hours";
 
-// LiveViewToolbar
+// LiveViewToolbar & UpcomingViewToolbar
 
 "LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE" = "Show absolute time";
 "LIVE_VIEW_TOOLBAR_SHOW_RELATIVE" = "Show relative time";
+"LIVE_VIEW_TOOLBAR_SHOW_COMPACT" = "Show compact view";
+"LIVE_VIEW_TOOLBAR_SHOW_CARD" = "Show card view";
 
 // VideoContextMenu
 "VIDEO_CONTEXT_MENU_TWITTER_PROFILE" = "Open Twitter profile";

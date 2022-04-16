@@ -10,6 +10,7 @@ import SwiftUI
 struct UpcomingView: View {
     @StateObject var upcoming: UpcomingViewModel
     @AppStorage("favouritedChannel") var favourited = Favourited()
+    @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingView) var isShowingCompactInUpcomingView: Bool = true
     
     init() {
         self._upcoming = StateObject(wrappedValue: UpcomingViewModel())
@@ -17,47 +18,18 @@ struct UpcomingView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                if favourited.count != 0 && upcoming.dataStatus == .success {
-                    Section {
-                        ForEach(upcoming.videoList.filter { video in
-                            favourited.contains(where: { video.channel.id == $0 })
-                        }) { live in
-                            SwipableLinkedCellView(video: live) {
-                                UpcomingCellView(upcoming: live)
-                            }
-                        }
+            if isShowingCompactInUpcomingView {
+                UpcomingCompactListView(upcoming: upcoming)
+                    .navigationTitle("UPCOMING_VIEW_TITLE")
+                    .toolbar {
+                        UpcomingViewToolbar()
                     }
-                }
-                
-                Section {
-                    ForEach(upcoming.videoList.filter { video in
-                        !favourited.contains(where: { video.channel.id == $0 })
-                    }, id: \.self) { live in
-                        SwipableLinkedCellView(video: live) {
-                            UpcomingCellView(upcoming: live)
-                        }
+            } else {
+                UpcomingCardListView(upcoming: upcoming)
+                    .navigationTitle("UPCOMING_VIEW_TITLE")
+                    .toolbar {
+                        UpcomingViewToolbar()
                     }
-                    HStack {
-                        Spacer()
-                        if (upcoming.dataStatus == .fail) {
-                            Label("FAILED_TO_RETRIEVE_NEW_DATA", systemImage: "exclamationmark.circle.fill")
-                                .foregroundColor(.secondary)
-                        } else {
-                            if (upcoming.dataStatus == .working) {
-                                ProgressView()
-                            } else {
-                                Text("UPCOMING_VIEW_STREAM_COUNT_IN_HOURS \(upcoming.videoList.count) \(getUpcomingStreamLookAheadHoursFromUserDefaults())")
-                                    .foregroundColor(.secondary)
-                            }
-                        }
-                        Spacer()
-                    }
-                }
-            }
-            .navigationTitle("UPCOMING_VIEW_TITLE")
-            .toolbar {
-                UpcomingViewToolbar()
             }
         }
         .task {

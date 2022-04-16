@@ -10,6 +10,7 @@ import SwiftUI
 struct LiveView: View {
     @StateObject var live: LiveViewModel
     @AppStorage("favouritedChannel") var favourited = Favourited()
+    @AppStorage(UserDefaultKeys.isShowingCompactInLiveView) var isShowingCompactInLiveView: Bool = true
     
     init() {
         self._live = StateObject(wrappedValue: LiveViewModel())
@@ -17,47 +18,18 @@ struct LiveView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                if favourited.count != 0 && live.dataStatus == .success {
-                    Section {
-                        ForEach(live.videoList.filter { video in
-                            favourited.contains(where: { video.channel.id == $0 })
-                        }) { live in
-                            SwipableLinkedCellView(video: live) {
-                                LiveCellView(live: live)
-                            }
-                        }
+            if isShowingCompactInLiveView {
+                LiveCompactListView(live: live)
+                    .navigationTitle("LIVE_VIEW_TITLE")
+                    .toolbar {
+                        LiveViewToolbar()
                     }
-                }
-                
-                Section {
-                    ForEach(live.videoList.filter { video in
-                        !favourited.contains(where: { video.channel.id == $0 })
-                    }, id: \.self) { live in
-                        SwipableLinkedCellView(video: live) {
-                            LiveCellView(live: live)
-                        }
+            } else {
+                LiveCardListView(live: live)
+                    .navigationTitle("LIVE_VIEW_TITLE")
+                    .toolbar {
+                        LiveViewToolbar()
                     }
-                    HStack {
-                        Spacer()
-                        if (live.dataStatus == .fail) {
-                            Label("FAILED_TO_RETRIEVE_NEW_DATA", systemImage: "exclamationmark.circle.fill")
-                                .foregroundColor(.secondary)
-                        } else {
-                            if (live.dataStatus == .working) {
-                                ProgressView()
-                            } else {
-                                Text("LIVE_VIEW_CURRENT_COUNT \(live.videoList.count)")
-                                    .foregroundColor(.secondary)
-                            }
-                        }
-                        Spacer()
-                    }
-                }
-            }
-            .navigationTitle("LIVE_VIEW_TITLE")
-            .toolbar {
-                LiveViewToolbar()
             }
         }
         .task {
