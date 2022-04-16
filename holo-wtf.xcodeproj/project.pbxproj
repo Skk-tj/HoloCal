@@ -49,6 +49,7 @@
 		F0ED2AEE280AA91E00683E6C /* UpcomingCardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AED280AA91E00683E6C /* UpcomingCardListView.swift */; };
 		F0ED2AF0280AC27400683E6C /* LiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AEF280AC27400683E6C /* LiveViewModel.swift */; };
 		F0ED2AF3280AD60D00683E6C /* UpcomingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AF2280AD60D00683E6C /* UpcomingViewModel.swift */; };
+		F0ED2AF5280B606400683E6C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F0ED2AF4280B606400683E6C /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		F0ED2AEF280AC27400683E6C /* LiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewModel.swift; sourceTree = "<group>"; };
 		F0ED2AF1280AC58C00683E6C /* SecretConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SecretConfig.xcconfig; sourceTree = "<group>"; };
 		F0ED2AF2280AD60D00683E6C /* UpcomingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewModel.swift; sourceTree = "<group>"; };
+		F0ED2AF4280B606400683E6C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 				F0D3AE7027E8241C00FB28EC /* README.md */,
 				F0204DB927E925220083750F /* PRIVACY-POLICY.md */,
 				F0ED2AF1280AC58C00683E6C /* SecretConfig.xcconfig */,
+				F0ED2AF4280B606400683E6C /* .gitignore */,
 			);
 			path = "holo-wtf";
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0ED2AF5280B606400683E6C /* .gitignore in Resources */,
 				F0C657C22771F47C004AF802 /* Preview Assets.xcassets in Resources */,
 				F009023B27EE255B00E343B0 /* Localizable.strings in Resources */,
 				F0C657BF2771F47C004AF802 /* Assets.xcassets in Resources */,
