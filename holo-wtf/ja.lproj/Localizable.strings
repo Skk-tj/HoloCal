@@ -64,9 +64,11 @@
 "UPCOMING_VIEW_TITLE" = "今後のライブ配信";
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld" = "%lld時間内に%lld人がライブ配信予定";
 
-// LiveViewToolbar
+// LiveViewToolbar & UpcomingViewToolbar
 "LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE" = "絶対時間を表示";
 "LIVE_VIEW_TOOLBAR_SHOW_RELATIVE" = "相対時間を表示";
+"LIVE_VIEW_TOOLBAR_SHOW_COMPACT" = "コンパクトビューを表示";
+"LIVE_VIEW_TOOLBAR_SHOW_CARD" = "カードビューを表示";
 
 // VideoContextMenu
 "VIDEO_CONTEXT_MENU_TWITTER_PROFILE" = "Twitter プロフィール";

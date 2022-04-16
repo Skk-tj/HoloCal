@@ -19,14 +19,15 @@ struct UpcomingCellView: View {
             VStack(alignment: .leading) {
                 MarqueeText(text: upcoming.title.removingHTMLEntities(), font: UIFont.preferredFont(forTextStyle: .headline), leftFade: 16, rightFade: 16, startDelay: 3.0)
                 HStack {
+                    Text(upcoming.channel.name)
+                        .font(.subheadline)
+                        .lineLimit(1)
+                        .foregroundColor(.secondary)
+                    
                     if favourited.contains(where: {$0 == upcoming.channel.id}) {
                         Image(systemName: "star.fill")
                             .tint(.yellow)
                     }
-                    
-                    Text(upcoming.channel.name)
-                        .font(.subheadline)
-                    .foregroundColor(.secondary)
                 }
                 Divider()
                 HStack {

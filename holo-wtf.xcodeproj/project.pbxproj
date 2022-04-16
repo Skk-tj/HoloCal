@@ -49,6 +49,10 @@
 		F0ED2AE22806858300683E6C /* ChannelNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AE12806858300683E6C /* ChannelNew.swift */; };
 		F0ED2AE4280685FD00683E6C /* VideoNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AE3280685FD00683E6C /* VideoNew.swift */; };
 		F0ED2AE62808253700683E6C /* VideoThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AE52808253700683E6C /* VideoThumbnailView.swift */; };
+		F0ED2AE8280AA2BC00683E6C /* LiveCompactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AE7280AA2BC00683E6C /* LiveCompactListView.swift */; };
+		F0ED2AEA280AA37B00683E6C /* LiveCardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AE9280AA37B00683E6C /* LiveCardListView.swift */; };
+		F0ED2AEC280AA7D400683E6C /* UpcomingCompactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AEB280AA7D400683E6C /* UpcomingCompactListView.swift */; };
+		F0ED2AEE280AA91E00683E6C /* UpcomingCardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AED280AA91E00683E6C /* UpcomingCardListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +100,10 @@
 		F0ED2AE12806858300683E6C /* ChannelNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelNew.swift; sourceTree = "<group>"; };
 		F0ED2AE3280685FD00683E6C /* VideoNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoNew.swift; sourceTree = "<group>"; };
 		F0ED2AE52808253700683E6C /* VideoThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailView.swift; sourceTree = "<group>"; };
+		F0ED2AE7280AA2BC00683E6C /* LiveCompactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCompactListView.swift; sourceTree = "<group>"; };
+		F0ED2AE9280AA37B00683E6C /* LiveCardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCardListView.swift; sourceTree = "<group>"; };
+		F0ED2AEB280AA7D400683E6C /* UpcomingCompactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingCompactListView.swift; sourceTree = "<group>"; };
+		F0ED2AED280AA91E00683E6C /* UpcomingCardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingCardListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +125,6 @@
 			children = (
 				F05E9EB827EB3C6100EF48DD /* LivePaneView.swift */,
 				F0BD611A27EC594300A2FBED /* UpcomingPaneView.swift */,
-				F0ED2AE52808253700683E6C /* VideoThumbnailView.swift */,
 			);
 			path = iPadOS;
 			sourceTree = "<group>";
@@ -127,6 +134,10 @@
 			children = (
 				F0C657D12771F7CE004AF802 /* LiveCellView.swift */,
 				F0673C1127732CE7009C65C6 /* UpcomingCellView.swift */,
+				F0ED2AE7280AA2BC00683E6C /* LiveCompactListView.swift */,
+				F0ED2AE9280AA37B00683E6C /* LiveCardListView.swift */,
+				F0ED2AEB280AA7D400683E6C /* UpcomingCompactListView.swift */,
+				F0ED2AED280AA91E00683E6C /* UpcomingCardListView.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -164,6 +175,7 @@
 				F09D25E42802EA09001A7D71 /* SwipableLinkedCellView.swift */,
 				F009024527EE6A9F00E343B0 /* VideoContextMenu.swift */,
 				F09D25BD27FC2552001A7D71 /* SettingsTalentStarView.swift */,
+				F0ED2AE52808253700683E6C /* VideoThumbnailView.swift */,
 				F009024227EE5DF000E343B0 /* iOS */,
 				F009024127EE5DDC00E343B0 /* iPadOS */,
 			);
@@ -329,6 +341,7 @@
 				F09D25F328041CC3001A7D71 /* iPadSidebarView.swift in Sources */,
 				F0673C172775F7FB009C65C6 /* LiveAvatarView.swift in Sources */,
 				F0BD611B27EC594300A2FBED /* UpcomingPaneView.swift in Sources */,
+				F0ED2AEC280AA7D400683E6C /* UpcomingCompactListView.swift in Sources */,
 				F0C657BD2771F47C004AF802 /* LiveView.swift in Sources */,
 				F09D25C928020B12001A7D71 /* UpcomingViewToolbar.swift in Sources */,
 				F009024027EE57BA00E343B0 /* LinkedVideoView.swift in Sources */,
@@ -347,14 +360,17 @@
 				F0C657D627732690004AF802 /* Util.swift in Sources */,
 				F09D25C327FEC12D001A7D71 /* SettingsFormView.swift in Sources */,
 				F05E9EB527EB290000EF48DD /* UpcomingiPadView.swift in Sources */,
+				F0ED2AEA280AA37B00683E6C /* LiveCardListView.swift in Sources */,
 				F09D25E728036C3F001A7D71 /* ActivityView.swift in Sources */,
 				F0ED2AE62808253700683E6C /* VideoThumbnailView.swift in Sources */,
 				F0433C4E27E99F85000FEADD /* SettingsView.swift in Sources */,
 				F0433C5227EAEDDB000FEADD /* OpenSourceView.swift in Sources */,
 				F04D101227E80C260083546C /* VideoListViewModel.swift in Sources */,
 				F0C657CE2771F70B004AF802 /* LiveViewModel.swift in Sources */,
+				F0ED2AEE280AA91E00683E6C /* UpcomingCardListView.swift in Sources */,
 				F05E9EB727EB291900EF48DD /* SettingsiPadView.swift in Sources */,
 				F0C657C92771F4EF004AF802 /* LiveVideo.swift in Sources */,
+				F0ED2AE8280AA2BC00683E6C /* LiveCompactListView.swift in Sources */,
 				F0C657D22771F7CE004AF802 /* LiveCellView.swift in Sources */,
 				F009024427EE5F3100E343B0 /* UpcomingTimeView.swift in Sources */,
 				F0C657BB2771F47C004AF802 /* holo_wtfApp.swift in Sources */,
@@ -499,7 +515,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -516,7 +532,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf";
 				PRODUCT_NAME = HoloCal;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -531,7 +547,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -548,7 +564,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf";
 				PRODUCT_NAME = HoloCal;
 				SWIFT_EMIT_LOC_STRINGS = YES;

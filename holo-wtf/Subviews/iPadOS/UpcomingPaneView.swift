@@ -23,17 +23,17 @@ struct UpcomingPaneView: View {
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
                 HStack {
-                    if favourited.contains(where: {$0 == upcoming.channel.id}) {
-                        Image(systemName: "star.fill")
-                            .tint(.yellow)
-                    }
-                    
                     LiveAvatarView(url: upcoming.channel.photo, avatarRadius: 40.0)
                     
                     Text(upcoming.channel.name)
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                         .lineLimit(1)
+                    
+                    if favourited.contains(where: {$0 == upcoming.channel.id}) {
+                        Image(systemName: "star.fill")
+                            .tint(.yellow)
+                    }
                 }
                 Divider()
                 HStack {

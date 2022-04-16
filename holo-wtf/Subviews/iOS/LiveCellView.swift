@@ -18,16 +18,16 @@ struct LiveCellView: View {
             LiveAvatarView(url: live.channel.photo)
             VStack(alignment: .leading) {
                 MarqueeText(text: live.title.removingHTMLEntities(), font: UIFont.preferredFont(forTextStyle: .headline), leftFade: 14, rightFade: 16, startDelay: 3.0)
-                HStack {
-                    if favourited.contains(where: {$0 == live.channel.id}) {
-                        Image(systemName: "star.fill")
-                            .tint(.yellow)
-                    }
-                    
+                HStack {                    
                     Text(live.channel.name)
                         .font(.subheadline)
                         .lineLimit(1)
                         .foregroundColor(.secondary)
+                    
+                    if favourited.contains(where: {$0 == live.channel.id}) {
+                        Image(systemName: "star.fill")
+                            .tint(.yellow)
+                    }
                 }
                 
                 Divider()
