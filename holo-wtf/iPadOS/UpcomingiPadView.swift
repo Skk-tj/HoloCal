@@ -33,7 +33,7 @@ struct UpcomingiPadView: View {
                     ForEach(upcoming.videoList.filter { video in
                         favourited.contains(where: { video.channel.id == $0 })
                     }) { live in
-                        LinkedVideoView(videoKey: live.ytVideoKey) {
+                        LinkedVideoView(videoKey: live.id) {
                             UpcomingPaneView(upcoming: live)
                         }
                         .contextMenu {
@@ -44,7 +44,7 @@ struct UpcomingiPadView: View {
                     ForEach(upcoming.videoList.filter { video in
                         !favourited.contains(where: { video.channel.id == $0 })
                     }, id: \.self) { live in
-                        LinkedVideoView(videoKey: live.ytVideoKey) {
+                        LinkedVideoView(videoKey: live.id) {
                             UpcomingPaneView(upcoming: live)
                         }
                         .contextMenu {
@@ -63,13 +63,13 @@ struct UpcomingiPadView: View {
             }
         }
         .task {
-            await upcoming.getUpcoming()
+            await upcoming.getVideo()
         }
         .toolbar {
             UpcomingViewToolbar()
             Button(action: {
                 Task {
-                    await upcoming.getUpcoming()
+                    await upcoming.getVideo()
                 }
             }, label: {
                 Label("Refresh", systemImage: "arrow.triangle.2.circlepath")
