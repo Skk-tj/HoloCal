@@ -1,26 +1,31 @@
 //
-//  ChannelNew.swift
+//  VideoViewModel.swift
 //  holo-wtf
 //
-//  Created by Haoyi An on 2022-04-12.
+//  Created by Haoyi An on 2022-04-16.
 //
 
 import Foundation
 import OSLog
 
-struct Channel: Codable, Identifiable, Hashable {
-    let id: String
-    let name: String
-    let photo: URL?
-    let org: String?
+@MainActor
+class VideoViewModel: ObservableObject {
+    @Published var videoList: [LiveVideo]
+    @Published var dataStatus: DataStatus
     
-    var twitter: String?
+    init() {
+        self.videoList = []
+        self.dataStatus = .working
+    }
     
-    mutating func getExtendedChannelInfo() async {
-        let logger = Logger()
+    let logger = Logger()
+    
+    func getVideo(url: String, completion: @escaping ([LiveVideo]) -> Void) async {
+        self.dataStatus = .working
         
-        guard let apiURL = URL(string: "https://holodex.net/api/v2/channels/\(id)") else {
+        guard let apiURL = URL(string: url) else {
             logger.critical("API URL is not valid")
+            self.dataStatus = .fail
             return
         }
         
@@ -36,13 +41,16 @@ struct Channel: Codable, Identifiable, Hashable {
             
             let decoder = getLiveVideoJSONDecoder()
             
-            let responseResult: Channel = try decoder.decode(Channel.self, from: data)
+            let responseResult: [LiveVideo] = try decoder.decode([LiveVideo].self, from: data)
             
-            self.twitter = responseResult.twitter
+            completion(responseResult)
+            
+            self.dataStatus = .success
         } catch {
             logger.error("Netword request/JSON serialization failed when trying to get live data from API. ")
             debugPrint(error)
             logger.error("Error is: \(error.localizedDescription)")
+            self.dataStatus = .fail
             return
         }
     }

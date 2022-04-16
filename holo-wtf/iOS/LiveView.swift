@@ -33,10 +33,10 @@ struct LiveView: View {
             }
         }
         .task {
-            await live.getVideo()
+            await live.getLive()
         }
         .refreshable {
-            await live.getVideo()
+            await live.getLive()
         }
     }
 }
