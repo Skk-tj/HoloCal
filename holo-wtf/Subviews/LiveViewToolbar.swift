@@ -21,11 +21,13 @@ struct LiveViewToolbar: View {
                 Label(isShowingAbsoluteTime ? "LIVE_VIEW_TOOLBAR_SHOW_RELATIVE" : "LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE", systemImage: "clock")
             }
             
-            Button {
-                isShowingCompactInLiveView.toggle()
-                UserDefaults.standard.set(isShowingCompactInLiveView, forKey: UserDefaultKeys.isShowingCompactInLiveView)
-            } label: {
-                Label(isShowingCompactInLiveView ? "LIVE_VIEW_TOOLBAR_SHOW_CARD" : "LIVE_VIEW_TOOLBAR_SHOW_COMPACT", systemImage: isShowingCompactInLiveView ? "rectangle.grid.1x2" : "list.bullet")
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                Button {
+                    isShowingCompactInLiveView.toggle()
+                    UserDefaults.standard.set(isShowingCompactInLiveView, forKey: UserDefaultKeys.isShowingCompactInLiveView)
+                } label: {
+                    Label(isShowingCompactInLiveView ? "LIVE_VIEW_TOOLBAR_SHOW_CARD" : "LIVE_VIEW_TOOLBAR_SHOW_COMPACT", systemImage: isShowingCompactInLiveView ? "rectangle.grid.1x2" : "list.bullet")
+                }
             }
         } label: {
             Label("Display Settings", systemImage: "ellipsis")
