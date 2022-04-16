@@ -63,13 +63,13 @@ struct UpcomingiPadView: View {
             }
         }
         .task {
-            await upcoming.getVideo()
+            await upcoming.getUpcoming()
         }
         .toolbar {
             UpcomingViewToolbar()
             Button(action: {
                 Task {
-                    await upcoming.getVideo()
+                    await upcoming.getUpcoming()
                 }
             }, label: {
                 Label("Refresh", systemImage: "arrow.triangle.2.circlepath")

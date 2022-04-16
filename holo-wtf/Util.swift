@@ -113,7 +113,7 @@ func getAbsoluteDateFormatter() -> DateFormatter {
     return formatter
 }
 
-func getDateParser() -> JSONDecoder {
+func getLiveVideoJSONDecoder() -> JSONDecoder {
     let decoder = JSONDecoder()
     decoder.keyDecodingStrategy = .convertFromSnakeCase
     

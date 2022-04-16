@@ -63,14 +63,14 @@ struct LiveiPadView: View {
             }
         }
         .task {
-            await live.getVideo()
+            await live.getLive()
         }
         .navigationTitle("LIVE_VIEW_TITLE")
         .toolbar {
             LiveViewToolbar()
             Button(action: {
                 Task {
-                    await live.getVideo()
+                    await live.getLive()
                 }
             }, label: {
                 Label("Refresh", systemImage: "arrow.triangle.2.circlepath")
