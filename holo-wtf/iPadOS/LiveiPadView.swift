@@ -33,7 +33,7 @@ struct LiveiPadView: View {
                     ForEach(live.videoList.filter { video in
                         favourited.contains(where: { video.channel.id == $0 })
                     }) { live in
-                        LinkedVideoView(videoKey: live.ytVideoKey) {
+                        LinkedVideoView(videoKey: live.id) {
                             LivePaneView(live: live)
                         }
                         .contextMenu {
@@ -44,7 +44,7 @@ struct LiveiPadView: View {
                     ForEach(live.videoList.filter { video in
                         !favourited.contains(where: { video.channel.id == $0 })
                     }, id: \.self) { live in
-                        LinkedVideoView(videoKey: live.ytVideoKey) {
+                        LinkedVideoView(videoKey: live.id) {
                             LivePaneView(live: live)
                         }
                         .contextMenu {
@@ -63,14 +63,14 @@ struct LiveiPadView: View {
             }
         }
         .task {
-            await live.getLive()
+            await live.getVideo()
         }
         .navigationTitle("LIVE_VIEW_TITLE")
         .toolbar {
             LiveViewToolbar()
             Button(action: {
                 Task {
-                    await live.getLive()
+                    await live.getVideo()
                 }
             }, label: {
                 Label("Refresh", systemImage: "arrow.triangle.2.circlepath")

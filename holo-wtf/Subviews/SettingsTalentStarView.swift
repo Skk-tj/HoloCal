@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsTalentStarView: View {
     let talent: Talent
-    @Binding var favourited: [Int]
+    @Binding var favourited: [String]
     
     var body: some View {
         HStack {
@@ -47,6 +47,6 @@ struct SettingsTalentStarView: View {
 
 struct SettingsTalentStarView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsTalentStarView(talent: Talent(id: 41, names: ["en": "Tokino Sora", "ja": "ときのそら"]), favourited: Binding.constant([0]))
+        SettingsTalentStarView(talent: Talent(id: "abcd", names: ["en": "Tokino Sora", "ja": "ときのそら"]), favourited: Binding.constant(["abcd"]))
     }
 }

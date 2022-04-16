@@ -142,7 +142,7 @@ enum UserDefaultKeys {
 
 // MARK: - AppStorage Support for Arrays
 // https://stackoverflow.com/a/65598711/8233415
-typealias Favourited = [Int]
+typealias Favourited = [String]
 
 extension Favourited: RawRepresentable {
     public init?(rawValue: String) {

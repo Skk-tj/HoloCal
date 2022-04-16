@@ -13,7 +13,7 @@ struct VideoContextMenu: View {
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
     var body: some View {
-        if let twitterLink = video.channel.twitterLink {
+        if let twitterLink = video.channel.twitter {
             let url = "https://twitter.com/\(twitterLink)"
             
             if let finalURL = URL(string: url) {
@@ -23,15 +23,14 @@ struct VideoContextMenu: View {
             }
         }
         
-        if let ytChannelId = video.channel.ytChannelId {
-            let url = "https://www.youtube.com/channel/\(ytChannelId)"
-            
-            if let finalURL = URL(string: url) {
-                Link(destination: finalURL) {
-                    Label("VIDEO_CONTEXT_MENU_YOUTUBE_CHANNEL", systemImage: "play.rectangle")
-                }
+        let url = "https://www.youtube.com/channel/\(video.channel.id)"
+        
+        if let finalURL = URL(string: url) {
+            Link(destination: finalURL) {
+                Label("VIDEO_CONTEXT_MENU_YOUTUBE_CHANNEL", systemImage: "play.rectangle")
             }
         }
+        
         
         let isFavourited = favourited.contains(where: {$0 == video.channel.id})
         
@@ -48,7 +47,7 @@ struct VideoContextMenu: View {
         })
         
         Button(action: {
-            shareSheet(url: "https://www.youtube.com/watch?v=\(video.ytVideoKey!)")
+            shareSheet(url: "https://www.youtube.com/watch?v=\(video.id)")
         }, label: {
             Label("LINKED_VIDEO_SWIPE_ACTIONS_SHARE", systemImage: "square.and.arrow.up")
         })
@@ -74,9 +73,9 @@ struct VideoContextMenu: View {
 }
 
 struct VideoContextMenu_Previews: PreviewProvider {
-    static let testChannel = Channel(id: 0, ytChannelId: "testChannelId", name: "a certain tuber's channel name", description: "hihihi", photo: URL(string: "https://yt3.ggpht.com/ytc/AKedOLQH3CqU4dL9EWjrYl6aKn26_DAAHbCXEBVyMTaWZA=s800-c-k-c0x00ffffff-no-rj"), publishedAt: Date(timeIntervalSinceNow: -1000), twitterLink: "a_certain_vtuber")
+    static let testChannel = Channel(id: "abcd", name: "test vtuber", photo: URL(string: "https://yt3.ggpht.com/ytc/AKedOLQH3CqU4dL9EWjrYl6aKn26_DAAHbCXEBVyMTaWZA=s800-c-k-c0x00ffffff-no-rj"), org: "Hololive", twitter: "aaaa")
     
-    static let previewLive = LiveVideo(id: 0, ytVideoKey: "testVideoId", title: "my debut live", thumbnail: nil, liveSchedule: nil, liveStart: nil, liveEnd: nil, liveViewers: 100, channel: testChannel)
+    static let previewLive = LiveVideo(id: "abcd", title: "my debut live", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, channel: testChannel)
     
     static var previews: some View {
         VideoContextMenu(video: previewLive)

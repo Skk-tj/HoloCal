@@ -33,10 +33,10 @@ struct UpcomingView: View {
             }
         }
         .task {
-            await upcoming.getUpcoming()
+            await upcoming.getVideo()
         }
         .refreshable {
-            await upcoming.getUpcoming()
+            await upcoming.getVideo()
         }
     }
 }

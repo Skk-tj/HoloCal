@@ -15,13 +15,22 @@ struct UpcomingPaneView: View {
     
     var body: some View {
         VStack {
-            VideoThumbnailView(ytVideoKey: upcoming.ytVideoKey)
+            VideoThumbnailView(ytVideoKey: upcoming.id)
             
             VStack(alignment: .leading) {
                 Text(upcoming.title.removingHTMLEntities())
                     .font(.headline)
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
+                
+                if let topicId = upcoming.topicId {
+                    Text(topicId)
+                        .padding(6)
+                        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 15, style: .continuous))
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
+                }
+                
                 HStack {
                     LiveAvatarView(url: upcoming.channel.photo, avatarRadius: 40.0)
                     
@@ -37,21 +46,29 @@ struct UpcomingPaneView: View {
                 }
                 Divider()
                 HStack {
-                    UpcomingTimeView(liveSchedule: upcoming.liveSchedule)
+                    UpcomingTimeView(liveSchedule: upcoming.startScheduled)
+                    if isLiveMengen(title: upcoming.title) {
+                        Spacer()
+                        Text("LIVE_CELL_VIEW_MEMBER_ONLY_STREAM")
+                            .font(.footnote)
+                            .foregroundColor(.secondary)
+                    }
                 }
             }
             .padding(.horizontal)
         }
         .padding(.bottom)
-        .background(.bar, in: RoundedRectangle(cornerRadius: 20))
+        .background(.thickMaterial, in: RoundedRectangle(cornerRadius: 20))
         .cornerRadius(20)
     }
 }
 
 struct UpcomingPaneView_Previews: PreviewProvider {
-    static let testChannel = Channel(id: 0, ytChannelId: "testChannelId", name: "a certain tuber's channel name", description: "hihihi", photo: URL(string: "https://yt3.ggpht.com/ytc/AKedOLQH3CqU4dL9EWjrYl6aKn26_DAAHbCXEBVyMTaWZA=s800-c-k-c0x00ffffff-no-rj"), publishedAt: Date(timeIntervalSinceNow: 10000), twitterLink: "a_certain_vtuber")
+    static let testChannel = Channel(id: "abcd", name: "test vtuber", photo: URL(string: "https://yt3.ggpht.com/ytc/AKedOLQH3CqU4dL9EWjrYl6aKn26_DAAHbCXEBVyMTaWZA=s800-c-k-c0x00ffffff-no-rj"), org: "Hololive", twitter: "aaaa")
     
-    static let previewLive = LiveVideo(id: 0, ytVideoKey: "testVideoId", title: "my debut live", thumbnail: nil, liveSchedule: nil, liveStart: nil, liveEnd: nil, liveViewers: 100, channel: testChannel)
+    static let previewLive = LiveVideo(id: "abcd", title: "my debut live", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, channel: testChannel)
+    
+    static let previewLiveMemberOnly = LiveVideo(id: "abcd", title: "my debut live member only", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, channel: testChannel)
     
     static var previews: some View {
         UpcomingPaneView(upcoming: previewLive)
