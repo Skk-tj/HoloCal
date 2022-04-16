@@ -1,1 +1,2 @@
-./SecretConfig.xcconfig
+SecretConfig.xcconfig
+.DS_Store
