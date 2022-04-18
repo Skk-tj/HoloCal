@@ -14,54 +14,65 @@ struct LivePaneView: View {
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
     var body: some View {
-        VStack {
-            VideoThumbnailView(ytVideoKey: live.id)
-            
-            VStack(alignment: .leading) {
-                Text(live.title.removingHTMLEntities())
-                    .font(.headline)
-                    .lineLimit(2)
-                    .multilineTextAlignment(.leading)
+        ZStack(alignment: .topLeading) {
+            VStack {
+                VideoThumbnailView(ytVideoKey: live.id)
                 
-                TopicTagView(topicId: live.topicId)
-                
-                HStack {
-                    LiveAvatarView(url: live.channel.photo, avatarRadius: 40.0)
+                VStack(alignment: .leading) {
+                    Text(live.title.removingHTMLEntities())
+                        .font(.headline)
+                        .lineLimit(2)
+                        .multilineTextAlignment(.leading)
                     
-                    Text(live.channel.name)
-                        .lineLimit(1)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                    
-                    if favourited.contains(where: {$0 == live.channel.id}) {
-                        Image(systemName: "star.fill")
-                            .tint(.yellow)
+                    HStack {
+                        LiveAvatarView(url: live.channel.photo, avatarRadius: 40.0)
+                        
+                        Text(live.channel.name)
+                            .lineLimit(1)
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                    }
+                    Divider()
+                    HStack {
+                        if isLiveMengen(live: live) {
+                            Text("LIVE_CELL_VIEW_MEMBER_ONLY_STREAM")
+                                .font(.footnote)
+                                .foregroundColor(.secondary)
+                                .multilineTextAlignment(.leading)
+                        } else {
+                            Text("LIVE_CELL_VIEW_PEOPLE_WATCHING \(live.liveViewers)")
+                                .font(.footnote)
+                                .foregroundColor(.secondary)
+                        }
+                        
+                        Spacer()
+                        
+                        LiveTimeView(liveTime: live.startActual)
+                            .multilineTextAlignment(.trailing)
                     }
                 }
-                Divider()
-                HStack {
-                    if isLiveMengen(live: live) {
-                        Text("LIVE_CELL_VIEW_MEMBER_ONLY_STREAM")
-                            .font(.footnote)
-                            .foregroundColor(.secondary)
-                            .multilineTextAlignment(.leading)
-                    } else {
-                        Text("LIVE_CELL_VIEW_PEOPLE_WATCHING \(live.liveViewers)")
-                            .font(.footnote)
-                            .foregroundColor(.secondary)
-                    }
-                    
-                    Spacer()
-                    
-                    LiveTimeView(liveTime: live.startActual)
-                        .multilineTextAlignment(.trailing)
+                .padding(.horizontal)
+            }
+            .padding(.bottom)
+            .background(.thickMaterial, in: RoundedRectangle(cornerRadius: 20))
+            .cornerRadius(20)
+            
+            
+            HStack {
+                TopicTagView(topicId: live.topicId)
+                    .padding()
+                
+                Spacer()
+                
+                if favourited.contains(where: {$0 == live.channel.id}) {
+                    Image(systemName: "star.fill")
+                        .foregroundColor(.yellow) // iOS needs it cause plain list style does not show tint
+                        .tint(.yellow)
+                        .padding()
+                        .shadow(radius: 5)
                 }
             }
-            .padding(.horizontal)
         }
-        .padding(.bottom)
-        .background(.thickMaterial, in: RoundedRectangle(cornerRadius: 20))
-        .cornerRadius(20)
     }
 }
 
