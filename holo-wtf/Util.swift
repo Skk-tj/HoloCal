@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import OSLog
 
 func getTimeIntervalFormatter() -> DateComponentsFormatter {
     let formatter = DateComponentsFormatter()
@@ -25,18 +26,22 @@ func getTimeIntervalStringFromReferenceDate(reference date: Date) -> String? {
     return formatter.string(from: abs(dateDifference))
 }
 
-func isLiveMengen(title: String) -> Bool {
+func isLiveMengen(live: LiveVideo) -> Bool {
     // Japanese
-    if title.contains("メン限") {
+    if live.title.contains("メン限") {
         return true
     }
     
     // English
-    if title.lowercased().contains("member") && title.lowercased().contains("only") {
+    if live.title.lowercased().contains("member") && live.title.lowercased().contains("only") {
         return true
     }
     
-    if title.lowercased().contains("membership") {
+    if live.title.lowercased().contains("membership") {
+        return true
+    }
+    
+    if live.topicId == "membersonly" {
         return true
     }
     
@@ -113,6 +118,30 @@ func getAbsoluteDateFormatter() -> DateFormatter {
     return formatter
 }
 
+func getTwitterId(channelId: String) async throws -> String? {
+    let logger = Logger()
+    
+    guard let apiURL = URL(string: "https://holodex.net/api/v2/channels/\(channelId)") else {
+        logger.critical("API URL is not valid")
+        return nil
+    }
+    
+    let headers = ["Content-Type": "application/json", "X-APIKEY": Bundle.main.object(forInfoDictionaryKey: "HOLODEX_API_KEY") as! String]
+    
+    var request = URLRequest(url: apiURL)
+    request.httpMethod = "GET"
+    request.allHTTPHeaderFields = headers
+    request.cachePolicy = .useProtocolCachePolicy
+    
+    let (data, _) = try await URLSession.shared.data(for: request)
+    
+    let decoder = getLiveVideoJSONDecoder()
+    
+    let responseResult: Channel = try decoder.decode(Channel.self, from: data)
+    
+    return responseResult.twitter
+}
+
 func getLiveVideoJSONDecoder() -> JSONDecoder {
     let decoder = JSONDecoder()
     decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -138,6 +167,19 @@ enum UserDefaultKeys {
     static let isShowingAbsoluteTimeInUpcomingView = "isShowingAbsoluteTimeInUpcomingView"
     static let isShowingCompactInLiveView = "isShowingCompactInLiveView"
     static let isShowingCompactInUpcomingView = "isShowingCompactInUpcomingView"
+}
+
+extension Bundle {
+    public var appName: String { getInfo("CFBundleName")  }
+    public var displayName: String {getInfo("CFBundleDisplayName")}
+    public var language: String {getInfo("CFBundleDevelopmentRegion")}
+    public var identifier: String {getInfo("CFBundleIdentifier")}
+    public var copyright: String {getInfo("NSHumanReadableCopyright").replacingOccurrences(of: "\\\\n", with: "\n") }
+    
+    public var appBuild: String { getInfo("CFBundleVersion") }
+    public var appVersionLong: String { getInfo("CFBundleShortVersionString") }
+    
+    fileprivate func getInfo(_ str: String) -> String { infoDictionary?[str] as? String ?? "⚠️" }
 }
 
 // MARK: - AppStorage Support for Arrays

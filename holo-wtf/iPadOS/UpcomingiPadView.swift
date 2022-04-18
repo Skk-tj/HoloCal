@@ -37,7 +37,7 @@ struct UpcomingiPadView: View {
                             UpcomingPaneView(upcoming: live)
                         }
                         .contextMenu {
-                            VideoContextMenu(video: live)
+                            VideoContextMenu(video: live, twitterLink: upcoming.twitterList[live.channel.id] ?? nil)
                         }
                     }
                     
@@ -48,7 +48,7 @@ struct UpcomingiPadView: View {
                             UpcomingPaneView(upcoming: live)
                         }
                         .contextMenu {
-                            VideoContextMenu(video: live)
+                            VideoContextMenu(video: live, twitterLink: upcoming.twitterList[live.channel.id] ?? nil)
                         }
                     }
                 }

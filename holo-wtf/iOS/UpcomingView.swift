@@ -38,6 +38,7 @@ struct UpcomingView: View {
         .refreshable {
             await upcoming.getUpcoming()
         }
+        .navigationViewStyle(.stack)
     }
 }
 

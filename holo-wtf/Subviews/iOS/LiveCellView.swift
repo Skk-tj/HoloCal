@@ -11,6 +11,7 @@ import HTMLString
 
 struct LiveCellView: View {
     let live: LiveVideo
+    let twitterLink: String?
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
     var body: some View {
@@ -19,13 +20,7 @@ struct LiveCellView: View {
             VStack(alignment: .leading) {
                 MarqueeText(text: live.title.removingHTMLEntities(), font: UIFont.preferredFont(forTextStyle: .headline), leftFade: 14, rightFade: 16, startDelay: 3.0)
                 
-                if let topicId = live.topicId {
-                    Text(topicId)
-                        .padding(6)
-                        .background(.bar, in: RoundedRectangle(cornerRadius: 15, style: .continuous))
-                        .font(.caption2)
-                        .foregroundColor(.secondary)
-                }
+                TopicTagView(topicId: live.topicId)
                 
                 HStack {                    
                     Text(live.channel.name)
@@ -41,7 +36,7 @@ struct LiveCellView: View {
                 
                 Divider()
                 HStack {
-                    if isLiveMengen(title: live.title) {
+                    if isLiveMengen(live: live) {
                         Text("LIVE_CELL_VIEW_MEMBER_ONLY_STREAM")
                             .font(.footnote)
                             .foregroundColor(.secondary)
@@ -58,7 +53,7 @@ struct LiveCellView: View {
             }
         }
         .contextMenu {
-            VideoContextMenu(video: live)
+            VideoContextMenu(video: live, twitterLink: twitterLink)
         }
     }
 }
@@ -71,7 +66,7 @@ struct LiveCellView_Previews: PreviewProvider {
     static let previewLiveMemberOnly = LiveVideo(id: "abcd", title: "my debut live member only", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, channel: testChannel)
     
     static var previews: some View {
-        LiveCellView(live: previewLive)
-        LiveCellView(live: previewLiveMemberOnly)
+        LiveCellView(live: previewLive, twitterLink: "abcd")
+        LiveCellView(live: previewLiveMemberOnly, twitterLink: "abcd")
     }
 }

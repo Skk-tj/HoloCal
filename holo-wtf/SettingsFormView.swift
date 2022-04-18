@@ -33,10 +33,14 @@ struct SettingsFormView: View {
                 }
             }
             
-            Section(header: Text("SETTINGS_ABOUT_SECTION_HEADER")) {
+            Section(header: Text("SETTINGS_ABOUT_SECTION_HEADER"), footer: Text("HoloCal \(Bundle.main.appVersionLong) (\(Bundle.main.appBuild)) \nCodename: Underworld")) {
                 Link(destination: URL(string: "https://github.com/Skk-tj/HoloCal/issues")!) {
                     Text("SETTINGS_ABOUT_BUG_REPORT")
                 }
+                
+                Link(destination: URL(string: "https://forms.gle/GyQBCJXrG29anSED7")!, label: {
+                    Text("SETTINGS_BETA_TESTING")
+                })
                 
                 NavigationLink(destination: OpenSourceView()) {
                     Text("SETTINGS_OPEN_SOURCE")

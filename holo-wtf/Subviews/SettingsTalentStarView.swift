@@ -16,7 +16,7 @@ struct SettingsTalentStarView: View {
             let isFavourited: Bool = favourited.contains(where: {$0 == talent.id})
             
             VStack(alignment: .leading) {
-                if Locale.preferredLanguages[0] == "ja" {
+                if Locale.current.languageCode == "ja" {
                     Text("\(talent.names["ja"]!)")
                         .font(.body)
                     Text("\(talent.names["en"]!)")

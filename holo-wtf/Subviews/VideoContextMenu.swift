@@ -9,11 +9,12 @@ import SwiftUI
 
 struct VideoContextMenu: View {
     let video: LiveVideo
+    let twitterLink: String?
     
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
     var body: some View {
-        if let twitterLink = video.channel.twitter {
+        if let twitterLink = twitterLink {
             let url = "https://twitter.com/\(twitterLink)"
             
             if let finalURL = URL(string: url) {
@@ -78,6 +79,6 @@ struct VideoContextMenu_Previews: PreviewProvider {
     static let previewLive = LiveVideo(id: "abcd", title: "my debut live", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, channel: testChannel)
     
     static var previews: some View {
-        VideoContextMenu(video: previewLive)
+        VideoContextMenu(video: previewLive, twitterLink: "abcd")
     }
 }

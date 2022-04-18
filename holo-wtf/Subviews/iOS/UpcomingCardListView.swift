@@ -23,7 +23,7 @@ struct UpcomingCardListView: View {
                             UpcomingPaneView(upcoming: live)
                         }
                         .contextMenu {
-                            VideoContextMenu(video: live)
+                            VideoContextMenu(video: live, twitterLink: upcoming.twitterList[live.channel.id] ?? nil)
                         }
                         .listRowSeparator(.hidden)
                     }
@@ -38,7 +38,7 @@ struct UpcomingCardListView: View {
                         UpcomingPaneView(upcoming: live)
                     }
                     .contextMenu {
-                        VideoContextMenu(video: live)
+                        VideoContextMenu(video: live, twitterLink: upcoming.twitterList[live.channel.id] ?? nil)
                     }
                     .listRowSeparator(.hidden)
                 }

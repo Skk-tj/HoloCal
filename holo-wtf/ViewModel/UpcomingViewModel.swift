@@ -20,5 +20,12 @@ class UpcomingViewModel: VideoViewModel {
                 video.channel.org == "Hololive"
             }
         }
+        
+        do {
+            self.twitterList = try await getTwitter()
+        } catch {
+            logger.error("Error in getting twitter list")
+           debugPrint(error)
+        }
     }
 }
