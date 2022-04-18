@@ -14,8 +14,8 @@ struct TopicTagView: View {
         if let topicId = topicId {
             Text(topicId)
                 .padding(5)
-                .background(.bar, in: RoundedRectangle(cornerRadius: 15, style: .continuous))
-                .font(.caption2)
+                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 15, style: .continuous))
+                .font(.caption)
                 .foregroundColor(.secondary)
         }
     }
