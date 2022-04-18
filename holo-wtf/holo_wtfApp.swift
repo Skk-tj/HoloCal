@@ -15,7 +15,6 @@ struct holo_wtfApp: App {
                 // iPadOS
                 NavigationView {
                     iPadSidebarView()
-                    
                     LiveiPadView()
                 }
             } else {

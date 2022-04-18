@@ -23,13 +23,7 @@ struct UpcomingPaneView: View {
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
                 
-                if let topicId = upcoming.topicId {
-                    Text(topicId)
-                        .padding(6)
-                        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 15, style: .continuous))
-                        .font(.caption2)
-                        .foregroundColor(.secondary)
-                }
+                TopicTagView(topicId: upcoming.topicId)
                 
                 HStack {
                     LiveAvatarView(url: upcoming.channel.photo, avatarRadius: 40.0)
@@ -47,7 +41,7 @@ struct UpcomingPaneView: View {
                 Divider()
                 HStack {
                     UpcomingTimeView(liveSchedule: upcoming.startScheduled)
-                    if isLiveMengen(title: upcoming.title) {
+                    if isLiveMengen(live: upcoming) {
                         Spacer()
                         Text("LIVE_CELL_VIEW_MEMBER_ONLY_STREAM")
                             .font(.footnote)

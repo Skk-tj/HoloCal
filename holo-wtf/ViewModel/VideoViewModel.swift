@@ -12,10 +12,12 @@ import OSLog
 class VideoViewModel: ObservableObject {
     @Published var videoList: [LiveVideo]
     @Published var dataStatus: DataStatus
+    @Published var twitterList: [String: String?]
     
     init() {
         self.videoList = []
         self.dataStatus = .working
+        self.twitterList = [:]
     }
     
     let logger = Logger()
@@ -53,5 +55,23 @@ class VideoViewModel: ObservableObject {
             self.dataStatus = .fail
             return
         }
+    }
+    
+    func getTwitter() async throws -> [String: String?] {
+        var twitterList: [String: String?] = [:]
+        
+        try await withThrowingTaskGroup(of: (String, String?).self) { group in
+            for video in videoList {
+                group.addTask {
+                    return (video.channel.id, try await getTwitterId(channelId: video.channel.id))
+                }
+            }
+            
+            for try await (channelId, twitterId) in group {
+                twitterList[channelId] = twitterId
+            }
+        }
+        
+        return twitterList
     }
 }

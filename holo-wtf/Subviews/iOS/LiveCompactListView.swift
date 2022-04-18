@@ -20,7 +20,7 @@ struct LiveCompactListView: View {
                         favourited.contains(where: { video.channel.id == $0 })
                     }) { live in
                         SwipableLinkedCellView(video: live) {
-                            LiveCellView(live: live)
+                            LiveCellView(live: live, twitterLink: self.live.twitterList[live.channel.id] ?? nil)
                         }
                     }
                 }
@@ -31,7 +31,7 @@ struct LiveCompactListView: View {
                     !favourited.contains(where: { video.channel.id == $0 })
                 }, id: \.self) { live in
                     SwipableLinkedCellView(video: live) {
-                        LiveCellView(live: live)
+                        LiveCellView(live: live, twitterLink: self.live.twitterList[live.channel.id] ?? nil)
                     }
                 }
                 HStack {

@@ -24,7 +24,7 @@ struct LiveCardListView: View {
                         }
                         .listRowSeparator(.hidden)
                         .contextMenu {
-                            VideoContextMenu(video: live)
+                            VideoContextMenu(video: live, twitterLink: self.live.twitterList[live.channel.id] ?? nil)
                         }
                     }
                 }
@@ -39,7 +39,7 @@ struct LiveCardListView: View {
                     }
                     .listRowSeparator(.hidden)
                     .contextMenu {
-                        VideoContextMenu(video: live)
+                        VideoContextMenu(video: live, twitterLink: self.live.twitterList[live.channel.id] ?? nil)
                     }
                 }
                 HStack {

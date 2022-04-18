@@ -11,6 +11,7 @@ import HTMLString
 
 struct UpcomingCellView: View {
     var upcoming: LiveVideo
+    let twitterLink: String?
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
     var body: some View {
@@ -19,13 +20,7 @@ struct UpcomingCellView: View {
             VStack(alignment: .leading) {
                 MarqueeText(text: upcoming.title.removingHTMLEntities(), font: UIFont.preferredFont(forTextStyle: .headline), leftFade: 16, rightFade: 16, startDelay: 3.0)
                 
-                if let topicId = upcoming.topicId {
-                    Text(topicId)
-                        .padding(6)
-                        .background(.bar, in: RoundedRectangle(cornerRadius: 15, style: .continuous))
-                        .font(.caption2)
-                        .foregroundColor(.secondary)
-                }
+                TopicTagView(topicId: upcoming.topicId)
                 
                 HStack {
                     Text(upcoming.channel.name)
@@ -41,7 +36,7 @@ struct UpcomingCellView: View {
                 Divider()
                 HStack {
                     UpcomingTimeView(liveSchedule: upcoming.startScheduled)
-                    if isLiveMengen(title: upcoming.title) {
+                    if isLiveMengen(live: upcoming) {
                         Spacer()
                         Text("LIVE_CELL_VIEW_MEMBER_ONLY_STREAM")
                             .font(.footnote)
@@ -51,7 +46,7 @@ struct UpcomingCellView: View {
             }
         }
         .contextMenu {
-            VideoContextMenu(video: upcoming)
+            VideoContextMenu(video: upcoming, twitterLink: twitterLink)
         }
     }
 }
@@ -64,6 +59,6 @@ struct UpcomingCellView_Previews: PreviewProvider {
     static let previewLiveMemberOnly = LiveVideo(id: "abcd", title: "my debut live member only", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, channel: testChannel)
     
     static var previews: some View {
-        UpcomingCellView(upcoming: previewLive)
+        UpcomingCellView(upcoming: previewLive, twitterLink: "abcd")
     }
 }

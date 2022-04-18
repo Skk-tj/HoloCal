@@ -23,13 +23,7 @@ struct LivePaneView: View {
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
                 
-                if let topicId = live.topicId {
-                    Text(topicId)
-                        .padding(6)
-                        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 15, style: .continuous))
-                        .font(.caption2)
-                        .foregroundColor(.secondary)
-                }
+                TopicTagView(topicId: live.topicId)
                 
                 HStack {
                     LiveAvatarView(url: live.channel.photo, avatarRadius: 40.0)
@@ -46,7 +40,7 @@ struct LivePaneView: View {
                 }
                 Divider()
                 HStack {
-                    if isLiveMengen(title: live.title) {
+                    if isLiveMengen(live: live) {
                         Text("LIVE_CELL_VIEW_MEMBER_ONLY_STREAM")
                             .font(.footnote)
                             .foregroundColor(.secondary)

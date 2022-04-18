@@ -12,6 +12,7 @@ struct SettingsView: View {
         NavigationView {
             SettingsFormView()
         }
+        .navigationViewStyle(.stack)
     }
 }
 

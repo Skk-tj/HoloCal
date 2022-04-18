@@ -38,6 +38,7 @@ struct LiveView: View {
         .refreshable {
             await live.getLive()
         }
+        .navigationViewStyle(.stack)
     }
 }
 

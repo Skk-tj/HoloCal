@@ -42,7 +42,7 @@ struct LinkedVideoView_Previews: PreviewProvider {
     
     static var previews: some View {
         LinkedVideoView(videoKey: "testVideoId") {
-            LiveCellView(live: previewLive)
+            LiveCellView(live: previewLive, twitterLink: "abcd")
         }
     }
 }
