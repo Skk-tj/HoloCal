@@ -74,12 +74,16 @@
 // VideoContextMenu
 "VIDEO_CONTEXT_MENU_TWITTER_PROFILE" = "Open Twitter profile";
 "VIDEO_CONTEXT_MENU_YOUTUBE_CHANNEL" = "Open YouTube channel";
-
 "VIDEO_CONTEXT_MENU_FAVOURITE_CHANNEL" = "Favorite channel";
 "VIDEO_CONTEXT_MENU_REMOVE_FAVOURITE" = "Remove favorite";
+"VIDEO_CONTEXT_MENU_SHARE" = "Share";
+"VIDEO_CONTEXT_MENU_ADD_TO_CALENDAR" = "Add to calendar";
 
 // Swipe actions for LinkedVideo
 "LINKED_VIDEO_SWIPE_ACTIONS_FAVOURITE" = "Favourite";
 "LINKED_VIDEO_SWIPE_ACTIONS_UNFAVOURITE" = "Unfavourite";
-
 "LINKED_VIDEO_SWIPE_ACTIONS_SHARE" = "Share";
+
+// Calendar acess
+"CALENDAR_ACCESS_TITLE" = "Calendar Access";
+"CALENDAR_ACCESS_MESSAGE" = "Calendar access is disabled. Please check your privacy settings. ";

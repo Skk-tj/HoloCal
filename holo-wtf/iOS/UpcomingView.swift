@@ -10,7 +10,7 @@ import SwiftUI
 struct UpcomingView: View {
     @StateObject var upcoming: UpcomingViewModel
     @AppStorage("favouritedChannel") var favourited = Favourited()
-    @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingView) var isShowingCompactInUpcomingView: Bool = true
+    @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingView) var isShowingCompactInUpcomingView: Bool = false
     
     init() {
         self._upcoming = StateObject(wrappedValue: UpcomingViewModel())

@@ -12,7 +12,7 @@ struct UpcomingiPadView: View {
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
     let layout = [
-        GridItem(.adaptive(minimum: 250), spacing: 10)
+        GridItem(.adaptive(minimum: 300), spacing: 10)
     ]
     
     init() {

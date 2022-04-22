@@ -25,7 +25,7 @@ class UpcomingViewModel: VideoViewModel {
             self.twitterList = try await getTwitter()
         } catch {
             logger.error("Error in getting twitter list")
-           debugPrint(error)
+            debugPrint(error)
         }
     }
 }

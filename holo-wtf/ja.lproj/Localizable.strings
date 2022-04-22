@@ -74,12 +74,15 @@
 // VideoContextMenu
 "VIDEO_CONTEXT_MENU_TWITTER_PROFILE" = "Twitter プロフィール";
 "VIDEO_CONTEXT_MENU_YOUTUBE_CHANNEL" = "YouTube チャンネル";
-
 "VIDEO_CONTEXT_MENU_FAVOURITE_CHANNEL" = "お気に入りに追加";
 "VIDEO_CONTEXT_MENU_REMOVE_FAVOURITE" = "お気に入りを削除";
+"VIDEO_CONTEXT_MENU_SHARE" = "シェアする";
 
 // Swipe actions for LinkedVideo
 "LINKED_VIDEO_SWIPE_ACTIONS_FAVOURITE" = "お気に入り";
 "LINKED_VIDEO_SWIPE_ACTIONS_UNFAVOURITE" = "お気に入りを削除";
+"LINKED_VIDEO_SWIPE_ACTIONS_SHARE" = "シェア";
 
-"LINKED_VIDEO_SWIPE_ACTIONS_SHARE" = "シェアする";
+// Calendar acess
+"CALENDAR_ACCESS_TITLE" = "カレンダーアクセス許可";
+"CALENDAR_ACCESS_MESSAGE" = "カレンダーにアクセスできません。プライバシー設定をご確認ください。";
