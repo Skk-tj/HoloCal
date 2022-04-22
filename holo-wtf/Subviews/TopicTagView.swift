@@ -14,10 +14,13 @@ struct TopicTagView: View {
         if let topicId = topicId {
             Text(topicId)
                 .padding(5)
-                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 15, style: .continuous))
+                .background(.thickMaterial, in: RoundedRectangle(cornerRadius: 5, style: .continuous))
                 .font(.caption)
                 .foregroundColor(.secondary)
         }
+//        else {
+//            Spacer()
+//        }
     }
 }
 

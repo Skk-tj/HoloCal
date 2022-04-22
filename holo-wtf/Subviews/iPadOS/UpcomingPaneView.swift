@@ -42,6 +42,9 @@ struct UpcomingPaneView: View {
                                 .foregroundColor(.secondary)
                         }
                     }
+                    .padding(.bottom)
+                    
+                    PaneViewButtonRowView(video: upcoming)
                 }
                 .padding(.horizontal)
             }

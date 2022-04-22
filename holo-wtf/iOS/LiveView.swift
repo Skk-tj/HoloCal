@@ -10,7 +10,7 @@ import SwiftUI
 struct LiveView: View {
     @StateObject var live: LiveViewModel
     @AppStorage("favouritedChannel") var favourited = Favourited()
-    @AppStorage(UserDefaultKeys.isShowingCompactInLiveView) var isShowingCompactInLiveView: Bool = true
+    @AppStorage(UserDefaultKeys.isShowingCompactInLiveView) var isShowingCompactInLiveView: Bool = false
     
     init() {
         self._live = StateObject(wrappedValue: LiveViewModel())

@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "activityview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftUI-Plus/ActivityView",
+      "state" : {
+        "revision" : "a6843efd45db389a39701e9a8dc1f91672789b33",
+        "version" : "1.1.1"
+      }
+    },
+    {
       "identity" : "htmlstring",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/alexaubry/HTMLString",

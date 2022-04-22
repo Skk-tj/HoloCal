@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import ActivityView
 
 struct SwipableLinkedCellView<Content: View>: View {
     let video: LiveVideo
     let content: () -> Content
+    @State var item: ActivityItem?
     
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
@@ -23,45 +25,16 @@ struct SwipableLinkedCellView<Content: View>: View {
             content()
         }
         .swipeActions {
-            let isFavourited = favourited.contains(where: {$0 == video.channel.id})
-            
-            Button(action: {
-                withAnimation {
-                    if !isFavourited {
-                        favourited.append(video.channel.id)
-                    } else {
-                        favourited.removeAll(where: {$0 == video.channel.id})
-                    }
-                }
-            }) {
+            FavouriteButton(video: video) {
+                let isFavourited = favourited.contains(where: {$0 == video.channel.id})
                 Label(isFavourited ? "LINKED_VIDEO_SWIPE_ACTIONS_UNFAVOURITE" : "LINKED_VIDEO_SWIPE_ACTIONS_FAVOURITE", systemImage: isFavourited ? "star.slash" : "star")
             }
             .tint(.yellow)
             
-            Button(action: {
-                shareSheet(url: "https://www.youtube.com/watch?v=\(video.id)")
-            }, label: {
+            OldShareButton(video: video) {
                 Label("LINKED_VIDEO_SWIPE_ACTIONS_SHARE", systemImage: "square.and.arrow.up")
-            })
+            }
             .tint(.blue)
-        }
-    }
-    
-    func shareSheet(url: String) {
-        let url = URL(string: url)
-        let activityView = UIActivityViewController(activityItems: [url!], applicationActivities: nil)
-        
-        let allScenes = UIApplication.shared.connectedScenes
-        let scene = allScenes.first { $0.activationState == .foregroundActive }
-        
-        if let windowScene = scene as? UIWindowScene {
-            let rootViewController = (windowScene.windows).first(where: { $0.isKeyWindow })?.rootViewController
-            
-            // iPad stuff (fine to leave this in for all iOS devices, it will be effectively ignored when not needed)
-            activityView.popoverPresentationController?.sourceView = rootViewController?.view
-            activityView.popoverPresentationController?.sourceRect = .zero
-            
-            rootViewController?.present(activityView, animated: true, completion: nil)
         }
     }
 }

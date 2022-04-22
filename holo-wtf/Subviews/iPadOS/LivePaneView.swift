@@ -32,7 +32,9 @@ struct LivePaneView: View {
                             .font(.subheadline)
                             .foregroundColor(.secondary)
                     }
+                    
                     Divider()
+                    
                     HStack {
                         if isLiveMengen(live: live) {
                             Text("LIVE_CELL_VIEW_MEMBER_ONLY_STREAM")
@@ -50,6 +52,9 @@ struct LivePaneView: View {
                         LiveTimeView(liveTime: live.startActual)
                             .multilineTextAlignment(.trailing)
                     }
+                    .padding(.bottom)
+                    
+                    PaneViewButtonRowView(video: live)
                 }
                 .padding(.horizontal)
             }
@@ -57,10 +62,18 @@ struct LivePaneView: View {
             .background(.thickMaterial, in: RoundedRectangle(cornerRadius: 20))
             .cornerRadius(20)
             
-            
-            HStack {
-                TopicTagView(topicId: live.topicId)
-                    .padding()
+            HStack(alignment: .top) {
+                VStack(alignment: .leading) {
+                    Text("LIVE")
+                        .padding(5)
+                        .background(.thickMaterial, in: RoundedRectangle(cornerRadius: 5, style: .continuous))
+                        .font(.caption)
+                        .foregroundColor(.red)
+                        .padding(.top)
+                        .padding(.leading)
+                    TopicTagView(topicId: live.topicId)
+                        .padding(.leading)
+                }
                 
                 Spacer()
                 

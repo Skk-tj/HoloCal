@@ -14,6 +14,7 @@ struct VideoContextMenu: View {
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
     var body: some View {
+        // MARK: - Twitter Button
         if let twitterLink = twitterLink {
             let url = "https://twitter.com/\(twitterLink)"
             
@@ -24,51 +25,23 @@ struct VideoContextMenu: View {
             }
         }
         
+        // MARK: - YouTube Button
         let url = "https://www.youtube.com/channel/\(video.channel.id)"
-        
         if let finalURL = URL(string: url) {
             Link(destination: finalURL) {
                 Label("VIDEO_CONTEXT_MENU_YOUTUBE_CHANNEL", systemImage: "play.rectangle")
             }
         }
         
-        
-        let isFavourited = favourited.contains(where: {$0 == video.channel.id})
-        
-        Button(action: {
-            withAnimation {
-                if !isFavourited {
-                    favourited.append(video.channel.id)
-                } else {
-                    favourited.removeAll(where: {$0 == video.channel.id})
-                }
-            }
-        }, label: {
+        // MARK: - Favourite Button
+        FavouriteButton(video: video) {
+            let isFavourited = favourited.contains(where: {$0 == video.channel.id})
             Label(isFavourited ? "VIDEO_CONTEXT_MENU_REMOVE_FAVOURITE" : "VIDEO_CONTEXT_MENU_FAVOURITE_CHANNEL", systemImage: isFavourited ? "star.slash" : "star")
-        })
+        }
         
-        Button(action: {
-            shareSheet(url: "https://www.youtube.com/watch?v=\(video.id)")
-        }, label: {
-            Label("LINKED_VIDEO_SWIPE_ACTIONS_SHARE", systemImage: "square.and.arrow.up")
-        })
-    }
-    
-    func shareSheet(url: String) {
-        let url = URL(string: url)
-        let activityView = UIActivityViewController(activityItems: [url!], applicationActivities: nil)
-        
-        let allScenes = UIApplication.shared.connectedScenes
-        let scene = allScenes.first { $0.activationState == .foregroundActive }
-        
-        if let windowScene = scene as? UIWindowScene {
-            let rootViewController = windowScene.windows.first(where: { $0.isKeyWindow })?.rootViewController
-            
-            // iPad stuff (fine to leave this in for all iOS devices, it will be effectively ignored when not needed)
-            activityView.popoverPresentationController?.sourceView = rootViewController?.view
-            activityView.popoverPresentationController?.sourceRect = .zero
-            
-            rootViewController?.present(activityView, animated: true, completion: nil)
+        // MARK: - Share button
+        OldShareButton(video: video) {
+            Label("VIDEO_CONTEXT_MENU_SHARE", systemImage: "square.and.arrow.up")
         }
     }
 }

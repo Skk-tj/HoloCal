@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import OSLog
+import EventKit
 
 func getTimeIntervalFormatter() -> DateComponentsFormatter {
     let formatter = DateComponentsFormatter()
@@ -153,6 +154,36 @@ func getLiveVideoJSONDecoder() -> JSONDecoder {
     decoder.dateDecodingStrategy = .formatted(dateFormatter)
     
     return decoder
+}
+
+func shareSheet(url: String) {
+    let url = URL(string: url)
+    let activityView = UIActivityViewController(activityItems: [url!], applicationActivities: nil)
+    
+    let allScenes = UIApplication.shared.connectedScenes
+    let scene = allScenes.first { $0.activationState == .foregroundActive }
+    
+    if let windowScene = scene as? UIWindowScene {
+        let rootViewController = (windowScene.windows).first(where: { $0.isKeyWindow })?.rootViewController
+        
+        // iPad stuff (fine to leave this in for all iOS devices, it will be effectively ignored when not needed)
+        activityView.popoverPresentationController?.sourceView = rootViewController?.view
+        activityView.popoverPresentationController?.sourceRect = .zero
+        
+        rootViewController?.present(activityView, animated: true, completion: nil)
+    }
+}
+
+func getCalendarEventFromVideo(eventStore: EKEventStore, video: LiveVideo) -> EKEvent {
+    let event = EKEvent(eventStore: eventStore)
+    event.title = video.title
+    event.location = "https://www.youtube.com/channel/\(video.channel.id)"
+    event.startDate = video.startScheduled
+    event.endDate = video.startScheduled! + 5400
+    event.url = URL(string: "https://www.youtube.com/watch?v=\(video.id)")
+    event.calendar = eventStore.defaultCalendarForNewEvents
+    
+    return event
 }
 
 enum DataStatus {

@@ -17,6 +17,10 @@ struct OpenSourceView: View {
             Link(destination: URL(string: "https://github.com/alexaubry/HTMLString")!) {
                 Text("HTMLString")
             }
+            
+            Link(destination: URL(string: "https://github.com/SwiftUI-Plus/ActivityView")!) {
+                Text("ActivityView")
+            }
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("OPEN_SOURCE_VIEW_TITLE")
