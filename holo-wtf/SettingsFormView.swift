@@ -38,9 +38,9 @@ struct SettingsFormView: View {
                     Text("SETTINGS_ABOUT_BUG_REPORT")
                 }
                 
-                Link(destination: URL(string: "https://forms.gle/GyQBCJXrG29anSED7")!, label: {
+                Link(destination: URL(string: "https://forms.gle/GyQBCJXrG29anSED7")!) {
                     Text("SETTINGS_BETA_TESTING")
-                })
+                }
                 
                 NavigationLink(destination: OpenSourceView()) {
                     Text("SETTINGS_OPEN_SOURCE")
