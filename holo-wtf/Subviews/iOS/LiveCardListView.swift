@@ -22,10 +22,10 @@ struct LiveCardListView: View {
                         SwipableLinkedCellView(video: live) {
                             LivePaneView(live: live)
                         }
-                        .listRowSeparator(.hidden)
                         .contextMenu {
                             VideoContextMenu(video: live, twitterLink: self.live.twitterList[live.channel.id] ?? nil)
                         }
+                        .listRowSeparator(.hidden)
                     }
                 }
             }
@@ -37,10 +37,10 @@ struct LiveCardListView: View {
                     SwipableLinkedCellView(video: live) {
                         LivePaneView(live: live)
                     }
-                    .listRowSeparator(.hidden)
                     .contextMenu {
                         VideoContextMenu(video: live, twitterLink: self.live.twitterList[live.channel.id] ?? nil)
                     }
+                    .listRowSeparator(.hidden)
                 }
                 HStack {
                     Spacer()
@@ -57,6 +57,7 @@ struct LiveCardListView: View {
                     }
                     Spacer()
                 }
+                .listRowSeparator(.hidden)
             }
         }
         .listStyle(.plain)

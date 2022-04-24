@@ -57,6 +57,7 @@ struct UpcomingCardListView: View {
                     }
                     Spacer()
                 }
+                .listRowSeparator(.hidden)
             }
         }
         .listStyle(.plain)
