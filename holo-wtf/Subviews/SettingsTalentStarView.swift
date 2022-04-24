@@ -47,6 +47,6 @@ struct SettingsTalentStarView: View {
 
 struct SettingsTalentStarView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsTalentStarView(talent: Talent(id: "abcd", names: ["en": "Tokino Sora", "ja": "ときのそら"]), favourited: Binding.constant(["abcd"]))
+        SettingsTalentStarView(talent: Talent(id: "abcd", names: ["en": "Tokino Sora", "ja": "ときのそら"], inGeneration: .zerothGen), favourited: Binding.constant(["abcd"]))
     }
 }
