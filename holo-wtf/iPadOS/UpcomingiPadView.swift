@@ -10,6 +10,7 @@ import SwiftUI
 struct UpcomingiPadView: View {
     @StateObject var upcoming: UpcomingViewModel
     @AppStorage("favouritedChannel") var favourited = Favourited()
+    @State var searchText: String = ""
     
     let layout = [
         GridItem(.adaptive(minimum: 300), spacing: 10)
@@ -30,25 +31,38 @@ struct UpcomingiPadView: View {
                 Spacer()
             } else {
                 LazyVGrid(columns: layout, spacing: 50) {
-                    ForEach(upcoming.videoList.filter { video in
-                        favourited.contains(where: { video.channel.id == $0 })
-                    }) { live in
-                        LinkedVideoView(videoKey: live.id) {
-                            UpcomingPaneView(upcoming: live)
+                    if searchText.isEmpty {
+                        ForEach(upcoming.videoList.filter { video in
+                            favourited.contains(where: { video.channel.id == $0 })
+                        }) { live in
+                            LinkedVideoView(videoKey: live.id) {
+                                UpcomingPaneView(upcoming: live)
+                            }
+                            .contextMenu {
+                                VideoContextMenu(video: live, twitterLink: upcoming.twitterList[live.channel.id] ?? nil)
+                            }
                         }
-                        .contextMenu {
-                            VideoContextMenu(video: live, twitterLink: upcoming.twitterList[live.channel.id] ?? nil)
+                        
+                        ForEach(upcoming.videoList.filter { video in
+                            !favourited.contains(where: { video.channel.id == $0 })
+                        }, id: \.self) { live in
+                            LinkedVideoView(videoKey: live.id) {
+                                UpcomingPaneView(upcoming: live)
+                            }
+                            .contextMenu {
+                                VideoContextMenu(video: live, twitterLink: upcoming.twitterList[live.channel.id] ?? nil)
+                            }
                         }
-                    }
-                    
-                    ForEach(upcoming.videoList.filter { video in
-                        !favourited.contains(where: { video.channel.id == $0 })
-                    }, id: \.self) { live in
-                        LinkedVideoView(videoKey: live.id) {
-                            UpcomingPaneView(upcoming: live)
-                        }
-                        .contextMenu {
-                            VideoContextMenu(video: live, twitterLink: upcoming.twitterList[live.channel.id] ?? nil)
+                    } else {
+                        ForEach(upcoming.videoList.filter { video in
+                            video.channel.talent.names[.en]!.localizedCaseInsensitiveContains(searchText) || video.channel.talent.names[.ja]!.localizedCaseInsensitiveContains(searchText)
+                        }) { live in
+                            LinkedVideoView(videoKey: live.id) {
+                                UpcomingPaneView(upcoming: live)
+                            }
+                            .contextMenu {
+                                VideoContextMenu(video: live, twitterLink: upcoming.twitterList[live.channel.id] ?? nil)
+                            }
                         }
                     }
                 }
@@ -65,6 +79,7 @@ struct UpcomingiPadView: View {
         .task {
             await upcoming.getUpcoming()
         }
+        .searchable(text: $searchText, prompt: "SEARCH_BY_NAME_OR_TAG")
         .toolbar {
             UpcomingViewToolbar()
             Button(action: {

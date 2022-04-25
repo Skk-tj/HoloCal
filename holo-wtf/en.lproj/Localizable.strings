@@ -87,3 +87,6 @@
 // Calendar acess
 "CALENDAR_ACCESS_TITLE" = "Calendar Access";
 "CALENDAR_ACCESS_MESSAGE" = "Calendar access is disabled. Please check your privacy settings. ";
+
+// Search prompt
+"SEARCH_BY_NAME_OR_TAG" = "Search by name or tag";

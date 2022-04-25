@@ -13,6 +13,7 @@
 		F009024027EE57BA00E343B0 /* LinkedVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009023F27EE57BA00E343B0 /* LinkedVideoView.swift */; };
 		F009024427EE5F3100E343B0 /* UpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */; };
 		F009024627EE6A9F00E343B0 /* VideoContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024527EE6A9F00E343B0 /* VideoContextMenu.swift */; };
+		F0114D4F2815F81600B99D4D /* DataStatusIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0114D4E2815F81600B99D4D /* DataStatusIndicatorView.swift */; };
 		F0433C4E27E99F85000FEADD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0433C4D27E99F85000FEADD /* SettingsView.swift */; };
 		F0433C5227EAEDDB000FEADD /* OpenSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */; };
 		F05E9EB327EB27F800EF48DD /* LiveiPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E9EB227EB27F800EF48DD /* LiveiPadView.swift */; };
@@ -67,6 +68,7 @@
 		F009023F27EE57BA00E343B0 /* LinkedVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedVideoView.swift; sourceTree = "<group>"; };
 		F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingTimeView.swift; sourceTree = "<group>"; };
 		F009024527EE6A9F00E343B0 /* VideoContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoContextMenu.swift; sourceTree = "<group>"; };
+		F0114D4E2815F81600B99D4D /* DataStatusIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStatusIndicatorView.swift; sourceTree = "<group>"; };
 		F0204DB827E91A920083750F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F0204DB927E925220083750F /* PRIVACY-POLICY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "PRIVACY-POLICY.md"; sourceTree = "<group>"; };
 		F0433C4D27E99F85000FEADD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				F0ED2B12280CB73D00683E6C /* TopicTagView.swift */,
 				F0EB53AF281290490024E089 /* PaneViewButtonRowView.swift */,
 				F0EB53B12812A2E90024E089 /* EventEditView.swift */,
+				F0114D4E2815F81600B99D4D /* DataStatusIndicatorView.swift */,
 				F009024227EE5DF000E343B0 /* iOS */,
 				F009024127EE5DDC00E343B0 /* iPadOS */,
 			);
@@ -403,6 +406,7 @@
 				F0ED2AF7280B640200683E6C /* VideoViewModel.swift in Sources */,
 				F0ED2B13280CB73D00683E6C /* TopicTagView.swift in Sources */,
 				F0EB53B22812A2E90024E089 /* EventEditView.swift in Sources */,
+				F0114D4F2815F81600B99D4D /* DataStatusIndicatorView.swift in Sources */,
 				F05E9EB727EB291900EF48DD /* SettingsiPadView.swift in Sources */,
 				F0ED2AE8280AA2BC00683E6C /* LiveCompactListView.swift in Sources */,
 				F0C657D22771F7CE004AF802 /* LiveCellView.swift in Sources */,
@@ -551,7 +555,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 33;
+				CURRENT_PROJECT_VERSION = 34;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -584,7 +588,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 33;
+				CURRENT_PROJECT_VERSION = 34;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
