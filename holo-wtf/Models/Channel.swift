@@ -15,4 +15,7 @@ struct Channel: Codable, Identifiable, Hashable {
     let org: String?
     
     var twitter: String?
+    var talent: Talent {
+        talentsToName[TalentsEnum(rawValue: id)!]!
+    }
 }

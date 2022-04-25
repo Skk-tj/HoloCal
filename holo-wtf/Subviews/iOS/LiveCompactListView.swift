@@ -9,15 +9,46 @@ import SwiftUI
 
 struct LiveCompactListView: View {
     @AppStorage("favouritedChannel") var favourited = Favourited()
+    @State var searchText: String = ""
     
     let live: LiveViewModel
     
     var body: some View {
         List {
-            if favourited.count != 0 && live.dataStatus == .success {
+            if searchText.isEmpty {
+                if favourited.count != 0 && live.dataStatus == .success {
+                    Section {
+                        ForEach(live.videoList.filter { video in
+                            favourited.contains(where: { video.channel.id == $0 })
+                        }) { live in
+                            SwipableLinkedCellView(video: live) {
+                                LiveCellView(live: live, twitterLink: self.live.twitterList[live.channel.id] ?? nil)
+                            }
+                        }
+                    }
+                }
+                
                 Section {
                     ForEach(live.videoList.filter { video in
-                        favourited.contains(where: { video.channel.id == $0 })
+                        !favourited.contains(where: { video.channel.id == $0 })
+                    }, id: \.self) { live in
+                        SwipableLinkedCellView(video: live) {
+                            LiveCellView(live: live, twitterLink: self.live.twitterList[live.channel.id] ?? nil)
+                        }
+                    }
+                    HStack {
+                        Spacer()
+                        DataStatusIndicatorView(dataStatus: live.dataStatus) {
+                            Text("LIVE_VIEW_CURRENT_COUNT \(live.videoList.count)")
+                                .foregroundColor(.secondary)
+                        }
+                        Spacer()
+                    }
+                }
+            } else {
+                Section {
+                    ForEach(live.videoList.filter { video in
+                        video.channel.talent.names[.en]!.localizedCaseInsensitiveContains(searchText) || video.channel.talent.names[.ja]!.localizedCaseInsensitiveContains(searchText)
                     }) { live in
                         SwipableLinkedCellView(video: live) {
                             LiveCellView(live: live, twitterLink: self.live.twitterList[live.channel.id] ?? nil)
@@ -25,32 +56,8 @@ struct LiveCompactListView: View {
                     }
                 }
             }
-            
-            Section {
-                ForEach(live.videoList.filter { video in
-                    !favourited.contains(where: { video.channel.id == $0 })
-                }, id: \.self) { live in
-                    SwipableLinkedCellView(video: live) {
-                        LiveCellView(live: live, twitterLink: self.live.twitterList[live.channel.id] ?? nil)
-                    }
-                }
-                HStack {
-                    Spacer()
-                    if (live.dataStatus == .fail) {
-                        Label("FAILED_TO_RETRIEVE_NEW_DATA", systemImage: "exclamationmark.circle.fill")
-                            .foregroundColor(.secondary)
-                    } else {
-                        if (live.dataStatus == .working) {
-                            ProgressView()
-                        } else {
-                            Text("LIVE_VIEW_CURRENT_COUNT \(live.videoList.count)")
-                                .foregroundColor(.secondary)
-                        }
-                    }
-                    Spacer()
-                }
-            }
         }
+        .searchable(text: $searchText, prompt: "SEARCH_BY_NAME_OR_TAG")
     }
 }
 

@@ -14,7 +14,7 @@ struct ManageFavoriteView: View {
     var body: some View {
         List {
             ForEach(talentsByGeneration, id: \.self) { generation in
-                Section(Locale.preferredLanguages[0] == "ja" ? generationToName[generation.generation]!["ja"]! : generationToName[generation.generation]!["en"]!) {
+                Section(Locale.preferredLanguages[0] == "ja" ? generationToName[generation.generation]![.ja]! : generationToName[generation.generation]![.en]!) {
                     ForEach(generation.members) { talent in
                         SettingsTalentStarView(talent: talentsToName[talent]!, favourited: $favourited)
                     }

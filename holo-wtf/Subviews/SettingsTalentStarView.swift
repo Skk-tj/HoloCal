@@ -17,15 +17,15 @@ struct SettingsTalentStarView: View {
             
             VStack(alignment: .leading) {
                 if Locale.current.languageCode == "ja" {
-                    Text("\(talent.names["ja"]!)")
+                    Text("\(talent.names[.ja]!)")
                         .font(.body)
-                    Text("\(talent.names["en"]!)")
+                    Text("\(talent.names[.en]!)")
                         .font(.caption)
                         .foregroundColor(.secondary)
                 } else {
-                    Text("\(talent.names["en"]!)")
+                    Text("\(talent.names[.en]!)")
                         .font(.body)
-                    Text("\(talent.names["ja"]!)")
+                    Text("\(talent.names[.ja]!)")
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
@@ -47,6 +47,6 @@ struct SettingsTalentStarView: View {
 
 struct SettingsTalentStarView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsTalentStarView(talent: Talent(id: "abcd", names: ["en": "Tokino Sora", "ja": "ときのそら"], inGeneration: .zerothGen), favourited: Binding.constant(["abcd"]))
+        SettingsTalentStarView(talent: Talent(id: "abcd", names: [.en: "Tokino Sora", .ja: "ときのそら"], inGeneration: .zerothGen), favourited: Binding.constant(["abcd"]))
     }
 }
