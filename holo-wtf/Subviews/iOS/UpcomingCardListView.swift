@@ -57,7 +57,7 @@ struct UpcomingCardListView: View {
             } else {
                 Section {
                     ForEach(upcoming.videoList.filter { video in
-                        video.channel.talent.names[.en]!.localizedCaseInsensitiveContains(searchText) || video.channel.talent.names[.ja]!.localizedCaseInsensitiveContains(searchText)
+                        video.channel.talent.names[.en]!.localizedCaseInsensitiveContains(searchText) || video.channel.talent.names[.ja]!.localizedCaseInsensitiveContains(searchText) || (video.topicId ?? "") .localizedStandardContains(searchText)
                     }) { live in
                         SwipableLinkedCellView(video: live) {
                             UpcomingPaneView(upcoming: live)
@@ -71,7 +71,13 @@ struct UpcomingCardListView: View {
             }
         }
         .listStyle(.plain)
-        .searchable(text: $searchText, prompt: "SEARCH_BY_NAME_OR_TAG")
+        .searchable(text: $searchText, prompt: "SEARCH_BY_NAME_OR_TAG") {
+            if searchText.isEmpty {
+                ForEach(upcoming.getSearchSuggestions(), id: \.self) { suggestion in
+                    Text("\(suggestion)").searchCompletion(suggestion)
+                }
+            }
+        }
     }
 }
 

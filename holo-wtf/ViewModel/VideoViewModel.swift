@@ -7,6 +7,7 @@
 
 import Foundation
 import OSLog
+import Algorithms
 
 @MainActor
 class VideoViewModel: ObservableObject {
@@ -73,5 +74,15 @@ class VideoViewModel: ObservableObject {
         }
         
         return twitterList
+    }
+    
+    func getSearchSuggestions() -> [String] {
+        let englishNames: [String] = self.videoList.map { video in talentsToName[TalentsEnum(rawValue: video.channel.id)!]!.names[.en]! }
+        let japaneseNames: [String] = self.videoList.map { video in talentsToName[TalentsEnum(rawValue: video.channel.id)!]!.names[.ja]! }
+        let allTags: [String] = self.videoList.compactMap { video in video.topicId }
+        
+        let suggestionsList: [String] = Array((englishNames + japaneseNames + allTags).uniqued())
+        
+        return suggestionsList
     }
 }
