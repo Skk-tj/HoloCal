@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Algorithms
 
 struct LiveCardListView: View {
     @AppStorage("favouritedChannel") var favourited = Favourited()
@@ -59,7 +58,7 @@ struct LiveCardListView: View {
             } else {
                 Section {
                     ForEach(live.videoList.filter { video in
-                        video.channel.talent.names[.en]!.localizedCaseInsensitiveContains(searchText) || video.channel.talent.names[.ja]!.localizedCaseInsensitiveContains(searchText)
+                        video.channel.talent.names[.en]!.localizedCaseInsensitiveContains(searchText) || video.channel.talent.names[.ja]!.localizedCaseInsensitiveContains(searchText) || (video.topicId ?? "") .localizedStandardContains(searchText)
                     }) { live in
                         SwipableLinkedCellView(video: live) {
                             LivePaneView(live: live)
@@ -72,23 +71,13 @@ struct LiveCardListView: View {
                 }
             }
         }
-        .searchable(text: $searchText, prompt: "SEARCH_BY_NAME_OR_TAG")
-//            if searchText.isEmpty {
-//                ForEach(
-//                    live.videoList
-//                        .map { video in talentsToName[TalentsEnum(rawValue: video.channel.id)!]! }
-//                ) { talent in
-//                    Text("\(talent.names[.en]!) / \(talent.names[.ja]!)")
-//                }
-//            } else {
-//                ForEach(
-//                    live.videoList
-//                        .map { video in talentsToName[TalentsEnum(rawValue: video.channel.id)!]! }
-//                        .filter { talent in talent.names[.en]!.localizedCaseInsensitiveContains(searchText) || talent.names[.ja]!.localizedCaseInsensitiveContains(searchText) }
-//                ) { talent in
-//                    Text("\(talent.names[.en]!) / \(talent.names[.ja]!)")
-//                }
-//            }
+        .searchable(text: $searchText, prompt: "SEARCH_BY_NAME_OR_TAG") {
+            if searchText.isEmpty {
+                ForEach(live.getSearchSuggestions(), id: \.self) { suggestion in
+                    Text("\(suggestion)").searchCompletion(suggestion)
+                }
+            }
+        }
         .listStyle(.plain)
     }
 }
