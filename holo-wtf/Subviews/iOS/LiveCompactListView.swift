@@ -18,24 +18,21 @@ struct LiveCompactListView: View {
             if searchText.isEmpty {
                 if favourited.count != 0 && live.dataStatus == .success {
                     Section {
-                        ForEach(live.videoList.filter { video in
-                            favourited.contains(where: { video.channel.id == $0 })
-                        }) { live in
+                        FavouritedForEachView(viewModel: live, cellView: { live in
                             SwipableLinkedCellView(video: live) {
                                 LiveCellView(live: live, twitterLink: self.live.twitterList[live.channel.id] ?? nil)
                             }
-                        }
+                        })
                     }
                 }
                 
                 Section {
-                    ForEach(live.videoList.filter { video in
-                        !favourited.contains(where: { video.channel.id == $0 })
-                    }, id: \.self) { live in
+                    NotFavouritedForEachView(viewModel: live, cellView: { live in
                         SwipableLinkedCellView(video: live) {
                             LiveCellView(live: live, twitterLink: self.live.twitterList[live.channel.id] ?? nil)
                         }
-                    }
+                    })
+                    
                     HStack {
                         Spacer()
                         DataStatusIndicatorView(dataStatus: live.dataStatus) {

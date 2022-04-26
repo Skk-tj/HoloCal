@@ -33,39 +33,33 @@ struct LiveiPadView: View {
                 LazyVGrid(columns: layout, spacing: 50) {
                     if searchText.isEmpty {
                         //- MARK: Favourites Section
-                        ForEach(live.videoList.filter { video in
-                            favourited.contains(where: { video.channel.id == $0 })
-                        }) { live in
+                        FavouritedForEachView(viewModel: live, cellView: { live in
                             LinkedVideoView(videoKey: live.id) {
                                 LivePaneView(live: live)
                             }
                             .contextMenu {
                                 VideoContextMenu(video: live, twitterLink: self.live.twitterList[live.channel.id] ?? nil)
                             }
-                        }
+                        })
                         
                         //- MARK: Not favourited
-                        ForEach(live.videoList.filter { video in
-                            !favourited.contains(where: { video.channel.id == $0 })
-                        }, id: \.self) { live in
+                        NotFavouritedForEachView(viewModel: live, cellView: { live in
                             LinkedVideoView(videoKey: live.id) {
                                 LivePaneView(live: live)
                             }
                             .contextMenu {
                                 VideoContextMenu(video: live, twitterLink: self.live.twitterList[live.channel.id] ?? nil)
                             }
-                        }
+                        })
                     } else {
-                        ForEach(live.videoList.filter { video in
-                            video.channel.talent.names[.en]!.localizedCaseInsensitiveContains(searchText) || video.channel.talent.names[.ja]!.localizedCaseInsensitiveContains(searchText) || (video.topicId ?? "") .localizedStandardContains(searchText)
-                        }) { live in
+                        SearchForEachView(viewModel: live, searchText: searchText, cellView: { live in
                             LinkedVideoView(videoKey: live.id) {
                                 LivePaneView(live: live)
                             }
                             .contextMenu {
                                 VideoContextMenu(video: live, twitterLink: self.live.twitterList[live.channel.id] ?? nil)
                             }
-                        }
+                        })
                     }
                 }
                 .padding(30)

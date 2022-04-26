@@ -18,24 +18,20 @@ struct UpcomingCompactListView: View {
             if searchText.isEmpty {
                 if favourited.count != 0 && upcoming.dataStatus == .success {
                     Section {
-                        ForEach(upcoming.videoList.filter { video in
-                            favourited.contains(where: { video.channel.id == $0 })
-                        }) { live in
+                        FavouritedForEachView(viewModel: upcoming, cellView: { live in
                             SwipableLinkedCellView(video: live) {
                                 UpcomingCellView(upcoming: live, twitterLink: upcoming.twitterList[live.channel.id] ?? nil)
                             }
-                        }
+                        })
                     }
                 }
                 
                 Section {
-                    ForEach(upcoming.videoList.filter { video in
-                        !favourited.contains(where: { video.channel.id == $0 })
-                    }, id: \.self) { live in
+                    NotFavouritedForEachView(viewModel: upcoming, cellView: { live in
                         SwipableLinkedCellView(video: live) {
                             UpcomingCellView(upcoming: live, twitterLink: upcoming.twitterList[live.channel.id] ?? nil)
                         }
-                    }
+                    })
                     HStack {
                         Spacer()
                         DataStatusIndicatorView(dataStatus: upcoming.dataStatus) {

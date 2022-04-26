@@ -32,38 +32,32 @@ struct UpcomingiPadView: View {
             } else {
                 LazyVGrid(columns: layout, spacing: 50) {
                     if searchText.isEmpty {
-                        ForEach(upcoming.videoList.filter { video in
-                            favourited.contains(where: { video.channel.id == $0 })
-                        }) { live in
+                        FavouritedForEachView(viewModel: upcoming, cellView: { live in
                             LinkedVideoView(videoKey: live.id) {
                                 UpcomingPaneView(upcoming: live)
                             }
                             .contextMenu {
                                 VideoContextMenu(video: live, twitterLink: upcoming.twitterList[live.channel.id] ?? nil)
                             }
-                        }
+                        })
                         
-                        ForEach(upcoming.videoList.filter { video in
-                            !favourited.contains(where: { video.channel.id == $0 })
-                        }, id: \.self) { live in
+                        NotFavouritedForEachView(viewModel: upcoming, cellView: { live in
                             LinkedVideoView(videoKey: live.id) {
                                 UpcomingPaneView(upcoming: live)
                             }
                             .contextMenu {
                                 VideoContextMenu(video: live, twitterLink: upcoming.twitterList[live.channel.id] ?? nil)
                             }
-                        }
+                        })
                     } else {
-                        ForEach(upcoming.videoList.filter { video in
-                            video.channel.talent.names[.en]!.localizedCaseInsensitiveContains(searchText) || video.channel.talent.names[.ja]!.localizedCaseInsensitiveContains(searchText) || (video.topicId ?? "") .localizedStandardContains(searchText)
-                        }) { live in
+                        SearchForEachView(viewModel: upcoming, searchText: searchText, cellView: { live in
                             LinkedVideoView(videoKey: live.id) {
                                 UpcomingPaneView(upcoming: live)
                             }
                             .contextMenu {
                                 VideoContextMenu(video: live, twitterLink: upcoming.twitterList[live.channel.id] ?? nil)
                             }
-                        }
+                        })
                     }
                 }
                 .padding(30)
