@@ -26,6 +26,9 @@
 		F080A04F27F95D9E00DBC08D /* Talents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A04E27F95D9E00DBC08D /* Talents.swift */; };
 		F080A05127F993DC00DBC08D /* ManageFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A05027F993DC00DBC08D /* ManageFavoriteView.swift */; };
 		F0954BDE2817B73E00369EC4 /* SearchSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BDD2817B73E00369EC4 /* SearchSectionView.swift */; };
+		F0954BE02817C01900369EC4 /* SearchForEachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BDF2817C01900369EC4 /* SearchForEachView.swift */; };
+		F0954BE22817C52700369EC4 /* FavouritedForEachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BE12817C52700369EC4 /* FavouritedForEachView.swift */; };
+		F0954BE62817C8BF00369EC4 /* NotFavouritedForEachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BE52817C8BF00369EC4 /* NotFavouritedForEachView.swift */; };
 		F09D25BE27FC2552001A7D71 /* SettingsTalentStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25BD27FC2552001A7D71 /* SettingsTalentStarView.swift */; };
 		F09D25C127FEBA2E001A7D71 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = F09D25C027FEBA2E001A7D71 /* Algorithms */; };
 		F09D25C327FEC12D001A7D71 /* SettingsFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */; };
@@ -84,6 +87,9 @@
 		F080A04E27F95D9E00DBC08D /* Talents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talents.swift; sourceTree = "<group>"; };
 		F080A05027F993DC00DBC08D /* ManageFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageFavoriteView.swift; sourceTree = "<group>"; };
 		F0954BDD2817B73E00369EC4 /* SearchSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSectionView.swift; sourceTree = "<group>"; };
+		F0954BDF2817C01900369EC4 /* SearchForEachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchForEachView.swift; sourceTree = "<group>"; };
+		F0954BE12817C52700369EC4 /* FavouritedForEachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritedForEachView.swift; sourceTree = "<group>"; };
+		F0954BE52817C8BF00369EC4 /* NotFavouritedForEachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFavouritedForEachView.swift; sourceTree = "<group>"; };
 		F09D25BD27FC2552001A7D71 /* SettingsTalentStarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTalentStarView.swift; sourceTree = "<group>"; };
 		F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFormView.swift; sourceTree = "<group>"; };
 		F09D25C828020B12001A7D71 /* UpcomingViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewToolbar.swift; sourceTree = "<group>"; };
@@ -194,8 +200,11 @@
 				F0EB53AF281290490024E089 /* PaneViewButtonRowView.swift */,
 				F0EB53B12812A2E90024E089 /* EventEditView.swift */,
 				F0114D4E2815F81600B99D4D /* DataStatusIndicatorView.swift */,
+				F0954BDF2817C01900369EC4 /* SearchForEachView.swift */,
+				F0954BE12817C52700369EC4 /* FavouritedForEachView.swift */,
 				F009024227EE5DF000E343B0 /* iOS */,
 				F009024127EE5DDC00E343B0 /* iPadOS */,
+				F0954BE52817C8BF00369EC4 /* NotFavouritedForEachView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -379,6 +388,7 @@
 				F0673C172775F7FB009C65C6 /* LiveAvatarView.swift in Sources */,
 				F0BD611B27EC594300A2FBED /* UpcomingPaneView.swift in Sources */,
 				F0ED2AEC280AA7D400683E6C /* UpcomingCompactListView.swift in Sources */,
+				F0954BE62817C8BF00369EC4 /* NotFavouritedForEachView.swift in Sources */,
 				F0C657BD2771F47C004AF802 /* LiveView.swift in Sources */,
 				F0EB53BD2812C5680024E089 /* OldShareButton.swift in Sources */,
 				F0EB53B0281290490024E089 /* PaneViewButtonRowView.swift in Sources */,
@@ -413,10 +423,12 @@
 				F0114D4F2815F81600B99D4D /* DataStatusIndicatorView.swift in Sources */,
 				F05E9EB727EB291900EF48DD /* SettingsiPadView.swift in Sources */,
 				F0ED2AE8280AA2BC00683E6C /* LiveCompactListView.swift in Sources */,
+				F0954BE22817C52700369EC4 /* FavouritedForEachView.swift in Sources */,
 				F0C657D22771F7CE004AF802 /* LiveCellView.swift in Sources */,
 				F009024427EE5F3100E343B0 /* UpcomingTimeView.swift in Sources */,
 				F0C657BB2771F47C004AF802 /* holo_wtfApp.swift in Sources */,
 				F0673C0E27732BA3009C65C6 /* UpcomingView.swift in Sources */,
+				F0954BE02817C01900369EC4 /* SearchForEachView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,7 +571,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 35;
+				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -592,7 +604,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 35;
+				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;

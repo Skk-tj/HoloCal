@@ -15,11 +15,9 @@ struct SearchSectionView<Content: View>: View {
     
     var body: some View {
         Section {
-            ForEach(viewModel.videoList.filter { video in
-                video.channel.talent.names[.en]!.localizedCaseInsensitiveContains(searchText) || video.channel.talent.names[.ja]!.localizedCaseInsensitiveContains(searchText) || (video.topicId ?? "") .localizedStandardContains(searchText)
-            }) { live in
+            SearchForEachView(viewModel: viewModel, searchText: searchText, cellView: { live in
                 cellView(live)
-            }
+            })
         }
     }
 }
