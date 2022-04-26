@@ -86,3 +86,6 @@
 // Calendar acess
 "CALENDAR_ACCESS_TITLE" = "カレンダーアクセス許可";
 "CALENDAR_ACCESS_MESSAGE" = "カレンダーにアクセスできません。プライバシー設定をご確認ください。";
+
+// Search prompt
+"SEARCH_BY_NAME_OR_TAG" = "名前またはタグで検索";

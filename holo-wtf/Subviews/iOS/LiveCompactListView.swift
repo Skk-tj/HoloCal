@@ -46,15 +46,11 @@ struct LiveCompactListView: View {
                     }
                 }
             } else {
-                Section {
-                    ForEach(live.videoList.filter { video in
-                        video.channel.talent.names[.en]!.localizedCaseInsensitiveContains(searchText) || video.channel.talent.names[.ja]!.localizedCaseInsensitiveContains(searchText) || (video.topicId ?? "") .localizedStandardContains(searchText)
-                    }) { live in
-                        SwipableLinkedCellView(video: live) {
-                            LiveCellView(live: live, twitterLink: self.live.twitterList[live.channel.id] ?? nil)
-                        }
+                SearchSectionView(viewModel: live, searchText: searchText, cellView: { live in
+                    SwipableLinkedCellView(video: live) {
+                        LiveCellView(live: live, twitterLink: self.live.twitterList[live.channel.id] ?? nil)
                     }
-                }
+                })
             }
         }
         .searchable(text: $searchText, prompt: "SEARCH_BY_NAME_OR_TAG") {
