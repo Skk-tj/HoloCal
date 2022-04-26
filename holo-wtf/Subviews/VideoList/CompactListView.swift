@@ -1,0 +1,34 @@
+//
+//  CompactListView.swift
+//  holo-wtf
+//
+//  Created by Haoyi An on 2022-04-26.
+//
+
+import SwiftUI
+
+struct CompactListView<CellContent: View, DataStatusContent: View>: View {
+    @AppStorage("favouritedChannel") var favourited = Favourited()
+    
+    let viewModel: VideoViewModel
+    
+    @Binding var searchText: String
+    @ViewBuilder let cellView: (_ live: LiveVideo) -> CellContent
+    @ViewBuilder let dataStatusView: () -> DataStatusContent
+    
+    var body: some View {
+        VideoListView(viewModel: viewModel, searchText: $searchText, singleVideoView: { live in
+            SwipableLinkedCellView(video: live) {
+                cellView(live)
+            }
+        }, dataStatusView: {
+            dataStatusView()
+        })
+    }
+}
+
+//struct CellListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CellListView()
+//    }
+//}
