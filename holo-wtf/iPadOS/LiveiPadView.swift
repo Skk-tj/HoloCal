@@ -57,7 +57,7 @@ struct LiveiPadView: View {
                         }
                     } else {
                         ForEach(live.videoList.filter { video in
-                            video.channel.talent.names[.en]!.localizedCaseInsensitiveContains(searchText) || video.channel.talent.names[.ja]!.localizedCaseInsensitiveContains(searchText)
+                            video.channel.talent.names[.en]!.localizedCaseInsensitiveContains(searchText) || video.channel.talent.names[.ja]!.localizedCaseInsensitiveContains(searchText) || (video.topicId ?? "") .localizedStandardContains(searchText)
                         }) { live in
                             LinkedVideoView(videoKey: live.id) {
                                 LivePaneView(live: live)
@@ -66,8 +66,6 @@ struct LiveiPadView: View {
                                 VideoContextMenu(video: live, twitterLink: self.live.twitterList[live.channel.id] ?? nil)
                             }
                         }
-                        
-                        
                     }
                 }
                 .padding(30)
@@ -84,7 +82,13 @@ struct LiveiPadView: View {
             await live.getLive()
         }
         .navigationTitle("LIVE_VIEW_TITLE")
-        .searchable(text: $searchText, prompt: "SEARCH_BY_NAME_OR_TAG")
+        .searchable(text: $searchText, prompt: "SEARCH_BY_NAME_OR_TAG") {
+            if searchText.isEmpty {
+                ForEach(live.getSearchSuggestions(), id: \.self) { suggestion in
+                    Text("\(suggestion)").searchCompletion(suggestion)
+                }
+            }
+        }
         .toolbar {
             LiveViewToolbar()
             Button(action: {

@@ -56,19 +56,15 @@ struct LiveCardListView: View {
                     .listRowSeparator(.hidden)
                 }
             } else {
-                Section {
-                    ForEach(live.videoList.filter { video in
-                        video.channel.talent.names[.en]!.localizedCaseInsensitiveContains(searchText) || video.channel.talent.names[.ja]!.localizedCaseInsensitiveContains(searchText) || (video.topicId ?? "") .localizedStandardContains(searchText)
-                    }) { live in
-                        SwipableLinkedCellView(video: live) {
-                            LivePaneView(live: live)
-                        }
-                        .contextMenu {
-                            VideoContextMenu(video: live, twitterLink: self.live.twitterList[live.channel.id] ?? nil)
-                        }
-                        .listRowSeparator(.hidden)
+                SearchSectionView(viewModel: live, searchText: searchText, cellView: { live in
+                    SwipableLinkedCellView(video: live) {
+                        LivePaneView(live: live)
                     }
-                }
+                    .contextMenu {
+                        VideoContextMenu(video: live, twitterLink: self.live.twitterList[live.channel.id] ?? nil)
+                    }
+                    .listRowSeparator(.hidden)
+                })
             }
         }
         .searchable(text: $searchText, prompt: "SEARCH_BY_NAME_OR_TAG") {
