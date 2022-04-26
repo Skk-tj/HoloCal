@@ -29,6 +29,9 @@
 		F0954BE02817C01900369EC4 /* SearchForEachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BDF2817C01900369EC4 /* SearchForEachView.swift */; };
 		F0954BE22817C52700369EC4 /* FavouritedForEachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BE12817C52700369EC4 /* FavouritedForEachView.swift */; };
 		F0954BE62817C8BF00369EC4 /* NotFavouritedForEachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BE52817C8BF00369EC4 /* NotFavouritedForEachView.swift */; };
+		F0954BE82817CD7800369EC4 /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BE72817CD7800369EC4 /* CardListView.swift */; };
+		F0954BEA2817D0C500369EC4 /* CompactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BE92817D0C500369EC4 /* CompactListView.swift */; };
+		F0954BEC2817D63100369EC4 /* VideoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BEB2817D63100369EC4 /* VideoListView.swift */; };
 		F09D25BE27FC2552001A7D71 /* SettingsTalentStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25BD27FC2552001A7D71 /* SettingsTalentStarView.swift */; };
 		F09D25C127FEBA2E001A7D71 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = F09D25C027FEBA2E001A7D71 /* Algorithms */; };
 		F09D25C327FEC12D001A7D71 /* SettingsFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */; };
@@ -90,6 +93,9 @@
 		F0954BDF2817C01900369EC4 /* SearchForEachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchForEachView.swift; sourceTree = "<group>"; };
 		F0954BE12817C52700369EC4 /* FavouritedForEachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritedForEachView.swift; sourceTree = "<group>"; };
 		F0954BE52817C8BF00369EC4 /* NotFavouritedForEachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFavouritedForEachView.swift; sourceTree = "<group>"; };
+		F0954BE72817CD7800369EC4 /* CardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
+		F0954BE92817D0C500369EC4 /* CompactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompactListView.swift; sourceTree = "<group>"; };
+		F0954BEB2817D63100369EC4 /* VideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListView.swift; sourceTree = "<group>"; };
 		F09D25BD27FC2552001A7D71 /* SettingsTalentStarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTalentStarView.swift; sourceTree = "<group>"; };
 		F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFormView.swift; sourceTree = "<group>"; };
 		F09D25C828020B12001A7D71 /* UpcomingViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewToolbar.swift; sourceTree = "<group>"; };
@@ -139,29 +145,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F009024127EE5DDC00E343B0 /* iPadOS */ = {
-			isa = PBXGroup;
-			children = (
-				F05E9EB827EB3C6100EF48DD /* LivePaneView.swift */,
-				F0BD611A27EC594300A2FBED /* UpcomingPaneView.swift */,
-			);
-			path = iPadOS;
-			sourceTree = "<group>";
-		};
-		F009024227EE5DF000E343B0 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				F0C657D12771F7CE004AF802 /* LiveCellView.swift */,
-				F0673C1127732CE7009C65C6 /* UpcomingCellView.swift */,
-				F0ED2AE7280AA2BC00683E6C /* LiveCompactListView.swift */,
-				F0ED2AE9280AA37B00683E6C /* LiveCardListView.swift */,
-				F0ED2AEB280AA7D400683E6C /* UpcomingCompactListView.swift */,
-				F0ED2AED280AA91E00683E6C /* UpcomingCardListView.swift */,
-				F0954BDD2817B73E00369EC4 /* SearchSectionView.swift */,
-			);
-			path = iOS;
-			sourceTree = "<group>";
-		};
 		F05E9EB027EB27D100EF48DD /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,27 +169,72 @@
 		F0673C182775FE2B009C65C6 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				F0EB53B42812BD640024E089 /* Buttons */,
+				F0954BEF2817D83E00369EC4 /* CellElement */,
+				F0954BEE2817D82200369EC4 /* VideoList */,
+				F0954BED2817D80400369EC4 /* VideoCell */,
+				F0EB53B42812BD640024E089 /* Button */,
 				F0EB53B32812BCBF0024E089 /* Toolbar */,
-				F0673C162775F7FB009C65C6 /* LiveAvatarView.swift */,
-				F009023727EDB6AE00E343B0 /* LiveTimeView.swift */,
-				F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */,
-				F009023F27EE57BA00E343B0 /* LinkedVideoView.swift */,
-				F09D25E42802EA09001A7D71 /* SwipableLinkedCellView.swift */,
-				F009024527EE6A9F00E343B0 /* VideoContextMenu.swift */,
 				F09D25BD27FC2552001A7D71 /* SettingsTalentStarView.swift */,
-				F0ED2AE52808253700683E6C /* VideoThumbnailView.swift */,
-				F0ED2B12280CB73D00683E6C /* TopicTagView.swift */,
-				F0EB53AF281290490024E089 /* PaneViewButtonRowView.swift */,
-				F0EB53B12812A2E90024E089 /* EventEditView.swift */,
 				F0114D4E2815F81600B99D4D /* DataStatusIndicatorView.swift */,
 				F0954BDF2817C01900369EC4 /* SearchForEachView.swift */,
 				F0954BE12817C52700369EC4 /* FavouritedForEachView.swift */,
-				F009024227EE5DF000E343B0 /* iOS */,
-				F009024127EE5DDC00E343B0 /* iPadOS */,
 				F0954BE52817C8BF00369EC4 /* NotFavouritedForEachView.swift */,
+				F0954BDD2817B73E00369EC4 /* SearchSectionView.swift */,
+				F0EB53B12812A2E90024E089 /* EventEditView.swift */,
 			);
 			path = Subviews;
+			sourceTree = "<group>";
+		};
+		F0954BED2817D80400369EC4 /* VideoCell */ = {
+			isa = PBXGroup;
+			children = (
+				F009023F27EE57BA00E343B0 /* LinkedVideoView.swift */,
+				F09D25E42802EA09001A7D71 /* SwipableLinkedCellView.swift */,
+				F009024527EE6A9F00E343B0 /* VideoContextMenu.swift */,
+				F0C657D12771F7CE004AF802 /* LiveCellView.swift */,
+				F0673C1127732CE7009C65C6 /* UpcomingCellView.swift */,
+				F05E9EB827EB3C6100EF48DD /* LivePaneView.swift */,
+				F0BD611A27EC594300A2FBED /* UpcomingPaneView.swift */,
+			);
+			path = VideoCell;
+			sourceTree = "<group>";
+		};
+		F0954BEE2817D82200369EC4 /* VideoList */ = {
+			isa = PBXGroup;
+			children = (
+				F0ED2AE7280AA2BC00683E6C /* LiveCompactListView.swift */,
+				F0ED2AE9280AA37B00683E6C /* LiveCardListView.swift */,
+				F0ED2AEB280AA7D400683E6C /* UpcomingCompactListView.swift */,
+				F0ED2AED280AA91E00683E6C /* UpcomingCardListView.swift */,
+				F0954BE72817CD7800369EC4 /* CardListView.swift */,
+				F0954BE92817D0C500369EC4 /* CompactListView.swift */,
+				F0954BEB2817D63100369EC4 /* VideoListView.swift */,
+			);
+			path = VideoList;
+			sourceTree = "<group>";
+		};
+		F0954BEF2817D83E00369EC4 /* CellElement */ = {
+			isa = PBXGroup;
+			children = (
+				F0EB53AF281290490024E089 /* PaneViewButtonRowView.swift */,
+				F0673C162775F7FB009C65C6 /* LiveAvatarView.swift */,
+				F009023727EDB6AE00E343B0 /* LiveTimeView.swift */,
+				F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */,
+				F0ED2AE52808253700683E6C /* VideoThumbnailView.swift */,
+				F0ED2B12280CB73D00683E6C /* TopicTagView.swift */,
+			);
+			path = CellElement;
+			sourceTree = "<group>";
+		};
+		F0954BF02817D8AC00369EC4 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */,
+				F080A05027F993DC00DBC08D /* ManageFavoriteView.swift */,
+				F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */,
+				F0C657D527732690004AF802 /* Util.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		F0C657AE2771F47C004AF802 = {
@@ -229,12 +257,9 @@
 			isa = PBXGroup;
 			children = (
 				F0C657BA2771F47C004AF802 /* holo_wtfApp.swift */,
-				F0C657D527732690004AF802 /* Util.swift */,
 				F05E9EB127EB27E800EF48DD /* iPadOS */,
 				F05E9EB027EB27D100EF48DD /* iOS */,
-				F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */,
-				F080A05027F993DC00DBC08D /* ManageFavoriteView.swift */,
-				F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */,
+				F0954BF02817D8AC00369EC4 /* Shared */,
 				F0673C182775FE2B009C65C6 /* Subviews */,
 				F0C657D02771F71C004AF802 /* ViewModel */,
 				F0C657CA2771F4F3004AF802 /* Models */,
@@ -287,14 +312,14 @@
 			path = Toolbar;
 			sourceTree = "<group>";
 		};
-		F0EB53B42812BD640024E089 /* Buttons */ = {
+		F0EB53B42812BD640024E089 /* Button */ = {
 			isa = PBXGroup;
 			children = (
 				F0EB53B52812BD6F0024E089 /* FavouriteButton.swift */,
 				F0EB53B72812BEAD0024E089 /* ShareButton.swift */,
 				F0EB53BC2812C5680024E089 /* OldShareButton.swift */,
 			);
-			path = Buttons;
+			path = Button;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,11 +427,13 @@
 				F0673C1227732CE7009C65C6 /* UpcomingCellView.swift in Sources */,
 				F009023A27EDB85100E343B0 /* LiveViewToolbar.swift in Sources */,
 				F09D25BE27FC2552001A7D71 /* SettingsTalentStarView.swift in Sources */,
+				F0954BEC2817D63100369EC4 /* VideoListView.swift in Sources */,
 				F0ED2AE22806858300683E6C /* Channel.swift in Sources */,
 				F0954BDE2817B73E00369EC4 /* SearchSectionView.swift in Sources */,
 				F0ED2AE4280685FD00683E6C /* LiveVideo.swift in Sources */,
 				F0ED2AF3280AD60D00683E6C /* UpcomingViewModel.swift in Sources */,
 				F0EB53B82812BEAD0024E089 /* ShareButton.swift in Sources */,
+				F0954BEA2817D0C500369EC4 /* CompactListView.swift in Sources */,
 				F05E9EB327EB27F800EF48DD /* LiveiPadView.swift in Sources */,
 				F0C657D627732690004AF802 /* Util.swift in Sources */,
 				F09D25C327FEC12D001A7D71 /* SettingsFormView.swift in Sources */,
@@ -428,6 +455,7 @@
 				F009024427EE5F3100E343B0 /* UpcomingTimeView.swift in Sources */,
 				F0C657BB2771F47C004AF802 /* holo_wtfApp.swift in Sources */,
 				F0673C0E27732BA3009C65C6 /* UpcomingView.swift in Sources */,
+				F0954BE82817CD7800369EC4 /* CardListView.swift in Sources */,
 				F0954BE02817C01900369EC4 /* SearchForEachView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,7 +599,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 38;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -604,7 +632,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 38;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
