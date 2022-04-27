@@ -20,6 +20,7 @@ struct PaneViewButtonRowView: View {
                 Label("LINKED_VIDEO_SWIPE_ACTIONS_SHARE", systemImage: "square.and.arrow.up")
                     .labelStyle(.iconOnly)
             }
+            .hoverEffect()
             
             Spacer()
             
@@ -47,6 +48,7 @@ struct PaneViewButtonRowView: View {
             }, message: {
                 Text("CALENDAR_ACCESS_MESSAGE")
             })
+            .hoverEffect()
             
             Spacer()
             
@@ -55,6 +57,7 @@ struct PaneViewButtonRowView: View {
                 Label(isFavourited ? "LINKED_VIDEO_SWIPE_ACTIONS_UNFAVOURITE" : "LINKED_VIDEO_SWIPE_ACTIONS_FAVOURITE", systemImage: isFavourited ? "star.fill" : "star")
                     .labelStyle(.iconOnly)
             }
+            .hoverEffect()
         }
     }
 }
