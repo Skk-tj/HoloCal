@@ -19,7 +19,7 @@ struct CardListView<PaneContent: View, StatusContent: View>: View {
     var body: some View {
         VideoListView(viewModel: viewModel, searchText: $searchText, singleVideoView: { live in
             SwipableLinkedCellView(video: live) {
-                LivePaneView(live: live)
+                paneView(live)
             }
             .contextMenu {
                 VideoContextMenu(video: live, twitterLink: self.viewModel.twitterList[live.channel.id] ?? nil)
