@@ -31,6 +31,7 @@
 "SETTINGS_ABOUT_BUG_REPORT" = "Feedback & Bug report";
 "SETTINGS_OPEN_SOURCE" = "Open Source Projects used";
 "SETTINGS_BETA_TESTING" = "Participate in Beta testing";
+"SETTINGS_TWITTER" = "Follow developer Twitter for HoloCal news";
 
 // OpenSourceView
 
@@ -70,6 +71,13 @@
 "LIVE_VIEW_TOOLBAR_SHOW_RELATIVE" = "Show relative time";
 "LIVE_VIEW_TOOLBAR_SHOW_COMPACT" = "Show compact view";
 "LIVE_VIEW_TOOLBAR_SHOW_CARD" = "Show card view";
+"LIVE_VIEW_TOOLBAR_SORT" = "Sort...";
+"LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME" = "Sort by start time...";
+"LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS" = "Sort by viewers...";
+"LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS_ASCENDING" = "Ascending";
+"LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS_ASCENDING" = "Descending";
+"LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST" = "Nearest to furthest";
+"LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_FURTHEST_TO_NEAREST" = "Furthest to nearest";
 
 // VideoContextMenu
 "VIDEO_CONTEXT_MENU_TWITTER_PROFILE" = "Open Twitter profile";

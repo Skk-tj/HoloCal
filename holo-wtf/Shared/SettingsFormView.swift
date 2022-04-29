@@ -42,6 +42,10 @@ struct SettingsFormView: View {
                     Text("SETTINGS_BETA_TESTING")
                 }
                 
+                Link(destination: URL(string: "https://twitter.com/skk_tj")!) {
+                    Text("SETTINGS_TWITTER")
+                }
+                
                 NavigationLink(destination: OpenSourceView()) {
                     Text("SETTINGS_OPEN_SOURCE")
                 }

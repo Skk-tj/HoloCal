@@ -84,7 +84,7 @@ struct LiveiPadView: View {
             }
         }
         .toolbar {
-            LiveViewToolbar()
+            LiveViewToolbar(liveViewModel: live)
             Button(action: {
                 Task {
                     await live.getLive()

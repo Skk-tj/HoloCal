@@ -9,6 +9,16 @@ import Foundation
 import OSLog
 import Algorithms
 
+enum SortingOrder: Hashable {
+    case asc
+    case desc
+}
+
+enum SortingStrategy: Hashable {
+    case viewers(SortingOrder)
+    case time(SortingOrder)
+}
+
 @MainActor
 class VideoViewModel: ObservableObject {
     @Published var videoList: [LiveVideo]
@@ -84,5 +94,24 @@ class VideoViewModel: ObservableObject {
         let suggestionsList: [String] = Array((englishNames + japaneseNames + allTags).uniqued())
         
         return suggestionsList
+    }
+    
+    func sortVideos(by strategy: SortingStrategy) {
+        switch strategy {
+        case .viewers(let sortingOrder):
+            switch sortingOrder {
+            case .asc:
+                self.videoList.sort(by: {$0.liveViewers < $1.liveViewers})
+            case .desc:
+                self.videoList.sort(by: {$0.liveViewers > $1.liveViewers})
+            }
+        case .time(let sortingOrder):
+            switch sortingOrder {
+            case .asc:
+                self.videoList.sort(by: {$0.startActual ?? ($0.startScheduled ?? Date.distantFuture) < $1.startActual ?? ($1.startScheduled ?? Date.distantFuture)})
+            case .desc:
+                self.videoList.sort(by: {$0.startActual ?? ($0.startScheduled ?? Date.distantFuture) > $1.startActual ?? ($1.startScheduled ?? Date.distantFuture)})
+            }
+        }
     }
 }
