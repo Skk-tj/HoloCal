@@ -81,7 +81,7 @@ struct UpcomingiPadView: View {
             }
         }
         .toolbar {
-            UpcomingViewToolbar()
+            UpcomingViewToolbar(upcomingViewModel: upcoming)
             Button(action: {
                 Task {
                     await upcoming.getUpcoming()

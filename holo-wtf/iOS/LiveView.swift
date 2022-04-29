@@ -22,13 +22,13 @@ struct LiveView: View {
                 LiveCompactListView(live: live)
                     .navigationTitle("LIVE_VIEW_TITLE")
                     .toolbar {
-                        LiveViewToolbar()
+                        LiveViewToolbar(liveViewModel: live)
                     }
             } else {
                 LiveCardListView(live: live)
                     .navigationTitle("LIVE_VIEW_TITLE")
                     .toolbar {
-                        LiveViewToolbar()
+                        LiveViewToolbar(liveViewModel: live)
                     }
             }
         }
