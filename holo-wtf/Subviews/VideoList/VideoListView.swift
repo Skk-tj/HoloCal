@@ -27,11 +27,11 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
                     }
                 }
                 
+                SectionedNotFavouritedForEachView(viewModel: viewModel, cellView: { live in
+                    singleVideoView(live)
+                })
+                
                 Section {
-                    NotFavouritedForEachView(viewModel: viewModel, cellView: { live in
-                        singleVideoView(live)
-                    })
-                    
                     HStack {
                         Spacer()
                         dataStatusView()
