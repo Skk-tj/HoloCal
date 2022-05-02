@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum GenerationEnum: Codable {
+enum GenerationEnum: Int, Codable {
     case zerothGen
     case firstGen
     case secondGen
@@ -266,7 +266,7 @@ let generationToName: [GenerationEnum: [NameLanguage: String]] = [
     .starsSecondGen: [.en: "holostars 2nd gen", .ja: "ホロスターズ 2期生"],
     .starsThirdGen: [.en: "holostars 3nd gen", .ja: "ホロスターズ 3期生"],
     .uproar: [.en: "holostars UPROAR!!", .ja: "ホロスターズ アップロー!!"],
-    .official: [.en: "Official Channels", .ja: "オフィシャルチャンネル"]
+    .official: [.en: "Official Channels", .ja: "公式チャンネル"]
 ]
 
 struct GenerationGroup: Hashable {

@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/// A view that `ForEach` a list of non-favourited videos.
+///
+/// The logic that filters non-favourited videos is here.
+/// This view accepts another `View` for what the video will be fit into. 
 struct NotFavouritedForEachView<Content: View>: View {
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
