@@ -10,14 +10,9 @@ import ActivityView
 
 struct ShareButton<Content: View>: View {
     let video: LiveVideo
-    let content: () -> Content
+    @ViewBuilder let content: () -> Content
     
     @State private var item: ActivityItem?
-    
-    init(video: LiveVideo, @ViewBuilder content: @escaping () -> Content) {
-        self.video = video
-        self.content = content
-    }
     
     var body: some View {
         Button(action: {

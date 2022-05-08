@@ -9,12 +9,7 @@ import SwiftUI
 
 struct DataStatusIndicatorView<Content: View>: View {
     let dataStatus: DataStatus
-    let content: () -> Content
-    
-    init(dataStatus: DataStatus, @ViewBuilder content: @escaping () -> Content) {
-        self.dataStatus = dataStatus
-        self.content = content
-    }
+    @ViewBuilder let content: () -> Content
     
     var body: some View {
         if (dataStatus == .fail) {
