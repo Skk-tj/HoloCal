@@ -121,27 +121,3 @@ class VideoViewModel: ObservableObject {
         }
     }
 }
-
-func getTwitterId(channelId: String) async throws -> String? {
-    let logger = Logger()
-    
-    guard let apiURL = URL(string: "https://holodex.net/api/v2/channels/\(channelId)") else {
-        logger.critical("API URL is not valid")
-        return nil
-    }
-    
-    let headers = ["Content-Type": "application/json", "X-APIKEY": Bundle.main.object(forInfoDictionaryKey: "HOLODEX_API_KEY") as! String]
-    
-    var request = URLRequest(url: apiURL)
-    request.httpMethod = "GET"
-    request.allHTTPHeaderFields = headers
-    request.cachePolicy = .useProtocolCachePolicy
-    
-    let (data, _) = try await URLSession.shared.data(for: request)
-    
-    let decoder = getLiveVideoJSONDecoder()
-    
-    let responseResult: Channel = try decoder.decode(Channel.self, from: data)
-    
-    return responseResult.twitter
-}
