@@ -9,17 +9,7 @@ import SwiftUI
 
 struct LiveAvatarView: View {
     let url: URL?
-    let avatarRadius: Double
-    
-    init(url: URL?) {
-        self.url = url
-        self.avatarRadius = 64.0
-    }
-    
-    init(url: URL?, avatarRadius: Double) {
-        self.url = url
-        self.avatarRadius = avatarRadius
-    }
+    var avatarRadius: Double = 64.0
     
     var body: some View {
         AsyncImage(url: url, content: { image in
