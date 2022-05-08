@@ -46,7 +46,7 @@ struct SwipableLinkedCellView_Previews: PreviewProvider {
     
     static var previews: some View {
         SwipableLinkedCellView(video: previewLive) {
-            LiveCellView(live: previewLive, twitterLink: "abcd")
+            LiveCellView(live: previewLive)
         }
     }
 }

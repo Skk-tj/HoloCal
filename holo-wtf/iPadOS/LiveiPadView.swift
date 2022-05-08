@@ -10,6 +10,7 @@ import SwiftUI
 struct LiveiPadView: View {
     @StateObject var live: LiveViewModel
     @AppStorage("favouritedChannel") var favourited = Favourited()
+    @AppStorage("generationListSelection") var generationListSelection = Set(GenerationEnum.allCases)
     @State var searchText: String = ""
     
     let layout = [
@@ -67,9 +68,20 @@ struct LiveiPadView: View {
                 Divider()
                     .padding(.horizontal)
                 
-                Text("LIVE_VIEW_CURRENT_COUNT \(live.videoList.count)")
-                    .foregroundColor(.secondary)
-                    .padding(.bottom, 30)
+                let filteredVideoCount = live.videoList.filter { video in
+                    !generationListSelection.contains(video.channel.talent.inGeneration)
+                }
+                    .count
+                
+                if filteredVideoCount == 0 {
+                    Text("LIVE_VIEW_CURRENT_COUNT \(live.videoList.count)")
+                        .foregroundColor(.secondary)
+                        .padding(.bottom, 30)
+                } else {
+                    Text("LIVE_VIEW_CURRENT_COUNT \(live.videoList.count) \(filteredVideoCount)")
+                        .foregroundColor(.secondary)
+                        .padding(.bottom, 30)
+                }
             }
         }
         .task {
@@ -84,14 +96,16 @@ struct LiveiPadView: View {
             }
         }
         .toolbar {
-            LiveViewToolbar(liveViewModel: live)
-            Button(action: {
-                Task {
-                    await live.getLive()
-                }
-            }, label: {
-                Label("Refresh", systemImage: "arrow.triangle.2.circlepath")
-            })
+            ToolbarItemGroup {
+                LiveViewToolbar(liveViewModel: live)
+                Button(action: {
+                    Task {
+                        await live.getLive()
+                    }
+                }, label: {
+                    Label("Refresh", systemImage: "arrow.triangle.2.circlepath")
+                })
+            }
         }
     }
 }

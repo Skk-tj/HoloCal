@@ -19,8 +19,8 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     var body: some View {
         List {
             if searchText.isEmpty {
-                if favourited.count != 0 && viewModel.dataStatus == .success {
-                    Section {
+                if viewModel.videoList.filter { video in favourited.contains(where: { video.channel.id == $0 })}.count != 0 && viewModel.dataStatus == .success {
+                    Section(header: Text("LIVE_VIEW_FAVOURITE_SECTION_TITLE")) {
                         FavouritedForEachView(viewModel: viewModel, cellView: { live in
                             singleVideoView(live)
                         })

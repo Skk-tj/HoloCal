@@ -11,7 +11,6 @@ import HTMLString
 
 struct LiveCellView: View {
     let live: LiveVideo
-    let twitterLink: String?
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
     var body: some View {
@@ -52,9 +51,6 @@ struct LiveCellView: View {
                 }
             }
         }
-        .contextMenu {
-            VideoContextMenu(video: live, twitterLink: twitterLink)
-        }
     }
 }
 
@@ -66,7 +62,7 @@ struct LiveCellView_Previews: PreviewProvider {
     static let previewLiveMemberOnly = LiveVideo(id: "abcd", title: "my debut live member only", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, channel: testChannel)
     
     static var previews: some View {
-        LiveCellView(live: previewLive, twitterLink: "abcd")
-        LiveCellView(live: previewLiveMemberOnly, twitterLink: "abcd")
+        LiveCellView(live: previewLive)
+        LiveCellView(live: previewLiveMemberOnly)
     }
 }

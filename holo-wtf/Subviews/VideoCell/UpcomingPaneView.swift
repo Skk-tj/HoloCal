@@ -49,8 +49,8 @@ struct UpcomingPaneView: View {
                 .padding(.horizontal)
             }
             .padding(.bottom)
-            .background(.thickMaterial, in: RoundedRectangle(cornerRadius: 20))
-            .cornerRadius(20)
+            .background(.thickMaterial)
+            .clipShape(RoundedRectangle(cornerRadius: 20))
             
             HStack {
                 TopicTagView(topicId: upcoming.topicId)

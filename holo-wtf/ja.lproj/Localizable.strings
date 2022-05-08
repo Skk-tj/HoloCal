@@ -27,6 +27,14 @@
 "SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_CANCEL" = "キャンセル";
 "SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_RESET" = "リセット";
 
+"SETTINGS_MANAGE_GENERATION" = "グループ別フィルター＆序次";
+"SETTINGS_MANAGE_GENERATION_VIEW_TITLE" = "グループ別フィルター";
+
+"SETTINGS_MANAGE_GENERATION_RESET" = "グループフィルターや序次をリセット";
+"SETTINGS_MANAGE_GENERATION_RESET_ALERT_TEXT" = "グループフィルターや序次をリセットします、よろしいですか？";
+"SETTINGS_MANAGE_GENERATION_RESET_ALERT_CANCEL" = "キャンセル";
+"SETTINGS_MANAGE_GENERATION_RESET_ALERT_RESET" = "リセット";
+
 "SETTINGS_ABOUT_SECTION_HEADER" = "このアプリについて";
 "SETTINGS_ABOUT_BUG_REPORT" = "フィードバック＆バグリポート";
 "SETTINGS_OPEN_SOURCE" = "オープンソース";
@@ -60,11 +68,15 @@
 
 "LIVE_VIEW_TITLE" = "ライブ配信中";
 "LIVE_VIEW_CURRENT_COUNT %lld" = "%lld人がライブ配信中";
+"LIVE_VIEW_CURRENT_COUNT %lld %lld" = "%lld人がライブ配信中（%lld人表示されていない）";
+"LIVE_VIEW_FAVOURITE_SECTION_TITLE" = "お気に入り";
 
 // UpcomingView
 
 "UPCOMING_VIEW_TITLE" = "今後のライブ配信";
-"UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld" = "%lld時間内に%lld人がライブ配信予定";
+"UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld" = "%2$lld時間内に%1$lld人が配信予定";
+"UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld %lld" = "%2$lld時間内に%1$lld人が配信予定（%3$lld人表示されていない）";
+
 
 // LiveViewToolbar & UpcomingViewToolbar
 "LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE" = "絶対時間を表示";

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct LiveView: View {
     @StateObject var live: LiveViewModel
-    @AppStorage("favouritedChannel") var favourited = Favourited()
     @AppStorage(UserDefaultKeys.isShowingCompactInLiveView) var isShowingCompactInLiveView: Bool = false
     
     init() {
@@ -22,13 +21,17 @@ struct LiveView: View {
                 LiveCompactListView(live: live)
                     .navigationTitle("LIVE_VIEW_TITLE")
                     .toolbar {
-                        LiveViewToolbar(liveViewModel: live)
+                        ToolbarItemGroup {
+                            LiveViewToolbar(liveViewModel: live)
+                        }
                     }
             } else {
                 LiveCardListView(live: live)
                     .navigationTitle("LIVE_VIEW_TITLE")
                     .toolbar {
-                        LiveViewToolbar(liveViewModel: live)
+                        ToolbarItemGroup {
+                            LiveViewToolbar(liveViewModel: live)
+                        }
                     }
             }
         }

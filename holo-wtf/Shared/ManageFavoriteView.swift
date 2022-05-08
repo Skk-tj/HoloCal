@@ -26,12 +26,13 @@ struct ManageFavoriteView: View {
                 }, label: {
                     Text("SETTINGS_MANAGE_FAVOURITE_RESET")
                 })
-                .alert("SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_TEXT", isPresented: $showResetAlert) {
-                    Button("SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_CANCEL", role: .cancel) {}
+                .confirmationDialog("SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_TEXT", isPresented: $showResetAlert, actions: {
                     Button("SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_RESET", role: .destructive) {
                         favourited.removeAll()
                     }
-                }
+                }, message: {
+                   Text("SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_TEXT")
+                })
             }
         }
         .navigationTitle("SETTINGS_MANAGE_FAVOURITE_VIEW_TITLE")

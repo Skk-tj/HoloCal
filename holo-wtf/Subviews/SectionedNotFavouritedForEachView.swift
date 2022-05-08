@@ -13,6 +13,8 @@ import SwiftUI
 /// This view accepts another `View` for what the video will be fit into.
 struct SectionedNotFavouritedForEachView<Content: View>: View {
     @AppStorage("favouritedChannel") var favourited = Favourited()
+    @AppStorage("generationListSelection") var generationListSelection = Set(GenerationEnum.allCases)
+    @AppStorage("generationListOrder") var generationListOrder = GenerationEnum.allCases
     
     let viewModel: VideoViewModel
     @ViewBuilder let cellView: (_ video: LiveVideo) -> Content
@@ -24,8 +26,22 @@ struct SectionedNotFavouritedForEachView<Content: View>: View {
         }
         
         let groupedDictionary = Dictionary<GenerationEnum, [LiveVideo]>(grouping: filteredVideos, by: { $0.channel.talent.inGeneration })
+        let filteredGenerationListOrder = generationListOrder.filter { generation in
+            generationListSelection.contains(generation)
+        }
         
-        ForEach(groupedDictionary.sorted(by: { $0.key.rawValue < $1.key.rawValue }), id: \.key) { key, value in
+        let filteredGroupedDictionary = groupedDictionary.filter { element in
+            filteredGenerationListOrder.contains(element.key)
+        }
+        
+        let sortedFilteredGroupedDictionary = filteredGroupedDictionary.sorted {
+            let orderOfFirst = filteredGenerationListOrder.firstIndex(of: $0.key) ?? 0
+            let orderOfSecond = filteredGenerationListOrder.firstIndex(of: $1.key) ?? 0
+            
+            return orderOfFirst < orderOfSecond
+        }
+        
+        ForEach(sortedFilteredGroupedDictionary, id: \.key) { key, value in
             Section(header: Text("\(Locale.current.languageCode == "ja" ? generationToName[key]![.ja]! : generationToName[key]![.en]!)")) {
                 ForEach(value, id: \.self) { live in
                     cellView(live)

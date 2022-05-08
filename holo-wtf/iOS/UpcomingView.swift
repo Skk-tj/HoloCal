@@ -22,13 +22,17 @@ struct UpcomingView: View {
                 UpcomingCompactListView(upcoming: upcoming)
                     .navigationTitle("UPCOMING_VIEW_TITLE")
                     .toolbar {
-                        UpcomingViewToolbar(upcomingViewModel: upcoming)
+                        ToolbarItemGroup {
+                            UpcomingViewToolbar(upcomingViewModel: upcoming)
+                        }
                     }
             } else {
                 UpcomingCardListView(upcoming: upcoming)
                     .navigationTitle("UPCOMING_VIEW_TITLE")
                     .toolbar {
-                        UpcomingViewToolbar(upcomingViewModel: upcoming)
+                        ToolbarItemGroup {
+                            UpcomingViewToolbar(upcomingViewModel: upcoming)
+                        }
                     }
             }
         }
