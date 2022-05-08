@@ -18,19 +18,23 @@ struct LiveView: View {
     var body: some View {
         NavigationView {
             if isShowingCompactInLiveView {
-                LiveCompactListView(live: live)
+                LiveCompactListView()
+                    .environmentObject(live as VideoViewModel)
                     .navigationTitle("LIVE_VIEW_TITLE")
                     .toolbar {
                         ToolbarItemGroup {
-                            LiveViewToolbar(liveViewModel: live)
+                            LiveViewToolbar()
+                                .environmentObject(live as VideoViewModel)
                         }
                     }
             } else {
-                LiveCardListView(live: live)
+                LiveCardListView()
+                    .environmentObject(live as VideoViewModel)
                     .navigationTitle("LIVE_VIEW_TITLE")
                     .toolbar {
                         ToolbarItemGroup {
-                            LiveViewToolbar(liveViewModel: live)
+                            LiveViewToolbar()
+                                .environmentObject(live as VideoViewModel)
                         }
                     }
             }

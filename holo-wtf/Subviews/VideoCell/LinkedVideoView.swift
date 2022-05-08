@@ -8,23 +8,12 @@
 import SwiftUI
 
 struct LinkedVideoView<Content: View>: View {
-    var videoKey: String?
-    var content: () -> Content
-    
-    init(videoKey: String?, @ViewBuilder content: @escaping () -> Content) {
-        self.videoKey = videoKey
-        self.content = content
-    }
+    var url: URL?
+    @ViewBuilder var content: () -> Content
     
     var body: some View {
-        if let key = videoKey {
-            let url = "https://www.youtube.com/watch?v=\(key)"
-            
-            if let finalURL = URL(string: url) {
-                Link(destination: finalURL) {
-                    content()
-                }
-            } else {
+        if let finalURL = url {
+            Link(destination: finalURL) {
                 content()
             }
         } else {
@@ -41,7 +30,7 @@ struct LinkedVideoView_Previews: PreviewProvider {
     static let previewLiveMemberOnly = LiveVideo(id: "abcd", title: "my debut live member only", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, channel: testChannel)
     
     static var previews: some View {
-        LinkedVideoView(videoKey: "testVideoId") {
+        LinkedVideoView(url: previewLive.url) {
             LiveCellView(live: previewLive)
         }
     }

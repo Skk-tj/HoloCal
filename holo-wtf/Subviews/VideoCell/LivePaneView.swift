@@ -37,7 +37,7 @@ struct LivePaneView: View {
                     Divider()
                     
                     HStack {
-                        if isLiveMengen(live: live) {
+                        if live.isMengen {
                             Text("LIVE_CELL_VIEW_MEMBER_ONLY_STREAM")
                                 .font(.footnote)
                                 .foregroundColor(.secondary)

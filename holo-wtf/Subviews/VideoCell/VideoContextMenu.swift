@@ -26,8 +26,7 @@ struct VideoContextMenu: View {
         }
         
         // MARK: - YouTube Button
-        let url = "https://www.youtube.com/channel/\(video.channel.id)"
-        if let finalURL = URL(string: url) {
+        if let finalURL = video.channel.channelURL {
             Link(destination: finalURL) {
                 Label("VIDEO_CONTEXT_MENU_YOUTUBE_CHANNEL", systemImage: "play.rectangle")
             }

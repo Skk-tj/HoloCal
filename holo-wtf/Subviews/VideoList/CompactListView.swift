@@ -10,14 +10,13 @@ import SwiftUI
 struct CompactListView<CellContent: View, DataStatusContent: View>: View {
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
-    let viewModel: VideoViewModel
+    @EnvironmentObject var viewModel: VideoViewModel
     
-    @Binding var searchText: String
     @ViewBuilder let cellView: (_ live: LiveVideo) -> CellContent
     @ViewBuilder let dataStatusView: () -> DataStatusContent
     
     var body: some View {
-        VideoListView(viewModel: viewModel, searchText: $searchText, singleVideoView: { live in
+        VideoListView(singleVideoView: { live in
             SwipableLinkedCellView(video: live) {
                 cellView(live)
             }

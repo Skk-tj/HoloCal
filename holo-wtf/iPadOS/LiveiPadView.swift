@@ -34,8 +34,8 @@ struct LiveiPadView: View {
                 LazyVGrid(columns: layout, spacing: 50) {
                     if searchText.isEmpty {
                         //- MARK: Favourites Section
-                        FavouritedForEachView(viewModel: live, cellView: { live in
-                            LinkedVideoView(videoKey: live.id) {
+                        FavouritedForEachView(cellView: { live in
+                            LinkedVideoView(url: live.url) {
                                 LivePaneView(live: live)
                             }
                             .contextMenu {
@@ -44,8 +44,8 @@ struct LiveiPadView: View {
                         })
                         
                         //- MARK: Not favourited
-                        NotFavouritedForEachView(viewModel: live, cellView: { live in
-                            LinkedVideoView(videoKey: live.id) {
+                        NotFavouritedForEachView(cellView: { live in
+                            LinkedVideoView(url: live.url) {
                                 LivePaneView(live: live)
                             }
                             .contextMenu {
@@ -53,8 +53,8 @@ struct LiveiPadView: View {
                             }
                         })
                     } else {
-                        SearchForEachView(viewModel: live, searchText: searchText, cellView: { live in
-                            LinkedVideoView(videoKey: live.id) {
+                        SearchForEachView(searchText: searchText, cellView: { live in
+                            LinkedVideoView(url: live.url) {
                                 LivePaneView(live: live)
                             }
                             .contextMenu {
@@ -84,6 +84,7 @@ struct LiveiPadView: View {
                 }
             }
         }
+        .environmentObject(live as VideoViewModel)
         .task {
             await live.getLive()
         }
@@ -97,7 +98,8 @@ struct LiveiPadView: View {
         }
         .toolbar {
             ToolbarItemGroup {
-                LiveViewToolbar(liveViewModel: live)
+                LiveViewToolbar()
+                    .environmentObject(live as VideoViewModel)
                 Button(action: {
                     Task {
                         await live.getLive()

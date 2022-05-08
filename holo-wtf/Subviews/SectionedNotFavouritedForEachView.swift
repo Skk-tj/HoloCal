@@ -16,7 +16,7 @@ struct SectionedNotFavouritedForEachView<Content: View>: View {
     @AppStorage("generationListSelection") var generationListSelection = Set(GenerationEnum.allCases)
     @AppStorage("generationListOrder") var generationListOrder = GenerationEnum.allCases
     
-    let viewModel: VideoViewModel
+    @EnvironmentObject var viewModel: VideoViewModel
     @ViewBuilder let cellView: (_ video: LiveVideo) -> Content
     
     @ViewBuilder

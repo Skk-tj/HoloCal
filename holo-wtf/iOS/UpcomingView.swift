@@ -19,19 +19,23 @@ struct UpcomingView: View {
     var body: some View {
         NavigationView {
             if isShowingCompactInUpcomingView {
-                UpcomingCompactListView(upcoming: upcoming)
+                UpcomingCompactListView()
+                    .environmentObject(upcoming as VideoViewModel)
                     .navigationTitle("UPCOMING_VIEW_TITLE")
                     .toolbar {
                         ToolbarItemGroup {
-                            UpcomingViewToolbar(upcomingViewModel: upcoming)
+                            UpcomingViewToolbar()
+                                .environmentObject(upcoming as VideoViewModel)
                         }
                     }
             } else {
-                UpcomingCardListView(upcoming: upcoming)
+                UpcomingCardListView()
+                    .environmentObject(upcoming as VideoViewModel)
                     .navigationTitle("UPCOMING_VIEW_TITLE")
                     .toolbar {
                         ToolbarItemGroup {
-                            UpcomingViewToolbar(upcomingViewModel: upcoming)
+                            UpcomingViewToolbar()
+                                .environmentObject(upcoming as VideoViewModel)
                         }
                     }
             }

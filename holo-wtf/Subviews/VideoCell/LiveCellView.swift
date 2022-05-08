@@ -7,7 +7,6 @@
 
 import SwiftUI
 import MarqueeText
-import HTMLString
 
 struct LiveCellView: View {
     let live: LiveVideo
@@ -17,7 +16,7 @@ struct LiveCellView: View {
         HStack {
             LiveAvatarView(url: live.channel.photo)
             VStack(alignment: .leading) {
-                MarqueeText(text: live.title.removingHTMLEntities(), font: UIFont.preferredFont(forTextStyle: .headline), leftFade: 14, rightFade: 16, startDelay: 3.0)
+                MarqueeText(text: live.escapedTitle, font: UIFont.preferredFont(forTextStyle: .headline), leftFade: 14, rightFade: 16, startDelay: 3.0)
                 
                 TopicTagView(topicId: live.topicId)
                 
@@ -35,7 +34,7 @@ struct LiveCellView: View {
                 
                 Divider()
                 HStack {
-                    if isLiveMengen(live: live) {
+                    if live.isMengen {
                         Text("LIVE_CELL_VIEW_MEMBER_ONLY_STREAM")
                             .font(.footnote)
                             .foregroundColor(.secondary)

@@ -10,14 +10,13 @@ import SwiftUI
 struct CardListView<PaneContent: View, StatusContent: View>: View {
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
-    let viewModel: VideoViewModel
+    @EnvironmentObject var viewModel: VideoViewModel
     
-    @Binding var searchText: String
     @ViewBuilder let paneView: (_ live: LiveVideo) -> PaneContent
     @ViewBuilder let dataStatusView: () -> StatusContent
     
     var body: some View {
-        VideoListView(viewModel: viewModel, searchText: $searchText, singleVideoView: { live in
+        VideoListView(singleVideoView: { live in
             SwipableLinkedCellView(video: live) {
                 paneView(live)
             }
