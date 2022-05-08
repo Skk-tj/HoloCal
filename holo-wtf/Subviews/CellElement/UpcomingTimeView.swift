@@ -15,7 +15,7 @@ struct UpcomingTimeView: View {
     var body: some View {
         if let liveSchedule = liveSchedule {
             if isShowingAbsoluteTime {
-                Text("UPCOMING_CELL_VIEW_STARTING_AT \(getAbsoluteDateFormatter().string(from: liveSchedule))")
+                Text("UPCOMING_CELL_VIEW_STARTING_AT \(liveSchedule.formatted(date: .abbreviated, time: .shortened))")
                     .font(.footnote)
                     .foregroundColor(.secondary)
             } else {

@@ -31,6 +31,10 @@ struct SettingsFormView: View {
                 NavigationLink(destination: ManageFavoriteView()) {
                     Text("SETTINGS_MANAGE_FAVOURITE")
                 }
+                
+                NavigationLink(destination: ManageGenerationView()) {
+                    Text("SETTINGS_MANAGE_GENERATION")
+                }
             }
             
             Section(header: Text("SETTINGS_ABOUT_SECTION_HEADER"), footer: Text("HoloCal \(Bundle.main.appVersionLong) (\(Bundle.main.appBuild)) \nCodename: Underworld")) {

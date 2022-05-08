@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum GenerationEnum: Int, Codable {
+enum GenerationEnum: Int, Codable, CaseIterable {
     case zerothGen
     case firstGen
     case secondGen
@@ -139,7 +139,7 @@ let talentsToName: [TalentsEnum: Talent] = [
     // MARK: - 0th gen
     .sora: Talent(id: "UCp6993wxpyDPHUpavwDFqgg", names: [.en: "Tokino Sora", .ja: "ときのそら"], inGeneration: .zerothGen),
     .roboco: Talent(id: "UCDqI2jOz0weumE8s7paEk6g", names: [.en: "Robocosan", .ja: "ロボ子さん"], inGeneration: .zerothGen),
-    .azki: Talent(id: "UC0TXe_LYZ4scaW2XMyi5_kw", names: [.en: "AZKi", .ja: "AZKi"], inGeneration: .firstGen),
+    .azki: Talent(id: "UC0TXe_LYZ4scaW2XMyi5_kw", names: [.en: "AZKi", .ja: "AZKi"], inGeneration: .zerothGen),
     .miko: Talent(id: "UC-hM6YJuNYVAmUWxeIr9FeA", names: [.en: "Sakura Miko", .ja: "さくらみこ"], inGeneration: .zerothGen),
     .suisei: Talent(id: "UC5CwaMl1eIgY8h02uZw7u8A", names: [.en: "Hoshimachi Suisei", .ja: "星街すいせい"], inGeneration: .zerothGen),
     
@@ -261,7 +261,7 @@ let generationToName: [GenerationEnum: [NameLanguage: String]] = [
     .idThirdGen: [.en: "ID 3rd gen", .ja: "ID 3期生"],
     .enMyth: [.en: "hololive English -Myth-", .ja: "hololive English -Myth-"],
     .projectHope: [.en: "Project: HOPE", .ja: "Project: HOPE"],
-    .enCouncil: [.en: "hololive English -Council-", .ja: "hololive English -Council-"],
+    .enCouncil: [.en: "hololive English -議会-", .ja: "hololive English -Council-"],
     .starsFirstGen: [.en: "holostars 1st gen", .ja: "ホロスターズ 1期生"],
     .starsSecondGen: [.en: "holostars 2nd gen", .ja: "ホロスターズ 2期生"],
     .starsThirdGen: [.en: "holostars 3nd gen", .ja: "ホロスターズ 3期生"],

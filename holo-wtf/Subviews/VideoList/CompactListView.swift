@@ -21,6 +21,9 @@ struct CompactListView<CellContent: View, DataStatusContent: View>: View {
             SwipableLinkedCellView(video: live) {
                 cellView(live)
             }
+            .contextMenu {
+                VideoContextMenu(video: live, twitterLink: self.viewModel.twitterList[live.channel.id] ?? nil)
+            }
         }, dataStatusView: {
             dataStatusView()
         })

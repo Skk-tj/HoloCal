@@ -15,7 +15,7 @@ struct PaneViewButtonRowView: View {
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
     var body: some View {
-        HStack {
+        ControlGroup {
             ShareButton(video: video) {
                 Label("LINKED_VIDEO_SWIPE_ACTIONS_SHARE", systemImage: "square.and.arrow.up")
                     .labelStyle(.iconOnly)
@@ -59,6 +59,7 @@ struct PaneViewButtonRowView: View {
             }
             .hoverEffect()
         }
+        .controlGroupStyle(.navigation)
     }
 }
 

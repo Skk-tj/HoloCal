@@ -10,6 +10,8 @@ import SwiftUI
 struct UpcomingiPadView: View {
     @StateObject var upcoming: UpcomingViewModel
     @AppStorage("favouritedChannel") var favourited = Favourited()
+    @AppStorage("generationListSelection") var generationListSelection = Set(GenerationEnum.allCases)
+    @AppStorage(UserDefaultKeys.upcomingLookAhead) var upcomingLookAhead = 48
     @State var searchText: String = ""
     
     let layout = [
@@ -65,9 +67,20 @@ struct UpcomingiPadView: View {
                 Divider()
                     .padding(.horizontal)
                 
-                Text("UPCOMING_VIEW_STREAM_COUNT_IN_HOURS \(upcoming.videoList.count) \(getUpcomingStreamLookAheadHoursFromUserDefaults())")
-                    .foregroundColor(.secondary)
-                    .padding(.bottom, 30)
+                let filteredVideoCount = upcoming.videoList.filter { video in
+                    !generationListSelection.contains(video.channel.talent.inGeneration)
+                }
+                    .count
+                
+                if filteredVideoCount == 0 {
+                    Text("UPCOMING_VIEW_STREAM_COUNT_IN_HOURS \(upcoming.videoList.count) \(upcomingLookAhead)")
+                        .foregroundColor(.secondary)
+                        .padding(.bottom, 30)
+                } else {
+                    Text("UPCOMING_VIEW_STREAM_COUNT_IN_HOURS \(upcoming.videoList.count) \(upcomingLookAhead) \(filteredVideoCount)")
+                        .foregroundColor(.secondary)
+                        .padding(.bottom, 30)
+                }
             }
         }
         .task {
@@ -81,14 +94,16 @@ struct UpcomingiPadView: View {
             }
         }
         .toolbar {
-            UpcomingViewToolbar(upcomingViewModel: upcoming)
-            Button(action: {
-                Task {
-                    await upcoming.getUpcoming()
-                }
-            }, label: {
-                Label("Refresh", systemImage: "arrow.triangle.2.circlepath")
-            })
+            ToolbarItemGroup {
+                UpcomingViewToolbar(upcomingViewModel: upcoming)
+                Button(action: {
+                    Task {
+                        await upcoming.getUpcoming()
+                    }
+                }, label: {
+                    Label("Refresh", systemImage: "arrow.triangle.2.circlepath")
+                })
+            }
         }
         .navigationTitle("UPCOMING_VIEW_TITLE")
     }

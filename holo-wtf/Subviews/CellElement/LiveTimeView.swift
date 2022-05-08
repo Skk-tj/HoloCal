@@ -15,7 +15,7 @@ struct LiveTimeView: View {
     var body: some View {
         if let liveStart = liveTime {
             if isShowingAbsoluteTime {
-                Text("LIVE_CELL_VIEW_STARTED_AT \(getAbsoluteDateFormatter().string(from: liveStart))")
+                Text("LIVE_CELL_VIEW_STARTED_AT \(liveStart.formatted(date: .abbreviated, time: .shortened))")
                     .font(.footnote)
                     .foregroundColor(.secondary)
             } else {
