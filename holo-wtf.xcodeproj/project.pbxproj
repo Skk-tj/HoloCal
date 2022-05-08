@@ -44,6 +44,8 @@
 		F0A5B7BC282112FF004E319F /* ManageGenerationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A5B7BB282112FF004E319F /* ManageGenerationView.swift */; };
 		F0B8E1CD27E90EBA00DC7CF9 /* HTMLString in Frameworks */ = {isa = PBXBuildFile; productRef = F0B8E1CC27E90EBA00DC7CF9 /* HTMLString */; };
 		F0BD611B27EC594300A2FBED /* UpcomingPaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BD611A27EC594300A2FBED /* UpcomingPaneView.swift */; };
+		F0C50A1D2827C4CA00A93225 /* LiveCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C50A1C2827C4CA00A93225 /* LiveCountView.swift */; };
+		F0C50A1F2827C6FA00A93225 /* UpcomingCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C50A1E2827C6FA00A93225 /* UpcomingCountView.swift */; };
 		F0C657BB2771F47C004AF802 /* holo_wtfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657BA2771F47C004AF802 /* holo_wtfApp.swift */; };
 		F0C657BD2771F47C004AF802 /* LiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657BC2771F47C004AF802 /* LiveView.swift */; };
 		F0C657BF2771F47C004AF802 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C657BE2771F47C004AF802 /* Assets.xcassets */; };
@@ -121,6 +123,8 @@
 		F09D25F228041CC3001A7D71 /* iPadSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadSidebarView.swift; sourceTree = "<group>"; };
 		F0A5B7BB282112FF004E319F /* ManageGenerationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageGenerationView.swift; sourceTree = "<group>"; };
 		F0BD611A27EC594300A2FBED /* UpcomingPaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingPaneView.swift; sourceTree = "<group>"; };
+		F0C50A1C2827C4CA00A93225 /* LiveCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCountView.swift; sourceTree = "<group>"; };
+		F0C50A1E2827C6FA00A93225 /* UpcomingCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingCountView.swift; sourceTree = "<group>"; };
 		F0C657B72771F47C004AF802 /* HoloCal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoloCal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0C657BA2771F47C004AF802 /* holo_wtfApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = holo_wtfApp.swift; sourceTree = "<group>"; };
 		F0C657BC2771F47C004AF802 /* LiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveView.swift; sourceTree = "<group>"; };
@@ -258,6 +262,8 @@
 				F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */,
 				F0ED2AE52808253700683E6C /* VideoThumbnailView.swift */,
 				F0ED2B12280CB73D00683E6C /* TopicTagView.swift */,
+				F0C50A1C2827C4CA00A93225 /* LiveCountView.swift */,
+				F0C50A1E2827C6FA00A93225 /* UpcomingCountView.swift */,
 			);
 			path = CellElement;
 			sourceTree = "<group>";
@@ -485,6 +491,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0C50A1F2827C6FA00A93225 /* UpcomingCountView.swift in Sources */,
 				F09D25E52802EA09001A7D71 /* SwipableLinkedCellView.swift in Sources */,
 				F009023827EDB6AE00E343B0 /* LiveTimeView.swift in Sources */,
 				F09D25F328041CC3001A7D71 /* iPadSidebarView.swift in Sources */,
@@ -531,6 +538,7 @@
 				F05E9EB727EB291900EF48DD /* SettingsiPadView.swift in Sources */,
 				F0ED2AE8280AA2BC00683E6C /* LiveCompactListView.swift in Sources */,
 				F0954BE22817C52700369EC4 /* FavouritedForEachView.swift in Sources */,
+				F0C50A1D2827C4CA00A93225 /* LiveCountView.swift in Sources */,
 				F0C657D22771F7CE004AF802 /* LiveCellView.swift in Sources */,
 				F009024427EE5F3100E343B0 /* UpcomingTimeView.swift in Sources */,
 				F0C657BB2771F47C004AF802 /* holo_wtfApp.swift in Sources */,
@@ -723,7 +731,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 48;
+				CURRENT_PROJECT_VERSION = 49;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -756,7 +764,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 48;
+				CURRENT_PROJECT_VERSION = 49;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;

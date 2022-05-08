@@ -9,14 +9,9 @@ import SwiftUI
 
 struct FavouriteButton<Content: View>: View {
     let video: LiveVideo
-    let content: () -> Content
+    @ViewBuilder let content: () -> Content
     
     @AppStorage("favouritedChannel") var favourited = Favourited()
-    
-    init(video: LiveVideo, @ViewBuilder content: @escaping () -> Content) {
-        self.video = video
-        self.content = content
-    }
     
     var body: some View {
         let isFavourited = favourited.contains(where: {$0 == video.channel.id})

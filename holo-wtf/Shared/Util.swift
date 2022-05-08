@@ -27,28 +27,6 @@ func getTimeIntervalStringFromReferenceDate(reference date: Date) -> String? {
     return formatter.string(from: abs(dateDifference))
 }
 
-func isLiveMengen(live: LiveVideo) -> Bool {
-    // Japanese
-    if live.title.contains("メン限") {
-        return true
-    }
-    
-    // English
-    if live.title.lowercased().contains("member") && live.title.lowercased().contains("only") {
-        return true
-    }
-    
-    if live.title.lowercased().contains("membership") {
-        return true
-    }
-    
-    if live.topicId == "membersonly" {
-        return true
-    }
-    
-    return false
-}
-
 func getUpcomingStreamLookAheadHoursFromUserDefaults() -> Int {
     let defaults = UserDefaults.standard
     
@@ -111,38 +89,6 @@ func resetFavouriteInUserDefault() -> Void {
     defaults.set([], forKey: "favouritedChannel2")
 }
 
-func getAbsoluteDateFormatter() -> DateFormatter {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .short
-    
-    return formatter
-}
-
-func getTwitterId(channelId: String) async throws -> String? {
-    let logger = Logger()
-    
-    guard let apiURL = URL(string: "https://holodex.net/api/v2/channels/\(channelId)") else {
-        logger.critical("API URL is not valid")
-        return nil
-    }
-    
-    let headers = ["Content-Type": "application/json", "X-APIKEY": Bundle.main.object(forInfoDictionaryKey: "HOLODEX_API_KEY") as! String]
-    
-    var request = URLRequest(url: apiURL)
-    request.httpMethod = "GET"
-    request.allHTTPHeaderFields = headers
-    request.cachePolicy = .useProtocolCachePolicy
-    
-    let (data, _) = try await URLSession.shared.data(for: request)
-    
-    let decoder = getLiveVideoJSONDecoder()
-    
-    let responseResult: Channel = try decoder.decode(Channel.self, from: data)
-    
-    return responseResult.twitter
-}
-
 func getLiveVideoJSONDecoder() -> JSONDecoder {
     let decoder = JSONDecoder()
     decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -184,12 +130,6 @@ func getCalendarEventFromVideo(eventStore: EKEventStore, video: LiveVideo) -> EK
     event.calendar = eventStore.defaultCalendarForNewEvents
     
     return event
-}
-
-enum DataStatus {
-    case working
-    case success
-    case fail
 }
 
 enum UserDefaultKeys {

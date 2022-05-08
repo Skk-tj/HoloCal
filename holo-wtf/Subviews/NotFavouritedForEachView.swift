@@ -15,7 +15,7 @@ struct NotFavouritedForEachView<Content: View>: View {
     @AppStorage("favouritedChannel") var favourited = Favourited()
     @AppStorage("generationListSelection") var generationListSelection = Set(GenerationEnum.allCases)
     
-    let viewModel: VideoViewModel
+    @EnvironmentObject var viewModel: VideoViewModel
     @ViewBuilder let cellView: (_ video: LiveVideo) -> Content
     
     @ViewBuilder

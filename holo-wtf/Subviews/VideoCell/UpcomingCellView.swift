@@ -36,7 +36,7 @@ struct UpcomingCellView: View {
                 Divider()
                 HStack {
                     UpcomingTimeView(liveSchedule: upcoming.startScheduled)
-                    if isLiveMengen(live: upcoming) {
+                    if upcoming.isMengen {
                         Spacer()
                         Text("LIVE_CELL_VIEW_MEMBER_ONLY_STREAM")
                             .font(.footnote)

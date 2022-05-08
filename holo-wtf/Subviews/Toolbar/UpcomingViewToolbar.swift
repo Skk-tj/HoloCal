@@ -12,7 +12,7 @@ struct UpcomingViewToolbar: View {
     @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingView) var isShowingCompactInUpcomingView: Bool = false
     
     @State var sortingSelection: SortingStrategy = .time(.asc)
-    @ObservedObject var upcomingViewModel: UpcomingViewModel
+    @EnvironmentObject var upcomingViewModel: VideoViewModel
     
     var body: some View {
         Menu {

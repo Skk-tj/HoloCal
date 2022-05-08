@@ -10,9 +10,9 @@ import SwiftUI
 struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
-    let viewModel: VideoViewModel
+    @EnvironmentObject var viewModel: VideoViewModel
     
-    @Binding var searchText: String
+    @State var searchText: String = ""
     @ViewBuilder let singleVideoView: (_ live: LiveVideo) -> VideoContent
     @ViewBuilder let dataStatusView: () -> DataStatusContent
     
@@ -21,13 +21,14 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
             if searchText.isEmpty {
                 if viewModel.videoList.filter { video in favourited.contains(where: { video.channel.id == $0 })}.count != 0 && viewModel.dataStatus == .success {
                     Section(header: Text("LIVE_VIEW_FAVOURITE_SECTION_TITLE")) {
-                        FavouritedForEachView(viewModel: viewModel, cellView: { live in
+                        FavouritedForEachView(cellView: { live in
                             singleVideoView(live)
                         })
                     }
+                    .headerProminence(.increased)
                 }
                 
-                SectionedNotFavouritedForEachView(viewModel: viewModel, cellView: { live in
+                SectionedNotFavouritedForEachView(cellView: { live in
                     singleVideoView(live)
                 })
                 
@@ -39,7 +40,7 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
                     }
                 }
             } else {
-                SearchSectionView(viewModel: viewModel, searchText: searchText, cellView: { live in
+                SearchSectionView(searchText: searchText, cellView: { live in
                     singleVideoView(live)
                 })
             }

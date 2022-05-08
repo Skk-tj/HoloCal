@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchForEachView<Content: View>: View {
-    let viewModel: VideoViewModel
+    @EnvironmentObject var viewModel: VideoViewModel
     let searchText: String
     
     @ViewBuilder let cellView: (_ live: LiveVideo) -> Content

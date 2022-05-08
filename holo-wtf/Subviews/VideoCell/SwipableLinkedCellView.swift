@@ -21,7 +21,7 @@ struct SwipableLinkedCellView<Content: View>: View {
     }
     
     var body: some View {
-        LinkedVideoView(videoKey: video.id) {
+        LinkedVideoView(url: video.url) {
             content()
         }
         .swipeActions {

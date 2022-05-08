@@ -9,6 +9,12 @@ import Foundation
 import OSLog
 import Algorithms
 
+enum DataStatus {
+    case working
+    case success
+    case fail
+}
+
 enum SortingOrder: Hashable {
     case asc
     case desc
@@ -74,7 +80,7 @@ class VideoViewModel: ObservableObject {
         try await withThrowingTaskGroup(of: (String, String?).self) { group in
             for video in videoList {
                 group.addTask {
-                    return (video.channel.id, try await getTwitterId(channelId: video.channel.id))
+                    return (video.channel.id, try await video.channel.getTwitterId())
                 }
             }
             
@@ -114,4 +120,28 @@ class VideoViewModel: ObservableObject {
             }
         }
     }
+}
+
+func getTwitterId(channelId: String) async throws -> String? {
+    let logger = Logger()
+    
+    guard let apiURL = URL(string: "https://holodex.net/api/v2/channels/\(channelId)") else {
+        logger.critical("API URL is not valid")
+        return nil
+    }
+    
+    let headers = ["Content-Type": "application/json", "X-APIKEY": Bundle.main.object(forInfoDictionaryKey: "HOLODEX_API_KEY") as! String]
+    
+    var request = URLRequest(url: apiURL)
+    request.httpMethod = "GET"
+    request.allHTTPHeaderFields = headers
+    request.cachePolicy = .useProtocolCachePolicy
+    
+    let (data, _) = try await URLSession.shared.data(for: request)
+    
+    let decoder = getLiveVideoJSONDecoder()
+    
+    let responseResult: Channel = try decoder.decode(Channel.self, from: data)
+    
+    return responseResult.twitter
 }

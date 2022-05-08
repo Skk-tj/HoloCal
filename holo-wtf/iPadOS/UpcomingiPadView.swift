@@ -23,7 +23,7 @@ struct UpcomingiPadView: View {
     }
     
     var body: some View {
-        ScrollView() {
+        ScrollView {
             if (upcoming.dataStatus == .working) {
                 ProgressView()
             } else if (upcoming.dataStatus == .fail) {
@@ -34,8 +34,8 @@ struct UpcomingiPadView: View {
             } else {
                 LazyVGrid(columns: layout, spacing: 50) {
                     if searchText.isEmpty {
-                        FavouritedForEachView(viewModel: upcoming, cellView: { live in
-                            LinkedVideoView(videoKey: live.id) {
+                        FavouritedForEachView(cellView: { live in
+                            LinkedVideoView(url: live.url) {
                                 UpcomingPaneView(upcoming: live)
                             }
                             .contextMenu {
@@ -43,8 +43,8 @@ struct UpcomingiPadView: View {
                             }
                         })
                         
-                        NotFavouritedForEachView(viewModel: upcoming, cellView: { live in
-                            LinkedVideoView(videoKey: live.id) {
+                        NotFavouritedForEachView(cellView: { live in
+                            LinkedVideoView(url: live.url) {
                                 UpcomingPaneView(upcoming: live)
                             }
                             .contextMenu {
@@ -52,8 +52,8 @@ struct UpcomingiPadView: View {
                             }
                         })
                     } else {
-                        SearchForEachView(viewModel: upcoming, searchText: searchText, cellView: { live in
-                            LinkedVideoView(videoKey: live.id) {
+                        SearchForEachView(searchText: searchText, cellView: { live in
+                            LinkedVideoView(url: live.url) {
                                 UpcomingPaneView(upcoming: live)
                             }
                             .contextMenu {
@@ -83,6 +83,7 @@ struct UpcomingiPadView: View {
                 }
             }
         }
+        .environmentObject(upcoming as VideoViewModel)
         .task {
             await upcoming.getUpcoming()
         }
@@ -95,7 +96,8 @@ struct UpcomingiPadView: View {
         }
         .toolbar {
             ToolbarItemGroup {
-                UpcomingViewToolbar(upcomingViewModel: upcoming)
+                UpcomingViewToolbar()
+                    .environmentObject(upcoming as VideoViewModel)
                 Button(action: {
                     Task {
                         await upcoming.getUpcoming()

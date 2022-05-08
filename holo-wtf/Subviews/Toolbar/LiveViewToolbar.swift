@@ -12,7 +12,7 @@ struct LiveViewToolbar: View {
     @AppStorage(UserDefaultKeys.isShowingCompactInLiveView) var isShowingCompactInLiveView: Bool = false
     
     @State var sortingSelection: SortingStrategy = .time(.desc)
-    @ObservedObject var liveViewModel: LiveViewModel
+    @EnvironmentObject var liveViewModel: VideoViewModel
     
     var body: some View {
         Menu {
