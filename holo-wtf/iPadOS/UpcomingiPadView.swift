@@ -9,10 +9,16 @@ import SwiftUI
 
 struct UpcomingiPadView: View {
     @StateObject var upcoming: UpcomingViewModel
+    
     @AppStorage("favouritedChannel") var favourited = Favourited()
     @AppStorage("generationListSelection") var generationListSelection = Set(GenerationEnum.allCases)
     @AppStorage(UserDefaultKeys.upcomingLookAhead) var upcomingLookAhead = 48
+    
     @State var searchText: String = ""
+    
+    @State var sortingSelection: SortingStrategy? = nil
+    @State var isSorting: Bool = false
+    
     
     let layout = [
         GridItem(.adaptive(minimum: 300), spacing: 10)
@@ -86,6 +92,10 @@ struct UpcomingiPadView: View {
         .environmentObject(upcoming as VideoViewModel)
         .task {
             await upcoming.getUpcoming()
+            
+            // Reset sorting state, go back to section view
+            isSorting = false
+            sortingSelection = nil
         }
         .searchable(text: $searchText, prompt: "SEARCH_BY_NAME_OR_TAG") {
             if searchText.isEmpty {
@@ -96,11 +106,15 @@ struct UpcomingiPadView: View {
         }
         .toolbar {
             ToolbarItemGroup {
-                UpcomingViewToolbar()
+                UpcomingViewToolbar(sortingSelection: $sortingSelection, isSorting: $isSorting)
                     .environmentObject(upcoming as VideoViewModel)
                 Button(action: {
                     Task {
                         await upcoming.getUpcoming()
+                        
+                        // Reset sorting state, go back to section view
+                        isSorting = false
+                        sortingSelection = nil
                     }
                 }, label: {
                     Label("Refresh", systemImage: "arrow.triangle.2.circlepath")

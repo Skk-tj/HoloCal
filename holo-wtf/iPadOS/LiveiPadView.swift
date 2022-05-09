@@ -9,9 +9,14 @@ import SwiftUI
 
 struct LiveiPadView: View {
     @StateObject var live: LiveViewModel
+    
     @AppStorage("favouritedChannel") var favourited = Favourited()
     @AppStorage("generationListSelection") var generationListSelection = Set(GenerationEnum.allCases)
+    
     @State var searchText: String = ""
+    
+    @State var sortingSelection: SortingStrategy? = nil
+    @State var isSorting: Bool = false
     
     let layout = [
         GridItem(.adaptive(minimum: 300), spacing: 10)
@@ -87,6 +92,10 @@ struct LiveiPadView: View {
         .environmentObject(live as VideoViewModel)
         .task {
             await live.getLive()
+            
+            // Reset sorting state, go back to section view
+            isSorting = false
+            sortingSelection = nil
         }
         .navigationTitle("LIVE_VIEW_TITLE")
         .searchable(text: $searchText, prompt: "SEARCH_BY_NAME_OR_TAG") {
@@ -98,11 +107,15 @@ struct LiveiPadView: View {
         }
         .toolbar {
             ToolbarItemGroup {
-                LiveViewToolbar()
+                LiveViewToolbar(sortingSelection: $sortingSelection, isSorting: $isSorting)
                     .environmentObject(live as VideoViewModel)
                 Button(action: {
                     Task {
                         await live.getLive()
+                        
+                        // Reset sorting state, go back to section view
+                        isSorting = false
+                        sortingSelection = nil
                     }
                 }, label: {
                     Label("Refresh", systemImage: "arrow.triangle.2.circlepath")
