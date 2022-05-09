@@ -12,11 +12,12 @@ struct CompactListView<CellContent: View, DataStatusContent: View>: View {
     
     @EnvironmentObject var viewModel: VideoViewModel
     
+    @Binding var isSorting: Bool
     @ViewBuilder let cellView: (_ live: LiveVideo) -> CellContent
     @ViewBuilder let dataStatusView: () -> DataStatusContent
     
     var body: some View {
-        VideoListView(singleVideoView: { live in
+        VideoListView(isSorting: $isSorting, singleVideoView: { live in
             SwipableLinkedCellView(video: live) {
                 cellView(live)
             }

@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct LiveCardListView: View {
+    @Binding var isSorting: Bool
     @EnvironmentObject var live: VideoViewModel
     
     var body: some View {
-        CardListView(paneView: { live in
+        CardListView(isSorting: $isSorting, paneView: { live in
             LivePaneView(live: live)
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: live.dataStatus) {

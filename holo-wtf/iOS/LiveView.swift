@@ -11,6 +11,9 @@ struct LiveView: View {
     @StateObject var live: LiveViewModel
     @AppStorage(UserDefaultKeys.isShowingCompactInLiveView) var isShowingCompactInLiveView: Bool = false
     
+    @State var isSorting: Bool = false
+    @State var sortingSelection: SortingStrategy? = nil
+    
     init() {
         self._live = StateObject(wrappedValue: LiveViewModel())
     }
@@ -18,22 +21,22 @@ struct LiveView: View {
     var body: some View {
         NavigationView {
             if isShowingCompactInLiveView {
-                LiveCompactListView()
+                LiveCompactListView(isSorting: $isSorting)
                     .environmentObject(live as VideoViewModel)
                     .navigationTitle("LIVE_VIEW_TITLE")
                     .toolbar {
                         ToolbarItemGroup {
-                            LiveViewToolbar()
+                            LiveViewToolbar(sortingSelection: $sortingSelection, isSorting: $isSorting)
                                 .environmentObject(live as VideoViewModel)
                         }
                     }
             } else {
-                LiveCardListView()
+                LiveCardListView(isSorting: $isSorting)
                     .environmentObject(live as VideoViewModel)
                     .navigationTitle("LIVE_VIEW_TITLE")
                     .toolbar {
                         ToolbarItemGroup {
-                            LiveViewToolbar()
+                            LiveViewToolbar(sortingSelection: $sortingSelection, isSorting: $isSorting)
                                 .environmentObject(live as VideoViewModel)
                         }
                     }
@@ -41,9 +44,17 @@ struct LiveView: View {
         }
         .task {
             await live.getLive()
+            
+            // Reset sorting state, go back to section view
+            isSorting = false
+            sortingSelection = nil
         }
         .refreshable {
             await live.getLive()
+            
+            // Reset sorting state, go back to section view
+            isSorting = false
+            sortingSelection = nil
         }
         .navigationViewStyle(.stack)
     }

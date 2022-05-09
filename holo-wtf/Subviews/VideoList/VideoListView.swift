@@ -13,6 +13,7 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     @EnvironmentObject var viewModel: VideoViewModel
     
     @State var searchText: String = ""
+    @Binding var isSorting: Bool
     @ViewBuilder let singleVideoView: (_ live: LiveVideo) -> VideoContent
     @ViewBuilder let dataStatusView: () -> DataStatusContent
     
@@ -28,9 +29,15 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
                     .headerProminence(.increased)
                 }
                 
-                SectionedNotFavouritedForEachView(cellView: { live in
-                    singleVideoView(live)
-                })
+                if isSorting {
+                    NotFavouritedForEachView(cellView: { live in
+                        singleVideoView(live)
+                    })
+                } else {
+                    SectionedNotFavouritedForEachView(cellView: { live in
+                        singleVideoView(live)
+                    })
+                }
                 
                 Section {
                     HStack {

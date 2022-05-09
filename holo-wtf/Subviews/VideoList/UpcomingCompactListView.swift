@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct UpcomingCompactListView: View {
+    @Binding var isSorting: Bool
     @EnvironmentObject var upcoming: VideoViewModel
     
     var body: some View {
-        CompactListView(cellView: { live in
+        CompactListView(isSorting: $isSorting, cellView: { live in
             UpcomingCellView(upcoming: live, twitterLink: upcoming.twitterList[live.channel.id] ?? nil)
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: upcoming.dataStatus) {

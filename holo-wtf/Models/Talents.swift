@@ -261,7 +261,7 @@ let generationToName: [GenerationEnum: [NameLanguage: String]] = [
     .idThirdGen: [.en: "ID 3rd gen", .ja: "ID 3期生"],
     .enMyth: [.en: "hololive English -Myth-", .ja: "hololive English -Myth-"],
     .projectHope: [.en: "Project: HOPE", .ja: "Project: HOPE"],
-    .enCouncil: [.en: "hololive English -議会-", .ja: "hololive English -Council-"],
+    .enCouncil: [.en: "hololive English -Council-", .ja: "hololive English -議会-"],
     .starsFirstGen: [.en: "holostars 1st gen", .ja: "ホロスターズ 1期生"],
     .starsSecondGen: [.en: "holostars 2nd gen", .ja: "ホロスターズ 2期生"],
     .starsThirdGen: [.en: "holostars 3nd gen", .ja: "ホロスターズ 3期生"],

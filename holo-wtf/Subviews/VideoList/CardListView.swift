@@ -12,11 +12,12 @@ struct CardListView<PaneContent: View, StatusContent: View>: View {
     
     @EnvironmentObject var viewModel: VideoViewModel
     
+    @Binding var isSorting: Bool
     @ViewBuilder let paneView: (_ live: LiveVideo) -> PaneContent
     @ViewBuilder let dataStatusView: () -> StatusContent
     
     var body: some View {
-        VideoListView(singleVideoView: { live in
+        VideoListView(isSorting: $isSorting, singleVideoView: { live in
             SwipableLinkedCellView(video: live) {
                 paneView(live)
             }
