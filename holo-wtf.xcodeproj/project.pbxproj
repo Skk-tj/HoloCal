@@ -14,6 +14,9 @@
 		F009024427EE5F3100E343B0 /* UpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */; };
 		F009024627EE6A9F00E343B0 /* VideoContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024527EE6A9F00E343B0 /* VideoContextMenu.swift */; };
 		F0114D4F2815F81600B99D4D /* DataStatusIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0114D4E2815F81600B99D4D /* DataStatusIndicatorView.swift */; };
+		F011C42828303CA400FD1364 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F009023D27EE255B00E343B0 /* Localizable.strings */; };
+		F011C429283059FA00FD1364 /* SecretConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F0ED2AF1280AC58C00683E6C /* SecretConfig.xcconfig */; };
+		F011C42A283059FB00FD1364 /* SecretConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F0ED2AF1280AC58C00683E6C /* SecretConfig.xcconfig */; };
 		F0433C4E27E99F85000FEADD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0433C4D27E99F85000FEADD /* SettingsView.swift */; };
 		F0433C5227EAEDDB000FEADD /* OpenSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */; };
 		F058189A281BFFDA0064EF94 /* SectionedNotFavouritedForEachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0581899281BFFDA0064EF94 /* SectionedNotFavouritedForEachView.swift */; };
@@ -28,6 +31,30 @@
 		F0673C172775F7FB009C65C6 /* LiveAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0673C162775F7FB009C65C6 /* LiveAvatarView.swift */; };
 		F080A04F27F95D9E00DBC08D /* Talents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A04E27F95D9E00DBC08D /* Talents.swift */; };
 		F080A05127F993DC00DBC08D /* ManageFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A05027F993DC00DBC08D /* ManageFavoriteView.swift */; };
+		F093D1BF282C32D000E2A6FF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F093D1BE282C32D000E2A6FF /* WidgetKit.framework */; };
+		F093D1C1282C32D000E2A6FF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F093D1C0282C32D000E2A6FF /* SwiftUI.framework */; };
+		F093D1C4282C32D000E2A6FF /* holo_wtf_widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1C3282C32D000E2A6FF /* holo_wtf_widget.swift */; };
+		F093D1C7282C32D100E2A6FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F093D1C6282C32D100E2A6FF /* Assets.xcassets */; };
+		F093D1C9282C32D100E2A6FF /* holo_wtf_widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F093D1C5282C32D000E2A6FF /* holo_wtf_widget.intentdefinition */; };
+		F093D1CA282C32D100E2A6FF /* holo_wtf_widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F093D1C5282C32D000E2A6FF /* holo_wtf_widget.intentdefinition */; };
+		F093D1CD282C32D100E2A6FF /* holo-wtf-widgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F093D1BC282C32D000E2A6FF /* holo-wtf-widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F093D1D3282FA08700E2A6FF /* LiveVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AE3280685FD00683E6C /* LiveVideo.swift */; };
+		F093D1D4282FA08900E2A6FF /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AE12806858300683E6C /* Channel.swift */; };
+		F093D1D6282FA0A600E2A6FF /* VideoThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AE52808253700683E6C /* VideoThumbnailView.swift */; };
+		F093D1D7282FA0B000E2A6FF /* LiveAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0673C162775F7FB009C65C6 /* LiveAvatarView.swift */; };
+		F093D1D9282FA0C000E2A6FF /* LiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AEF280AC27400683E6C /* LiveViewModel.swift */; };
+		F093D1DA282FA0C000E2A6FF /* UpcomingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AF2280AD60D00683E6C /* UpcomingViewModel.swift */; };
+		F093D1DB282FA0C000E2A6FF /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AF6280B640200683E6C /* VideoViewModel.swift */; };
+		F093D1DC282FA0CF00E2A6FF /* LiveTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009023727EDB6AE00E343B0 /* LiveTimeView.swift */; };
+		F093D1DE282FA5E600E2A6FF /* VideoFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */; };
+		F093D1DF282FA5FE00E2A6FF /* VideoFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */; };
+		F093D1E0282FAA0500E2A6FF /* TopicTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2B12280CB73D00683E6C /* TopicTagView.swift */; };
+		F093D1E5283034DA00E2A6FF /* Talents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A04E27F95D9E00DBC08D /* Talents.swift */; };
+		F093D1E72830358400E2A6FF /* ViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1E62830358400E2A6FF /* ViewUtil.swift */; };
+		F093D1E82830359900E2A6FF /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657D527732690004AF802 /* Util.swift */; };
+		F093D1EA283035D800E2A6FF /* HTMLString in Frameworks */ = {isa = PBXBuildFile; productRef = F093D1E9283035D800E2A6FF /* HTMLString */; };
+		F093D1EC283035EC00E2A6FF /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = F093D1EB283035EC00E2A6FF /* Algorithms */; };
+		F093D1ED2830372900E2A6FF /* LiveWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1E3283034AF00E2A6FF /* LiveWidgetView.swift */; };
 		F0954BDE2817B73E00369EC4 /* SearchSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BDD2817B73E00369EC4 /* SearchSectionView.swift */; };
 		F0954BE02817C01900369EC4 /* SearchForEachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BDF2817C01900369EC4 /* SearchForEachView.swift */; };
 		F0954BE22817C52700369EC4 /* FavouritedForEachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BE12817C52700369EC4 /* FavouritedForEachView.swift */; };
@@ -81,7 +108,28 @@
 			remoteGlobalIDString = F0C657B62771F47C004AF802;
 			remoteInfo = "holo-wtf";
 		};
+		F093D1CB282C32D100E2A6FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0C657AF2771F47C004AF802 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F093D1BB282C32D000E2A6FF;
+			remoteInfo = "holo-wtf-widgetExtension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F093D1CE282C32D100E2A6FF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F093D1CD282C32D100E2A6FF /* holo-wtf-widgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F009023727EDB6AE00E343B0 /* LiveTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTimeView.swift; sourceTree = "<group>"; };
@@ -109,6 +157,16 @@
 		F0673C162775F7FB009C65C6 /* LiveAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAvatarView.swift; sourceTree = "<group>"; };
 		F080A04E27F95D9E00DBC08D /* Talents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talents.swift; sourceTree = "<group>"; };
 		F080A05027F993DC00DBC08D /* ManageFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageFavoriteView.swift; sourceTree = "<group>"; };
+		F093D1BC282C32D000E2A6FF /* holo-wtf-widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "holo-wtf-widgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F093D1BE282C32D000E2A6FF /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		F093D1C0282C32D000E2A6FF /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		F093D1C3282C32D000E2A6FF /* holo_wtf_widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = holo_wtf_widget.swift; sourceTree = "<group>"; };
+		F093D1C5282C32D000E2A6FF /* holo_wtf_widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = holo_wtf_widget.intentdefinition; sourceTree = "<group>"; };
+		F093D1C6282C32D100E2A6FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F093D1C8282C32D100E2A6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFetchService.swift; sourceTree = "<group>"; };
+		F093D1E3283034AF00E2A6FF /* LiveWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveWidgetView.swift; sourceTree = "<group>"; };
+		F093D1E62830358400E2A6FF /* ViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtil.swift; sourceTree = "<group>"; };
 		F0954BDD2817B73E00369EC4 /* SearchSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSectionView.swift; sourceTree = "<group>"; };
 		F0954BDF2817C01900369EC4 /* SearchForEachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchForEachView.swift; sourceTree = "<group>"; };
 		F0954BE12817C52700369EC4 /* FavouritedForEachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritedForEachView.swift; sourceTree = "<group>"; };
@@ -158,6 +216,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F093D1B9282C32D000E2A6FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F093D1EC283035EC00E2A6FF /* Algorithms in Frameworks */,
+				F093D1C1282C32D000E2A6FF /* SwiftUI.framework in Frameworks */,
+				F093D1EA283035D800E2A6FF /* HTMLString in Frameworks */,
+				F093D1BF282C32D000E2A6FF /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +294,27 @@
 			path = Subviews;
 			sourceTree = "<group>";
 		};
+		F093D1BD282C32D000E2A6FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F093D1BE282C32D000E2A6FF /* WidgetKit.framework */,
+				F093D1C0282C32D000E2A6FF /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F093D1C2282C32D000E2A6FF /* holo-wtf-widget */ = {
+			isa = PBXGroup;
+			children = (
+				F093D1E3283034AF00E2A6FF /* LiveWidgetView.swift */,
+				F093D1C3282C32D000E2A6FF /* holo_wtf_widget.swift */,
+				F093D1C5282C32D000E2A6FF /* holo_wtf_widget.intentdefinition */,
+				F093D1C6282C32D100E2A6FF /* Assets.xcassets */,
+				F093D1C8282C32D100E2A6FF /* Info.plist */,
+			);
+			path = "holo-wtf-widget";
+			sourceTree = "<group>";
+		};
 		F0954BED2817D80400369EC4 /* VideoCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +366,7 @@
 				F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */,
 				F0C657D527732690004AF802 /* Util.swift */,
 				F0A5B7BB282112FF004E319F /* ManageGenerationView.swift */,
+				F093D1E62830358400E2A6FF /* ViewUtil.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -285,6 +376,8 @@
 			children = (
 				F0C657B92771F47C004AF802 /* holo-wtf */,
 				F05818A0281CAAF50064EF94 /* HoloCalUITests */,
+				F093D1C2282C32D000E2A6FF /* holo-wtf-widget */,
+				F093D1BD282C32D000E2A6FF /* Frameworks */,
 				F0C657B82771F47C004AF802 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -294,6 +387,7 @@
 			children = (
 				F0C657B72771F47C004AF802 /* HoloCal.app */,
 				F058189F281CAAF50064EF94 /* HoloCalUITests.xctest */,
+				F093D1BC282C32D000E2A6FF /* holo-wtf-widgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -344,6 +438,7 @@
 				F0ED2AEF280AC27400683E6C /* LiveViewModel.swift */,
 				F0ED2AF2280AD60D00683E6C /* UpcomingViewModel.swift */,
 				F0ED2AF6280B640200683E6C /* VideoViewModel.swift */,
+				F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -388,6 +483,27 @@
 			productReference = F058189F281CAAF50064EF94 /* HoloCalUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		F093D1BB282C32D000E2A6FF /* holo-wtf-widgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F093D1D1282C32D100E2A6FF /* Build configuration list for PBXNativeTarget "holo-wtf-widgetExtension" */;
+			buildPhases = (
+				F093D1B8282C32D000E2A6FF /* Sources */,
+				F093D1B9282C32D000E2A6FF /* Frameworks */,
+				F093D1BA282C32D000E2A6FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "holo-wtf-widgetExtension";
+			packageProductDependencies = (
+				F093D1E9283035D800E2A6FF /* HTMLString */,
+				F093D1EB283035EC00E2A6FF /* Algorithms */,
+			);
+			productName = "holo-wtf-widgetExtension";
+			productReference = F093D1BC282C32D000E2A6FF /* holo-wtf-widgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		F0C657B62771F47C004AF802 /* holo-wtf */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0C657C52771F47C004AF802 /* Build configuration list for PBXNativeTarget "holo-wtf" */;
@@ -395,10 +511,12 @@
 				F0C657B32771F47C004AF802 /* Sources */,
 				F0C657B42771F47C004AF802 /* Frameworks */,
 				F0C657B52771F47C004AF802 /* Resources */,
+				F093D1CE282C32D100E2A6FF /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F093D1CC282C32D100E2A6FF /* PBXTargetDependency */,
 			);
 			name = "holo-wtf";
 			packageProductDependencies = (
@@ -424,6 +542,9 @@
 					F058189E281CAAF50064EF94 = {
 						CreatedOnToolsVersion = 13.3.1;
 						TestTargetID = F0C657B62771F47C004AF802;
+					};
+					F093D1BB282C32D000E2A6FF = {
+						CreatedOnToolsVersion = 13.3.1;
 					};
 					F0C657B62771F47C004AF802 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -452,6 +573,7 @@
 			targets = (
 				F0C657B62771F47C004AF802 /* holo-wtf */,
 				F058189E281CAAF50064EF94 /* HoloCalUITests */,
+				F093D1BB282C32D000E2A6FF /* holo-wtf-widgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -464,6 +586,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F093D1BA282C32D000E2A6FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F011C429283059FA00FD1364 /* SecretConfig.xcconfig in Resources */,
+				F093D1C7282C32D100E2A6FF /* Assets.xcassets in Resources */,
+				F011C42828303CA400FD1364 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F0C657B52771F47C004AF802 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -472,6 +604,7 @@
 				F0C657C22771F47C004AF802 /* Preview Assets.xcassets in Resources */,
 				F009023B27EE255B00E343B0 /* Localizable.strings in Resources */,
 				F0C657BF2771F47C004AF802 /* Assets.xcassets in Resources */,
+				F011C42A283059FB00FD1364 /* SecretConfig.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,12 +620,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F093D1B8282C32D000E2A6FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F093D1C9282C32D100E2A6FF /* holo_wtf_widget.intentdefinition in Sources */,
+				F093D1DC282FA0CF00E2A6FF /* LiveTimeView.swift in Sources */,
+				F093D1DA282FA0C000E2A6FF /* UpcomingViewModel.swift in Sources */,
+				F093D1D9282FA0C000E2A6FF /* LiveViewModel.swift in Sources */,
+				F093D1D7282FA0B000E2A6FF /* LiveAvatarView.swift in Sources */,
+				F093D1D4282FA08900E2A6FF /* Channel.swift in Sources */,
+				F093D1D3282FA08700E2A6FF /* LiveVideo.swift in Sources */,
+				F093D1E5283034DA00E2A6FF /* Talents.swift in Sources */,
+				F093D1C4282C32D000E2A6FF /* holo_wtf_widget.swift in Sources */,
+				F093D1D6282FA0A600E2A6FF /* VideoThumbnailView.swift in Sources */,
+				F093D1DB282FA0C000E2A6FF /* VideoViewModel.swift in Sources */,
+				F093D1E82830359900E2A6FF /* Util.swift in Sources */,
+				F093D1E0282FAA0500E2A6FF /* TopicTagView.swift in Sources */,
+				F093D1ED2830372900E2A6FF /* LiveWidgetView.swift in Sources */,
+				F093D1DF282FA5FE00E2A6FF /* VideoFetchService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F0C657B32771F47C004AF802 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F0C50A1F2827C6FA00A93225 /* UpcomingCountView.swift in Sources */,
 				F09D25E52802EA09001A7D71 /* SwipableLinkedCellView.swift in Sources */,
+				F093D1CA282C32D100E2A6FF /* holo_wtf_widget.intentdefinition in Sources */,
 				F009023827EDB6AE00E343B0 /* LiveTimeView.swift in Sources */,
 				F09D25F328041CC3001A7D71 /* iPadSidebarView.swift in Sources */,
 				F0673C172775F7FB009C65C6 /* LiveAvatarView.swift in Sources */,
@@ -502,6 +658,7 @@
 				F0C657BD2771F47C004AF802 /* LiveView.swift in Sources */,
 				F0EB53BD2812C5680024E089 /* OldShareButton.swift in Sources */,
 				F0EB53B0281290490024E089 /* PaneViewButtonRowView.swift in Sources */,
+				F093D1DE282FA5E600E2A6FF /* VideoFetchService.swift in Sources */,
 				F09D25C928020B12001A7D71 /* UpcomingViewToolbar.swift in Sources */,
 				F009024027EE57BA00E343B0 /* LinkedVideoView.swift in Sources */,
 				F009024627EE6A9F00E343B0 /* VideoContextMenu.swift in Sources */,
@@ -515,6 +672,7 @@
 				F0954BEC2817D63100369EC4 /* VideoListView.swift in Sources */,
 				F0ED2AE22806858300683E6C /* Channel.swift in Sources */,
 				F0954BDE2817B73E00369EC4 /* SearchSectionView.swift in Sources */,
+				F093D1E72830358400E2A6FF /* ViewUtil.swift in Sources */,
 				F0ED2AE4280685FD00683E6C /* LiveVideo.swift in Sources */,
 				F0ED2AF3280AD60D00683E6C /* UpcomingViewModel.swift in Sources */,
 				F0EB53B82812BEAD0024E089 /* ShareButton.swift in Sources */,
@@ -555,6 +713,11 @@
 			isa = PBXTargetDependency;
 			target = F0C657B62771F47C004AF802 /* holo-wtf */;
 			targetProxy = F05818A5281CAAF50064EF94 /* PBXContainerItemProxy */;
+		};
+		F093D1CC282C32D100E2A6FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F093D1BB282C32D000E2A6FF /* holo-wtf-widgetExtension */;
+			targetProxy = F093D1CB282C32D100E2A6FF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -604,6 +767,62 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "holo-wtf";
+			};
+			name = Release;
+		};
+		F093D1CF282C32D100E2A6FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 51;
+				DEVELOPMENT_TEAM = NTH2V9C699;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "holo-wtf-widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "holo-wtf-widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.4.5;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.holo-wtf-widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F093D1D0282C32D100E2A6FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 51;
+				DEVELOPMENT_TEAM = NTH2V9C699;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "holo-wtf-widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "holo-wtf-widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.4.5;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.holo-wtf-widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -728,6 +947,7 @@
 		F0C657C62771F47C004AF802 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -761,6 +981,7 @@
 		F0C657C72771F47C004AF802 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -799,6 +1020,15 @@
 			buildConfigurations = (
 				F05818A8281CAAF50064EF94 /* Debug */,
 				F05818A9281CAAF50064EF94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F093D1D1282C32D100E2A6FF /* Build configuration list for PBXNativeTarget "holo-wtf-widgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F093D1CF282C32D100E2A6FF /* Debug */,
+				F093D1D0282C32D100E2A6FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -859,6 +1089,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F093D1E9283035D800E2A6FF /* HTMLString */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F0B8E1CB27E90EBA00DC7CF9 /* XCRemoteSwiftPackageReference "HTMLString" */;
+			productName = HTMLString;
+		};
+		F093D1EB283035EC00E2A6FF /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F09D25BF27FEBA2E001A7D71 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
 		F09D25C027FEBA2E001A7D71 /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F09D25BF27FEBA2E001A7D71 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
