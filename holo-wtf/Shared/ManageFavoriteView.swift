@@ -12,9 +12,11 @@ struct ManageFavoriteView: View {
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
     var body: some View {
+        let lang: NameLanguage = Locale.current.languageCode == "ja" ? .ja : .en
+        
         List {
             ForEach(talentsByGeneration, id: \.self) { generation in
-                Section(Locale.preferredLanguages[0] == "ja" ? generationToName[generation.generation]![.ja]! : generationToName[generation.generation]![.en]!) {
+                Section(generationToName[generation.generation]![lang]!) {
                     ForEach(generation.members) { talent in
                         SettingsTalentStarView(talent: talentsToName[talent]!, favourited: $favourited)
                     }

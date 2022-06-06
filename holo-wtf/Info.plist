@@ -6,5 +6,9 @@
 	<string>$(HOLODEX_API_KEY)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>ConfigurationIntent</string>
+	</array>
 </dict>
 </plist>
