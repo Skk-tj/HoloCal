@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  holo-wtf
+
+ 
+  
+*/
+
+// Widget view text
+
+"NO_ONE_IS_STREAMING" = "No stream. ";
+"NETWORK_ERROR" = "Network error. ";
+
+// Widget system text
+
+"CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "ライブ配信中";
+"CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "ライブ配信中のメンバーを表示する";
+
+"MULTIPLE_CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "ライブ配信中";
+"MULTIPLE_CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "Show two lives at once. "

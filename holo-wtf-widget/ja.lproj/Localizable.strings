@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  holo-wtf
+
+ 
+  
+*/
+
+"NO_ONE_IS_STREAMING" = "配信はありません。";
+"NETWORK_ERROR" = "ネットワークエラーが発生しました。";
+
+// Widget system text
+
+"CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "Currently Live";
+"CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "Show who is currently live. ";
+
+"MULTIPLE_CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "Multiple Currently Live";
+"MULTIPLE_CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "Show two lives at once. "
