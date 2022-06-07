@@ -15,11 +15,23 @@ struct LiveWidgetView: View {
     
     var body: some View {
         VStack {
+            HStack {
+                Text("LIVE_WIDGET_TITLE")
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
+                
+                Spacer()
+            }
+            .padding(.top)
+            .padding(.leading)
+            
             if let image = UIImage(data: thumbnailData) {
                 Image(uiImage: image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .offset(y: -15)
+                    .cornerRadius(15)
+                    .padding(.leading)
+                    .padding(.trailing)
             }
             
             VStack(alignment: .leading) {
@@ -69,6 +81,7 @@ struct LiveWidgetView: View {
                 }
             }
             .padding(.horizontal)
+            .padding(.bottom)
         }
     }
 }

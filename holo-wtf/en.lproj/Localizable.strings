@@ -109,3 +109,17 @@
 
 // Search prompt
 "SEARCH_BY_NAME_OR_TAG" = "Search by name or tag";
+
+// Widget view text
+"NO_ONE_IS_STREAMING" = "No stream. ";
+"NETWORK_ERROR" = "Network error. ";
+
+// LiveWidget
+"LIVE_WIDGET_TITLE" = "**CURRENTLY LIVE**";
+
+// Widget system text
+"CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "Currently Live";
+"CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "Show who is currently live. ";
+
+"MULTIPLE_CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "Currently Live";
+"MULTIPLE_CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "Show two lives at once. ";
