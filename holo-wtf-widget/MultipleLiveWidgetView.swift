@@ -19,15 +19,6 @@ struct MultipleLiveWidgetView: View {
         let lang: NameLanguage = Locale.current.languageCode == "ja" ? .ja : .en
         
         VStack {
-//            HStack {
-//                Text("LIVE_WIDGET_TITLE")
-//                    .font(.footnote)
-//                    .foregroundColor(.secondary)
-//
-//                Spacer()
-//            }
-//            .padding(.leading)
-            
             if let rightVideo = rightVideo {
                 HStack {
                     // Left stream
@@ -85,6 +76,15 @@ struct MultipleLiveWidgetView: View {
                 }
             } else {
                 HStack {
+                    Text("LIVE_WIDGET_TITLE")
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                    
+                    Spacer()
+                }
+                .padding(.leading)
+                
+                HStack {
                     if let image = UIImage(data: leftVideoThumbnail) {
                         Image(uiImage: image)
                             .resizable()
@@ -95,7 +95,7 @@ struct MultipleLiveWidgetView: View {
                     VStack(alignment: .leading) {
                         Text(leftVideo.escapedTitle)
                             .lineLimit(2)
-                            .font(.caption)
+                            .font(.footnote)
                         
                         Text(leftVideo.channel.talent.names[lang]!)
                             .foregroundColor(.secondary)
