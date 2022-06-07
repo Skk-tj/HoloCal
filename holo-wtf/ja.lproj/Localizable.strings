@@ -109,3 +109,17 @@
 
 // Search prompt
 "SEARCH_BY_NAME_OR_TAG" = "名前またはタグで検索";
+
+// Widget view text
+"NO_ONE_IS_STREAMING" = "配信はありません。";
+"NETWORK_ERROR" = "ネットワークエラーが発生しました。";
+
+// LiveWidget
+"LIVE_WIDGET_TITLE" = "**ライブ配信中**";
+
+// Widget system text
+"CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "ライブ配信中";
+"CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "ライブ配信中のメンバーを表示する";
+
+"MULTIPLE_CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "ライブ配信中";
+"MULTIPLE_CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "Show two lives at once. ";

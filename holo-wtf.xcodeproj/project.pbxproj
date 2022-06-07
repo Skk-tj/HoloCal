@@ -15,7 +15,6 @@
 		F009024627EE6A9F00E343B0 /* VideoContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024527EE6A9F00E343B0 /* VideoContextMenu.swift */; };
 		F0114D4F2815F81600B99D4D /* DataStatusIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0114D4E2815F81600B99D4D /* DataStatusIndicatorView.swift */; };
 		F011C42828303CA400FD1364 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F009023D27EE255B00E343B0 /* Localizable.strings */; };
-		F0431BF4284A982E00B41531 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0431BF6284A982E00B41531 /* Localizable.strings */; };
 		F0433C4E27E99F85000FEADD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0433C4D27E99F85000FEADD /* SettingsView.swift */; };
 		F0433C5227EAEDDB000FEADD /* OpenSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */; };
 		F04D1B3E283A304E0026340D /* LiveWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D1B3C283A300E0026340D /* LiveWidgetProvider.swift */; };
@@ -144,8 +143,6 @@
 		F0114D4E2815F81600B99D4D /* DataStatusIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStatusIndicatorView.swift; sourceTree = "<group>"; };
 		F0204DB827E91A920083750F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F0204DB927E925220083750F /* PRIVACY-POLICY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "PRIVACY-POLICY.md"; sourceTree = "<group>"; };
-		F0431BF5284A982E00B41531 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F0431BF7284A983400B41531 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F0433C4D27E99F85000FEADD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceView.swift; sourceTree = "<group>"; };
 		F04D1B3C283A300E0026340D /* LiveWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveWidgetProvider.swift; sourceTree = "<group>"; };
@@ -321,7 +318,6 @@
 				F093D1C8282C32D100E2A6FF /* Info.plist */,
 				F04D1B3C283A300E0026340D /* LiveWidgetProvider.swift */,
 				F0B71FCC283CACA000DC4260 /* MultipleLiveWidgetProvider.swift */,
-				F0431BF6284A982E00B41531 /* Localizable.strings */,
 			);
 			path = "holo-wtf-widget";
 			sourceTree = "<group>";
@@ -602,7 +598,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F093D1C7282C32D100E2A6FF /* Assets.xcassets in Resources */,
-				F0431BF4284A982E00B41531 /* Localizable.strings in Resources */,
 				F011C42828303CA400FD1364 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -740,15 +735,6 @@
 			children = (
 				F009023C27EE255B00E343B0 /* ja */,
 				F009023E27EE258500E343B0 /* en */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		F0431BF6284A982E00B41531 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F0431BF5284A982E00B41531 /* ja */,
-				F0431BF7284A983400B41531 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
