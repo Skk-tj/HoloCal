@@ -119,7 +119,7 @@
 
 // Widget system text
 "CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "Currently Live";
-"CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "Show who is currently live. ";
+"CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "Show a current stream. ";
 
-"MULTIPLE_CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "Currently Live";
-"MULTIPLE_CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "Show two lives at once. ";
+"MULTIPLE_CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "Multiple Current Live";
+"MULTIPLE_CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "Show two streams together. ";
