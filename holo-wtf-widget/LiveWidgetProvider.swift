@@ -8,7 +8,7 @@
 import WidgetKit
 import Intents
 
-struct LiveWidgetEntry: TimelineEntry {
+struct LiveWidgetEntry: VideoTimelineEntry {
     let date: Date
     let configuration: ConfigurationIntent
     let video: LiveVideo?

@@ -9,6 +9,10 @@ import WidgetKit
 import SwiftUI
 import Intents
 
+protocol VideoTimelineEntry: TimelineEntry {
+    var status: WidgetDataStatus { get }
+}
+
 enum WidgetDataStatus {
     case ok
     case noVideo
@@ -19,10 +23,45 @@ struct SmallLiveWidgetEntryView: View {
     var entry: LiveWidgetProvider.Entry
     
     var body: some View {
-        if let video = entry.video {
-            SmallLiveWidgetView(live: video, avatarData: entry.avatarData)
-        } else {
-            Text("NO_ONE_IS_STREAMING")
+        switch entry.status {
+        case .ok:
+            if let video = entry.video {
+                SmallLiveWidgetView(live: video, avatarData: entry.avatarData)
+            } else {
+                Text("NO_ONE_IS_STREAMING")
+            }
+        case .noVideo:
+            VStack {
+                HStack {
+                    Text("LIVE_WIDGET_TITLE")
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                        .padding(.leading)
+                        .padding(.top)
+                    Spacer()
+                }
+                Spacer()
+                
+                Text("NO_ONE_IS_STREAMING")
+                
+                Spacer()
+            }
+        case .network:
+            VStack {
+                HStack {
+                    Text("LIVE_WIDGET_TITLE")
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                        .padding(.leading)
+                        .padding(.top)
+                    Spacer()
+                }
+                Spacer()
+                
+                Text("NETWORK_ERROR")
+                
+                Spacer()
+            }
         }
     }
 }
