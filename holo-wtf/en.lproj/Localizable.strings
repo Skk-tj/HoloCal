@@ -111,8 +111,8 @@
 "SEARCH_BY_NAME_OR_TAG" = "Search by name or tag";
 
 // Widget view text
-"NO_ONE_IS_STREAMING" = "No stream. ";
-"NETWORK_ERROR" = "Network error. ";
+"NO_ONE_IS_STREAMING" = "No stream";
+"NETWORK_ERROR" = "Network error";
 
 // LiveWidget
 "LIVE_WIDGET_TITLE" = "**CURRENTLY LIVE**";

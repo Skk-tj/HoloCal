@@ -29,7 +29,7 @@ struct LiveWidgetView: View {
                 Image(uiImage: image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .cornerRadius(15)
+                    .cornerRadius(10)
                     .padding(.leading)
                     .padding(.trailing)
             }
@@ -48,10 +48,10 @@ struct LiveWidgetView: View {
                             .frame(width: 40, height: 40)
                             .clipShape(Circle())
                             .overlay {
-                                Circle().stroke(.white, lineWidth: 2)
+                                Circle().stroke(.white, lineWidth: 1)
                             }
-                            .shadow(radius: 4)
-                            .padding(4.0)
+                            .shadow(radius: 3)
+                            .padding(2)
                     }
                     
                     Text(live.channel.name)
