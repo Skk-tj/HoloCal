@@ -22,6 +22,7 @@
 		F058189A281BFFDA0064EF94 /* SectionedNotFavouritedForEachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0581899281BFFDA0064EF94 /* SectionedNotFavouritedForEachView.swift */; };
 		F05818A2281CAAF50064EF94 /* HoloCalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05818A1281CAAF50064EF94 /* HoloCalUITests.swift */; };
 		F05818A4281CAAF50064EF94 /* HoloCalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05818A3281CAAF50064EF94 /* HoloCalUITestsLaunchTests.swift */; };
+		F05DFA362853CA7800D62D19 /* BaseVideoEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05DFA352853CA7800D62D19 /* BaseVideoEntryView.swift */; };
 		F05E9EB327EB27F800EF48DD /* LiveiPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E9EB227EB27F800EF48DD /* LiveiPadView.swift */; };
 		F05E9EB527EB290000EF48DD /* UpcomingiPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E9EB427EB290000EF48DD /* UpcomingiPadView.swift */; };
 		F05E9EB727EB291900EF48DD /* SettingsiPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E9EB627EB291900EF48DD /* SettingsiPadView.swift */; };
@@ -153,6 +154,7 @@
 		F058189F281CAAF50064EF94 /* HoloCalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoloCalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F05818A1281CAAF50064EF94 /* HoloCalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoloCalUITests.swift; sourceTree = "<group>"; };
 		F05818A3281CAAF50064EF94 /* HoloCalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoloCalUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F05DFA352853CA7800D62D19 /* BaseVideoEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVideoEntryView.swift; sourceTree = "<group>"; };
 		F05E9EB227EB27F800EF48DD /* LiveiPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveiPadView.swift; sourceTree = "<group>"; };
 		F05E9EB427EB290000EF48DD /* UpcomingiPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingiPadView.swift; sourceTree = "<group>"; };
 		F05E9EB627EB291900EF48DD /* SettingsiPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsiPadView.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 		F093D1C2282C32D000E2A6FF /* holo-wtf-widget */ = {
 			isa = PBXGroup;
 			children = (
+				F05DFA352853CA7800D62D19 /* BaseVideoEntryView.swift */,
 				F047F0852851C74500B2E2B9 /* SmallLiveWidgetView.swift */,
 				F093D1E3283034AF00E2A6FF /* LiveWidgetView.swift */,
 				F04D1B40283A3AE70026340D /* MultipleLiveWidgetView.swift */,
@@ -648,6 +651,7 @@
 				F047F0862851C74500B2E2B9 /* SmallLiveWidgetView.swift in Sources */,
 				F093D1D6282FA0A600E2A6FF /* VideoThumbnailView.swift in Sources */,
 				F0B71FCF283E08C300DC4260 /* MultipleLiveWidgetView.swift in Sources */,
+				F05DFA362853CA7800D62D19 /* BaseVideoEntryView.swift in Sources */,
 				F093D1DB282FA0C000E2A6FF /* VideoViewModel.swift in Sources */,
 				F093D1E82830359900E2A6FF /* Util.swift in Sources */,
 				F093D1E0282FAA0500E2A6FF /* TopicTagView.swift in Sources */,

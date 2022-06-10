@@ -8,7 +8,7 @@
 import WidgetKit
 import Intents
 
-struct MultipleLiveWidgetEntry: TimelineEntry {
+struct MultipleLiveWidgetEntry: VideoTimelineEntry {
     let date: Date
     let configuration: ConfigurationIntent
     
