@@ -24,6 +24,8 @@ struct MultipleLiveWidgetEntry: TimelineEntry {
 struct MultipleLiveWidgetProvider: IntentTimelineProvider {
     typealias Entry = MultipleLiveWidgetEntry
     
+    let url: String = "https://holodex.net/api/v2/live?org=Hololive&status=live&type=stream"
+    
     func placeholder(in context: Context) -> MultipleLiveWidgetEntry {
         let channel: Channel = .init(id: "UCp6993wxpyDPHUpavwDFqgg", name: "I don't know", photo: nil, org: "Hololive")
         
@@ -35,7 +37,7 @@ struct MultipleLiveWidgetProvider: IntentTimelineProvider {
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Entry) -> Void) {
         Task {
             do {
-                var lives = try await VideoFetchService.shared.getVideos(from: "https://holodex.net/api/v2/live?org=Hololive&status=live&type=stream")
+                var lives = try await VideoFetchService.shared.getVideos(from: url)
                 lives.sort(by: {$0.startActual ?? Date.distantFuture > $1.startActual ?? Date.distantFuture})
                 
                 if lives.isEmpty {
@@ -68,7 +70,7 @@ struct MultipleLiveWidgetProvider: IntentTimelineProvider {
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
         Task {
             do {
-                var lives = try await VideoFetchService.shared.getVideos(from: "https://holodex.net/api/v2/live?org=Hololive&status=live&type=stream")
+                var lives = try await VideoFetchService.shared.getVideos(from: url)
                 lives.sort(by: {$0.startActual ?? Date.distantFuture > $1.startActual ?? Date.distantFuture})
                 
                 if lives.isEmpty {

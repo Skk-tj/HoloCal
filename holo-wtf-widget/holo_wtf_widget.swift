@@ -15,6 +15,18 @@ enum WidgetDataStatus {
     case network
 }
 
+struct SmallLiveWidgetEntryView: View {
+    var entry: LiveWidgetProvider.Entry
+    
+    var body: some View {
+        if let video = entry.video {
+            SmallLiveWidgetView(live: video, avatarData: entry.avatarData)
+        } else {
+            Text("NO_ONE_IS_STREAMING")
+        }
+    }
+}
+
 struct LivePaneWidgetEntryView: View {
     var entry: LiveWidgetProvider.Entry
     
@@ -27,10 +39,37 @@ struct LivePaneWidgetEntryView: View {
                 Text("NO_ONE_IS_STREAMING")
             }
         case .noVideo:
-            Text("NO_ONE_IS_STREAMING")
-            
+            VStack {
+                HStack {
+                    Text("LIVE_WIDGET_TITLE")
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                        .padding(.leading)
+                        .padding(.top)
+                    Spacer()
+                }
+                Spacer()
+                
+                Text("NO_ONE_IS_STREAMING")
+                
+                Spacer()
+            }
         case .network:
-            Text("NETWORK_ERROR")
+            VStack {
+                HStack {
+                    Text("LIVE_WIDGET_TITLE")
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                        .padding(.leading)
+                        .padding(.top)
+                    Spacer()
+                }
+                Spacer()
+                
+                Text("NETWORK_ERROR")
+                
+                Spacer()
+            }
         }
     }
 }
@@ -45,19 +84,51 @@ struct MultipleLiveWidgetEntryView: View {
                 MultipleLiveWidgetView(leftVideo: videoLeft, leftVideoThumbnail: entry.thumbnailDataLeft, rightVideo: entry.videoRight, rightVideoThumbnail: entry.thumbnailDataRight)
             }
         case .noVideo:
-            Text("NO_ONE_IS_STREAMING")
+            VStack {
+                HStack {
+                    Text("LIVE_WIDGET_TITLE")
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                        .padding(.leading)
+                        .padding(.top)
+                    Spacer()
+                }
+                Spacer()
+                
+                Text("NO_ONE_IS_STREAMING")
+                
+                Spacer()
+            }
         case .network:
-            Text("NETWORK_ERROR")
+            VStack {
+                HStack {
+                    Text("LIVE_WIDGET_TITLE")
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                        .padding(.leading)
+                        .padding(.top)
+                    Spacer()
+                }
+                Spacer()
+                
+                Text("NETWORK_ERROR")
+                
+                Spacer()
+            }
         }
     }
 }
 
-@main
-struct HoloCalWidgetBundle: WidgetBundle {
-    @WidgetBundleBuilder
-    var body: some Widget {
-        LivePaneWidget()
-        MultipleLiveWidget()
+struct SmallLiveWidget: Widget {
+    let kind: String = "SmallLiveWidget"
+    
+    var body: some WidgetConfiguration {
+        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: LiveWidgetProvider()) { entry in
+            SmallLiveWidgetEntryView(entry: entry)
+        }
+        .configurationDisplayName("CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
+        .description("CURRENTLY_LIVE_WIDGET_DESCRIPTION")
+        .supportedFamilies([.systemSmall])
     }
 }
 
@@ -87,6 +158,16 @@ struct MultipleLiveWidget: Widget {
     }
 }
 
+@main
+struct HoloCalWidgetBundle: WidgetBundle {
+    @WidgetBundleBuilder
+    var body: some Widget {
+        SmallLiveWidget()
+        LivePaneWidget()
+        MultipleLiveWidget()
+    }
+}
+
 struct holo_wtf_widget_Previews: PreviewProvider {
     static var previews: some View {
         let channel: Channel = .init(id: "sampleChannelId", name: "Cp6993wxpyDPHUpavwDFqgg", photo: nil, org: "Hololive")
@@ -95,5 +176,14 @@ struct holo_wtf_widget_Previews: PreviewProvider {
         
         LivePaneWidgetEntryView(entry: LiveWidgetEntry(date: Date(), configuration: ConfigurationIntent(), video: video, status: .ok, avatarData: Data(), thumbnailData: Data()))
             .previewContext(WidgetPreviewContext(family: .systemLarge))
+        
+        LivePaneWidgetEntryView(entry: LiveWidgetEntry(date: Date(), configuration: ConfigurationIntent(), video: video, status: .noVideo, avatarData: Data(), thumbnailData: Data()))
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
+        
+        MultipleLiveWidgetEntryView(entry: MultipleLiveWidgetEntry(date: Date(), configuration: ConfigurationIntent(), videoLeft: nil, thumbnailDataLeft: Data(), videoRight: nil, thumbnailDataRight: Data(), status: .noVideo))
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
+        
+        MultipleLiveWidgetEntryView(entry: MultipleLiveWidgetEntry(date: Date(), configuration: ConfigurationIntent(), videoLeft: nil, thumbnailDataLeft: Data(), videoRight: nil, thumbnailDataRight: Data(), status: .network))
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

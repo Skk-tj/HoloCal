@@ -17,6 +17,7 @@
 		F011C42828303CA400FD1364 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F009023D27EE255B00E343B0 /* Localizable.strings */; };
 		F0433C4E27E99F85000FEADD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0433C4D27E99F85000FEADD /* SettingsView.swift */; };
 		F0433C5227EAEDDB000FEADD /* OpenSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */; };
+		F047F0862851C74500B2E2B9 /* SmallLiveWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F047F0852851C74500B2E2B9 /* SmallLiveWidgetView.swift */; };
 		F04D1B3E283A304E0026340D /* LiveWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D1B3C283A300E0026340D /* LiveWidgetProvider.swift */; };
 		F058189A281BFFDA0064EF94 /* SectionedNotFavouritedForEachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0581899281BFFDA0064EF94 /* SectionedNotFavouritedForEachView.swift */; };
 		F05818A2281CAAF50064EF94 /* HoloCalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05818A1281CAAF50064EF94 /* HoloCalUITests.swift */; };
@@ -145,6 +146,7 @@
 		F0204DB927E925220083750F /* PRIVACY-POLICY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "PRIVACY-POLICY.md"; sourceTree = "<group>"; };
 		F0433C4D27E99F85000FEADD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceView.swift; sourceTree = "<group>"; };
+		F047F0852851C74500B2E2B9 /* SmallLiveWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallLiveWidgetView.swift; sourceTree = "<group>"; };
 		F04D1B3C283A300E0026340D /* LiveWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveWidgetProvider.swift; sourceTree = "<group>"; };
 		F04D1B40283A3AE70026340D /* MultipleLiveWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleLiveWidgetView.swift; sourceTree = "<group>"; };
 		F0581899281BFFDA0064EF94 /* SectionedNotFavouritedForEachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedNotFavouritedForEachView.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 		F093D1C2282C32D000E2A6FF /* holo-wtf-widget */ = {
 			isa = PBXGroup;
 			children = (
+				F047F0852851C74500B2E2B9 /* SmallLiveWidgetView.swift */,
 				F093D1E3283034AF00E2A6FF /* LiveWidgetView.swift */,
 				F04D1B40283A3AE70026340D /* MultipleLiveWidgetView.swift */,
 				F093D1C3282C32D000E2A6FF /* holo_wtf_widget.swift */,
@@ -642,6 +645,7 @@
 				F093D1D3282FA08700E2A6FF /* LiveVideo.swift in Sources */,
 				F093D1E5283034DA00E2A6FF /* Talents.swift in Sources */,
 				F093D1C4282C32D000E2A6FF /* holo_wtf_widget.swift in Sources */,
+				F047F0862851C74500B2E2B9 /* SmallLiveWidgetView.swift in Sources */,
 				F093D1D6282FA0A600E2A6FF /* VideoThumbnailView.swift in Sources */,
 				F0B71FCF283E08C300DC4260 /* MultipleLiveWidgetView.swift in Sources */,
 				F093D1DB282FA0C000E2A6FF /* VideoViewModel.swift in Sources */,
@@ -796,7 +800,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 56;
+				CURRENT_PROJECT_VERSION = 57;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "holo-wtf-widget/Info.plist";
@@ -808,7 +812,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.holo-wtf-widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -824,7 +828,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 56;
+				CURRENT_PROJECT_VERSION = 57;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "holo-wtf-widget/Info.plist";
@@ -836,7 +840,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.holo-wtf-widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -973,7 +977,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 56;
+				CURRENT_PROJECT_VERSION = 57;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -991,7 +995,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf";
 				PRODUCT_NAME = HoloCal;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1007,7 +1011,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 56;
+				CURRENT_PROJECT_VERSION = 57;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -1025,7 +1029,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf";
 				PRODUCT_NAME = HoloCal;
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -19,15 +19,20 @@ struct MultipleLiveWidgetView: View {
         let lang: NameLanguage = Locale.current.languageCode == "ja" ? .ja : .en
         
         VStack {
-            if let rightVideo = rightVideo {
+            if let rightVideo = rightVideo {                
                 HStack {
                     // Left stream
                     VStack(alignment: .leading) {
                         if let image = UIImage(data: leftVideoThumbnail) {
-                            Image(uiImage: image)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .cornerRadius(15)
+                            HStack {
+                                Spacer()
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .cornerRadius(10)
+                                Spacer()
+                            }
+                            
                         }
                         
                         Text(leftVideo.escapedTitle)
@@ -45,15 +50,18 @@ struct MultipleLiveWidgetView: View {
                                 .font(.caption2)
                         }
                     }
-                    .padding(.leading)
                     
                     // Right stream
                     VStack(alignment: .leading) {
                         if let image = UIImage(data: rightVideoThumbnail) {
-                            Image(uiImage: image)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .cornerRadius(15)
+                            HStack {
+                                Spacer()
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .cornerRadius(10)
+                                Spacer()
+                            }
                         }
                         
                         Text(rightVideo.escapedTitle)
@@ -72,7 +80,6 @@ struct MultipleLiveWidgetView: View {
                         }
                         
                     }
-                    .padding(.trailing)
                 }
             } else {
                 HStack {
@@ -82,14 +89,13 @@ struct MultipleLiveWidgetView: View {
                     
                     Spacer()
                 }
-                .padding(.leading)
                 
                 HStack {
                     if let image = UIImage(data: leftVideoThumbnail) {
                         Image(uiImage: image)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .cornerRadius(15)
+                            .cornerRadius(10)
                     }
                     
                     VStack(alignment: .leading) {
@@ -107,9 +113,9 @@ struct MultipleLiveWidgetView: View {
                         
                     }
                 }
-                .padding(.horizontal)
             }
         }
+        .padding()
     }
 }
 
