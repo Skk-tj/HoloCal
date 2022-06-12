@@ -8,3 +8,4 @@ Report bug and suggest features at Issues above.
 
 MarqueeText: https://github.com/joekndy/MarqueeText. MIT license. 
 HTMLString: https://github.com/alexaubry/HTMLString. MIT license. 
+ActivityView: https://github.com/SwiftUI-Plus/ActivityView. MIT license. 

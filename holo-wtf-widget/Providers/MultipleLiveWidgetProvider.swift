@@ -27,7 +27,7 @@ struct MultipleLiveWidgetProvider: IntentTimelineProvider {
     let url: String = "https://holodex.net/api/v2/live?org=Hololive&status=live&type=stream"
     
     func placeholder(in context: Context) -> MultipleLiveWidgetEntry {
-        let channel: Channel = .init(id: "UCp6993wxpyDPHUpavwDFqgg", name: "I don't know", photo: nil, org: "Hololive")
+        let channel: Channel = .init(id: "UCp6993wxpyDPHUpavwDFqgg", name: "Tokino Sora", photo: nil, org: "Hololive")
         
         let video: LiveVideo = .init(id: "sampleId", title: "My Debut Stream!", topicId: "debut", startScheduled: Date(), startActual: Date(), liveViewers: 1000, channel: channel)
         

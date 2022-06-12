@@ -8,15 +8,7 @@
 import WidgetKit
 import Intents
 
-struct LiveWidgetEntry: VideoTimelineEntry {
-    let date: Date
-    let configuration: ConfigurationIntent
-    let video: LiveVideo?
-    let status: WidgetDataStatus
-    
-    let avatarData: Data
-    let thumbnailData: Data
-}
+typealias LiveWidgetEntry = SingleVideoWidgetEntry
 
 struct LiveWidgetProvider: IntentTimelineProvider {
     typealias Entry = LiveWidgetEntry
@@ -35,6 +27,12 @@ struct LiveWidgetProvider: IntentTimelineProvider {
                 var lives = try await VideoFetchService.shared.getVideos(from: "https://holodex.net/api/v2/live?org=Hololive&status=live&type=stream")
                 
                 lives.sort(by: {$0.startActual ?? Date.distantFuture > $1.startActual ?? Date.distantFuture})
+                
+                if lives.isEmpty {
+                    let entry = LiveWidgetEntry(date: .now, configuration: configuration, video: nil, status: .noVideo, avatarData: Data(), thumbnailData: Data())
+                    completion(entry)
+                    return
+                }
                 
                 let firstVideo = lives[0]
                 

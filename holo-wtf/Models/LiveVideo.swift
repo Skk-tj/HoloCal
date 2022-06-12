@@ -22,7 +22,7 @@ struct LiveVideo: Codable, Identifiable, Hashable {
     
     var isMengen: Bool {
         // Japanese
-        if title.contains("メン限") {
+        if title.contains("メン限") || title.contains("メンバー限定") {
             return true
         }
         
