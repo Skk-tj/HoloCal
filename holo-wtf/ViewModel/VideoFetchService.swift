@@ -40,10 +40,6 @@ final class VideoFetchService {
             let responseResult: [LiveVideo] = try decoder.decode([LiveVideo].self, from: data)
             
             return responseResult
-        } catch DecodingError.dataCorrupted, DecodingError.keyNotFound, DecodingError.typeMismatch, DecodingError.valueNotFound {
-            logger.error("JSON serialization failed when trying to get live data from API. ")
-            
-            throw VideoFetchServiceError.serialization
         } catch {
             logger.error("Netword request failed when trying to get live data from API. ")
             debugPrint(error)

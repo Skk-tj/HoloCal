@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F004E8C6285D004A00ABDFED /* SongInStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004E8C5285D004A00ABDFED /* SongInStream.swift */; };
+		F004E8C7285D013300ABDFED /* SongInStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004E8C5285D004A00ABDFED /* SongInStream.swift */; };
+		F004E8C9285D045D00ABDFED /* SongListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004E8C8285D045D00ABDFED /* SongListView.swift */; };
+		F004E8CB285D058000ABDFED /* SingleSongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004E8CA285D058000ABDFED /* SingleSongView.swift */; };
 		F009023827EDB6AE00E343B0 /* LiveTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009023727EDB6AE00E343B0 /* LiveTimeView.swift */; };
 		F009023A27EDB85100E343B0 /* LiveViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009023927EDB85100E343B0 /* LiveViewToolbar.swift */; };
 		F009023B27EE255B00E343B0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F009023D27EE255B00E343B0 /* Localizable.strings */; };
@@ -139,6 +143,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F004E8C5285D004A00ABDFED /* SongInStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInStream.swift; sourceTree = "<group>"; };
+		F004E8C8285D045D00ABDFED /* SongListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListView.swift; sourceTree = "<group>"; };
+		F004E8CA285D058000ABDFED /* SingleSongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSongView.swift; sourceTree = "<group>"; };
 		F009023727EDB6AE00E343B0 /* LiveTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTimeView.swift; sourceTree = "<group>"; };
 		F009023927EDB85100E343B0 /* LiveViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewToolbar.swift; sourceTree = "<group>"; };
 		F009023C27EE255B00E343B0 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -329,6 +336,8 @@
 				F0581899281BFFDA0064EF94 /* SectionedNotFavouritedForEachView.swift */,
 				F0954BDD2817B73E00369EC4 /* SearchSectionView.swift */,
 				F0EB53B12812A2E90024E089 /* EventEditView.swift */,
+				F004E8C8285D045D00ABDFED /* SongListView.swift */,
+				F004E8CA285D058000ABDFED /* SingleSongView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -471,6 +480,7 @@
 				F080A04E27F95D9E00DBC08D /* Talents.swift */,
 				F0ED2AE12806858300683E6C /* Channel.swift */,
 				F0ED2AE3280685FD00683E6C /* LiveVideo.swift */,
+				F004E8C5285D004A00ABDFED /* SongInStream.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -684,6 +694,7 @@
 				F05DFA362853CA7800D62D19 /* BaseVideoEntryView.swift in Sources */,
 				F093D1DB282FA0C000E2A6FF /* VideoViewModel.swift in Sources */,
 				F093D1E82830359900E2A6FF /* Util.swift in Sources */,
+				F004E8C7285D013300ABDFED /* SongInStream.swift in Sources */,
 				F093D1E0282FAA0500E2A6FF /* TopicTagView.swift in Sources */,
 				F028308828545B1200CBFCE7 /* SingleVideoWidgetEntry.swift in Sources */,
 				F093D1ED2830372900E2A6FF /* LiveWidgetView.swift in Sources */,
@@ -701,6 +712,7 @@
 				F0C15F3B284F25F6005672CF /* holo_wtf_widget.intentdefinition in Sources */,
 				F009023827EDB6AE00E343B0 /* LiveTimeView.swift in Sources */,
 				F09D25F328041CC3001A7D71 /* iPadSidebarView.swift in Sources */,
+				F004E8C6285D004A00ABDFED /* SongInStream.swift in Sources */,
 				F0673C172775F7FB009C65C6 /* LiveAvatarView.swift in Sources */,
 				F0BD611B27EC594300A2FBED /* UpcomingPaneView.swift in Sources */,
 				F0ED2AEC280AA7D400683E6C /* UpcomingCompactListView.swift in Sources */,
@@ -726,6 +738,7 @@
 				F0ED2AE4280685FD00683E6C /* LiveVideo.swift in Sources */,
 				F0ED2AF3280AD60D00683E6C /* UpcomingViewModel.swift in Sources */,
 				F0EB53B82812BEAD0024E089 /* ShareButton.swift in Sources */,
+				F004E8CB285D058000ABDFED /* SingleSongView.swift in Sources */,
 				F0954BEA2817D0C500369EC4 /* CompactListView.swift in Sources */,
 				F05E9EB327EB27F800EF48DD /* LiveiPadView.swift in Sources */,
 				F0C657D627732690004AF802 /* Util.swift in Sources */,
@@ -738,6 +751,7 @@
 				F0433C4E27E99F85000FEADD /* SettingsView.swift in Sources */,
 				F0433C5227EAEDDB000FEADD /* OpenSourceView.swift in Sources */,
 				F0ED2AEE280AA91E00683E6C /* UpcomingCardListView.swift in Sources */,
+				F004E8C9285D045D00ABDFED /* SongListView.swift in Sources */,
 				F0ED2AF7280B640200683E6C /* VideoViewModel.swift in Sources */,
 				F058189A281BFFDA0064EF94 /* SectionedNotFavouritedForEachView.swift in Sources */,
 				F0ED2B13280CB73D00683E6C /* TopicTagView.swift in Sources */,
@@ -1013,13 +1027,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 59;
+				CURRENT_PROJECT_VERSION = 60;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "holo-wtf/Info.plist";
-				INFOPLIST_KEY_NSCalendarsUsageDescription = "HoloCal requires access to your Calendar in order to save events to your Calendar. ";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "HoloCal requires access to Apple Music catalog in order to obtain information about songs appeared in streams. No personal library data will be accessed. ";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "HoloCal requires access to your Calendar in order to save stream events to your Calendar. ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1031,7 +1046,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.1;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf";
 				PRODUCT_NAME = HoloCal;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1047,13 +1062,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 59;
+				CURRENT_PROJECT_VERSION = 60;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "holo-wtf/Info.plist";
-				INFOPLIST_KEY_NSCalendarsUsageDescription = "HoloCal requires access to your Calendar in order to save events to your Calendar. ";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "HoloCal requires access to Apple Music catalog in order to obtain information about songs appeared in streams. No personal library data will be accessed. ";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "HoloCal requires access to your Calendar in order to save stream events to your Calendar. ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1065,7 +1081,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5.1;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf";
 				PRODUCT_NAME = HoloCal;
 				SWIFT_EMIT_LOC_STRINGS = YES;

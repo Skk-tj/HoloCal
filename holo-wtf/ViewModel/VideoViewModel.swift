@@ -29,14 +29,12 @@ enum SortingStrategy: Hashable {
 class VideoViewModel: ObservableObject {
     @Published var videoList: [LiveVideo]
     @Published var dataStatus: DataStatus
-    @Published var twitterList: [String: String?]
     
     let service = VideoFetchService()
     
     init() {
         self.videoList = []
         self.dataStatus = .working
-        self.twitterList = [:]
     }
     
     let logger = Logger()
@@ -46,29 +44,94 @@ class VideoViewModel: ObservableObject {
         
         do {
             let getResult = try await VideoFetchService.shared.getVideos(from: url)
-            completion(getResult)
+            let getResultWithTwitter = try await getTwitterForAll(videoList: getResult)
+            let getResultWithSongs = try await getSongsForAll(videoList: getResultWithTwitter)
+        
+            completion(getResultWithSongs)
             self.dataStatus = .success
         } catch {
             self.dataStatus = .fail
         }
     }
     
-    func getTwitter() async throws -> [String: String?] {
-        var twitterList: [String: String?] = [:]
-        
-        try await withThrowingTaskGroup(of: (String, String?).self) { group in
-            for video in videoList {
+    private func updatedWithTwitter(channel: Channel) async -> Channel {
+        return Channel(id: channel.id, name: channel.name, photo: channel.photo, org: channel.org, twitter: try? await channel.getTwitterId())
+    }
+    
+    private func updatedWithTwitter(video: LiveVideo) async -> LiveVideo {
+        return LiveVideo(id: video.id, title: video.title, topicId: video.topicId, startScheduled: video.startScheduled, startActual: video.startActual, liveViewers: video.liveViewers, songs: video.songs, channel: await self.updatedWithTwitter(channel: video.channel))
+    }
+    
+    private func updateSongWithMusicKit(song: SongInStream) async -> SongInStream {
+        return SongInStream(id: song.id, start: song.start, end: song.end, name: song.name, originalArtist: song.originalArtist, itunesid: song.itunesid, MKsong: try? await song.getSongInfo())
+    }
+    
+    private func updateVideoWithMusicKit(video: LiveVideo) async -> LiveVideo {
+        if let songs = video.songs {
+            return LiveVideo(id: video.id, title: video.title, topicId: video.topicId, startScheduled: video.startScheduled, startActual: video.startActual, liveViewers: video.liveViewers, songs: try? await getSongsForOneVideo(songList: songs), channel: video.channel)
+        } else {
+            return video
+        }
+    }
+    
+    func getTwitterForAll(videoList: [LiveVideo]) async throws -> [LiveVideo] {        
+        try await withThrowingTaskGroup(of: LiveVideo.self) { group in
+            videoList.forEach { video in
                 group.addTask {
-                    return (video.channel.id, try await video.channel.getTwitterId())
+                    return await self.updatedWithTwitter(video: video)
                 }
             }
             
-            for try await (channelId, twitterId) in group {
-                twitterList[channelId] = twitterId
+            var newVideos: [LiveVideo] = []
+            newVideos.reserveCapacity(videoList.count)
+            
+            for try await video in group {
+                newVideos.append(video)
+            }
+            
+            return newVideos
+        }
+    }
+    
+    private func getSongsForOneVideo(songList: [SongInStream]) async throws -> [SongInStream] {
+        var newSongs: [SongInStream] = []
+        newSongs.reserveCapacity(songList.count)
+        
+        try await withThrowingTaskGroup(of: SongInStream.self) { group in
+            songList.forEach { song in
+                group.addTask {
+                    return await self.updateSongWithMusicKit(song: song)
+                }
+            }
+            
+            for try await song in group {
+                newSongs.append(song)
             }
         }
         
-        return twitterList
+        // sort the songs by starting time
+        newSongs.sort { $0.start < $1.start }
+        
+        return newSongs
+    }
+    
+    func getSongsForAll(videoList: [LiveVideo]) async throws -> [LiveVideo] {
+        var newVideos: [LiveVideo] = []
+        newVideos.reserveCapacity(videoList.count)
+        
+        try await withThrowingTaskGroup(of: LiveVideo.self) { group in
+            videoList.forEach { video in
+                group.addTask {
+                    await self.updateVideoWithMusicKit(video: video)
+                }
+            }
+
+            for try await video in group {
+                newVideos.append(video)
+            }
+        }
+        
+        return newVideos
     }
     
     func getSearchSuggestions() -> [String] {

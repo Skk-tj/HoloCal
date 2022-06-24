@@ -51,12 +51,8 @@ struct SmallLiveWidgetView: View {
 }
 
 struct SmallLiveWidgetView_Previews: PreviewProvider {
-    static let testChannel = Channel(id: "UCp6993wxpyDPHUpavwDFqgg", name: "test vtuber", photo: URL(string: "https://yt3.ggpht.com/ytc/AKedOLQH3CqU4dL9EWjrYl6aKn26_DAAHbCXEBVyMTaWZA=s800-c-k-c0x00ffffff-no-rj"), org: "Hololive", twitter: "aaaa")
-    
-    static let previewLive = LiveVideo(id: "abcd", title: "my debut live", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, channel: testChannel)
-    
     static var previews: some View {
-        SmallLiveWidgetView(live: previewLive, avatarData: Data())
+        SmallLiveWidgetView(live: LiveVideo.previewLive, avatarData: Data())
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

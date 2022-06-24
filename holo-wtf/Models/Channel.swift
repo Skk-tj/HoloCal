@@ -24,6 +24,8 @@ struct Channel: Codable, Identifiable, Hashable {
         URL(string: "https://www.youtube.com/channel/\(id)")
     }
     
+    static let testChannel = Channel(id: "abcd", name: "test vtuber", photo: URL(string: "https://yt3.ggpht.com/ytc/AKedOLQH3CqU4dL9EWjrYl6aKn26_DAAHbCXEBVyMTaWZA=s800-c-k-c0x00ffffff-no-rj"), org: "Hololive", twitter: "aaaa")
+    
     func getTwitterId() async throws -> String? {
         let logger = Logger()
         

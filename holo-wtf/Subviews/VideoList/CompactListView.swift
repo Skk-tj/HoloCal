@@ -22,7 +22,7 @@ struct CompactListView<CellContent: View, DataStatusContent: View>: View {
                 cellView(live)
             }
             .contextMenu {
-                VideoContextMenu(video: live, twitterLink: self.viewModel.twitterList[live.channel.id] ?? nil)
+                VideoContextMenu(video: live)
             }
         }, dataStatusView: {
             dataStatusView()
