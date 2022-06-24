@@ -50,6 +50,15 @@ struct PaneViewButtonRowView: View {
             })
             .hoverEffect()
             
+            if let songs = video.songs {
+                Spacer()
+                
+                NavigationLink(destination: SongListView(videoURL: video.url!, songs: songs)) {
+                    Label("List of Songs", systemImage: "music.note.list")
+                        .labelStyle(.iconOnly)
+                }
+            }
+            
             Spacer()
             
             FavouriteButton(video: video) {
@@ -63,8 +72,8 @@ struct PaneViewButtonRowView: View {
     }
 }
 
-//struct PaneViewButtonRowView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PaneViewButtonRowView()
-//    }
-//}
+struct PaneViewButtonRowView_Previews: PreviewProvider {
+    static var previews: some View {
+        PaneViewButtonRowView(video: LiveVideo.previewLive)
+    }
+}

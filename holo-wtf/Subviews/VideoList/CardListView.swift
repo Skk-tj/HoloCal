@@ -22,7 +22,7 @@ struct CardListView<PaneContent: View, StatusContent: View>: View {
                 paneView(live)
             }
             .contextMenu {
-                VideoContextMenu(video: live, twitterLink: self.viewModel.twitterList[live.channel.id] ?? nil)
+                VideoContextMenu(video: live)
             }
             .listRowSeparator(.hidden)
         }, dataStatusView: {

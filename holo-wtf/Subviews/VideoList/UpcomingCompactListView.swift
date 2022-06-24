@@ -13,7 +13,7 @@ struct UpcomingCompactListView: View {
     
     var body: some View {
         CompactListView(isSorting: $isSorting, cellView: { live in
-            UpcomingCellView(upcoming: live, twitterLink: upcoming.twitterList[live.channel.id] ?? nil)
+            UpcomingCellView(upcoming: live)
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: upcoming.dataStatus) {
                 UpcomingCountView()

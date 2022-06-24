@@ -123,3 +123,6 @@
 
 "MULTIPLE_CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "Multiple Current Live";
 "MULTIPLE_CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "Show two streams together. ";
+
+// Song List View
+"SONG_LIST_VIEW_NAVIGATION_TITLE" = "Songs"; 

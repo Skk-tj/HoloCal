@@ -44,7 +44,7 @@ struct LiveiPadView: View {
                                 LivePaneView(live: live)
                             }
                             .contextMenu {
-                                VideoContextMenu(video: live, twitterLink: self.live.twitterList[live.channel.id] ?? nil)
+                                VideoContextMenu(video: live)
                             }
                         })
                         
@@ -54,7 +54,7 @@ struct LiveiPadView: View {
                                 LivePaneView(live: live)
                             }
                             .contextMenu {
-                                VideoContextMenu(video: live, twitterLink: self.live.twitterList[live.channel.id] ?? nil)
+                                VideoContextMenu(video: live)
                             }
                         })
                     } else {
@@ -63,7 +63,7 @@ struct LiveiPadView: View {
                                 LivePaneView(live: live)
                             }
                             .contextMenu {
-                                VideoContextMenu(video: live, twitterLink: self.live.twitterList[live.channel.id] ?? nil)
+                                VideoContextMenu(video: live)
                             }
                         })
                     }

@@ -25,13 +25,9 @@ struct ShareButton<Content: View>: View {
     }
 }
 
-struct ShareButton_Previews: PreviewProvider {
-    static let testChannel = Channel(id: "abcd", name: "test vtuber", photo: URL(string: "https://yt3.ggpht.com/ytc/AKedOLQH3CqU4dL9EWjrYl6aKn26_DAAHbCXEBVyMTaWZA=s800-c-k-c0x00ffffff-no-rj"), org: "Hololive", twitter: "aaaa")
-    
-    static let previewLive = LiveVideo(id: "abcd", title: "my debut live", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, channel: testChannel)
-    
+struct ShareButton_Previews: PreviewProvider {    
     static var previews: some View {
-        ShareButton(video: previewLive) {
+        ShareButton(video: LiveVideo.previewLive) {
             Label("VIDEO_CONTEXT_MENU_SHARE", systemImage: "square.and.arrow.up")
         }
     }
