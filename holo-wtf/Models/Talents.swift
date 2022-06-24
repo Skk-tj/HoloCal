@@ -127,11 +127,17 @@ extension TalentsEnum: Identifiable {
     var id: String { rawValue }
 }
 
+/// Represent a person in Hololive.
 struct Talent: Codable, Identifiable, Hashable {
-    /// The ID shall correspond to the ID given by the API
+    /// The ID shall correspond to the ID given by the API, HoloDex API uses YT channel ID.
     let id: String
-    /// Example: `[.en: "Tokino Sora", .ja: "ときのそら"]`
+    
+    /// Represent the name of the talent and the translation.
+    ///
+    /// - Example: `[.en: "Tokino Sora", .ja: "ときのそら"]`
     let names: [NameLanguage: String]
+    
+    /// Represent which generation (group) this talent is in.
     let inGeneration: GenerationEnum
 }
 
@@ -269,11 +275,19 @@ let generationToName: [GenerationEnum: [NameLanguage: String]] = [
     .official: [.en: "Official Channels", .ja: "公式チャンネル"]
 ]
 
+/// Represent the generation group in Hololive
 struct GenerationGroup: Hashable {
+    /// Represents the generation of this instance as an enum.
     let generation: GenerationEnum
+    
+    /// Represents a list of members.
     let members: [TalentsEnum]
 }
 
+
+/// Available languages for the name of a talent
+///
+/// For most international standards (except Chinese), we only need the original Japanese name and its Romaji representation (Hepburn).
 enum NameLanguage: Codable {
     case en
     case ja
@@ -288,7 +302,7 @@ let talentsByGeneration: [GenerationGroup] = [
     GenerationGroup(generation: .thirdGen, members: [.pekora, .flare, .noel, .marine]),
     GenerationGroup(generation: .forthGen, members: [.kanata, .watame, .towa, .luna]),
     GenerationGroup(generation: .fifthGen, members: [.lamy, .nene, .botan, .polka]),
-    GenerationGroup(generation: .holox, members: [.laplus, .koyori, .chloe, .iroha]),
+    GenerationGroup(generation: .holox, members: [.laplus, .lui, .koyori, .chloe, .iroha]),
     GenerationGroup(generation: .idFirstGen, members: [.risu, .moona, .iofi]),
     GenerationGroup(generation: .idSecondGen, members: [.ollie, .anya, .reine]),
     GenerationGroup(generation: .idThirdGen, members: [.zeta, .kaela, .kobo]),
