@@ -90,6 +90,8 @@ struct MultipleLiveWidgetView: View {
                     Spacer()
                 }
                 
+                Spacer()
+                
                 HStack {
                     if let image = UIImage(data: leftVideoThumbnail) {
                         Image(uiImage: image)
@@ -100,7 +102,7 @@ struct MultipleLiveWidgetView: View {
                     
                     VStack(alignment: .leading) {
                         Text(leftVideo.escapedTitle)
-                            .lineLimit(2)
+                            .lineLimit(3)
                             .font(.footnote)
                         
                         Text(leftVideo.channel.talent.names[lang]!)
