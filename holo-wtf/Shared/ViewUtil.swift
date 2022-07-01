@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+// TODO: Can remove after iOS 16
 func shareSheet(url: String) {
     let url = URL(string: url)
     let activityView = UIActivityViewController(activityItems: [url!], applicationActivities: nil)

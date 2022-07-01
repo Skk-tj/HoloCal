@@ -50,7 +50,7 @@ struct LiveWidgetView: View {
                             .overlay {
                                 Circle().stroke(.white, lineWidth: 1)
                             }
-                            .shadow(radius: 3)
+                            .shadow(radius: 1)
                             .padding(2)
                     }
                     
