@@ -125,4 +125,8 @@
 "MULTIPLE_CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "Show two streams together. ";
 
 // Song List View
-"SONG_LIST_VIEW_NAVIGATION_TITLE" = "Songs"; 
+"SONG_LIST_VIEW_NAVIGATION_TITLE" = "Songs";
+
+// Single Song View
+"SINGLE_SONG_VIEW_CONTECT_MENU_OPEN_IN_APPLE_MUSIC" = "Open in Apple Music";
+"SINGLE_SONG_VIEW_CONTECT_MENU_JUMP_TO_SONG_IN_VIDEO" = "Jump to Song in Stream";

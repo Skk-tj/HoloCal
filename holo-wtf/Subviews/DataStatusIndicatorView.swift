@@ -7,20 +7,26 @@
 
 import SwiftUI
 
+/// The view that represents the view model's network status
+///
+/// If the status of the network is loading, it will show a ProgressView.
+/// Otherwise, the content view (customizable) will be shown.
 struct DataStatusIndicatorView<Content: View>: View {
+    /// The data status property from VideoViewModel and its subclasses.
     let dataStatus: DataStatus
+    
+    /// The view to be shown after the data finishes loading.
     @ViewBuilder let content: () -> Content
     
     var body: some View {
-        if (dataStatus == .fail) {
+        switch dataStatus {
+        case .working:
+            ProgressView()
+        case .success:
+            content()
+        case .fail:
             Label("FAILED_TO_RETRIEVE_NEW_DATA", systemImage: "exclamationmark.circle.fill")
                 .foregroundColor(.secondary)
-        } else {
-            if (dataStatus == .working) {
-                ProgressView()
-            } else {
-                content()
-            }
         }
     }
 }

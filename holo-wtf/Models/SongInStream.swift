@@ -14,7 +14,7 @@ enum SongRequestError: Error {
 }
 
 struct MySingleSongReponse: Decodable {
-    let data: Song?
+    let data: [Song]?
 }
 
 struct SongInStream: Codable, Identifiable, Hashable {
@@ -44,13 +44,18 @@ struct SongInStream: Codable, Identifiable, Hashable {
             let dataResponse = try await dataRequest.response()
             
             let decoder = JSONDecoder()
-            let songResponse = try decoder.decode(MySingleSongReponse.self, from: dataResponse.data)
-            
-            print(songResponse)
-            
-            if let song = songResponse.data {
-                return song
-            } else {
+            do {
+                let songResponse = try decoder.decode(MySingleSongReponse.self, from: dataResponse.data)
+                
+                if let song: [Song] = songResponse.data {
+                    guard let firstSong = song.first else {
+                        throw SongRequestError.notFound
+                    }
+                    return firstSong
+                } else {
+                    throw SongRequestError.notFound
+                }
+            } catch {
                 throw SongRequestError.notFound
             }
         } else {
