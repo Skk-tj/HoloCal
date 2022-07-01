@@ -19,6 +19,7 @@
 		F009024627EE6A9F00E343B0 /* VideoContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024527EE6A9F00E343B0 /* VideoContextMenu.swift */; };
 		F0114D4F2815F81600B99D4D /* DataStatusIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0114D4E2815F81600B99D4D /* DataStatusIndicatorView.swift */; };
 		F011C42828303CA400FD1364 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F009023D27EE255B00E343B0 /* Localizable.strings */; };
+		F01E95B3286FB4B900CDF0F9 /* iPadLazyGirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01E95B2286FB4B900CDF0F9 /* iPadLazyGirdView.swift */; };
 		F02830802853DB0E00CBFCE7 /* Widgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028307F2853DB0E00CBFCE7 /* Widgets.swift */; };
 		F02830822853DB5E00CBFCE7 /* WidgetEntryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02830812853DB5E00CBFCE7 /* WidgetEntryViews.swift */; };
 		F028308628545ACF00CBFCE7 /* UpcomingWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028308528545ACF00CBFCE7 /* UpcomingWidgetProvider.swift */; };
@@ -154,6 +155,7 @@
 		F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingTimeView.swift; sourceTree = "<group>"; };
 		F009024527EE6A9F00E343B0 /* VideoContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoContextMenu.swift; sourceTree = "<group>"; };
 		F0114D4E2815F81600B99D4D /* DataStatusIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStatusIndicatorView.swift; sourceTree = "<group>"; };
+		F01E95B2286FB4B900CDF0F9 /* iPadLazyGirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadLazyGirdView.swift; sourceTree = "<group>"; };
 		F0204DB827E91A920083750F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F0204DB927E925220083750F /* PRIVACY-POLICY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "PRIVACY-POLICY.md"; sourceTree = "<group>"; };
 		F028307F2853DB0E00CBFCE7 /* Widgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widgets.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				F05E9EB427EB290000EF48DD /* UpcomingiPadView.swift */,
 				F05E9EB627EB291900EF48DD /* SettingsiPadView.swift */,
 				F09D25F228041CC3001A7D71 /* iPadSidebarView.swift */,
+				F01E95B2286FB4B900CDF0F9 /* iPadLazyGirdView.swift */,
 			);
 			path = iPadOS;
 			sourceTree = "<group>";
@@ -722,6 +725,7 @@
 				F0EB53B0281290490024E089 /* PaneViewButtonRowView.swift in Sources */,
 				F093D1DE282FA5E600E2A6FF /* VideoFetchService.swift in Sources */,
 				F09D25C928020B12001A7D71 /* UpcomingViewToolbar.swift in Sources */,
+				F01E95B3286FB4B900CDF0F9 /* iPadLazyGirdView.swift in Sources */,
 				F009024027EE57BA00E343B0 /* LinkedVideoView.swift in Sources */,
 				F009024627EE6A9F00E343B0 /* VideoContextMenu.swift in Sources */,
 				F080A04F27F95D9E00DBC08D /* Talents.swift in Sources */,
@@ -1027,7 +1031,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 60;
+				CURRENT_PROJECT_VERSION = 61;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -1062,7 +1066,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 60;
+				CURRENT_PROJECT_VERSION = 61;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
