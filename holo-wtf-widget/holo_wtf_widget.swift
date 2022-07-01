@@ -31,7 +31,7 @@ struct HoloCalWidgetBundle: WidgetBundle {
 
 struct holo_wtf_widget_Previews: PreviewProvider {
     static var previews: some View {
-        let channel: Channel = .init(id: "sampleChannelId", name: "Cp6993wxpyDPHUpavwDFqgg", photo: nil, org: "Hololive")
+        let channel: Channel = .init(id: "Cp6993wxpyDPHUpavwDFqgg", name: "Tokino Sora", photo: nil, org: "Hololive")
         
         let video: LiveVideo = .init(id: "sampleId", title: "My Debut Stream!", topicId: "debut", startScheduled: Date(), startActual: Date(), liveViewers: 1000, songs: nil, channel: channel)
         

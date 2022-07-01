@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// The view that represents a general list of videos.
 struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
@@ -14,7 +15,11 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     
     @State var searchText: String = ""
     @Binding var isSorting: Bool
+    
+    /// The view of a single video.
     @ViewBuilder let singleVideoView: (_ live: LiveVideo) -> VideoContent
+    
+    /// The view of the counter at the bottom.
     @ViewBuilder let dataStatusView: () -> DataStatusContent
     
     var body: some View {
