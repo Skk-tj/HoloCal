@@ -11,7 +11,7 @@ struct LiveiPadView: View {
     @StateObject var live: LiveViewModel
     
     @State var isSorting: Bool = false
-    @State var sortingSelection: SortingStrategy? = nil
+    @State var sortingSelection: SortingStrategy = .notSorting
     
     init() {
         self._live = StateObject(wrappedValue: LiveViewModel())
@@ -29,7 +29,7 @@ struct LiveiPadView: View {
             
             // Reset sorting state, go back to section view
             isSorting = false
-            sortingSelection = nil
+            sortingSelection = .notSorting
         }
         .navigationTitle("LIVE_VIEW_TITLE")
         .toolbar {
@@ -42,7 +42,7 @@ struct LiveiPadView: View {
                         
                         // Reset sorting state, go back to section view
                         isSorting = false
-                        sortingSelection = nil
+                        sortingSelection = .notSorting
                     }
                 }, label: {
                     Label("Refresh", systemImage: "arrow.triangle.2.circlepath")

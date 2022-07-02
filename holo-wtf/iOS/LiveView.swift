@@ -12,7 +12,7 @@ struct LiveView: View {
     @AppStorage(UserDefaultKeys.isShowingCompactInLiveView) var isShowingCompactInLiveView: Bool = false
     
     @State var isSorting: Bool = false
-    @State var sortingSelection: SortingStrategy? = nil
+    @State var sortingSelection: SortingStrategy = .notSorting
     
     init() {
         self._live = StateObject(wrappedValue: LiveViewModel())
@@ -47,14 +47,14 @@ struct LiveView: View {
             
             // Reset sorting state, go back to section view
             isSorting = false
-            sortingSelection = nil
+            sortingSelection = .notSorting
         }
         .refreshable {
             await live.getLive()
             
             // Reset sorting state, go back to section view
             isSorting = false
-            sortingSelection = nil
+            sortingSelection = .notSorting
         }
         .navigationViewStyle(.stack)
     }

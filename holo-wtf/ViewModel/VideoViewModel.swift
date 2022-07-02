@@ -15,14 +15,12 @@ enum DataStatus {
     case fail
 }
 
-enum SortingOrder: Hashable {
-    case asc
-    case desc
-}
-
 enum SortingStrategy: Hashable {
-    case viewers(SortingOrder)
-    case time(SortingOrder)
+    case notSorting
+    case viewersAsc
+    case viewersDesc
+    case timeAsc
+    case timeDesc
 }
 
 enum SearchSuggestionCategory {
@@ -157,20 +155,16 @@ class VideoViewModel: ObservableObject {
     
     func sortVideos(by strategy: SortingStrategy) {
         switch strategy {
-        case .viewers(let sortingOrder):
-            switch sortingOrder {
-            case .asc:
-                self.videoList.sort(by: {$0.liveViewers < $1.liveViewers})
-            case .desc:
-                self.videoList.sort(by: {$0.liveViewers > $1.liveViewers})
-            }
-        case .time(let sortingOrder):
-            switch sortingOrder {
-            case .asc:
-                self.videoList.sort(by: {$0.startActual ?? ($0.startScheduled ?? Date.distantFuture) < $1.startActual ?? ($1.startScheduled ?? Date.distantFuture)})
-            case .desc:
-                self.videoList.sort(by: {$0.startActual ?? ($0.startScheduled ?? Date.distantFuture) > $1.startActual ?? ($1.startScheduled ?? Date.distantFuture)})
-            }
+        case .viewersAsc:
+            self.videoList.sort(by: {$0.liveViewers < $1.liveViewers})
+        case .viewersDesc:
+            self.videoList.sort(by: {$0.liveViewers > $1.liveViewers})
+        case .timeAsc:
+            self.videoList.sort(by: {$0.startActual ?? ($0.startScheduled ?? Date.distantFuture) < $1.startActual ?? ($1.startScheduled ?? Date.distantFuture)})
+        case .timeDesc:
+            self.videoList.sort(by: {$0.startActual ?? ($0.startScheduled ?? Date.distantFuture) > $1.startActual ?? ($1.startScheduled ?? Date.distantFuture)})
+        default:
+            return
         }
     }
 }
