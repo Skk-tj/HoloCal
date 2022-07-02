@@ -11,7 +11,7 @@ struct UpcomingiPadView: View {
     @StateObject var upcoming: UpcomingViewModel
     
     @State var isSorting: Bool = false
-    @State var sortingSelection: SortingStrategy? = nil
+    @State var sortingSelection: SortingStrategy = .notSorting
     
     init() {
         self._upcoming = StateObject(wrappedValue: UpcomingViewModel())
@@ -29,7 +29,7 @@ struct UpcomingiPadView: View {
             
             // Reset sorting state, go back to section view
             isSorting = false
-            sortingSelection = nil
+            sortingSelection = .notSorting
         }
         .toolbar {
             ToolbarItemGroup {
@@ -41,7 +41,7 @@ struct UpcomingiPadView: View {
                         
                         // Reset sorting state, go back to section view
                         isSorting = false
-                        sortingSelection = nil
+                        sortingSelection = .notSorting
                     }
                 }, label: {
                     Label("Refresh", systemImage: "arrow.triangle.2.circlepath")

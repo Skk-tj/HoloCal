@@ -13,7 +13,7 @@ struct LiveViewToolbar: View {
     
     /// Defines the current sorting strategy
     /// - Note: `sortingSelection` is of `@Binding` here because the parent views need to control it upon refresh of content.
-    @Binding var sortingSelection: SortingStrategy?
+    @Binding var sortingSelection: SortingStrategy
     /// Defines if current view is in sorting mode or not.
     /// - Note: `isSorting` is of `@Binding` here because the parent views needs to use it to control whether to display in sectioned mode or not.
     @Binding var isSorting: Bool
@@ -43,8 +43,8 @@ struct LiveViewToolbar: View {
             Menu {
                 Menu {
                     Picker("Order", selection: $sortingSelection) {
-                        Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST", systemImage: "arrow.down").tag(SortingStrategy.time(.desc))
-                        Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_FURTHEST_TO_NEAREST", systemImage: "arrow.up").tag(SortingStrategy.time(.asc))
+                        Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST", systemImage: "arrow.down").tag(SortingStrategy.timeDesc)
+                        Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_FURTHEST_TO_NEAREST", systemImage: "arrow.up").tag(SortingStrategy.timeAsc)
                     }
                 } label: {
                     Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME", systemImage: "clock")
@@ -52,8 +52,8 @@ struct LiveViewToolbar: View {
                 
                 Menu {
                     Picker("Order", selection: $sortingSelection) {
-                        Label("LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS_ASCENDING", systemImage: "arrow.up").tag(SortingStrategy.viewers(.asc))
-                        Label("LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS_DESCENDING", systemImage: "arrow.down").tag(SortingStrategy.viewers(.desc))
+                        Label("LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS_ASCENDING", systemImage: "arrow.up").tag(SortingStrategy.viewersAsc)
+                        Label("LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS_DESCENDING", systemImage: "arrow.down").tag(SortingStrategy.viewersDesc)
                     }
                 } label: {
                     Label("LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS", systemImage: "person.3.sequence.fill")
@@ -64,11 +64,9 @@ struct LiveViewToolbar: View {
         } label: {
             Label("Display Settings", systemImage: "ellipsis")
         }
-        .onChange(of: sortingSelection, perform: { sortingSelection in
-            if let strategy = sortingSelection {
-                self.liveViewModel.sortVideos(by: strategy)
-                isSorting = true
-            }
+        .onChange(of: self.sortingSelection, perform: { sortingSelection in
+            self.liveViewModel.sortVideos(by: sortingSelection)
+            isSorting = true
         })
     }
 }

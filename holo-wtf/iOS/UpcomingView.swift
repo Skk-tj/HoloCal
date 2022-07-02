@@ -13,7 +13,7 @@ struct UpcomingView: View {
     @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingView) var isShowingCompactInUpcomingView: Bool = false
     
     @State var isSorting: Bool = false
-    @State var sortingSelection: SortingStrategy? = nil
+    @State var sortingSelection: SortingStrategy = .notSorting
     
     init() {
         self._upcoming = StateObject(wrappedValue: UpcomingViewModel())
@@ -48,14 +48,14 @@ struct UpcomingView: View {
             
             // Reset sorting state, go back to section view
             isSorting = false
-            sortingSelection = nil
+            sortingSelection = .notSorting
         }
         .refreshable {
             await upcoming.getUpcoming()
             
             // Reset sorting state, go back to section view
             isSorting = false
-            sortingSelection = nil
+            sortingSelection = .notSorting
         }
         .navigationViewStyle(.stack)
     }
