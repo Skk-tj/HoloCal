@@ -51,7 +51,6 @@ struct LiveWidgetView: View {
                                 Circle().stroke(.white, lineWidth: 1)
                             }
                             .shadow(radius: 1)
-                            .padding(2)
                     }
                     
                     Text(live.channel.name)
