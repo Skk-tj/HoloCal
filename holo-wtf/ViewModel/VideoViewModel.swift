@@ -143,8 +143,23 @@ class VideoViewModel: ObservableObject {
     }
     
     func getSearchSuggestions() -> [SearchSuggestion] {
-        let englishNames: [SearchSuggestion] = self.videoList.map { video in SearchSuggestion(searchText: talentsToName[TalentsEnum(rawValue: video.channel.id)!]!.names[.en]!, category: .name) }
-        let japaneseNames: [SearchSuggestion] = self.videoList.map { video in SearchSuggestion(searchText: talentsToName[TalentsEnum(rawValue: video.channel.id)!]!.names[.ja]!, category: .name) }
+        let englishNames: [SearchSuggestion] = self.videoList.map { video in
+            if let talentEnum = TalentsEnum(rawValue: video.channel.id), let talent = talentsToName[talentEnum] {
+                // talent exists here
+                return SearchSuggestion(searchText: talent.names[.en]!, category: .name)
+            } else {
+                return SearchSuggestion(searchText: video.channel.name, category: .name)
+            }
+        }
+        
+        let japaneseNames: [SearchSuggestion] = self.videoList.map { video in
+            if let talentEnum = TalentsEnum(rawValue: video.channel.id), let talent = talentsToName[talentEnum] {
+                // talent exists here
+                return SearchSuggestion(searchText: talent.names[.ja]!, category: .name)
+            } else {
+                return SearchSuggestion(searchText: video.channel.name, category: .name)
+            }
+        }
         let allTags: [String] = self.videoList.compactMap { video in video.topicId }
         let allTagsInStruct: [SearchSuggestion] = allTags.map { suggestion in SearchSuggestion(searchText: suggestion, category: .tag) }
         
