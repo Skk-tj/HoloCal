@@ -1037,8 +1037,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "holo-wtf/Info.plist";
-				INFOPLIST_KEY_NSAppleMusicUsageDescription = "HoloCal requires access to Apple Music catalog in order to obtain information about songs appeared in streams. No personal library data will be accessed. ";
-				INFOPLIST_KEY_NSCalendarsUsageDescription = "HoloCal requires access to your Calendar in order to save stream events to your Calendar. ";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "HoloCal requires access to Apple Music catalog in order to obtain information about songs appeared in videos. Personal information will not be accessed. ";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "HoloCal requires access to your Calendar in order to save stream events to your Calendar. Personal information will not accessed. ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1072,8 +1072,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "holo-wtf/Info.plist";
-				INFOPLIST_KEY_NSAppleMusicUsageDescription = "HoloCal requires access to Apple Music catalog in order to obtain information about songs appeared in streams. No personal library data will be accessed. ";
-				INFOPLIST_KEY_NSCalendarsUsageDescription = "HoloCal requires access to your Calendar in order to save stream events to your Calendar. ";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "HoloCal requires access to Apple Music catalog in order to obtain information about songs appeared in videos. Personal information will not be accessed. ";
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "HoloCal requires access to your Calendar in order to save stream events to your Calendar. Personal information will not accessed. ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
