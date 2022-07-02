@@ -28,7 +28,7 @@ struct SmallLiveWidgetView: View {
                 Image(uiImage: avatarImage)
                     .resizable()
                     .aspectRatio(1, contentMode: .fill)
-                    .frame(width: 40, height: 40)
+                    .frame(width: 45, height: 45)
                     .clipShape(Circle())
                     .overlay {
                         Circle().stroke(.white, lineWidth: 1)

@@ -26,11 +26,15 @@ struct CardListView<PaneContent: View, StatusContent: View>: View {
             SwipableLinkedCellView(video: live) {
                 paneView(live)
             }
+            .listSectionSeparator(.hidden)
+            .listRowSeparator(.hidden)
             .contextMenu {
                 VideoContextMenu(video: live)
             }
         }, dataStatusView: {
             dataStatusView()
+                .listSectionSeparator(.hidden)
+                .listRowSeparator(.hidden)
         })
         .listStyle(.plain)
     }

@@ -21,20 +21,24 @@ struct UpcomingViewToolbar: View {
     @EnvironmentObject var upcomingViewModel: VideoViewModel
     
     var body: some View {
+        
+        
         Menu {
-            Button {
-                isShowingAbsoluteTime.toggle()
-                UserDefaults.standard.set(isShowingAbsoluteTime, forKey: UserDefaultKeys.isShowingAbsoluteTimeInUpcomingView)
-            } label: {
-                Label(isShowingAbsoluteTime ? "LIVE_VIEW_TOOLBAR_SHOW_RELATIVE" : "LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE", systemImage: "clock")
-            }
-            
-            if UIDevice.current.userInterfaceIdiom == .phone {
+            Section {
                 Button {
-                    isShowingCompactInUpcomingView.toggle()
-                    UserDefaults.standard.set(isShowingCompactInUpcomingView, forKey: UserDefaultKeys.isShowingCompactInUpcomingView)
+                    isShowingAbsoluteTime.toggle()
+                    UserDefaults.standard.set(isShowingAbsoluteTime, forKey: UserDefaultKeys.isShowingAbsoluteTimeInUpcomingView)
                 } label: {
-                    Label(isShowingCompactInUpcomingView ? "LIVE_VIEW_TOOLBAR_SHOW_CARD" : "LIVE_VIEW_TOOLBAR_SHOW_COMPACT", systemImage: isShowingCompactInUpcomingView ? "rectangle.grid.1x2" : "list.bullet")
+                    Label(isShowingAbsoluteTime ? "LIVE_VIEW_TOOLBAR_SHOW_RELATIVE" : "LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE", systemImage: "clock")
+                }
+                
+                if UIDevice.current.userInterfaceIdiom == .phone {
+                    Button {
+                        isShowingCompactInUpcomingView.toggle()
+                        UserDefaults.standard.set(isShowingCompactInUpcomingView, forKey: UserDefaultKeys.isShowingCompactInUpcomingView)
+                    } label: {
+                        Label(isShowingCompactInUpcomingView ? "LIVE_VIEW_TOOLBAR_SHOW_CARD" : "LIVE_VIEW_TOOLBAR_SHOW_COMPACT", systemImage: isShowingCompactInUpcomingView ? "rectangle.grid.1x2" : "list.bullet")
+                    }
                 }
             }
             
