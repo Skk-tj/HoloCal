@@ -12,8 +12,7 @@ struct UpcomingView: View {
     @AppStorage("favouritedChannel") var favourited = Favourited()
     @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingView) var isShowingCompactInUpcomingView: Bool = false
     
-    @State var isSorting: Bool = false
-    @State var sortingSelection: SortingStrategy = .notSorting
+    @State var sortingStrategy: SortingStrategy = .notSorting
     
     init() {
         self._upcoming = StateObject(wrappedValue: UpcomingViewModel())
@@ -22,22 +21,22 @@ struct UpcomingView: View {
     var body: some View {
         NavigationView {
             if isShowingCompactInUpcomingView {
-                UpcomingCompactListView(isSorting: $isSorting)
+                UpcomingCompactListView(sortingStrategy: $sortingStrategy)
                     .environmentObject(upcoming as VideoViewModel)
                     .navigationTitle("UPCOMING_VIEW_TITLE")
                     .toolbar {
                         ToolbarItemGroup {
-                            UpcomingViewToolbar(sortingSelection: $sortingSelection, isSorting: $isSorting)
+                            UpcomingViewToolbar(sortingStrategy: $sortingStrategy)
                                 .environmentObject(upcoming as VideoViewModel)
                         }
                     }
             } else {
-                UpcomingCardListView(isSorting: $isSorting)
+                UpcomingCardListView(sortingStrategy: $sortingStrategy)
                     .environmentObject(upcoming as VideoViewModel)
                     .navigationTitle("UPCOMING_VIEW_TITLE")
                     .toolbar {
                         ToolbarItemGroup {
-                            UpcomingViewToolbar(sortingSelection: $sortingSelection, isSorting: $isSorting)
+                            UpcomingViewToolbar(sortingStrategy: $sortingStrategy)
                                 .environmentObject(upcoming as VideoViewModel)
                         }
                     }
@@ -47,15 +46,13 @@ struct UpcomingView: View {
             await upcoming.getUpcoming()
             
             // Reset sorting state, go back to section view
-            isSorting = false
-            sortingSelection = .notSorting
+            sortingStrategy = .notSorting
         }
         .refreshable {
             await upcoming.getUpcoming()
             
             // Reset sorting state, go back to section view
-            isSorting = false
-            sortingSelection = .notSorting
+            sortingStrategy = .notSorting
         }
         .navigationViewStyle(.stack)
     }

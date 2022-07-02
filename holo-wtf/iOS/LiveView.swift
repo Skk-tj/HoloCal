@@ -11,8 +11,7 @@ struct LiveView: View {
     @StateObject var live: LiveViewModel
     @AppStorage(UserDefaultKeys.isShowingCompactInLiveView) var isShowingCompactInLiveView: Bool = false
     
-    @State var isSorting: Bool = false
-    @State var sortingSelection: SortingStrategy = .notSorting
+    @State var sortingStrategy: SortingStrategy = .notSorting
     
     init() {
         self._live = StateObject(wrappedValue: LiveViewModel())
@@ -21,22 +20,22 @@ struct LiveView: View {
     var body: some View {
         NavigationView {
             if isShowingCompactInLiveView {
-                LiveCompactListView(isSorting: $isSorting)
+                LiveCompactListView(sortingStrategy: $sortingStrategy)
                     .environmentObject(live as VideoViewModel)
                     .navigationTitle("LIVE_VIEW_TITLE")
                     .toolbar {
                         ToolbarItemGroup {
-                            LiveViewToolbar(sortingSelection: $sortingSelection, isSorting: $isSorting)
+                            LiveViewToolbar(sortingStrategy: $sortingStrategy)
                                 .environmentObject(live as VideoViewModel)
                         }
                     }
             } else {
-                LiveCardListView(isSorting: $isSorting)
+                LiveCardListView(sortingStrategy: $sortingStrategy)
                     .environmentObject(live as VideoViewModel)
                     .navigationTitle("LIVE_VIEW_TITLE")
                     .toolbar {
                         ToolbarItemGroup {
-                            LiveViewToolbar(sortingSelection: $sortingSelection, isSorting: $isSorting)
+                            LiveViewToolbar(sortingStrategy: $sortingStrategy)
                                 .environmentObject(live as VideoViewModel)
                         }
                     }
@@ -46,15 +45,13 @@ struct LiveView: View {
             await live.getLive()
             
             // Reset sorting state, go back to section view
-            isSorting = false
-            sortingSelection = .notSorting
+            sortingStrategy = .notSorting
         }
         .refreshable {
             await live.getLive()
             
             // Reset sorting state, go back to section view
-            isSorting = false
-            sortingSelection = .notSorting
+            sortingStrategy = .notSorting
         }
         .navigationViewStyle(.stack)
     }

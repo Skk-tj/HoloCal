@@ -10,8 +10,7 @@ import SwiftUI
 struct LiveiPadView: View {
     @StateObject var live: LiveViewModel
     
-    @State var isSorting: Bool = false
-    @State var sortingSelection: SortingStrategy = .notSorting
+    @State var sortingStrategy: SortingStrategy = .notSorting
     
     init() {
         self._live = StateObject(wrappedValue: LiveViewModel())
@@ -28,21 +27,19 @@ struct LiveiPadView: View {
             await live.getLive()
             
             // Reset sorting state, go back to section view
-            isSorting = false
-            sortingSelection = .notSorting
+            sortingStrategy = .notSorting
         }
         .navigationTitle("LIVE_VIEW_TITLE")
         .toolbar {
             ToolbarItemGroup {
-                LiveViewToolbar(sortingSelection: $sortingSelection, isSorting: $isSorting)
+                LiveViewToolbar(sortingStrategy: $sortingStrategy)
                     .environmentObject(live as VideoViewModel)
                 Button(action: {
                     Task {
                         await live.getLive()
                         
                         // Reset sorting state, go back to section view
-                        isSorting = false
-                        sortingSelection = .notSorting
+                        sortingStrategy = .notSorting
                     }
                 }, label: {
                     Label("Refresh", systemImage: "arrow.triangle.2.circlepath")
