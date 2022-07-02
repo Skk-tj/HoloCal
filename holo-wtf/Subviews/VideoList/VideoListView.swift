@@ -14,7 +14,7 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     @EnvironmentObject var viewModel: VideoViewModel
     
     @State var searchText: String = ""
-    @Binding var isSorting: Bool
+    @Binding var sortingStrategy: SortingStrategy
     
     /// The view of a single video.
     @ViewBuilder let singleVideoView: (_ live: LiveVideo) -> VideoContent
@@ -34,7 +34,7 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
                     .headerProminence(.increased)
                 }
                 
-                if isSorting {
+                if sortingStrategy != .notSorting {
                     NotFavouritedForEachView(cellView: { live in
                         singleVideoView(live)
                     })

@@ -10,8 +10,7 @@ import SwiftUI
 struct UpcomingiPadView: View {
     @StateObject var upcoming: UpcomingViewModel
     
-    @State var isSorting: Bool = false
-    @State var sortingSelection: SortingStrategy = .notSorting
+    @State var sortingStrategy: SortingStrategy = .notSorting
     
     init() {
         self._upcoming = StateObject(wrappedValue: UpcomingViewModel())
@@ -28,20 +27,18 @@ struct UpcomingiPadView: View {
             await upcoming.getUpcoming()
             
             // Reset sorting state, go back to section view
-            isSorting = false
-            sortingSelection = .notSorting
+            sortingStrategy = .notSorting
         }
         .toolbar {
             ToolbarItemGroup {
-                UpcomingViewToolbar(sortingSelection: $sortingSelection, isSorting: $isSorting)
+                UpcomingViewToolbar(sortingStrategy: $sortingStrategy)
                     .environmentObject(upcoming as VideoViewModel)
                 Button(action: {
                     Task {
                         await upcoming.getUpcoming()
                         
                         // Reset sorting state, go back to section view
-                        isSorting = false
-                        sortingSelection = .notSorting
+                        sortingStrategy = .notSorting
                     }
                 }, label: {
                     Label("Refresh", systemImage: "arrow.triangle.2.circlepath")

@@ -19,7 +19,7 @@
 "SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT %lld" = "Show upcoming streams in %lld hours";
 
 "SETTINGS_CHANNEL_MANAGEMENT_HEADER" = "Channels";
-"SETTINGS_MANAGE_FAVOURITE" = "Manage Favorites";
+"SETTINGS_MANAGE_FAVOURITE" = "Manage Channel Favorites";
 "SETTINGS_MANAGE_FAVOURITE_VIEW_TITLE" = "Manage Favorites";
 "SETTINGS_MANAGE_FAVOURITE_RESET" = "Reset Favorites";
 
@@ -93,7 +93,7 @@
 // VideoContextMenu
 "VIDEO_CONTEXT_MENU_TWITTER_PROFILE" = "Open Twitter profile";
 "VIDEO_CONTEXT_MENU_YOUTUBE_CHANNEL" = "Open YouTube channel";
-"VIDEO_CONTEXT_MENU_FAVOURITE_CHANNEL" = "Favorite channel";
+"VIDEO_CONTEXT_MENU_FAVOURITE_CHANNEL" = "Add channel to favorite";
 "VIDEO_CONTEXT_MENU_REMOVE_FAVOURITE" = "Remove favorite";
 "VIDEO_CONTEXT_MENU_SHARE" = "Share";
 "VIDEO_CONTEXT_MENU_ADD_TO_CALENDAR" = "Add to calendar";
