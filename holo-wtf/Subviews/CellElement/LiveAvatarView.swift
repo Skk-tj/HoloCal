@@ -16,17 +16,15 @@ struct LiveAvatarView: View {
             image
                 .resizable()
                 .aspectRatio(1, contentMode: .fill)
+                .frame(width: avatarRadius, height: avatarRadius)
+                .clipShape(Circle())
+                .overlay {
+                    Circle().stroke(.white, lineWidth: 1)
+                }
+                .shadow(radius: 1)
         }, placeholder: {
             ProgressView()
         })
-            .padding(4.0)
-            .frame(width: avatarRadius, height: avatarRadius)
-            .clipShape(Circle())
-            .overlay {
-                Circle().stroke(.white, lineWidth: 1)
-            }
-            .shadow(radius: 1)
-            
     }
 }
 

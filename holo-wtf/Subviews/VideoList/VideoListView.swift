@@ -60,7 +60,16 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
         .searchable(text: $searchText, prompt: "SEARCH_BY_NAME_OR_TAG") {
             if searchText.isEmpty {
                 ForEach(viewModel.getSearchSuggestions(), id: \.self) { suggestion in
-                    Text("\(suggestion)").searchCompletion(suggestion)
+                    HStack {
+                        switch suggestion.category {
+                        case .name:
+                            Image(systemName: "person")
+                        case .tag:
+                            Image(systemName: "tag")
+                        }
+                        
+                        Text("\(suggestion.searchText)").searchCompletion(suggestion.searchText)
+                    }
                 }
             }
         }

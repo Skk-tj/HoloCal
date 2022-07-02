@@ -25,6 +25,16 @@ enum SortingStrategy: Hashable {
     case time(SortingOrder)
 }
 
+enum SearchSuggestionCategory {
+    case name
+    case tag
+}
+
+struct SearchSuggestion: Hashable {
+    let searchText: String
+    let category: SearchSuggestionCategory
+}
+
 @MainActor
 class VideoViewModel: ObservableObject {
     @Published var videoList: [LiveVideo]
@@ -134,12 +144,13 @@ class VideoViewModel: ObservableObject {
         return newVideos
     }
     
-    func getSearchSuggestions() -> [String] {
-        let englishNames: [String] = self.videoList.map { video in talentsToName[TalentsEnum(rawValue: video.channel.id)!]!.names[.en]! }
-        let japaneseNames: [String] = self.videoList.map { video in talentsToName[TalentsEnum(rawValue: video.channel.id)!]!.names[.ja]! }
+    func getSearchSuggestions() -> [SearchSuggestion] {
+        let englishNames: [SearchSuggestion] = self.videoList.map { video in SearchSuggestion(searchText: talentsToName[TalentsEnum(rawValue: video.channel.id)!]!.names[.en]!, category: .name) }
+        let japaneseNames: [SearchSuggestion] = self.videoList.map { video in SearchSuggestion(searchText: talentsToName[TalentsEnum(rawValue: video.channel.id)!]!.names[.ja]!, category: .name) }
         let allTags: [String] = self.videoList.compactMap { video in video.topicId }
+        let allTagsInStruct: [SearchSuggestion] = allTags.map { suggestion in SearchSuggestion(searchText: suggestion, category: .tag) }
         
-        let suggestionsList: [String] = Array((englishNames + japaneseNames + allTags).uniqued())
+        let suggestionsList: [SearchSuggestion] = Array((englishNames + japaneseNames + allTagsInStruct).uniqued())
         
         return suggestionsList
     }
