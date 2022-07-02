@@ -19,7 +19,7 @@ struct UpcomingPaneView: View {
                 VideoThumbnailView(ytVideoKey: upcoming.id)
                 
                 VStack(alignment: .leading) {
-                    Text(upcoming.title.removingHTMLEntities())
+                    Text(upcoming.escapedTitle)
                         .font(.headline)
                         .lineLimit(2)
                         .multilineTextAlignment(.leading)
