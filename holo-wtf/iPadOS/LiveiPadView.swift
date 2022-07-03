@@ -18,7 +18,12 @@ struct LiveiPadView: View {
     
     var body: some View {
         iPadLazyGirdView(singleVideoView: { live in
-            LivePaneView(live: live)
+            LinkedVideoView(url: live.url) {
+                LivePaneView(live: live)
+            }
+            .contextMenu {
+                VideoContextMenu(video: live)
+            }
         }, countView: {
             LiveCountView()
         })
