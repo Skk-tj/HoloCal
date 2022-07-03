@@ -18,7 +18,12 @@ struct UpcomingiPadView: View {
     
     var body: some View {
         iPadLazyGirdView(singleVideoView: { live in
-            UpcomingPaneView(upcoming: live)
+            LinkedVideoView(url: live.url) {
+                UpcomingPaneView(upcoming: live)
+            }
+            .contextMenu {
+                VideoContextMenu(video: live)
+            }
         }, countView: {
             UpcomingCountView()
         })
