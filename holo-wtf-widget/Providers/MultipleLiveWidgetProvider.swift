@@ -29,7 +29,7 @@ struct MultipleLiveWidgetProvider: IntentTimelineProvider {
     func placeholder(in context: Context) -> MultipleLiveWidgetEntry {
         let channel: Channel = .init(id: "UCp6993wxpyDPHUpavwDFqgg", name: "Tokino Sora", photo: nil, org: "Hololive")
         
-        let video: LiveVideo = .init(id: "NT6Pf28eCgQ", title: "My Debut Stream!", topicId: "debut", startScheduled: Date(), startActual: Date(), liveViewers: 1000, songs: nil, channel: channel)
+        let video: LiveVideo = .init(id: "NT6Pf28eCgQ", title: "My Debut Stream!", topicId: "debut", startScheduled: Date(), startActual: Date(), liveViewers: 1000, mentions: nil, songs: nil, channel: channel)
         
         return MultipleLiveWidgetEntry(date: Date(), configuration: ConfigurationIntent(), videoLeft: video, thumbnailDataLeft: Data(), videoRight: video, thumbnailDataRight: Data(), status: .ok)
     }

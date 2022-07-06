@@ -28,12 +28,12 @@ struct SmallLiveWidgetView: View {
                 Image(uiImage: avatarImage)
                     .resizable()
                     .aspectRatio(1, contentMode: .fill)
-                    .frame(width: 45, height: 45)
+                    .frame(width: 35, height: 35)
                     .clipShape(Circle())
                     .overlay {
                         Circle().stroke(.white, lineWidth: 1)
                     }
-                    .shadow(radius: 3)
+                    .shadow(radius: 1)
             }
             
             Spacer()
@@ -45,6 +45,10 @@ struct SmallLiveWidgetView: View {
             Text(live.escapedTitle)
                 .lineLimit(3)
                 .font(.caption)
+            
+            Text("\(Image(systemName: "eye")) \(live.liveViewers)")
+                .foregroundColor(.secondary)
+                .font(.caption2)
         }
         .padding()
     }
