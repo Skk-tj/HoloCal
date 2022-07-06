@@ -67,7 +67,7 @@ class VideoViewModel: ObservableObject {
     }
     
     private func updatedWithTwitter(video: LiveVideo) async -> LiveVideo {
-        return LiveVideo(id: video.id, title: video.title, topicId: video.topicId, startScheduled: video.startScheduled, startActual: video.startActual, liveViewers: video.liveViewers, songs: video.songs, channel: await self.updatedWithTwitter(channel: video.channel))
+        return LiveVideo(id: video.id, title: video.title, topicId: video.topicId, startScheduled: video.startScheduled, startActual: video.startActual, liveViewers: video.liveViewers, mentions: video.mentions, songs: video.songs, channel: await self.updatedWithTwitter(channel: video.channel))
     }
     
     private func updateSongWithMusicKit(song: SongInStream) async -> SongInStream {
@@ -76,7 +76,7 @@ class VideoViewModel: ObservableObject {
     
     private func updateVideoWithMusicKit(video: LiveVideo) async -> LiveVideo {
         if let songs = video.songs {
-            return LiveVideo(id: video.id, title: video.title, topicId: video.topicId, startScheduled: video.startScheduled, startActual: video.startActual, liveViewers: video.liveViewers, songs: try? await getSongsForOneVideo(songList: songs), channel: video.channel)
+            return LiveVideo(id: video.id, title: video.title, topicId: video.topicId, startScheduled: video.startScheduled, startActual: video.startActual, liveViewers: video.liveViewers, mentions: video.mentions, songs: try? await getSongsForOneVideo(songList: songs), channel: video.channel)
         } else {
             return video
         }

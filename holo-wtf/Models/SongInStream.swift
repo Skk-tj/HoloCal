@@ -36,6 +36,7 @@ struct SongInStream: Codable, Identifiable, Hashable {
     
     func getSongInfo() async throws -> Song {
         let authorizationStatus = await MusicAuthorization.request()
+        
         if authorizationStatus == .authorized {
             let countryCode = try await MusicDataRequest.currentCountryCode
             let url = URL(string: "https://api.music.apple.com/v1/catalog/\(countryCode)/songs/\(self.itunesid)")!
@@ -44,6 +45,7 @@ struct SongInStream: Codable, Identifiable, Hashable {
             let dataResponse = try await dataRequest.response()
             
             let decoder = JSONDecoder()
+            
             do {
                 let songResponse = try decoder.decode(MySingleSongReponse.self, from: dataResponse.data)
                 

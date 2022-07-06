@@ -15,6 +15,7 @@ struct LiveVideo: Codable, Identifiable, Hashable {
     let startScheduled: Date?
     let startActual: Date?
     let liveViewers: Int
+    let mentions: [Channel]?
     
     var songs: [SongInStream]?
     var channel: Channel
@@ -49,7 +50,7 @@ struct LiveVideo: Codable, Identifiable, Hashable {
         title.removingHTMLEntities()
     }
     
-    static let previewLive = LiveVideo(id: "abcd", title: "my debut live", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, songs: nil, channel: Channel.testChannel)
+    static let previewLive = LiveVideo(id: "abcd", title: "my debut live", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, mentions: [Channel.testChannel, Channel.testChannel2], songs: nil, channel: Channel.testChannel)
     
-    static let previewLiveMemberOnly = LiveVideo(id: "abcd", title: "my debut live member only", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, songs: nil, channel: Channel.testChannel)
+    static let previewLiveMemberOnly = LiveVideo(id: "abcd", title: "my debut live member only", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, mentions: [Channel.testChannel, Channel.testChannel2], songs: nil, channel: Channel.testChannel)
 }

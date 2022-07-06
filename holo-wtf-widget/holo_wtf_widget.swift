@@ -31,14 +31,10 @@ struct HoloCalWidgetBundle: WidgetBundle {
 
 struct holo_wtf_widget_Previews: PreviewProvider {
     static var previews: some View {
-        let channel: Channel = .init(id: "Cp6993wxpyDPHUpavwDFqgg", name: "Tokino Sora", photo: nil, org: "Hololive")
-        
-        let video: LiveVideo = .init(id: "sampleId", title: "My Debut Stream!", topicId: "debut", startScheduled: Date(), startActual: Date(), liveViewers: 1000, songs: nil, channel: channel)
-        
-        LivePaneWidgetEntryView(entry: LiveWidgetEntry(date: Date(), configuration: ConfigurationIntent(), video: video, status: .ok, avatarData: Data(), thumbnailData: Data()))
+        LivePaneWidgetEntryView(entry: LiveWidgetEntry(date: Date(), configuration: ConfigurationIntent(), video: LiveVideo.previewLive, status: .ok, avatarData: Data(), thumbnailData: Data()))
             .previewContext(WidgetPreviewContext(family: .systemLarge))
         
-        LivePaneWidgetEntryView(entry: LiveWidgetEntry(date: Date(), configuration: ConfigurationIntent(), video: video, status: .noVideo, avatarData: Data(), thumbnailData: Data()))
+        LivePaneWidgetEntryView(entry: LiveWidgetEntry(date: Date(), configuration: ConfigurationIntent(), video: LiveVideo.previewLive, status: .noVideo, avatarData: Data(), thumbnailData: Data()))
             .previewContext(WidgetPreviewContext(family: .systemLarge))
         
         MultipleLiveWidgetEntryView(entry: MultipleLiveWidgetEntry(date: Date(), configuration: ConfigurationIntent(), videoLeft: nil, thumbnailDataLeft: Data(), videoRight: nil, thumbnailDataRight: Data(), status: .noVideo))
