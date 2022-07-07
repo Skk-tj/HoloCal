@@ -31,6 +31,14 @@ struct UpcomingPaneView: View {
                             .font(.subheadline)
                             .foregroundColor(.secondary)
                             .lineLimit(1)
+                        
+                        if let mentions = upcoming.mentions {
+                            Text("LIVE_PANE_VIEW_WITH")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                            
+                            LiveCollabAvatarView(mentions: mentions, avatarRadius: 40.0)
+                        }
                     }
                     Divider()
                     HStack {

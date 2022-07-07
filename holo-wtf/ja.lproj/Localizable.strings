@@ -130,3 +130,6 @@
 // Single Song View
 "SINGLE_SONG_VIEW_CONTECT_MENU_OPEN_IN_APPLE_MUSIC" = "Apple Musicで開く";
 "SINGLE_SONG_VIEW_CONTECT_MENU_JUMP_TO_SONG_IN_VIDEO" = "配信に出る場所へ";
+
+// Common between LivePaneView and UpcomingPaneView
+"LIVE_PANE_VIEW_WITH" = "と";
