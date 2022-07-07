@@ -32,6 +32,14 @@ struct LivePaneView: View {
                             .lineLimit(1)
                             .font(.subheadline)
                             .foregroundColor(.secondary)
+                        
+                        if let mentions = live.mentions {
+                            Text("LIVE_PANE_VIEW_WITH")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                            
+                            LiveCollabAvatarView(mentions: mentions, avatarRadius: 40.0)
+                        }
                     }
                     
                     Divider()

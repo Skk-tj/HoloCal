@@ -130,3 +130,6 @@
 // Single Song View
 "SINGLE_SONG_VIEW_CONTECT_MENU_OPEN_IN_APPLE_MUSIC" = "Open in Apple Music";
 "SINGLE_SONG_VIEW_CONTECT_MENU_JUMP_TO_SONG_IN_VIDEO" = "Jump to Song in Stream";
+
+// Common between LivePaneView and UpcomingPaneView
+"LIVE_PANE_VIEW_WITH" = "with";
