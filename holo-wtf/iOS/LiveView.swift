@@ -9,7 +9,11 @@ import SwiftUI
 
 struct LiveView: View {
     @StateObject var live: LiveViewModel
+    
     @AppStorage(UserDefaultKeys.isShowingCompactInLiveView) var isShowingCompactInLiveView: Bool = false
+    
+    @State var isShowingCollabSheet: Bool = false
+    @State var collabChannels: [Channel] = [Channel.testChannel]
     
     @State var sortingStrategy: SortingStrategy = .notSorting
     
@@ -30,11 +34,11 @@ struct LiveView: View {
                         }
                     }
             } else {
-                LiveCardListView(sortingStrategy: $sortingStrategy)
+                LiveCardListView(sortingStrategy: $sortingStrategy, isShowingCollabSheet: $isShowingCollabSheet, collabChannels: $collabChannels)
                     .environmentObject(live as VideoViewModel)
                     .navigationTitle("LIVE_VIEW_TITLE")
                     .toolbar {
-                        ToolbarItemGroup {
+                        ToolbarItem(placement: .primaryAction) {
                             LiveViewToolbar(sortingStrategy: $sortingStrategy)
                                 .environmentObject(live as VideoViewModel)
                         }
@@ -43,15 +47,14 @@ struct LiveView: View {
         }
         .task {
             await live.getLive()
-            
-            // Reset sorting state, go back to section view
             sortingStrategy = .notSorting
         }
         .refreshable {
             await live.getLive()
-            
-            // Reset sorting state, go back to section view
             sortingStrategy = .notSorting
+        }
+        .sheet(isPresented: $isShowingCollabSheet) {
+            LiveCollabListView(mentions: $collabChannels)
         }
         .navigationViewStyle(.stack)
     }

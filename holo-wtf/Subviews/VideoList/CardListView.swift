@@ -8,9 +8,7 @@
 import SwiftUI
 
 /// The view that represents a list of cards. 
-struct CardListView<PaneContent: View, StatusContent: View>: View {
-    @AppStorage("favouritedChannel") var favourited = Favourited()
-    
+struct CardListView<PaneContent: View, StatusContent: View>: View {    
     @EnvironmentObject var viewModel: VideoViewModel
     
     @Binding var sortingStrategy: SortingStrategy

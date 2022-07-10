@@ -9,8 +9,11 @@ import SwiftUI
 
 struct UpcomingView: View {
     @StateObject var upcoming: UpcomingViewModel
-    @AppStorage("favouritedChannel") var favourited = Favourited()
+    
     @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingView) var isShowingCompactInUpcomingView: Bool = false
+    
+    @State var isShowingCollabSheet: Bool = false
+    @State var collabChannels: [Channel] = [Channel.testChannel]
     
     @State var sortingStrategy: SortingStrategy = .notSorting
     
@@ -31,11 +34,11 @@ struct UpcomingView: View {
                         }
                     }
             } else {
-                UpcomingCardListView(sortingStrategy: $sortingStrategy)
+                UpcomingCardListView(sortingStrategy: $sortingStrategy, isShowingCollabSheet: $isShowingCollabSheet, collabChannels: $collabChannels)
                     .environmentObject(upcoming as VideoViewModel)
                     .navigationTitle("UPCOMING_VIEW_TITLE")
                     .toolbar {
-                        ToolbarItemGroup {
+                        ToolbarItem(placement: .primaryAction) {
                             UpcomingViewToolbar(sortingStrategy: $sortingStrategy)
                                 .environmentObject(upcoming as VideoViewModel)
                         }
@@ -44,15 +47,14 @@ struct UpcomingView: View {
         }
         .task {
             await upcoming.getUpcoming()
-            
-            // Reset sorting state, go back to section view
             sortingStrategy = .notSorting
         }
         .refreshable {
             await upcoming.getUpcoming()
-            
-            // Reset sorting state, go back to section view
             sortingStrategy = .notSorting
+        }
+        .sheet(isPresented: $isShowingCollabSheet) {
+            LiveCollabListView(mentions: $collabChannels)
         }
         .navigationViewStyle(.stack)
     }
