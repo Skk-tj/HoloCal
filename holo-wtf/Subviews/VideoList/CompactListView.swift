@@ -7,9 +7,7 @@
 
 import SwiftUI
 
-struct CompactListView<CellContent: View, DataStatusContent: View>: View {
-    @AppStorage("favouritedChannel") var favourited = Favourited()
-    
+struct CompactListView<CellContent: View, DataStatusContent: View>: View {    
     @EnvironmentObject var viewModel: VideoViewModel
     
     @Binding var sortingStrategy: SortingStrategy

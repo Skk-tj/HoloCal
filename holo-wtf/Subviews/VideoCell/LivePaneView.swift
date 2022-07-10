@@ -11,6 +11,9 @@ import HTMLString
 struct LivePaneView: View {
     let live: LiveVideo
     
+    @Binding var isShowingCollabSheet: Bool
+    @Binding var collabChannels: [Channel]
+    
     @AppStorage("favouritedChannel") var favourited = Favourited()
     @State var liveIconOpcality: Double = 0
     
@@ -39,6 +42,10 @@ struct LivePaneView: View {
                                 .foregroundColor(.secondary)
                             
                             LiveCollabAvatarView(mentions: mentions, avatarRadius: 40.0)
+                                .onTapGesture {
+                                    isShowingCollabSheet = true
+                                    collabChannels = live.mentions!
+                                }
                         }
                     }
                     
@@ -109,7 +116,7 @@ struct LivePaneView: View {
 
 struct LivePaneView_Previews: PreviewProvider {
     static var previews: some View {
-        LivePaneView(live: LiveVideo.previewLive)
-        LivePaneView(live: LiveVideo.previewLive).preferredColorScheme(.dark)
+        LivePaneView(live: LiveVideo.previewLive, isShowingCollabSheet: Binding.constant(false), collabChannels: Binding.constant([Channel.testChannel]))
+        LivePaneView(live: LiveVideo.previewLive, isShowingCollabSheet: Binding.constant(false), collabChannels: Binding.constant([Channel.testChannel])).preferredColorScheme(.dark)
     }
 }

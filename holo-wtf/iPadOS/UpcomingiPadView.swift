@@ -10,6 +10,9 @@ import SwiftUI
 struct UpcomingiPadView: View {
     @StateObject var upcoming: UpcomingViewModel
     
+    @State var isShowingCollabSheet: Bool = false
+    @State var collabChannels: [Channel] = [Channel.testChannel]
+    
     @State var sortingStrategy: SortingStrategy = .notSorting
     
     init() {
@@ -19,7 +22,7 @@ struct UpcomingiPadView: View {
     var body: some View {
         iPadLazyGirdView(singleVideoView: { live in
             LinkedVideoView(url: live.url) {
-                UpcomingPaneView(upcoming: live)
+                UpcomingPaneView(upcoming: live, isShowingCollabSheet: $isShowingCollabSheet, collabChannels: $collabChannels)
             }
             .contextMenu {
                 VideoContextMenu(video: live)
@@ -35,7 +38,7 @@ struct UpcomingiPadView: View {
             sortingStrategy = .notSorting
         }
         .toolbar {
-            ToolbarItemGroup {
+            ToolbarItemGroup(placement: .primaryAction) {
                 UpcomingViewToolbar(sortingStrategy: $sortingStrategy)
                     .environmentObject(upcoming as VideoViewModel)
                 Button(action: {
@@ -51,6 +54,9 @@ struct UpcomingiPadView: View {
             }
         }
         .navigationTitle("UPCOMING_VIEW_TITLE")
+        .sheet(isPresented: $isShowingCollabSheet) {
+            LiveCollabListView(mentions: $collabChannels)
+        }
     }
 }
 

@@ -133,3 +133,5 @@
 
 // Common between LivePaneView and UpcomingPaneView
 "LIVE_PANE_VIEW_WITH" = "with";
+
+"COLLAB_SHEET_DISMISS_BUTTON" = "Dismiss";

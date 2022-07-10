@@ -16,14 +16,6 @@ struct SmallLiveWidgetView: View {
         let lang: NameLanguage = Locale.current.languageCode == "ja" ? .ja : .en
         
         VStack(alignment: .leading) {
-            HStack {
-                Text("LIVE_WIDGET_TITLE")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
-                
-                Spacer()
-            }
-            
             if let avatarImage = UIImage(data: avatarData) {
                 Image(uiImage: avatarImage)
                     .resizable()
