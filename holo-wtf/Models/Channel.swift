@@ -16,8 +16,13 @@ struct Channel: Codable, Identifiable, Hashable {
     
     var twitter: String?
     
-    var talent: Talent {
-        talentsToName[TalentsEnum(rawValue: id)!]!
+    var talent: Talent? {
+        if let talentEnum = TalentsEnum(rawValue: id) {
+            return talentsToName[talentEnum]!
+        } else {
+            // Don't recognize this ID
+            return nil
+        }
     }
     
     var channelURL: URL? {
@@ -27,6 +32,14 @@ struct Channel: Codable, Identifiable, Hashable {
     static let testChannel = Channel(id: "UCp6993wxpyDPHUpavwDFqgg", name: "test vtuber", photo: URL(string: "https://yt3.ggpht.com/ytc/AKedOLQH3CqU4dL9EWjrYl6aKn26_DAAHbCXEBVyMTaWZA=s800-c-k-c0x00ffffff-no-rj"), org: "Hololive", twitter: "aaaa")
     
     static let testChannel2 = Channel(id: "UCDqI2jOz0weumE8s7paEk6g", name: "test vtuber 2", photo: URL(string: "https://yt3.ggpht.com/wIqM7MWDN94PoibzPmeog7WOt8jFKTKZBOBFEbLBaiUAdKLwoqdLC_CN7B7Gby-FWH-076rN=s800-c-k-c0x00ffffff-no-rj"), org: "Hololive", twitter: "aaaa")
+    
+    func getTalentName(lang: NameLanguage) -> String {
+        if let talent = self.talent {
+            return talent.names[lang]!
+        } else {
+            return self.name
+        }
+    }
     
     func getTwitterId() async throws -> String? {
         let logger = Logger()

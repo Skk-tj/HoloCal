@@ -25,7 +25,7 @@ struct SectionedNotFavouritedForEachView<Content: View>: View {
             !favourited.contains(where: { video.channel.id == $0 })
         }
         
-        let groupedDictionary = Dictionary<GenerationEnum, [LiveVideo]>(grouping: filteredVideos, by: { $0.channel.talent.inGeneration })
+        let groupedDictionary = Dictionary<GenerationEnum, [LiveVideo]>(grouping: filteredVideos, by: { $0.channel.talent?.inGeneration ?? .other })
         let filteredGenerationListOrder = generationListOrder.filter { generation in
             generationListSelection.contains(generation)
         }

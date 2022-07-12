@@ -44,8 +44,6 @@ struct UpcomingiPadView: View {
                 Button(action: {
                     Task {
                         await upcoming.getUpcoming()
-                        
-                        // Reset sorting state, go back to section view
                         sortingStrategy = .notSorting
                     }
                 }, label: {

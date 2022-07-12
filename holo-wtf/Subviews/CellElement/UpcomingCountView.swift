@@ -15,7 +15,7 @@ struct UpcomingCountView: View {
     
     var body: some View {
         let filteredVideoCount = upcoming.videoList.filter { video in
-            !generationListSelection.contains(video.channel.talent.inGeneration)
+            !generationListSelection.contains(video.channel.talent?.inGeneration ?? .other)
         }
             .count
         

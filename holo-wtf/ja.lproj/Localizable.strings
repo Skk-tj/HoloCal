@@ -134,4 +134,5 @@
 // Common between LivePaneView and UpcomingPaneView
 "LIVE_PANE_VIEW_WITH" = "と";
 
+"COLLAB_SHEET_NAVIGATION_TITLE" = "コラボレーション";
 "COLLAB_SHEET_DISMISS_BUTTON" = "閉じる";
