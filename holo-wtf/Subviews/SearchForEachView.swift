@@ -16,7 +16,9 @@ struct SearchForEachView<Content: View>: View {
     @ViewBuilder
     var body: some View {
         ForEach(viewModel.videoList.filter { video in
-            video.channel.talent.names[.en]!.localizedCaseInsensitiveContains(searchText) || video.channel.talent.names[.ja]!.localizedCaseInsensitiveContains(searchText) || (video.topicId ?? "").localizedStandardContains(searchText)
+            video.channel.getTalentName(lang: .en).localizedCaseInsensitiveContains(searchText) ||
+            video.channel.getTalentName(lang: .ja).localizedCaseInsensitiveContains(searchText) ||
+            (video.topicId ?? "").localizedStandardContains(searchText)
         }) { live in
             cellView(live)
         }

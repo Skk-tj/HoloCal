@@ -30,7 +30,7 @@ struct SmallLiveWidgetView: View {
             
             Spacer()
             
-            Text(live.channel.talent.names[lang]!)
+            Text(live.channel.getTalentName(lang: lang))
                 .lineLimit(1)
                 .font(.subheadline)
                 .foregroundColor(.secondary)

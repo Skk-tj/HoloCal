@@ -27,6 +27,9 @@ enum GenerationEnum: Int, Codable, CaseIterable {
     case starsThirdGen
     case uproar
     case official
+    
+    // For all the channels that we may not recognize
+    case other
 }
 
 enum TalentsEnum: String, Codable {
@@ -121,6 +124,7 @@ enum TalentsEnum: String, Codable {
     case hololiveEN = "UCotXwY6s8pWmuWd_snKYjhg"
     case hololiveID = "UCfrWoRGlawPQDQxxeIDRP0Q"
     case holostars = "UCWsfcksUUpoEvhia0_ut0bA"
+    case midnight = "UCnVbtCwr-5LXxUlGxsgD7sQ"
 }
 
 extension TalentsEnum: Identifiable {
@@ -251,6 +255,7 @@ let talentsToName: [TalentsEnum: Talent] = [
     .hololiveEN: Talent(id: "UCotXwY6s8pWmuWd_snKYjhg", names: [.en: "hololive English", .ja: "hololive English"], inGeneration: .official),
     .hololiveID: Talent(id: "UCfrWoRGlawPQDQxxeIDRP0Q", names: [.en: "hololive Indonesia", .ja: "hololive Indonesia"], inGeneration: .official),
     .holostars: Talent(id: "UCWsfcksUUpoEvhia0_ut0bA", names: [.en: "holostars", .ja: "ホロスターズ"], inGeneration: .official),
+    .midnight: Talent(id: "UCnVbtCwr-5LXxUlGxsgD7sQ", names: [.en: "Midnight Grand Orchestra", .ja: "Midnight Grand Orchestra"], inGeneration: .official)
 ]
 
 let generationToName: [GenerationEnum: [NameLanguage: String]] = [
@@ -272,7 +277,8 @@ let generationToName: [GenerationEnum: [NameLanguage: String]] = [
     .starsSecondGen: [.en: "holostars 2nd gen", .ja: "ホロスターズ 2期生"],
     .starsThirdGen: [.en: "holostars 3nd gen", .ja: "ホロスターズ 3期生"],
     .uproar: [.en: "holostars UPROAR!!", .ja: "ホロスターズ アップロー!!"],
-    .official: [.en: "Official Channels", .ja: "公式チャンネル"]
+    .official: [.en: "Official Channels", .ja: "公式チャンネル"],
+    .other: [.en: "Other", .ja: "他"]
 ]
 
 /// Represent the generation group in Hololive
@@ -313,5 +319,5 @@ let talentsByGeneration: [GenerationGroup] = [
     GenerationGroup(generation: .starsSecondGen, members: [.astel, .temma, .roberu]),
     GenerationGroup(generation: .starsThirdGen, members: [.shien, .oga]),
     GenerationGroup(generation: .uproar, members: [.fuma, .uyu, .gamma, .rio]),
-    GenerationGroup(generation: .official, members: [.hololive, .hololiveEN, .hololiveID, .holostars])
+    GenerationGroup(generation: .official, members: [.hololive, .hololiveEN, .hololiveID, .holostars, .midnight])
 ]

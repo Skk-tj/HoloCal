@@ -25,7 +25,7 @@ struct NotFavouritedForEachView<Content: View>: View {
         }
         
         let generationFilteredVideo = favouritedFilteredVideo.filter { video in
-            generationListSelection.contains(video.channel.talent.inGeneration)
+            generationListSelection.contains(video.channel.talent?.inGeneration ?? .other)
         }
         
         ForEach(generationFilteredVideo, id: \.self) { live in

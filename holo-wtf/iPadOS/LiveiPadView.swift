@@ -45,8 +45,6 @@ struct LiveiPadView: View {
                 Button(action: {
                     Task {
                         await live.getLive()
-                        
-                        // Reset sorting state, go back to section view
                         sortingStrategy = .notSorting
                     }
                 }, label: {

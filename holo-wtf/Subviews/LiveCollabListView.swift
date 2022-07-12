@@ -12,8 +12,9 @@ struct LiveCollabListView: View {
     /// Note: this is a binding because this property will be changed by an external view, so we must observe it.
     @Binding var mentions: [Channel]
     
-    
     var body: some View {
+        let lang: NameLanguage = Locale.current.languageCode == "ja" ? .ja : .en
+        
         NavigationView {
             List {
                 ForEach(mentions) { channel in
@@ -21,7 +22,7 @@ struct LiveCollabListView: View {
                         LiveAvatarView(url: channel.photo, avatarRadius: 64)
                         
                         VStack(alignment: .leading) {
-                            Text(channel.talent.names[.en]!)
+                            Text(channel.getTalentName(lang: lang))
                             
                             Text(channel.name)
                                 .foregroundColor(.secondary)
@@ -29,7 +30,7 @@ struct LiveCollabListView: View {
                     }
                 }
             }
-            .navigationTitle("Collaboration")
+            .navigationTitle("COLLAB_SHEET_NAVIGATION_TITLE")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {

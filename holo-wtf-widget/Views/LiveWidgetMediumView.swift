@@ -42,7 +42,7 @@ struct LiveWidgetMediumView: View {
                     .lineLimit(3)
                     .font(.footnote)
                 
-                Text(video.channel.talent.names[lang]!)
+                Text(video.channel.getTalentName(lang: lang))
                     .foregroundColor(.secondary)
                     .font(.caption2)
                 

@@ -38,7 +38,7 @@ struct MultipleLiveWidgetView: View {
                     .font(.caption)
                 
                 HStack {
-                    Text(leftVideo.channel.talent.names[lang]!)
+                    Text(leftVideo.channel.getTalentName(lang: lang))
                         .foregroundColor(.secondary)
                         .lineLimit(1)
                         .font(.caption2)
@@ -67,7 +67,7 @@ struct MultipleLiveWidgetView: View {
                     .font(.caption)
                 
                 HStack {
-                    Text(rightVideo.channel.talent.names[lang]!)
+                    Text(rightVideo.channel.getTalentName(lang: lang))
                         .lineLimit(1)
                         .foregroundColor(.secondary)
                         .font(.caption2)
