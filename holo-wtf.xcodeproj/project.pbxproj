@@ -94,7 +94,6 @@
 		F0E219C3287AB47D0080697F /* LiveWidgetMediumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E219C2287AB47D0080697F /* LiveWidgetMediumView.swift */; };
 		F0E4873D2876586F00118BBB /* LiveCollabAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E4873C2876586F00118BBB /* LiveCollabAvatarView.swift */; };
 		F0E4873F2877F73500118BBB /* LiveCollabListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E4873E2877F73500118BBB /* LiveCollabListView.swift */; };
-		F0EB53AC28107C0D0024E089 /* MarqueeText in Frameworks */ = {isa = PBXBuildFile; productRef = F0EB53AB28107C0D0024E089 /* MarqueeText */; };
 		F0EB53B0281290490024E089 /* PaneViewButtonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EB53AF281290490024E089 /* PaneViewButtonRowView.swift */; };
 		F0EB53B22812A2E90024E089 /* EventEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EB53B12812A2E90024E089 /* EventEditView.swift */; };
 		F0EB53B62812BD6F0024E089 /* FavouriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EB53B52812BD6F0024E089 /* FavouriteButton.swift */; };
@@ -268,7 +267,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0EB53BB2812C2490024E089 /* ActivityView in Frameworks */,
-				F0EB53AC28107C0D0024E089 /* MarqueeText in Frameworks */,
 				F09D25C127FEBA2E001A7D71 /* Algorithms in Frameworks */,
 				F0B8E1CD27E90EBA00DC7CF9 /* HTMLString in Frameworks */,
 			);
@@ -587,7 +585,6 @@
 			packageProductDependencies = (
 				F0B8E1CC27E90EBA00DC7CF9 /* HTMLString */,
 				F09D25C027FEBA2E001A7D71 /* Algorithms */,
-				F0EB53AB28107C0D0024E089 /* MarqueeText */,
 				F0EB53BA2812C2490024E089 /* ActivityView */,
 			);
 			productName = "holo-wtf";
@@ -629,7 +626,6 @@
 			packageReferences = (
 				F0B8E1CB27E90EBA00DC7CF9 /* XCRemoteSwiftPackageReference "HTMLString" */,
 				F09D25BF27FEBA2E001A7D71 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
-				F0EB53AA28107C0D0024E089 /* XCRemoteSwiftPackageReference "MarqueeText" */,
 				F0EB53B92812C2490024E089 /* XCRemoteSwiftPackageReference "ActivityView" */,
 			);
 			productRefGroup = F0C657B82771F47C004AF802 /* Products */;
@@ -1164,14 +1160,6 @@
 				minimumVersion = 6.0.0;
 			};
 		};
-		F0EB53AA28107C0D0024E089 /* XCRemoteSwiftPackageReference "MarqueeText" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/joekndy/MarqueeText.git";
-			requirement = {
-				kind = revision;
-				revision = c6214a470c2c7f2b9add671722b4bb402126bce9;
-			};
-		};
 		F0EB53B92812C2490024E089 /* XCRemoteSwiftPackageReference "ActivityView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftUI-Plus/ActivityView";
@@ -1202,11 +1190,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F0B8E1CB27E90EBA00DC7CF9 /* XCRemoteSwiftPackageReference "HTMLString" */;
 			productName = HTMLString;
-		};
-		F0EB53AB28107C0D0024E089 /* MarqueeText */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F0EB53AA28107C0D0024E089 /* XCRemoteSwiftPackageReference "MarqueeText" */;
-			productName = MarqueeText;
 		};
 		F0EB53BA2812C2490024E089 /* ActivityView */ = {
 			isa = XCSwiftPackageProductDependency;

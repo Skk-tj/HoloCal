@@ -19,14 +19,6 @@
       }
     },
     {
-      "identity" : "marqueetext",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/joekndy/MarqueeText.git",
-      "state" : {
-        "revision" : "c6214a470c2c7f2b9add671722b4bb402126bce9"
-      }
-    },
-    {
       "identity" : "swift-algorithms",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-algorithms.git",
