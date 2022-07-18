@@ -76,7 +76,7 @@
 
 // UpcomingView
 
-"UPCOMING_VIEW_TITLE" = "今後のライブ配信";
+"UPCOMING_VIEW_TITLE" = "ライブ配信の予定";
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld" = "%2$lld時間内に%1$lld人が配信予定";
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld %lld" = "%2$lld時間内に%1$lld人が配信予定（%3$lld人表示されていない）";
 
@@ -143,5 +143,5 @@
 
 // DST Reminder View
 "DST_REMINDER_VIEW_TITLE" = "夏時間リマインダー";
-"DST_REMINDER_VIEW_TEXT %@ %lld" = "Daylight Saving Time is %@ in **%lld days**. As Japan does not observe Daylight Saving Time, please double-check the stream time.";
+"DST_REMINDER_VIEW_TEXT %@ %lld" = "Daylight Saving Time is %@ in **%lld days**. As Japan does not observe Daylight Saving Time, please double-check the stream time. ";
 "DST_REMINDER_VIEW_FOOTER" = "このデバイスは、夏時間タイムゾーンに設定されています。位置情報は使用されていません。";
