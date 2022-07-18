@@ -55,6 +55,7 @@
 "LIVE_CELL_VIEW_PEOPLE_WATCHING %lld" = "%lld watching";
 "LIVE_CELL_VIEW_STARTED_AGO %@" = "Started %@ ago";
 "LIVE_CELL_VIEW_WAITING" = "Waiting...";
+
 "LIVE_CELL_VIEW_STARTED_AT %@" = "%@";
 
 // Upcoming Cell View
@@ -80,8 +81,8 @@
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld" = "%lld Upcoming Streams in %lld hours";
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld %lld" = "%lld Upcoming Streams in %lld hours (%lld excluded)";
 
-// LiveViewToolbar & UpcomingViewToolbar
 
+// LiveViewToolbar & UpcomingViewToolbar
 "LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE" = "Show absolute time";
 "LIVE_VIEW_TOOLBAR_SHOW_RELATIVE" = "Show relative time";
 "LIVE_VIEW_TOOLBAR_SHOW_COMPACT" = "Show compact view";
@@ -100,7 +101,6 @@
 "VIDEO_CONTEXT_MENU_FAVOURITE_CHANNEL" = "Add channel to favorite";
 "VIDEO_CONTEXT_MENU_REMOVE_FAVOURITE" = "Remove favorite";
 "VIDEO_CONTEXT_MENU_SHARE" = "Share";
-"VIDEO_CONTEXT_MENU_ADD_TO_CALENDAR" = "Add to calendar";
 
 // Swipe actions for LinkedVideo
 "LINKED_VIDEO_SWIPE_ACTIONS_FAVOURITE" = "Favourite";
