@@ -19,7 +19,7 @@
 "SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT %lld" = "%lld時間内のライブ配信を表示";
 
 "SETTINGS_STREAM_TIME_HEADER" = "配信時間";
-"SETTINGS_STREAM_TIME_FOOTER" = "HoloCal は夏時間が適用されるタイムゾーンに設定されている場合、夏時間への移行をお知らせします。";
+"SETTINGS_STREAM_TIME_FOOTER" = "HoloCalは夏時間が適用されるタイムゾーンに設定されている場合、夏時間への移行をお知らせします。";
 "SETTINGS_DST_CHANGE_TEXT %lld" = "%lld日前に夏時間の移行をお知らせ";
 
 "SETTINGS_CHANNEL_MANAGEMENT_HEADER" = "チャンネル";
@@ -143,5 +143,5 @@
 
 // DST Reminder View
 "DST_REMINDER_VIEW_TITLE" = "夏時間リマインダー";
-"DST_REMINDER_VIEW_TEXT %@ %lld" = "Daylight Saving Time is %@ in **%lld days**. As Japan does not observe Daylight Saving Time, please double-check the stream time.";
+"DST_REMINDER_VIEW_TEXT %@ %lld" = "Daylight Saving Time is %@ in **%lld days**. As Japan does not observe Daylight Saving Time, please double-check the stream time. ";
 "DST_REMINDER_VIEW_FOOTER" = "このデバイスは、夏時間タイムゾーンに設定されています。位置情報は使用されていません。";
