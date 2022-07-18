@@ -11,6 +11,8 @@ import SwiftUI
 struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
+    @AppStorage(UserDefaultKeys.isShowingDSTReminder) var isShowingDSTReminder = false
+    
     @EnvironmentObject var viewModel: VideoViewModel
     
     @State var searchText: String = ""
@@ -24,6 +26,15 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     
     var body: some View {
         List {
+            if let nextDSTTransition = TimeZone.current.nextDaylightSavingTimeTransition {
+                if let days = Calendar.current.dateComponents([.day], from: Date(), to: nextDSTTransition).day {
+                    if isShowingDSTReminder {
+                        DSTReminderView(numberOfDaysToChange: days, changeType: TimeZone.current.isDaylightSavingTime() ? .ending : .starting)
+                            .listRowSeparator(.hidden)
+                    }
+                }
+            }
+            
             if searchText.isEmpty {
                 if viewModel.videoList.filter { video in favourited.contains(where: { video.channel.id == $0 })}.count != 0 && viewModel.dataStatus == .success {
                     Section(header: Text("LIVE_VIEW_FAVOURITE_SECTION_TITLE")) {

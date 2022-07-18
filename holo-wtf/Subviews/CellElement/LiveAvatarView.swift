@@ -24,6 +24,11 @@ struct LiveAvatarView: View {
                 .shadow(radius: 1)
         }, placeholder: {
             ProgressView()
+                .frame(width: avatarRadius, height: avatarRadius)
+                .overlay {
+                    Circle().stroke(.white, lineWidth: 1)
+                }
+                .shadow(radius: 1)
         })
     }
 }

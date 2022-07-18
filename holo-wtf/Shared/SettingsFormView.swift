@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingsFormView: View {
     @AppStorage(UserDefaultKeys.upcomingLookAhead) var hoursLookAhead: Int = 48
+    @AppStorage(UserDefaultKeys.dstDays) var dstDays: Int = 5
     
     var body: some View {
         Form {
@@ -24,6 +25,20 @@ struct SettingsFormView: View {
                 .pickerStyle(.wheel)
                 .onChange(of: hoursLookAhead, perform: { newHours in
                     UserDefaults.standard.set(newHours, forKey: UserDefaultKeys.upcomingLookAhead)
+                })
+            }
+            
+            Section(header: Text("SETTINGS_STREAM_TIME_HEADER"), footer: Text("SETTINGS_STREAM_TIME_FOOTER")) {
+                Text("SETTINGS_DST_CHANGE_TEXT \(dstDays)")
+                
+                Picker("DST change", selection: $dstDays) {
+                    ForEach(1...10, id: \.self) {
+                        Text("\($0)")
+                    }
+                }
+                .pickerStyle(.wheel)
+                .onChange(of: dstDays, perform: { newHours in
+                    UserDefaults.standard.set(newHours, forKey: UserDefaultKeys.dstDays)
                 })
             }
             

@@ -12,6 +12,7 @@ struct iPadLazyGirdView<VideoContent: View, CountContent: View>: View {
     
     @AppStorage("favouritedChannel") var favourited = Favourited()
     @AppStorage("generationListSelection") var generationListSelection = Set(GenerationEnum.allCases)
+    @AppStorage(UserDefaultKeys.isShowingDSTReminder) var isShowingDSTReminder = false
     
     @State var searchText: String = ""
     
@@ -24,6 +25,15 @@ struct iPadLazyGirdView<VideoContent: View, CountContent: View>: View {
     
     var body: some View {
         ScrollView {
+            if let nextDSTTransition = TimeZone.current.nextDaylightSavingTimeTransition {
+                if let days = Calendar.current.dateComponents([.day], from: Date(), to: nextDSTTransition).day {
+                    if isShowingDSTReminder {
+                        DSTReminderView(numberOfDaysToChange: days, changeType: TimeZone.current.isDaylightSavingTime() ? .ending : .starting)
+                            .padding(.horizontal, 30)
+                    }
+                }
+            }
+            
             switch videoViewModel.dataStatus {
             case .working:
                 ProgressView()

@@ -18,6 +18,15 @@ func getTimeIntervalFormatter() -> DateComponentsFormatter {
     return formatter
 }
 
+func getDSTReminderTimeIntervalFormatter() -> DateComponentsFormatter {
+    let formatter = DateComponentsFormatter()
+    formatter.maximumUnitCount = 1
+    formatter.unitsStyle = .full
+    formatter.allowedUnits = [.day]
+    
+    return formatter
+}
+
 func getTimeIntervalStringFromReferenceDate(reference date: Date) -> String? {
     let dateDifference = date.timeIntervalSinceNow
     
@@ -119,6 +128,8 @@ enum UserDefaultKeys {
     static let isShowingAbsoluteTimeInUpcomingView = "isShowingAbsoluteTimeInUpcomingView"
     static let isShowingCompactInLiveView = "isShowingCompactInLiveView"
     static let isShowingCompactInUpcomingView = "isShowingCompactInUpcomingView"
+    static let isShowingDSTReminder = "isShowingDSTReminder"
+    static let dstDays = "dstDays"
 }
 
 extension Bundle {

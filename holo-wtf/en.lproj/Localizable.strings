@@ -18,6 +18,10 @@
 "SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER" = "Upcoming Schedule";
 "SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT %lld" = "Show upcoming streams in %lld hours";
 
+"SETTINGS_STREAM_TIME_HEADER" = "Stream Time";
+"SETTINGS_STREAM_TIME_FOOTER" = "If your device is set to a timezone that observes Daylight Saving Time, HoloCal will remind you about DST transitions. ";
+"SETTINGS_DST_CHANGE_TEXT %lld" = "Remind me about DST change %lld days before";
+
 "SETTINGS_CHANNEL_MANAGEMENT_HEADER" = "Channels";
 "SETTINGS_MANAGE_FAVOURITE" = "Manage Channel Favorites";
 "SETTINGS_MANAGE_FAVOURITE_VIEW_TITLE" = "Manage Favorites";
@@ -132,7 +136,12 @@
 "SINGLE_SONG_VIEW_CONTECT_MENU_JUMP_TO_SONG_IN_VIDEO" = "Jump to Song in Stream";
 
 // Common between LivePaneView and UpcomingPaneView
-"LIVE_PANE_VIEW_WITH" = "with";
+"LIVE_PANE_VIEW_WITH" = "&";
 
 "COLLAB_SHEET_NAVIGATION_TITLE" = "Collaboration";
 "COLLAB_SHEET_DISMISS_BUTTON" = "Dismiss";
+
+// DST Reminder View
+"DST_REMINDER_VIEW_TITLE" = "**DAYLIGHT SAVING TIME REMINDER**";
+"DST_REMINDER_VIEW_TEXT %@ %lld" = "Daylight Saving Time is %@ in **%lld days**. As Japan does not observe Daylight Saving Time, please double-check the stream time. ";
+"DST_REMINDER_VIEW_FOOTER" = "Your device is set to a timezone that observes Daylight Saving Time. No location data was used. ";
