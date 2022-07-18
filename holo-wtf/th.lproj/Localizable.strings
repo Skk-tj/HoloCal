@@ -9,13 +9,13 @@
 
 "ROOT_VIEW_LIVE" = "Live";
 "ROOT_VIEW_UPCOMING" = "Upcoming";
-"ROOT_VIEW_SETTINGS" = "Settings";
+"ROOT_VIEW_SETTINGS" = "ตั้งค่า";
 
 // Settings
 
 "SETTINGS_TITLE" = "Settings";
 
-"SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER" = "Upcoming Schedule";
+"SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER" = "ตั้งค่า";
 "SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT %lld" = "Show upcoming streams in %lld hours";
 
 "SETTINGS_STREAM_TIME_HEADER" = "Stream Time";
