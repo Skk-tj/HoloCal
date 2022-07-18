@@ -19,7 +19,7 @@
 "SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT %lld" = "%lld時間内のライブ配信を表示";
 
 "SETTINGS_STREAM_TIME_HEADER" = "配信時間";
-"SETTINGS_STREAM_TIME_FOOTER" = "HoloCalは夏時間が適用されるタイムゾーンに設定されている場合、夏時間への移行をお知らせします。";
+"SETTINGS_STREAM_TIME_FOOTER" = "If your device is set to a timezone that observes Daylight Saving Time, HoloCal will remind you about DST transitions.";
 "SETTINGS_DST_CHANGE_TEXT %lld" = "%lld日前に夏時間の移行をお知らせ";
 
 "SETTINGS_CHANNEL_MANAGEMENT_HEADER" = "チャンネル";
@@ -109,7 +109,7 @@
 
 // Calendar acess
 "CALENDAR_ACCESS_TITLE" = "カレンダーアクセス許可";
-"CALENDAR_ACCESS_MESSAGE" = "カレンダーにアクセスできません。プライバシー設定をご確認ください。";
+"CALENDAR_ACCESS_MESSAGE" = "Calendar access is disabled. Please check your privacy settings.";
 
 // Search prompt
 "SEARCH_BY_NAME_OR_TAG" = "名前またはタグで検索";
@@ -123,10 +123,10 @@
 
 // Widget system text
 "CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "ライブ配信";
-"CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "ライブ配信を表示する";
+"CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "Show a current stream.";
 
 "MULTIPLE_CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "複数のライブ配信";
-"MULTIPLE_CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "複数のライブ配信を表示する";
+"MULTIPLE_CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "Show two streams together.";
 
 // Song List View
 "SONG_LIST_VIEW_NAVIGATION_TITLE" = "曲";
@@ -143,5 +143,5 @@
 
 // DST Reminder View
 "DST_REMINDER_VIEW_TITLE" = "夏時間リマインダー";
-"DST_REMINDER_VIEW_TEXT %@ %lld" = "Daylight Saving Time is %@ in **%lld days**. As Japan does not observe Daylight Saving Time, please double-check the stream time. ";
-"DST_REMINDER_VIEW_FOOTER" = "このデバイスは、夏時間タイムゾーンに設定されています。位置情報は使用されていません。";
+"DST_REMINDER_VIEW_TEXT %@ %lld" = "Daylight Saving Time is %@ in **%lld days**. As Japan does not observe Daylight Saving Time, please double-check the stream time.";
+"DST_REMINDER_VIEW_FOOTER" = "Your device is set to a timezone that observes Daylight Saving Time. No location data was used.";
