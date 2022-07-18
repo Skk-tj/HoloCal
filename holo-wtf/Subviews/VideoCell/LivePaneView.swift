@@ -31,21 +31,22 @@ struct LivePaneView: View {
                     HStack {
                         LiveAvatarView(url: live.channel.photo, avatarRadius: 40.0)
                         
-                        Text(live.channel.name)
-                            .lineLimit(1)
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                        
                         if let mentions = live.mentions {
-                            Text("LIVE_PANE_VIEW_WITH")
+                            Text("\(live.channel.name) \(String(localized: "LIVE_PANE_VIEW_WITH"))")
+                                .lineLimit(1)
                                 .font(.subheadline)
                                 .foregroundColor(.secondary)
                             
                             LiveCollabAvatarView(mentions: mentions, avatarRadius: 40.0)
                                 .onTapGesture {
                                     isShowingCollabSheet = true
-                                    collabChannels = live.mentions!
+                                    collabChannels = mentions
                                 }
+                        } else {
+                            Text(live.channel.name)
+                                .lineLimit(1)
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
                         }
                     }
                     

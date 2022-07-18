@@ -9,6 +9,25 @@ import SwiftUI
 
 @main
 struct holo_wtfApp: App {
+    @AppStorage(UserDefaultKeys.dstDays) var dstDays: Int = 5
+    @AppStorage(UserDefaultKeys.isShowingDSTReminder) var isShowingDSTReminder = false
+    
+    init() {
+        let tz = TimeZone.current
+        
+        if let nextDSTTransition = tz.nextDaylightSavingTimeTransition {
+            if let days = Calendar.current.dateComponents([.day], from: Date(), to: nextDSTTransition).day {
+                if days <= dstDays {
+                    isShowingDSTReminder = true
+                } else {
+                    isShowingDSTReminder = false
+                }
+            }
+        } else {
+            isShowingDSTReminder = false
+        }
+    }
+    
     var body: some Scene {
         WindowGroup {
             if UIDevice.current.userInterfaceIdiom == .pad {
