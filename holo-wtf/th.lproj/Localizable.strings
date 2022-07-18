@@ -1,0 +1,147 @@
+/* 
+  Localizable.strings
+  holo-wtf
+
+  Created by Henry An on 2022-03-22.
+  
+*/
+// Root View
+
+"ROOT_VIEW_LIVE" = "Live";
+"ROOT_VIEW_UPCOMING" = "Upcoming";
+"ROOT_VIEW_SETTINGS" = "Settings";
+
+// Settings
+
+"SETTINGS_TITLE" = "Settings";
+
+"SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER" = "Upcoming Schedule";
+"SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT %lld" = "Show upcoming streams in %lld hours";
+
+"SETTINGS_STREAM_TIME_HEADER" = "Stream Time";
+"SETTINGS_STREAM_TIME_FOOTER" = "If your device is set to a timezone that observes Daylight Saving Time, HoloCal will remind you about DST transitions. ";
+"SETTINGS_DST_CHANGE_TEXT %lld" = "Remind me about DST change %lld days before";
+
+"SETTINGS_CHANNEL_MANAGEMENT_HEADER" = "Channels";
+"SETTINGS_MANAGE_FAVOURITE" = "Manage Channel Favorites";
+"SETTINGS_MANAGE_FAVOURITE_VIEW_TITLE" = "Manage Favorites";
+"SETTINGS_MANAGE_FAVOURITE_RESET" = "Reset Favorites";
+
+"SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_TEXT" = "Favorites will be reset, are you sure?";
+"SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_CANCEL" = "Cancel";
+"SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_RESET" = "Reset";
+
+"SETTINGS_MANAGE_GENERATION" = "Manage Generations";
+"SETTINGS_MANAGE_GENERATION_VIEW_TITLE" = "Manage Generations";
+
+"SETTINGS_MANAGE_GENERATION_RESET" = "Reset selection and order";
+"SETTINGS_MANAGE_GENERATION_RESET_ALERT_TEXT" = "Generation selection and order will be reset, are you sure?";
+"SETTINGS_MANAGE_GENERATION_RESET_ALERT_CANCEL" = "Cancel";
+"SETTINGS_MANAGE_GENERATION_RESET_ALERT_RESET" = "Reset";
+
+"SETTINGS_ABOUT_SECTION_HEADER" = "About";
+"SETTINGS_ABOUT_BUG_REPORT" = "Feedback & Bug report";
+"SETTINGS_OPEN_SOURCE" = "Open Source Projects used";
+"SETTINGS_BETA_TESTING" = "Participate in Beta testing";
+"SETTINGS_TWITTER" = "Follow developer Twitter for HoloCal news";
+
+// OpenSourceView
+
+"OPEN_SOURCE_VIEW_TITLE" = "Open Source";
+
+// Live Cell View
+
+"LIVE_CELL_VIEW_MEMBER_ONLY_STREAM" = "Member-only stream";
+"LIVE_CELL_VIEW_PEOPLE_WATCHING %lld" = "%lld watching";
+"LIVE_CELL_VIEW_STARTED_AGO %@" = "Started %@ ago";
+"LIVE_CELL_VIEW_WAITING" = "Waiting...";
+"LIVE_CELL_VIEW_STARTED_AT %@" = "%@";
+
+// Upcoming Cell View
+
+"UPCOMING_CELL_VIEW_STARTING_IN %@" = "Starting in %@";
+"UPCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN" = "No starting time";
+"UPCOMING_CELL_VIEW_STARTING_AT %@" = "Starting at %@";
+
+// Common between LiveView and UpcomingView
+
+"FAILED_TO_RETRIEVE_NEW_DATA" = "Failed to retrieve new data";
+
+// LiveView
+
+"LIVE_VIEW_TITLE" = "Currently Live";
+"LIVE_VIEW_CURRENT_COUNT %lld" = "%lld Currently Live";
+"LIVE_VIEW_CURRENT_COUNT %lld %lld" = "%lld Currently Live (%lld excluded)";
+"LIVE_VIEW_FAVOURITE_SECTION_TITLE" = "Favorited";
+
+// UpcomingView
+
+"UPCOMING_VIEW_TITLE" = "Upcoming Streams";
+"UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld" = "%lld Upcoming Streams in %lld hours";
+"UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld %lld" = "%lld Upcoming Streams in %lld hours (%lld excluded)";
+
+// LiveViewToolbar & UpcomingViewToolbar
+
+"LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE" = "Show absolute time";
+"LIVE_VIEW_TOOLBAR_SHOW_RELATIVE" = "Show relative time";
+"LIVE_VIEW_TOOLBAR_SHOW_COMPACT" = "Show compact view";
+"LIVE_VIEW_TOOLBAR_SHOW_CARD" = "Show card view";
+"LIVE_VIEW_TOOLBAR_SORT" = "Sort...";
+"LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME" = "Sort by start time...";
+"LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS" = "Sort by viewers...";
+"LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS_ASCENDING" = "Ascending";
+"LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS_DESCENDING" = "Descending";
+"LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST" = "Nearest to furthest";
+"LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_FURTHEST_TO_NEAREST" = "Furthest to nearest";
+
+// VideoContextMenu
+"VIDEO_CONTEXT_MENU_TWITTER_PROFILE" = "Open Twitter profile";
+"VIDEO_CONTEXT_MENU_YOUTUBE_CHANNEL" = "Open YouTube channel";
+"VIDEO_CONTEXT_MENU_FAVOURITE_CHANNEL" = "Add channel to favorite";
+"VIDEO_CONTEXT_MENU_REMOVE_FAVOURITE" = "Remove favorite";
+"VIDEO_CONTEXT_MENU_SHARE" = "Share";
+"VIDEO_CONTEXT_MENU_ADD_TO_CALENDAR" = "Add to calendar";
+
+// Swipe actions for LinkedVideo
+"LINKED_VIDEO_SWIPE_ACTIONS_FAVOURITE" = "Favourite";
+"LINKED_VIDEO_SWIPE_ACTIONS_UNFAVOURITE" = "Unfavourite";
+"LINKED_VIDEO_SWIPE_ACTIONS_SHARE" = "Share";
+
+// Calendar acess
+"CALENDAR_ACCESS_TITLE" = "Calendar Access";
+"CALENDAR_ACCESS_MESSAGE" = "Calendar access is disabled. Please check your privacy settings. ";
+
+// Search prompt
+"SEARCH_BY_NAME_OR_TAG" = "Search by name or tag";
+
+// Widget view text
+"NO_ONE_IS_STREAMING" = "No stream";
+"NETWORK_ERROR" = "Network error";
+
+// LiveWidget
+"LIVE_WIDGET_TITLE" = "**CURRENTLY LIVE**";
+
+// Widget system text
+"CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "Currently Live";
+"CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "Show a current stream. ";
+
+"MULTIPLE_CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "Multiple Current Live";
+"MULTIPLE_CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "Show two streams together. ";
+
+// Song List View
+"SONG_LIST_VIEW_NAVIGATION_TITLE" = "Songs";
+
+// Single Song View
+"SINGLE_SONG_VIEW_CONTECT_MENU_OPEN_IN_APPLE_MUSIC" = "Open in Apple Music";
+"SINGLE_SONG_VIEW_CONTECT_MENU_JUMP_TO_SONG_IN_VIDEO" = "Jump to Song in Stream";
+
+// Common between LivePaneView and UpcomingPaneView
+"LIVE_PANE_VIEW_WITH" = "&";
+
+"COLLAB_SHEET_NAVIGATION_TITLE" = "Collaboration";
+"COLLAB_SHEET_DISMISS_BUTTON" = "Dismiss";
+
+// DST Reminder View
+"DST_REMINDER_VIEW_TITLE" = "**DAYLIGHT SAVING TIME REMINDER**";
+"DST_REMINDER_VIEW_TEXT %@ %lld" = "Daylight Saving Time is %@ in **%lld days**. As Japan does not observe Daylight Saving Time, please double-check the stream time. ";
+"DST_REMINDER_VIEW_FOOTER" = "Your device is set to a timezone that observes Daylight Saving Time. No location data was used. ";
