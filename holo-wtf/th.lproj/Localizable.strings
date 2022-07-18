@@ -39,15 +39,15 @@
 "SETTINGS_MANAGE_GENERATION_RESET_ALERT_CANCEL" = "ยกเลิก";
 "SETTINGS_MANAGE_GENERATION_RESET_ALERT_RESET" = "รีเซ็ต";
 
-"SETTINGS_ABOUT_SECTION_HEADER" = "About";
-"SETTINGS_ABOUT_BUG_REPORT" = "Feedback & Bug report";
-"SETTINGS_OPEN_SOURCE" = "Open Source Projects used";
-"SETTINGS_BETA_TESTING" = "Participate in Beta testing";
+"SETTINGS_ABOUT_SECTION_HEADER" = "เกี่ยวกับ";
+"SETTINGS_ABOUT_BUG_REPORT" = "คำติชม & รายงานข้อบกพร่อง";
+"SETTINGS_OPEN_SOURCE" = "โพรเจกต์โอเพ่นซอร์สที่ใช้";
+"SETTINGS_BETA_TESTING" = "เข้าร่วมเป็นผู้ทดสอบระบบ";
 "SETTINGS_TWITTER" = "ติดตามทวิตเตอร์ของผู้พัฒนาเพื่อไม่พลาดข่าวสารใหม่ๆ เกี่ยวกับ HoloCal";
 
 // OpenSourceView
 
-"OPEN_SOURCE_VIEW_TITLE" = "Open Source";
+"OPEN_SOURCE_VIEW_TITLE" = "โอเพ่นซอร์ส";
 
 // Live Cell View
 
@@ -60,8 +60,8 @@
 // Upcoming Cell View
 
 "UPCOMING_CELL_VIEW_STARTING_IN %@" = "จะเริ่มใน %@";
-"UPCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN" = "No starting time";
-"UPCOMING_CELL_VIEW_STARTING_AT %@" = "Starting at %@";
+"UPCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN" = "ไม่มีเวลากำหนด";
+"UPCOMING_CELL_VIEW_STARTING_AT %@" = "จะเริ่มเวลา %@";
 
 // Common between LiveView and UpcomingView
 
@@ -69,8 +69,8 @@
 
 // LiveView
 
-"LIVE_VIEW_TITLE" = "Currently Live";
-"LIVE_VIEW_CURRENT_COUNT %lld" = "%lld Currently Live";
+"LIVE_VIEW_TITLE" = "กำลังไลฟ์";
+"LIVE_VIEW_CURRENT_COUNT %lld" = "%lld คนกำลังไลฟ์";
 "LIVE_VIEW_CURRENT_COUNT %lld %lld" = "%lld Currently Live (%lld excluded)";
 "LIVE_VIEW_FAVOURITE_SECTION_TITLE" = "Favorited";
 
@@ -82,13 +82,13 @@
 
 // LiveViewToolbar & UpcomingViewToolbar
 
-"LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE" = "Show absolute time";
+"LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE" = "แสดงวันเดือนปี";
 "LIVE_VIEW_TOOLBAR_SHOW_RELATIVE" = "Show relative time";
 "LIVE_VIEW_TOOLBAR_SHOW_COMPACT" = "Show compact view";
 "LIVE_VIEW_TOOLBAR_SHOW_CARD" = "Show card view";
-"LIVE_VIEW_TOOLBAR_SORT" = "Sort...";
-"LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME" = "Sort by start time...";
-"LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS" = "Sort by viewers...";
+"LIVE_VIEW_TOOLBAR_SORT" = "จัดเรียงตาม";
+"LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME" = "เวลาเริ่ม";
+"LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS" = "จำนวนผู้ชม";
 "LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS_ASCENDING" = "Ascending";
 "LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS_DESCENDING" = "Descending";
 "LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST" = "Nearest to furthest";
@@ -99,8 +99,8 @@
 "VIDEO_CONTEXT_MENU_YOUTUBE_CHANNEL" = "Open YouTube channel";
 "VIDEO_CONTEXT_MENU_FAVOURITE_CHANNEL" = "Add channel to favorite";
 "VIDEO_CONTEXT_MENU_REMOVE_FAVOURITE" = "Remove favorite";
-"VIDEO_CONTEXT_MENU_SHARE" = "Share";
-"VIDEO_CONTEXT_MENU_ADD_TO_CALENDAR" = "Add to calendar";
+"VIDEO_CONTEXT_MENU_SHARE" = "แชร์";
+"VIDEO_CONTEXT_MENU_ADD_TO_CALENDAR" = "เพิ่มเข้าปฎิทิน";
 
 // Swipe actions for LinkedVideo
 "LINKED_VIDEO_SWIPE_ACTIONS_FAVOURITE" = "Favourite";
@@ -108,8 +108,8 @@
 "LINKED_VIDEO_SWIPE_ACTIONS_SHARE" = "Share";
 
 // Calendar acess
-"CALENDAR_ACCESS_TITLE" = "Calendar Access";
-"CALENDAR_ACCESS_MESSAGE" = "Calendar access is disabled. Please check your privacy settings.";
+"CALENDAR_ACCESS_TITLE" = "การเข้าถึงปฎิทิน";
+"CALENDAR_ACCESS_MESSAGE" = "การเข้าถึงปฎิทินถูกระงับ กรุณาตรวจตอบการตั้งค่าความปลอดภัยของท่าน";
 
 // Search prompt
 "SEARCH_BY_NAME_OR_TAG" = "Search by name or tag";
