@@ -13,9 +13,9 @@
 
 // Settings
 
-"SETTINGS_TITLE" = "Settings";
+"SETTINGS_TITLE" = "ตั้งค่า";
 
-"SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER" = "ตั้งค่า";
+"SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER" = "Upcoming Schedule";
 "SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT %lld" = "Show upcoming streams in %lld hours";
 
 "SETTINGS_STREAM_TIME_HEADER" = "Stream Time";
@@ -52,14 +52,14 @@
 // Live Cell View
 
 "LIVE_CELL_VIEW_MEMBER_ONLY_STREAM" = "ไลฟ์สตรีมสำหรับเมมเบอร์เท่านั้น";
-"LIVE_CELL_VIEW_PEOPLE_WATCHING %lld" = "%lld watching";
+"LIVE_CELL_VIEW_PEOPLE_WATCHING %lld" = "%lld คนกำลังรับชม";
 "LIVE_CELL_VIEW_STARTED_AGO %@" = "เริ่มสตรีมเมื่อ %@ ที่แล้ว";
 "LIVE_CELL_VIEW_WAITING" = "Waiting...";
 "LIVE_CELL_VIEW_STARTED_AT %@" = "%@";
 
 // Upcoming Cell View
 
-"UPCOMING_CELL_VIEW_STARTING_IN %@" = "Starting in %@";
+"UPCOMING_CELL_VIEW_STARTING_IN %@" = "จะเริ่มใน %@";
 "UPCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN" = "No starting time";
 "UPCOMING_CELL_VIEW_STARTING_AT %@" = "Starting at %@";
 
