@@ -55,7 +55,6 @@
 "LIVE_CELL_VIEW_PEOPLE_WATCHING %lld" = "%lld人が視聴中";
 "LIVE_CELL_VIEW_STARTED_AGO %@" = "%@前にライブ開始";
 "LIVE_CELL_VIEW_WAITING" = "待機中";
-
 "LIVE_CELL_VIEW_STARTED_AT %@" = "%@";
 
 // Upcoming Cell View
@@ -81,8 +80,8 @@
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld" = "%2$lld時間内に%1$lld人が配信予定";
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld %lld" = "%2$lld時間内に%1$lld人が配信予定（%3$lld人表示されていない）";
 
-
 // LiveViewToolbar & UpcomingViewToolbar
+
 "LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE" = "絶対時間を表示";
 "LIVE_VIEW_TOOLBAR_SHOW_RELATIVE" = "相対時間を表示";
 "LIVE_VIEW_TOOLBAR_SHOW_COMPACT" = "コンパクトビューを表示";
@@ -101,6 +100,7 @@
 "VIDEO_CONTEXT_MENU_FAVOURITE_CHANNEL" = "お気に入りに追加";
 "VIDEO_CONTEXT_MENU_REMOVE_FAVOURITE" = "お気に入りを削除";
 "VIDEO_CONTEXT_MENU_SHARE" = "シェアする";
+"VIDEO_CONTEXT_MENU_ADD_TO_CALENDAR" = "Add to calendar";
 
 // Swipe actions for LinkedVideo
 "LINKED_VIDEO_SWIPE_ACTIONS_FAVOURITE" = "お気に入り";
