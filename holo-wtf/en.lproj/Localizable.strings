@@ -13,7 +13,7 @@
 
 // Settings
 
-"SETTINGS_TITLE" = "Settings"; 
+"SETTINGS_TITLE" = "Settings";
 
 "SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER" = "Upcoming Schedule";
 "SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT %lld" = "Show upcoming streams in %lld hours";
