@@ -51,7 +51,7 @@
 
 // Live Cell View
 
-"LIVE_CELL_VIEW_MEMBER_ONLY_STREAM" = "ไลฟ์สดสำหรับเมมเบอร์เท่านั้น";
+"LIVE_CELL_VIEW_MEMBER_ONLY_STREAM" = "ไลฟ์สตรีมสำหรับเมมเบอร์เท่านั้น";
 "LIVE_CELL_VIEW_PEOPLE_WATCHING %lld" = "%lld watching";
 "LIVE_CELL_VIEW_STARTED_AGO %@" = "เริ่มสตรีมเมื่อ %@ ที่แล้ว";
 "LIVE_CELL_VIEW_WAITING" = "Waiting...";
