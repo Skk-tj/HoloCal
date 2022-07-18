@@ -8,14 +8,14 @@
 // Root View
 
 "ROOT_VIEW_LIVE" = "ライブ配信中";
-"ROOT_VIEW_UPCOMING" = "今後のライブ配信";
+"ROOT_VIEW_UPCOMING" = "ライブ配信の予定";
 "ROOT_VIEW_SETTINGS" = "設定";
 
 // Settings
 
 "SETTINGS_TITLE" = "設定";
 
-"SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER" = "今後のライブ配信";
+"SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER" = "ライブ配信の予定";
 "SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT %lld" = "%lld時間内のライブ配信を表示";
 
 "SETTINGS_STREAM_TIME_HEADER" = "配信時間";
@@ -143,5 +143,5 @@
 
 // DST Reminder View
 "DST_REMINDER_VIEW_TITLE" = "夏時間リマインダー";
-"DST_REMINDER_VIEW_TEXT %@ %lld" = "Daylight Saving Time is %@ in **%lld days**. As Japan does not observe Daylight Saving Time, please double-check the stream time. ";
+"DST_REMINDER_VIEW_TEXT %@ %lld" = "Daylight Saving Time is %@ in **%lld days**. As Japan does not observe Daylight Saving Time, please double-check the stream time.";
 "DST_REMINDER_VIEW_FOOTER" = "このデバイスは、夏時間タイムゾーンに設定されています。位置情報は使用されていません。";
