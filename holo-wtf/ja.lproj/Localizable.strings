@@ -51,7 +51,7 @@
 
 // Live Cell View
 
-"LIVE_CELL_VIEW_MEMBER_ONLY_STREAM" = "メン限配信";
+"LIVE_CELL_VIEW_MEMBER_ONLY_STREAM" = "メンバー限定";
 "LIVE_CELL_VIEW_PEOPLE_WATCHING %lld" = "%lld人が視聴中";
 "LIVE_CELL_VIEW_STARTED_AGO %@" = "%@前にライブ開始";
 "LIVE_CELL_VIEW_WAITING" = "待機中";
