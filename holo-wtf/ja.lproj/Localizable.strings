@@ -23,11 +23,11 @@
 "SETTINGS_DST_CHANGE_TEXT %lld" = "%lld日前に夏時間の移行をお知らせ";
 
 "SETTINGS_CHANNEL_MANAGEMENT_HEADER" = "チャンネル";
-"SETTINGS_MANAGE_FAVOURITE" = "お気に入りのチャンネル";
-"SETTINGS_MANAGE_FAVOURITE_VIEW_TITLE" = "お気に入りのチャンネル";
+"SETTINGS_MANAGE_FAVOURITE" = "お気に入り";
+"SETTINGS_MANAGE_FAVOURITE_VIEW_TITLE" = "お気に入り";
 "SETTINGS_MANAGE_FAVOURITE_RESET" = "お気に入りをリセット";
 
-"SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_TEXT" = "お気に入りをリセットします、よろしいですか？";
+"SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_TEXT" = "お気に入りをリセットします、よろしいでしょうか？";
 "SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_CANCEL" = "キャンセル";
 "SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_RESET" = "リセット";
 
@@ -35,7 +35,7 @@
 "SETTINGS_MANAGE_GENERATION_VIEW_TITLE" = "グループ別フィルター";
 
 "SETTINGS_MANAGE_GENERATION_RESET" = "グループフィルターや序次をリセット";
-"SETTINGS_MANAGE_GENERATION_RESET_ALERT_TEXT" = "グループフィルターや序次をリセットします、よろしいですか？";
+"SETTINGS_MANAGE_GENERATION_RESET_ALERT_TEXT" = "グループフィルターや序次をリセットします、よろしいでしょうか？";
 "SETTINGS_MANAGE_GENERATION_RESET_ALERT_CANCEL" = "キャンセル";
 "SETTINGS_MANAGE_GENERATION_RESET_ALERT_RESET" = "リセット";
 
@@ -143,5 +143,5 @@
 
 // DST Reminder View
 "DST_REMINDER_VIEW_TITLE" = "夏時間リマインダー";
-"DST_REMINDER_VIEW_TEXT %@ %lld" = "Daylight Saving Time is %@ in **%lld days**. As Japan does not observe Daylight Saving Time, please double-check the stream time. ";
+"DST_REMINDER_VIEW_TEXT %@ %lld" = "Daylight Saving Time is %@ in **%lld days**. As Japan does not observe Daylight Saving Time, please double-check the stream time.";
 "DST_REMINDER_VIEW_FOOTER" = "このデバイスは、夏時間タイムゾーンに設定されています。位置情報は使用されていません。";
