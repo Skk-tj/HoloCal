@@ -72,7 +72,7 @@
 "LIVE_VIEW_TITLE" = "กำลังไลฟ์";
 "LIVE_VIEW_CURRENT_COUNT %lld" = "%lld คนกำลังไลฟ์";
 "LIVE_VIEW_CURRENT_COUNT %lld %lld" = "%lld Currently Live (%lld excluded)";
-"LIVE_VIEW_FAVOURITE_SECTION_TITLE" = "Favorited";
+"LIVE_VIEW_FAVOURITE_SECTION_TITLE" = "รายการโปรด";
 
 // UpcomingView
 
@@ -105,24 +105,24 @@
 // Swipe actions for LinkedVideo
 "LINKED_VIDEO_SWIPE_ACTIONS_FAVOURITE" = "Favourite";
 "LINKED_VIDEO_SWIPE_ACTIONS_UNFAVOURITE" = "Unfavourite";
-"LINKED_VIDEO_SWIPE_ACTIONS_SHARE" = "Share";
+"LINKED_VIDEO_SWIPE_ACTIONS_SHARE" = "แชร์";
 
 // Calendar acess
 "CALENDAR_ACCESS_TITLE" = "การเข้าถึงปฎิทิน";
 "CALENDAR_ACCESS_MESSAGE" = "การเข้าถึงปฎิทินถูกระงับ กรุณาตรวจตอบการตั้งค่าความปลอดภัยของท่าน";
 
 // Search prompt
-"SEARCH_BY_NAME_OR_TAG" = "Search by name or tag";
+"SEARCH_BY_NAME_OR_TAG" = "ค้นหาด้วยชื่อหรือแท็ก";
 
 // Widget view text
-"NO_ONE_IS_STREAMING" = "No stream";
-"NETWORK_ERROR" = "Network error";
+"NO_ONE_IS_STREAMING" = "ไม่มีไลฟ์สด";
+"NETWORK_ERROR" = "ข้อผิดพลาดทางเน็ตเวิร์ค";
 
 // LiveWidget
 "LIVE_WIDGET_TITLE" = "**CURRENTLY LIVE**";
 
 // Widget system text
-"CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "Currently Live";
+"CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "กำลังไลฟ์";
 "CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "Show a current stream.";
 
 "MULTIPLE_CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "Multiple Current Live";
