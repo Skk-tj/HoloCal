@@ -57,11 +57,7 @@ struct ManageGenerationView: View {
             }
         }
         .onChange(of: generationSelected, perform: { newValue in
-            let difference = Set(GenerationEnum.allCases).symmetricDifference(newValue)
-            
-            excludedGenerations = difference
-            
-            print(excludedGenerations)
+            excludedGenerations =  Set(GenerationEnum.allCases).symmetricDifference(newValue)
         })
         .navigationTitle("SETTINGS_MANAGE_GENERATION_VIEW_TITLE")
         .toolbar {
