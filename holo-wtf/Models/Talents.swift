@@ -26,6 +26,7 @@ enum GenerationEnum: Int, Codable, CaseIterable {
     case starsSecondGen
     case starsThirdGen
     case uproar
+    case tempus
     case official
     
     // For all the channels that we may not recognize
@@ -119,6 +120,11 @@ enum TalentsEnum: String, Codable {
     case uyu = "UCgRqGV1gBf2Esxh0Tz1vxzw"
     case gamma = "UCkT1u65YS49ca_LsFwcTakw"
     case rio = "UCdfMHxjcCc2HSd9qFvfJgjg"
+    // MARK: - holostars English -TEMPUS-
+    case altare = "UCyxtGMdWlURZ30WSnEjDOQw"
+    case vesper = "UCDRWSO281bIHYVi-OV3iFYA"
+    case syrios = "UC2hx0xVkMoHGWijwr_lA01w"
+    case dezmond = "UC7MMNHR-kf9EN1rXiesMTMw"
     // MARK: - Official Channels
     case hololive = "UCJFZiqLMntJufDCHc6bQixg"
     case hololiveEN = "UCotXwY6s8pWmuWd_snKYjhg"
@@ -250,6 +256,12 @@ let talentsToName: [TalentsEnum: Talent] = [
     .gamma: Talent(id: "UCkT1u65YS49ca_LsFwcTakw", names: [.en: "Hizaki Gamma", .ja: "緋崎ガンマ"], inGeneration: .uproar),
     .rio: Talent(id: "UCdfMHxjcCc2HSd9qFvfJgjg", names: [.en: "Minase Rio", .ja: "水無世燐央"], inGeneration: .uproar),
     
+    // MARK: - holostars TEMPUS
+    .altare: Talent(id: "UCyxtGMdWlURZ30WSnEjDOQw", names: [.en: "Regis Altare", .ja: "リージス・アルテア"], inGeneration: .tempus),
+    .vesper: Talent(id: "UCDRWSO281bIHYVi-OV3iFYA", names: [.en: "Noir Vesper", .ja: "ノワール・ヴェスパー"], inGeneration: .tempus),
+    .syrios: Talent(id: "UC2hx0xVkMoHGWijwr_lA01w", names: [.en: "Axel Syrios", .ja: "アクセル・シリオス"], inGeneration: .tempus),
+    .dezmond: Talent(id: "UC7MMNHR-kf9EN1rXiesMTMw", names: [.en: "Magni Dezmond", .ja: "マグニ・デズモンド"], inGeneration: .tempus),
+    
     // MARK: - Official Channels
     .hololive: Talent(id: "UCJFZiqLMntJufDCHc6bQixg", names: [.en: "hololive", .ja: "ホロライブ"], inGeneration: .official),
     .hololiveEN: Talent(id: "UCotXwY6s8pWmuWd_snKYjhg", names: [.en: "hololive English", .ja: "hololive English"], inGeneration: .official),
@@ -277,6 +289,7 @@ let generationToName: [GenerationEnum: [NameLanguage: String]] = [
     .starsSecondGen: [.en: "holostars 2nd gen", .ja: "ホロスターズ 2期生"],
     .starsThirdGen: [.en: "holostars 3nd gen", .ja: "ホロスターズ 3期生"],
     .uproar: [.en: "holostars UPROAR!!", .ja: "ホロスターズ アップロー!!"],
+    .tempus: [.en: "HOLOSTARS English -TEMPUS-", .ja: "HOLOSTARS English -TEMPUS-"],
     .official: [.en: "Official Channels", .ja: "公式チャンネル"],
     .other: [.en: "Other", .ja: "他"]
 ]
@@ -319,5 +332,6 @@ let talentsByGeneration: [GenerationGroup] = [
     GenerationGroup(generation: .starsSecondGen, members: [.astel, .temma, .roberu]),
     GenerationGroup(generation: .starsThirdGen, members: [.shien, .oga]),
     GenerationGroup(generation: .uproar, members: [.fuma, .uyu, .gamma, .rio]),
+    GenerationGroup(generation: .tempus, members: [.altare, .dezmond, .syrios, .vesper]),
     GenerationGroup(generation: .official, members: [.hololive, .hololiveEN, .hololiveID, .holostars, .midnight])
 ]

@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct ManageGenerationView: View {
-    @AppStorage("generationListSelection") var generationList = Set(GenerationEnum.allCases)
-    @AppStorage("generationListOrder") var allGenerations = GenerationEnum.allCases
+    @AppStorage("generationListSelection") var generationSelected = Set(GenerationEnum.allCases)
+    @AppStorage("generationListOrder") var generationOrder = GenerationEnum.allCases
+    @AppStorage("excludedGenerations") var excludedGenerations = Set<GenerationEnum>()
     @State var showResetAlert = false
     
     var body: some View {
-        List(selection: $generationList) {
-            ForEach(allGenerations, id: \.self) { generation in
+        List(selection: $generationSelected) {
+            ForEach(generationOrder, id: \.self) { generation in
                 HStack {
                     VStack(alignment: .leading) {
                         if Locale.current.languageCode == "ja" {
@@ -29,7 +30,7 @@ struct ManageGenerationView: View {
                                 .foregroundColor(.secondary)
                         }
                     }
-                    if generationList.contains(generation) {
+                    if generationSelected.contains(generation) {
                         Spacer()
                         Image(systemName: "checkmark")
                             .foregroundColor(.secondary)
@@ -47,14 +48,21 @@ struct ManageGenerationView: View {
                 })
                 .confirmationDialog("SETTINGS_MANAGE_GENERATION_RESET_ALERT_TEXT", isPresented: $showResetAlert, actions: {
                     Button("SETTINGS_MANAGE_GENERATION_RESET_ALERT_RESET", role: .destructive) {
-                        generationList = Set(GenerationEnum.allCases)
-                        allGenerations = GenerationEnum.allCases
+                        generationSelected = Set(GenerationEnum.allCases)
+                        generationOrder = GenerationEnum.allCases
                     }
                 }, message: {
                     Text("SETTINGS_MANAGE_GENERATION_RESET_ALERT_TEXT")
                 })
             }
         }
+        .onChange(of: generationSelected, perform: { newValue in
+            let difference = Set(GenerationEnum.allCases).symmetricDifference(newValue)
+            
+            excludedGenerations = difference
+            
+            print(excludedGenerations)
+        })
         .navigationTitle("SETTINGS_MANAGE_GENERATION_VIEW_TITLE")
         .toolbar {
             EditButton()
@@ -62,7 +70,7 @@ struct ManageGenerationView: View {
     }
     
     func move(from source: IndexSet, to destination: Int) {
-        allGenerations.move(fromOffsets: source, toOffset: destination)
+        generationOrder.move(fromOffsets: source, toOffset: destination)
     }
 }
 
