@@ -23,7 +23,7 @@ struct LivePaneView: View {
                 VideoThumbnailView(ytVideoKey: live.id)
                 
                 VStack(alignment: .leading) {
-                    Text(live.escapedTitle)
+                    Text(live.escapedTitle + "\n")
                         .font(.headline)
                         .lineLimit(2)
                         .multilineTextAlignment(.leading)

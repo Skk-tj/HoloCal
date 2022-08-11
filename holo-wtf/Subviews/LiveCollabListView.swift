@@ -26,6 +26,10 @@ struct LiveCollabListView: View {
                             
                             Text(channel.name)
                                 .foregroundColor(.secondary)
+                            
+                            Text(channel.getTalentGenerationName(lang: lang))
+                                .foregroundColor(.secondary)
+                                .font(.caption)
                         }
                     }
                 }
