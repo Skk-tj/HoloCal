@@ -22,10 +22,17 @@ struct UpcomingPaneView: View {
                 VideoThumbnailView(ytVideoKey: upcoming.id)
                 
                 VStack(alignment: .leading) {
-                    Text(upcoming.escapedTitle + "\n")
-                        .font(.headline)
-                        .lineLimit(2)
-                        .multilineTextAlignment(.leading)
+                    if UIDevice.current.userInterfaceIdiom == .pad {
+                        Text(upcoming.escapedTitle + "\n")
+                            .font(.headline)
+                            .lineLimit(2)
+                            .multilineTextAlignment(.leading)
+                    } else {
+                        Text(upcoming.escapedTitle)
+                            .font(.headline)
+                            .lineLimit(2)
+                            .multilineTextAlignment(.leading)
+                    }
                     
                     HStack {
                         LiveAvatarView(url: upcoming.channel.photo, avatarRadius: 40.0)
