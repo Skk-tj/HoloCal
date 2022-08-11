@@ -23,10 +23,17 @@ struct LivePaneView: View {
                 VideoThumbnailView(ytVideoKey: live.id)
                 
                 VStack(alignment: .leading) {
-                    Text(live.escapedTitle + "\n")
-                        .font(.headline)
-                        .lineLimit(2)
-                        .multilineTextAlignment(.leading)
+                    if UIDevice.current.userInterfaceIdiom == .pad {
+                        Text(live.escapedTitle + "\n")
+                            .font(.headline)
+                            .lineLimit(2)
+                            .multilineTextAlignment(.leading)
+                    } else {
+                        Text(live.escapedTitle)
+                            .font(.headline)
+                            .lineLimit(2)
+                            .multilineTextAlignment(.leading)
+                    }
                     
                     HStack {
                         LiveAvatarView(url: live.channel.photo, avatarRadius: 40.0)

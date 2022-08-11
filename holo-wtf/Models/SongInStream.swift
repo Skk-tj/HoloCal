@@ -23,7 +23,7 @@ struct SongInStream: Codable, Identifiable, Hashable {
     let end: Int
     let name: String
     let originalArtist: String
-    let itunesid: Int
+    let itunesid: Int?
     
     var MKsong: Song?
     
@@ -39,7 +39,12 @@ struct SongInStream: Codable, Identifiable, Hashable {
         
         if authorizationStatus == .authorized {
             let countryCode = try await MusicDataRequest.currentCountryCode
-            let url = URL(string: "https://api.music.apple.com/v1/catalog/\(countryCode)/songs/\(self.itunesid)")!
+            
+            guard let itunesid = itunesid else {
+                throw SongRequestError.notFound
+            }
+            
+            let url = URL(string: "https://api.music.apple.com/v1/catalog/\(countryCode)/songs/\(itunesid)")!
             
             let dataRequest = MusicDataRequest(urlRequest: URLRequest(url: url))
             let dataResponse = try await dataRequest.response()

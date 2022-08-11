@@ -16,20 +16,6 @@ struct LiveWidgetMediumView: View {
         let lang: NameLanguage = Locale.current.languageCode == "ja" ? .ja : .en
         
         HStack {
-            Image(systemName: "person.wave.2.fill")
-                .font(.footnote)
-                .foregroundColor(.secondary)
-            
-            Text("LIVE_WIDGET_TITLE")
-                .font(.footnote)
-                .foregroundColor(.secondary)
-            
-            Spacer()
-        }
-        
-        Spacer()
-        
-        HStack {
             if let image = UIImage(data: videoThumbnail) {
                 Image(uiImage: image)
                     .resizable()
@@ -52,6 +38,8 @@ struct LiveWidgetMediumView: View {
                 
             }
         }
+        .padding(.horizontal)
+        .padding(.bottom)
     }
 }
 
