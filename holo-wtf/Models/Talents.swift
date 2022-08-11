@@ -98,7 +98,6 @@ enum TalentsEnum: String, Codable {
     // MARK: - Project: HOPE
     case irys = "UC8rcEBzJSleTkf_-agPM20g"
     // MARK: - EN Council
-    case sana = "UCsUj0dszADCGbF3gNrQEuSQ"
     case ceres = "UCO_aKKYxn4tvrqPjcTzZ6EQ"
     case kronii = "UCmbs8T6MWqUHP1tIQvSgKrg"
     case mumei = "UC3n5uGu18FoCy23ggWWp8tA"
@@ -153,121 +152,120 @@ struct Talent: Codable, Identifiable, Hashable {
 
 let talentsToName: [TalentsEnum: Talent] = [
     // MARK: - 0th gen
-    .sora: Talent(id: "UCp6993wxpyDPHUpavwDFqgg", names: [.en: "Tokino Sora", .ja: "ときのそら"], inGeneration: .zerothGen),
-    .roboco: Talent(id: "UCDqI2jOz0weumE8s7paEk6g", names: [.en: "Robocosan", .ja: "ロボ子さん"], inGeneration: .zerothGen),
-    .azki: Talent(id: "UC0TXe_LYZ4scaW2XMyi5_kw", names: [.en: "AZKi", .ja: "AZKi"], inGeneration: .zerothGen),
-    .miko: Talent(id: "UC-hM6YJuNYVAmUWxeIr9FeA", names: [.en: "Sakura Miko", .ja: "さくらみこ"], inGeneration: .zerothGen),
-    .suisei: Talent(id: "UC5CwaMl1eIgY8h02uZw7u8A", names: [.en: "Hoshimachi Suisei", .ja: "星街すいせい"], inGeneration: .zerothGen),
+    .sora: Talent(id: TalentsEnum.sora.rawValue, names: [.en: "Tokino Sora", .ja: "ときのそら"], inGeneration: .zerothGen),
+    .roboco: Talent(id: TalentsEnum.roboco.rawValue, names: [.en: "Robocosan", .ja: "ロボ子さん"], inGeneration: .zerothGen),
+    .azki: Talent(id: TalentsEnum.azki.rawValue, names: [.en: "AZKi", .ja: "AZKi"], inGeneration: .zerothGen),
+    .miko: Talent(id: TalentsEnum.miko.rawValue, names: [.en: "Sakura Miko", .ja: "さくらみこ"], inGeneration: .zerothGen),
+    .suisei: Talent(id: TalentsEnum.suisei.rawValue, names: [.en: "Hoshimachi Suisei", .ja: "星街すいせい"], inGeneration: .zerothGen),
     
     // MARK: - 1st gen
-    .mel: Talent(id: "UCD8HOxPs4Xvsm8H0ZxXGiBw", names: [.en: "Yozora Mel", .ja: "夜空メル"], inGeneration: .firstGen),
-    .aki: Talent(id: "UCFTLzh12_nrtzqBPsTCqenA", names: [.en: "Aki Rosenthal", .ja: "アキ・ローゼンタール"], inGeneration: .firstGen),
-    .haato: Talent(id: "UC1CfXB_kRs3C-zaeTG3oGyg", names: [.en: "Akai Haato", .ja: "赤井はあと"], inGeneration: .firstGen),
-    .fubuki: Talent(id: "UCdn5BQ06XqgXoAxIhbqw5Rg", names: [.en: "Shirakami Fubuki", .ja: "白上フブキ"], inGeneration: .firstGen),
-    .matsuri: Talent(id: "UCQ0UDLQCjY0rmuxCDE38FGg", names: [.en: "Natsuiro Matsuri", .ja: "夏色まつり"], inGeneration: .firstGen),
+    .mel: Talent(id: TalentsEnum.mel.rawValue, names: [.en: "Yozora Mel", .ja: "夜空メル"], inGeneration: .firstGen),
+    .aki: Talent(id: TalentsEnum.aki.rawValue, names: [.en: "Aki Rosenthal", .ja: "アキ・ローゼンタール"], inGeneration: .firstGen),
+    .haato: Talent(id: TalentsEnum.haato.rawValue, names: [.en: "Akai Haato", .ja: "赤井はあと"], inGeneration: .firstGen),
+    .fubuki: Talent(id: TalentsEnum.fubuki.rawValue, names: [.en: "Shirakami Fubuki", .ja: "白上フブキ"], inGeneration: .firstGen),
+    .matsuri: Talent(id: TalentsEnum.matsuri.rawValue, names: [.en: "Natsuiro Matsuri", .ja: "夏色まつり"], inGeneration: .firstGen),
     
     // MARK: - 2nd gen
-    .aqua: Talent(id: "UC1opHUrw8rvnsadT-iGp7Cg", names: [.en: "Minato Aqua", .ja: "湊あくあ"], inGeneration: .secondGen),
-    .shion: Talent(id: "UCXTpFs_3PqI41qX2d9tL2Rw", names: [.en: "Murasaki Shion", .ja: "紫咲シオン"], inGeneration: .secondGen),
-    .ayame: Talent(id: "UC7fk0CB07ly8oSl0aqKkqFg", names: [.en: "Nakiri Ayame", .ja: "百鬼あやめ"], inGeneration: .secondGen),
-    .choco: Talent(id: "UC1suqwovbL1kzsoaZgFZLKg", names: [.en: "Yuzuki Choco", .ja: "癒月ちょこ"], inGeneration: .secondGen),
-    .subaru: Talent(id: "UCvzGlP9oQwU--Y0r9id_jnA", names: [.en: "Oozora Subaru", .ja: "大空スバル"], inGeneration: .secondGen),
+    .aqua: Talent(id: TalentsEnum.aqua.rawValue, names: [.en: "Minato Aqua", .ja: "湊あくあ"], inGeneration: .secondGen),
+    .shion: Talent(id: TalentsEnum.shion.rawValue, names: [.en: "Murasaki Shion", .ja: "紫咲シオン"], inGeneration: .secondGen),
+    .ayame: Talent(id: TalentsEnum.ayame.rawValue, names: [.en: "Nakiri Ayame", .ja: "百鬼あやめ"], inGeneration: .secondGen),
+    .choco: Talent(id: TalentsEnum.choco.rawValue, names: [.en: "Yuzuki Choco", .ja: "癒月ちょこ"], inGeneration: .secondGen),
+    .subaru: Talent(id: TalentsEnum.subaru.rawValue, names: [.en: "Oozora Subaru", .ja: "大空スバル"], inGeneration: .secondGen),
     
     // MARK: - Gamers
-    .mio: Talent(id: "UCp-5t9SrOQwXMU7iIjQfARg", names: [.en: "Ookami Mio", .ja: "大神ミオ"], inGeneration: .gamers),
-    .okayu: Talent(id: "UCvaTdHTWBGv3MKj3KVqJVCw", names: [.en: "Nekomata Okayu", .ja: "猫又おかゆ"], inGeneration: .gamers),
-    .korone: Talent(id: "UChAnqc_AY5_I3Px5dig3X1Q", names: [.en: "Inugami Korone", .ja: "戌神ころね"], inGeneration: .gamers),
+    .mio: Talent(id: TalentsEnum.mio.rawValue, names: [.en: "Ookami Mio", .ja: "大神ミオ"], inGeneration: .gamers),
+    .okayu: Talent(id: TalentsEnum.okayu.rawValue, names: [.en: "Nekomata Okayu", .ja: "猫又おかゆ"], inGeneration: .gamers),
+    .korone: Talent(id: TalentsEnum.korone.rawValue, names: [.en: "Inugami Korone", .ja: "戌神ころね"], inGeneration: .gamers),
     
     // MARK: - 3rd gen
-    .pekora: Talent(id: "UC1DCedRgGHBdm81E1llLhOQ", names: [.en: "Usada Pekora", .ja: "兎田ぺこら"], inGeneration: .thirdGen),
-    .flare: Talent(id: "UCvInZx9h3jC2JzsIzoOebWg", names: [.en: "Shiranui Flare", .ja: "不知火フレア"], inGeneration: .thirdGen),
-    .noel: Talent(id: "UCdyqAaZDKHXg4Ahi7VENThQ", names: [.en: "Shirogane Noel", .ja: "白銀ノエル"], inGeneration: .thirdGen),
-    .marine: Talent(id: "UCCzUftO8KOVkV4wQG1vkUvg", names: [.en: "Houshou Marine", .ja: "宝鐘マリン"], inGeneration: .thirdGen),
+    .pekora: Talent(id: TalentsEnum.pekora.rawValue, names: [.en: "Usada Pekora", .ja: "兎田ぺこら"], inGeneration: .thirdGen),
+    .flare: Talent(id: TalentsEnum.flare.rawValue, names: [.en: "Shiranui Flare", .ja: "不知火フレア"], inGeneration: .thirdGen),
+    .noel: Talent(id: TalentsEnum.noel.rawValue, names: [.en: "Shirogane Noel", .ja: "白銀ノエル"], inGeneration: .thirdGen),
+    .marine: Talent(id: TalentsEnum.marine.rawValue, names: [.en: "Houshou Marine", .ja: "宝鐘マリン"], inGeneration: .thirdGen),
     
     // MARK: - 4th gen
-    .kanata: Talent(id: "UCZlDXzGoo7d44bwdNObFacg", names: [.en: "Amane Kanata", .ja: "天音かなた"], inGeneration: .forthGen),
-    .watame: Talent(id: "UCqm3BQLlJfvkTsX_hvm0UmA", names: [.en: "Tsunomaki Watame", .ja: "角巻わため"], inGeneration: .forthGen),
-    .towa: Talent(id: "UC1uv2Oq6kNxgATlCiez59hw", names: [.en: "Tokoyami Towa", .ja: "常闇トワ"], inGeneration: .forthGen),
-    .luna: Talent(id: "UCa9Y57gfeY0Zro_noHRVrnw", names: [.en: "Himemori Luna", .ja: "姫森ルーナ"], inGeneration: .forthGen),
+    .kanata: Talent(id: TalentsEnum.kanata.rawValue, names: [.en: "Amane Kanata", .ja: "天音かなた"], inGeneration: .forthGen),
+    .watame: Talent(id: TalentsEnum.watame.rawValue, names: [.en: "Tsunomaki Watame", .ja: "角巻わため"], inGeneration: .forthGen),
+    .towa: Talent(id: TalentsEnum.towa.rawValue, names: [.en: "Tokoyami Towa", .ja: "常闇トワ"], inGeneration: .forthGen),
+    .luna: Talent(id: TalentsEnum.luna.rawValue, names: [.en: "Himemori Luna", .ja: "姫森ルーナ"], inGeneration: .forthGen),
     
     // MARK: - 5th gen
-    .lamy: Talent(id: "UCFKOVgVbGmX65RxO3EtH3iw", names: [.en: "Yukihana Lamy", .ja: "雪花ラミィ"], inGeneration: .fifthGen),
-    .nene: Talent(id: "UCAWSyEs_Io8MtpY3m-zqILA", names: [.en: "Momosuzu Nene", .ja: "桃鈴ねね"], inGeneration: .fifthGen),
-    .botan: Talent(id: "UCUKD-uaobj9jiqB-VXt71mA", names: [.en: "Shishiro Botan", .ja: "獅白ぼたん"], inGeneration: .fifthGen),
-    .polka: Talent(id: "UCK9V2B22uJYu3N7eR_BT9QA", names: [.en: "Omaru Polka", .ja: "尾丸ポルカ"], inGeneration: .fifthGen),
+    .lamy: Talent(id: TalentsEnum.lamy.rawValue, names: [.en: "Yukihana Lamy", .ja: "雪花ラミィ"], inGeneration: .fifthGen),
+    .nene: Talent(id: TalentsEnum.nene.rawValue, names: [.en: "Momosuzu Nene", .ja: "桃鈴ねね"], inGeneration: .fifthGen),
+    .botan: Talent(id: TalentsEnum.botan.rawValue, names: [.en: "Shishiro Botan", .ja: "獅白ぼたん"], inGeneration: .fifthGen),
+    .polka: Talent(id: TalentsEnum.polka.rawValue, names: [.en: "Omaru Polka", .ja: "尾丸ポルカ"], inGeneration: .fifthGen),
     
     // MARK: - holoX
-    .laplus: Talent(id: "UCENwRMx5Yh42zWpzURebzTw", names: [.en: "La+ Darknesss", .ja: "ラプラス・ダークネス"], inGeneration: .holox),
-    .lui: Talent(id: "UCs9_O1tRPMQTHQ-N_L6FU2g", names: [.en: "Takane Lui", .ja: "鷹嶺ルイ"], inGeneration: .holox),
-    .koyori: Talent(id: "UC6eWCld0KwmyHFbAqK3V-Rw", names: [.en: "Hakui Koyori", .ja: "博衣こより"], inGeneration: .holox),
-    .chloe: Talent(id: "UCIBY1ollUsauvVi4hW4cumw", names: [.en: "Sakamata Chloe", .ja: "沙花叉クロヱ"], inGeneration: .holox),
-    .iroha: Talent(id: "UC_vMYWcDjmfdpH6r4TTn1MQ", names: [.en: "Kazama Iroha", .ja: "風真いろは"], inGeneration: .holox),
+    .laplus: Talent(id: TalentsEnum.laplus.rawValue, names: [.en: "La+ Darknesss", .ja: "ラプラス・ダークネス"], inGeneration: .holox),
+    .lui: Talent(id: TalentsEnum.lui.rawValue, names: [.en: "Takane Lui", .ja: "鷹嶺ルイ"], inGeneration: .holox),
+    .koyori: Talent(id: TalentsEnum.koyori.rawValue, names: [.en: "Hakui Koyori", .ja: "博衣こより"], inGeneration: .holox),
+    .chloe: Talent(id: TalentsEnum.chloe.rawValue, names: [.en: "Sakamata Chloe", .ja: "沙花叉クロヱ"], inGeneration: .holox),
+    .iroha: Talent(id: TalentsEnum.iroha.rawValue, names: [.en: "Kazama Iroha", .ja: "風真いろは"], inGeneration: .holox),
     
     // MARK: - ID 1st gen
-    .risu: Talent(id: "UCOyYb1c43VlX9rc_lT6NKQw", names: [.en: "Ayunda Risu", .ja: "アユンダ・リス"], inGeneration: .idFirstGen),
-    .moona: Talent(id: "UCP0BspO_AMEe3aQqqpo89Dg", names: [.en: "Moona Hoshinova", .ja: "ムーナ・ホシノヴァ"], inGeneration: .idFirstGen),
-    .iofi: Talent(id: "UCAoy6rzhSf4ydcYjJw3WoVg", names: [.en: "Airani Iofifteen", .ja: "アイラニ・イオフィフティーン"], inGeneration: .idFirstGen),
+    .risu: Talent(id: TalentsEnum.risu.rawValue, names: [.en: "Ayunda Risu", .ja: "アユンダ・リス"], inGeneration: .idFirstGen),
+    .moona: Talent(id: TalentsEnum.moona.rawValue, names: [.en: "Moona Hoshinova", .ja: "ムーナ・ホシノヴァ"], inGeneration: .idFirstGen),
+    .iofi: Talent(id: TalentsEnum.iofi.rawValue, names: [.en: "Airani Iofifteen", .ja: "アイラニ・イオフィフティーン"], inGeneration: .idFirstGen),
     
     // MARK: - ID 2nd gen
-    .ollie: Talent(id: "UCYz_5n-uDuChHtLo7My1HnQ", names: [.en: "Kureiji Ollie", .ja: "クレイジー・オリー"], inGeneration: .idThirdGen),
-    .anya: Talent(id: "UC727SQYUvx5pDDGQpTICNWg", names: [.en: "Anya Melfissa", .ja: "アーニャ・メルフィッサ"], inGeneration: .idThirdGen),
-    .reine: Talent(id: "UChgTyjG-pdNvxxhdsXfHQ5Q", names: [.en: "Pavolia Reine", .ja: "パヴォリア・レイネ"], inGeneration: .idThirdGen),
+    .ollie: Talent(id: TalentsEnum.ollie.rawValue, names: [.en: "Kureiji Ollie", .ja: "クレイジー・オリー"], inGeneration: .idThirdGen),
+    .anya: Talent(id: TalentsEnum.anya.rawValue, names: [.en: "Anya Melfissa", .ja: "アーニャ・メルフィッサ"], inGeneration: .idThirdGen),
+    .reine: Talent(id: TalentsEnum.reine.rawValue, names: [.en: "Pavolia Reine", .ja: "パヴォリア・レイネ"], inGeneration: .idThirdGen),
     
     // MARK: - ID 3rd gen
-    .zeta: Talent(id: "UCTvHWSfBZgtxE4sILOaurIQ", names: [.en: "KVestia Zeta", .ja: "ベスティア・ゼータ"], inGeneration: .idThirdGen),
-    .kaela: Talent(id: "UCZLZ8Jjx_RN2CXloOmgTHVg", names: [.en: "Kaela Kovalskia", .ja: "カエラ・コヴァルスキア"], inGeneration: .idThirdGen),
-    .kobo: Talent(id: "UCjLEmnpCNeisMxy134KPwWw", names: [.en: "Kobo Kanaeru", .ja: "こぼ・かなえる"], inGeneration: .idThirdGen),
+    .zeta: Talent(id: TalentsEnum.zeta.rawValue, names: [.en: "KVestia Zeta", .ja: "ベスティア・ゼータ"], inGeneration: .idThirdGen),
+    .kaela: Talent(id: TalentsEnum.kaela.rawValue, names: [.en: "Kaela Kovalskia", .ja: "カエラ・コヴァルスキア"], inGeneration: .idThirdGen),
+    .kobo: Talent(id: TalentsEnum.kobo.rawValue, names: [.en: "Kobo Kanaeru", .ja: "こぼ・かなえる"], inGeneration: .idThirdGen),
     
     // MARK: - EN Myth
-    .mori: Talent(id: "UCL_qhgtOy0dy1Agp8vkySQg", names: [.en: "Mori Calliope", .ja: "森カリオペ"], inGeneration: .enMyth),
-    .kiara: Talent(id: "UCHsx4Hqa-1ORjQTh9TYDhww", names: [.en: "Takanashi Kiara", .ja: "小鳥遊キアラ"], inGeneration: .enMyth),
-    .ina: Talent(id: "UCMwGHR0BTZuLsmjY_NT5Pwg", names: [.en: "Ninomae Ina'nis", .ja: "一伊那尓栖"], inGeneration: .enMyth),
-    .gura: Talent(id: "UCoSrY_IQQVpmIRZ9Xf-y93g", names: [.en: "Gawr Gura", .ja: "がうる・ぐら"], inGeneration: .enMyth),
-    .ame: Talent(id: "UCyl1z3jo3XHR1riLFKG5UAg", names: [.en: "Watson Amelia", .ja: "ワトソン・アメリア"], inGeneration: .enMyth),
+    .mori: Talent(id: TalentsEnum.mori.rawValue, names: [.en: "Mori Calliope", .ja: "森カリオペ"], inGeneration: .enMyth),
+    .kiara: Talent(id: TalentsEnum.kiara.rawValue, names: [.en: "Takanashi Kiara", .ja: "小鳥遊キアラ"], inGeneration: .enMyth),
+    .ina: Talent(id: TalentsEnum.ina.rawValue, names: [.en: "Ninomae Ina'nis", .ja: "一伊那尓栖"], inGeneration: .enMyth),
+    .gura: Talent(id: TalentsEnum.gura.rawValue, names: [.en: "Gawr Gura", .ja: "がうる・ぐら"], inGeneration: .enMyth),
+    .ame: Talent(id: TalentsEnum.ame.rawValue, names: [.en: "Watson Amelia", .ja: "ワトソン・アメリア"], inGeneration: .enMyth),
     
     // MARK: - Project: HOPE
-    .irys: Talent(id: "UC8rcEBzJSleTkf_-agPM20g", names: [.en: "IRyS", .ja: "アイリス"], inGeneration: .projectHope),
+    .irys: Talent(id: TalentsEnum.irys.rawValue, names: [.en: "IRyS", .ja: "アイリス"], inGeneration: .projectHope),
     
     // MARK: - EN Council
-    .sana: Talent(id: "UCsUj0dszADCGbF3gNrQEuSQ", names: [.en: "Tsukumo Sana", .ja: "九十九佐命"], inGeneration: .enCouncil),
-    .ceres: Talent(id: "UCO_aKKYxn4tvrqPjcTzZ6EQ", names: [.en: "Ceres Fauna", .ja: "セレス・ファウナ"], inGeneration: .enCouncil),
-    .kronii: Talent(id: "UCmbs8T6MWqUHP1tIQvSgKrg", names: [.en: "Ouro Kronii", .ja: "オーロ・クロニー"], inGeneration: .enCouncil),
-    .mumei: Talent(id: "UC3n5uGu18FoCy23ggWWp8tA", names: [.en: "Nanashi Mumei", .ja: "七詩ムメイ"], inGeneration: .enCouncil),
-    .baelz: Talent(id: "UCgmPnx-EEeOrZSg5Tiw7ZRQ", names: [.en: "Hakos Baelz", .ja: "ハコス・ベールズ"], inGeneration: .enCouncil),
+    .ceres: Talent(id: TalentsEnum.ceres.rawValue, names: [.en: "Ceres Fauna", .ja: "セレス・ファウナ"], inGeneration: .enCouncil),
+    .kronii: Talent(id: TalentsEnum.kronii.rawValue, names: [.en: "Ouro Kronii", .ja: "オーロ・クロニー"], inGeneration: .enCouncil),
+    .mumei: Talent(id: TalentsEnum.mumei.rawValue, names: [.en: "Nanashi Mumei", .ja: "七詩ムメイ"], inGeneration: .enCouncil),
+    .baelz: Talent(id: TalentsEnum.baelz.rawValue, names: [.en: "Hakos Baelz", .ja: "ハコス・ベールズ"], inGeneration: .enCouncil),
     
     // MARK: - holostars 1st gen
-    .miyabi: Talent(id: "UC6t3-_N8A6ME1JShZHHqOMw", names: [.en: "Hanasaki Miyabi", .ja: "花咲みやび"], inGeneration: .starsFirstGen),
-    .izuru: Talent(id: "UCZgOv3YDEs-ZnZWDYVwJdmA", names: [.en: "Kanade Izuru", .ja: "奏手イヅル"], inGeneration: .starsFirstGen),
-    .arurandeisu: Talent(id: "UCKeAhJvy8zgXWbh9duVjIaQ", names: [.en: "Arurandeisu", .ja: "アルランディス"], inGeneration: .starsFirstGen),
-    .rikka: Talent(id: "UC9mf_ZVpouoILRY9NUIaK-w", names: [.en: "Rikka", .ja: "律可"], inGeneration: .starsFirstGen),
+    .miyabi: Talent(id: TalentsEnum.miyabi.rawValue, names: [.en: "Hanasaki Miyabi", .ja: "花咲みやび"], inGeneration: .starsFirstGen),
+    .izuru: Talent(id: TalentsEnum.izuru.rawValue, names: [.en: "Kanade Izuru", .ja: "奏手イヅル"], inGeneration: .starsFirstGen),
+    .arurandeisu: Talent(id: TalentsEnum.arurandeisu.rawValue, names: [.en: "Arurandeisu", .ja: "アルランディス"], inGeneration: .starsFirstGen),
+    .rikka: Talent(id: TalentsEnum.rikka.rawValue, names: [.en: "Rikka", .ja: "律可"], inGeneration: .starsFirstGen),
     
     // MARK: - holostars 2nd gen
-    .astel: Talent(id: "UCNVEsYbiZjH5QLmGeSgTSzg", names: [.en: "Astel Leda", .ja: "アステル・レダ"], inGeneration: .starsSecondGen),
-    .temma: Talent(id: "UCGNI4MENvnsymYjKiZwv9eg", names: [.en: "Kishido Temma", .ja: "岸堂天真"], inGeneration: .starsSecondGen),
-    .roberu: Talent(id: "UCANDOlYTJT7N5jlRC3zfzVA", names: [.en: "Yukoku Roberu", .ja: "夕刻ロベル"], inGeneration: .starsSecondGen),
+    .astel: Talent(id: TalentsEnum.astel.rawValue, names: [.en: "Astel Leda", .ja: "アステル・レダ"], inGeneration: .starsSecondGen),
+    .temma: Talent(id: TalentsEnum.temma.rawValue, names: [.en: "Kishido Temma", .ja: "岸堂天真"], inGeneration: .starsSecondGen),
+    .roberu: Talent(id: TalentsEnum.roberu.rawValue, names: [.en: "Yukoku Roberu", .ja: "夕刻ロベル"], inGeneration: .starsSecondGen),
     
     // MARK: - holostars 3rd gen
-    .shien: Talent(id: "UChSvpZYRPh0FvG4SJGSga3g", names: [.en: "Kageyama Shien", .ja: "影山シエン"], inGeneration: .starsThirdGen),
-    .oga: Talent(id: "UCwL7dgTxKo8Y4RFIKWaf8gA", names: [.en: "Aragami Oga", .ja: "荒咬オウガ"], inGeneration: .starsThirdGen),
+    .shien: Talent(id: TalentsEnum.shien.rawValue, names: [.en: "Kageyama Shien", .ja: "影山シエン"], inGeneration: .starsThirdGen),
+    .oga: Talent(id: TalentsEnum.oga.rawValue, names: [.en: "Aragami Oga", .ja: "荒咬オウガ"], inGeneration: .starsThirdGen),
     
     // MARK: - holostars UPROAR!!
-    .fuma: Talent(id: "UCc88OV45ICgHbn3ZqLLb52w", names: [.en: "Yatogami Fuma", .ja: "夜十神封魔"], inGeneration: .uproar),
-    .uyu: Talent(id: "UCgRqGV1gBf2Esxh0Tz1vxzw", names: [.en: "Utsugi Uyu", .ja: "羽継烏有"], inGeneration: .uproar),
-    .gamma: Talent(id: "UCkT1u65YS49ca_LsFwcTakw", names: [.en: "Hizaki Gamma", .ja: "緋崎ガンマ"], inGeneration: .uproar),
-    .rio: Talent(id: "UCdfMHxjcCc2HSd9qFvfJgjg", names: [.en: "Minase Rio", .ja: "水無世燐央"], inGeneration: .uproar),
+    .fuma: Talent(id: TalentsEnum.fuma.rawValue, names: [.en: "Yatogami Fuma", .ja: "夜十神封魔"], inGeneration: .uproar),
+    .uyu: Talent(id: TalentsEnum.uyu.rawValue, names: [.en: "Utsugi Uyu", .ja: "羽継烏有"], inGeneration: .uproar),
+    .gamma: Talent(id: TalentsEnum.gamma.rawValue, names: [.en: "Hizaki Gamma", .ja: "緋崎ガンマ"], inGeneration: .uproar),
+    .rio: Talent(id: TalentsEnum.rio.rawValue, names: [.en: "Minase Rio", .ja: "水無世燐央"], inGeneration: .uproar),
     
     // MARK: - holostars TEMPUS
-    .altare: Talent(id: "UCyxtGMdWlURZ30WSnEjDOQw", names: [.en: "Regis Altare", .ja: "リージス・アルテア"], inGeneration: .tempus),
-    .vesper: Talent(id: "UCDRWSO281bIHYVi-OV3iFYA", names: [.en: "Noir Vesper", .ja: "ノワール・ヴェスパー"], inGeneration: .tempus),
-    .syrios: Talent(id: "UC2hx0xVkMoHGWijwr_lA01w", names: [.en: "Axel Syrios", .ja: "アクセル・シリオス"], inGeneration: .tempus),
-    .dezmond: Talent(id: "UC7MMNHR-kf9EN1rXiesMTMw", names: [.en: "Magni Dezmond", .ja: "マグニ・デズモンド"], inGeneration: .tempus),
+    .altare: Talent(id: TalentsEnum.altare.rawValue, names: [.en: "Regis Altare", .ja: "リージス・アルテア"], inGeneration: .tempus),
+    .vesper: Talent(id: TalentsEnum.vesper.rawValue, names: [.en: "Noir Vesper", .ja: "ノワール・ヴェスパー"], inGeneration: .tempus),
+    .syrios: Talent(id: TalentsEnum.syrios.rawValue, names: [.en: "Axel Syrios", .ja: "アクセル・シリオス"], inGeneration: .tempus),
+    .dezmond: Talent(id: TalentsEnum.dezmond.rawValue, names: [.en: "Magni Dezmond", .ja: "マグニ・デズモンド"], inGeneration: .tempus),
     
     // MARK: - Official Channels
-    .hololive: Talent(id: "UCJFZiqLMntJufDCHc6bQixg", names: [.en: "hololive", .ja: "ホロライブ"], inGeneration: .official),
-    .hololiveEN: Talent(id: "UCotXwY6s8pWmuWd_snKYjhg", names: [.en: "hololive English", .ja: "hololive English"], inGeneration: .official),
-    .hololiveID: Talent(id: "UCfrWoRGlawPQDQxxeIDRP0Q", names: [.en: "hololive Indonesia", .ja: "hololive Indonesia"], inGeneration: .official),
-    .holostars: Talent(id: "UCWsfcksUUpoEvhia0_ut0bA", names: [.en: "holostars", .ja: "ホロスターズ"], inGeneration: .official),
-    .midnight: Talent(id: "UCnVbtCwr-5LXxUlGxsgD7sQ", names: [.en: "Midnight Grand Orchestra", .ja: "Midnight Grand Orchestra"], inGeneration: .official)
+    .hololive: Talent(id: TalentsEnum.hololive.rawValue, names: [.en: "hololive", .ja: "ホロライブ"], inGeneration: .official),
+    .hololiveEN: Talent(id: TalentsEnum.hololiveEN.rawValue, names: [.en: "hololive English", .ja: "hololive English"], inGeneration: .official),
+    .hololiveID: Talent(id: TalentsEnum.hololiveID.rawValue, names: [.en: "hololive Indonesia", .ja: "hololive Indonesia"], inGeneration: .official),
+    .holostars: Talent(id: TalentsEnum.holostars.rawValue, names: [.en: "holostars", .ja: "ホロスターズ"], inGeneration: .official),
+    .midnight: Talent(id: TalentsEnum.midnight.rawValue, names: [.en: "Midnight Grand Orchestra", .ja: "Midnight Grand Orchestra"], inGeneration: .official)
 ]
 
 let generationToName: [GenerationEnum: [NameLanguage: String]] = [
@@ -327,7 +325,7 @@ let talentsByGeneration: [GenerationGroup] = [
     GenerationGroup(generation: .idThirdGen, members: [.zeta, .kaela, .kobo]),
     GenerationGroup(generation: .enMyth, members: [.mori, .kiara, .ina, .gura, .ame]),
     GenerationGroup(generation: .projectHope, members: [.irys]),
-    GenerationGroup(generation: .enCouncil, members: [.sana, .ceres, .kronii, .mumei, .baelz]),
+    GenerationGroup(generation: .enCouncil, members: [.ceres, .kronii, .mumei, .baelz]),
     GenerationGroup(generation: .starsFirstGen, members: [.miyabi, .izuru, .arurandeisu, .rikka]),
     GenerationGroup(generation: .starsSecondGen, members: [.astel, .temma, .roberu]),
     GenerationGroup(generation: .starsThirdGen, members: [.shien, .oga]),

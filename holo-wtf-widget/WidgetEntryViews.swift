@@ -19,30 +19,27 @@ struct SmallLiveWidgetEntryView: View {
                 
                 Spacer()
             }
-            .padding(.leading)
-            .padding(.top)
-            
-            Spacer()
         
             switch entry.status {
             case .ok:
                 if let video = entry.video {
                     SmallLiveWidgetView(live: video, avatarData: entry.avatarData)
                 } else {
+                    Spacer()
                     Text("NO_ONE_IS_STREAMING")
-                    
                     Spacer()
                 }
             case .noVideo:
-                    Text("NO_ONE_IS_STREAMING")
-                    
-                    Spacer()
+                Spacer()
+                Text("NO_ONE_IS_STREAMING")
+                Spacer()
             case .network:
-                    Text("NETWORK_ERROR")
-                    
-                    Spacer()
+                Spacer()
+                Text("NETWORK_ERROR")
+                Spacer()
             }
         }
+        .padding()
     }
 }
 

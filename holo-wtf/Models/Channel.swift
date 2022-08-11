@@ -34,10 +34,22 @@ struct Channel: Codable, Identifiable, Hashable {
     static let testChannel2 = Channel(id: "UCDqI2jOz0weumE8s7paEk6g", name: "test vtuber 2", photo: URL(string: "https://yt3.ggpht.com/wIqM7MWDN94PoibzPmeog7WOt8jFKTKZBOBFEbLBaiUAdKLwoqdLC_CN7B7Gby-FWH-076rN=s800-c-k-c0x00ffffff-no-rj"), org: "Hololive", twitter: "aaaa")
     
     func getTalentName(lang: NameLanguage) -> String {
-        if let talent = self.talent {
+        if let talent = talent {
             return talent.names[lang]!
         } else {
             return self.name
+        }
+    }
+    
+    func getTalentGenerationName(lang: NameLanguage) -> String {
+        if let talent = talent {
+            if let generationNames = generationToName[talent.inGeneration] {
+                return generationNames[lang]!
+            } else {
+                return generationToName[.other]![lang]!
+            }
+        } else {
+            return generationToName[.other]![lang]!
         }
     }
     

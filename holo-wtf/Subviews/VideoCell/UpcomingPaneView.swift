@@ -22,7 +22,7 @@ struct UpcomingPaneView: View {
                 VideoThumbnailView(ytVideoKey: upcoming.id)
                 
                 VStack(alignment: .leading) {
-                    Text(upcoming.escapedTitle)
+                    Text(upcoming.escapedTitle + "\n")
                         .font(.headline)
                         .lineLimit(2)
                         .multilineTextAlignment(.leading)

@@ -20,7 +20,7 @@ struct SmallLiveWidgetView: View {
                 Image(uiImage: avatarImage)
                     .resizable()
                     .aspectRatio(1, contentMode: .fill)
-                    .frame(width: 35, height: 35)
+                    .frame(width: 40, height: 40)
                     .clipShape(Circle())
                     .overlay {
                         Circle().stroke(.white, lineWidth: 1)
@@ -28,21 +28,19 @@ struct SmallLiveWidgetView: View {
                     .shadow(radius: 1)
             }
             
-            Spacer()
-            
+            Text(live.escapedTitle)
+                .font(.caption)
+                .lineLimit(2)
+                .fixedSize(horizontal: false, vertical: true)
             Text(live.channel.getTalentName(lang: lang))
                 .lineLimit(1)
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-            Text(live.escapedTitle)
-                .lineLimit(3)
                 .font(.caption)
+                .foregroundColor(.secondary)
             
             Text("\(Image(systemName: "eye")) \(live.liveViewers)")
                 .foregroundColor(.secondary)
                 .font(.caption2)
         }
-        .padding()
     }
 }
 
