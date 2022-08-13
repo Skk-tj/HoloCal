@@ -31,7 +31,6 @@ struct CardListView<PaneContent: View, StatusContent: View>: View {
             }
         }, dataStatusView: {
             dataStatusView()
-                .listSectionSeparator(.hidden)
                 .listRowSeparator(.hidden)
         })
         .listStyle(.plain)

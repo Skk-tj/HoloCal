@@ -9,7 +9,8 @@ import SwiftUI
 
 struct LiveViewToolbar: View {
     @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInLiveView) var isShowingAbsoluteTime: Bool = false
-    @AppStorage(UserDefaultKeys.isShowingCompactInLiveView) var isShowingCompactInLiveView: Bool = false
+    @AppStorage(UserDefaultKeys.isShowingCompactInLiveView) var isShowingCompact: Bool = false
+    @AppStorage(UserDefaultKeys.isShowingOnlyFavouritesInLiveView) var isShowingOnlyFavourites: Bool = false
     
     /// Defines the current sorting strategy
     /// - Note: `sortingStrategy` is of `@Binding` here because the parent views need to control it upon refresh of content.
@@ -20,24 +21,29 @@ struct LiveViewToolbar: View {
     var body: some View {
         Menu {
             Section {
-                Button {
-                    isShowingAbsoluteTime.toggle()
-                    UserDefaults.standard.set(isShowingAbsoluteTime, forKey: UserDefaultKeys.isShowingAbsoluteTimeInLiveView)
-                } label: {
-                    Label(isShowingAbsoluteTime ? "LIVE_VIEW_TOOLBAR_SHOW_RELATIVE" : "LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE", systemImage: "clock")
-                }
+                Toggle(isOn: $isShowingAbsoluteTime, label: {
+                    Label("LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE", systemImage: "clock")
+                })
+                
+                Toggle(isOn: $isShowingOnlyFavourites, label: {
+                    Label("LIVE_VIEW_TOOLBAR_FAVOURITES_ONLY", systemImage: "star")
+                })
                 
                 if UIDevice.current.userInterfaceIdiom == .phone {
                     Button {
-                        isShowingCompactInLiveView.toggle()
-                        UserDefaults.standard.set(isShowingCompactInLiveView, forKey: UserDefaultKeys.isShowingCompactInLiveView)
+                        isShowingCompact.toggle()
+                        UserDefaults.standard.set(isShowingCompact, forKey: UserDefaultKeys.isShowingCompactInLiveView)
                     } label: {
-                        Label(isShowingCompactInLiveView ? "LIVE_VIEW_TOOLBAR_SHOW_CARD" : "LIVE_VIEW_TOOLBAR_SHOW_COMPACT", systemImage: isShowingCompactInLiveView ? "rectangle.grid.1x2" : "list.bullet")
+                        Label(isShowingCompact ? "LIVE_VIEW_TOOLBAR_SHOW_CARD" : "LIVE_VIEW_TOOLBAR_SHOW_COMPACT", systemImage: isShowingCompact ? "rectangle.grid.1x2" : "list.bullet")
                     }
                 }
             }
             
             Menu {
+                Picker("Order", selection: $sortingStrategy) {
+                    Label("LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION", systemImage: "person.fill").tag(SortingStrategy.notSorting)
+                }
+                
                 Menu {
                     Picker("Order", selection: $sortingStrategy) {
                         Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST", systemImage: "arrow.down").tag(SortingStrategy.timeDesc)

@@ -87,6 +87,8 @@
 "LIVE_VIEW_TOOLBAR_SHOW_COMPACT" = "Show compact view";
 "LIVE_VIEW_TOOLBAR_SHOW_CARD" = "Show card view";
 "LIVE_VIEW_TOOLBAR_SORT" = "Sort...";
+"LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION" = "Sort by generation";
+"LIVE_VIEW_TOOLBAR_FAVOURITES_ONLY" = "Show favourites only";
 "LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME" = "Sort by start time...";
 "LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS" = "Sort by viewers...";
 "LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS_ASCENDING" = "Ascending";
