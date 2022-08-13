@@ -26,6 +26,9 @@ struct LiveCollabListView: View {
                             
                             Text(channel.name)
                                 .foregroundColor(.secondary)
+                                .font(.caption)
+                            
+                            Divider()
                             
                             Text(channel.getTalentGenerationName(lang: lang))
                                 .foregroundColor(.secondary)

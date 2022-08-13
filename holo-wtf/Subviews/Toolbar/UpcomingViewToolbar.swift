@@ -9,7 +9,8 @@ import SwiftUI
 
 struct UpcomingViewToolbar: View {
     @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInUpcomingView) var isShowingAbsoluteTime: Bool = false
-    @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingView) var isShowingCompactInUpcomingView: Bool = false
+    @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingView) var isShowingCompact: Bool = false
+    @AppStorage(UserDefaultKeys.isShowingOnlyFavouritesInUpcomingView) var isShowingOnlyFavourites: Bool = false
     
     /// Defines the current sorting strategy.
     /// - Note: `sortingStrategy` is of `@Binding` here because the parent views need to control it upon refresh of content.
@@ -18,28 +19,31 @@ struct UpcomingViewToolbar: View {
     @EnvironmentObject var upcomingViewModel: VideoViewModel
     
     var body: some View {
-        
-        
         Menu {
             Section {
-                Button {
-                    isShowingAbsoluteTime.toggle()
-                    UserDefaults.standard.set(isShowingAbsoluteTime, forKey: UserDefaultKeys.isShowingAbsoluteTimeInUpcomingView)
-                } label: {
-                    Label(isShowingAbsoluteTime ? "LIVE_VIEW_TOOLBAR_SHOW_RELATIVE" : "LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE", systemImage: "clock")
-                }
+                Toggle(isOn: $isShowingAbsoluteTime, label: {
+                    Label("LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE", systemImage: "clock")
+                })
+                
+                Toggle(isOn: $isShowingOnlyFavourites, label: {
+                    Label("LIVE_VIEW_TOOLBAR_FAVOURITES_ONLY", systemImage: "star")
+                })
                 
                 if UIDevice.current.userInterfaceIdiom == .phone {
                     Button {
-                        isShowingCompactInUpcomingView.toggle()
-                        UserDefaults.standard.set(isShowingCompactInUpcomingView, forKey: UserDefaultKeys.isShowingCompactInUpcomingView)
+                        isShowingCompact.toggle()
+                        UserDefaults.standard.set(isShowingCompact, forKey: UserDefaultKeys.isShowingCompactInUpcomingView)
                     } label: {
-                        Label(isShowingCompactInUpcomingView ? "LIVE_VIEW_TOOLBAR_SHOW_CARD" : "LIVE_VIEW_TOOLBAR_SHOW_COMPACT", systemImage: isShowingCompactInUpcomingView ? "rectangle.grid.1x2" : "list.bullet")
+                        Label(isShowingCompact ? "LIVE_VIEW_TOOLBAR_SHOW_CARD" : "LIVE_VIEW_TOOLBAR_SHOW_COMPACT", systemImage: isShowingCompact ? "rectangle.grid.1x2" : "list.bullet")
                     }
                 }
             }
             
             Menu {
+                Picker("Order", selection: $sortingStrategy) {
+                    Label("LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION", systemImage: "person.fill").tag(SortingStrategy.notSorting)
+                }
+                
                 Menu {
                     Picker("Order", selection: $sortingStrategy) {
                         Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST", systemImage: "arrow.down").tag(SortingStrategy.timeAsc)

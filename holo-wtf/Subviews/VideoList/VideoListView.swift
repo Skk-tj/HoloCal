@@ -7,11 +7,20 @@
 
 import SwiftUI
 
+enum presentationMode {
+    case normal
+    case searching
+    case sorting
+    case favouritesOnly
+}
+
+
 /// The view that represents a general list of videos.
 struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
     @AppStorage(UserDefaultKeys.isShowingDSTReminder) var isShowingDSTReminder = false
+    @AppStorage(UserDefaultKeys.isShowingOnlyFavouritesInLiveView) var isShowingOnlyFavouritesInLiveView: Bool = false
     
     @EnvironmentObject var viewModel: VideoViewModel
     
@@ -25,7 +34,19 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     @ViewBuilder let dataStatusView: () -> DataStatusContent
     
     var body: some View {
-        List {
+        var currentPresentationMode: presentationMode = .normal
+        
+        if !searchText.isEmpty {
+            currentPresentationMode = .searching
+        } else if isShowingOnlyFavouritesInLiveView {
+            currentPresentationMode = .favouritesOnly
+        } else if sortingStrategy != .notSorting {
+            currentPresentationMode = .sorting
+        }
+        
+        let isThereFavouriteToShow = viewModel.videoList.filter { video in favourited.contains(where: { video.channel.id == $0 })}.count != 0 && viewModel.dataStatus == .success
+        
+        return List {
             if let nextDSTTransition = TimeZone.current.nextDaylightSavingTimeTransition {
                 if let days = Calendar.current.dateComponents([.day], from: Date(), to: nextDSTTransition).day {
                     if isShowingDSTReminder {
@@ -35,8 +56,9 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
                 }
             }
             
-            if searchText.isEmpty {
-                if viewModel.videoList.filter { video in favourited.contains(where: { video.channel.id == $0 })}.count != 0 && viewModel.dataStatus == .success {
+            switch currentPresentationMode {
+            case .normal:
+                if isThereFavouriteToShow {
                     Section(header: Text("LIVE_VIEW_FAVOURITE_SECTION_TITLE")) {
                         FavouritedForEachView(cellView: { live in
                             singleVideoView(live)
@@ -45,28 +67,34 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
                     .headerProminence(.increased)
                 }
                 
-                if sortingStrategy != .notSorting {
-                    NotFavouritedForEachView(cellView: { live in
-                        singleVideoView(live)
-                    })
-                } else {
-                    SectionedNotFavouritedForEachView(cellView: { live in
-                        singleVideoView(live)
-                    })
-                }
-                
-                Section {
-                    HStack {
-                        Spacer()
-                        dataStatusView()
-                        Spacer()
-                    }
-                }
-            } else {
+                SectionedNotFavouritedForEachView(cellView: { live in
+                    singleVideoView(live)
+                })
+            case .searching:
                 SearchSectionView(searchText: searchText, cellView: { live in
                     singleVideoView(live)
                 })
+            case .sorting:
+                NotFavouritedForEachView(cellView: { live in
+                    singleVideoView(live)
+                })
+            case .favouritesOnly:
+                if isThereFavouriteToShow {
+                    Section(header: Text("LIVE_VIEW_FAVOURITE_SECTION_TITLE")) {
+                        FavouritedForEachView(cellView: { live in
+                            singleVideoView(live)
+                        })
+                    }
+                    .headerProminence(.increased)
+                }
             }
+            
+            HStack {
+                Spacer()
+                dataStatusView()
+                Spacer()
+            }
+            .listRowSeparator(.hidden)
         }
         .searchable(text: $searchText, prompt: "SEARCH_BY_NAME_OR_TAG") {
             if searchText.isEmpty {
