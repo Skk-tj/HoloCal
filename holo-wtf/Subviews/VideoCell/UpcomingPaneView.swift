@@ -22,6 +22,7 @@ struct UpcomingPaneView: View {
                 VideoThumbnailView(ytVideoKey: upcoming.id)
                 
                 VStack(alignment: .leading) {
+                    // Force the title to be two lines
                     if UIDevice.current.userInterfaceIdiom == .pad {
                         Text(upcoming.escapedTitle + "\n")
                             .font(.headline)
@@ -73,7 +74,7 @@ struct UpcomingPaneView: View {
             }
             .padding(.bottom)
             .background(.thickMaterial)
-            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .clipShape(RoundedRectangle(cornerRadius: 10))
             
             HStack {
                 TopicTagView(topicId: upcoming.topicId)
