@@ -23,6 +23,7 @@ struct LivePaneView: View {
                 VideoThumbnailView(ytVideoKey: live.id)
                 
                 VStack(alignment: .leading) {
+                    // Force the title to be two lines
                     if UIDevice.current.userInterfaceIdiom == .pad {
                         Text(live.escapedTitle + "\n")
                             .font(.headline)
@@ -84,7 +85,7 @@ struct LivePaneView: View {
             }
             .padding(.bottom)
             .background(.thickMaterial)
-            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .clipShape(RoundedRectangle(cornerRadius: 10))
             
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {

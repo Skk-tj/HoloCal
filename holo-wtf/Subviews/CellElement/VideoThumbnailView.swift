@@ -15,7 +15,7 @@ struct VideoThumbnailView: View {
             AsyncImage(url: URL(string: "https://i.ytimg.com/vi/\(ytVideoKey)/maxresdefault.jpg"), content: { image in
                 image
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(1.78, contentMode: .fit)
             }, placeholder: {
                 ProgressView()
                     .padding(.vertical)
