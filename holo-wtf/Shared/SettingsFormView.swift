@@ -57,7 +57,7 @@ struct SettingsFormView: View {
                     Text("SETTINGS_ABOUT_BUG_REPORT")
                 }
                 
-                Link(destination: URL(string: "https://forms.gle/GyQBCJXrG29anSED7")!) {
+                Link(destination: URL(string: "https://testflight.apple.com/join/uxxMYkU3")!) {
                     Text("SETTINGS_BETA_TESTING")
                 }
                 
