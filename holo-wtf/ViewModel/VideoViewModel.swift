@@ -53,9 +53,9 @@ class VideoViewModel: ObservableObject {
         do {
             let getResult = try await VideoFetchService.shared.getVideos(from: url)
             let getResultWithTwitter = try await getTwitterForAll(videoList: getResult)
-            let getResultWithSongs = try await getSongsForAll(videoList: getResultWithTwitter)
+            // let getResultWithSongs = try await getSongsForAll(videoList: getResultWithTwitter)
         
-            completion(getResultWithSongs)
+            completion(getResultWithTwitter)
             self.dataStatus = .success
         } catch {
             self.dataStatus = .fail
