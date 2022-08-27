@@ -25,7 +25,7 @@ struct LiveCollabAvatarView: View {
                 }
             }
         }
-        .padding(.trailing, -Double(mentions.count - 1) * (avatarRadius / 2))
+        .padding(.trailing, -Double(mentions.count > 3 ? 2 : mentions.count-1) * (avatarRadius / 2))
     }
 }
 
