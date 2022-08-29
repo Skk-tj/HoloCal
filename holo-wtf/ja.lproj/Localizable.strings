@@ -69,14 +69,14 @@
 
 // LiveView
 
-"LIVE_VIEW_TITLE" = "ライブ配信中";
+"LIVE_VIEW_TITLE" = "Live";
 "LIVE_VIEW_CURRENT_COUNT %lld" = "%lld人がライブ配信中";
 "LIVE_VIEW_CURRENT_COUNT %lld %lld" = "%lld人がライブ配信中（%lld人表示されていない）";
 "LIVE_VIEW_FAVOURITE_SECTION_TITLE" = "お気に入り";
 
 // UpcomingView
 
-"UPCOMING_VIEW_TITLE" = "ライブ配信の予定";
+"UPCOMING_VIEW_TITLE" = "Upcoming";
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld" = "%2$lld時間内に%1$lld人が配信予定";
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld %lld" = "%2$lld時間内に%1$lld人が配信予定（%3$lld人表示されていない）";
 
