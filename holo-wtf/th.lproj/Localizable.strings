@@ -69,14 +69,14 @@
 
 // LiveView
 
-"LIVE_VIEW_TITLE" = "กำลังไลฟ์";
+"LIVE_VIEW_TITLE" = "Live";
 "LIVE_VIEW_CURRENT_COUNT %lld" = "%lld คนกำลังไลฟ์";
 "LIVE_VIEW_CURRENT_COUNT %lld %lld" = "%lld Currently Live (%lld excluded)";
 "LIVE_VIEW_FAVOURITE_SECTION_TITLE" = "รายการโปรด";
 
 // UpcomingView
 
-"UPCOMING_VIEW_TITLE" = "Upcoming Streams";
+"UPCOMING_VIEW_TITLE" = "Upcoming";
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld" = "%lld Upcoming Streams in %lld hours";
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld %lld" = "%lld Upcoming Streams in %lld hours (%lld excluded)";
 
