@@ -34,6 +34,10 @@ struct SongInStream: Codable, Identifiable, Hashable {
         SongInStream(id: UUID(uuidString: "3c812748-3595-4b82-8310-0e397e8cb517")!, start: 823, end: 223, name: "king", originalArtist: "kanaria", itunesid: 1580886351)
     ]
     
+    func updateSongWithMusicKit() async -> SongInStream {
+        return SongInStream(id: self.id, start: self.start, end: self.end, name: self.name, originalArtist: self.originalArtist, itunesid: self.itunesid, MKsong: try? await self.getSongInfo())
+    }
+    
     func getSongInfo() async throws -> Song {
         let authorizationStatus = await MusicAuthorization.request()
         
@@ -95,6 +99,7 @@ struct SongInStream: Codable, Identifiable, Hashable {
                         self.MKsong = nil
                         return
                     }
+                    
                     self.MKsong = firstSong
                 } else {
                     throw SongRequestError.notFound
