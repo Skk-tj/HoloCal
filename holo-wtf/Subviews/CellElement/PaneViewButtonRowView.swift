@@ -53,7 +53,7 @@ struct PaneViewButtonRowView: View {
             if let songs = video.songs {
                 Spacer()
                 
-                NavigationLink(destination: SongListView(videoURL: video.url!, songs: songs)) {
+                NavigationLink(destination: SongListView(videoURL: video.url!).environmentObject(SongsViewModel(songsRaw: songs))) {
                     Label("List of Songs", systemImage: "music.note.list")
                         .labelStyle(.iconOnly)
                 }

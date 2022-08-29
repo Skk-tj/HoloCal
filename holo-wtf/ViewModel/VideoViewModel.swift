@@ -53,7 +53,6 @@ class VideoViewModel: ObservableObject {
         do {
             let getResult = try await VideoFetchService.shared.getVideos(from: url)
             let getResultWithTwitter = try await getTwitterForAll(videoList: getResult)
-            // let getResultWithSongs = try await getSongsForAll(videoList: getResultWithTwitter)
         
             completion(getResultWithTwitter)
             self.dataStatus = .success
@@ -68,18 +67,6 @@ class VideoViewModel: ObservableObject {
     
     private func updatedWithTwitter(video: LiveVideo) async -> LiveVideo {
         return LiveVideo(id: video.id, title: video.title, topicId: video.topicId, startScheduled: video.startScheduled, startActual: video.startActual, liveViewers: video.liveViewers, mentions: video.mentions, songs: video.songs, channel: await self.updatedWithTwitter(channel: video.channel))
-    }
-    
-    private func updateSongWithMusicKit(song: SongInStream) async -> SongInStream {
-        return SongInStream(id: song.id, start: song.start, end: song.end, name: song.name, originalArtist: song.originalArtist, itunesid: song.itunesid, MKsong: try? await song.getSongInfo())
-    }
-    
-    private func updateVideoWithMusicKit(video: LiveVideo) async -> LiveVideo {
-        if let songs = video.songs {
-            return LiveVideo(id: video.id, title: video.title, topicId: video.topicId, startScheduled: video.startScheduled, startActual: video.startActual, liveViewers: video.liveViewers, mentions: video.mentions, songs: try? await getSongsForOneVideo(songList: songs), channel: video.channel)
-        } else {
-            return video
-        }
     }
     
     func getTwitterForAll(videoList: [LiveVideo]) async throws -> [LiveVideo] {        
@@ -99,47 +86,6 @@ class VideoViewModel: ObservableObject {
             
             return newVideos
         }
-    }
-    
-    private func getSongsForOneVideo(songList: [SongInStream]) async throws -> [SongInStream] {
-        var newSongs: [SongInStream] = []
-        newSongs.reserveCapacity(songList.count)
-        
-        try await withThrowingTaskGroup(of: SongInStream.self) { group in
-            songList.forEach { song in
-                group.addTask {
-                    return await self.updateSongWithMusicKit(song: song)
-                }
-            }
-            
-            for try await song in group {
-                newSongs.append(song)
-            }
-        }
-        
-        // sort the songs by starting time
-        newSongs.sort { $0.start < $1.start }
-        
-        return newSongs
-    }
-    
-    func getSongsForAll(videoList: [LiveVideo]) async throws -> [LiveVideo] {
-        var newVideos: [LiveVideo] = []
-        newVideos.reserveCapacity(videoList.count)
-        
-        try await withThrowingTaskGroup(of: LiveVideo.self) { group in
-            videoList.forEach { video in
-                group.addTask {
-                    await self.updateVideoWithMusicKit(video: video)
-                }
-            }
-
-            for try await video in group {
-                newVideos.append(video)
-            }
-        }
-        
-        return newVideos
     }
     
     func getSearchSuggestions() -> [SearchSuggestion] {

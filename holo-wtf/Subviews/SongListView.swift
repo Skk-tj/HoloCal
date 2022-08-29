@@ -8,36 +8,21 @@
 import SwiftUI
 import MusicKit
 
-enum SongDataStatus {
-    case working
-    case done
-}
-
 struct SongListView: View {
     let videoURL: URL
     
-    @State var songs: [SongInStream]
-    
-    @State var songDataStatus: SongDataStatus = .working
+    @EnvironmentObject var songsViewModel: SongsViewModel
     
     var body: some View {
-        switch songDataStatus {
+        switch songsViewModel.songDataStatus {
         case .working:
             ProgressView()
                 .navigationTitle("SONG_LIST_VIEW_NAVIGATION_TITLE")
                 .task {
-                    await withThrowingTaskGroup(of: Void.self) { group in
-                        for i in songs.indices {
-                            group.addTask {
-                                try await songs[i].writeMKSongInfo()
-                            }
-                        }
-                    }
-                    
-                    songDataStatus = .done
+                    await songsViewModel.updateAllSongsWithMusicKit()
                 }
-        case .done:
-            List(songs.indexed(), id: \.element) { i, song in
+        case .finished:
+            List(songsViewModel.songsProcessed.indexed(), id: \.element) { i, song in
                 SingleSongView(count: i + 1, videoURL: videoURL, song: song)
             }
             .navigationTitle("SONG_LIST_VIEW_NAVIGATION_TITLE")
@@ -47,6 +32,7 @@ struct SongListView: View {
 
 struct SongListView_Previews: PreviewProvider {
     static var previews: some View {
-        SongListView(videoURL: URL(string: "https://youtu.be/b1ChFwNTvMo")!, songs: SongInStream.exampleSongs)
+        SongListView(videoURL: URL(string: "https://www.youtube.com/watch?v=0ntqQpqO0J4")!)
+            .environmentObject(SongsViewModel(songsRaw: SongInStream.exampleSongs))
     }
 }
