@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct iPadSidebarView: View {    
+struct iPadSidebarView: View {
     var body: some View {
         List {
             NavigationLink(destination: LiveiPadView()) {

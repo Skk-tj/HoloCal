@@ -13,6 +13,10 @@ struct SmallLiveWidgetEntryView: View {
     var body: some View {
         VStack {
             HStack {
+                Image(systemName: "person.wave.2.fill")
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
+                
                 Text("LIVE_WIDGET_TITLE")
                     .font(.footnote)
                     .foregroundColor(.secondary)
