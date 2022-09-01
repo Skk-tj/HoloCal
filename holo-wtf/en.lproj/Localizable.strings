@@ -121,10 +121,10 @@
 "NETWORK_ERROR" = "Network error";
 
 // LiveWidget
-"LIVE_WIDGET_TITLE" = "**CURRENTLY LIVE**";
+"LIVE_WIDGET_TITLE" = "**LIVE**";
 
 // Widget system text
-"CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "Currently Live";
+"CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "Live";
 "CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "Show a current stream.";
 
 "MULTIPLE_CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "Multiple Current Live";
