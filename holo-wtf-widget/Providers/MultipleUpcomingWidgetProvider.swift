@@ -1,6 +1,6 @@
 //
-//  MultipleLiveWidgetProvider.swift
-//  holo-wtf
+//  MultipleUpcomingWidgetProvider.swift
+//  holo-wtf-widgetExtension
 //
 //
 //
@@ -8,10 +8,10 @@
 import WidgetKit
 import Intents
 
-struct MultipleLiveWidgetProvider: IntentTimelineProvider {
+struct MultipleUpcomingWidgetProvider: IntentTimelineProvider {
     typealias Entry = MultipleVideoWidgetEntry
     
-    let url: String = "https://holodex.net/api/v2/live?org=Hololive&status=live&type=stream"
+    let url: String = "https://holodex.net/api/v2/live?org=Hololive&status=upcoming&type=stream"
     
     func placeholder(in context: Context) -> Entry {
         let channel: Channel = .init(id: "UCp6993wxpyDPHUpavwDFqgg", name: "Tokino Sora", photo: nil, org: "Hololive")
@@ -25,7 +25,7 @@ struct MultipleLiveWidgetProvider: IntentTimelineProvider {
         Task {
             do {
                 var lives = try await VideoFetchService.shared.getVideos(from: url)
-                lives.sort(by: {$0.startActual ?? Date.distantFuture > $1.startActual ?? Date.distantFuture})
+                lives.sort(by: {$0.startActual ?? Date.distantFuture < $1.startActual ?? Date.distantFuture})
                 lives = lives.filter { video in
                     video.channel.org == "Hololive"
                 }
@@ -61,7 +61,7 @@ struct MultipleLiveWidgetProvider: IntentTimelineProvider {
         Task {
             do {
                 var lives = try await VideoFetchService.shared.getVideos(from: url)
-                lives.sort(by: {$0.startActual ?? Date.distantFuture > $1.startActual ?? Date.distantFuture})
+                lives.sort(by: {$0.startActual ?? Date.distantFuture < $1.startActual ?? Date.distantFuture})
                 lives = lives.filter { video in
                     video.channel.org == "Hololive"
                 }

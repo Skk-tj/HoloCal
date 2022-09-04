@@ -8,52 +8,31 @@
 import SwiftUI
 import WidgetKit
 
-struct BaseVideoEntryView<Content: View, Entry: VideoTimelineEntry>: View {
+struct BaseVideoEntryView<MainContent: View, TitleContent: View, Entry: VideoTimelineEntry>: View {
     var entry: Entry
-    var titleText: String
-    var noVideoErrorText: String
-    var networkErrorText: String
     
-    @ViewBuilder let mainView: () -> Content
+    @ViewBuilder let mainView: () -> MainContent
+    @ViewBuilder let titleView: () -> TitleContent
     
     @ViewBuilder
     var body: some View {
-        switch entry.status {
-        case .ok:
-            mainView()
-        case .noVideo:
-            VStack {
-                HStack {
-                    Text(titleText)
-                        .font(.footnote)
-                        .foregroundColor(.secondary)
-                        .padding(.leading)
-                        .padding(.top)
-                    Spacer()
-                }
+        VStack {
+            titleView()
+            
+            switch entry.status {
+            case .ok:
+                mainView()
+            case .noVideo:
                 Spacer()
-                
-                Text(noVideoErrorText)
-                
+                Text("NO_ONE_IS_STREAMING")
                 Spacer()
-            }
-        case .network:
-            VStack {
-                HStack {
-                    Text(titleText)
-                        .font(.footnote)
-                        .foregroundColor(.secondary)
-                        .padding(.leading)
-                        .padding(.top)
-                    Spacer()
-                }
+            case .network:
                 Spacer()
-                
-                Text(networkErrorText)
-                
+                Text("NETWORK_ERROR")
                 Spacer()
             }
         }
+        .padding()
     }
 }
 

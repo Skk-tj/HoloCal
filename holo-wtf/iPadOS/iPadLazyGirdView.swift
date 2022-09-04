@@ -20,7 +20,7 @@ struct iPadLazyGirdView<VideoContent: View, CountContent: View>: View {
     @ViewBuilder let countView: () -> CountContent
     
     let layout = [
-        GridItem(.adaptive(minimum: 300, maximum: 310), spacing: 10)
+        GridItem(.adaptive(minimum: 300), spacing: 10)
     ]
     
     var body: some View {

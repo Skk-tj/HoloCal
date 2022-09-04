@@ -79,8 +79,6 @@ struct MultipleLiveWidgetView: View {
                 
             }
         }
-        .padding(.horizontal)
-        .padding(.bottom)
     }
 }
 

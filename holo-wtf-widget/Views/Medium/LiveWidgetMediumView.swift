@@ -38,8 +38,6 @@ struct LiveWidgetMediumView: View {
                 
             }
         }
-        .padding(.horizontal)
-        .padding(.bottom)
     }
 }
 

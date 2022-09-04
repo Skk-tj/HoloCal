@@ -47,3 +47,41 @@ struct MultipleLiveWidget: Widget {
     }
 }
 
+struct SmallUpcomingWidget: Widget {
+    let kind: String = "SmallUpcomingWidget"
+    
+    var body: some WidgetConfiguration {
+        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: UpcomingWidgetProvider()) { entry in
+            SmallUpcomingWidgetEntryView(entry: entry)
+        }
+        .configurationDisplayName("UPCOMING_WIDGET_DISPLAY_NAME")
+        .description("UPCOMING_WIDGET_DESCRIPTION")
+        .supportedFamilies([.systemSmall])
+    }
+}
+
+struct UpcomingPaneWidget: Widget {
+    let kind: String = "UpcomingPaneWidget"
+    
+    var body: some WidgetConfiguration {
+        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: UpcomingWidgetProvider()) { entry in
+            UpcomingPaneWidgetEntryView(entry: entry)
+        }
+        .configurationDisplayName("UPCOMING_WIDGET_DISPLAY_NAME")
+        .description("UPCOMING_WIDGET_DESCRIPTION")
+        .supportedFamilies([.systemLarge])
+    }
+}
+
+struct MultipleUpcomingWidget: Widget {
+    let kind: String = "MultipleUpcomingWidget"
+    
+    var body: some WidgetConfiguration {
+        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: MultipleUpcomingWidgetProvider()) { entry in
+            MultipleUpcomingWidgetEntryView(entry: entry)
+        }
+        .configurationDisplayName("MULTIPLE_UPCOMING_WIDGET_DISPLAY_NAME")
+        .description("MULTIPLE_UPCOMING_WIDGET_DESCRIPTION")
+        .supportedFamilies([.systemMedium])
+    }
+}

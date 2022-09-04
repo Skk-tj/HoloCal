@@ -20,8 +20,6 @@ struct LiveWidgetView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(10)
-                    .padding(.leading)
-                    .padding(.trailing)
             }
             
             VStack(alignment: .leading) {
@@ -69,8 +67,6 @@ struct LiveWidgetView: View {
                         .multilineTextAlignment(.trailing)
                 }
             }
-            .padding(.horizontal)
-            .padding(.bottom)
         }
     }
 }
