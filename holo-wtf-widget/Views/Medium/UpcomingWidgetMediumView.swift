@@ -1,14 +1,14 @@
 //
-//  LiveWidgetMediumView.swift
+//  UpcomingWidgetMediumView.swift
 //  holo-wtf-widgetExtension
 //
-//  Created by Haoyi An on 2022-07-10.
+//  Created by Haoyi An on 2022-09-02.
 //
 
 import SwiftUI
 import WidgetKit
 
-struct LiveWidgetMediumView: View {
+struct UpcomingWidgetMediumView: View {
     let video: LiveVideo
     let videoThumbnail: Data
     
@@ -32,20 +32,25 @@ struct LiveWidgetMediumView: View {
                     .foregroundColor(.secondary)
                     .font(.caption2)
                 
-                Text("\(Image(systemName: "eye")) \(video.liveViewers)")
-                    .foregroundColor(.secondary)
-                    .font(.caption2)
-                
+                if let schedule = video.startScheduled {
+                    if let futureTimeString = getTimeIntervalStringFromReferenceDate(reference: schedule) {
+                        Text(futureTimeString)
+                            .foregroundColor(.secondary)
+                            .font(.caption2)
+                    }
+                } else {
+                    Text("UPCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN")
+                        .foregroundColor(.secondary)
+                        .font(.caption2)
+                }
             }
         }
-        .padding(.horizontal)
-        .padding(.bottom)
     }
 }
 
-struct LiveWidgetMediumView_Previews: PreviewProvider {
+struct UpcomingWidgetMediumView_Previews: PreviewProvider {
     static var previews: some View {
-        LiveWidgetMediumView(video: LiveVideo.previewLive, videoThumbnail: Data())
+        UpcomingWidgetMediumView(video: LiveVideo.previewLive, videoThumbnail: Data())
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

@@ -79,6 +79,13 @@
 		F09D25E52802EA09001A7D71 /* SwipableLinkedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25E42802EA09001A7D71 /* SwipableLinkedCellView.swift */; };
 		F09D25F328041CC3001A7D71 /* iPadSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25F228041CC3001A7D71 /* iPadSidebarView.swift */; };
 		F0A5B7BC282112FF004E319F /* ManageGenerationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A5B7BB282112FF004E319F /* ManageGenerationView.swift */; };
+		F0B2AF0928C13C7600635CAD /* SmallUpcomingWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0828C13C7600635CAD /* SmallUpcomingWidgetView.swift */; };
+		F0B2AF0A28C13D0F00635CAD /* UpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */; };
+		F0B2AF0C28C1A82400635CAD /* MultipleVideoWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0B28C1A82400635CAD /* MultipleVideoWidgetEntry.swift */; };
+		F0B2AF0E28C2940200635CAD /* UpcomingWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0D28C2940200635CAD /* UpcomingWidgetView.swift */; };
+		F0B2AF1028C2DEF100635CAD /* MultipleUpcomingWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0F28C2DEF100635CAD /* MultipleUpcomingWidgetProvider.swift */; };
+		F0B2AF1228C2E28700635CAD /* MultipleUpcomingWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF1128C2E28700635CAD /* MultipleUpcomingWidgetView.swift */; };
+		F0B2AF1728C2E4C300635CAD /* UpcomingWidgetMediumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF1628C2E4C300635CAD /* UpcomingWidgetMediumView.swift */; };
 		F0B71FCE283CAD0700DC4260 /* MultipleLiveWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B71FCC283CACA000DC4260 /* MultipleLiveWidgetProvider.swift */; };
 		F0B71FCF283E08C300DC4260 /* MultipleLiveWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D1B40283A3AE70026340D /* MultipleLiveWidgetView.swift */; };
 		F0B8E1CD27E90EBA00DC7CF9 /* HTMLString in Frameworks */ = {isa = PBXBuildFile; productRef = F0B8E1CC27E90EBA00DC7CF9 /* HTMLString */; };
@@ -209,6 +216,12 @@
 		F09D25E42802EA09001A7D71 /* SwipableLinkedCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipableLinkedCellView.swift; sourceTree = "<group>"; };
 		F09D25F228041CC3001A7D71 /* iPadSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadSidebarView.swift; sourceTree = "<group>"; };
 		F0A5B7BB282112FF004E319F /* ManageGenerationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageGenerationView.swift; sourceTree = "<group>"; };
+		F0B2AF0828C13C7600635CAD /* SmallUpcomingWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallUpcomingWidgetView.swift; sourceTree = "<group>"; };
+		F0B2AF0B28C1A82400635CAD /* MultipleVideoWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleVideoWidgetEntry.swift; sourceTree = "<group>"; };
+		F0B2AF0D28C2940200635CAD /* UpcomingWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingWidgetView.swift; sourceTree = "<group>"; };
+		F0B2AF0F28C2DEF100635CAD /* MultipleUpcomingWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleUpcomingWidgetProvider.swift; sourceTree = "<group>"; };
+		F0B2AF1128C2E28700635CAD /* MultipleUpcomingWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleUpcomingWidgetView.swift; sourceTree = "<group>"; };
+		F0B2AF1628C2E4C300635CAD /* UpcomingWidgetMediumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingWidgetMediumView.swift; sourceTree = "<group>"; };
 		F0B71FCC283CACA000DC4260 /* MultipleLiveWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleLiveWidgetProvider.swift; sourceTree = "<group>"; };
 		F0BD611A27EC594300A2FBED /* UpcomingPaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingPaneView.swift; sourceTree = "<group>"; };
 		F0C15F3D284F25F6005672CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/holo_wtf_widget.intentdefinition; sourceTree = "<group>"; };
@@ -281,10 +294,8 @@
 		F02830832853DB8500CBFCE7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F047F0852851C74500B2E2B9 /* SmallLiveWidgetView.swift */,
-				F093D1E3283034AF00E2A6FF /* LiveWidgetView.swift */,
-				F04D1B40283A3AE70026340D /* MultipleLiveWidgetView.swift */,
-				F0E219C2287AB47D0080697F /* LiveWidgetMediumView.swift */,
+				F0B2AF1328C2E48C00635CAD /* Small */,
+				F0B2AF1428C2E49700635CAD /* Medium */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -295,7 +306,9 @@
 				F04D1B3C283A300E0026340D /* LiveWidgetProvider.swift */,
 				F0B71FCC283CACA000DC4260 /* MultipleLiveWidgetProvider.swift */,
 				F028308528545ACF00CBFCE7 /* UpcomingWidgetProvider.swift */,
+				F0B2AF0F28C2DEF100635CAD /* MultipleUpcomingWidgetProvider.swift */,
 				F028308728545B1200CBFCE7 /* SingleVideoWidgetEntry.swift */,
+				F0B2AF0B28C1A82400635CAD /* MultipleVideoWidgetEntry.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -369,6 +382,7 @@
 			children = (
 				F02830842853DB9200CBFCE7 /* Providers */,
 				F02830832853DB8500CBFCE7 /* Views */,
+				F0B2AF1528C2E4AF00635CAD /* Large */,
 				F093D1C3282C32D000E2A6FF /* holo_wtf_widget.swift */,
 				F0C15F3E284F25F6005672CF /* holo_wtf_widget.intentdefinition */,
 				F093D1C6282C32D100E2A6FF /* Assets.xcassets */,
@@ -435,6 +449,35 @@
 				F093D1E62830358400E2A6FF /* ViewUtil.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		F0B2AF1328C2E48C00635CAD /* Small */ = {
+			isa = PBXGroup;
+			children = (
+				F047F0852851C74500B2E2B9 /* SmallLiveWidgetView.swift */,
+				F0B2AF0828C13C7600635CAD /* SmallUpcomingWidgetView.swift */,
+			);
+			path = Small;
+			sourceTree = "<group>";
+		};
+		F0B2AF1428C2E49700635CAD /* Medium */ = {
+			isa = PBXGroup;
+			children = (
+				F04D1B40283A3AE70026340D /* MultipleLiveWidgetView.swift */,
+				F0B2AF1128C2E28700635CAD /* MultipleUpcomingWidgetView.swift */,
+				F0E219C2287AB47D0080697F /* LiveWidgetMediumView.swift */,
+				F0B2AF1628C2E4C300635CAD /* UpcomingWidgetMediumView.swift */,
+			);
+			path = Medium;
+			sourceTree = "<group>";
+		};
+		F0B2AF1528C2E4AF00635CAD /* Large */ = {
+			isa = PBXGroup;
+			children = (
+				F093D1E3283034AF00E2A6FF /* LiveWidgetView.swift */,
+				F0B2AF0D28C2940200635CAD /* UpcomingWidgetView.swift */,
+			);
+			path = Large;
 			sourceTree = "<group>";
 		};
 		F0C657AE2771F47C004AF802 = {
@@ -700,19 +743,26 @@
 				F093D1D3282FA08700E2A6FF /* LiveVideo.swift in Sources */,
 				F093D1E5283034DA00E2A6FF /* Talents.swift in Sources */,
 				F093D1C4282C32D000E2A6FF /* holo_wtf_widget.swift in Sources */,
+				F0B2AF0A28C13D0F00635CAD /* UpcomingTimeView.swift in Sources */,
 				F0E219C3287AB47D0080697F /* LiveWidgetMediumView.swift in Sources */,
 				F047F0862851C74500B2E2B9 /* SmallLiveWidgetView.swift in Sources */,
+				F0B2AF1228C2E28700635CAD /* MultipleUpcomingWidgetView.swift in Sources */,
 				F093D1D6282FA0A600E2A6FF /* VideoThumbnailView.swift in Sources */,
+				F0B2AF0928C13C7600635CAD /* SmallUpcomingWidgetView.swift in Sources */,
 				F0B71FCF283E08C300DC4260 /* MultipleLiveWidgetView.swift in Sources */,
 				F05DFA362853CA7800D62D19 /* BaseVideoEntryView.swift in Sources */,
+				F0B2AF0C28C1A82400635CAD /* MultipleVideoWidgetEntry.swift in Sources */,
 				F093D1DB282FA0C000E2A6FF /* VideoViewModel.swift in Sources */,
 				F093D1E82830359900E2A6FF /* Util.swift in Sources */,
 				F004E8C7285D013300ABDFED /* SongInStream.swift in Sources */,
 				F093D1E0282FAA0500E2A6FF /* TopicTagView.swift in Sources */,
 				F028308828545B1200CBFCE7 /* SingleVideoWidgetEntry.swift in Sources */,
+				F0B2AF0E28C2940200635CAD /* UpcomingWidgetView.swift in Sources */,
 				F093D1ED2830372900E2A6FF /* LiveWidgetView.swift in Sources */,
 				F02830802853DB0E00CBFCE7 /* Widgets.swift in Sources */,
+				F0B2AF1728C2E4C300635CAD /* UpcomingWidgetMediumView.swift in Sources */,
 				F093D1DF282FA5FE00E2A6FF /* VideoFetchService.swift in Sources */,
+				F0B2AF1028C2DEF100635CAD /* MultipleUpcomingWidgetProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -868,7 +918,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 91;
+				CURRENT_PROJECT_VERSION = 94;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "holo-wtf-widget/Info.plist";
@@ -880,7 +930,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.7.5;
+				MARKETING_VERSION = 1.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.holo-wtf-widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -896,7 +946,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 91;
+				CURRENT_PROJECT_VERSION = 94;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "holo-wtf-widget/Info.plist";
@@ -908,7 +958,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.7.5;
+				MARKETING_VERSION = 1.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.holo-wtf-widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1045,7 +1095,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 91;
+				CURRENT_PROJECT_VERSION = 94;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -1064,7 +1114,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7.5;
+				MARKETING_VERSION = 1.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf";
 				PRODUCT_NAME = HoloCal;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1080,7 +1130,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 91;
+				CURRENT_PROJECT_VERSION = 94;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -1099,7 +1149,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7.5;
+				MARKETING_VERSION = 1.8;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf";
 				PRODUCT_NAME = HoloCal;
 				SWIFT_EMIT_LOC_STRINGS = YES;
