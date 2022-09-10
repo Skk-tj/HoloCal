@@ -10,12 +10,12 @@ import SwiftUI
 struct CompactListView<CellContent: View, DataStatusContent: View>: View {    
     @EnvironmentObject var viewModel: VideoViewModel
     
-    @Binding var sortingStrategy: SortingStrategy
+    @Binding var currentPresentationMode: PresentationMode
     @ViewBuilder let cellView: (_ live: LiveVideo) -> CellContent
     @ViewBuilder let dataStatusView: () -> DataStatusContent
     
     var body: some View {
-        VideoListView(sortingStrategy: $sortingStrategy, singleVideoView: { live in
+        VideoListView(currentPresentationMode: $currentPresentationMode, singleVideoView: { live in
             SwipableLinkedCellView(video: live) {
                 cellView(live)
             }

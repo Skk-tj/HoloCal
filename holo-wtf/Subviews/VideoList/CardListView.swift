@@ -11,7 +11,7 @@ import SwiftUI
 struct CardListView<PaneContent: View, StatusContent: View>: View {    
     @EnvironmentObject var viewModel: VideoViewModel
     
-    @Binding var sortingStrategy: SortingStrategy
+    @Binding var currentPresentationMode: PresentationMode
     
     /// The view of a single element in the list.
     @ViewBuilder let paneView: (_ live: LiveVideo) -> PaneContent
@@ -20,7 +20,7 @@ struct CardListView<PaneContent: View, StatusContent: View>: View {
     @ViewBuilder let dataStatusView: () -> StatusContent
     
     var body: some View {
-        VideoListView(sortingStrategy: $sortingStrategy, singleVideoView: { live in
+        VideoListView(currentPresentationMode: $currentPresentationMode, singleVideoView: { live in
             SwipableLinkedCellView(video: live) {
                 paneView(live)
             }

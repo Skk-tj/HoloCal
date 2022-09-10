@@ -11,9 +11,10 @@ struct UpcomingViewToolbar: View {
     @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInUpcomingView) var isShowingAbsoluteTime: Bool = false
     @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingView) var isShowingCompact: Bool = false
     
+    @Binding var currentPresentationMode: PresentationMode
+    
     /// Defines the current sorting strategy.
-    /// - Note: `sortingStrategy` is of `@Binding` here because the parent views need to control it upon refresh of content.
-    @Binding var sortingStrategy: SortingStrategy
+    @State var sortingStrategy: SortingStrategy = .notSorting
     
     @EnvironmentObject var upcomingViewModel: VideoViewModel
     
@@ -54,6 +55,12 @@ struct UpcomingViewToolbar: View {
             Label("Display Settings", systemImage: "ellipsis")
         }
         .onChange(of: sortingStrategy, perform: { sortingSelection in
+            if sortingSelection == .notSorting {
+                currentPresentationMode = .normal
+            } else {
+                currentPresentationMode = .sorting
+            }
+            
             self.upcomingViewModel.sortVideos(by: sortingSelection)
         })
     }

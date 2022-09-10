@@ -13,7 +13,7 @@ struct UpcomingiPadView: View {
     @State var isShowingCollabSheet: Bool = false
     @State var collabChannels: [Channel] = [Channel.testChannel]
     
-    @State var sortingStrategy: SortingStrategy = .notSorting
+    @State var currentPresentationMode: PresentationMode = .normal
     
     init() {
         self._upcoming = StateObject(wrappedValue: UpcomingViewModel())
@@ -37,16 +37,16 @@ struct UpcomingiPadView: View {
             await upcoming.getUpcoming()
             
             // Reset sorting state, go back to section view
-            sortingStrategy = .notSorting
+            currentPresentationMode = .normal
         }
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {
-                UpcomingViewToolbar(sortingStrategy: $sortingStrategy)
+                UpcomingViewToolbar(currentPresentationMode: $currentPresentationMode)
                     .environmentObject(upcoming as VideoViewModel)
                 Button(action: {
                     Task {
                         await upcoming.getUpcoming()
-                        sortingStrategy = .notSorting
+                        currentPresentationMode = .normal
                     }
                 }, label: {
                     Label("Refresh", systemImage: "arrow.triangle.2.circlepath")

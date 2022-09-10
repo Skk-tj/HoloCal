@@ -46,7 +46,7 @@ struct iPadLazyGirdView<VideoContent: View, DataStatusView: View>: View {
                         singleVideoView(live)
                     })
                 } else {
-                    SearchForEachView(searchText: searchText, cellView: { live in
+                    SearchSectionView(searchText: searchText, cellView: { live in
                         LinkedVideoView(url: live.url) {
                             singleVideoView(live)
                         }
@@ -82,9 +82,3 @@ struct iPadLazyGirdView<VideoContent: View, DataStatusView: View>: View {
         }
     }
 }
-
-//struct iPadLazyGirdView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        iPadLazyGirdView()
-//    }
-//}

@@ -23,7 +23,7 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     @EnvironmentObject var viewModel: VideoViewModel
     
     @State var searchText: String = ""
-    @Binding var sortingStrategy: SortingStrategy
+    @Binding var currentPresentationMode: PresentationMode
     
     /// The view of a single video.
     @ViewBuilder let singleVideoView: (_ live: LiveVideo) -> VideoContent
@@ -32,13 +32,10 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     @ViewBuilder let dataStatusView: () -> DataStatusContent
     
     var body: some View {
-        // TODO: Presentation mode should not be derived like this, this should be a source of truth
-        var currentPresentationMode: PresentationMode = .normal
-        
         if !searchText.isEmpty {
             currentPresentationMode = .searching
-        } else if sortingStrategy != .notSorting {
-            currentPresentationMode = .sorting
+        } else {
+            currentPresentationMode = .normal
         }
         
         let isThereFavouriteToShow = viewModel.videoList.filter { video in favourited.contains(where: { video.channel.id == $0 })}.count != 0 && viewModel.dataStatus == .success
