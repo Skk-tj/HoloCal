@@ -10,7 +10,6 @@ import SwiftUI
 struct LiveViewToolbar: View {
     @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInLiveView) var isShowingAbsoluteTime: Bool = false
     @AppStorage(UserDefaultKeys.isShowingCompactInLiveView) var isShowingCompact: Bool = false
-    @AppStorage(UserDefaultKeys.isShowingOnlyFavouritesInLiveView) var isShowingOnlyFavourites: Bool = false
     
     /// Defines the current sorting strategy
     /// - Note: `sortingStrategy` is of `@Binding` here because the parent views need to control it upon refresh of content.
@@ -23,10 +22,6 @@ struct LiveViewToolbar: View {
             Section {
                 Toggle(isOn: $isShowingAbsoluteTime, label: {
                     Label("LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE", systemImage: "clock")
-                })
-                
-                Toggle(isOn: $isShowingOnlyFavourites, label: {
-                    Label("LIVE_VIEW_TOOLBAR_FAVOURITES_ONLY", systemImage: "star")
                 })
                 
                 if UIDevice.current.userInterfaceIdiom == .phone {

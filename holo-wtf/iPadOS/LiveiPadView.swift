@@ -27,8 +27,10 @@ struct LiveiPadView: View {
             .contextMenu {
                 VideoContextMenu(video: live)
             }
-        }, countView: {
-            LiveCountView()
+        }, dataStatusView: {
+            DataStatusIndicatorView(dataStatus: live.dataStatus) {
+                LiveCountView()
+            }
         })
         .environmentObject(live as VideoViewModel)
         .task {

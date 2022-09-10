@@ -27,8 +27,10 @@ struct UpcomingiPadView: View {
             .contextMenu {
                 VideoContextMenu(video: live)
             }
-        }, countView: {
-            UpcomingCountView()
+        }, dataStatusView: {
+            DataStatusIndicatorView(dataStatus: upcoming.dataStatus) {
+                UpcomingCountView()
+            }
         })
         .environmentObject(upcoming as VideoViewModel)
         .task {

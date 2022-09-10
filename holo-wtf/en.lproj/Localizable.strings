@@ -31,11 +31,12 @@
 "SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_CANCEL" = "Cancel";
 "SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_RESET" = "Reset";
 
-"SETTINGS_MANAGE_GENERATION" = "Manage Generations";
-"SETTINGS_MANAGE_GENERATION_VIEW_TITLE" = "Manage Generations";
+"SETTINGS_MANAGE_GENERATION" = "Manage Generation Order & Filter";
+"SETTINGS_MANAGE_GENERATION_VIEW_TITLE" = "Manage Generation";
+"SETTINGS_MANAGE_GENERATION_SECTION_FOOTER" = "You can deselect generations to exclude them from appearing in Live and Upcoming. \nIf you favourited a talent whose generation is excluded, they will still be shown. \nYou can also reorder the generations to alter the order they would be shown in both Live and Upcoming. ";
 
-"SETTINGS_MANAGE_GENERATION_RESET" = "Reset selection and order";
-"SETTINGS_MANAGE_GENERATION_RESET_ALERT_TEXT" = "Generation selection and order will be reset, are you sure?";
+"SETTINGS_MANAGE_GENERATION_RESET" = "Reset filter and order";
+"SETTINGS_MANAGE_GENERATION_RESET_ALERT_TEXT" = "Generation filter and order will be reset, are you sure?";
 "SETTINGS_MANAGE_GENERATION_RESET_ALERT_CANCEL" = "Cancel";
 "SETTINGS_MANAGE_GENERATION_RESET_ALERT_RESET" = "Reset";
 
