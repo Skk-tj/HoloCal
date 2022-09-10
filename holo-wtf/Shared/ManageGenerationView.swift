@@ -15,30 +15,34 @@ struct ManageGenerationView: View {
     
     var body: some View {
         List(selection: $generationSelected) {
-            ForEach(generationOrder, id: \.self) { generation in
-                HStack {
-                    VStack(alignment: .leading) {
-                        if Locale.current.languageCode == "ja" {
-                            Text("\(generationToName[generation]![.ja]!)")
-                            Text("\(generationToName[generation]![.en]!)")
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-                        } else {
-                            Text("\(generationToName[generation]![.en]!)")
-                            Text("\(generationToName[generation]![.ja]!)")
-                                .font(.caption)
+            Section(content: {
+                ForEach(generationOrder, id: \.self) { generation in
+                    HStack {
+                        VStack(alignment: .leading) {
+                            if Locale.current.languageCode == "ja" {
+                                Text("\(generationToName[generation]![.ja]!)")
+                                Text("\(generationToName[generation]![.en]!)")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            } else {
+                                Text("\(generationToName[generation]![.en]!)")
+                                Text("\(generationToName[generation]![.ja]!)")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                        if generationSelected.contains(generation) {
+                            Spacer()
+                            Image(systemName: "checkmark")
                                 .foregroundColor(.secondary)
                         }
                     }
-                    if generationSelected.contains(generation) {
-                        Spacer()
-                        Image(systemName: "checkmark")
-                            .foregroundColor(.secondary)
-                    }
+                    
                 }
-                
-            }
-            .onMove(perform: move)
+                .onMove(perform: move)
+            }, footer: {
+                Text("SETTINGS_MANAGE_GENERATION_SECTION_FOOTER")
+            })
             
             Section {
                 Button(role: .destructive, action: {

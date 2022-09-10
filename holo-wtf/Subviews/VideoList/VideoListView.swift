@@ -7,11 +7,10 @@
 
 import SwiftUI
 
-enum presentationMode {
+enum PresentationMode {
     case normal
     case searching
     case sorting
-    case favouritesOnly
 }
 
 
@@ -20,7 +19,6 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
     @AppStorage(UserDefaultKeys.isShowingDSTReminder) var isShowingDSTReminder = false
-    @AppStorage(UserDefaultKeys.isShowingOnlyFavouritesInLiveView) var isShowingOnlyFavouritesInLiveView: Bool = false
     
     @EnvironmentObject var viewModel: VideoViewModel
     
@@ -34,12 +32,11 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     @ViewBuilder let dataStatusView: () -> DataStatusContent
     
     var body: some View {
-        var currentPresentationMode: presentationMode = .normal
+        // TODO: Presentation mode should not be derived like this, this should be a source of truth
+        var currentPresentationMode: PresentationMode = .normal
         
         if !searchText.isEmpty {
             currentPresentationMode = .searching
-        } else if isShowingOnlyFavouritesInLiveView {
-            currentPresentationMode = .favouritesOnly
         } else if sortingStrategy != .notSorting {
             currentPresentationMode = .sorting
         }
@@ -78,15 +75,6 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
                 NotFavouritedForEachView(cellView: { live in
                     singleVideoView(live)
                 })
-            case .favouritesOnly:
-                if isThereFavouriteToShow {
-                    Section(header: Text("LIVE_VIEW_FAVOURITE_SECTION_TITLE")) {
-                        FavouritedForEachView(cellView: { live in
-                            singleVideoView(live)
-                        })
-                    }
-                    .headerProminence(.increased)
-                }
             }
             
             HStack {
@@ -114,9 +102,3 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
         }
     }
 }
-
-//struct VideoListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        VideoListView()
-//    }
-//}

@@ -33,6 +33,7 @@
 
 "SETTINGS_MANAGE_GENERATION" = "グループ別フィルター＆序次";
 "SETTINGS_MANAGE_GENERATION_VIEW_TITLE" = "グループ別フィルター";
+"SETTINGS_MANAGE_GENERATION_SECTION_FOOTER" = "グループを選択解除するで、「ライブ配信中」と「今後のライブ配信」に表示されないようにすることができます。\nグループが除外されているタレントをお気に入りに入れても、タレントを表示されます。 \nまた、世代を並び替えて、「ライブ配信中」と「今後のライブ配信」で表示される順番を変更することも可能です。 ";
 
 "SETTINGS_MANAGE_GENERATION_RESET" = "グループフィルターや序次をリセット";
 "SETTINGS_MANAGE_GENERATION_RESET_ALERT_TEXT" = "グループフィルターや序次をリセットします、よろしいですか？";

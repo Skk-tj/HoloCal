@@ -130,8 +130,6 @@ enum UserDefaultKeys {
     static let isShowingCompactInUpcomingView = "isShowingCompactInUpcomingView"
     static let isShowingDSTReminder = "isShowingDSTReminder"
     static let dstDays = "dstDays"
-    static let isShowingOnlyFavouritesInLiveView = "isShowingOnlyFavouritesInLiveView"
-    static let isShowingOnlyFavouritesInUpcomingView = "isShowingOnlyFavouritesInUpcomingView"
 }
 
 extension Bundle {
