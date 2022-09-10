@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct UpcomingCardListView: View {
-    @Binding var sortingStrategy: SortingStrategy
+    @Binding var currentPresentationMode: PresentationMode
     @Binding var isShowingCollabSheet: Bool
     @Binding var collabChannels: [Channel]
     
     @EnvironmentObject var upcoming: VideoViewModel
     
     var body: some View {
-        CardListView(sortingStrategy: $sortingStrategy, paneView: { live in
+        CardListView(currentPresentationMode: $currentPresentationMode, paneView: { live in
             UpcomingPaneView(upcoming: live, isShowingCollabSheet: $isShowingCollabSheet, collabChannels: $collabChannels)
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: upcoming.dataStatus) {

@@ -15,7 +15,7 @@ struct UpcomingView: View {
     @State var isShowingCollabSheet: Bool = false
     @State var collabChannels: [Channel] = [Channel.testChannel]
     
-    @State var sortingStrategy: SortingStrategy = .notSorting
+    @State var currentPresentationMode: PresentationMode = .normal
     
     init() {
         self._upcoming = StateObject(wrappedValue: UpcomingViewModel())
@@ -24,22 +24,22 @@ struct UpcomingView: View {
     var body: some View {
         NavigationView {
             if isShowingCompactInUpcomingView {
-                UpcomingCompactListView(sortingStrategy: $sortingStrategy)
+                UpcomingCompactListView(currentPresentationMode: $currentPresentationMode)
                     .environmentObject(upcoming as VideoViewModel)
                     .navigationTitle("UPCOMING_VIEW_TITLE")
                     .toolbar {
                         ToolbarItemGroup {
-                            UpcomingViewToolbar(sortingStrategy: $sortingStrategy)
+                            UpcomingViewToolbar(currentPresentationMode: $currentPresentationMode)
                                 .environmentObject(upcoming as VideoViewModel)
                         }
                     }
             } else {
-                UpcomingCardListView(sortingStrategy: $sortingStrategy, isShowingCollabSheet: $isShowingCollabSheet, collabChannels: $collabChannels)
+                UpcomingCardListView(currentPresentationMode: $currentPresentationMode, isShowingCollabSheet: $isShowingCollabSheet, collabChannels: $collabChannels)
                     .environmentObject(upcoming as VideoViewModel)
                     .navigationTitle("UPCOMING_VIEW_TITLE")
                     .toolbar {
                         ToolbarItem(placement: .primaryAction) {
-                            UpcomingViewToolbar(sortingStrategy: $sortingStrategy)
+                            UpcomingViewToolbar(currentPresentationMode: $currentPresentationMode)
                                 .environmentObject(upcoming as VideoViewModel)
                         }
                     }
@@ -47,11 +47,11 @@ struct UpcomingView: View {
         }
         .task {
             await upcoming.getUpcoming()
-            sortingStrategy = .notSorting
+            currentPresentationMode = .normal
         }
         .refreshable {
             await upcoming.getUpcoming()
-            sortingStrategy = .notSorting
+            currentPresentationMode = .normal
         }
         .sheet(isPresented: $isShowingCollabSheet) {
             LiveCollabListView(mentions: $collabChannels)

@@ -15,7 +15,7 @@ struct LiveView: View {
     @State var isShowingCollabSheet: Bool = false
     @State var collabChannels: [Channel] = [Channel.testChannel]
     
-    @State var sortingStrategy: SortingStrategy = .notSorting
+    @State var currentPresentationMode: PresentationMode = .normal
     
     init() {
         self._live = StateObject(wrappedValue: LiveViewModel())
@@ -24,22 +24,22 @@ struct LiveView: View {
     var body: some View {
         NavigationView {
             if isShowingCompactInLiveView {
-                LiveCompactListView(sortingStrategy: $sortingStrategy)
+                LiveCompactListView(currentPresentationMode: $currentPresentationMode)
                     .environmentObject(live as VideoViewModel)
                     .navigationTitle("LIVE_VIEW_TITLE")
                     .toolbar {
                         ToolbarItemGroup {
-                            LiveViewToolbar(sortingStrategy: $sortingStrategy)
+                            LiveViewToolbar(currentPresentationMode: $currentPresentationMode)
                                 .environmentObject(live as VideoViewModel)
                         }
                     }
             } else {
-                LiveCardListView(sortingStrategy: $sortingStrategy, isShowingCollabSheet: $isShowingCollabSheet, collabChannels: $collabChannels)
+                LiveCardListView(currentPresentationMode: $currentPresentationMode, isShowingCollabSheet: $isShowingCollabSheet, collabChannels: $collabChannels)
                     .environmentObject(live as VideoViewModel)
                     .navigationTitle("LIVE_VIEW_TITLE")
                     .toolbar {
                         ToolbarItem(placement: .primaryAction) {
-                            LiveViewToolbar(sortingStrategy: $sortingStrategy)
+                            LiveViewToolbar(currentPresentationMode: $currentPresentationMode)
                                 .environmentObject(live as VideoViewModel)
                         }
                     }
@@ -47,11 +47,11 @@ struct LiveView: View {
         }
         .task {
             await live.getLive()
-            sortingStrategy = .notSorting
+            currentPresentationMode = .normal
         }
         .refreshable {
             await live.getLive()
-            sortingStrategy = .notSorting
+            currentPresentationMode = .normal
         }
         .sheet(isPresented: $isShowingCollabSheet) {
             LiveCollabListView(mentions: $collabChannels)

@@ -11,9 +11,10 @@ struct LiveViewToolbar: View {
     @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInLiveView) var isShowingAbsoluteTime: Bool = false
     @AppStorage(UserDefaultKeys.isShowingCompactInLiveView) var isShowingCompact: Bool = false
     
+    @Binding var currentPresentationMode: PresentationMode
+    
     /// Defines the current sorting strategy
-    /// - Note: `sortingStrategy` is of `@Binding` here because the parent views need to control it upon refresh of content.
-    @Binding var sortingStrategy: SortingStrategy
+    @State var sortingStrategy: SortingStrategy = .notSorting
     
     @EnvironmentObject var liveViewModel: VideoViewModel
     
@@ -63,6 +64,12 @@ struct LiveViewToolbar: View {
             Label("Display Settings", systemImage: "ellipsis")
         }
         .onChange(of: self.sortingStrategy, perform: { sortingSelection in
+            if sortingSelection == .notSorting {
+                currentPresentationMode = .normal
+            } else {
+                currentPresentationMode = .sorting
+            }
+            
             self.liveViewModel.sortVideos(by: sortingSelection)
         })
     }

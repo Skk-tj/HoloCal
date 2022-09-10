@@ -13,7 +13,7 @@ struct LiveiPadView: View {
     @State var isShowingCollabSheet: Bool = false
     @State var collabChannels: [Channel] = [Channel.testChannel]
     
-    @State var sortingStrategy: SortingStrategy = .notSorting
+    @State var currentPresentationMode: PresentationMode = .normal
     
     init() {
         self._live = StateObject(wrappedValue: LiveViewModel())
@@ -37,17 +37,17 @@ struct LiveiPadView: View {
             await live.getLive()
             
             // Reset sorting state, go back to section view
-            sortingStrategy = .notSorting
+            currentPresentationMode = .normal
         }
         .navigationTitle("LIVE_VIEW_TITLE")
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {
-                LiveViewToolbar(sortingStrategy: $sortingStrategy)
+                LiveViewToolbar(currentPresentationMode: $currentPresentationMode)
                     .environmentObject(live as VideoViewModel)
                 Button(action: {
                     Task {
                         await live.getLive()
-                        sortingStrategy = .notSorting
+                        currentPresentationMode = .normal
                     }
                 }, label: {
                     Label("Refresh", systemImage: "arrow.triangle.2.circlepath")

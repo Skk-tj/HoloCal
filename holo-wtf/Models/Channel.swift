@@ -41,6 +41,14 @@ struct Channel: Codable, Identifiable, Hashable {
         }
     }
     
+    func getAltTalentName() -> String {
+        if let talent = talent {
+            return talent.altLocalizedName
+        } else {
+            return self.name
+        }
+    }
+    
     func getTalentGenerationName() -> String {
         if let talent = talent {
             if let generationGroup = talentsByGeneration[talent.inGeneration] {
