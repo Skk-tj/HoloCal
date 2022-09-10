@@ -13,8 +13,6 @@ struct UpcomingWidgetMediumView: View {
     let videoThumbnail: Data
     
     var body: some View {
-        let lang: NameLanguage = Locale.current.languageCode == "ja" ? .ja : .en
-        
         HStack {
             if let image = UIImage(data: videoThumbnail) {
                 Image(uiImage: image)
@@ -28,7 +26,7 @@ struct UpcomingWidgetMediumView: View {
                     .lineLimit(3)
                     .font(.footnote)
                 
-                Text(video.channel.getTalentName(lang: lang))
+                Text(video.channel.getTalentName())
                     .foregroundColor(.secondary)
                     .font(.caption2)
                 
