@@ -42,7 +42,7 @@ struct SectionedNotFavouritedForEachView<Content: View>: View {
         }
         
         ForEach(sortedFilteredGroupedDictionary, id: \.key) { key, value in
-            Section(header: Text("\(Locale.current.languageCode == "ja" ? generationToName[key]![.ja]! : generationToName[key]![.en]!)")) {
+            Section(header: Text(key.getLocalizedName())) {
                 ForEach(value, id: \.self) { live in
                     cellView(live)
                 }

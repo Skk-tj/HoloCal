@@ -16,8 +16,6 @@ struct MultipleUpcomingWidgetView: View {
     let rightVideoThumbnail: Data
     
     var body: some View {
-        let lang: NameLanguage = Locale.current.languageCode == "ja" ? .ja : .en
-        
         HStack {
             // Left stream
             VStack(alignment: .leading) {
@@ -38,7 +36,7 @@ struct MultipleUpcomingWidgetView: View {
                     .font(.caption)
                 
                 HStack {
-                    Text(leftVideo.channel.getTalentName(lang: lang))
+                    Text(leftVideo.channel.getTalentName())
                         .foregroundColor(.secondary)
                         .lineLimit(1)
                         .font(.caption2)
@@ -75,7 +73,7 @@ struct MultipleUpcomingWidgetView: View {
                     .font(.caption)
                 
                 HStack {
-                    Text(rightVideo.channel.getTalentName(lang: lang))
+                    Text(rightVideo.channel.getTalentName())
                         .lineLimit(1)
                         .foregroundColor(.secondary)
                         .font(.caption2)

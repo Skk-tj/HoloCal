@@ -13,8 +13,6 @@ struct SmallUpcomingWidgetView: View {
     let avatarData: Data
     
     var body: some View {
-        let lang: NameLanguage = Locale.current.languageCode == "ja" ? .ja : .en
-        
         VStack(alignment: .leading) {
             if let avatarImage = UIImage(data: avatarData) {
                 Image(uiImage: avatarImage)
@@ -32,7 +30,7 @@ struct SmallUpcomingWidgetView: View {
                 .font(.caption)
                 .lineLimit(2)
                 .fixedSize(horizontal: false, vertical: true)
-            Text(upcoming.channel.getTalentName(lang: lang))
+            Text(upcoming.channel.getTalentName())
                 .lineLimit(1)
                 .font(.caption)
                 .foregroundColor(.secondary)

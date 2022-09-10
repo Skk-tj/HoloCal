@@ -12,16 +12,13 @@ struct SettingsTalentStarView: View {
     @Binding var favourited: [String]
     
     var body: some View {
-        let lang: NameLanguage = Locale.current.languageCode == "ja" ? .ja : .en
-        let altLang: NameLanguage = Locale.current.languageCode == "ja" ? .en : .ja
-        
         HStack {
             let isFavourited: Bool = favourited.contains(where: {$0 == talent.id})
             
             VStack(alignment: .leading) {
-                Text("\(talent.names[lang]!)")
+                Text("\(talent.localizedName)")
                     .font(.body)
-                Text("\(talent.names[altLang]!)")
+                Text("\(talent.altLocalizedName)")
                     .font(.caption)
                     .foregroundColor(.secondary)
             }

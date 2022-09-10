@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Collections
 
 enum GenerationEnum: Int, Codable, CaseIterable {
     case zerothGen
@@ -31,6 +32,14 @@ enum GenerationEnum: Int, Codable, CaseIterable {
     
     // For all the channels that we may not recognize
     case other
+    
+    func getLocalizedName() -> String {
+        return talentsByGeneration[self]!.localizedName
+    }
+    
+    func getAltLocalizedName() -> String {
+        return talentsByGeneration[self]!.altLocalizedName
+    }
 }
 
 enum TalentsEnum: String, Codable {
@@ -148,6 +157,16 @@ struct Talent: Codable, Identifiable, Hashable {
     
     /// Represent which generation (group) this talent is in.
     let inGeneration: GenerationEnum
+    
+    var localizedName: String {
+        let lang: NameLanguage = Locale.current.languageCode == "ja" ? .ja : .en
+        return names[lang]!
+    }
+    
+    var altLocalizedName: String {
+        let altLang: NameLanguage = Locale.current.languageCode == "ja" ? .en : .ja
+        return names[altLang]!
+    }
 }
 
 let talentsToName: [TalentsEnum: Talent] = [
@@ -268,37 +287,26 @@ let talentsToName: [TalentsEnum: Talent] = [
     .midnight: Talent(id: TalentsEnum.midnight.rawValue, names: [.en: "Midnight Grand Orchestra", .ja: "Midnight Grand Orchestra"], inGeneration: .official)
 ]
 
-let generationToName: [GenerationEnum: [NameLanguage: String]] = [
-    .zerothGen: [.en: "0th gen", .ja: "0期生"],
-    .firstGen: [.en: "1st gen", .ja: "1期生"],
-    .secondGen: [.en: "2nd gen", .ja: "2期生"],
-    .gamers: [.en: "Gamers", .ja: "ゲーマーズ"],
-    .thirdGen: [.en: "3rd gen", .ja: "3期生"],
-    .forthGen: [.en: "4th gen", .ja: "4期生"],
-    .fifthGen: [.en: "5th gen", .ja: "5期生"],
-    .holox: [.en: "holoX", .ja: "秘密結社holoX"],
-    .idFirstGen: [.en: "ID 1st gen", .ja: "ID 1期生"],
-    .idSecondGen: [.en: "ID 2nd gen", .ja: "ID 2期生"],
-    .idThirdGen: [.en: "ID 3rd gen", .ja: "ID 3期生"],
-    .enMyth: [.en: "hololive English -Myth-", .ja: "hololive English -Myth-"],
-    .projectHope: [.en: "Project: HOPE", .ja: "Project: HOPE"],
-    .enCouncil: [.en: "hololive English -Council-", .ja: "hololive English -議会-"],
-    .starsFirstGen: [.en: "holostars 1st gen", .ja: "ホロスターズ 1期生"],
-    .starsSecondGen: [.en: "holostars 2nd gen", .ja: "ホロスターズ 2期生"],
-    .starsThirdGen: [.en: "holostars 3nd gen", .ja: "ホロスターズ 3期生"],
-    .uproar: [.en: "holostars UPROAR!!", .ja: "ホロスターズ アップロー!!"],
-    .tempus: [.en: "HOLOSTARS English -TEMPUS-", .ja: "HOLOSTARS English -TEMPUS-"],
-    .official: [.en: "Official Channels", .ja: "公式チャンネル"],
-    .other: [.en: "Other", .ja: "他"]
-]
-
 /// Represent the generation group in Hololive
 struct GenerationGroup: Hashable {
     /// Represents the generation of this instance as an enum.
     let generation: GenerationEnum
     
+    /// Represent the names of a generation group
+    let names: [NameLanguage: String]
+    
     /// Represents a list of members.
     let members: [TalentsEnum]
+    
+    var localizedName: String {
+        let lang: NameLanguage = Locale.current.languageCode == "ja" ? .ja : .en
+        return names[lang]!
+    }
+    
+    var altLocalizedName: String {
+        let altLang: NameLanguage = Locale.current.languageCode == "ja" ? .en : .ja
+        return names[altLang]!
+    }
 }
 
 
@@ -310,26 +318,26 @@ enum NameLanguage: Codable {
     case ja
 }
 
-let talentsByGeneration: [GenerationGroup] = [
-    // MARK: - 0th gen
-    GenerationGroup(generation: .zerothGen, members: [.sora, .roboco, .azki, .miko, .suisei]),
-    GenerationGroup(generation: .firstGen, members: [.mel, .aki, .haato, .fubuki, .matsuri]),
-    GenerationGroup(generation: .secondGen, members: [.aqua, .shion, .ayame, .choco, .subaru]),
-    GenerationGroup(generation: .gamers, members: [.mio, .okayu, .korone]),
-    GenerationGroup(generation: .thirdGen, members: [.pekora, .flare, .noel, .marine]),
-    GenerationGroup(generation: .forthGen, members: [.kanata, .watame, .towa, .luna]),
-    GenerationGroup(generation: .fifthGen, members: [.lamy, .nene, .botan, .polka]),
-    GenerationGroup(generation: .holox, members: [.laplus, .lui, .koyori, .chloe, .iroha]),
-    GenerationGroup(generation: .idFirstGen, members: [.risu, .moona, .iofi]),
-    GenerationGroup(generation: .idSecondGen, members: [.ollie, .anya, .reine]),
-    GenerationGroup(generation: .idThirdGen, members: [.zeta, .kaela, .kobo]),
-    GenerationGroup(generation: .enMyth, members: [.mori, .kiara, .ina, .gura, .ame]),
-    GenerationGroup(generation: .projectHope, members: [.irys]),
-    GenerationGroup(generation: .enCouncil, members: [.ceres, .kronii, .mumei, .baelz]),
-    GenerationGroup(generation: .starsFirstGen, members: [.miyabi, .izuru, .arurandeisu, .rikka]),
-    GenerationGroup(generation: .starsSecondGen, members: [.astel, .temma, .roberu]),
-    GenerationGroup(generation: .starsThirdGen, members: [.shien, .oga]),
-    GenerationGroup(generation: .uproar, members: [.fuma, .uyu, .gamma, .rio]),
-    GenerationGroup(generation: .tempus, members: [.altare, .dezmond, .syrios, .vesper]),
-    GenerationGroup(generation: .official, members: [.hololive, .hololiveEN, .hololiveID, .holostars, .midnight])
+let talentsByGeneration: OrderedDictionary<GenerationEnum, GenerationGroup> = [
+    .zerothGen: GenerationGroup(generation: .zerothGen, names: [.en: "0th gen", .ja: "0期生"], members: [.sora, .roboco, .azki, .miko, .suisei]),
+    .firstGen: GenerationGroup(generation: .firstGen, names: [.en: "1st gen", .ja: "1期生"], members: [.mel, .aki, .haato, .fubuki, .matsuri]),
+    .secondGen: GenerationGroup(generation: .secondGen, names: [.en: "2nd gen", .ja: "2期生"], members: [.aqua, .shion, .ayame, .choco, .subaru]),
+    .gamers: GenerationGroup(generation: .gamers, names: [.en: "Gamers", .ja: "ゲーマーズ"], members: [.mio, .okayu, .korone]),
+    .thirdGen: GenerationGroup(generation: .thirdGen, names: [.en: "3rd gen", .ja: "3期生"], members: [.pekora, .flare, .noel, .marine]),
+    .forthGen: GenerationGroup(generation: .forthGen, names: [.en: "4th gen", .ja: "4期生"], members: [.kanata, .watame, .towa, .luna]),
+    .fifthGen: GenerationGroup(generation: .fifthGen, names: [.en: "5th gen", .ja: "5期生"], members: [.lamy, .nene, .botan, .polka]),
+    .holox: GenerationGroup(generation: .holox, names: [.en: "holoX", .ja: "秘密結社holoX"], members: [.laplus, .lui, .koyori, .chloe, .iroha]),
+    .idFirstGen: GenerationGroup(generation: .idFirstGen, names: [.en: "ID 1st gen", .ja: "ID 1期生"], members: [.risu, .moona, .iofi]),
+    .idSecondGen: GenerationGroup(generation: .idSecondGen, names: [.en: "ID 2nd gen", .ja: "ID 2期生"], members: [.ollie, .anya, .reine]),
+    .idThirdGen: GenerationGroup(generation: .idThirdGen, names: [.en: "ID 3rd gen", .ja: "ID 3期生"], members: [.zeta, .kaela, .kobo]),
+    .enMyth: GenerationGroup(generation: .enMyth, names: [.en: "hololive English -Myth-", .ja: "hololive English -Myth-"], members: [.mori, .kiara, .ina, .gura, .ame]),
+    .projectHope: GenerationGroup(generation: .projectHope, names: [.en: "Project: HOPE", .ja: "Project: HOPE"], members: [.irys]),
+    .enCouncil: GenerationGroup(generation: .enCouncil, names: [.en: "hololive English -Council-", .ja: "hololive English -議会-"], members: [.ceres, .kronii, .mumei, .baelz]),
+    .starsFirstGen: GenerationGroup(generation: .starsFirstGen, names: [.en: "holostars 1st gen", .ja: "ホロスターズ 1期生"], members: [.miyabi, .izuru, .arurandeisu, .rikka]),
+    .starsSecondGen: GenerationGroup(generation: .starsSecondGen, names: [.en: "holostars 2nd gen", .ja: "ホロスターズ 2期生"], members: [.astel, .temma, .roberu]),
+    .starsThirdGen: GenerationGroup(generation: .starsThirdGen, names: [.en: "holostars 3nd gen", .ja: "ホロスターズ 3期生"], members: [.shien, .oga]),
+    .uproar: GenerationGroup(generation: .uproar, names: [.en: "holostars UPROAR!!", .ja: "ホロスターズ アップロー!!"], members: [.fuma, .uyu, .gamma, .rio]),
+    .tempus: GenerationGroup(generation: .tempus, names: [.en: "HOLOSTARS English -TEMPUS-", .ja: "HOLOSTARS English -TEMPUS-"], members: [.altare, .dezmond, .syrios, .vesper]),
+    .official: GenerationGroup(generation: .official, names: [.en: "Official Channels", .ja: "公式チャンネル"], members: [.hololive, .hololiveEN, .hololiveID, .holostars, .midnight]),
+    .other: GenerationGroup(generation: .other, names: [.en: "Other", .ja: "他"], members: [])
 ]

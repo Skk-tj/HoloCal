@@ -13,8 +13,6 @@ struct LiveCollabListView: View {
     @Binding var mentions: [Channel]
     
     var body: some View {
-        let lang: NameLanguage = Locale.current.languageCode == "ja" ? .ja : .en
-        
         NavigationView {
             List {
                 ForEach(mentions) { channel in
@@ -22,7 +20,7 @@ struct LiveCollabListView: View {
                         LiveAvatarView(url: channel.photo, avatarRadius: 64)
                         
                         VStack(alignment: .leading) {
-                            Text(channel.getTalentName(lang: lang))
+                            Text(channel.getTalentName())
                             
                             Text(channel.name)
                                 .foregroundColor(.secondary)
@@ -30,7 +28,7 @@ struct LiveCollabListView: View {
                             
                             Divider()
                             
-                            Text(channel.getTalentGenerationName(lang: lang))
+                            Text(channel.getTalentGenerationName())
                                 .foregroundColor(.secondary)
                                 .font(.caption)
                         }

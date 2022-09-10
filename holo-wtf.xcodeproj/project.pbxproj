@@ -86,6 +86,10 @@
 		F0B2AF1028C2DEF100635CAD /* MultipleUpcomingWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0F28C2DEF100635CAD /* MultipleUpcomingWidgetProvider.swift */; };
 		F0B2AF1228C2E28700635CAD /* MultipleUpcomingWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF1128C2E28700635CAD /* MultipleUpcomingWidgetView.swift */; };
 		F0B2AF1728C2E4C300635CAD /* UpcomingWidgetMediumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF1628C2E4C300635CAD /* UpcomingWidgetMediumView.swift */; };
+		F0B2AF1A28CC696A00635CAD /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = F0B2AF1928CC696A00635CAD /* Collections */; };
+		F0B2AF1C28CC696A00635CAD /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = F0B2AF1B28CC696A00635CAD /* OrderedCollections */; };
+		F0B2AF1E28CC6A1B00635CAD /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = F0B2AF1D28CC6A1B00635CAD /* Collections */; };
+		F0B2AF2028CC6A2100635CAD /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = F0B2AF1F28CC6A2100635CAD /* OrderedCollections */; };
 		F0B71FCE283CAD0700DC4260 /* MultipleLiveWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B71FCC283CACA000DC4260 /* MultipleLiveWidgetProvider.swift */; };
 		F0B71FCF283E08C300DC4260 /* MultipleLiveWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D1B40283A3AE70026340D /* MultipleLiveWidgetView.swift */; };
 		F0B8E1CD27E90EBA00DC7CF9 /* HTMLString in Frameworks */ = {isa = PBXBuildFile; productRef = F0B8E1CC27E90EBA00DC7CF9 /* HTMLString */; };
@@ -273,6 +277,8 @@
 			files = (
 				F093D1EC283035EC00E2A6FF /* Algorithms in Frameworks */,
 				F093D1C1282C32D000E2A6FF /* SwiftUI.framework in Frameworks */,
+				F0B2AF2028CC6A2100635CAD /* OrderedCollections in Frameworks */,
+				F0B2AF1E28CC6A1B00635CAD /* Collections in Frameworks */,
 				F093D1EA283035D800E2A6FF /* HTMLString in Frameworks */,
 				F093D1BF282C32D000E2A6FF /* WidgetKit.framework in Frameworks */,
 			);
@@ -282,8 +288,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0B2AF1C28CC696A00635CAD /* OrderedCollections in Frameworks */,
 				F0EB53BB2812C2490024E089 /* ActivityView in Frameworks */,
 				F09D25C127FEBA2E001A7D71 /* Algorithms in Frameworks */,
+				F0B2AF1A28CC696A00635CAD /* Collections in Frameworks */,
 				F0B8E1CD27E90EBA00DC7CF9 /* HTMLString in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,6 +617,8 @@
 			packageProductDependencies = (
 				F093D1E9283035D800E2A6FF /* HTMLString */,
 				F093D1EB283035EC00E2A6FF /* Algorithms */,
+				F0B2AF1D28CC6A1B00635CAD /* Collections */,
+				F0B2AF1F28CC6A2100635CAD /* OrderedCollections */,
 			);
 			productName = "holo-wtf-widgetExtension";
 			productReference = F093D1BC282C32D000E2A6FF /* holo-wtf-widgetExtension.appex */;
@@ -633,6 +643,8 @@
 				F0B8E1CC27E90EBA00DC7CF9 /* HTMLString */,
 				F09D25C027FEBA2E001A7D71 /* Algorithms */,
 				F0EB53BA2812C2490024E089 /* ActivityView */,
+				F0B2AF1928CC696A00635CAD /* Collections */,
+				F0B2AF1B28CC696A00635CAD /* OrderedCollections */,
 			);
 			productName = "holo-wtf";
 			productReference = F0C657B72771F47C004AF802 /* HoloCal.app */;
@@ -674,6 +686,7 @@
 				F0B8E1CB27E90EBA00DC7CF9 /* XCRemoteSwiftPackageReference "HTMLString" */,
 				F09D25BF27FEBA2E001A7D71 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 				F0EB53B92812C2490024E089 /* XCRemoteSwiftPackageReference "ActivityView" */,
+				F0B2AF1828CC696A00635CAD /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			productRefGroup = F0C657B82771F47C004AF802 /* Products */;
 			projectDirPath = "";
@@ -1208,6 +1221,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		F0B2AF1828CC696A00635CAD /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		F0B8E1CB27E90EBA00DC7CF9 /* XCRemoteSwiftPackageReference "HTMLString" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alexaubry/HTMLString";
@@ -1241,6 +1262,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F09D25BF27FEBA2E001A7D71 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
 			productName = Algorithms;
+		};
+		F0B2AF1928CC696A00635CAD /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F0B2AF1828CC696A00635CAD /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		F0B2AF1B28CC696A00635CAD /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F0B2AF1828CC696A00635CAD /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
+		F0B2AF1D28CC6A1B00635CAD /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F0B2AF1828CC696A00635CAD /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		F0B2AF1F28CC6A2100635CAD /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F0B2AF1828CC696A00635CAD /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
 		};
 		F0B8E1CC27E90EBA00DC7CF9 /* HTMLString */ = {
 			isa = XCSwiftPackageProductDependency;
