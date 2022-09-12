@@ -16,11 +16,19 @@ struct PaneViewButtonRowView: View {
     
     var body: some View {
         ControlGroup {
-            ShareButton(video: video) {
-                Label("LINKED_VIDEO_SWIPE_ACTIONS_SHARE", systemImage: "square.and.arrow.up")
-                    .labelStyle(.iconOnly)
+            if #available(iOS 16.0, *) {
+                ShareLink(item: URL(string: "https://www.youtube.com/watch?v=\(video.id)")!, label: {
+                    Label("LINKED_VIDEO_SWIPE_ACTIONS_SHARE", systemImage: "square.and.arrow.up")
+                        .labelStyle(.iconOnly)
+                        .hoverEffect()
+                })
+            } else {
+                ShareButton(video: video) {
+                    Label("LINKED_VIDEO_SWIPE_ACTIONS_SHARE", systemImage: "square.and.arrow.up")
+                        .labelStyle(.iconOnly)
+                        .hoverEffect()
+                }
             }
-            .hoverEffect()
             
             Spacer()
             

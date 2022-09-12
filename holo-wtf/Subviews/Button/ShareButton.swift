@@ -8,6 +8,7 @@
 import SwiftUI
 import ActivityView
 
+// FIXME: Remove after iOS 16
 struct ShareButton<Content: View>: View {
     let video: LiveVideo
     @ViewBuilder let content: () -> Content

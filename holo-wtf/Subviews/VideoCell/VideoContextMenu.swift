@@ -38,8 +38,13 @@ struct VideoContextMenu: View {
         }
         
         // MARK: - Share button
-        OldShareButton(video: video) {
-            Label("VIDEO_CONTEXT_MENU_SHARE", systemImage: "square.and.arrow.up")
+        if #available(iOS 16.0, *) {
+            ShareLink(item: URL(string: "https://www.youtube.com/watch?v=\(video.id)")!, label: { Label("VIDEO_CONTEXT_MENU_SHARE", systemImage: "square.and.arrow.up")
+            })
+        } else {
+            OldShareButton(video: video) {
+                Label("VIDEO_CONTEXT_MENU_SHARE", systemImage: "square.and.arrow.up")
+            }
         }
     }
 }

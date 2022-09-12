@@ -47,7 +47,6 @@ struct SectionedNotFavouritedForEachView<Content: View>: View {
                     cellView(live)
                 }
             }
-            .headerProminence(.increased)
         }
     }
 }
