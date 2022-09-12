@@ -47,7 +47,7 @@
 		F093D1C1282C32D000E2A6FF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F093D1C0282C32D000E2A6FF /* SwiftUI.framework */; };
 		F093D1C4282C32D000E2A6FF /* holo_wtf_widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1C3282C32D000E2A6FF /* holo_wtf_widget.swift */; };
 		F093D1C7282C32D100E2A6FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F093D1C6282C32D100E2A6FF /* Assets.xcassets */; };
-		F093D1CD282C32D100E2A6FF /* holo-wtf-widgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F093D1BC282C32D000E2A6FF /* holo-wtf-widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F093D1CD282C32D100E2A6FF /* holo-wtf-widgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F093D1BC282C32D000E2A6FF /* holo-wtf-widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F093D1D3282FA08700E2A6FF /* LiveVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AE3280685FD00683E6C /* LiveVideo.swift */; };
 		F093D1D4282FA08900E2A6FF /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AE12806858300683E6C /* Channel.swift */; };
 		F093D1D6282FA0A600E2A6FF /* VideoThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AE52808253700683E6C /* VideoThumbnailView.swift */; };
@@ -147,15 +147,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F093D1CE282C32D100E2A6FF /* Embed App Extensions */ = {
+		F093D1CE282C32D100E2A6FF /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				F093D1CD282C32D100E2A6FF /* holo-wtf-widgetExtension.appex in Embed App Extensions */,
+				F093D1CD282C32D100E2A6FF /* holo-wtf-widgetExtension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -637,7 +637,7 @@
 				F0C657B32771F47C004AF802 /* Sources */,
 				F0C657B42771F47C004AF802 /* Frameworks */,
 				F0C657B52771F47C004AF802 /* Resources */,
-				F093D1CE282C32D100E2A6FF /* Embed App Extensions */,
+				F093D1CE282C32D100E2A6FF /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -664,7 +664,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					F058189E281CAAF50064EF94 = {
 						CreatedOnToolsVersion = 13.3.1;
