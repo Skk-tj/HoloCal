@@ -1,13 +1,14 @@
 //
-//  ContentView.swift
+//  LiveStackView.swift
 //  holo-wtf
 //
-//  Created by Henry An on 2021-12-21.
+//  Created by Haoyi An on 2022-09-12.
 //
 
 import SwiftUI
 
-struct LiveView: View {
+@available(iOS 16.0, *)
+struct LiveStackView: View {
     @StateObject var live: LiveViewModel
     
     @AppStorage(UserDefaultKeys.isShowingCompactInLiveView) var isShowingCompactInLiveView: Bool = false
@@ -22,7 +23,7 @@ struct LiveView: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             if isShowingCompactInLiveView {
                 LiveCompactListView(currentPresentationMode: $currentPresentationMode)
                     .environmentObject(live as VideoViewModel)
@@ -56,15 +57,15 @@ struct LiveView: View {
         .sheet(isPresented: $isShowingCollabSheet) {
             LiveCollabListView(mentions: $collabChannels)
         }
-        .navigationViewStyle(.stack)
     }
 }
 
-struct LiveView_Previews: PreviewProvider {
+@available(iOS 16.0, *)
+struct LiveStackView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            LiveView()
-            LiveView().preferredColorScheme(.dark)
+            LiveStackView()
+            LiveStackView().preferredColorScheme(.dark)
         }
     }
 }

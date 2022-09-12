@@ -53,18 +53,33 @@ struct holo_wtfApp: App {
             } else {
                 // iOS
                 TabView {
-                    LiveView()
-                        .tabItem {
-                            Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
-                        }
-                    UpcomingView()
-                        .tabItem() {
-                            Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
-                        }
-                    SettingsView()
-                        .tabItem {
-                            Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
-                        }
+                    if #available(iOS 16.0, *) {
+                        LiveStackView()
+                            .tabItem {
+                                Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
+                            }
+                        UpcomingStackView()
+                            .tabItem() {
+                                Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
+                            }
+                        SettingsStackView()
+                            .tabItem {
+                                Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
+                            }
+                    } else {
+                        LiveView()
+                            .tabItem {
+                                Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
+                            }
+                        UpcomingView()
+                            .tabItem() {
+                                Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
+                            }
+                        SettingsView()
+                            .tabItem {
+                                Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
+                            }
+                    }
                 }
             }
         }
