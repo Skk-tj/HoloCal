@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// FIXME: Remove after iOS 16
 struct OldShareButton<Content: View>: View {
     let video: LiveVideo
     let content: () -> Content
