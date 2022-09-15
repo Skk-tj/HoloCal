@@ -22,11 +22,7 @@ struct SmallLiveWidgetEntryView: View {
             }
         }, titleView: {
             HStack {
-                Image(systemName: "person.wave.2.fill")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
-                
-                Text("LIVE_WIDGET_TITLE")
+                Label("LIVE_WIDGET_TITLE", systemImage: "person.wave.2.fill")
                     .font(.footnote)
                     .foregroundColor(.secondary)
                 
@@ -50,11 +46,7 @@ struct LivePaneWidgetEntryView: View {
             }
         }, titleView: {
             HStack {
-                Image(systemName: "person.wave.2.fill")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
-                
-                Text("LIVE_WIDGET_TITLE")
+                Label("LIVE_WIDGET_TITLE", systemImage: "person.wave.2.fill")
                     .font(.footnote)
                     .foregroundColor(.secondary)
                 
@@ -84,11 +76,7 @@ struct MultipleLiveWidgetEntryView: View {
             }
         }, titleView: {
             HStack {
-                Image(systemName: "person.wave.2.fill")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
-                
-                Text("LIVE_WIDGET_TITLE")
+                Label("LIVE_WIDGET_TITLE", systemImage: "person.wave.2.fill")
                     .font(.footnote)
                     .foregroundColor(.secondary)
                 
@@ -112,11 +100,7 @@ struct SmallUpcomingWidgetEntryView: View {
             }
         }, titleView: {
             HStack {
-                Image(systemName: "clock")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
-                
-                Text("UPCOMING_WIDGET_TITLE")
+                Label("UPCOMING_WIDGET_TITLE", systemImage: "clock")
                     .font(.footnote)
                     .foregroundColor(.secondary)
                 
@@ -140,11 +124,7 @@ struct UpcomingPaneWidgetEntryView: View {
             }
         }, titleView: {
             HStack {
-                Image(systemName: "clock")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
-                
-                Text("UPCOMING_WIDGET_TITLE")
+                Label("UPCOMING_WIDGET_TITLE", systemImage: "clock")
                     .font(.footnote)
                     .foregroundColor(.secondary)
                 
@@ -174,11 +154,7 @@ struct MultipleUpcomingWidgetEntryView: View {
             }
         }, titleView: {
             HStack {
-                Image(systemName: "clock")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
-                
-                Text("UPCOMING_WIDGET_TITLE")
+                Label("UPCOMING_WIDGET_TITLE", systemImage: "clock")
                     .font(.footnote)
                     .foregroundColor(.secondary)
                 
@@ -196,13 +172,8 @@ struct LiveAccessoryRectangularWidgetEntryView: View {
             LiveAccessoryRectangularWidgetView(live: video)
         } else {
             VStack(alignment: .leading) {
-                HStack {
-                    Image(systemName: "person.wave.2.fill")
-                        .font(.caption)
-                    
-                    Text("LIVE_WIDGET_TITLE")
-                        .font(.caption)
-                }
+                Label("LIVE_WIDGET_TITLE", systemImage: "person.wave.2.fill")
+                    .font(.caption)
                 
                 Text("NO_ONE_IS_STREAMING")
             }
@@ -218,13 +189,8 @@ struct UpcomingAccessoryRectangularWidgetEntryView: View {
             UpcomingAccessoryRectangularWidgetView(upcoming: video)
         } else {
             VStack(alignment: .leading) {
-                HStack {
-                    Image(systemName: "clock")
-                        .font(.caption)
-                    
-                    Text("UPCOMING_WIDGET_TITLE")
-                        .font(.caption)
-                }
+                Label("UPCOMING_WIDGET_TITLE", systemImage: "clock")
+                    .font(.caption)
                 
                 Text("NO_ONE_IS_STREAMING")
             }
