@@ -13,13 +13,8 @@ struct LiveAccessoryRectangularWidgetView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
-                Image(systemName: "person.wave.2.fill")
-                    .font(.caption)
-                
-                Text("LIVE_WIDGET_TITLE")
-                    .font(.caption)
-            }
+            Label("LIVE_WIDGET_TITLE", systemImage: "person.wave.2.fill")
+                .font(.caption)
             
             Text(live.title)
                 .font(.caption)

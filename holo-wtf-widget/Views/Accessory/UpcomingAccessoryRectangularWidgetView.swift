@@ -13,13 +13,8 @@ struct UpcomingAccessoryRectangularWidgetView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
-                Image(systemName: "clock")
-                    .font(.caption)
-                
-                Text("UPCOMING_WIDGET_TITLE")
-                    .font(.caption)
-            }
+            Label("UPCOMING_WIDGET_TITLE", systemImage: "clock")
+                .font(.caption)
             
             Text(upcoming.title)
                 .font(.caption)

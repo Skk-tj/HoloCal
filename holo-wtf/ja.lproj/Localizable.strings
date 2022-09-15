@@ -134,7 +134,7 @@
 "LIVE_WIDGET_TITLE" = "**ライブ配信中**";
 
 // Upcoming Widget
-"UPCOMING_WIDGET_TITLE" = "**今後のライブ配信**";
+"UPCOMING_WIDGET_TITLE" = "**今後の配信**";
 
 // Widget system text
 "CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "ライブ配信";
