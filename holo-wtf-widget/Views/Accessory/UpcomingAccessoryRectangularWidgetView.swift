@@ -17,7 +17,6 @@ struct UpcomingAccessoryRectangularWidgetView: View {
                 .font(.caption)
             
             Text(upcoming.title)
-                .font(.caption)
             
             Text(upcoming.channel.getTalentName())
                 .font(.footnote)
