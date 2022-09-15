@@ -10,10 +10,6 @@ import SwiftUI
 struct OpenSourceView: View {
     var body: some View {
         List {
-            Link(destination: URL(string: "https://github.com/alexaubry/HTMLString")!) {
-                Text("HTMLString")
-            }
-            
             Link(destination: URL(string: "https://github.com/SwiftUI-Plus/ActivityView")!) {
                 Text("ActivityView")
             }

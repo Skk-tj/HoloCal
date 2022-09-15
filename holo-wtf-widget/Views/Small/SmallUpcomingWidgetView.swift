@@ -26,7 +26,7 @@ struct SmallUpcomingWidgetView: View {
                     .shadow(radius: 1)
             }
             
-            Text(upcoming.escapedTitle)
+            Text(upcoming.title)
                 .font(.caption)
                 .lineLimit(2)
                 .fixedSize(horizontal: false, vertical: true)

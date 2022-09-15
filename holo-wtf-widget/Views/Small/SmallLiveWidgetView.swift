@@ -26,7 +26,7 @@ struct SmallLiveWidgetView: View {
                     .shadow(radius: 1)
             }
             
-            Text(live.escapedTitle)
+            Text(live.title)
                 .font(.caption)
                 .lineLimit(2)
                 .fixedSize(horizontal: false, vertical: true)

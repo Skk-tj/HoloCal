@@ -47,9 +47,13 @@ struct SettingsFormView: View {
                     Text("SETTINGS_MANAGE_FAVOURITE")
                 }
                 
-                NavigationLink(destination: ManageGenerationView()) {
-                    Text("SETTINGS_MANAGE_GENERATION")
+                NavigationLink(destination: ManageGenerationVisibilityView()) {
+                    Text("SETTINGS_MANAGE_GENERATION_VISIBILITY")
                 }
+                
+                NavigationLink(destination: ManageGenerationOrderView(), label: {
+                    Text("SETTINGS_MANAGE_GENERATION_ORDER")
+                })
             }
             
             Section(header: Text("SETTINGS_ABOUT_SECTION_HEADER"), footer: Text("HoloCal \(Bundle.main.appVersionLong) (\(Bundle.main.appBuild)) \nCodename: \(Bundle.main.codeName)")) {

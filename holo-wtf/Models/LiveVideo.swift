@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import HTMLString
 
 struct LiveVideo: Codable, Identifiable, Hashable {
     let id: String
@@ -44,10 +43,6 @@ struct LiveVideo: Codable, Identifiable, Hashable {
         }
         
         return false
-    }
-    
-    var escapedTitle: String {
-        title.removingHTMLEntities()
     }
     
     static let previewLive = LiveVideo(id: "abcd", title: "my debut live, but a really long title, aaaaaaa", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, mentions: [Channel.testChannel, Channel.testChannel2], songs: nil, channel: Channel.testChannel)

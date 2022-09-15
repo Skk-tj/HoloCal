@@ -23,7 +23,7 @@ struct UpcomingWidgetView: View {
             }
             
             VStack(alignment: .leading) {
-                Text(upcoming.escapedTitle)
+                Text(upcoming.title)
                     .font(.headline)
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)

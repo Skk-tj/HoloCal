@@ -8,7 +8,7 @@
 import WidgetKit
 import Intents
 
-struct UpcomingWidgetProvider: IntentTimelineProvider {    
+struct UpcomingWidgetProvider: TimelineProvider {    
     typealias Entry = SingleVideoWidgetEntry
     
     func placeholder(in context: Context) -> Entry {
@@ -16,10 +16,10 @@ struct UpcomingWidgetProvider: IntentTimelineProvider {
         
         let video: LiveVideo = .init(id: "NT6Pf28eCgQ", title: "My Debut Stream!", topicId: "debut", startScheduled: Date(), startActual: Date(), liveViewers: 1000, mentions: nil, songs: nil, channel: channel)
         
-        return SingleVideoWidgetEntry(date: Date(), configuration: ConfigurationIntent(), video: video, status: .ok, avatarData: Data(), thumbnailData: Data())
+        return SingleVideoWidgetEntry(date: Date(), video: video, status: .ok, avatarData: Data(), thumbnailData: Data())
     }
     
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Entry) -> Void) {
+    func getSnapshot(in context: Context, completion: @escaping (Entry) -> Void) {
         Task {
             do {
                 var lives = try await VideoFetchService.shared.getVideos(from: "https://holodex.net/api/v2/live?org=Hololive&status=upcoming&type=stream")
@@ -33,17 +33,17 @@ struct UpcomingWidgetProvider: IntentTimelineProvider {
                 let (avatarData, _) = try await URLSession.shared.data(from: firstVideo.channel.photo!)
                 let (thumbnailData, _) = try await URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(firstVideo.id)/maxresdefault.jpg")!)
                 
-                let entry = SingleVideoWidgetEntry(date: .now, configuration: configuration, video: lives[0], status: .ok, avatarData: avatarData, thumbnailData: thumbnailData)
+                let entry = SingleVideoWidgetEntry(date: .now, video: lives[0], status: .ok, avatarData: avatarData, thumbnailData: thumbnailData)
                 completion(entry)
             } catch {
-                let entry = SingleVideoWidgetEntry(date: .now, configuration: configuration, video: nil, status: .network, avatarData: Data(), thumbnailData: Data())
+                let entry = SingleVideoWidgetEntry(date: .now, video: nil, status: .network, avatarData: Data(), thumbnailData: Data())
                 
                 completion(entry)
             }
         }
     }
     
-    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
         Task {
             do {
                 var lives = try await VideoFetchService.shared.getVideos(from: "https://holodex.net/api/v2/live?org=Hololive&status=upcoming&type=stream")
@@ -53,7 +53,7 @@ struct UpcomingWidgetProvider: IntentTimelineProvider {
                 }
                 
                 if lives.isEmpty {
-                    let entry = SingleVideoWidgetEntry(date: .now, configuration: configuration, video: nil, status: .noVideo, avatarData: Data(), thumbnailData: Data())
+                    let entry = SingleVideoWidgetEntry(date: .now, video: nil, status: .noVideo, avatarData: Data(), thumbnailData: Data())
                     
                     let entries: [SingleVideoWidgetEntry] = [entry]
                     
@@ -65,7 +65,7 @@ struct UpcomingWidgetProvider: IntentTimelineProvider {
                     let (avatarData, _) = try await URLSession.shared.data(from: firstVideo.channel.photo!)
                     let (thumbnailData, _) = try await URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(firstVideo.id)/maxresdefault.jpg")!)
                     
-                    let entry = SingleVideoWidgetEntry(date: .now, configuration: configuration, video: lives[0], status: .ok, avatarData: avatarData, thumbnailData: thumbnailData)
+                    let entry = SingleVideoWidgetEntry(date: .now, video: lives[0], status: .ok, avatarData: avatarData, thumbnailData: thumbnailData)
                     
                     let entries: [SingleVideoWidgetEntry] = [entry]
                     
@@ -73,7 +73,7 @@ struct UpcomingWidgetProvider: IntentTimelineProvider {
                     completion(timeline)
                 }
             } catch {
-                let entry = SingleVideoWidgetEntry(date: .now, configuration: configuration, video: nil, status: .network, avatarData: Data(), thumbnailData: Data())
+                let entry = SingleVideoWidgetEntry(date: .now, video: nil, status: .network, avatarData: Data(), thumbnailData: Data())
                 
                 let entries: [SingleVideoWidgetEntry] = [entry]
                 

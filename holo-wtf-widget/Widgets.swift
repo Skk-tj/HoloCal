@@ -12,7 +12,7 @@ struct SmallLiveWidget: Widget {
     let kind: String = "SmallLiveWidget"
     
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: LiveWidgetProvider()) { entry in
+        StaticConfiguration(kind: kind, provider: LiveWidgetProvider()) { entry in
             SmallLiveWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
@@ -25,7 +25,7 @@ struct LivePaneWidget: Widget {
     let kind: String = "LivePaneWidget"
     
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: LiveWidgetProvider()) { entry in
+        StaticConfiguration(kind: kind, provider: LiveWidgetProvider()) { entry in
             LivePaneWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
@@ -38,7 +38,7 @@ struct MultipleLiveWidget: Widget {
     let kind: String = "MultipleLiveWidget"
     
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: MultipleLiveWidgetProvider()) { entry in
+        StaticConfiguration(kind: kind, provider: MultipleLiveWidgetProvider()) { entry in
             MultipleLiveWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("MULTIPLE_CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
@@ -51,7 +51,7 @@ struct SmallUpcomingWidget: Widget {
     let kind: String = "SmallUpcomingWidget"
     
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: UpcomingWidgetProvider()) { entry in
+        StaticConfiguration(kind: kind, provider: UpcomingWidgetProvider()) { entry in
             SmallUpcomingWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("UPCOMING_WIDGET_DISPLAY_NAME")
@@ -64,7 +64,7 @@ struct UpcomingPaneWidget: Widget {
     let kind: String = "UpcomingPaneWidget"
     
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: UpcomingWidgetProvider()) { entry in
+        StaticConfiguration(kind: kind, provider: UpcomingWidgetProvider()) { entry in
             UpcomingPaneWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("UPCOMING_WIDGET_DISPLAY_NAME")
@@ -77,11 +77,45 @@ struct MultipleUpcomingWidget: Widget {
     let kind: String = "MultipleUpcomingWidget"
     
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: MultipleUpcomingWidgetProvider()) { entry in
+        StaticConfiguration(kind: kind, provider: MultipleUpcomingWidgetProvider()) { entry in
             MultipleUpcomingWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("MULTIPLE_UPCOMING_WIDGET_DISPLAY_NAME")
         .description("MULTIPLE_UPCOMING_WIDGET_DESCRIPTION")
         .supportedFamilies([.systemMedium])
+    }
+}
+
+struct LiveAccessoryRectangularWidget: Widget {
+    let kind: String = "LiveAccessoryRectangularWidget"
+    
+    var body: some WidgetConfiguration {
+        if #available(iOSApplicationExtension 16.0, *) {
+            return StaticConfiguration(kind: kind, provider: LiveWidgetProvider()) { entry in
+                LiveAccessoryRectangularWidgetEntryView(entry: entry)
+            }
+            .configurationDisplayName("CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
+            .description("CURRENTLY_LIVE_WIDGET_DESCRIPTION")
+            .supportedFamilies([.accessoryRectangular])
+        } else {
+            return EmptyWidgetConfiguration()
+        }
+    }
+}
+
+struct UpcomingAccessoryRectangularWidget: Widget {
+    let kind: String = "UpcomingAccessoryRectangularWidget"
+    
+    var body: some WidgetConfiguration {
+        if #available(iOSApplicationExtension 16.0, *) {
+            return StaticConfiguration(kind: kind, provider: UpcomingWidgetProvider()) { entry in
+                UpcomingAccessoryRectangularWidgetEntryView(entry: entry)
+            }
+            .configurationDisplayName("UPCOMING_WIDGET_DISPLAY_NAME")
+            .description("UPCOMING_WIDGET_DESCRIPTION")
+            .supportedFamilies([.accessoryRectangular])
+        } else {
+            return EmptyWidgetConfiguration()
+        }
     }
 }

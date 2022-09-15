@@ -8,7 +8,7 @@
 import WidgetKit
 import Intents
 
-struct MultipleUpcomingWidgetProvider: IntentTimelineProvider {
+struct MultipleUpcomingWidgetProvider: TimelineProvider {
     typealias Entry = MultipleVideoWidgetEntry
     
     let url: String = "https://holodex.net/api/v2/live?org=Hololive&status=upcoming&type=stream"
@@ -18,10 +18,10 @@ struct MultipleUpcomingWidgetProvider: IntentTimelineProvider {
         
         let video: LiveVideo = .init(id: "NT6Pf28eCgQ", title: "My Debut Stream!", topicId: "debut", startScheduled: Date(), startActual: Date(), liveViewers: 1000, mentions: nil, songs: nil, channel: channel)
         
-        return MultipleVideoWidgetEntry(date: Date(), configuration: ConfigurationIntent(), videoLeft: video, thumbnailDataLeft: Data(), videoRight: video, thumbnailDataRight: Data(), status: .ok)
+        return MultipleVideoWidgetEntry(date: Date(), videoLeft: video, thumbnailDataLeft: Data(), videoRight: video, thumbnailDataRight: Data(), status: .ok)
     }
     
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Entry) -> Void) {
+    func getSnapshot(in context: Context, completion: @escaping (Entry) -> Void) {
         Task {
             do {
                 var lives = try await VideoFetchService.shared.getVideos(from: url)
@@ -31,13 +31,13 @@ struct MultipleUpcomingWidgetProvider: IntentTimelineProvider {
                 }
                 
                 if lives.isEmpty {
-                    let entry = MultipleVideoWidgetEntry(date: Date(), configuration: ConfigurationIntent(), videoLeft: nil, thumbnailDataLeft: Data(), videoRight: nil, thumbnailDataRight: Data(), status: .noVideo)
+                    let entry = MultipleVideoWidgetEntry(date: Date(), videoLeft: nil, thumbnailDataLeft: Data(), videoRight: nil, thumbnailDataRight: Data(), status: .noVideo)
                     
                     completion(entry)
                 } else if lives.count == 1 {
                     let (thumbnailData, _) = try await URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(lives[0].id)/maxresdefault.jpg")!)
                     
-                    let entry = MultipleVideoWidgetEntry(date: Date(), configuration: ConfigurationIntent(), videoLeft: lives[0], thumbnailDataLeft: thumbnailData, videoRight: nil, thumbnailDataRight: Data(), status: .ok)
+                    let entry = MultipleVideoWidgetEntry(date: Date(), videoLeft: lives[0], thumbnailDataLeft: thumbnailData, videoRight: nil, thumbnailDataRight: Data(), status: .ok)
                     
                     completion(entry)
                 } else {
@@ -45,19 +45,19 @@ struct MultipleUpcomingWidgetProvider: IntentTimelineProvider {
                     
                     let (thumbnailDataRight, _) = try await URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(lives[1].id)/maxresdefault.jpg")!)
                     
-                    let entry = MultipleVideoWidgetEntry(date: Date(), configuration: ConfigurationIntent(), videoLeft: lives[0], thumbnailDataLeft: thumbnailDataLeft, videoRight: lives[1], thumbnailDataRight: thumbnailDataRight, status: .ok)
+                    let entry = MultipleVideoWidgetEntry(date: Date(), videoLeft: lives[0], thumbnailDataLeft: thumbnailDataLeft, videoRight: lives[1], thumbnailDataRight: thumbnailDataRight, status: .ok)
                     
                     completion(entry)
                 }
             } catch {
-                let entry = MultipleVideoWidgetEntry(date: Date(), configuration: ConfigurationIntent(), videoLeft: nil, thumbnailDataLeft: Data(), videoRight: nil, thumbnailDataRight: Data(), status: .network)
+                let entry = MultipleVideoWidgetEntry(date: Date(), videoLeft: nil, thumbnailDataLeft: Data(), videoRight: nil, thumbnailDataRight: Data(), status: .network)
                 
                 completion(entry)
             }
         }
     }
     
-    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
         Task {
             do {
                 var lives = try await VideoFetchService.shared.getVideos(from: url)
@@ -67,7 +67,7 @@ struct MultipleUpcomingWidgetProvider: IntentTimelineProvider {
                 }
                 
                 if lives.isEmpty {
-                    let entry = MultipleVideoWidgetEntry(date: Date(), configuration: ConfigurationIntent(), videoLeft: nil, thumbnailDataLeft: Data(), videoRight: nil, thumbnailDataRight: Data(), status: .noVideo)
+                    let entry = MultipleVideoWidgetEntry(date: Date(), videoLeft: nil, thumbnailDataLeft: Data(), videoRight: nil, thumbnailDataRight: Data(), status: .noVideo)
                     
                     let entries: [MultipleVideoWidgetEntry] = [entry]
                     
@@ -76,7 +76,7 @@ struct MultipleUpcomingWidgetProvider: IntentTimelineProvider {
                 } else if lives.count == 1 {
                     let (thumbnailData, _) = try await URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(lives[0].id)/maxresdefault.jpg")!)
                     
-                    let entry = MultipleVideoWidgetEntry(date: Date(), configuration: ConfigurationIntent(), videoLeft: lives[0], thumbnailDataLeft: thumbnailData, videoRight: nil, thumbnailDataRight: Data(), status: .ok)
+                    let entry = MultipleVideoWidgetEntry(date: Date(), videoLeft: lives[0], thumbnailDataLeft: thumbnailData, videoRight: nil, thumbnailDataRight: Data(), status: .ok)
                     
                     let entries: [MultipleVideoWidgetEntry] = [entry]
                     
@@ -87,7 +87,7 @@ struct MultipleUpcomingWidgetProvider: IntentTimelineProvider {
                     
                     let (thumbnailDataRight, _) = try await URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(lives[1].id)/maxresdefault.jpg")!)
                     
-                    let entry = MultipleVideoWidgetEntry(date: Date(), configuration: ConfigurationIntent(), videoLeft: lives[0], thumbnailDataLeft: thumbnailDataLeft, videoRight: lives[1], thumbnailDataRight: thumbnailDataRight, status: .ok)
+                    let entry = MultipleVideoWidgetEntry(date: Date(), videoLeft: lives[0], thumbnailDataLeft: thumbnailDataLeft, videoRight: lives[1], thumbnailDataRight: thumbnailDataRight, status: .ok)
                     
                     let entries: [MultipleVideoWidgetEntry] = [entry]
                     
@@ -95,7 +95,7 @@ struct MultipleUpcomingWidgetProvider: IntentTimelineProvider {
                     completion(timeline)
                 }
             } catch {
-                let entry = MultipleVideoWidgetEntry(date: Date(), configuration: ConfigurationIntent(), videoLeft: nil, thumbnailDataLeft: Data(), videoRight: nil, thumbnailDataRight: Data(), status: .network)
+                let entry = MultipleVideoWidgetEntry(date: Date(), videoLeft: nil, thumbnailDataLeft: Data(), videoRight: nil, thumbnailDataRight: Data(), status: .network)
                 
                 let entries: [MultipleVideoWidgetEntry] = [entry]
                 

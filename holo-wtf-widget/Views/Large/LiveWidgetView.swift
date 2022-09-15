@@ -23,7 +23,7 @@ struct LiveWidgetView: View {
             }
             
             VStack(alignment: .leading) {
-                Text(live.escapedTitle)
+                Text(live.title)
                     .font(.headline)
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)

@@ -15,7 +15,7 @@ struct LiveCellView: View {
         HStack {
             LiveAvatarView(url: live.channel.photo)
             VStack(alignment: .leading) {
-                Text(live.escapedTitle)
+                Text(live.title)
                     .font(.headline)
                     .lineLimit(1)
                     .padding(.bottom, 5)

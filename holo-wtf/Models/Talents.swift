@@ -8,7 +8,7 @@
 import Foundation
 import Collections
 
-enum GenerationEnum: Int, Codable, CaseIterable {
+enum GenerationEnum: Int, Codable, CaseIterable, Hashable {
     case zerothGen
     case firstGen
     case secondGen

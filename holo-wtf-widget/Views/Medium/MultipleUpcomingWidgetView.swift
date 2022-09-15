@@ -31,7 +31,7 @@ struct MultipleUpcomingWidgetView: View {
                     
                 }
                 
-                Text(leftVideo.escapedTitle)
+                Text(leftVideo.title)
                     .lineLimit(1)
                     .font(.caption)
                 
@@ -68,7 +68,7 @@ struct MultipleUpcomingWidgetView: View {
                     }
                 }
                 
-                Text(rightVideo.escapedTitle)
+                Text(rightVideo.title)
                     .lineLimit(1)
                     .font(.caption)
                 
