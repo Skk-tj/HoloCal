@@ -31,12 +31,20 @@
 "SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_CANCEL" = "キャンセル";
 "SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_RESET" = "リセット";
 
-"SETTINGS_MANAGE_GENERATION" = "グループ別フィルター＆序次";
-"SETTINGS_MANAGE_GENERATION_VIEW_TITLE" = "グループ別フィルター";
-"SETTINGS_MANAGE_GENERATION_SECTION_FOOTER" = "グループを選択解除するで、「ライブ配信中」と「今後のライブ配信」に表示されないようにすることができます。\nグループが除外されているタレントをお気に入りに入れても、タレントを表示されます。 \nまた、世代を並び替えて、「ライブ配信中」と「今後のライブ配信」で表示される順番を変更することも可能です。 ";
+"SETTINGS_MANAGE_GENERATION_VISIBILITY" = "グループフィルター";
+"SETTINGS_MANAGE_GENERATION_VISIBILITY_VIEW_TITLE" = "グループフィルター";
+"SETTINGS_MANAGE_GENERATION_VISIBILITY_SECTION_FOOTER" = "グループを選択解除するで、「ライブ配信中」と「今後のライブ配信」に表示されないようにすることができます。\nお気に入りに登録したタレントが所属するグループが選択解除するても、タレントを表示されます。";
 
-"SETTINGS_MANAGE_GENERATION_RESET" = "グループフィルターや序次をリセット";
-"SETTINGS_MANAGE_GENERATION_RESET_ALERT_TEXT" = "グループフィルターや序次をリセットします、よろしいですか？";
+"SETTINGS_MANAGE_GENERATION_ORDER" = "グループ序次";
+"SETTINGS_MANAGE_GENERATION_ORDER_VIEW_TITLE" = "グループ序次";
+"SETTINGS_MANAGE_GENERATION_ORDER_SECTION_FOOTER" = "グループ序次を並び替えて、「ライブ配信中」と「今後のライブ配信」で表示される順番を変更することも可能です。";
+
+"SETTINGS_MANAGE_GENERATION_VISIBILITY_RESET" = "フィルターをリセット";
+"SETTINGS_MANAGE_GENERATION_VISIBILITY_RESET_ALERT_TEXT" = "フィルターをリセットします、よろしいですか？";
+
+"SETTINGS_MANAGE_GENERATION_ORDER_RESET" = "序次をリセット";
+"SETTINGS_MANAGE_GENERATION_ORDER_RESET_ALERT_TEXT" = "序次をリセットします、よろしいですか？";
+
 "SETTINGS_MANAGE_GENERATION_RESET_ALERT_CANCEL" = "キャンセル";
 "SETTINGS_MANAGE_GENERATION_RESET_ALERT_RESET" = "リセット";
 

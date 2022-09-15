@@ -22,7 +22,7 @@ struct LiveWidgetMediumView: View {
             }
             
             VStack(alignment: .leading) {
-                Text(video.escapedTitle)
+                Text(video.title)
                     .lineLimit(3)
                     .font(.footnote)
                 

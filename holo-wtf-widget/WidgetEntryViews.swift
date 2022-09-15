@@ -187,3 +187,47 @@ struct MultipleUpcomingWidgetEntryView: View {
         })
     }
 }
+
+struct LiveAccessoryRectangularWidgetEntryView: View {
+    var entry: LiveWidgetProvider.Entry
+    
+    var body: some View {
+        if let video = entry.video {
+            LiveAccessoryRectangularWidgetView(live: video)
+        } else {
+            VStack(alignment: .leading) {
+                HStack {
+                    Image(systemName: "person.wave.2.fill")
+                        .font(.caption)
+                    
+                    Text("LIVE_WIDGET_TITLE")
+                        .font(.caption)
+                }
+                
+                Text("NO_ONE_IS_STREAMING")
+            }
+        }
+    }
+}
+
+struct UpcomingAccessoryRectangularWidgetEntryView: View {
+    var entry: UpcomingWidgetProvider.Entry
+    
+    var body: some View {
+        if let video = entry.video {
+            UpcomingAccessoryRectangularWidgetView(upcoming: video)
+        } else {
+            VStack(alignment: .leading) {
+                HStack {
+                    Image(systemName: "clock")
+                        .font(.caption)
+                    
+                    Text("UPCOMING_WIDGET_TITLE")
+                        .font(.caption)
+                }
+                
+                Text("NO_ONE_IS_STREAMING")
+            }
+        }
+    }
+}

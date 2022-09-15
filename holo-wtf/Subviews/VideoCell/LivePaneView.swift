@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import HTMLString
 
 struct LivePaneView: View {
     let live: LiveVideo
@@ -25,12 +24,12 @@ struct LivePaneView: View {
                 VStack(alignment: .leading) {
                     // Force the title to be two lines
                     if UIDevice.current.userInterfaceIdiom == .pad {
-                        Text(live.escapedTitle + "\n")
+                        Text(live.title + "\n")
                             .font(.headline)
                             .lineLimit(2)
                             .multilineTextAlignment(.leading)
                     } else {
-                        Text(live.escapedTitle)
+                        Text(live.title)
                             .font(.headline)
                             .lineLimit(2)
                             .multilineTextAlignment(.leading)

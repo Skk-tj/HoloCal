@@ -9,7 +9,6 @@ import Foundation
 
 struct MultipleVideoWidgetEntry: VideoTimelineEntry {
     let date: Date
-    let configuration: ConfigurationIntent
     
     let videoLeft: LiveVideo?
     let thumbnailDataLeft: Data

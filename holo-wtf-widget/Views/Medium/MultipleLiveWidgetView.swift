@@ -31,7 +31,7 @@ struct MultipleLiveWidgetView: View {
                     
                 }
                 
-                Text(leftVideo.escapedTitle)
+                Text(leftVideo.title)
                     .lineLimit(1)
                     .font(.caption)
                 
@@ -60,7 +60,7 @@ struct MultipleLiveWidgetView: View {
                     }
                 }
                 
-                Text(rightVideo.escapedTitle)
+                Text(rightVideo.title)
                     .lineLimit(1)
                     .font(.caption)
                 
