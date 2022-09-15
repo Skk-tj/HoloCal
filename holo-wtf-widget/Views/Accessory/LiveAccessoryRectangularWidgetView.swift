@@ -17,6 +17,7 @@ struct LiveAccessoryRectangularWidgetView: View {
                 .font(.caption)
             
             Text(live.title)
+                .font(.caption)
             
             Text(live.channel.getTalentName())
                 .lineLimit(1)
