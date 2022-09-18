@@ -9,6 +9,8 @@ import SwiftUI
 import EventKit
 
 struct PaneViewButtonRowView: View {
+    @Environment(\.dismiss) var dismiss
+    
     @State var isAddToCalendarSheetPresented: Bool = false
     @State var isCalendarAccessAlertPresented: Bool = false
     @State var isShowingSheet: Bool = false
@@ -73,14 +75,22 @@ struct PaneViewButtonRowView: View {
             .hoverEffect()
             
             if let songs = video.songs {
+                Spacer()
+                
                 Button(action: {
                     isShowingSheet.toggle()
                 }, label: {
                     Image(systemName: "music.note.list")
                 })
                 .sheet(isPresented: $isShowingSheet) {
-                    SongListView(videoURL: video.url!)
-                        .environmentObject(SongsViewModel(songsRaw: songs))
+                    if #available(iOS 16.0, *) {
+                        SongListView(videoURL: video.url!)
+                            .presentationDetents([.medium, .large])
+                            .environmentObject(SongsViewModel(songsRaw: songs))
+                    } else {
+                        SongListView(videoURL: video.url!)
+                            .environmentObject(SongsViewModel(songsRaw: songs))
+                    }
                 }
             }
         }
