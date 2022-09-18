@@ -1,14 +1,14 @@
 //
-//  SongListView.swift
+//  SongListStackView.swift
 //  holo-wtf
 //
-//  Created by Haoyi An on 2022-06-17.
+//  Created by Haoyi An on 2022-09-18.
 //
 
 import SwiftUI
-import MusicKit
 
-struct SongListView: View {
+@available(iOS 16.0, *)
+struct SongListStackView: View {
     @Environment(\.dismiss) var dismiss
     
     let videoURL: URL
@@ -16,7 +16,7 @@ struct SongListView: View {
     @EnvironmentObject var songsViewModel: SongsViewModel
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             switch songsViewModel.songDataStatus {
             case .working:
                 ProgressView()
@@ -48,9 +48,10 @@ struct SongListView: View {
     }
 }
 
-struct SongListView_Previews: PreviewProvider {
+@available(iOS 16.0, *)
+struct SongListStackView_Previews: PreviewProvider {
     static var previews: some View {
-        SongListView(videoURL: URL(string: "https://www.youtube.com/watch?v=0ntqQpqO0J4")!)
+        SongListStackView(videoURL: URL(string: "https://www.youtube.com/watch?v=0ntqQpqO0J4")!)
             .environmentObject(SongsViewModel(songsRaw: SongInStream.exampleSongs))
     }
 }
