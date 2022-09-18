@@ -12,9 +12,6 @@ struct UpcomingView: View {
     
     @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingView) var isShowingCompactInUpcomingView: Bool = false
     
-    @State var isShowingCollabSheet: Bool = false
-    @State var collabChannels: [Channel] = [Channel.testChannel]
-    
     @State var currentPresentationMode: PresentationMode = .normal
     
     init() {
@@ -34,7 +31,7 @@ struct UpcomingView: View {
                         }
                     }
             } else {
-                UpcomingCardListView(currentPresentationMode: $currentPresentationMode, isShowingCollabSheet: $isShowingCollabSheet, collabChannels: $collabChannels)
+                UpcomingCardListView(currentPresentationMode: $currentPresentationMode)
                     .environmentObject(upcoming as VideoViewModel)
                     .navigationTitle("UPCOMING_VIEW_TITLE")
                     .toolbar {
@@ -52,9 +49,6 @@ struct UpcomingView: View {
         .refreshable {
             await upcoming.getUpcoming()
             currentPresentationMode = .normal
-        }
-        .sheet(isPresented: $isShowingCollabSheet) {
-            LiveCollabListView(mentions: $collabChannels)
         }
         .navigationViewStyle(.stack)
     }

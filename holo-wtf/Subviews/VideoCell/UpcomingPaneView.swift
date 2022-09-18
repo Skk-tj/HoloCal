@@ -10,8 +10,7 @@ import SwiftUI
 struct UpcomingPaneView: View {
     var upcoming: LiveVideo
     
-    @Binding var isShowingCollabSheet: Bool
-    @Binding var collabChannels: [Channel]
+    @State var isShowingCollabSheet: Bool = false
     
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
@@ -45,9 +44,16 @@ struct UpcomingPaneView: View {
                             
                             LiveCollabAvatarView(mentions: mentions, avatarRadius: 40.0)
                                 .onTapGesture {
-                                    isShowingCollabSheet = true
-                                    collabChannels = mentions
+                                    isShowingCollabSheet.toggle()
                                 }
+                                .sheet(isPresented: $isShowingCollabSheet, content: {
+                                    if #available(iOS 16.0, *) {
+                                        LiveCollabListStackView(mentions: mentions)
+                                            .presentationDetents([.medium, .large])
+                                    } else {
+                                        LiveCollabListView(mentions: mentions)
+                                    }
+                                })
                         } else {
                             Text(upcoming.channel.name)
                                 .lineLimit(1)
@@ -95,6 +101,6 @@ struct UpcomingPaneView: View {
 
 struct UpcomingPaneView_Previews: PreviewProvider {
     static var previews: some View {
-        UpcomingPaneView(upcoming: LiveVideo.previewLive, isShowingCollabSheet: Binding.constant(false), collabChannels: Binding.constant([Channel.testChannel]))
+        UpcomingPaneView(upcoming: LiveVideo.previewLive)
     }
 }

@@ -10,8 +10,7 @@ import SwiftUI
 struct LivePaneView: View {
     let live: LiveVideo
     
-    @Binding var isShowingCollabSheet: Bool
-    @Binding var collabChannels: [Channel]
+    @State var isShowingCollabSheet: Bool = false
     
     @AppStorage("favouritedChannel") var favourited = Favourited()
     @State var liveIconOpcality: Double = 0
@@ -48,9 +47,16 @@ struct LivePaneView: View {
                             
                             LiveCollabAvatarView(mentions: mentions, avatarRadius: 40.0)
                                 .onTapGesture {
-                                    isShowingCollabSheet = true
-                                    collabChannels = mentions
+                                    isShowingCollabSheet.toggle()
                                 }
+                                .sheet(isPresented: $isShowingCollabSheet, content: {
+                                    if #available(iOS 16.0, *) {
+                                        LiveCollabListStackView(mentions: mentions)
+                                            .presentationDetents([.medium, .large])
+                                    } else {
+                                        LiveCollabListView(mentions: mentions)
+                                    }
+                                })
                         } else {
                             Text(live.channel.name)
                                 .lineLimit(1)
@@ -120,7 +126,7 @@ struct LivePaneView: View {
 
 struct LivePaneView_Previews: PreviewProvider {
     static var previews: some View {
-        LivePaneView(live: LiveVideo.previewLive, isShowingCollabSheet: Binding.constant(false), collabChannels: Binding.constant([Channel.testChannel]))
-        LivePaneView(live: LiveVideo.previewLive, isShowingCollabSheet: Binding.constant(false), collabChannels: Binding.constant([Channel.testChannel])).preferredColorScheme(.dark)
+        LivePaneView(live: LiveVideo.previewLive)
+        LivePaneView(live: LiveVideo.previewLive).preferredColorScheme(.dark)
     }
 }

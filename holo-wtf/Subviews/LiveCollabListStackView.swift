@@ -1,5 +1,5 @@
 //
-//  LiveCollabListView.swift
+//  LiveCollabListStackView.swift
 //  holo-wtf
 //
 //
@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct LiveCollabListView: View {
+@available(iOS 16.0, *)
+struct LiveCollabListStackView: View {
     @Environment(\.dismiss) var dismiss
     let mentions: [Channel]
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach(mentions) { channel in
                     HStack {
@@ -35,7 +36,6 @@ struct LiveCollabListView: View {
                 }
             }
             .navigationTitle("COLLAB_SHEET_NAVIGATION_TITLE")
-            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("COLLAB_SHEET_DISMISS_BUTTON", role: .cancel) {
@@ -47,10 +47,8 @@ struct LiveCollabListView: View {
     }
 }
 
-struct LiveCollabListView_Previews: PreviewProvider {
+struct LiveCollabListStackView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            LiveCollabListView(mentions: [Channel.testChannel, Channel.testChannel2])
-        }
+        LiveCollabListView(mentions: [Channel.testChannel, Channel.testChannel2])
     }
 }

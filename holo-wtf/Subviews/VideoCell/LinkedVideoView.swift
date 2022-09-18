@@ -30,7 +30,7 @@ struct LinkedVideoView_Previews: PreviewProvider {
             }
             
             LinkedVideoView(url: LiveVideo.previewLive.url) {
-                LivePaneView(live: LiveVideo.previewLive, isShowingCollabSheet: Binding.constant(false), collabChannels: Binding.constant([]))
+                LivePaneView(live: LiveVideo.previewLive)
             }
         }
     }

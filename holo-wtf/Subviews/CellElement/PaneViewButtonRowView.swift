@@ -11,6 +11,8 @@ import EventKit
 struct PaneViewButtonRowView: View {
     @State var isAddToCalendarSheetPresented: Bool = false
     @State var isCalendarAccessAlertPresented: Bool = false
+    @State var isShowingSheet: Bool = false
+    
     let video: LiveVideo
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
@@ -71,11 +73,14 @@ struct PaneViewButtonRowView: View {
             .hoverEffect()
             
             if let songs = video.songs {
-                Spacer()
-                
-                NavigationLink(destination: SongListView(videoURL: video.url!).environmentObject(SongsViewModel(songsRaw: songs))) {
-                    Label("List of Songs", systemImage: "music.note.list")
-                        .labelStyle(.iconOnly)
+                Button(action: {
+                    isShowingSheet.toggle()
+                }, label: {
+                    Image(systemName: "music.note.list")
+                })
+                .sheet(isPresented: $isShowingSheet) {
+                    SongListView(videoURL: video.url!)
+                        .environmentObject(SongsViewModel(songsRaw: songs))
                 }
             }
         }

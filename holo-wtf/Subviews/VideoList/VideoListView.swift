@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-enum PresentationMode {
-    case normal
-    case searching
-    case sorting
-}
-
 
 /// The view that represents a general list of videos.
 struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
