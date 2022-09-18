@@ -22,6 +22,7 @@ struct PaneViewButtonRowView: View {
                         .labelStyle(.iconOnly)
                         .hoverEffect()
                 })
+                .buttonStyle(.borderless)
             } else {
                 ShareButton(video: video) {
                     Label("LINKED_VIDEO_SWIPE_ACTIONS_SHARE", systemImage: "square.and.arrow.up")
@@ -47,6 +48,7 @@ struct PaneViewButtonRowView: View {
                 Label("VIDEO_CONTEXT_MENU_ADD_TO_CALENDAR", systemImage: "calendar.badge.plus")
                     .labelStyle(.iconOnly)
             }
+            .buttonStyle(.borderless)
             .sheet(isPresented: $isAddToCalendarSheetPresented) {
                 let eventStore: EKEventStore = EKEventStore()
                 EventEditView(eventStore: eventStore, event: getCalendarEventFromVideo(eventStore: eventStore, video: video))
@@ -58,6 +60,16 @@ struct PaneViewButtonRowView: View {
             })
             .hoverEffect()
             
+            Spacer()
+            
+            FavouriteButton(video: video) {
+                let isFavourited = favourited.contains(where: {$0 == video.channel.id})
+                Label(isFavourited ? "LINKED_VIDEO_SWIPE_ACTIONS_UNFAVOURITE" : "LINKED_VIDEO_SWIPE_ACTIONS_FAVOURITE", systemImage: isFavourited ? "star.fill" : "star")
+                    .labelStyle(.iconOnly)
+            }
+            .buttonStyle(.borderless)
+            .hoverEffect()
+            
             if let songs = video.songs {
                 Spacer()
                 
@@ -66,15 +78,6 @@ struct PaneViewButtonRowView: View {
                         .labelStyle(.iconOnly)
                 }
             }
-            
-            Spacer()
-            
-            FavouriteButton(video: video) {
-                let isFavourited = favourited.contains(where: {$0 == video.channel.id})
-                Label(isFavourited ? "LINKED_VIDEO_SWIPE_ACTIONS_UNFAVOURITE" : "LINKED_VIDEO_SWIPE_ACTIONS_FAVOURITE", systemImage: isFavourited ? "star.fill" : "star")
-                    .labelStyle(.iconOnly)
-            }
-            .hoverEffect()
         }
         .controlGroupStyle(.navigation)
     }

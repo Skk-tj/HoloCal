@@ -24,8 +24,14 @@ struct LinkedVideoView<Content: View>: View {
 
 struct LinkedVideoView_Previews: PreviewProvider {
     static var previews: some View {
-        LinkedVideoView(url: LiveVideo.previewLive.url) {
-            LiveCellView(live: LiveVideo.previewLive)
+        Group {
+            LinkedVideoView(url: LiveVideo.previewLive.url) {
+                LiveCellView(live: LiveVideo.previewLive)
+            }
+            
+            LinkedVideoView(url: LiveVideo.previewLive.url) {
+                LivePaneView(live: LiveVideo.previewLive, isShowingCollabSheet: Binding.constant(false), collabChannels: Binding.constant([]))
+            }
         }
     }
 }

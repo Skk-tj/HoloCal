@@ -22,6 +22,7 @@ struct LivePaneView: View {
                 VideoThumbnailView(ytVideoKey: live.id)
                 
                 VStack(alignment: .leading) {
+                    // MARK: - Stream title
                     // Force the title to be two lines
                     if UIDevice.current.userInterfaceIdiom == .pad {
                         Text(live.title + "\n")
@@ -35,6 +36,7 @@ struct LivePaneView: View {
                             .multilineTextAlignment(.leading)
                     }
                     
+                    // MARK: - Channel information
                     HStack {
                         LiveAvatarView(url: live.channel.photo, avatarRadius: 40.0)
                         
@@ -59,6 +61,7 @@ struct LivePaneView: View {
                     
                     Divider()
                     
+                    // MARK: - Time and other information
                     HStack {
                         if live.isMengen {
                             Text("LIVE_CELL_VIEW_MEMBER_ONLY_STREAM")
@@ -86,6 +89,7 @@ struct LivePaneView: View {
             .background(.thickMaterial)
             .clipShape(RoundedRectangle(cornerRadius: 10))
             
+            // MARK: - Live icon and tags
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
                     HStack(alignment: .top, spacing: 2) {
@@ -109,14 +113,6 @@ struct LivePaneView: View {
                 }
                 
                 Spacer()
-                
-                if favourited.contains(where: {$0 == live.channel.id}) {
-                    Image(systemName: "star.fill")
-                        .foregroundColor(.yellow) // iOS needs it cause plain list style does not show tint
-                        .tint(.yellow)
-                        .padding()
-                        .shadow(radius: 5)
-                }
             }
         }
     }
