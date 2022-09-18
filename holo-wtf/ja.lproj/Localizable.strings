@@ -150,6 +150,7 @@
 
 // Song List View
 "SONG_LIST_VIEW_NAVIGATION_TITLE" = "曲";
+"SONG_SHEET_DISMISS_BUTTON" = "Dismiss";
 
 // Single Song View
 "SINGLE_SONG_VIEW_CONTECT_MENU_OPEN_IN_APPLE_MUSIC" = "Apple Musicで開く";
