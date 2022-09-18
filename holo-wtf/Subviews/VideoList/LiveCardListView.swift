@@ -9,14 +9,12 @@ import SwiftUI
 
 struct LiveCardListView: View {
     @Binding var currentPresentationMode: PresentationMode
-    @Binding var isShowingCollabSheet: Bool
-    @Binding var collabChannels: [Channel]
     
     @EnvironmentObject var live: VideoViewModel
     
     var body: some View {
         CardListView(currentPresentationMode: $currentPresentationMode, paneView: { live in
-            LivePaneView(live: live, isShowingCollabSheet: $isShowingCollabSheet, collabChannels: $collabChannels)
+            LivePaneView(live: live)
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: live.dataStatus) {
                 LiveCountView()

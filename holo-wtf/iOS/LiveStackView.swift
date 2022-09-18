@@ -17,9 +17,6 @@ struct LiveStackView: View {
     
     @AppStorage(UserDefaultKeys.isShowingCompactInLiveView) var isShowingCompactInLiveView: Bool = false
     
-    @State var isShowingCollabSheet: Bool = false
-    @State var collabChannels: [Channel] = [Channel.testChannel]
-    
     @State var currentPresentationMode: PresentationMode = .normal
     
     init() {
@@ -39,7 +36,7 @@ struct LiveStackView: View {
                         }
                     }
             } else {
-                LiveCardListView(currentPresentationMode: $currentPresentationMode, isShowingCollabSheet: $isShowingCollabSheet, collabChannels: $collabChannels)
+                LiveCardListView(currentPresentationMode: $currentPresentationMode)
                     .environmentObject(live as VideoViewModel)
                     .navigationTitle("LIVE_VIEW_TITLE")
                     .toolbar {
@@ -57,10 +54,6 @@ struct LiveStackView: View {
         .refreshable {
             await live.getLive()
             currentPresentationMode = .normal
-        }
-        .sheet(isPresented: $isShowingCollabSheet) {
-            LiveCollabListView(mentions: $collabChannels)
-                .presentationDetents([.medium, .large])
         }
     }
 }
