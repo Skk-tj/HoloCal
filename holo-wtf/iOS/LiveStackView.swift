@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+enum NavigationStatus {
+    case songs
+}
+
 @available(iOS 16.0, *)
 struct LiveStackView: View {
     @StateObject var live: LiveViewModel
@@ -56,6 +60,7 @@ struct LiveStackView: View {
         }
         .sheet(isPresented: $isShowingCollabSheet) {
             LiveCollabListView(mentions: $collabChannels)
+                .presentationDetents([.medium, .large])
         }
     }
 }

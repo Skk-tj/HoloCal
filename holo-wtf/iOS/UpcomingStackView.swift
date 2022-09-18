@@ -56,6 +56,7 @@ struct UpcomingStackView: View {
         }
         .sheet(isPresented: $isShowingCollabSheet) {
             LiveCollabListView(mentions: $collabChannels)
+                .presentationDetents([.medium, .large])
         }
     }
 }
