@@ -6,12 +6,10 @@
 //
 
 import SwiftUI
-import ActivityView
 
 struct SwipableLinkedCellView<Content: View>: View {
     let video: LiveVideo
     let content: () -> Content
-    @State var item: ActivityItem?
     
     @AppStorage("favouritedChannel") var favourited = Favourited()
     

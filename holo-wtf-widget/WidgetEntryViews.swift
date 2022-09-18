@@ -164,6 +164,7 @@ struct MultipleUpcomingWidgetEntryView: View {
     }
 }
 
+@available(iOSApplicationExtension 16.0, *)
 struct LiveAccessoryRectangularWidgetEntryView: View {
     var entry: LiveWidgetProvider.Entry
     
@@ -181,6 +182,7 @@ struct LiveAccessoryRectangularWidgetEntryView: View {
     }
 }
 
+@available(iOSApplicationExtension 16.0, *)
 struct UpcomingAccessoryRectangularWidgetEntryView: View {
     var entry: UpcomingWidgetProvider.Entry
     

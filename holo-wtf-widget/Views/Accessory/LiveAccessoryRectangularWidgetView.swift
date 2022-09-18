@@ -8,6 +8,7 @@
 import SwiftUI
 import WidgetKit
 
+@available(iOS 16.0, *)
 struct LiveAccessoryRectangularWidgetView: View {
     let live: LiveVideo
     
@@ -15,6 +16,7 @@ struct LiveAccessoryRectangularWidgetView: View {
         VStack(alignment: .leading) {
             Label("LIVE_WIDGET_TITLE", systemImage: "person.wave.2.fill")
                 .font(.caption)
+                .widgetAccentable()
             
             Text(live.title)
                 .font(.caption)

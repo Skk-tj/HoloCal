@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UpcomingCellView: View {
-    var upcoming: LiveVideo
+    let upcoming: LiveVideo
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
     var body: some View {
