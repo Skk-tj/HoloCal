@@ -8,6 +8,7 @@
 import SwiftUI
 import WidgetKit
 
+@available(iOSApplicationExtension 16.0, *)
 struct UpcomingAccessoryRectangularWidgetView: View {
     let upcoming: LiveVideo
     
@@ -15,6 +16,7 @@ struct UpcomingAccessoryRectangularWidgetView: View {
         VStack(alignment: .leading) {
             Label("UPCOMING_WIDGET_TITLE", systemImage: "clock")
                 .font(.caption)
+                .widgetAccentable()
             
             Text(upcoming.title)
                 .font(.caption)

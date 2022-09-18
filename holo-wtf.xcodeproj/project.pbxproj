@@ -31,6 +31,14 @@
 		F0433C5227EAEDDB000FEADD /* OpenSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */; };
 		F047F0862851C74500B2E2B9 /* SmallLiveWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F047F0852851C74500B2E2B9 /* SmallLiveWidgetView.swift */; };
 		F04D1B3E283A304E0026340D /* LiveWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D1B3C283A300E0026340D /* LiveWidgetProvider.swift */; };
+		F04D754528D7C90E0096B8AB /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = F04D754428D7C90E0096B8AB /* Algorithms */; };
+		F04D754728D7C93F0096B8AB /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = F04D754628D7C93F0096B8AB /* Collections */; };
+		F04D754828D7C94F0096B8AB /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657D527732690004AF802 /* Util.swift */; };
+		F04D755028D7CC1F0096B8AB /* DataStatusIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0114D4E2815F81600B99D4D /* DataStatusIndicatorView.swift */; };
+		F04D755428D7CF3F0096B8AB /* UpcomingWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D755328D7CF3F0096B8AB /* UpcomingWatchView.swift */; };
+		F04D755628D7D0CC0096B8AB /* WatchUpcomingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D755528D7D0CC0096B8AB /* WatchUpcomingCellView.swift */; };
+		F04D755828D7D8430096B8AB /* SettingsWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D755728D7D8430096B8AB /* SettingsWatchView.swift */; };
+		F04D755B28D7D8DD0096B8AB /* OpenSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */; };
 		F04EB66728D2A0A000F168CB /* ManageGenerationOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04EB66628D2A0A000F168CB /* ManageGenerationOrderView.swift */; };
 		F058189A281BFFDA0064EF94 /* SectionedNotFavouritedForEachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0581899281BFFDA0064EF94 /* SectionedNotFavouritedForEachView.swift */; };
 		F05818A2281CAAF50064EF94 /* HoloCalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05818A1281CAAF50064EF94 /* HoloCalUITests.swift */; };
@@ -103,13 +111,37 @@
 		F0C50A1F2827C6FA00A93225 /* UpcomingCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C50A1E2827C6FA00A93225 /* UpcomingCountView.swift */; };
 		F0C657BB2771F47C004AF802 /* holo_wtfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657BA2771F47C004AF802 /* holo_wtfApp.swift */; };
 		F0C657BD2771F47C004AF802 /* LiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657BC2771F47C004AF802 /* LiveView.swift */; };
-		F0C657BF2771F47C004AF802 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C657BE2771F47C004AF802 /* Assets.xcassets */; };
+		F0C657BF2771F47C004AF802 /* Assets (Main).xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C657BE2771F47C004AF802 /* Assets (Main).xcassets */; };
 		F0C657C22771F47C004AF802 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C657C12771F47C004AF802 /* Preview Assets.xcassets */; };
 		F0C657D22771F7CE004AF802 /* LiveCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657D12771F7CE004AF802 /* LiveCellView.swift */; };
 		F0C657D627732690004AF802 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657D527732690004AF802 /* Util.swift */; };
 		F0CA6EA328D791BE0028CB11 /* UIModes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA6EA228D791BE0028CB11 /* UIModes.swift */; };
 		F0CA6EA828D794320028CB11 /* LiveCollabListStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA6EA728D794320028CB11 /* LiveCollabListStackView.swift */; };
 		F0CA6EAA28D7B5DD0028CB11 /* SongListStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA6EA928D7B5DD0028CB11 /* SongListStackView.swift */; };
+		F0CA6EB228D7C0410028CB11 /* holo_wtf_watchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA6EB128D7C0410028CB11 /* holo_wtf_watchApp.swift */; };
+		F0CA6EB428D7C0410028CB11 /* WatchRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA6EB328D7C0410028CB11 /* WatchRootView.swift */; };
+		F0CA6EB628D7C0420028CB11 /* Assets (Watch).xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0CA6EB528D7C0420028CB11 /* Assets (Watch).xcassets */; };
+		F0CA6EB928D7C0420028CB11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0CA6EB828D7C0420028CB11 /* Preview Assets.xcassets */; };
+		F0CA6EBC28D7C0420028CB11 /* holo-wtf-watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F0CA6EAF28D7C0410028CB11 /* holo-wtf-watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F0CA6EC128D7C20E0028CB11 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F009023D27EE255B00E343B0 /* Localizable.strings */; };
+		F0CA6EC328D7C2620028CB11 /* LiveWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA6EC228D7C2620028CB11 /* LiveWatchView.swift */; };
+		F0CA6EC428D7C2880028CB11 /* UpcomingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AF2280AD60D00683E6C /* UpcomingViewModel.swift */; };
+		F0CA6EC528D7C2880028CB11 /* LiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AEF280AC27400683E6C /* LiveViewModel.swift */; };
+		F0CA6EC628D7C2880028CB11 /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AF6280B640200683E6C /* VideoViewModel.swift */; };
+		F0CA6EC728D7C2880028CB11 /* VideoFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */; };
+		F0CA6EC828D7C2880028CB11 /* SongsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064A5B528BB3765008C51C2 /* SongsViewModel.swift */; };
+		F0CA6EC928D7C2BE0028CB11 /* Talents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A04E27F95D9E00DBC08D /* Talents.swift */; };
+		F0CA6ECA28D7C2BE0028CB11 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AE12806858300683E6C /* Channel.swift */; };
+		F0CA6ECB28D7C2BE0028CB11 /* SongInStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004E8C5285D004A00ABDFED /* SongInStream.swift */; };
+		F0CA6ECC28D7C2BE0028CB11 /* LiveVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AE3280685FD00683E6C /* LiveVideo.swift */; };
+		F0CA6ECD28D7C2C30028CB11 /* SongsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064A5B528BB3765008C51C2 /* SongsViewModel.swift */; };
+		F0CA6ED028D7C31D0028CB11 /* WatchVideoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA6ECF28D7C31D0028CB11 /* WatchVideoListView.swift */; };
+		F0CA6ED128D7C49A0028CB11 /* UpcomingCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C50A1E2827C6FA00A93225 /* UpcomingCountView.swift */; };
+		F0CA6ED228D7C49A0028CB11 /* LiveCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C50A1C2827C4CA00A93225 /* LiveCountView.swift */; };
+		F0CA6ED328D7C4A40028CB11 /* LiveTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009023727EDB6AE00E343B0 /* LiveTimeView.swift */; };
+		F0CA6ED428D7C4A40028CB11 /* UpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */; };
+		F0CA6ED528D7C4A70028CB11 /* LiveAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0673C162775F7FB009C65C6 /* LiveAvatarView.swift */; };
+		F0CA6ED728D7C4DB0028CB11 /* WatchLiveCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA6ED628D7C4DB0028CB11 /* WatchLiveCellView.swift */; };
 		F0E219C3287AB47D0080697F /* LiveWidgetMediumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E219C2287AB47D0080697F /* LiveWidgetMediumView.swift */; };
 		F0E4873D2876586F00118BBB /* LiveCollabAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E4873C2876586F00118BBB /* LiveCollabAvatarView.swift */; };
 		F0E4873F2877F73500118BBB /* LiveCollabListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E4873E2877F73500118BBB /* LiveCollabListView.swift */; };
@@ -148,6 +180,13 @@
 			remoteGlobalIDString = F093D1BB282C32D000E2A6FF;
 			remoteInfo = "holo-wtf-widgetExtension";
 		};
+		F0CA6EBA28D7C0420028CB11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0C657AF2771F47C004AF802 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0CA6EAE28D7C0410028CB11;
+			remoteInfo = "holo-wtf-watch Watch App";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -160,6 +199,17 @@
 				F093D1CD282C32D100E2A6FF /* holo-wtf-widgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0CA6EC028D7C0420028CB11 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				F0CA6EBC28D7C0420028CB11 /* holo-wtf-watch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -190,6 +240,10 @@
 		F047F0852851C74500B2E2B9 /* SmallLiveWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallLiveWidgetView.swift; sourceTree = "<group>"; };
 		F04D1B3C283A300E0026340D /* LiveWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveWidgetProvider.swift; sourceTree = "<group>"; };
 		F04D1B40283A3AE70026340D /* MultipleLiveWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleLiveWidgetView.swift; sourceTree = "<group>"; };
+		F04D754F28D7CB770096B8AB /* holo-wtf-watch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "holo-wtf-watch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F04D755328D7CF3F0096B8AB /* UpcomingWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingWatchView.swift; sourceTree = "<group>"; };
+		F04D755528D7D0CC0096B8AB /* WatchUpcomingCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchUpcomingCellView.swift; sourceTree = "<group>"; };
+		F04D755728D7D8430096B8AB /* SettingsWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWatchView.swift; sourceTree = "<group>"; };
 		F04EB66628D2A0A000F168CB /* ManageGenerationOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageGenerationOrderView.swift; sourceTree = "<group>"; };
 		F0581899281BFFDA0064EF94 /* SectionedNotFavouritedForEachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedNotFavouritedForEachView.swift; sourceTree = "<group>"; };
 		F058189F281CAAF50064EF94 /* HoloCalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoloCalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,13 +299,21 @@
 		F0C657B72771F47C004AF802 /* HoloCal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoloCal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0C657BA2771F47C004AF802 /* holo_wtfApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = holo_wtfApp.swift; sourceTree = "<group>"; };
 		F0C657BC2771F47C004AF802 /* LiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveView.swift; sourceTree = "<group>"; };
-		F0C657BE2771F47C004AF802 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0C657BE2771F47C004AF802 /* Assets (Main).xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets (Main).xcassets"; sourceTree = "<group>"; };
 		F0C657C12771F47C004AF802 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F0C657D12771F7CE004AF802 /* LiveCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCellView.swift; sourceTree = "<group>"; };
 		F0C657D527732690004AF802 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		F0CA6EA228D791BE0028CB11 /* UIModes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIModes.swift; sourceTree = "<group>"; };
 		F0CA6EA728D794320028CB11 /* LiveCollabListStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCollabListStackView.swift; sourceTree = "<group>"; };
 		F0CA6EA928D7B5DD0028CB11 /* SongListStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListStackView.swift; sourceTree = "<group>"; };
+		F0CA6EAF28D7C0410028CB11 /* holo-wtf-watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "holo-wtf-watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0CA6EB128D7C0410028CB11 /* holo_wtf_watchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = holo_wtf_watchApp.swift; sourceTree = "<group>"; };
+		F0CA6EB328D7C0410028CB11 /* WatchRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchRootView.swift; sourceTree = "<group>"; };
+		F0CA6EB528D7C0420028CB11 /* Assets (Watch).xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets (Watch).xcassets"; sourceTree = "<group>"; };
+		F0CA6EB828D7C0420028CB11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F0CA6EC228D7C2620028CB11 /* LiveWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveWatchView.swift; sourceTree = "<group>"; };
+		F0CA6ECF28D7C31D0028CB11 /* WatchVideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchVideoListView.swift; sourceTree = "<group>"; };
+		F0CA6ED628D7C4DB0028CB11 /* WatchLiveCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchLiveCellView.swift; sourceTree = "<group>"; };
 		F0E219C2287AB47D0080697F /* LiveWidgetMediumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveWidgetMediumView.swift; sourceTree = "<group>"; };
 		F0E4873C2876586F00118BBB /* LiveCollabAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCollabAvatarView.swift; sourceTree = "<group>"; };
 		F0E4873E2877F73500118BBB /* LiveCollabListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCollabListView.swift; sourceTree = "<group>"; };
@@ -306,6 +368,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F0CA6EAC28D7C0410028CB11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F04D754728D7C93F0096B8AB /* Collections in Frameworks */,
+				F04D754528D7C90E0096B8AB /* Algorithms in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -340,6 +411,26 @@
 				F0050DA928CFEDE1004532CB /* UpcomingAccessoryRectangularWidgetView.swift */,
 			);
 			path = Accessory;
+			sourceTree = "<group>";
+		};
+		F04D755928D7D84E0096B8AB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F0CA6ED628D7C4DB0028CB11 /* WatchLiveCellView.swift */,
+				F04D755528D7D0CC0096B8AB /* WatchUpcomingCellView.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F04D755A28D7D85C0096B8AB /* Main Views */ = {
+			isa = PBXGroup;
+			children = (
+				F0CA6EB328D7C0410028CB11 /* WatchRootView.swift */,
+				F0CA6EC228D7C2620028CB11 /* LiveWatchView.swift */,
+				F04D755328D7CF3F0096B8AB /* UpcomingWatchView.swift */,
+				F04D755728D7D8430096B8AB /* SettingsWatchView.swift */,
+			);
+			path = "Main Views";
 			sourceTree = "<group>";
 		};
 		F05818A0281CAAF50064EF94 /* HoloCalUITests */ = {
@@ -520,6 +611,7 @@
 				F0C657B92771F47C004AF802 /* holo-wtf */,
 				F05818A0281CAAF50064EF94 /* HoloCalUITests */,
 				F093D1C2282C32D000E2A6FF /* holo-wtf-widget */,
+				F0CA6EB028D7C0410028CB11 /* holo-wtf-watch Watch App */,
 				F093D1BD282C32D000E2A6FF /* Frameworks */,
 				F0C657B82771F47C004AF802 /* Products */,
 			);
@@ -531,6 +623,7 @@
 				F0C657B72771F47C004AF802 /* HoloCal.app */,
 				F058189F281CAAF50064EF94 /* HoloCalUITests.xctest */,
 				F093D1BC282C32D000E2A6FF /* holo-wtf-widgetExtension.appex */,
+				F0CA6EAF28D7C0410028CB11 /* holo-wtf-watch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -546,7 +639,7 @@
 				F0C657D02771F71C004AF802 /* ViewModel */,
 				F0C657CA2771F4F3004AF802 /* Models */,
 				F0C657C02771F47C004AF802 /* Preview Content */,
-				F0C657BE2771F47C004AF802 /* Assets.xcassets */,
+				F0C657BE2771F47C004AF802 /* Assets (Main).xcassets */,
 				F0204DB827E91A920083750F /* Info.plist */,
 				F009023D27EE255B00E343B0 /* Localizable.strings */,
 				F0204DB927E925220083750F /* PRIVACY-POLICY.md */,
@@ -585,6 +678,28 @@
 				F064A5B528BB3765008C51C2 /* SongsViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F0CA6EB028D7C0410028CB11 /* holo-wtf-watch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				F04D755A28D7D85C0096B8AB /* Main Views */,
+				F04D755928D7D84E0096B8AB /* Cell */,
+				F04D754F28D7CB770096B8AB /* holo-wtf-watch-Watch-App-Info.plist */,
+				F0CA6EB128D7C0410028CB11 /* holo_wtf_watchApp.swift */,
+				F0CA6ECF28D7C31D0028CB11 /* WatchVideoListView.swift */,
+				F0CA6EB528D7C0420028CB11 /* Assets (Watch).xcassets */,
+				F0CA6EB728D7C0420028CB11 /* Preview Content */,
+			);
+			path = "holo-wtf-watch Watch App";
+			sourceTree = "<group>";
+		};
+		F0CA6EB728D7C0420028CB11 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F0CA6EB828D7C0420028CB11 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		F0EB53B32812BCBF0024E089 /* Toolbar */ = {
@@ -657,11 +772,13 @@
 				F0C657B42771F47C004AF802 /* Frameworks */,
 				F0C657B52771F47C004AF802 /* Resources */,
 				F093D1CE282C32D100E2A6FF /* Embed Foundation Extensions */,
+				F0CA6EC028D7C0420028CB11 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				F093D1CC282C32D100E2A6FF /* PBXTargetDependency */,
+				F0CA6EBB28D7C0420028CB11 /* PBXTargetDependency */,
 			);
 			name = "holo-wtf";
 			packageProductDependencies = (
@@ -674,6 +791,27 @@
 			productReference = F0C657B72771F47C004AF802 /* HoloCal.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F0CA6EAE28D7C0410028CB11 /* holo-wtf-watch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0CA6EBD28D7C0420028CB11 /* Build configuration list for PBXNativeTarget "holo-wtf-watch Watch App" */;
+			buildPhases = (
+				F0CA6EAB28D7C0410028CB11 /* Sources */,
+				F0CA6EAC28D7C0410028CB11 /* Frameworks */,
+				F0CA6EAD28D7C0410028CB11 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "holo-wtf-watch Watch App";
+			packageProductDependencies = (
+				F04D754428D7C90E0096B8AB /* Algorithms */,
+				F04D754628D7C93F0096B8AB /* Collections */,
+			);
+			productName = "holo-wtf-watch Watch App";
+			productReference = F0CA6EAF28D7C0410028CB11 /* holo-wtf-watch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -681,7 +819,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1330;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					F058189E281CAAF50064EF94 = {
@@ -693,6 +831,9 @@
 					};
 					F0C657B62771F47C004AF802 = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					F0CA6EAE28D7C0410028CB11 = {
+						CreatedOnToolsVersion = 14.0;
 					};
 				};
 			};
@@ -718,6 +859,7 @@
 				F0C657B62771F47C004AF802 /* holo-wtf */,
 				F058189E281CAAF50064EF94 /* HoloCalUITests */,
 				F093D1BB282C32D000E2A6FF /* holo-wtf-widgetExtension */,
+				F0CA6EAE28D7C0410028CB11 /* holo-wtf-watch Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -746,7 +888,17 @@
 				F0ED2AF5280B606400683E6C /* .gitignore in Resources */,
 				F0C657C22771F47C004AF802 /* Preview Assets.xcassets in Resources */,
 				F009023B27EE255B00E343B0 /* Localizable.strings in Resources */,
-				F0C657BF2771F47C004AF802 /* Assets.xcassets in Resources */,
+				F0C657BF2771F47C004AF802 /* Assets (Main).xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0CA6EAD28D7C0410028CB11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0CA6EB928D7C0420028CB11 /* Preview Assets.xcassets in Resources */,
+				F0CA6EC128D7C20E0028CB11 /* Localizable.strings in Resources */,
+				F0CA6EB628D7C0420028CB11 /* Assets (Watch).xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -782,6 +934,7 @@
 				F0B2AF0A28C13D0F00635CAD /* UpcomingTimeView.swift in Sources */,
 				F0E219C3287AB47D0080697F /* LiveWidgetMediumView.swift in Sources */,
 				F047F0862851C74500B2E2B9 /* SmallLiveWidgetView.swift in Sources */,
+				F0CA6ECD28D7C2C30028CB11 /* SongsViewModel.swift in Sources */,
 				F0396E7928CFD60900A3EDCB /* LiveAccessoryRectangularWidgetView.swift in Sources */,
 				F0B2AF1228C2E28700635CAD /* MultipleUpcomingWidgetView.swift in Sources */,
 				F093D1D6282FA0A600E2A6FF /* VideoThumbnailView.swift in Sources */,
@@ -882,6 +1035,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F0CA6EAB28D7C0410028CB11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0CA6ED128D7C49A0028CB11 /* UpcomingCountView.swift in Sources */,
+				F0CA6EC428D7C2880028CB11 /* UpcomingViewModel.swift in Sources */,
+				F04D755428D7CF3F0096B8AB /* UpcomingWatchView.swift in Sources */,
+				F04D755B28D7D8DD0096B8AB /* OpenSourceView.swift in Sources */,
+				F04D755628D7D0CC0096B8AB /* WatchUpcomingCellView.swift in Sources */,
+				F0CA6ED328D7C4A40028CB11 /* LiveTimeView.swift in Sources */,
+				F0CA6ED428D7C4A40028CB11 /* UpcomingTimeView.swift in Sources */,
+				F04D754828D7C94F0096B8AB /* Util.swift in Sources */,
+				F0CA6ED728D7C4DB0028CB11 /* WatchLiveCellView.swift in Sources */,
+				F0CA6ED228D7C49A0028CB11 /* LiveCountView.swift in Sources */,
+				F0CA6ECB28D7C2BE0028CB11 /* SongInStream.swift in Sources */,
+				F0CA6ECA28D7C2BE0028CB11 /* Channel.swift in Sources */,
+				F0CA6EB428D7C0410028CB11 /* WatchRootView.swift in Sources */,
+				F0CA6EC528D7C2880028CB11 /* LiveViewModel.swift in Sources */,
+				F04D755828D7D8430096B8AB /* SettingsWatchView.swift in Sources */,
+				F0CA6ED528D7C4A70028CB11 /* LiveAvatarView.swift in Sources */,
+				F0CA6ECC28D7C2BE0028CB11 /* LiveVideo.swift in Sources */,
+				F0CA6EC328D7C2620028CB11 /* LiveWatchView.swift in Sources */,
+				F0CA6ED028D7C31D0028CB11 /* WatchVideoListView.swift in Sources */,
+				F0CA6EC628D7C2880028CB11 /* VideoViewModel.swift in Sources */,
+				F0CA6EC828D7C2880028CB11 /* SongsViewModel.swift in Sources */,
+				F0CA6EC728D7C2880028CB11 /* VideoFetchService.swift in Sources */,
+				F0CA6EB228D7C0410028CB11 /* holo_wtf_watchApp.swift in Sources */,
+				F04D755028D7CC1F0096B8AB /* DataStatusIndicatorView.swift in Sources */,
+				F0CA6EC928D7C2BE0028CB11 /* Talents.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -894,6 +1079,11 @@
 			isa = PBXTargetDependency;
 			target = F093D1BB282C32D000E2A6FF /* holo-wtf-widgetExtension */;
 			targetProxy = F093D1CB282C32D100E2A6FF /* PBXContainerItemProxy */;
+		};
+		F0CA6EBB28D7C0420028CB11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0CA6EAE28D7C0410028CB11 /* holo-wtf-watch Watch App */;
+			targetProxy = F0CA6EBA28D7C0420028CB11 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -952,7 +1142,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 106;
+				CURRENT_PROJECT_VERSION = 107;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "holo-wtf-widget/Info.plist";
@@ -964,7 +1154,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.9.2;
+				MARKETING_VERSION = 1.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.holo-wtf-widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -980,7 +1170,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 106;
+				CURRENT_PROJECT_VERSION = 107;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "holo-wtf-widget/Info.plist";
@@ -992,7 +1182,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.9.2;
+				MARKETING_VERSION = 1.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.holo-wtf-widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1129,7 +1319,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 106;
+				CURRENT_PROJECT_VERSION = 107;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -1148,7 +1338,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9.2;
+				MARKETING_VERSION = 1.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf";
 				PRODUCT_NAME = HoloCal;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1164,7 +1354,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 106;
+				CURRENT_PROJECT_VERSION = 107;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -1183,12 +1373,80 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9.2;
+				MARKETING_VERSION = 1.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf";
 				PRODUCT_NAME = HoloCal;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F0CA6EBE28D7C0420028CB11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 107;
+				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf-watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = NTH2V9C699;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "holo-wtf-watch-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "holo-wtf-watch";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "io.skk-tj.holo-wtf";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		F0CA6EBF28D7C0420028CB11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 107;
+				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf-watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = NTH2V9C699;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "holo-wtf-watch-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "holo-wtf-watch";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "io.skk-tj.holo-wtf";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
@@ -1231,6 +1489,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		F0CA6EBD28D7C0420028CB11 /* Build configuration list for PBXNativeTarget "holo-wtf-watch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0CA6EBE28D7C0420028CB11 /* Debug */,
+				F0CA6EBF28D7C0420028CB11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -1261,6 +1528,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F04D754428D7C90E0096B8AB /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F09D25BF27FEBA2E001A7D71 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+		F04D754628D7C93F0096B8AB /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F0B2AF1828CC696A00635CAD /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
 		F093D1EB283035EC00E2A6FF /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F09D25BF27FEBA2E001A7D71 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
