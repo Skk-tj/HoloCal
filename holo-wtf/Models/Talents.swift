@@ -159,13 +159,31 @@ struct Talent: Codable, Identifiable, Hashable {
     let inGeneration: GenerationEnum
     
     var localizedName: String {
-        let lang: NameLanguage = Locale.current.languageCode == "ja" ? .ja : .en
-        return names[lang]!
+        if #available(iOS 16, *) {
+            if let langCode = Locale.current.language.languageCode?.identifier {
+                let lang: NameLanguage = langCode == "ja" ? .ja : .en
+                return names[lang]!
+            } else {
+                return names[.en]!
+            }
+        } else {
+            let lang: NameLanguage = Locale.current.languageCode == "ja" ? .ja : .en
+            return names[lang]!
+        }
     }
     
     var altLocalizedName: String {
-        let altLang: NameLanguage = Locale.current.languageCode == "ja" ? .en : .ja
-        return names[altLang]!
+        if #available(iOS 16, *) {
+            if let langCode = Locale.current.language.languageCode?.identifier {
+                let lang: NameLanguage = langCode == "ja" ? .en : .ja
+                return names[lang]!
+            } else {
+                return names[.ja]!
+            }
+        } else {
+            let lang: NameLanguage = Locale.current.languageCode == "ja" ? .en : .ja
+            return names[lang]!
+        }
     }
 }
 
@@ -299,8 +317,17 @@ struct GenerationGroup: Hashable {
     let members: [TalentsEnum]
     
     var localizedName: String {
-        let lang: NameLanguage = Locale.current.languageCode == "ja" ? .ja : .en
-        return names[lang]!
+        if #available(iOS 16, *) {
+            if let langCode = Locale.current.language.languageCode?.identifier {
+                let lang: NameLanguage = langCode == "ja" ? .ja : .en
+                return names[lang]!
+            } else {
+                return names[.en]!
+            }
+        } else {
+            let lang: NameLanguage = Locale.current.languageCode == "ja" ? .ja : .en
+            return names[lang]!
+        }
     }
     
     var altLocalizedName: String {
