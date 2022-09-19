@@ -17,6 +17,7 @@
 
 "SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER" = "ライブ配信の予定";
 "SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT %lld" = "%lld時間内のライブ配信を表示";
+"WATCH_SETTINGS_UPCOMING_SCHEDULE_PICKER_TEXT %lld" = "%lld hours";
 
 "SETTINGS_STREAM_TIME_HEADER" = "配信時間";
 "SETTINGS_STREAM_TIME_FOOTER" = "HoloCalは夏時間が適用されるタイムゾーンに設定されている場合、夏時間への移行をお知らせします。";
@@ -63,6 +64,7 @@
 "LIVE_CELL_VIEW_MEMBER_ONLY_STREAM" = "メンバー限定";
 "LIVE_CELL_VIEW_PEOPLE_WATCHING %lld" = "%lld人が視聴中";
 "LIVE_CELL_VIEW_STARTED_AGO %@" = "%@前にライブ開始";
+"LIVE_CELL_VIEW_STARTED_AGO_SHORT %@" = "%@ ago";
 "LIVE_CELL_VIEW_WAITING" = "待機中";
 "LIVE_CELL_VIEW_STARTED_AT %@" = "%@";
 
