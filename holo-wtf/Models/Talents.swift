@@ -331,8 +331,17 @@ struct GenerationGroup: Hashable {
     }
     
     var altLocalizedName: String {
-        let altLang: NameLanguage = Locale.current.languageCode == "ja" ? .en : .ja
-        return names[altLang]!
+        if #available(iOS 16, *) {
+            if let langCode = Locale.current.language.languageCode?.identifier {
+                let lang: NameLanguage = langCode == "ja" ? .en : .ja
+                return names[lang]!
+            } else {
+                return names[.en]!
+            }
+        } else {
+            let lang: NameLanguage = Locale.current.languageCode == "ja" ? .en : .ja
+            return names[lang]!
+        }
     }
 }
 
