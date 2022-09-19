@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-enum NavigationStatus {
-    case songs
-}
-
 @available(iOS 16.0, *)
 struct LiveStackView: View {
     @StateObject var live: LiveViewModel
