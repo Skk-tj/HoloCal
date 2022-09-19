@@ -10,13 +10,34 @@ import WidgetKit
 
 @available(iOSApplicationExtension 16.0, *)
 struct UpcomingAccessoryRectangularWidgetView: View {
+    @Environment(\.widgetRenderingMode) var renderingMode
     let upcoming: LiveVideo
     
     var body: some View {
+        switch renderingMode {
+        case .accented:
+            VStack(alignment: .leading) {
+                Label("UPCOMING_WIDGET_TITLE", systemImage: "clock")
+                    .font(.caption)
+                    .widgetAccentable()
+                
+                Text(upcoming.title)
+                    .font(.caption)
+                
+                Text(upcoming.channel.getTalentName())
+                    .font(.footnote)
+                
+                UpcomingTimeView(liveSchedule: upcoming.startScheduled, fontSize: .footnote)
+            }
+        default:
+            widget
+        }
+    }
+    
+    var widget: some View {
         VStack(alignment: .leading) {
             Label("UPCOMING_WIDGET_TITLE", systemImage: "clock")
                 .font(.caption)
-                .widgetAccentable()
             
             Text(upcoming.title)
                 .font(.caption)
