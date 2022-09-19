@@ -17,6 +17,7 @@
 
 "SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER" = "Upcoming Schedule";
 "SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT %lld" = "Show upcoming streams in %lld hours";
+"WATCH_SETTINGS_UPCOMING_SCHEDULE_PICKER_TEXT %lld" = "%lld hours";
 
 "SETTINGS_STREAM_TIME_HEADER" = "Stream Time";
 "SETTINGS_STREAM_TIME_FOOTER" = "If your device is set to a timezone that observes Daylight Saving Time, HoloCal will remind you about DST transitions.";
@@ -63,6 +64,7 @@
 "LIVE_CELL_VIEW_MEMBER_ONLY_STREAM" = "ไลฟ์สตรีมสำหรับเมมเบอร์เท่านั้น";
 "LIVE_CELL_VIEW_PEOPLE_WATCHING %lld" = "%lld คนกำลังรับชม";
 "LIVE_CELL_VIEW_STARTED_AGO %@" = "เริ่มสตรีมเมื่อ %@ ที่แล้ว";
+"LIVE_CELL_VIEW_STARTED_AGO_SHORT %@" = "%@ ago";
 "LIVE_CELL_VIEW_WAITING" = "Waiting...";
 "LIVE_CELL_VIEW_STARTED_AT %@" = "%@";
 
