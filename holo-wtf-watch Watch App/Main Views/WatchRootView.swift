@@ -9,52 +9,27 @@ import SwiftUI
 
 struct WatchRootView: View {
     var body: some View {
-        if #available(watchOS 9.0, *) {
-            NavigationStack {
-                List {
-                    NavigationLink(destination: {
-                        LiveWatchView()
-                    }, label: {
-                        Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
-                    })
-                    
-                    NavigationLink(destination: {
-                        UpcomingWatchView()
-                    }, label: {
-                        Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
-                    })
-                    
-                    NavigationLink(destination: {
-                        SettingsWatchView()
-                    }, label: {
-                        Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
-                    })
-                }
-                .navigationTitle("HoloCal")
+        NavigationStack {
+            List {
+                NavigationLink(destination: {
+                    LiveWatchView()
+                }, label: {
+                    Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
+                })
+                
+                NavigationLink(destination: {
+                    UpcomingWatchView()
+                }, label: {
+                    Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
+                })
+                
+                NavigationLink(destination: {
+                    SettingsWatchView()
+                }, label: {
+                    Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
+                })
             }
-        } else {
-            NavigationView {
-                List {
-                    NavigationLink(destination: {
-                        LiveWatchView()
-                    }, label: {
-                        Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
-                    })
-                    
-                    NavigationLink(destination: {
-                        UpcomingWatchView()
-                    }, label: {
-                        Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
-                    })
-                    
-                    NavigationLink(destination: {
-                        SettingsWatchView()
-                    }, label: {
-                        Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
-                    })
-                }
-                .navigationTitle("HoloCal")
-            }
+            .navigationTitle("HoloCal")
         }
     }
 }
