@@ -14,7 +14,6 @@ struct SettingsFormView: View {
     var body: some View {
         Form {
             Section(header: Text("SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER")) {
-                
                 Text("SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT \(hoursLookAhead)")
                 
                 Picker("Upcoming look ahead", selection: $hoursLookAhead) {

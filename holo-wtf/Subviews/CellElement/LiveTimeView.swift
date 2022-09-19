@@ -9,6 +9,8 @@ import SwiftUI
 
 struct LiveTimeView: View {
     let liveTime: Date?
+    var fontSize: Font = .footnote
+    var shortMode: Bool = false
     
     @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInLiveView) var isShowingAbsoluteTime: Bool = false
     
@@ -16,18 +18,24 @@ struct LiveTimeView: View {
         if let liveStart = liveTime {
             if isShowingAbsoluteTime {
                 Text("LIVE_CELL_VIEW_STARTED_AT \(liveStart.formatted(date: .abbreviated, time: .shortened))")
-                    .font(.footnote)
+                    .font(fontSize)
                     .foregroundColor(.secondary)
             } else {
                 if let elapsedTimeString = getTimeIntervalStringFromReferenceDate(reference: liveStart) {
-                    Text("LIVE_CELL_VIEW_STARTED_AGO \(elapsedTimeString)")
-                        .font(.footnote)
-                        .foregroundColor(.secondary)
+                    if shortMode {
+                        Text("LIVE_CELL_VIEW_STARTED_AGO_SHORT \(elapsedTimeString)")
+                            .font(fontSize)
+                            .foregroundColor(.secondary)
+                    } else {
+                        Text("LIVE_CELL_VIEW_STARTED_AGO \(elapsedTimeString)")
+                            .font(fontSize)
+                            .foregroundColor(.secondary)
+                    }
                 }
             }
         } else {
             Text("LIVE_CELL_VIEW_WAITING")
-                .font(.footnote)
+                .font(fontSize)
                 .foregroundColor(.secondary)
         }
     }

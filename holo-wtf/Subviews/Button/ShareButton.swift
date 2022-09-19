@@ -6,7 +6,9 @@
 //
 
 import SwiftUI
+#if canImport(ActivityView)
 import ActivityView
+#endif
 
 // FIXME: Remove after iOS 16
 struct ShareButton<Content: View>: View {
