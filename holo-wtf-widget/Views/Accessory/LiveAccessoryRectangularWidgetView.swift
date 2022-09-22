@@ -18,20 +18,17 @@ struct LiveAccessoryRectangularWidgetView: View {
         case .accented:
             VStack(alignment: .leading) {
                 Label("LIVE_WIDGET_TITLE", systemImage: "person.wave.2.fill")
-                    .font(.caption)
+                    .font(.headline)
                     .widgetAccentable()
                 
                 Text(live.title)
-                    .font(.caption)
+                    .lineLimit(1)
                 
                 Text(live.channel.getTalentName())
-                    .lineLimit(1)
-                    .font(.footnote)
-                
-                Text("\(Image(systemName: "eye")) \(live.liveViewers)")
-                    .font(.footnote)
                     .foregroundColor(.secondary)
+                    .lineLimit(1)
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         default:
             widget
         }
@@ -40,19 +37,16 @@ struct LiveAccessoryRectangularWidgetView: View {
     var widget: some View {
         VStack(alignment: .leading) {
             Label("LIVE_WIDGET_TITLE", systemImage: "person.wave.2.fill")
-                .font(.caption)
+                .font(.headline)
             
             Text(live.title)
-                .font(.caption)
+                .lineLimit(1)
             
             Text(live.channel.getTalentName())
-                .lineLimit(1)
-                .font(.footnote)
-            
-            Text("\(Image(systemName: "eye")) \(live.liveViewers)")
-                .font(.footnote)
                 .foregroundColor(.secondary)
+                .lineLimit(1)
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
