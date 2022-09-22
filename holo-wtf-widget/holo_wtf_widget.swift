@@ -9,16 +9,6 @@ import WidgetKit
 import SwiftUI
 import Intents
 
-protocol VideoTimelineEntry: TimelineEntry {
-    var status: WidgetDataStatus { get }
-}
-
-enum WidgetDataStatus {
-    case ok
-    case noVideo
-    case network
-}
-
 @main
 struct HoloCalWidgetBundle: WidgetBundle {
     @WidgetBundleBuilder
