@@ -24,8 +24,8 @@ struct SingleSongView: View {
                 .alignmentGuide(.leading) { d in d[.trailing]}
             
             VStack(alignment: .leading) {
-                Text("\(song.MKsong?.title ?? song.name)")
-                Text("\(song.MKsong?.artistName ?? song.originalArtist)")
+                Text("\(song.mkSong?.title ?? song.name)")
+                Text("\(song.mkSong?.artistName ?? song.originalArtist)")
                     .foregroundColor(.secondary)
                     .font(.caption)
             }
@@ -39,14 +39,14 @@ struct SingleSongView: View {
             .buttonStyle(.plain)
         }
         .contextMenu {
-            if let itunesURL = song.MKsong?.url {
-                Link(destination: itunesURL) {
-                    Label("SINGLE_SONG_VIEW_CONTECT_MENU_OPEN_IN_APPLE_MUSIC", systemImage: "music.note")
+            if let iTunesURL = song.mkSong?.url {
+                Link(destination: iTunesURL) {
+                    Label("SINGLE_SONG_VIEW_CONTEXT_MENU_OPEN_IN_APPLE_MUSIC", systemImage: "music.note")
                 }
             }
             
             Link(destination: songStartURL.url!) {
-                Label("SINGLE_SONG_VIEW_CONTECT_MENU_JUMP_TO_SONG_IN_VIDEO", systemImage: "play.rectangle")
+                Label("SINGLE_SONG_VIEW_CONTEXT_MENU_JUMP_TO_SONG_IN_VIDEO", systemImage: "play.rectangle")
             }
         }
     }
