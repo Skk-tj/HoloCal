@@ -17,8 +17,9 @@ struct LiveAccessoryRectangularWidgetEntryView: View {
             LiveAccessoryRectangularWidgetView(live: video)
         } else {
             VStack(alignment: .leading) {
-                Label("LIVE_WIDGET_TITLE", systemImage: "person.wave.2.fill")
-                    .font(.caption)
+                Label("LIVE_WIDGET_TITLE_NON_BOLD", systemImage: "person.wave.2.fill")
+                    .font(.headline)
+                    .widgetAccentable()
                 
                 Text("NO_ONE_IS_STREAMING")
             }
@@ -35,8 +36,9 @@ struct UpcomingAccessoryRectangularWidgetEntryView: View {
             UpcomingAccessoryRectangularWidgetView(upcoming: video)
         } else {
             VStack(alignment: .leading) {
-                Label("UPCOMING_WIDGET_TITLE", systemImage: "clock")
-                    .font(.caption)
+                Label("UPCOMING_WIDGET_TITLE_NON_BOLD", systemImage: "clock")
+                    .font(.headline)
+                    .widgetAccentable()
                 
                 Text("NO_ONE_IS_STREAMING")
             }
