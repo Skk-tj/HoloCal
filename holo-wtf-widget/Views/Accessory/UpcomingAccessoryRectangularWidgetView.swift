@@ -17,18 +17,19 @@ struct UpcomingAccessoryRectangularWidgetView: View {
         switch renderingMode {
         case .accented:
             VStack(alignment: .leading) {
-                Label("UPCOMING_WIDGET_TITLE", systemImage: "clock")
-                    .font(.caption)
+                Label("UPCOMING_WIDGET_TITLE_NON_BOLD", systemImage: "clock")
+                    .font(.headline)
                     .widgetAccentable()
+                    .lineLimit(1)
                 
                 Text(upcoming.title)
-                    .font(.caption)
+                    .lineLimit(1)
                 
                 Text(upcoming.channel.getTalentName())
-                    .font(.footnote)
-                
-                UpcomingTimeView(liveSchedule: upcoming.startScheduled, fontSize: .footnote)
+                    .foregroundColor(.secondary)
+                    .lineLimit(1)
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         default:
             widget
         }
@@ -36,17 +37,18 @@ struct UpcomingAccessoryRectangularWidgetView: View {
     
     var widget: some View {
         VStack(alignment: .leading) {
-            Label("UPCOMING_WIDGET_TITLE", systemImage: "clock")
-                .font(.caption)
+            Label("UPCOMING_WIDGET_TITLE_NON_BOLD", systemImage: "clock")
+                .font(.headline)
+                .lineLimit(1)
             
             Text(upcoming.title)
-                .font(.caption)
+                .lineLimit(1)
             
             Text(upcoming.channel.getTalentName())
-                .font(.footnote)
-            
-            UpcomingTimeView(liveSchedule: upcoming.startScheduled, fontSize: .footnote)
+                .foregroundColor(.secondary)
+                .lineLimit(1)
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
