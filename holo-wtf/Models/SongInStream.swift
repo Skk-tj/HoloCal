@@ -13,7 +13,7 @@ enum SongRequestError: Error {
     case notAuthorized
 }
 
-struct MySingleSongReponse: Decodable {
+struct MySingleSongResponse: Decodable {
     let data: [Song]?
 }
 
@@ -23,19 +23,19 @@ struct SongInStream: Codable, Identifiable, Hashable {
     let end: Int
     let name: String
     let originalArtist: String
-    let itunesid: Int?
+    let iTunesId: Int?
     
-    var MKsong: Song?
+    var mkSong: Song?
     
-    static let exampleSong = SongInStream(id: UUID(uuidString: "159d5e0d-6b74-4b3f-869a-d47ac0aa6e01")!, start: 3220, end: 223, name: "My only gradation", originalArtist: "fuji aoi", itunesid: 1585332602)
+    static let exampleSong = SongInStream(id: UUID(uuidString: "159d5e0d-6b74-4b3f-869a-d47ac0aa6e01")!, start: 3220, end: 223, name: "My only gradation", originalArtist: "fuji aoi", iTunesId: 1585332602)
     
     static let exampleSongs: [SongInStream] = [
-        SongInStream(id: UUID(uuidString: "159d5e0d-6b74-4b3f-869a-d47ac0aa6e01")!, start: 3220, end: 223, name: "My only gradation", originalArtist: "fuji aoi", itunesid: 1585332602),
-        SongInStream(id: UUID(uuidString: "3c812748-3595-4b82-8310-0e397e8cb517")!, start: 823, end: 223, name: "king", originalArtist: "kanaria", itunesid: 1580886351)
+        SongInStream(id: UUID(uuidString: "159d5e0d-6b74-4b3f-869a-d47ac0aa6e01")!, start: 3220, end: 223, name: "My only gradation", originalArtist: "fuji aoi", iTunesId: 1585332602),
+        SongInStream(id: UUID(uuidString: "3c812748-3595-4b82-8310-0e397e8cb517")!, start: 823, end: 223, name: "king", originalArtist: "kanaria", iTunesId: 1580886351)
     ]
     
     func updateSongWithMusicKit() async -> SongInStream {
-        return SongInStream(id: self.id, start: self.start, end: self.end, name: self.name, originalArtist: self.originalArtist, itunesid: self.itunesid, MKsong: try? await self.getSongInfo())
+        return SongInStream(id: self.id, start: self.start, end: self.end, name: self.name, originalArtist: self.originalArtist, iTunesId: self.iTunesId, mkSong: try? await self.getSongInfo())
     }
     
     func getSongInfo() async throws -> Song {
@@ -44,11 +44,11 @@ struct SongInStream: Codable, Identifiable, Hashable {
         if authorizationStatus == .authorized {
             let countryCode = try await MusicDataRequest.currentCountryCode
             
-            guard let itunesid = itunesid else {
+            guard let iTunesId = iTunesId else {
                 throw SongRequestError.notFound
             }
             
-            let url = URL(string: "https://api.music.apple.com/v1/catalog/\(countryCode)/songs/\(itunesid)")!
+            let url = URL(string: "https://api.music.apple.com/v1/catalog/\(countryCode)/songs/\(iTunesId)")!
             
             let dataRequest = MusicDataRequest(urlRequest: URLRequest(url: url))
             let dataResponse = try await dataRequest.response()
@@ -56,7 +56,7 @@ struct SongInStream: Codable, Identifiable, Hashable {
             let decoder = JSONDecoder()
             
             do {
-                let songResponse = try decoder.decode(MySingleSongReponse.self, from: dataResponse.data)
+                let songResponse = try decoder.decode(MySingleSongResponse.self, from: dataResponse.data)
                 
                 if let song: [Song] = songResponse.data {
                     guard let firstSong = song.first else {
@@ -80,11 +80,11 @@ struct SongInStream: Codable, Identifiable, Hashable {
         if authorizationStatus == .authorized {
             let countryCode = try await MusicDataRequest.currentCountryCode
             
-            guard let itunesid = itunesid else {
+            guard let iTunesid = iTunesId else {
                 throw SongRequestError.notFound
             }
             
-            let url = URL(string: "https://api.music.apple.com/v1/catalog/\(countryCode)/songs/\(itunesid)")!
+            let url = URL(string: "https://api.music.apple.com/v1/catalog/\(countryCode)/songs/\(iTunesid)")!
             
             let dataRequest = MusicDataRequest(urlRequest: URLRequest(url: url))
             let dataResponse = try await dataRequest.response()
@@ -92,15 +92,15 @@ struct SongInStream: Codable, Identifiable, Hashable {
             let decoder = JSONDecoder()
             
             do {
-                let songResponse = try decoder.decode(MySingleSongReponse.self, from: dataResponse.data)
+                let songResponse = try decoder.decode(MySingleSongResponse.self, from: dataResponse.data)
                 
                 if let song: [Song] = songResponse.data {
                     guard let firstSong = song.first else {
-                        self.MKsong = nil
+                        self.mkSong = nil
                         return
                     }
                     
-                    self.MKsong = firstSong
+                    self.mkSong = firstSong
                 } else {
                     throw SongRequestError.notFound
                 }

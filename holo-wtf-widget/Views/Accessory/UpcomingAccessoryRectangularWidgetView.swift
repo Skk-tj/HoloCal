@@ -17,7 +17,7 @@ struct UpcomingAccessoryRectangularWidgetView: View {
         switch renderingMode {
         case .accented:
             VStack(alignment: .leading) {
-                Label("UPCOMING_WIDGET_TITLE", systemImage: "clock")
+                Label("UPCOMING_WIDGET_TITLE_NON_BOLD", systemImage: "clock")
                     .font(.headline)
                     .widgetAccentable()
                     .lineLimit(1)
@@ -37,7 +37,7 @@ struct UpcomingAccessoryRectangularWidgetView: View {
     
     var widget: some View {
         VStack(alignment: .leading) {
-            Label("UPCOMING_WIDGET_TITLE", systemImage: "clock")
+            Label("UPCOMING_WIDGET_TITLE_NON_BOLD", systemImage: "clock")
                 .font(.headline)
                 .lineLimit(1)
             
