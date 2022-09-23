@@ -133,9 +133,11 @@
 
 // LiveWidget
 "LIVE_WIDGET_TITLE" = "**LIVE**";
+"LIVE_WIDGET_TITLE_NON_BOLD" = "LIVE";
 
 // Upcoming Widget
 "UPCOMING_WIDGET_TITLE" = "**UPCOMING**";
+"UPCOMING_WIDGET_TITLE_NON_BOLD" = "UPCOMING";
 
 // Widget system text
 "CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "Live";
@@ -155,8 +157,8 @@
 "SONG_SHEET_DISMISS_BUTTON" = "Dismiss";
 
 // Single Song View
-"SINGLE_SONG_VIEW_CONTECT_MENU_OPEN_IN_APPLE_MUSIC" = "Apple Musicで開く";
-"SINGLE_SONG_VIEW_CONTECT_MENU_JUMP_TO_SONG_IN_VIDEO" = "配信に出る場所へ";
+"SINGLE_SONG_VIEW_CONTEXT_MENU_OPEN_IN_APPLE_MUSIC" = "Open in Apple Music";
+"SINGLE_SONG_VIEW_CONTEXT_MENU_JUMP_TO_SONG_IN_VIDEO" = "Jump to Song in Stream";
 
 // Common between LivePaneView and UpcomingPaneView
 "LIVE_PANE_VIEW_WITH" = "と";
