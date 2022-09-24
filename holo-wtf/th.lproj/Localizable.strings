@@ -51,7 +51,7 @@
 
 "SETTINGS_ABOUT_SECTION_HEADER" = "เกี่ยวกับ";
 "SETTINGS_ABOUT_BUG_REPORT" = "คำติชม & รายงานข้อบกพร่อง";
-"SETTINGS_OPEN_SOURCE" = "โพรเจกต์โอเพ่นซอร์สที่ใช้";
+"SETTINGS_OPEN_SOURCE" = "Open Source";
 "SETTINGS_BETA_TESTING" = "เข้าร่วมเป็นผู้ทดสอบระบบ";
 "SETTINGS_TWITTER" = "ติดตามทวิตเตอร์ของผู้พัฒนาเพื่อไม่พลาดข่าวสารใหม่ๆ เกี่ยวกับ HoloCal";
 
