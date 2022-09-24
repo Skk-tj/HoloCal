@@ -28,7 +28,7 @@ class HoloCalUITests: XCTestCase {
         app.launch()
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        XCTAssertTrue(app.navigationBars.staticTexts["Currently Live"].exists)
+        XCTAssertTrue(app.navigationBars.staticTexts["Live"].exists)
     }
     
     func testTabBar() throws {
@@ -45,13 +45,37 @@ class HoloCalUITests: XCTestCase {
         app.launch()
         
         app.tabBars.buttons["Live"].tap()
-        XCTAssertTrue(app.navigationBars.staticTexts["Currently Live"].exists)
+        XCTAssertTrue(app.navigationBars.staticTexts["Live"].exists)
         
         app.tabBars.buttons["Upcoming"].tap()
-        XCTAssertTrue(app.navigationBars.staticTexts["Upcoming Streams"].exists)
+        XCTAssertTrue(app.navigationBars.staticTexts["Upcoming"].exists)
         
         app.tabBars.buttons["Settings"].tap()
         XCTAssertTrue(app.navigationBars.staticTexts["Settings"].exists)
+    }
+    
+    func testJapaneseTabBar() throws {
+        let app = XCUIApplication()
+        app.launchArguments = [
+            "-AppleLanguages",
+            "(ja)",
+            "-AppleLocale",
+            "ja_JP"
+        ]
+        
+        app.launch()
+        
+        XCTAssertTrue(app.tabBars.buttons["ライブ配信中"].exists)
+        XCTAssertTrue(app.tabBars.buttons["今後のライブ配信"].exists)
+        XCTAssertTrue(app.tabBars.buttons["設定"].exists)
+    }
+    
+    func testSettingsSectionHeaderText() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.tabBars.buttons["Settings"].tap()
+        XCTAssertTrue(app.staticTexts["UPCOMING SCHEDULE"].exists)
     }
 
     func testLaunchPerformance() throws {
