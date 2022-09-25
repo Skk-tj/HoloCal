@@ -17,7 +17,7 @@
 
 "SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER" = "ライブ配信の予定";
 "SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT %lld" = "%lld時間内のライブ配信を表示";
-"WATCH_SETTINGS_UPCOMING_SCHEDULE_PICKER_TEXT %lld" = "%lld hours";
+"WATCH_SETTINGS_UPCOMING_SCHEDULE_PICKER_TEXT %lld" = "%lld時間";
 
 "SETTINGS_STREAM_TIME_HEADER" = "配信時間";
 "SETTINGS_STREAM_TIME_FOOTER" = "HoloCalは夏時間が適用されるタイムゾーンに設定されている場合、夏時間への移行をお知らせします。";
@@ -32,26 +32,26 @@
 "SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_CANCEL" = "キャンセル";
 "SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_RESET" = "リセット";
 
-"SETTINGS_MANAGE_GENERATION_VISIBILITY" = "Manage Generation Visibility";
-"SETTINGS_MANAGE_GENERATION_VISIBILITY_VIEW_TITLE" = "Generation Visibility";
-"SETTINGS_MANAGE_GENERATION_VISIBILITY_SECTION_FOOTER" = "You can deselect generations to exclude them from appearing in Live and Upcoming. \nIf you favourited a talent whose generation is excluded, they will still be shown. ";
+"SETTINGS_MANAGE_GENERATION_VISIBILITY" = "グループフィルター";
+"SETTINGS_MANAGE_GENERATION_VISIBILITY_VIEW_TITLE" = "グループフィルター";
+"SETTINGS_MANAGE_GENERATION_VISIBILITY_SECTION_FOOTER" = "グループを選択解除するで、「ライブ配信中」と「今後のライブ配信」に表示されないようにすることができます。\nお気に入りに登録したタレントが所属するグループが選択解除するても、タレントを表示されます。";
 
-"SETTINGS_MANAGE_GENERATION_ORDER" = "Manage Generation Order";
-"SETTINGS_MANAGE_GENERATION_ORDER_VIEW_TITLE" = "Generation Order";
-"SETTINGS_MANAGE_GENERATION_ORDER_SECTION_FOOTER" = "You can reorder the generations to alter the order they would be shown in both Live and Upcoming. ";
+"SETTINGS_MANAGE_GENERATION_ORDER" = "グループ序次";
+"SETTINGS_MANAGE_GENERATION_ORDER_VIEW_TITLE" = "グループ序次";
+"SETTINGS_MANAGE_GENERATION_ORDER_SECTION_FOOTER" = "グループ序次を並び替えて、「ライブ配信中」と「今後のライブ配信」で表示される順番を変更することも可能です。";
 
-"SETTINGS_MANAGE_GENERATION_VISIBILITY_RESET" = "Reset visibility";
-"SETTINGS_MANAGE_GENERATION_VISIBILITY_RESET_ALERT_TEXT" = "Generation visibility will be reset, are you sure?";
+"SETTINGS_MANAGE_GENERATION_VISIBILITY_RESET" = "フィルターをリセット";
+"SETTINGS_MANAGE_GENERATION_VISIBILITY_RESET_ALERT_TEXT" = "フィルターをリセットします、よろしいですか？";
 
-"SETTINGS_MANAGE_GENERATION_ORDER_RESET" = "Reset order";
-"SETTINGS_MANAGE_GENERATION_ORDER_RESET_ALERT_TEXT" = "Generation order will be reset, are you sure?";
+"SETTINGS_MANAGE_GENERATION_ORDER_RESET" = "序次をリセット";
+"SETTINGS_MANAGE_GENERATION_ORDER_RESET_ALERT_TEXT" = "序次をリセットします、よろしいですか？";
 
 "SETTINGS_MANAGE_GENERATION_RESET_ALERT_CANCEL" = "キャンセル";
 "SETTINGS_MANAGE_GENERATION_RESET_ALERT_RESET" = "リセット";
 
 "SETTINGS_ABOUT_SECTION_HEADER" = "このアプリについて";
 "SETTINGS_ABOUT_BUG_REPORT" = "フィードバック＆バグリポート";
-"SETTINGS_OPEN_SOURCE" = "Open Source";
+"SETTINGS_OPEN_SOURCE" = "オープンソース";
 "SETTINGS_BETA_TESTING" = "ベータテストに参加";
 "SETTINGS_TWITTER" = "開発者Twitter";
 
@@ -64,7 +64,7 @@
 "LIVE_CELL_VIEW_MEMBER_ONLY_STREAM" = "メンバー限定";
 "LIVE_CELL_VIEW_PEOPLE_WATCHING %lld" = "%lld人が視聴中";
 "LIVE_CELL_VIEW_STARTED_AGO %@" = "%@前にライブ開始";
-"LIVE_CELL_VIEW_STARTED_AGO_SHORT %@" = "%@ ago";
+"LIVE_CELL_VIEW_STARTED_AGO_SHORT %@" = "%@前";
 "LIVE_CELL_VIEW_WAITING" = "待機中";
 "LIVE_CELL_VIEW_STARTED_AT %@" = "%@";
 
@@ -80,14 +80,14 @@
 
 // LiveView
 
-"LIVE_VIEW_TITLE" = "Live";
+"LIVE_VIEW_TITLE" = "ライブ配信中";
 "LIVE_VIEW_CURRENT_COUNT %lld" = "%lld人がライブ配信中";
 "LIVE_VIEW_CURRENT_COUNT %lld %lld" = "%lld人がライブ配信中（%lld人表示されていない）";
 "LIVE_VIEW_FAVOURITE_SECTION_TITLE" = "お気に入り";
 
 // UpcomingView
 
-"UPCOMING_VIEW_TITLE" = "Upcoming";
+"UPCOMING_VIEW_TITLE" = "今後のライブ配信";
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld" = "%2$lld時間内に%1$lld人が配信予定";
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld %lld" = "%2$lld時間内に%1$lld人が配信予定（%3$lld人表示されていない）";
 
@@ -95,11 +95,11 @@
 
 "LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE" = "絶対時間を表示";
 "LIVE_VIEW_TOOLBAR_SHOW_RELATIVE" = "相対時間を表示";
-"LIVE_VIEW_TOOLBAR_SHOW_COMPACT" = "Show Express Mode";
+"LIVE_VIEW_TOOLBAR_SHOW_COMPACT" = "エクスプレスモードを表示";
 "LIVE_VIEW_TOOLBAR_SHOW_CARD" = "カードビューを表示";
 "LIVE_VIEW_TOOLBAR_SORT" = "並べ替え...";
-"LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION" = "Sort by generation";
-"LIVE_VIEW_TOOLBAR_FAVOURITES_ONLY" = "Show favourites only";
+"LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION" = "グループ順";
+"LIVE_VIEW_TOOLBAR_FAVOURITES_ONLY" = "お気に入りのみ";
 "LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME" = "開始時間順...";
 "LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS" = "視聴者数順...";
 "LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS_ASCENDING" = "昇順";
@@ -132,33 +132,33 @@
 "NETWORK_ERROR" = "ネットワークエラーが発生しました。";
 
 // LiveWidget
-"LIVE_WIDGET_TITLE" = "**LIVE**";
-"LIVE_WIDGET_TITLE_NON_BOLD" = "LIVE";
+"LIVE_WIDGET_TITLE" = "**ライブ配信中**";
+"LIVE_WIDGET_TITLE_NON_BOLD" = "ライブ配信中";
 
 // Upcoming Widget
-"UPCOMING_WIDGET_TITLE" = "**UPCOMING**";
-"UPCOMING_WIDGET_TITLE_NON_BOLD" = "UPCOMING";
+"UPCOMING_WIDGET_TITLE" = "**今後の配信**";
+"UPCOMING_WIDGET_TITLE_NON_BOLD" = "今後の配信";
 
 // Widget system text
-"CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "Live";
+"CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "ライブ配信";
 "CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "ライブ配信を表示する";
 
-"MULTIPLE_CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "Multiple Live";
+"MULTIPLE_CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "複数のライブ配信";
 "MULTIPLE_CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "複数のライブ配信を表示する";
 
-"UPCOMING_WIDGET_DISPLAY_NAME" = "Upcoming";
-"UPCOMING_WIDGET_DESCRIPTION" = "Show an upcoming stream.";
+"UPCOMING_WIDGET_DISPLAY_NAME" = "今後のライブ配信";
+"UPCOMING_WIDGET_DESCRIPTION" = "今後のライブ配信を表示する";
 
-"MULTIPLE_UPCOMING_WIDGET_DISPLAY_NAME" = "Multiple Upcoming";
-"MULTIPLE_UPCOMING_WIDGET_DESCRIPTION" = "Show two streams together.";
+"MULTIPLE_UPCOMING_WIDGET_DISPLAY_NAME" = "複数の今後のライブ配信";
+"MULTIPLE_UPCOMING_WIDGET_DESCRIPTION" = "複数の今後のライブ配信を表示する";
 
 // Song List View
 "SONG_LIST_VIEW_NAVIGATION_TITLE" = "曲";
-"SONG_SHEET_DISMISS_BUTTON" = "Dismiss";
+"SONG_SHEET_DISMISS_BUTTON" = "閉じる";
 
 // Single Song View
-"SINGLE_SONG_VIEW_CONTEXT_MENU_OPEN_IN_APPLE_MUSIC" = "Open in Apple Music";
-"SINGLE_SONG_VIEW_CONTEXT_MENU_JUMP_TO_SONG_IN_VIDEO" = "Jump to Song in Stream";
+"SINGLE_SONG_VIEW_CONTEXT_MENU_OPEN_IN_APPLE_MUSIC" = "Apple Musicで開く";
+"SINGLE_SONG_VIEW_CONTEXT_MENU_JUMP_TO_SONG_IN_VIDEO" = "配信に出る場所へ";
 
 // Common between LivePaneView and UpcomingPaneView
 "LIVE_PANE_VIEW_WITH" = "と";
@@ -168,5 +168,5 @@
 
 // DST Reminder View
 "DST_REMINDER_VIEW_TITLE" = "夏時間リマインダー";
-"DST_REMINDER_VIEW_TEXT %@ %lld" = "Daylight Saving Time is %@ in **%lld days**. As Japan does not observe Daylight Saving Time, please double-check the stream time.";
+"DST_REMINDER_VIEW_TEXT %@ %lld" = "Daylight Saving Time is %@ in **%lld days**. As Japan does not observe Daylight Saving Time, please double-check the stream time. ";
 "DST_REMINDER_VIEW_FOOTER" = "このデバイスは、夏時間タイムゾーンに設定されています。位置情報は使用されていません。";
