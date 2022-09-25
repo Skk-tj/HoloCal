@@ -11,34 +11,79 @@ struct SettingsFormView: View {
     @AppStorage(UserDefaultKeys.upcomingLookAhead) var hoursLookAhead: Int = 48
     @AppStorage(UserDefaultKeys.dstDays) var dstDays: Int = 5
     
+    // Upcoming picker hiding/showing management states
+    @State var showUpcomingPicker = false
+    @State var upcomingChevronRotationAngle: Double = 0
+    
+    // DST change picker hiding/showing management states
+    @State var showDSTPicker = false
+    @State var dstChevronRotationAngle: Double = 0
+    
     var body: some View {
         Form {
             Section(header: Text("SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER")) {
-                Text("SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT \(hoursLookAhead)")
-                
-                Picker("Upcoming look ahead", selection: $hoursLookAhead) {
-                    ForEach([12, 24, 48, 72, 96, 120], id: \.self) {
-                        Text("\($0)")
+                Button(action: {
+                    withAnimation(.easeInOut) {
+                        showUpcomingPicker.toggle()
+                        if showUpcomingPicker {
+                            upcomingChevronRotationAngle += 90
+                        } else {
+                            upcomingChevronRotationAngle -= 90
+                        }
                     }
-                }
-                .pickerStyle(.wheel)
-                .onChange(of: hoursLookAhead, perform: { newHours in
-                    UserDefaults.standard.set(newHours, forKey: UserDefaultKeys.upcomingLookAhead)
+                }, label: {
+                    HStack {
+                        Text("SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT \(hoursLookAhead)")
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .foregroundColor(.secondary)
+                            .rotationEffect(Angle(degrees: upcomingChevronRotationAngle))
+                    }
                 })
+                
+                if showUpcomingPicker {
+                    Picker("Upcoming look ahead", selection: $hoursLookAhead) {
+                        ForEach([12, 24, 48, 72, 96, 120], id: \.self) {
+                            Text("\($0)")
+                        }
+                    }
+                    .pickerStyle(.wheel)
+                    .onChange(of: hoursLookAhead, perform: { newHours in
+                        UserDefaults.standard.set(newHours, forKey: UserDefaultKeys.upcomingLookAhead)
+                    })
+                }
             }
             
             Section(header: Text("SETTINGS_STREAM_TIME_HEADER"), footer: Text("SETTINGS_STREAM_TIME_FOOTER")) {
-                Text("SETTINGS_DST_CHANGE_TEXT \(dstDays)")
-                
-                Picker("DST change", selection: $dstDays) {
-                    ForEach(1...10, id: \.self) {
-                        Text("\($0)")
+                Button(action: {
+                    withAnimation(.easeInOut) {
+                        showDSTPicker.toggle()
+                        if showDSTPicker {
+                            dstChevronRotationAngle += 90
+                        } else {
+                            dstChevronRotationAngle -= 90
+                        }
                     }
-                }
-                .pickerStyle(.wheel)
-                .onChange(of: dstDays, perform: { newHours in
-                    UserDefaults.standard.set(newHours, forKey: UserDefaultKeys.dstDays)
+                }, label: {
+                    HStack {
+                        Text("SETTINGS_DST_CHANGE_TEXT \(dstDays)")
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .foregroundColor(.secondary)
+                            .rotationEffect(Angle(degrees: dstChevronRotationAngle))
+                    }
                 })
+                if showDSTPicker {
+                    Picker("DST change", selection: $dstDays) {
+                        ForEach(1...10, id: \.self) {
+                            Text("\($0)")
+                        }
+                    }
+                    .pickerStyle(.wheel)
+                    .onChange(of: dstDays, perform: { newHours in
+                        UserDefaults.standard.set(newHours, forKey: UserDefaultKeys.dstDays)
+                    })
+                }
             }
             
             Section("SETTINGS_CHANNEL_MANAGEMENT_HEADER") {
