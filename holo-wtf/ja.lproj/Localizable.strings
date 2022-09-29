@@ -53,7 +53,9 @@
 "SETTINGS_ABOUT_BUG_REPORT" = "フィードバック＆バグリポート";
 "SETTINGS_OPEN_SOURCE" = "オープンソース";
 "SETTINGS_BETA_TESTING" = "ベータテストに参加";
+"SETTINGS_SPECIAL_THANKS" = "Special Thanks";
 "SETTINGS_TWITTER" = "開発者Twitter";
+"SETTINGS_HELP_TRANSLATE" = "Help translate this app";
 
 // OpenSourceView
 
