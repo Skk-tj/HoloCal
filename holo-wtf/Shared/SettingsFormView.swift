@@ -109,9 +109,17 @@ struct SettingsFormView: View {
                     Text("SETTINGS_BETA_TESTING")
                 }
                 
+                Link(destination: URL(string: "https://crowdin.com/project/holocal/invite?d=p6a556u4l6f5339323b363c5b3o4a3p4a323")!, label: {
+                    Text("SETTINGS_HELP_TRANSLATE")
+                })
+                
                 Link(destination: URL(string: "https://twitter.com/skk_tj")!) {
                     Text("SETTINGS_TWITTER")
                 }
+                
+                NavigationLink(destination: SpecialThanksView(), label: {
+                    Text("SETTINGS_SPECIAL_THANKS")
+                })
                 
                 NavigationLink(destination: OpenSourceView()) {
                     Text("SETTINGS_OPEN_SOURCE")
