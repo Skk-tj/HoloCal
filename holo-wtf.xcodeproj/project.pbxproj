@@ -22,6 +22,20 @@
 		F011C42828303CA400FD1364 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F009023D27EE255B00E343B0 /* Localizable.strings */; };
 		F01E95B3286FB4B900CDF0F9 /* iPadLazyGirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01E95B2286FB4B900CDF0F9 /* iPadLazyGirdView.swift */; };
 		F025203728E10AB600976972 /* SpecialThanksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025203628E10AB600976972 /* SpecialThanksView.swift */; };
+		F025203F28EE94B700976972 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025203E28EE94B700976972 /* Constants.swift */; };
+		F025204028EE95F900976972 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025203E28EE94B700976972 /* Constants.swift */; };
+		F025204128EE95FA00976972 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025203E28EE94B700976972 /* Constants.swift */; };
+		F025204228EE95FB00976972 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025203E28EE94B700976972 /* Constants.swift */; };
+		F025204428EEA5FC00976972 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025204328EEA5FC00976972 /* Common.swift */; };
+		F025204528EEA5FC00976972 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025204328EEA5FC00976972 /* Common.swift */; };
+		F025204628EEA5FC00976972 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025204328EEA5FC00976972 /* Common.swift */; };
+		F025204728EEA5FC00976972 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025204328EEA5FC00976972 /* Common.swift */; };
+		F025204928EEA91600976972 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025204828EEA91600976972 /* Organization.swift */; };
+		F025204A28EEA91600976972 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025204828EEA91600976972 /* Organization.swift */; };
+		F025204B28EEA91600976972 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025204828EEA91600976972 /* Organization.swift */; };
+		F025204C28EEA91600976972 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025204828EEA91600976972 /* Organization.swift */; };
+		F025204D28EEAEE000976972 /* MultipleVideoWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0B28C1A82400635CAD /* MultipleVideoWidgetEntry.swift */; };
+		F025204E28EEAEE100976972 /* MultipleVideoWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0B28C1A82400635CAD /* MultipleVideoWidgetEntry.swift */; };
 		F02830802853DB0E00CBFCE7 /* Widgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028307F2853DB0E00CBFCE7 /* Widgets.swift */; };
 		F02830822853DB5E00CBFCE7 /* WidgetEntryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02830812853DB5E00CBFCE7 /* WidgetEntryViews.swift */; };
 		F028308628545ACF00CBFCE7 /* UpcomingWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028308528545ACF00CBFCE7 /* UpcomingWidgetProvider.swift */; };
@@ -300,6 +314,9 @@
 		F0204DB827E91A920083750F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F0204DB927E925220083750F /* PRIVACY-POLICY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "PRIVACY-POLICY.md"; sourceTree = "<group>"; };
 		F025203628E10AB600976972 /* SpecialThanksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialThanksView.swift; sourceTree = "<group>"; };
+		F025203E28EE94B700976972 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F025204328EEA5FC00976972 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		F025204828EEA91600976972 /* Organization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
 		F028307F2853DB0E00CBFCE7 /* Widgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widgets.swift; sourceTree = "<group>"; };
 		F02830812853DB5E00CBFCE7 /* WidgetEntryViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetEntryViews.swift; sourceTree = "<group>"; };
 		F028308528545ACF00CBFCE7 /* UpcomingWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingWidgetProvider.swift; sourceTree = "<group>"; };
@@ -475,6 +492,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F025203D28EE949100976972 /* SharedUtil */ = {
+			isa = PBXGroup;
+			children = (
+				F0C657D527732690004AF802 /* Util.swift */,
+				F093D1E62830358400E2A6FF /* ViewUtil.swift */,
+				F0CA6EA228D791BE0028CB11 /* UIModes.swift */,
+				F025203E28EE94B700976972 /* Constants.swift */,
+			);
+			path = SharedUtil;
+			sourceTree = "<group>";
+		};
 		F02830832853DB8500CBFCE7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -495,6 +523,7 @@
 				F0B2AF0F28C2DEF100635CAD /* MultipleUpcomingWidgetProvider.swift */,
 				F028308728545B1200CBFCE7 /* SingleVideoWidgetEntry.swift */,
 				F0B2AF0B28C1A82400635CAD /* MultipleVideoWidgetEntry.swift */,
+				F025204328EEA5FC00976972 /* Common.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -673,21 +702,18 @@
 			path = CellElement;
 			sourceTree = "<group>";
 		};
-		F0954BF02817D8AC00369EC4 /* Shared */ = {
+		F0954BF02817D8AC00369EC4 /* SharedUI */ = {
 			isa = PBXGroup;
 			children = (
 				F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */,
 				F080A05027F993DC00DBC08D /* ManageFavoriteView.swift */,
 				F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */,
-				F0C657D527732690004AF802 /* Util.swift */,
 				F065857C28CFF4C6001672E1 /* ManageGenerationVisibilityView.swift */,
 				F04EB66628D2A0A000F168CB /* ManageGenerationOrderView.swift */,
 				F0A5B7BB282112FF004E319F /* ManageGenerationView.swift */,
-				F093D1E62830358400E2A6FF /* ViewUtil.swift */,
-				F0CA6EA228D791BE0028CB11 /* UIModes.swift */,
 				F025203628E10AB600976972 /* SpecialThanksView.swift */,
 			);
-			path = Shared;
+			path = SharedUI;
 			sourceTree = "<group>";
 		};
 		F0B2AF1328C2E48C00635CAD /* Small */ = {
@@ -750,7 +776,8 @@
 				F0C657BA2771F47C004AF802 /* holo_wtfApp.swift */,
 				F05E9EB127EB27E800EF48DD /* iPadOS */,
 				F05E9EB027EB27D100EF48DD /* iOS */,
-				F0954BF02817D8AC00369EC4 /* Shared */,
+				F025203D28EE949100976972 /* SharedUtil */,
+				F0954BF02817D8AC00369EC4 /* SharedUI */,
 				F0673C182775FE2B009C65C6 /* Subviews */,
 				F0C657D02771F71C004AF802 /* ViewModel */,
 				F0C657CA2771F4F3004AF802 /* Models */,
@@ -780,6 +807,7 @@
 				F0ED2AE12806858300683E6C /* Channel.swift */,
 				F0ED2AE3280685FD00683E6C /* LiveVideo.swift */,
 				F004E8C5285D004A00ABDFED /* SongInStream.swift */,
+				F025204828EEA91600976972 /* Organization.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1073,6 +1101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F06D28E528D839E4007D06FB /* LiveWidgetProvider.swift in Sources */,
+				F025204228EE95FB00976972 /* Constants.swift in Sources */,
 				F06D28F428D83A9D007D06FB /* LiveAccessoryRectangularWidgetView.swift in Sources */,
 				F06D28E828D839F5007D06FB /* LiveVideo.swift in Sources */,
 				F06D28F928D83AC9007D06FB /* Util.swift in Sources */,
@@ -1081,12 +1110,14 @@
 				F04D148228DD523C00750B71 /* LiveAccessoryCornerEntryView.swift in Sources */,
 				F06D28E128D8390F007D06FB /* SharedEntryView.swift in Sources */,
 				F04D148C28DD66AD00750B71 /* UpcomingAccessoryCornerView.swift in Sources */,
+				F025204C28EEA91600976972 /* Organization.swift in Sources */,
 				F06D28F828D83ABB007D06FB /* VideoFetchService.swift in Sources */,
 				F06D28FA28D83AD3007D06FB /* UpcomingTimeView.swift in Sources */,
 				F06D28F728D83AA6007D06FB /* UpcomingAccessoryRectangularWidgetView.swift in Sources */,
 				F06D28DE28D838C7007D06FB /* SharedWidgets.swift in Sources */,
 				F06D28E228D839E4007D06FB /* MultipleVideoWidgetEntry.swift in Sources */,
 				F06D28EC28D83A2D007D06FB /* SharedUtil.swift in Sources */,
+				F025204728EEA5FC00976972 /* Common.swift in Sources */,
 				F06D28E428D839E4007D06FB /* UpcomingWidgetProvider.swift in Sources */,
 				F04D147D28DD4ED300750B71 /* LiveAccessoryCornerView.swift in Sources */,
 				F06D28D128D83826007D06FB /* complications.swift in Sources */,
@@ -1104,10 +1135,12 @@
 				F093D1DC282FA0CF00E2A6FF /* LiveTimeView.swift in Sources */,
 				F04D1B3E283A304E0026340D /* LiveWidgetProvider.swift in Sources */,
 				F093D1DA282FA0C000E2A6FF /* UpcomingViewModel.swift in Sources */,
+				F025204528EEA5FC00976972 /* Common.swift in Sources */,
 				F06D28E028D8390F007D06FB /* SharedEntryView.swift in Sources */,
 				F093D1D9282FA0C000E2A6FF /* LiveViewModel.swift in Sources */,
 				F093D1D7282FA0B000E2A6FF /* LiveAvatarView.swift in Sources */,
 				F093D1D4282FA08900E2A6FF /* Channel.swift in Sources */,
+				F025204028EE95F900976972 /* Constants.swift in Sources */,
 				F02830822853DB5E00CBFCE7 /* WidgetEntryViews.swift in Sources */,
 				F0050DAA28CFEDE1004532CB /* UpcomingAccessoryRectangularWidgetView.swift in Sources */,
 				F0B71FCE283CAD0700DC4260 /* MultipleLiveWidgetProvider.swift in Sources */,
@@ -1141,6 +1174,7 @@
 				F093D1DF282FA5FE00E2A6FF /* VideoFetchService.swift in Sources */,
 				F0B2AF1028C2DEF100635CAD /* MultipleUpcomingWidgetProvider.swift in Sources */,
 				F04D148A28DD66AD00750B71 /* UpcomingAccessoryCornerView.swift in Sources */,
+				F025204A28EEA91600976972 /* Organization.swift in Sources */,
 				F04D148E28DD673A00750B71 /* UpcomingAccessoryCornerEntryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1156,6 +1190,7 @@
 				F09D25F328041CC3001A7D71 /* iPadSidebarView.swift in Sources */,
 				F004E8C6285D004A00ABDFED /* SongInStream.swift in Sources */,
 				F0CA6EA828D794320028CB11 /* LiveCollabListStackView.swift in Sources */,
+				F025204E28EEAEE100976972 /* MultipleVideoWidgetEntry.swift in Sources */,
 				F0CA6EA328D791BE0028CB11 /* UIModes.swift in Sources */,
 				F0673C172775F7FB009C65C6 /* LiveAvatarView.swift in Sources */,
 				F0BD611B27EC594300A2FBED /* UpcomingPaneView.swift in Sources */,
@@ -1167,6 +1202,7 @@
 				F0AC584728CFCA5C0088151C /* LiveStackView.swift in Sources */,
 				F0EB53B0281290490024E089 /* PaneViewButtonRowView.swift in Sources */,
 				F093D1DE282FA5E600E2A6FF /* VideoFetchService.swift in Sources */,
+				F025204928EEA91600976972 /* Organization.swift in Sources */,
 				F09D25C928020B12001A7D71 /* UpcomingViewToolbar.swift in Sources */,
 				F01E95B3286FB4B900CDF0F9 /* iPadLazyGirdView.swift in Sources */,
 				F009024027EE57BA00E343B0 /* LinkedVideoView.swift in Sources */,
@@ -1186,6 +1222,7 @@
 				F064A5B628BB3765008C51C2 /* SongsViewModel.swift in Sources */,
 				F0AC584928CFCBC20088151C /* UpcomingStackView.swift in Sources */,
 				F0ED2AE4280685FD00683E6C /* LiveVideo.swift in Sources */,
+				F025203F28EE94B700976972 /* Constants.swift in Sources */,
 				F04D148428DD52DE00750B71 /* LiveWidgetProvider.swift in Sources */,
 				F0ED2AF3280AD60D00683E6C /* UpcomingViewModel.swift in Sources */,
 				F065857D28CFF4C6001672E1 /* ManageGenerationVisibilityView.swift in Sources */,
@@ -1220,6 +1257,7 @@
 				F0ED2AE8280AA2BC00683E6C /* LiveCompactListView.swift in Sources */,
 				F0954BE22817C52700369EC4 /* FavouritedForEachView.swift in Sources */,
 				F0C50A1D2827C4CA00A93225 /* LiveCountView.swift in Sources */,
+				F025204428EEA5FC00976972 /* Common.swift in Sources */,
 				F0C657D22771F7CE004AF802 /* LiveCellView.swift in Sources */,
 				F025203728E10AB600976972 /* SpecialThanksView.swift in Sources */,
 				F009024427EE5F3100E343B0 /* UpcomingTimeView.swift in Sources */,
@@ -1237,6 +1275,7 @@
 				F04D148F28DD673A00750B71 /* UpcomingAccessoryCornerEntryView.swift in Sources */,
 				F0CA6ED128D7C49A0028CB11 /* UpcomingCountView.swift in Sources */,
 				F0CA6EC428D7C2880028CB11 /* UpcomingViewModel.swift in Sources */,
+				F025204628EEA5FC00976972 /* Common.swift in Sources */,
 				F04D755428D7CF3F0096B8AB /* UpcomingWatchView.swift in Sources */,
 				F04D755B28D7D8DD0096B8AB /* OpenSourceView.swift in Sources */,
 				F06D28F628D83AA6007D06FB /* UpcomingAccessoryRectangularWidgetView.swift in Sources */,
@@ -1244,7 +1283,9 @@
 				F0CA6ED328D7C4A40028CB11 /* LiveTimeView.swift in Sources */,
 				F0CA6ED428D7C4A40028CB11 /* UpcomingTimeView.swift in Sources */,
 				F04D754828D7C94F0096B8AB /* Util.swift in Sources */,
+				F025204D28EEAEE000976972 /* MultipleVideoWidgetEntry.swift in Sources */,
 				F0CA6ED728D7C4DB0028CB11 /* WatchLiveCellView.swift in Sources */,
+				F025204B28EEA91600976972 /* Organization.swift in Sources */,
 				F0CA6ED228D7C49A0028CB11 /* LiveCountView.swift in Sources */,
 				F0CA6ECB28D7C2BE0028CB11 /* SongInStream.swift in Sources */,
 				F0CA6ECA28D7C2BE0028CB11 /* Channel.swift in Sources */,
@@ -1258,6 +1299,7 @@
 				F0CA6ED028D7C31D0028CB11 /* WatchVideoListView.swift in Sources */,
 				F0CA6EC628D7C2880028CB11 /* VideoViewModel.swift in Sources */,
 				F04D148328DD527400750B71 /* LiveWidgetProvider.swift in Sources */,
+				F025204128EE95FA00976972 /* Constants.swift in Sources */,
 				F0CA6EC828D7C2880028CB11 /* SongsViewModel.swift in Sources */,
 				F0CA6EC728D7C2880028CB11 /* VideoFetchService.swift in Sources */,
 				F04D147C28DD4ED300750B71 /* LiveAccessoryCornerView.swift in Sources */,

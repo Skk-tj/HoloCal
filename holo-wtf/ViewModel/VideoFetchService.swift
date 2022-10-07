@@ -41,7 +41,7 @@ final class VideoFetchService {
             
             return responseResult
         } catch {
-            logger.error("Netword request failed when trying to get live data from API. ")
+            logger.error("Network request failed when trying to get live data from API. ")
             debugPrint(error)
             logger.error("Error is: \(error.localizedDescription)")
             
