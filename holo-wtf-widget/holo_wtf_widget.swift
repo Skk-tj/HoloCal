@@ -7,7 +7,6 @@
 
 import WidgetKit
 import SwiftUI
-import Intents
 
 @main
 struct HoloCalWidgetBundle: WidgetBundle {
@@ -21,27 +20,28 @@ struct HoloCalWidgetBundle: WidgetBundle {
         MultipleUpcomingWidget()
         LiveAccessoryRectangularWidget()
         UpcomingAccessoryRectangularWidget()
+        LiveChannelsWidget()
     }
 }
 
 struct holo_wtf_widget_Previews: PreviewProvider {
     static var previews: some View {
-        SmallLiveWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), video: LiveVideo.previewLive, status: .ok, avatarData: Data(), thumbnailData: Data()))
+        SmallLiveWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), status: .ok, video: LiveVideo.previewLive, avatarData: Data(), thumbnailData: Data()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
         
-        SmallLiveWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), video: LiveVideo.previewLive, status: .network, avatarData: Data(), thumbnailData: Data()))
+        SmallLiveWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), status: .network, video: LiveVideo.previewLive, avatarData: Data(), thumbnailData: Data()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
         
-        LivePaneWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), video: LiveVideo.previewLive, status: .ok, avatarData: Data(), thumbnailData: Data()))
+        LivePaneWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), status: .ok, video: LiveVideo.previewLive, avatarData: Data(), thumbnailData: Data()))
             .previewContext(WidgetPreviewContext(family: .systemLarge))
         
-        LivePaneWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), video: LiveVideo.previewLive, status: .noVideo, avatarData: Data(), thumbnailData: Data()))
+        LivePaneWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), status: .noVideo, video: LiveVideo.previewLive, avatarData: Data(), thumbnailData: Data()))
             .previewContext(WidgetPreviewContext(family: .systemLarge))
         
-        MultipleLiveWidgetEntryView(entry: MultipleVideoWidgetEntry(date: Date(), videoLeft: nil, thumbnailDataLeft: Data(), videoRight: nil, thumbnailDataRight: Data(), status: .noVideo))
+        MultipleLiveWidgetEntryView(entry: MultipleVideoWidgetEntry(date: Date(), status: .noVideo, videoLeft: nil, thumbnailDataLeft: Data(), videoRight: nil, thumbnailDataRight: Data()))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
         
-        MultipleLiveWidgetEntryView(entry: MultipleVideoWidgetEntry(date: Date(), videoLeft: nil, thumbnailDataLeft: Data(), videoRight: nil, thumbnailDataRight: Data(), status: .network))
+        MultipleLiveWidgetEntryView(entry: MultipleVideoWidgetEntry(date: Date(), status: .network, videoLeft: nil, thumbnailDataLeft: Data(), videoRight: nil, thumbnailDataRight: Data()))
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

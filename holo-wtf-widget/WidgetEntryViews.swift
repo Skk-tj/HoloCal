@@ -7,8 +7,32 @@
 
 import SwiftUI
 
+struct LiveTitleView: View {
+    var body: some View {
+        HStack {
+            Label("LIVE_WIDGET_TITLE", systemImage: "person.wave.2.fill")
+                .font(.footnote)
+                .foregroundColor(.secondary)
+            
+            Spacer()
+        }
+    }
+}
+
+struct UpcomingTitleView: View {
+    var body: some View {
+        HStack {
+            Label("UPCOMING_WIDGET_TITLE", systemImage: "clock")
+                .font(.footnote)
+                .foregroundColor(.secondary)
+            
+            Spacer()
+        }
+    }
+}
+
 struct SmallLiveWidgetEntryView: View {
-    var entry: LiveWidgetProvider.Entry
+    var entry: VideoWidgetProvider.Entry
     
     var body: some View {
         BaseVideoEntryView(entry: entry, mainView: {
@@ -21,19 +45,13 @@ struct SmallLiveWidgetEntryView: View {
                 Spacer()
             }
         }, titleView: {
-            HStack {
-                Label("LIVE_WIDGET_TITLE", systemImage: "person.wave.2.fill")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
-                
-                Spacer()
-            }
+            LiveTitleView()
         })
     }
 }
 
 struct LivePaneWidgetEntryView: View {
-    var entry: LiveWidgetProvider.Entry
+    var entry: VideoWidgetProvider.Entry
     
     var body: some View {
         BaseVideoEntryView(entry: entry, mainView: {
@@ -45,13 +63,7 @@ struct LivePaneWidgetEntryView: View {
                 Spacer()
             }
         }, titleView: {
-            HStack {
-                Label("LIVE_WIDGET_TITLE", systemImage: "person.wave.2.fill")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
-                
-                Spacer()
-            }
+            LiveTitleView()
         })
     }
 }
@@ -75,19 +87,13 @@ struct MultipleLiveWidgetEntryView: View {
                 }
             }
         }, titleView: {
-            HStack {
-                Label("LIVE_WIDGET_TITLE", systemImage: "person.wave.2.fill")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
-                
-                Spacer()
-            }
+            LiveTitleView()
         })
     }
 }
 
 struct SmallUpcomingWidgetEntryView: View {
-    var entry: UpcomingWidgetProvider.Entry
+    var entry: VideoWidgetProvider.Entry
     
     var body: some View {
         BaseVideoEntryView(entry: entry, mainView: {
@@ -99,19 +105,13 @@ struct SmallUpcomingWidgetEntryView: View {
                 Spacer()
             }
         }, titleView: {
-            HStack {
-                Label("UPCOMING_WIDGET_TITLE", systemImage: "clock")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
-                
-                Spacer()
-            }
+            UpcomingTitleView()
         })
     }
 }
 
 struct UpcomingPaneWidgetEntryView: View {
-    var entry: UpcomingWidgetProvider.Entry
+    var entry: VideoWidgetProvider.Entry
     
     var body: some View {
         BaseVideoEntryView(entry: entry, mainView: {
@@ -123,13 +123,7 @@ struct UpcomingPaneWidgetEntryView: View {
                 Spacer()
             }
         }, titleView: {
-            HStack {
-                Label("UPCOMING_WIDGET_TITLE", systemImage: "clock")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
-                
-                Spacer()
-            }
+            UpcomingTitleView()
         })
     }
 }
@@ -153,13 +147,25 @@ struct MultipleUpcomingWidgetEntryView: View {
                 }
             }
         }, titleView: {
-            HStack {
-                Label("UPCOMING_WIDGET_TITLE", systemImage: "clock")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
-                
+            UpcomingTitleView()
+        })
+    }
+}
+
+struct LiveChannelsEntryView: View {
+    var entry: LiveChannelsWidgetProvider.Entry
+    
+    var body: some View {
+        BaseVideoEntryView(entry: entry, mainView: {
+            if !entry.channels.isEmpty {
+                LiveChannelsView(channels: entry.channels, thumbnails: entry.thumbnails)
+            } else {
+                Spacer()
+                Text("NO_ONE_IS_STREAMING")
                 Spacer()
             }
+        }, titleView: {
+            LiveTitleView()
         })
     }
 }

@@ -13,7 +13,7 @@ struct LiveAccessoryCornerWidget: Widget {
     
     var body: some WidgetConfiguration {
         if #available(iOSApplicationExtension 16.0, *) {
-            return StaticConfiguration(kind: kind, provider: LiveWidgetProvider()) { entry in
+            return StaticConfiguration(kind: kind, provider: VideoWidgetProvider(url: hololiveLiveURL, sortStrategy: liveSortStrategy)) { entry in
                 LiveAccessoryCornerEntryView(entry: entry)
             }
             .configurationDisplayName("CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
@@ -30,7 +30,7 @@ struct UpcomingAccessoryCornerWidget: Widget {
     
     var body: some WidgetConfiguration {
         if #available(iOSApplicationExtension 16.0, *) {
-            return StaticConfiguration(kind: kind, provider: UpcomingWidgetProvider()) { entry in
+            return StaticConfiguration(kind: kind, provider: VideoWidgetProvider(url: hololiveWidgetUpcomingURL, sortStrategy: upcomingSortStrategy)) { entry in
                 UpcomingAccessoryCornerEntryView(entry: entry)
             }
             .configurationDisplayName("UPCOMING_WIDGET_DISPLAY_NAME")
@@ -55,7 +55,7 @@ struct ComplicationsWidgetBundle: WidgetBundle {
 
 struct complications_Previews: PreviewProvider {
     static var previews: some View {
-        LiveAccessoryRectangularWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), video: LiveVideo.previewLive, status: .ok, avatarData: Data(), thumbnailData: Data()))
+        LiveAccessoryRectangularWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), status: .ok, video: LiveVideo.previewLive, avatarData: Data(), thumbnailData: Data()))
             .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
     }
 }

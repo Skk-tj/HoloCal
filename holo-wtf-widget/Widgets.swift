@@ -12,7 +12,7 @@ struct SmallLiveWidget: Widget {
     let kind: String = "SmallLiveWidget"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: LiveWidgetProvider()) { entry in
+        StaticConfiguration(kind: kind, provider: VideoWidgetProvider(url: hololiveLiveURL, sortStrategy: liveSortStrategy)) { entry in
             SmallLiveWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
@@ -25,7 +25,7 @@ struct LivePaneWidget: Widget {
     let kind: String = "LivePaneWidget"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: LiveWidgetProvider()) { entry in
+        StaticConfiguration(kind: kind, provider: VideoWidgetProvider(url: hololiveLiveURL, sortStrategy: liveSortStrategy)) { entry in
             LivePaneWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
@@ -51,7 +51,7 @@ struct SmallUpcomingWidget: Widget {
     let kind: String = "SmallUpcomingWidget"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: UpcomingWidgetProvider()) { entry in
+        StaticConfiguration(kind: kind, provider: VideoWidgetProvider(url: hololiveWidgetUpcomingURL, sortStrategy: upcomingSortStrategy)) { entry in
             SmallUpcomingWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("UPCOMING_WIDGET_DISPLAY_NAME")
@@ -64,7 +64,7 @@ struct UpcomingPaneWidget: Widget {
     let kind: String = "UpcomingPaneWidget"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: UpcomingWidgetProvider()) { entry in
+        StaticConfiguration(kind: kind, provider: VideoWidgetProvider(url: hololiveWidgetUpcomingURL, sortStrategy: upcomingSortStrategy)) { entry in
             UpcomingPaneWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("UPCOMING_WIDGET_DISPLAY_NAME")
@@ -82,6 +82,19 @@ struct MultipleUpcomingWidget: Widget {
         }
         .configurationDisplayName("MULTIPLE_UPCOMING_WIDGET_DISPLAY_NAME")
         .description("MULTIPLE_UPCOMING_WIDGET_DESCRIPTION")
+        .supportedFamilies([.systemMedium])
+    }
+}
+
+struct LiveChannelsWidget: Widget {
+    let kind: String = "LiveChannelsWidget"
+    
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: LiveChannelsWidgetProvider()) { entry in
+            LiveChannelsEntryView(entry: entry)
+        }
+        .configurationDisplayName("LIVE_CHANNELS_WIDGET_DISPLAY_NAME")
+        .description("LIVE_CHANNELS_WIDGET_DESCRIPTION")
         .supportedFamilies([.systemMedium])
     }
 }

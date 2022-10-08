@@ -10,7 +10,7 @@ import WidgetKit
 
 @available(iOSApplicationExtension 16.0, *)
 struct LiveAccessoryCornerEntryView: View {
-    var entry: LiveWidgetProvider.Entry
+    var entry: VideoWidgetProvider.Entry
     
     var body: some View {
         if let video = entry.video {

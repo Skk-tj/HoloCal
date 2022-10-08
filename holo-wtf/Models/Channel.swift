@@ -84,4 +84,8 @@ struct Channel: Codable, Identifiable, Hashable {
         
         return responseResult.twitter
     }
+    
+    static func ==(c1: Channel, c2: Channel) -> Bool {
+        c1.id == c2.id
+    }
 }

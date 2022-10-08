@@ -10,7 +10,7 @@ import WidgetKit
 
 @available(iOSApplicationExtension 16.0, *)
 struct LiveAccessoryRectangularWidgetEntryView: View {
-    var entry: LiveWidgetProvider.Entry
+    var entry: VideoWidgetProvider.Entry
     
     var body: some View {
         if let video = entry.video {
@@ -29,7 +29,7 @@ struct LiveAccessoryRectangularWidgetEntryView: View {
 
 @available(iOSApplicationExtension 16.0, *)
 struct UpcomingAccessoryRectangularWidgetEntryView: View {
-    var entry: UpcomingWidgetProvider.Entry
+    var entry: VideoWidgetProvider.Entry
     
     var body: some View {
         if let video = entry.video {
