@@ -98,3 +98,16 @@ struct LiveChannelsWidget: Widget {
         .supportedFamilies([.systemMedium])
     }
 }
+
+struct UpcomingChannelsWidget: Widget {
+    let kind: String = "UpcomingChannelsWidget"
+    
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: ChannelsWidgetProvider(url: hololiveWidgetUpcomingURL, sortStrategy: upcomingSortStrategy)) { entry in
+            UpcomingChannelsEntryView(entry: entry)
+        }
+        .configurationDisplayName("UPCOMING_CHANNELS_WIDGET_DISPLAY_NAME")
+        .description("UPCOMING_CHANNELS_WIDGET_DESCRIPTION")
+        .supportedFamilies([.systemMedium])
+    }
+}

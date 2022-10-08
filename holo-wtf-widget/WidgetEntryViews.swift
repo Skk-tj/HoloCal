@@ -169,3 +169,21 @@ struct LiveChannelsEntryView: View {
         })
     }
 }
+
+struct UpcomingChannelsEntryView: View {
+    var entry: ChannelsWidgetProvider.Entry
+    
+    var body: some View {
+        BaseVideoEntryView(entry: entry, mainView: {
+            if !entry.channels.isEmpty {
+                LiveChannelsView(channels: entry.channels, thumbnails: entry.thumbnails)
+            } else {
+                Spacer()
+                Text("NO_ONE_IS_STREAMING")
+                Spacer()
+            }
+        }, titleView: {
+            UpcomingTitleView()
+        })
+    }
+}
