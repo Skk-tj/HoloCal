@@ -155,7 +155,10 @@
 "MULTIPLE_UPCOMING_WIDGET_DESCRIPTION" = "複数の今後のライブ配信を表示する";
 
 "LIVE_CHANNELS_WIDGET_DISPLAY_NAME" = "Live Channels";
-"LIVE_CHANNELS_WIDGET_DESCRIPTION" = "Show a list of live channels.";
+"LIVE_CHANNELS_WIDGET_DESCRIPTION" = "Show a list of channels that are live.";
+
+"UPCOMING_CHANNELS_WIDGET_DISPLAY_NAME" = "Upcoming Channels";
+"UPCOMING_CHANNELS_WIDGET_DESCRIPTION" = "Show a list of channels that are about to go live.";
 
 // Song List View
 "SONG_LIST_VIEW_NAVIGATION_TITLE" = "曲";
