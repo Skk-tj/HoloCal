@@ -155,8 +155,11 @@
 "MULTIPLE_UPCOMING_WIDGET_DISPLAY_NAME" = "複数の今後のライブ配信";
 "MULTIPLE_UPCOMING_WIDGET_DESCRIPTION" = "複数の今後のライブ配信を表示する";
 
-"LIVE_CHANNELS_DISPLAY_NAME" = "Live Channels";
-"LIVE_CHANNELS_DESCRIPTION" = "Show a list of live channels.";
+"LIVE_CHANNELS_DISPLAY_NAME" = "配信中チャンネル";
+"LIVE_CHANNELS_DESCRIPTION" = "配信中チャンネルを表示する";
+
+"UPCOMING_CHANNELS_WIDGET_DISPLAY_NAME" = "ライブ予定チャンネル";
+"UPCOMING_CHANNELS_WIDGET_DESCRIPTION" = "ライブ予定をしたチャンネルを表示する";
 
 // Song List View
 "SONG_LIST_VIEW_NAVIGATION_TITLE" = "曲";
