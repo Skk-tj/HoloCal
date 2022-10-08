@@ -69,7 +69,7 @@ struct LivePaneWidgetEntryView: View {
 }
 
 struct MultipleLiveWidgetEntryView: View {
-    var entry: MultipleLiveWidgetProvider.Entry
+    var entry: MultipleVideoWidgetProvider.Entry
     
     var body: some View {
         BaseVideoEntryView(entry: entry, mainView: {
@@ -129,7 +129,7 @@ struct UpcomingPaneWidgetEntryView: View {
 }
 
 struct MultipleUpcomingWidgetEntryView: View {
-    var entry: MultipleUpcomingWidgetProvider.Entry
+    var entry: MultipleVideoWidgetProvider.Entry
     
     var body: some View {
         BaseVideoEntryView(entry: entry, mainView: {

@@ -7,8 +7,11 @@
 
 import WidgetKit
 
-struct MultipleLiveWidgetProvider: TimelineProvider {
+struct MultipleVideoWidgetProvider: TimelineProvider {
     typealias Entry = MultipleVideoWidgetEntry
+    
+    let url: String
+    let sortStrategy: (LiveVideo, LiveVideo) -> Bool
     
     func placeholder(in context: Context) -> Entry {
         return MultipleVideoWidgetEntry(date: Date(), status: .ok, videoLeft: widgetSampleVideo, thumbnailDataLeft: Data(), videoRight: widgetSampleVideo, thumbnailDataRight: Data())
@@ -16,13 +19,13 @@ struct MultipleLiveWidgetProvider: TimelineProvider {
     
     func getSnapshot(in context: Context, completion: @escaping (Entry) -> Void) {
         Task {
-            completion(await getMultipleEntry(url: hololiveLiveURL, sortBy: liveSortStrategy, filterBy: {$0.isHololive}))
+            completion(await getMultipleEntry(url: url, sortBy: sortStrategy, filterBy: {$0.isHololive}))
         }
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
         Task {
-            let entries: [MultipleVideoWidgetEntry] = [await getMultipleEntry(url: hololiveLiveURL, sortBy: liveSortStrategy, filterBy: {$0.isHololive})]
+            let entries: [MultipleVideoWidgetEntry] = [await getMultipleEntry(url: url, sortBy: sortStrategy, filterBy: {$0.isHololive})]
             let timeline = Timeline(entries: entries, policy: .atEnd)
             completion(timeline)
         }
