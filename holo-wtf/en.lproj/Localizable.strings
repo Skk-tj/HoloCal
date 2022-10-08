@@ -154,6 +154,9 @@
 "MULTIPLE_UPCOMING_WIDGET_DISPLAY_NAME" = "Multiple Upcoming";
 "MULTIPLE_UPCOMING_WIDGET_DESCRIPTION" = "Show two streams together.";
 
+"LIVE_CHANNELS_WIDGET_DISPLAY_NAME" = "Live Channels";
+"LIVE_CHANNELS_WIDGET_DESCRIPTION" = "Show a list of live channels.";
+
 // Song List View
 "SONG_LIST_VIEW_NAVIGATION_TITLE" = "Songs";
 "SONG_SHEET_DISMISS_BUTTON" = "Dismiss";

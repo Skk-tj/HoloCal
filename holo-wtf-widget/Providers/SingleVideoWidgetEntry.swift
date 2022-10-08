@@ -9,8 +9,9 @@ import Foundation
 
 struct SingleVideoWidgetEntry: VideoTimelineEntry {
     let date: Date
-    let video: LiveVideo?
     let status: WidgetDataStatus
+    
+    let video: LiveVideo?
     
     let avatarData: Data
     let thumbnailData: Data
