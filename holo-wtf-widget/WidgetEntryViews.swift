@@ -153,7 +153,7 @@ struct MultipleUpcomingWidgetEntryView: View {
 }
 
 struct LiveChannelsEntryView: View {
-    var entry: LiveChannelsWidgetProvider.Entry
+    var entry: ChannelsWidgetProvider.Entry
     
     var body: some View {
         BaseVideoEntryView(entry: entry, mainView: {

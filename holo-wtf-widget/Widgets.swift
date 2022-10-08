@@ -90,7 +90,7 @@ struct LiveChannelsWidget: Widget {
     let kind: String = "LiveChannelsWidget"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: LiveChannelsWidgetProvider()) { entry in
+        StaticConfiguration(kind: kind, provider: ChannelsWidgetProvider(url: hololiveLiveURL, sortStrategy: liveSortStrategy)) { entry in
             LiveChannelsEntryView(entry: entry)
         }
         .configurationDisplayName("LIVE_CHANNELS_WIDGET_DISPLAY_NAME")
