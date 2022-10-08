@@ -8,6 +8,8 @@
 import SwiftUI
 import WidgetKit
 
+/// These widgets are shared between iOS Lock Screen widgets and watchOS complications
+
 struct LiveAccessoryRectangularWidget: Widget {
     let kind: String = "LiveAccessoryRectangularWidget"
     

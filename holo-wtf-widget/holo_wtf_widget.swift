@@ -21,6 +21,7 @@ struct HoloCalWidgetBundle: WidgetBundle {
         LiveAccessoryRectangularWidget()
         UpcomingAccessoryRectangularWidget()
         LiveChannelsWidget()
+        UpcomingChannelsWidget()
     }
 }
 
