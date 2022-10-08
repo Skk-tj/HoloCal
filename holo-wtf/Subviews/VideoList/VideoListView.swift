@@ -28,8 +28,6 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     var body: some View {
         if !searchText.isEmpty {
             currentPresentationMode = .searching
-        } else {
-            currentPresentationMode = .normal
         }
         
         let isThereFavouriteToShow = viewModel.videoList.filter { video in favourited.contains(where: { video.channel.id == $0 })}.count != 0 && viewModel.dataStatus == .success

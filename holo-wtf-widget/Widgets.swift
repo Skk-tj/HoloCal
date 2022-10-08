@@ -38,7 +38,7 @@ struct MultipleLiveWidget: Widget {
     let kind: String = "MultipleLiveWidget"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: MultipleLiveWidgetProvider()) { entry in
+        StaticConfiguration(kind: kind, provider: MultipleVideoWidgetProvider(url: hololiveLiveURL, sortStrategy: liveSortStrategy)) { entry in
             MultipleLiveWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("MULTIPLE_CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
@@ -77,7 +77,7 @@ struct MultipleUpcomingWidget: Widget {
     let kind: String = "MultipleUpcomingWidget"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: MultipleUpcomingWidgetProvider()) { entry in
+        StaticConfiguration(kind: kind, provider: MultipleVideoWidgetProvider(url: hololiveWidgetUpcomingURL, sortStrategy: upcomingSortStrategy)) { entry in
             MultipleUpcomingWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("MULTIPLE_UPCOMING_WIDGET_DISPLAY_NAME")

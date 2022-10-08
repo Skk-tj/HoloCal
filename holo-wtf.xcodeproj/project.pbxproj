@@ -41,10 +41,8 @@
 		F03A138328F0004C00BB8E51 /* ChannelsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A138228F0004C00BB8E51 /* ChannelsEntry.swift */; };
 		F03A138428F0004C00BB8E51 /* ChannelsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A138228F0004C00BB8E51 /* ChannelsEntry.swift */; };
 		F03A138528F0004C00BB8E51 /* ChannelsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A138228F0004C00BB8E51 /* ChannelsEntry.swift */; };
-		F03A138B28F0010A00BB8E51 /* MultipleUpcomingWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0F28C2DEF100635CAD /* MultipleUpcomingWidgetProvider.swift */; };
-		F03A138C28F0010A00BB8E51 /* MultipleLiveWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B71FCC283CACA000DC4260 /* MultipleLiveWidgetProvider.swift */; };
-		F03A138D28F0010B00BB8E51 /* MultipleUpcomingWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0F28C2DEF100635CAD /* MultipleUpcomingWidgetProvider.swift */; };
-		F03A138E28F0010B00BB8E51 /* MultipleLiveWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B71FCC283CACA000DC4260 /* MultipleLiveWidgetProvider.swift */; };
+		F03A138C28F0010A00BB8E51 /* MultipleVideoWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B71FCC283CACA000DC4260 /* MultipleVideoWidgetProvider.swift */; };
+		F03A138E28F0010B00BB8E51 /* MultipleVideoWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B71FCC283CACA000DC4260 /* MultipleVideoWidgetProvider.swift */; };
 		F03A139228F1FE0700BB8E51 /* LiveChannelsWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A139128F1FE0700BB8E51 /* LiveChannelsWidgetProvider.swift */; };
 		F03A139428F2018000BB8E51 /* LiveChannelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A139328F2018000BB8E51 /* LiveChannelsView.swift */; };
 		F0433C4E27E99F85000FEADD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0433C4D27E99F85000FEADD /* SettingsView.swift */; };
@@ -165,10 +163,9 @@
 		F0B2AF0A28C13D0F00635CAD /* UpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */; };
 		F0B2AF0C28C1A82400635CAD /* MultipleVideoWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0B28C1A82400635CAD /* MultipleVideoWidgetEntry.swift */; };
 		F0B2AF0E28C2940200635CAD /* UpcomingWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0D28C2940200635CAD /* UpcomingWidgetView.swift */; };
-		F0B2AF1028C2DEF100635CAD /* MultipleUpcomingWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0F28C2DEF100635CAD /* MultipleUpcomingWidgetProvider.swift */; };
 		F0B2AF1228C2E28700635CAD /* MultipleUpcomingWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF1128C2E28700635CAD /* MultipleUpcomingWidgetView.swift */; };
 		F0B2AF1728C2E4C300635CAD /* UpcomingWidgetMediumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF1628C2E4C300635CAD /* UpcomingWidgetMediumView.swift */; };
-		F0B71FCE283CAD0700DC4260 /* MultipleLiveWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B71FCC283CACA000DC4260 /* MultipleLiveWidgetProvider.swift */; };
+		F0B71FCE283CAD0700DC4260 /* MultipleVideoWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B71FCC283CACA000DC4260 /* MultipleVideoWidgetProvider.swift */; };
 		F0B71FCF283E08C300DC4260 /* MultipleLiveWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D1B40283A3AE70026340D /* MultipleLiveWidgetView.swift */; };
 		F0BD611B27EC594300A2FBED /* UpcomingPaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BD611A27EC594300A2FBED /* UpcomingPaneView.swift */; };
 		F0C50A1D2827C4CA00A93225 /* LiveCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C50A1C2827C4CA00A93225 /* LiveCountView.swift */; };
@@ -388,10 +385,9 @@
 		F0B2AF0828C13C7600635CAD /* SmallUpcomingWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallUpcomingWidgetView.swift; sourceTree = "<group>"; };
 		F0B2AF0B28C1A82400635CAD /* MultipleVideoWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleVideoWidgetEntry.swift; sourceTree = "<group>"; };
 		F0B2AF0D28C2940200635CAD /* UpcomingWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingWidgetView.swift; sourceTree = "<group>"; };
-		F0B2AF0F28C2DEF100635CAD /* MultipleUpcomingWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleUpcomingWidgetProvider.swift; sourceTree = "<group>"; };
 		F0B2AF1128C2E28700635CAD /* MultipleUpcomingWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleUpcomingWidgetView.swift; sourceTree = "<group>"; };
 		F0B2AF1628C2E4C300635CAD /* UpcomingWidgetMediumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingWidgetMediumView.swift; sourceTree = "<group>"; };
-		F0B71FCC283CACA000DC4260 /* MultipleLiveWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleLiveWidgetProvider.swift; sourceTree = "<group>"; };
+		F0B71FCC283CACA000DC4260 /* MultipleVideoWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleVideoWidgetProvider.swift; sourceTree = "<group>"; };
 		F0BD611A27EC594300A2FBED /* UpcomingPaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingPaneView.swift; sourceTree = "<group>"; };
 		F0C50A1C2827C4CA00A93225 /* LiveCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCountView.swift; sourceTree = "<group>"; };
 		F0C50A1E2827C6FA00A93225 /* UpcomingCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingCountView.swift; sourceTree = "<group>"; };
@@ -518,8 +514,7 @@
 			isa = PBXGroup;
 			children = (
 				F04D1B3C283A300E0026340D /* VideoWidgetProvider.swift */,
-				F0B71FCC283CACA000DC4260 /* MultipleLiveWidgetProvider.swift */,
-				F0B2AF0F28C2DEF100635CAD /* MultipleUpcomingWidgetProvider.swift */,
+				F0B71FCC283CACA000DC4260 /* MultipleVideoWidgetProvider.swift */,
 				F03A139128F1FE0700BB8E51 /* LiveChannelsWidgetProvider.swift */,
 				F028308728545B1200CBFCE7 /* SingleVideoWidgetEntry.swift */,
 				F0B2AF0B28C1A82400635CAD /* MultipleVideoWidgetEntry.swift */,
@@ -1103,7 +1098,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F06D28E528D839E4007D06FB /* VideoWidgetProvider.swift in Sources */,
-				F03A138E28F0010B00BB8E51 /* MultipleLiveWidgetProvider.swift in Sources */,
+				F03A138E28F0010B00BB8E51 /* MultipleVideoWidgetProvider.swift in Sources */,
 				F025204228EE95FB00976972 /* Constants.swift in Sources */,
 				F06D28F428D83A9D007D06FB /* LiveAccessoryRectangularWidgetView.swift in Sources */,
 				F06D28E828D839F5007D06FB /* LiveVideo.swift in Sources */,
@@ -1111,7 +1106,6 @@
 				F06D28E628D839F5007D06FB /* Channel.swift in Sources */,
 				F06D28E328D839E4007D06FB /* SingleVideoWidgetEntry.swift in Sources */,
 				F04D148228DD523C00750B71 /* LiveAccessoryCornerEntryView.swift in Sources */,
-				F03A138D28F0010B00BB8E51 /* MultipleUpcomingWidgetProvider.swift in Sources */,
 				F06D28E128D8390F007D06FB /* SharedEntryView.swift in Sources */,
 				F04D148C28DD66AD00750B71 /* UpcomingAccessoryCornerView.swift in Sources */,
 				F025204C28EEA91600976972 /* Organization.swift in Sources */,
@@ -1148,7 +1142,7 @@
 				F025204028EE95F900976972 /* Constants.swift in Sources */,
 				F02830822853DB5E00CBFCE7 /* WidgetEntryViews.swift in Sources */,
 				F0050DAA28CFEDE1004532CB /* UpcomingAccessoryRectangularWidgetView.swift in Sources */,
-				F0B71FCE283CAD0700DC4260 /* MultipleLiveWidgetProvider.swift in Sources */,
+				F0B71FCE283CAD0700DC4260 /* MultipleVideoWidgetProvider.swift in Sources */,
 				F093D1D3282FA08700E2A6FF /* LiveVideo.swift in Sources */,
 				F093D1E5283034DA00E2A6FF /* Talents.swift in Sources */,
 				F093D1C4282C32D000E2A6FF /* holo_wtf_widget.swift in Sources */,
@@ -1177,7 +1171,6 @@
 				F02830802853DB0E00CBFCE7 /* Widgets.swift in Sources */,
 				F0B2AF1728C2E4C300635CAD /* UpcomingWidgetMediumView.swift in Sources */,
 				F093D1DF282FA5FE00E2A6FF /* VideoFetchService.swift in Sources */,
-				F0B2AF1028C2DEF100635CAD /* MultipleUpcomingWidgetProvider.swift in Sources */,
 				F04D148A28DD66AD00750B71 /* UpcomingAccessoryCornerView.swift in Sources */,
 				F025204A28EEA91600976972 /* Organization.swift in Sources */,
 			);
@@ -1277,7 +1270,7 @@
 				F04D755B28D7D8DD0096B8AB /* OpenSourceView.swift in Sources */,
 				F06D28F628D83AA6007D06FB /* UpcomingAccessoryRectangularWidgetView.swift in Sources */,
 				F04D755628D7D0CC0096B8AB /* WatchUpcomingCellView.swift in Sources */,
-				F03A138C28F0010A00BB8E51 /* MultipleLiveWidgetProvider.swift in Sources */,
+				F03A138C28F0010A00BB8E51 /* MultipleVideoWidgetProvider.swift in Sources */,
 				F0CA6ED328D7C4A40028CB11 /* LiveTimeView.swift in Sources */,
 				F0CA6ED428D7C4A40028CB11 /* UpcomingTimeView.swift in Sources */,
 				F04D754828D7C94F0096B8AB /* Util.swift in Sources */,
@@ -1292,7 +1285,6 @@
 				F0CA6EC528D7C2880028CB11 /* LiveViewModel.swift in Sources */,
 				F06D28F528D83AA0007D06FB /* LiveAccessoryRectangularWidgetView.swift in Sources */,
 				F04D755828D7D8430096B8AB /* SettingsWatchView.swift in Sources */,
-				F03A138B28F0010A00BB8E51 /* MultipleUpcomingWidgetProvider.swift in Sources */,
 				F0CA6ED528D7C4A70028CB11 /* LiveAvatarView.swift in Sources */,
 				F0CA6ECC28D7C2BE0028CB11 /* LiveVideo.swift in Sources */,
 				F0CA6EC328D7C2620028CB11 /* LiveWatchView.swift in Sources */,
