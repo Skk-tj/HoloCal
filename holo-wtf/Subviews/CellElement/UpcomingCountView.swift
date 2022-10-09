@@ -22,9 +22,11 @@ struct UpcomingCountView: View {
         if filteredVideoCount == 0 {
             Text("UPCOMING_VIEW_STREAM_COUNT_IN_HOURS \(upcoming.videoList.count) \(upcomingLookAhead)")
                 .foregroundColor(.secondary)
+                .multilineTextAlignment(.center)
         } else {
             Text("UPCOMING_VIEW_STREAM_COUNT_IN_HOURS \(upcoming.videoList.count) \(upcomingLookAhead) \(filteredVideoCount)")
                 .foregroundColor(.secondary)
+                .multilineTextAlignment(.center)
         }
     }
 }
