@@ -24,11 +24,15 @@ struct WatchLiveCellView: View {
                     .lineLimit(1)
                     .foregroundColor(.secondary)
                 
-                Text("\(Image(systemName: "eye")) \(live.liveViewers)")
-                    .foregroundColor(.secondary)
-                    .font(.footnote)
-                
-                LiveTimeView(liveTime: live.startActual, fontSize: .footnote, shortMode: true)
+                HStack {
+                    Text("\(Image(systemName: "eye")) \(live.liveViewers)")
+                    
+                    Spacer()
+                    
+                    LiveTimeView(liveTime: live.startActual, fontSize: .footnote, shortMode: true)
+                }
+                .foregroundColor(.secondary)
+                .font(.footnote)
             }
         }
     }

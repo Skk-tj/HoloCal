@@ -31,10 +31,15 @@ struct SettingsWatchView: View {
 //                Link(destination: URL(string: "https://twitter.com/skk_tj")!) {
 //                    Text("SETTINGS_TWITTER")
 //                }
+                NavigationLink(destination: SpecialThanksView(), label: {
+                    Text("SETTINGS_SPECIAL_THANKS")
+                })
                 
                 NavigationLink(destination: OpenSourceView()) {
                     Text("SETTINGS_OPEN_SOURCE")
                 }
+                
+                
             }
         }
         .navigationTitle("SETTINGS_TITLE")
