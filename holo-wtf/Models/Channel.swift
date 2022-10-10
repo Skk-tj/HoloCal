@@ -17,8 +17,8 @@ struct Channel: Codable, Identifiable, Hashable {
     var twitter: String?
     
     var talent: Talent? {
-        if let talentEnum = TalentsEnum(rawValue: id) {
-            return talentsToName[talentEnum]!
+        if let talentEnum = hololiveTalents(rawValue: id) {
+            return hololiveTalentsEnumToTalent[talentEnum]!
         } else {
             // Don't recognize this ID
             return nil

@@ -11,7 +11,7 @@ struct iPadLazyGirdView<VideoContent: View, DataStatusView: View>: View {
     @EnvironmentObject var videoViewModel: VideoViewModel
     
     @AppStorage("favouritedChannel") var favourited = Favourited()
-    @AppStorage("generationListSelection") var generationListSelection = Set(GenerationEnum.allCases)
+    @AppStorage("generationListSelection") var generationListSelection = Set(hololiveGenerations.allCases)
     @AppStorage(UserDefaultKeys.isShowingDSTReminder) var isShowingDSTReminder = false
     
     @State var searchText: String = ""

@@ -13,7 +13,7 @@ import SwiftUI
 /// This view accepts another `View` for what the video will be fit into. 
 struct NotFavouritedForEachView<Content: View>: View {
     @AppStorage("favouritedChannel") var favourited = Favourited()
-    @AppStorage("generationListSelection") var generationListSelection = Set(GenerationEnum.allCases)
+    @AppStorage("generationListSelection") var generationListSelection = Set(hololiveGenerations.allCases)
     
     @EnvironmentObject var viewModel: VideoViewModel
     @ViewBuilder let cellView: (_ video: LiveVideo) -> Content
