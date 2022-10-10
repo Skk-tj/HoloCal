@@ -14,11 +14,9 @@ struct ManageFavoriteView: View {
     var body: some View {
         List {
             ForEach(talentsByGeneration.values, id: \.self) { generation in
-                if generation.generation != .other {
-                    Section(generation.localizedName) {
-                        ForEach(generation.members) { talent in
-                            SettingsTalentStarView(talent: talentsToName[talent]!, favourited: $favourited)
-                        }
+                Section(generation.localizedName) {
+                    ForEach(generation.members) { talent in
+                        SettingsTalentStarView(talent: hololiveTalentsEnumToTalent[talent]!, favourited: $favourited)
                     }
                 }
             }

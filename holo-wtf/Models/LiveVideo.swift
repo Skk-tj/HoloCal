@@ -46,11 +46,11 @@ struct LiveVideo: Codable, Identifiable, Hashable {
     }
     
     var isHololive: Bool {
-        channel.org == Organization.hololive.rawValue
+        channel.org == Agencies.hololive.rawValue
     }
     
     var isNijisanji: Bool {
-        channel.org == Organization.nijisanji.rawValue
+        channel.org == Agencies.nijisanji.rawValue
     }
     
     static let previewLive = LiveVideo(id: "abcd", title: "my debut live, but a really long title, aaaaaaa", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, mentions: [Channel.testChannel, Channel.testChannel2], songs: nil, channel: Channel.testChannel)

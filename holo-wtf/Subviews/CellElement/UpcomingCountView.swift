@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UpcomingCountView: View {
     @AppStorage(UserDefaultKeys.upcomingLookAhead) var upcomingLookAhead = 48
-    @AppStorage("generationListSelection") var generationListSelection = Set(GenerationEnum.allCases)
+    @AppStorage("generationListSelection") var generationListSelection = Set(hololiveGenerations.allCases)
     
     @EnvironmentObject var upcoming: VideoViewModel
     

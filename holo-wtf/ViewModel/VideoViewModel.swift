@@ -90,7 +90,7 @@ class VideoViewModel: ObservableObject {
     
     func getSearchSuggestions() -> [SearchSuggestion] {
         let englishNames: [SearchSuggestion] = self.videoList.map { video in
-            if let talentEnum = TalentsEnum(rawValue: video.channel.id), let talent = talentsToName[talentEnum] {
+            if let talentEnum = hololiveTalents(rawValue: video.channel.id), let talent = hololiveTalentsEnumToTalent[talentEnum] {
                 // talent exists here
                 return SearchSuggestion(searchText: talent.names[.en]!, category: .name)
             } else {
@@ -99,7 +99,7 @@ class VideoViewModel: ObservableObject {
         }
         
         let japaneseNames: [SearchSuggestion] = self.videoList.map { video in
-            if let talentEnum = TalentsEnum(rawValue: video.channel.id), let talent = talentsToName[talentEnum] {
+            if let talentEnum = hololiveTalents(rawValue: video.channel.id), let talent = hololiveTalentsEnumToTalent[talentEnum] {
                 // talent exists here
                 return SearchSuggestion(searchText: talent.names[.ja]!, category: .name)
             } else {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LiveCountView: View {
-    @AppStorage("generationListSelection") var generationListSelection = Set(GenerationEnum.allCases)
+    @AppStorage("generationListSelection") var generationListSelection = Set(hololiveGenerations.allCases)
     
     @EnvironmentObject var live: VideoViewModel
     
