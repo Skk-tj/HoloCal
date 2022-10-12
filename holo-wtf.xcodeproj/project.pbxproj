@@ -30,6 +30,10 @@
 		F025204628EEA5FC00976972 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025204328EEA5FC00976972 /* Common.swift */; };
 		F025204728EEA5FC00976972 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025204328EEA5FC00976972 /* Common.swift */; };
 		F025204D28EEAEE000976972 /* MultipleVideoWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0B28C1A82400635CAD /* MultipleVideoWidgetEntry.swift */; };
+		F025369928F67F8000B140E8 /* Nijisanji.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025369828F67F8000B140E8 /* Nijisanji.swift */; };
+		F025369A28F67F8000B140E8 /* Nijisanji.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025369828F67F8000B140E8 /* Nijisanji.swift */; };
+		F025369B28F67F8000B140E8 /* Nijisanji.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025369828F67F8000B140E8 /* Nijisanji.swift */; };
+		F025369C28F67F8000B140E8 /* Nijisanji.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025369828F67F8000B140E8 /* Nijisanji.swift */; };
 		F02830802853DB0E00CBFCE7 /* Widgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028307F2853DB0E00CBFCE7 /* Widgets.swift */; };
 		F02830822853DB5E00CBFCE7 /* WidgetEntryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02830812853DB5E00CBFCE7 /* WidgetEntryViews.swift */; };
 		F028308828545B1200CBFCE7 /* SingleVideoWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028308728545B1200CBFCE7 /* SingleVideoWidgetEntry.swift */; };
@@ -104,7 +108,7 @@
 		F06D28E328D839E4007D06FB /* SingleVideoWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028308728545B1200CBFCE7 /* SingleVideoWidgetEntry.swift */; };
 		F06D28E528D839E4007D06FB /* VideoWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D1B3C283A300E0026340D /* VideoWidgetProvider.swift */; };
 		F06D28E628D839F5007D06FB /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AE12806858300683E6C /* Channel.swift */; };
-		F06D28E728D839F5007D06FB /* Talents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A04E27F95D9E00DBC08D /* Talents.swift */; };
+		F06D28E728D839F5007D06FB /* Hololive.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A04E27F95D9E00DBC08D /* Hololive.swift */; };
 		F06D28E828D839F5007D06FB /* LiveVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AE3280685FD00683E6C /* LiveVideo.swift */; };
 		F06D28EB28D83A2D007D06FB /* SharedUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06D28EA28D83A2D007D06FB /* SharedUtil.swift */; };
 		F06D28EC28D83A2D007D06FB /* SharedUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06D28EA28D83A2D007D06FB /* SharedUtil.swift */; };
@@ -118,7 +122,7 @@
 		F06D28FA28D83AD3007D06FB /* UpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */; };
 		F06D28FB28D83B21007D06FB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F009023D27EE255B00E343B0 /* Localizable.strings */; };
 		F07D891928834FBB008D3057 /* DSTReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07D891828834FBB008D3057 /* DSTReminderView.swift */; };
-		F080A04F27F95D9E00DBC08D /* Talents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A04E27F95D9E00DBC08D /* Talents.swift */; };
+		F080A04F27F95D9E00DBC08D /* Hololive.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A04E27F95D9E00DBC08D /* Hololive.swift */; };
 		F080A05127F993DC00DBC08D /* ManageFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A05027F993DC00DBC08D /* ManageFavoriteView.swift */; };
 		F093D1BF282C32D000E2A6FF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F093D1BE282C32D000E2A6FF /* WidgetKit.framework */; };
 		F093D1C1282C32D000E2A6FF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F093D1C0282C32D000E2A6FF /* SwiftUI.framework */; };
@@ -136,7 +140,7 @@
 		F093D1DE282FA5E600E2A6FF /* VideoFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */; };
 		F093D1DF282FA5FE00E2A6FF /* VideoFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */; };
 		F093D1E0282FAA0500E2A6FF /* TopicTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2B12280CB73D00683E6C /* TopicTagView.swift */; };
-		F093D1E5283034DA00E2A6FF /* Talents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A04E27F95D9E00DBC08D /* Talents.swift */; };
+		F093D1E5283034DA00E2A6FF /* Hololive.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A04E27F95D9E00DBC08D /* Hololive.swift */; };
 		F093D1E72830358400E2A6FF /* ViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1E62830358400E2A6FF /* ViewUtil.swift */; };
 		F093D1E82830359900E2A6FF /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657D527732690004AF802 /* Util.swift */; };
 		F093D1ED2830372900E2A6FF /* LiveWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1E3283034AF00E2A6FF /* LiveWidgetView.swift */; };
@@ -187,7 +191,7 @@
 		F0CA6EC628D7C2880028CB11 /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AF6280B640200683E6C /* VideoViewModel.swift */; };
 		F0CA6EC728D7C2880028CB11 /* VideoFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */; };
 		F0CA6EC828D7C2880028CB11 /* SongsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064A5B528BB3765008C51C2 /* SongsViewModel.swift */; };
-		F0CA6EC928D7C2BE0028CB11 /* Talents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A04E27F95D9E00DBC08D /* Talents.swift */; };
+		F0CA6EC928D7C2BE0028CB11 /* Hololive.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A04E27F95D9E00DBC08D /* Hololive.swift */; };
 		F0CA6ECA28D7C2BE0028CB11 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AE12806858300683E6C /* Channel.swift */; };
 		F0CA6ECB28D7C2BE0028CB11 /* SongInStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004E8C5285D004A00ABDFED /* SongInStream.swift */; };
 		F0CA6ECC28D7C2BE0028CB11 /* LiveVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AE3280685FD00683E6C /* LiveVideo.swift */; };
@@ -312,6 +316,7 @@
 		F025203628E10AB600976972 /* SpecialThanksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialThanksView.swift; sourceTree = "<group>"; };
 		F025203E28EE94B700976972 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F025204328EEA5FC00976972 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		F025369828F67F8000B140E8 /* Nijisanji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nijisanji.swift; sourceTree = "<group>"; };
 		F028307F2853DB0E00CBFCE7 /* Widgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widgets.swift; sourceTree = "<group>"; };
 		F02830812853DB5E00CBFCE7 /* WidgetEntryViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetEntryViews.swift; sourceTree = "<group>"; };
 		F028308728545B1200CBFCE7 /* SingleVideoWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleVideoWidgetEntry.swift; sourceTree = "<group>"; };
@@ -356,7 +361,7 @@
 		F06D28DF28D8390F007D06FB /* SharedEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedEntryView.swift; sourceTree = "<group>"; };
 		F06D28EA28D83A2D007D06FB /* SharedUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUtil.swift; sourceTree = "<group>"; };
 		F07D891828834FBB008D3057 /* DSTReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSTReminderView.swift; sourceTree = "<group>"; };
-		F080A04E27F95D9E00DBC08D /* Talents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talents.swift; sourceTree = "<group>"; };
+		F080A04E27F95D9E00DBC08D /* Hololive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hololive.swift; sourceTree = "<group>"; };
 		F080A05027F993DC00DBC08D /* ManageFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageFavoriteView.swift; sourceTree = "<group>"; };
 		F093D1BC282C32D000E2A6FF /* holo-wtf-widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "holo-wtf-widgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F093D1BE282C32D000E2A6FF /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -801,11 +806,12 @@
 		F0C657CA2771F4F3004AF802 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F080A04E27F95D9E00DBC08D /* Talents.swift */,
+				F080A04E27F95D9E00DBC08D /* Hololive.swift */,
 				F0ED2AE12806858300683E6C /* Channel.swift */,
 				F0ED2AE3280685FD00683E6C /* LiveVideo.swift */,
 				F004E8C5285D004A00ABDFED /* SongInStream.swift */,
 				F0E45D1728F39AD90091474A /* Agency.swift */,
+				F025369828F67F8000B140E8 /* Nijisanji.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1099,6 +1105,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0E45D1B28F39AF90091474A /* Agency.swift in Sources */,
+				F025369C28F67F8000B140E8 /* Nijisanji.swift in Sources */,
 				F06D28E528D839E4007D06FB /* VideoWidgetProvider.swift in Sources */,
 				F03A138E28F0010B00BB8E51 /* MultipleVideoWidgetProvider.swift in Sources */,
 				F025204228EE95FB00976972 /* Constants.swift in Sources */,
@@ -1120,7 +1127,7 @@
 				F04D147D28DD4ED300750B71 /* LiveAccessoryCornerView.swift in Sources */,
 				F03A138528F0004C00BB8E51 /* ChannelsEntry.swift in Sources */,
 				F06D28D128D83826007D06FB /* complications.swift in Sources */,
-				F06D28E728D839F5007D06FB /* Talents.swift in Sources */,
+				F06D28E728D839F5007D06FB /* Hololive.swift in Sources */,
 				F06D28F328D83A92007D06FB /* SongInStream.swift in Sources */,
 				F04D149028DD673A00750B71 /* UpcomingAccessoryCornerEntryView.swift in Sources */,
 			);
@@ -1145,7 +1152,7 @@
 				F0050DAA28CFEDE1004532CB /* UpcomingAccessoryRectangularWidgetView.swift in Sources */,
 				F0B71FCE283CAD0700DC4260 /* MultipleVideoWidgetProvider.swift in Sources */,
 				F093D1D3282FA08700E2A6FF /* LiveVideo.swift in Sources */,
-				F093D1E5283034DA00E2A6FF /* Talents.swift in Sources */,
+				F093D1E5283034DA00E2A6FF /* Hololive.swift in Sources */,
 				F093D1C4282C32D000E2A6FF /* holo_wtf_widget.swift in Sources */,
 				F0B2AF0A28C13D0F00635CAD /* UpcomingTimeView.swift in Sources */,
 				F0E219C3287AB47D0080697F /* LiveWidgetMediumView.swift in Sources */,
@@ -1161,6 +1168,7 @@
 				F0E45D1928F39AF90091474A /* Agency.swift in Sources */,
 				F0B2AF0C28C1A82400635CAD /* MultipleVideoWidgetEntry.swift in Sources */,
 				F093D1DB282FA0C000E2A6FF /* VideoViewModel.swift in Sources */,
+				F025369A28F67F8000B140E8 /* Nijisanji.swift in Sources */,
 				F093D1E82830359900E2A6FF /* Util.swift in Sources */,
 				F004E8C7285D013300ABDFED /* SongInStream.swift in Sources */,
 				F093D1E0282FAA0500E2A6FF /* TopicTagView.swift in Sources */,
@@ -1182,6 +1190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0C50A1F2827C6FA00A93225 /* UpcomingCountView.swift in Sources */,
+				F025369928F67F8000B140E8 /* Nijisanji.swift in Sources */,
 				F09D25E52802EA09001A7D71 /* SwipableLinkedCellView.swift in Sources */,
 				F0E4873D2876586F00118BBB /* LiveCollabAvatarView.swift in Sources */,
 				F009023827EDB6AE00E343B0 /* LiveTimeView.swift in Sources */,
@@ -1203,7 +1212,7 @@
 				F01E95B3286FB4B900CDF0F9 /* iPadLazyGirdView.swift in Sources */,
 				F009024027EE57BA00E343B0 /* LinkedVideoView.swift in Sources */,
 				F009024627EE6A9F00E343B0 /* VideoContextMenu.swift in Sources */,
-				F080A04F27F95D9E00DBC08D /* Talents.swift in Sources */,
+				F080A04F27F95D9E00DBC08D /* Hololive.swift in Sources */,
 				F0EB53B62812BD6F0024E089 /* FavouriteButton.swift in Sources */,
 				F080A05127F993DC00DBC08D /* ManageFavoriteView.swift in Sources */,
 				F05E9EB927EB3C6100EF48DD /* LivePaneView.swift in Sources */,
@@ -1275,6 +1284,7 @@
 				F03A138C28F0010A00BB8E51 /* MultipleVideoWidgetProvider.swift in Sources */,
 				F0CA6ED328D7C4A40028CB11 /* LiveTimeView.swift in Sources */,
 				F0CA6ED428D7C4A40028CB11 /* UpcomingTimeView.swift in Sources */,
+				F025369B28F67F8000B140E8 /* Nijisanji.swift in Sources */,
 				F04D754828D7C94F0096B8AB /* Util.swift in Sources */,
 				F025204D28EEAEE000976972 /* MultipleVideoWidgetEntry.swift in Sources */,
 				F0CA6ED728D7C4DB0028CB11 /* WatchLiveCellView.swift in Sources */,
@@ -1302,7 +1312,7 @@
 				F04D755028D7CC1F0096B8AB /* DataStatusIndicatorView.swift in Sources */,
 				F04D148128DD523C00750B71 /* LiveAccessoryCornerEntryView.swift in Sources */,
 				F04D148528DD53CE00750B71 /* SingleVideoWidgetEntry.swift in Sources */,
-				F0CA6EC928D7C2BE0028CB11 /* Talents.swift in Sources */,
+				F0CA6EC928D7C2BE0028CB11 /* Hololive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
