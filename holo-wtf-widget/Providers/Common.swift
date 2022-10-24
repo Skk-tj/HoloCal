@@ -7,9 +7,9 @@
 
 import Foundation
 
-func getEntry(url: String, sortBy sortAlgorithm: (LiveVideo, LiveVideo) -> Bool, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> SingleVideoWidgetEntry {
+func getEntry(url: String, sortBy sortAlgorithm: (any LiveVideo, any LiveVideo) -> Bool, filterBy filterAlgorithm: (any LiveVideo) -> Bool) async -> SingleVideoWidgetEntry {
     do {
-        var lives = try await VideoFetchService.shared.getVideos(from: url)
+        var lives: [HololiveLiveVideo] = try await getVideos(from: url)
         lives = lives.filter(filterAlgorithm)
         lives.sort(by: sortAlgorithm)
         
@@ -31,9 +31,9 @@ func getEntry(url: String, sortBy sortAlgorithm: (LiveVideo, LiveVideo) -> Bool,
     }
 }
 
-func getMultipleEntry(url: String, sortBy sortAlgorithm: (LiveVideo, LiveVideo) -> Bool, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> MultipleVideoWidgetEntry {
+func getMultipleEntry(url: String, sortBy sortAlgorithm: (any LiveVideo, any LiveVideo) -> Bool, filterBy filterAlgorithm: (any LiveVideo) -> Bool) async -> MultipleVideoWidgetEntry {
     do {
-        var lives = try await VideoFetchService.shared.getVideos(from: url)
+        var lives: [HololiveLiveVideo] = try await getVideos(from: url)
         lives = lives.filter(filterAlgorithm)
         lives.sort(by: sortAlgorithm)
         
@@ -63,9 +63,9 @@ func getMultipleEntry(url: String, sortBy sortAlgorithm: (LiveVideo, LiveVideo) 
     }
 }
 
-func getChannelsEntry(from url: String, sortBy sortAlgorithm: (LiveVideo, LiveVideo) -> Bool, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> ChannelsEntry {
+func getChannelsEntry(from url: String, sortBy sortAlgorithm: (any LiveVideo, any LiveVideo) -> Bool, filterBy filterAlgorithm: (any LiveVideo) -> Bool) async -> ChannelsEntry {
     do {
-        var lives = try await VideoFetchService.shared.getVideos(from: url)
+        var lives: [HololiveLiveVideo] = try await getVideos(from: url)
         lives.sort(by: sortAlgorithm)
         lives = lives.filter(filterAlgorithm)
         
@@ -82,7 +82,7 @@ func getChannelsEntry(from url: String, sortBy sortAlgorithm: (LiveVideo, LiveVi
     }
 }
 
-func getThumbnailsForChannels(_ channels: [Channel]) async throws -> [Data] {
+func getThumbnailsForChannels(_ channels: [any Channel]) async throws -> [Data] {
     try await withThrowingTaskGroup(of: Data.self) { group in
         channels.forEach { channel in
             group.addTask {

@@ -10,7 +10,7 @@ import SwiftUI
 struct UpcomingCardListView: View {
     @Binding var currentPresentationMode: PresentationMode
     
-    @EnvironmentObject var upcoming: VideoViewModel
+    @EnvironmentObject var upcoming: HololiveVideoViewModel
     
     var body: some View {
         CardListView(currentPresentationMode: $currentPresentationMode, paneView: { live in

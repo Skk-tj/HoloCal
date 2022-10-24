@@ -23,22 +23,22 @@ struct LiveStackView: View {
         NavigationStack {
             if isShowingCompactInLiveView {
                 LiveCompactListView(currentPresentationMode: $currentPresentationMode)
-                    .environmentObject(live as VideoViewModel)
+                    .environmentObject(live as HololiveVideoViewModel)
                     .navigationTitle("LIVE_VIEW_TITLE")
                     .toolbar {
                         ToolbarItemGroup {
                             LiveViewToolbar(currentPresentationMode: $currentPresentationMode)
-                                .environmentObject(live as VideoViewModel)
+                                .environmentObject(live as HololiveVideoViewModel)
                         }
                     }
             } else {
                 LiveCardListView(currentPresentationMode: $currentPresentationMode)
-                    .environmentObject(live as VideoViewModel)
+                    .environmentObject(live as HololiveVideoViewModel)
                     .navigationTitle("LIVE_VIEW_TITLE")
                     .toolbar {
                         ToolbarItem(placement: .primaryAction) {
                             LiveViewToolbar(currentPresentationMode: $currentPresentationMode)
-                                .environmentObject(live as VideoViewModel)
+                                .environmentObject(live as HololiveVideoViewModel)
                         }
                     }
             }

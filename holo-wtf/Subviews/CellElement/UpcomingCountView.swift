@@ -9,9 +9,9 @@ import SwiftUI
 
 struct UpcomingCountView: View {
     @AppStorage(UserDefaultKeys.upcomingLookAhead) var upcomingLookAhead = 48
-    @AppStorage("generationListSelection") var generationListSelection = Set(hololiveGenerations.allCases)
+    @AppStorage("generationListSelection") var generationListSelection = Set(HololiveGeneration.allCases)
     
-    @EnvironmentObject var upcoming: VideoViewModel
+    @EnvironmentObject var upcoming: HololiveVideoViewModel
     
     var body: some View {
         let filteredVideoCount = upcoming.videoList.filter { video in

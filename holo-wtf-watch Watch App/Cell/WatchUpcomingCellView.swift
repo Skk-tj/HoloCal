@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WatchUpcomingCellView: View {
-    let upcoming: LiveVideo
+    let upcoming: any LiveVideo
     
     var body: some View {
         HStack {
@@ -32,6 +32,6 @@ struct WatchUpcomingCellView: View {
 
 struct WatchUpcomingCellView_Previews: PreviewProvider {
     static var previews: some View {
-        WatchUpcomingCellView(upcoming: LiveVideo.previewLive)
+        WatchUpcomingCellView(upcoming: HololiveLiveVideo.previewLive)
     }
 }

@@ -29,7 +29,7 @@ struct UpcomingiPadView: View {
                 UpcomingCountView()
             }
         })
-        .environmentObject(upcoming as VideoViewModel)
+        .environmentObject(upcoming as HololiveVideoViewModel)
         .task {
             await upcoming.getUpcoming()
             
@@ -39,7 +39,7 @@ struct UpcomingiPadView: View {
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {
                 UpcomingViewToolbar(currentPresentationMode: $currentPresentationMode)
-                    .environmentObject(upcoming as VideoViewModel)
+                    .environmentObject(upcoming as HololiveVideoViewModel)
                 Button(action: {
                     Task {
                         await upcoming.getUpcoming()

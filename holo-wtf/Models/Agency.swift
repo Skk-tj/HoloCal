@@ -7,16 +7,19 @@
 
 import Foundation
 
+/// A protocol that allows entities to have an ID, and names in different languages.
 protocol Vtuberable {
     associatedtype ID
     
     var id: ID { get }
+    /// Names in different language.
     var names: [NameLanguage: String] { get }
     
     var localizedName: String { get }
     var altLocalizedName: String { get }
 }
 
+/// Default implementation of getting the names.
 extension Vtuberable {
     var localizedName: String {
         if #available(iOS 16, *) {
@@ -57,8 +60,29 @@ struct Agency: Vtuberable {
     let names: [NameLanguage: String]
 }
 
+protocol Talent: Codable, Identifiable, Hashable, Vtuberable {
+    associatedtype Generation
+    
+    var id: String { get }
+    
+    var names: [NameLanguage: String] { get }
+    
+    var inGeneration: Generation { get }
+}
+
+protocol Generation: Hashable, Vtuberable {
+    associatedtype Generation
+    associatedtype TalentEnum
+    
+    var id: Generation { get }
+    
+    var names: [NameLanguage: String] { get }
+    
+    var members: [TalentEnum] { get }
+}
+
 /// Represent a person.
-struct Talent: Codable, Identifiable, Hashable, Vtuberable {
+struct HololiveTalent: Talent {
     /// The ID shall correspond to the ID given by the API, HoloDex API uses YT channel ID.
     let id: String
     
@@ -68,19 +92,35 @@ struct Talent: Codable, Identifiable, Hashable, Vtuberable {
     let names: [NameLanguage: String]
     
     /// Represent which generation (group) this talent is in.
-    let inGeneration: hololiveGenerations
+    let inGeneration: HololiveGeneration
+}
+
+struct NijisanjiTalent: Talent {
+    let id: String
+    
+    let names: [NameLanguage: String]
+    
+    let inGeneration: NijisanjiGeneration
 }
 
 /// Represent a group of talents in a VTuber agency
-struct GenerationGroup: Hashable, Vtuberable {
+struct HololiveGenerationGroup: Generation {
     /// Represents the generation of this instance as an enum.
-    let id: hololiveGenerations
+    let id: HololiveGeneration
     
     /// Represent the names of a generation group
     let names: [NameLanguage: String]
     
     /// Represents a list of members.
-    let members: [hololiveTalents]
+    let members: [HololiveTalentEnum]
+}
+
+struct NijisanjiGenerationGroup: Generation {
+    let id: NijisanjiGeneration
+    
+    let names: [NameLanguage : String]
+    
+    let members: [NijisanjiTalentEnum]
 }
 
 

@@ -16,7 +16,7 @@ struct UpcomingViewToolbar: View {
     /// Defines the current sorting strategy.
     @State var sortingStrategy: SortingStrategy = .notSorting
     
-    @EnvironmentObject var upcomingViewModel: VideoViewModel
+    @EnvironmentObject var upcomingViewModel: HololiveVideoViewModel
     
     var body: some View {
         Menu {

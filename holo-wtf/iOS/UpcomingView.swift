@@ -22,22 +22,22 @@ struct UpcomingView: View {
         NavigationView {
             if isShowingCompactInUpcomingView {
                 UpcomingCompactListView(currentPresentationMode: $currentPresentationMode)
-                    .environmentObject(upcoming as VideoViewModel)
+                    .environmentObject(upcoming as HololiveVideoViewModel)
                     .navigationTitle("UPCOMING_VIEW_TITLE")
                     .toolbar {
                         ToolbarItemGroup {
                             UpcomingViewToolbar(currentPresentationMode: $currentPresentationMode)
-                                .environmentObject(upcoming as VideoViewModel)
+                                .environmentObject(upcoming as HololiveVideoViewModel)
                         }
                     }
             } else {
                 UpcomingCardListView(currentPresentationMode: $currentPresentationMode)
-                    .environmentObject(upcoming as VideoViewModel)
+                    .environmentObject(upcoming as HololiveVideoViewModel)
                     .navigationTitle("UPCOMING_VIEW_TITLE")
                     .toolbar {
                         ToolbarItem(placement: .primaryAction) {
                             UpcomingViewToolbar(currentPresentationMode: $currentPresentationMode)
-                                .environmentObject(upcoming as VideoViewModel)
+                                .environmentObject(upcoming as HololiveVideoViewModel)
                         }
                     }
             }

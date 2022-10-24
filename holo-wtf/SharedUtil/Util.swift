@@ -110,7 +110,7 @@ func getLiveVideoJSONDecoder() -> JSONDecoder {
     return decoder
 }
 
-func getCalendarEventFromVideo(eventStore: EKEventStore, video: LiveVideo) -> EKEvent {
+func getCalendarEventFromVideo(eventStore: EKEventStore, video: any LiveVideo) -> EKEvent {
     let event = EKEvent(eventStore: eventStore)
     event.title = video.title
     event.location = "https://www.youtube.com/channel/\(video.channel.id)"

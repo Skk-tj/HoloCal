@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ManageGenerationView: View {
-    @AppStorage("generationListSelection") var generationSelected = Set(hololiveGenerations.allCases)
-    @AppStorage("generationListOrder") var generationOrder = hololiveGenerations.allCases
-    @AppStorage("excludedGenerations") var excludedGenerations = Set<hololiveGenerations>()
+    @AppStorage("generationListSelection") var generationSelected = Set(HololiveGeneration.allCases)
+    @AppStorage("generationListOrder") var generationOrder = HololiveGeneration.allCases
+    @AppStorage("excludedGenerations") var excludedGenerations = Set<HololiveGeneration>()
     @State var showResetAlert = false
     
     var body: some View {
@@ -45,8 +45,8 @@ struct ManageGenerationView: View {
                 })
                 .confirmationDialog("SETTINGS_MANAGE_GENERATION_RESET_ALERT_TEXT", isPresented: $showResetAlert, actions: {
                     Button("SETTINGS_MANAGE_GENERATION_RESET_ALERT_RESET", role: .destructive) {
-                        generationSelected = Set(hololiveGenerations.allCases)
-                        generationOrder = hololiveGenerations.allCases
+                        generationSelected = Set(HololiveGeneration.allCases)
+                        generationOrder = HololiveGeneration.allCases
                     }
                 }, message: {
                     Text("SETTINGS_MANAGE_GENERATION_RESET_ALERT_TEXT")
@@ -54,7 +54,7 @@ struct ManageGenerationView: View {
             }
         }
         .onChange(of: generationSelected, perform: { newValue in
-            excludedGenerations =  Set(hololiveGenerations.allCases).symmetricDifference(newValue)
+            excludedGenerations =  Set(HololiveGeneration.allCases).symmetricDifference(newValue)
         })
         .navigationTitle("SETTINGS_MANAGE_GENERATION_VIEW_TITLE")
         .toolbar {

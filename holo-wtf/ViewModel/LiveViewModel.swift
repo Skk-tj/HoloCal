@@ -10,7 +10,7 @@ import MusicKit
 import OSLog
 
 @MainActor
-class LiveViewModel: VideoViewModel {
+class LiveViewModel: HololiveVideoViewModel {
     func getLive() async {
         await getVideo(url: hololiveLiveURL) { responseResult in
             self.videoList = responseResult
