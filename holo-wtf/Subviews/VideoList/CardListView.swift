@@ -9,12 +9,12 @@ import SwiftUI
 
 /// The view that represents a list of cards. 
 struct CardListView<PaneContent: View, StatusContent: View>: View {    
-    @EnvironmentObject var viewModel: VideoViewModel
+    @EnvironmentObject var viewModel: HololiveVideoViewModel
     
     @Binding var currentPresentationMode: PresentationMode
     
     /// The view of a single element in the list.
-    @ViewBuilder let paneView: (_ live: LiveVideo) -> PaneContent
+    @ViewBuilder let paneView: (_ live: any LiveVideo) -> PaneContent
     
     /// The view of the counter at the bottom.
     @ViewBuilder let dataStatusView: () -> StatusContent

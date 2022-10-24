@@ -55,7 +55,7 @@ struct ComplicationsWidgetBundle: WidgetBundle {
 
 struct complications_Previews: PreviewProvider {
     static var previews: some View {
-        LiveAccessoryRectangularWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), status: .ok, video: LiveVideo.previewLive, avatarData: Data(), thumbnailData: Data()))
+        LiveAccessoryRectangularWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), status: .ok, video: HololiveLiveVideo.previewLive, avatarData: Data(), thumbnailData: Data()))
             .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
     }
 }

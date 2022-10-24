@@ -11,9 +11,9 @@ struct MultipleVideoWidgetEntry: VideoTimelineEntry {
     let date: Date
     let status: WidgetDataStatus
     
-    let videoLeft: LiveVideo?
+    let videoLeft: (any LiveVideo)?
     let thumbnailDataLeft: Data
     
-    let videoRight: LiveVideo?
+    let videoRight: (any LiveVideo)?
     let thumbnailDataRight: Data
 }

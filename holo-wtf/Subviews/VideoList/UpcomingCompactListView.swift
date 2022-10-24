@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UpcomingCompactListView: View {
     @Binding var currentPresentationMode: PresentationMode
-    @EnvironmentObject var upcoming: VideoViewModel
+    @EnvironmentObject var upcoming: HololiveVideoViewModel
     
     var body: some View {
         CompactListView(currentPresentationMode: $currentPresentationMode, cellView: { live in

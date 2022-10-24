@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct VideoContextMenu: View {
-    let video: LiveVideo
+    let video: any LiveVideo
     
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
@@ -51,6 +51,6 @@ struct VideoContextMenu: View {
 
 struct VideoContextMenu_Previews: PreviewProvider {    
     static var previews: some View {
-        VideoContextMenu(video: LiveVideo.previewLive)
+        VideoContextMenu(video: HololiveLiveVideo.previewLive)
     }
 }

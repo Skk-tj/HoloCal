@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct WatchVideoListView<VideoContent: View, DataStatusContent: View>: View {
-    @EnvironmentObject var viewModel: VideoViewModel
+struct WatchVideoListView<VideoContent: View, DataStatusContent: View, LiveVideoType: LiveVideo, ChannelType: Channel, VM: VideoViewModel<LiveVideoType, ChannelType>>: View {
+    @EnvironmentObject var viewModel: VM
     
     /// The view of a single video.
-    @ViewBuilder let singleVideoView: (_ live: LiveVideo) -> VideoContent
+    @ViewBuilder let singleVideoView: (_ live: any LiveVideo) -> VideoContent
     
     /// The view of the counter at the bottom.
     @ViewBuilder let dataStatusView: () -> DataStatusContent

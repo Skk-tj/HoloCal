@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct SwipableLinkedCellView<Content: View>: View {
-    let video: LiveVideo
+    let video: any LiveVideo
     let content: () -> Content
     
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
-    init(video: LiveVideo, @ViewBuilder content: @escaping () -> Content) {
+    init(video: any LiveVideo, @ViewBuilder content: @escaping () -> Content) {
         self.video = video
         self.content = content
     }
@@ -45,8 +45,8 @@ struct SwipableLinkedCellView<Content: View>: View {
 
 struct SwipableLinkedCellView_Previews: PreviewProvider {
     static var previews: some View {
-        SwipableLinkedCellView(video: LiveVideo.previewLive) {
-            LiveCellView(live: LiveVideo.previewLive)
+        SwipableLinkedCellView(video: HololiveLiveVideo.previewLive) {
+            LiveCellView(live: HololiveLiveVideo.previewLive)
         }
     }
 }

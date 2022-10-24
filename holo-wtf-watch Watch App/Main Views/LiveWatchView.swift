@@ -15,7 +15,7 @@ struct LiveWatchView: View {
     }
     
     var body: some View {
-        WatchVideoListView(singleVideoView: { video in
+        WatchVideoListView<WatchLiveCellView, DataStatusIndicatorView, HololiveLiveVideo, HololiveChannel, HololiveVideoViewModel>(singleVideoView: { video in
             WatchLiveCellView(live: video)
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: live.dataStatus) {

@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct LiveCountView: View {
-    @AppStorage("generationListSelection") var generationListSelection = Set(hololiveGenerations.allCases)
+    @AppStorage("generationListSelection") var generationListSelection = Set(HololiveGeneration.allCases)
     
-    @EnvironmentObject var live: VideoViewModel
+    @EnvironmentObject var live: HololiveVideoViewModel
     
     var body: some View {
         let filteredVideoCount = live.videoList.filter { video in

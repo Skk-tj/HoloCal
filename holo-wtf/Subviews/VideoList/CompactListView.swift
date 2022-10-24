@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct CompactListView<CellContent: View, DataStatusContent: View>: View {    
-    @EnvironmentObject var viewModel: VideoViewModel
+    @EnvironmentObject var viewModel: HololiveVideoViewModel
     
     @Binding var currentPresentationMode: PresentationMode
-    @ViewBuilder let cellView: (_ live: LiveVideo) -> CellContent
+    @ViewBuilder let cellView: (_ live: any LiveVideo) -> CellContent
     @ViewBuilder let dataStatusView: () -> DataStatusContent
     
     var body: some View {

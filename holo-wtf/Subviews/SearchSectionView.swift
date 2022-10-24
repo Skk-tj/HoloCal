@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct SearchSectionView<Content: View>: View {
-    @EnvironmentObject var viewModel: VideoViewModel
+    @EnvironmentObject var viewModel: HololiveVideoViewModel
     let searchText: String
     
-    @ViewBuilder let cellView: (_ live: LiveVideo) -> Content
+    @ViewBuilder let cellView: (_ live: any LiveVideo) -> Content
     
     var body: some View {
         Section {

@@ -27,16 +27,16 @@ struct HoloCalWidgetBundle: WidgetBundle {
 
 struct holo_wtf_widget_Previews: PreviewProvider {
     static var previews: some View {
-        SmallLiveWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), status: .ok, video: LiveVideo.previewLive, avatarData: Data(), thumbnailData: Data()))
+        SmallLiveWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), status: .ok, video: HololiveLiveVideo.previewLive, avatarData: Data(), thumbnailData: Data()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
         
-        SmallLiveWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), status: .network, video: LiveVideo.previewLive, avatarData: Data(), thumbnailData: Data()))
+        SmallLiveWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), status: .network, video: HololiveLiveVideo.previewLive, avatarData: Data(), thumbnailData: Data()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
         
-        LivePaneWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), status: .ok, video: LiveVideo.previewLive, avatarData: Data(), thumbnailData: Data()))
+        LivePaneWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), status: .ok, video: HololiveLiveVideo.previewLive, avatarData: Data(), thumbnailData: Data()))
             .previewContext(WidgetPreviewContext(family: .systemLarge))
         
-        LivePaneWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), status: .noVideo, video: LiveVideo.previewLive, avatarData: Data(), thumbnailData: Data()))
+        LivePaneWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), status: .noVideo, video: HololiveLiveVideo.previewLive, avatarData: Data(), thumbnailData: Data()))
             .previewContext(WidgetPreviewContext(family: .systemLarge))
         
         MultipleLiveWidgetEntryView(entry: MultipleVideoWidgetEntry(date: Date(), status: .noVideo, videoLeft: nil, thumbnailDataLeft: Data(), videoRight: nil, thumbnailDataRight: Data()))

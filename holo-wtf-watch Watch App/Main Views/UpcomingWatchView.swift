@@ -15,7 +15,7 @@ struct UpcomingWatchView: View {
     }
     
     var body: some View {
-        WatchVideoListView(singleVideoView: { video in
+        WatchVideoListView<WatchUpcomingCellView, DataStatusIndicatorView, HololiveLiveVideo, HololiveChannel, HololiveVideoViewModel>(singleVideoView: { video in
             WatchUpcomingCellView(upcoming: video)
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: upcoming.dataStatus) {

@@ -8,7 +8,7 @@
 import Foundation
 import OrderedCollections
 
-enum hololiveGenerations: Int, Codable, CaseIterable, Hashable {
+enum HololiveGeneration: Int, CaseIterable, Codable, Hashable {
     case zerothGen
     case firstGen
     case secondGen
@@ -34,15 +34,15 @@ enum hololiveGenerations: Int, Codable, CaseIterable, Hashable {
     case other
     
     func getLocalizedName() -> String {
-        return talentsByGeneration[self]!.localizedName
+        return hololiveTalentsByGeneration[self]!.localizedName
     }
     
     func getAltLocalizedName() -> String {
-        return talentsByGeneration[self]!.altLocalizedName
+        return hololiveTalentsByGeneration[self]!.altLocalizedName
     }
 }
 
-enum hololiveTalents: String, Codable {
+enum HololiveTalentEnum: String, Codable {
     // MARK: - 0th gen
     case sora = "UCp6993wxpyDPHUpavwDFqgg"
     case roboco = "UCDqI2jOz0weumE8s7paEk6g"
@@ -141,147 +141,147 @@ enum hololiveTalents: String, Codable {
     case midnight = "UCnVbtCwr-5LXxUlGxsgD7sQ"
 }
 
-extension hololiveTalents: Identifiable {
+extension HololiveTalentEnum: Identifiable {
     var id: String { rawValue }
 }
 
-let hololiveTalentsEnumToTalent: [hololiveTalents: Talent] = [
+let hololiveTalentEnumToTalent: [HololiveTalentEnum: HololiveTalent] = [
     // MARK: - 0th gen
-    .sora: Talent(id: hololiveTalents.sora.rawValue, names: [.en: "Tokino Sora", .ja: "ときのそら"], inGeneration: .zerothGen),
-    .roboco: Talent(id: hololiveTalents.roboco.rawValue, names: [.en: "Robocosan", .ja: "ロボ子さん"], inGeneration: .zerothGen),
-    .azki: Talent(id: hololiveTalents.azki.rawValue, names: [.en: "AZKi", .ja: "AZKi"], inGeneration: .zerothGen),
-    .miko: Talent(id: hololiveTalents.miko.rawValue, names: [.en: "Sakura Miko", .ja: "さくらみこ"], inGeneration: .zerothGen),
-    .suisei: Talent(id: hololiveTalents.suisei.rawValue, names: [.en: "Hoshimachi Suisei", .ja: "星街すいせい"], inGeneration: .zerothGen),
+    .sora: HololiveTalent(id: HololiveTalentEnum.sora.rawValue, names: [.en: "Tokino Sora", .ja: "ときのそら"], inGeneration: HololiveGeneration.zerothGen),
+    .roboco: HololiveTalent(id: HololiveTalentEnum.roboco.rawValue, names: [.en: "Robocosan", .ja: "ロボ子さん"], inGeneration: HololiveGeneration.zerothGen),
+    .azki: HololiveTalent(id: HololiveTalentEnum.azki.rawValue, names: [.en: "AZKi", .ja: "AZKi"], inGeneration: HololiveGeneration.zerothGen),
+    .miko: HololiveTalent(id: HololiveTalentEnum.miko.rawValue, names: [.en: "Sakura Miko", .ja: "さくらみこ"], inGeneration: HololiveGeneration.zerothGen),
+    .suisei: HololiveTalent(id: HololiveTalentEnum.suisei.rawValue, names: [.en: "Hoshimachi Suisei", .ja: "星街すいせい"], inGeneration: HololiveGeneration.zerothGen),
     
     // MARK: - 1st gen
-    .mel: Talent(id: hololiveTalents.mel.rawValue, names: [.en: "Yozora Mel", .ja: "夜空メル"], inGeneration: .firstGen),
-    .aki: Talent(id: hololiveTalents.aki.rawValue, names: [.en: "Aki Rosenthal", .ja: "アキ・ローゼンタール"], inGeneration: .firstGen),
-    .haato: Talent(id: hololiveTalents.haato.rawValue, names: [.en: "Akai Haato", .ja: "赤井はあと"], inGeneration: .firstGen),
-    .fubuki: Talent(id: hololiveTalents.fubuki.rawValue, names: [.en: "Shirakami Fubuki", .ja: "白上フブキ"], inGeneration: .firstGen),
-    .matsuri: Talent(id: hololiveTalents.matsuri.rawValue, names: [.en: "Natsuiro Matsuri", .ja: "夏色まつり"], inGeneration: .firstGen),
+    .mel: HololiveTalent(id: HololiveTalentEnum.mel.rawValue, names: [.en: "Yozora Mel", .ja: "夜空メル"], inGeneration: HololiveGeneration.firstGen),
+    .aki: HololiveTalent(id: HololiveTalentEnum.aki.rawValue, names: [.en: "Aki Rosenthal", .ja: "アキ・ローゼンタール"], inGeneration: HololiveGeneration.firstGen),
+    .haato: HololiveTalent(id: HololiveTalentEnum.haato.rawValue, names: [.en: "Akai Haato", .ja: "赤井はあと"], inGeneration: HololiveGeneration.firstGen),
+    .fubuki: HololiveTalent(id: HololiveTalentEnum.fubuki.rawValue, names: [.en: "Shirakami Fubuki", .ja: "白上フブキ"], inGeneration: HololiveGeneration.firstGen),
+    .matsuri: HololiveTalent(id: HololiveTalentEnum.matsuri.rawValue, names: [.en: "Natsuiro Matsuri", .ja: "夏色まつり"], inGeneration: HololiveGeneration.firstGen),
     
     // MARK: - 2nd gen
-    .aqua: Talent(id: hololiveTalents.aqua.rawValue, names: [.en: "Minato Aqua", .ja: "湊あくあ"], inGeneration: .secondGen),
-    .shion: Talent(id: hololiveTalents.shion.rawValue, names: [.en: "Murasaki Shion", .ja: "紫咲シオン"], inGeneration: .secondGen),
-    .ayame: Talent(id: hololiveTalents.ayame.rawValue, names: [.en: "Nakiri Ayame", .ja: "百鬼あやめ"], inGeneration: .secondGen),
-    .choco: Talent(id: hololiveTalents.choco.rawValue, names: [.en: "Yuzuki Choco", .ja: "癒月ちょこ"], inGeneration: .secondGen),
-    .subaru: Talent(id: hololiveTalents.subaru.rawValue, names: [.en: "Oozora Subaru", .ja: "大空スバル"], inGeneration: .secondGen),
+    .aqua: HololiveTalent(id: HololiveTalentEnum.aqua.rawValue, names: [.en: "Minato Aqua", .ja: "湊あくあ"], inGeneration: HololiveGeneration.secondGen),
+    .shion: HololiveTalent(id: HololiveTalentEnum.shion.rawValue, names: [.en: "Murasaki Shion", .ja: "紫咲シオン"], inGeneration: HololiveGeneration.secondGen),
+    .ayame: HololiveTalent(id: HololiveTalentEnum.ayame.rawValue, names: [.en: "Nakiri Ayame", .ja: "百鬼あやめ"], inGeneration: HololiveGeneration.secondGen),
+    .choco: HololiveTalent(id: HololiveTalentEnum.choco.rawValue, names: [.en: "Yuzuki Choco", .ja: "癒月ちょこ"], inGeneration: HololiveGeneration.secondGen),
+    .subaru: HololiveTalent(id: HololiveTalentEnum.subaru.rawValue, names: [.en: "Oozora Subaru", .ja: "大空スバル"], inGeneration: HololiveGeneration.secondGen),
     
     // MARK: - Gamers
-    .mio: Talent(id: hololiveTalents.mio.rawValue, names: [.en: "Ookami Mio", .ja: "大神ミオ"], inGeneration: .gamers),
-    .okayu: Talent(id: hololiveTalents.okayu.rawValue, names: [.en: "Nekomata Okayu", .ja: "猫又おかゆ"], inGeneration: .gamers),
-    .korone: Talent(id: hololiveTalents.korone.rawValue, names: [.en: "Inugami Korone", .ja: "戌神ころね"], inGeneration: .gamers),
+    .mio: HololiveTalent(id: HololiveTalentEnum.mio.rawValue, names: [.en: "Ookami Mio", .ja: "大神ミオ"], inGeneration: HololiveGeneration.gamers),
+    .okayu: HololiveTalent(id: HololiveTalentEnum.okayu.rawValue, names: [.en: "Nekomata Okayu", .ja: "猫又おかゆ"], inGeneration: HololiveGeneration.gamers),
+    .korone: HololiveTalent(id: HololiveTalentEnum.korone.rawValue, names: [.en: "Inugami Korone", .ja: "戌神ころね"], inGeneration: HololiveGeneration.gamers),
     
     // MARK: - 3rd gen
-    .pekora: Talent(id: hololiveTalents.pekora.rawValue, names: [.en: "Usada Pekora", .ja: "兎田ぺこら"], inGeneration: .thirdGen),
-    .flare: Talent(id: hololiveTalents.flare.rawValue, names: [.en: "Shiranui Flare", .ja: "不知火フレア"], inGeneration: .thirdGen),
-    .noel: Talent(id: hololiveTalents.noel.rawValue, names: [.en: "Shirogane Noel", .ja: "白銀ノエル"], inGeneration: .thirdGen),
-    .marine: Talent(id: hololiveTalents.marine.rawValue, names: [.en: "Houshou Marine", .ja: "宝鐘マリン"], inGeneration: .thirdGen),
+    .pekora: HololiveTalent(id: HololiveTalentEnum.pekora.rawValue, names: [.en: "Usada Pekora", .ja: "兎田ぺこら"], inGeneration: HololiveGeneration.thirdGen),
+    .flare: HololiveTalent(id: HololiveTalentEnum.flare.rawValue, names: [.en: "Shiranui Flare", .ja: "不知火フレア"], inGeneration: HololiveGeneration.thirdGen),
+    .noel: HololiveTalent(id: HololiveTalentEnum.noel.rawValue, names: [.en: "Shirogane Noel", .ja: "白銀ノエル"], inGeneration: HololiveGeneration.thirdGen),
+    .marine: HololiveTalent(id: HololiveTalentEnum.marine.rawValue, names: [.en: "Houshou Marine", .ja: "宝鐘マリン"], inGeneration: HololiveGeneration.thirdGen),
     
     // MARK: - 4th gen
-    .kanata: Talent(id: hololiveTalents.kanata.rawValue, names: [.en: "Amane Kanata", .ja: "天音かなた"], inGeneration: .forthGen),
-    .watame: Talent(id: hololiveTalents.watame.rawValue, names: [.en: "Tsunomaki Watame", .ja: "角巻わため"], inGeneration: .forthGen),
-    .towa: Talent(id: hololiveTalents.towa.rawValue, names: [.en: "Tokoyami Towa", .ja: "常闇トワ"], inGeneration: .forthGen),
-    .luna: Talent(id: hololiveTalents.luna.rawValue, names: [.en: "Himemori Luna", .ja: "姫森ルーナ"], inGeneration: .forthGen),
+    .kanata: HololiveTalent(id: HololiveTalentEnum.kanata.rawValue, names: [.en: "Amane Kanata", .ja: "天音かなた"], inGeneration: HololiveGeneration.forthGen),
+    .watame: HololiveTalent(id: HololiveTalentEnum.watame.rawValue, names: [.en: "Tsunomaki Watame", .ja: "角巻わため"], inGeneration: HololiveGeneration.forthGen),
+    .towa: HololiveTalent(id: HololiveTalentEnum.towa.rawValue, names: [.en: "Tokoyami Towa", .ja: "常闇トワ"], inGeneration: HololiveGeneration.forthGen),
+    .luna: HololiveTalent(id: HololiveTalentEnum.luna.rawValue, names: [.en: "Himemori Luna", .ja: "姫森ルーナ"], inGeneration: HololiveGeneration.forthGen),
     
     // MARK: - 5th gen
-    .lamy: Talent(id: hololiveTalents.lamy.rawValue, names: [.en: "Yukihana Lamy", .ja: "雪花ラミィ"], inGeneration: .fifthGen),
-    .nene: Talent(id: hololiveTalents.nene.rawValue, names: [.en: "Momosuzu Nene", .ja: "桃鈴ねね"], inGeneration: .fifthGen),
-    .botan: Talent(id: hololiveTalents.botan.rawValue, names: [.en: "Shishiro Botan", .ja: "獅白ぼたん"], inGeneration: .fifthGen),
-    .polka: Talent(id: hololiveTalents.polka.rawValue, names: [.en: "Omaru Polka", .ja: "尾丸ポルカ"], inGeneration: .fifthGen),
+    .lamy: HololiveTalent(id: HololiveTalentEnum.lamy.rawValue, names: [.en: "Yukihana Lamy", .ja: "雪花ラミィ"], inGeneration: HololiveGeneration.fifthGen),
+    .nene: HololiveTalent(id: HololiveTalentEnum.nene.rawValue, names: [.en: "Momosuzu Nene", .ja: "桃鈴ねね"], inGeneration: HololiveGeneration.fifthGen),
+    .botan: HololiveTalent(id: HololiveTalentEnum.botan.rawValue, names: [.en: "Shishiro Botan", .ja: "獅白ぼたん"], inGeneration: HololiveGeneration.fifthGen),
+    .polka: HololiveTalent(id: HololiveTalentEnum.polka.rawValue, names: [.en: "Omaru Polka", .ja: "尾丸ポルカ"], inGeneration: HololiveGeneration.fifthGen),
     
     // MARK: - holoX
-    .laplus: Talent(id: hololiveTalents.laplus.rawValue, names: [.en: "La+ Darknesss", .ja: "ラプラス・ダークネス"], inGeneration: .holox),
-    .lui: Talent(id: hololiveTalents.lui.rawValue, names: [.en: "Takane Lui", .ja: "鷹嶺ルイ"], inGeneration: .holox),
-    .koyori: Talent(id: hololiveTalents.koyori.rawValue, names: [.en: "Hakui Koyori", .ja: "博衣こより"], inGeneration: .holox),
-    .chloe: Talent(id: hololiveTalents.chloe.rawValue, names: [.en: "Sakamata Chloe", .ja: "沙花叉クロヱ"], inGeneration: .holox),
-    .iroha: Talent(id: hololiveTalents.iroha.rawValue, names: [.en: "Kazama Iroha", .ja: "風真いろは"], inGeneration: .holox),
+    .laplus: HololiveTalent(id: HololiveTalentEnum.laplus.rawValue, names: [.en: "La+ Darknesss", .ja: "ラプラス・ダークネス"], inGeneration: HololiveGeneration.holox),
+    .lui: HololiveTalent(id: HololiveTalentEnum.lui.rawValue, names: [.en: "Takane Lui", .ja: "鷹嶺ルイ"], inGeneration: HololiveGeneration.holox),
+    .koyori: HololiveTalent(id: HololiveTalentEnum.koyori.rawValue, names: [.en: "Hakui Koyori", .ja: "博衣こより"], inGeneration: HololiveGeneration.holox),
+    .chloe: HololiveTalent(id: HololiveTalentEnum.chloe.rawValue, names: [.en: "Sakamata Chloe", .ja: "沙花叉クロヱ"], inGeneration: HololiveGeneration.holox),
+    .iroha: HololiveTalent(id: HololiveTalentEnum.iroha.rawValue, names: [.en: "Kazama Iroha", .ja: "風真いろは"], inGeneration: HololiveGeneration.holox),
     
     // MARK: - ID 1st gen
-    .risu: Talent(id: hololiveTalents.risu.rawValue, names: [.en: "Ayunda Risu", .ja: "アユンダ・リス"], inGeneration: .idFirstGen),
-    .moona: Talent(id: hololiveTalents.moona.rawValue, names: [.en: "Moona Hoshinova", .ja: "ムーナ・ホシノヴァ"], inGeneration: .idFirstGen),
-    .iofi: Talent(id: hololiveTalents.iofi.rawValue, names: [.en: "Airani Iofifteen", .ja: "アイラニ・イオフィフティーン"], inGeneration: .idFirstGen),
+    .risu: HololiveTalent(id: HololiveTalentEnum.risu.rawValue, names: [.en: "Ayunda Risu", .ja: "アユンダ・リス"], inGeneration: HololiveGeneration.idFirstGen),
+    .moona: HololiveTalent(id: HololiveTalentEnum.moona.rawValue, names: [.en: "Moona Hoshinova", .ja: "ムーナ・ホシノヴァ"], inGeneration: HololiveGeneration.idFirstGen),
+    .iofi: HololiveTalent(id: HololiveTalentEnum.iofi.rawValue, names: [.en: "Airani Iofifteen", .ja: "アイラニ・イオフィフティーン"], inGeneration: HololiveGeneration.idFirstGen),
     
     // MARK: - ID 2nd gen
-    .ollie: Talent(id: hololiveTalents.ollie.rawValue, names: [.en: "Kureiji Ollie", .ja: "クレイジー・オリー"], inGeneration: .idThirdGen),
-    .anya: Talent(id: hololiveTalents.anya.rawValue, names: [.en: "Anya Melfissa", .ja: "アーニャ・メルフィッサ"], inGeneration: .idThirdGen),
-    .reine: Talent(id: hololiveTalents.reine.rawValue, names: [.en: "Pavolia Reine", .ja: "パヴォリア・レイネ"], inGeneration: .idThirdGen),
+    .ollie: HololiveTalent(id: HololiveTalentEnum.ollie.rawValue, names: [.en: "Kureiji Ollie", .ja: "クレイジー・オリー"], inGeneration: HololiveGeneration.idThirdGen),
+    .anya: HololiveTalent(id: HololiveTalentEnum.anya.rawValue, names: [.en: "Anya Melfissa", .ja: "アーニャ・メルフィッサ"], inGeneration: HololiveGeneration.idThirdGen),
+    .reine: HololiveTalent(id: HololiveTalentEnum.reine.rawValue, names: [.en: "Pavolia Reine", .ja: "パヴォリア・レイネ"], inGeneration: HololiveGeneration.idThirdGen),
     
     // MARK: - ID 3rd gen
-    .zeta: Talent(id: hololiveTalents.zeta.rawValue, names: [.en: "KVestia Zeta", .ja: "ベスティア・ゼータ"], inGeneration: .idThirdGen),
-    .kaela: Talent(id: hololiveTalents.kaela.rawValue, names: [.en: "Kaela Kovalskia", .ja: "カエラ・コヴァルスキア"], inGeneration: .idThirdGen),
-    .kobo: Talent(id: hololiveTalents.kobo.rawValue, names: [.en: "Kobo Kanaeru", .ja: "こぼ・かなえる"], inGeneration: .idThirdGen),
+    .zeta: HololiveTalent(id: HololiveTalentEnum.zeta.rawValue, names: [.en: "KVestia Zeta", .ja: "ベスティア・ゼータ"], inGeneration: HololiveGeneration.idThirdGen),
+    .kaela: HololiveTalent(id: HololiveTalentEnum.kaela.rawValue, names: [.en: "Kaela Kovalskia", .ja: "カエラ・コヴァルスキア"], inGeneration: HololiveGeneration.idThirdGen),
+    .kobo: HololiveTalent(id: HololiveTalentEnum.kobo.rawValue, names: [.en: "Kobo Kanaeru", .ja: "こぼ・かなえる"], inGeneration: HololiveGeneration.idThirdGen),
     
     // MARK: - EN Myth
-    .mori: Talent(id: hololiveTalents.mori.rawValue, names: [.en: "Mori Calliope", .ja: "森カリオペ"], inGeneration: .enMyth),
-    .kiara: Talent(id: hololiveTalents.kiara.rawValue, names: [.en: "Takanashi Kiara", .ja: "小鳥遊キアラ"], inGeneration: .enMyth),
-    .ina: Talent(id: hololiveTalents.ina.rawValue, names: [.en: "Ninomae Ina'nis", .ja: "一伊那尓栖"], inGeneration: .enMyth),
-    .gura: Talent(id: hololiveTalents.gura.rawValue, names: [.en: "Gawr Gura", .ja: "がうる・ぐら"], inGeneration: .enMyth),
-    .ame: Talent(id: hololiveTalents.ame.rawValue, names: [.en: "Watson Amelia", .ja: "ワトソン・アメリア"], inGeneration: .enMyth),
+    .mori: HololiveTalent(id: HololiveTalentEnum.mori.rawValue, names: [.en: "Mori Calliope", .ja: "森カリオペ"], inGeneration: HololiveGeneration.enMyth),
+    .kiara: HololiveTalent(id: HololiveTalentEnum.kiara.rawValue, names: [.en: "Takanashi Kiara", .ja: "小鳥遊キアラ"], inGeneration: HololiveGeneration.enMyth),
+    .ina: HololiveTalent(id: HololiveTalentEnum.ina.rawValue, names: [.en: "Ninomae Ina'nis", .ja: "一伊那尓栖"], inGeneration: HololiveGeneration.enMyth),
+    .gura: HololiveTalent(id: HololiveTalentEnum.gura.rawValue, names: [.en: "Gawr Gura", .ja: "がうる・ぐら"], inGeneration: HololiveGeneration.enMyth),
+    .ame: HololiveTalent(id: HololiveTalentEnum.ame.rawValue, names: [.en: "Watson Amelia", .ja: "ワトソン・アメリア"], inGeneration: HololiveGeneration.enMyth),
     
     // MARK: - Project: HOPE
-    .irys: Talent(id: hololiveTalents.irys.rawValue, names: [.en: "IRyS", .ja: "アイリス"], inGeneration: .projectHope),
+    .irys: HololiveTalent(id: HololiveTalentEnum.irys.rawValue, names: [.en: "IRyS", .ja: "アイリス"], inGeneration: HololiveGeneration.projectHope),
     
     // MARK: - EN Council
-    .ceres: Talent(id: hololiveTalents.ceres.rawValue, names: [.en: "Ceres Fauna", .ja: "セレス・ファウナ"], inGeneration: .enCouncil),
-    .kronii: Talent(id: hololiveTalents.kronii.rawValue, names: [.en: "Ouro Kronii", .ja: "オーロ・クロニー"], inGeneration: .enCouncil),
-    .mumei: Talent(id: hololiveTalents.mumei.rawValue, names: [.en: "Nanashi Mumei", .ja: "七詩ムメイ"], inGeneration: .enCouncil),
-    .baelz: Talent(id: hololiveTalents.baelz.rawValue, names: [.en: "Hakos Baelz", .ja: "ハコス・ベールズ"], inGeneration: .enCouncil),
+    .ceres: HololiveTalent(id: HololiveTalentEnum.ceres.rawValue, names: [.en: "Ceres Fauna", .ja: "セレス・ファウナ"], inGeneration: HololiveGeneration.enCouncil),
+    .kronii: HololiveTalent(id: HololiveTalentEnum.kronii.rawValue, names: [.en: "Ouro Kronii", .ja: "オーロ・クロニー"], inGeneration: HololiveGeneration.enCouncil),
+    .mumei: HololiveTalent(id: HololiveTalentEnum.mumei.rawValue, names: [.en: "Nanashi Mumei", .ja: "七詩ムメイ"], inGeneration: HololiveGeneration.enCouncil),
+    .baelz: HololiveTalent(id: HololiveTalentEnum.baelz.rawValue, names: [.en: "Hakos Baelz", .ja: "ハコス・ベールズ"], inGeneration: HololiveGeneration.enCouncil),
     
     // MARK: - holostars 1st gen
-    .miyabi: Talent(id: hololiveTalents.miyabi.rawValue, names: [.en: "Hanasaki Miyabi", .ja: "花咲みやび"], inGeneration: .starsFirstGen),
-    .izuru: Talent(id: hololiveTalents.izuru.rawValue, names: [.en: "Kanade Izuru", .ja: "奏手イヅル"], inGeneration: .starsFirstGen),
-    .arurandeisu: Talent(id: hololiveTalents.arurandeisu.rawValue, names: [.en: "Arurandeisu", .ja: "アルランディス"], inGeneration: .starsFirstGen),
-    .rikka: Talent(id: hololiveTalents.rikka.rawValue, names: [.en: "Rikka", .ja: "律可"], inGeneration: .starsFirstGen),
+    .miyabi: HololiveTalent(id: HololiveTalentEnum.miyabi.rawValue, names: [.en: "Hanasaki Miyabi", .ja: "花咲みやび"], inGeneration: HololiveGeneration.starsFirstGen),
+    .izuru: HololiveTalent(id: HololiveTalentEnum.izuru.rawValue, names: [.en: "Kanade Izuru", .ja: "奏手イヅル"], inGeneration: HololiveGeneration.starsFirstGen),
+    .arurandeisu: HololiveTalent(id: HololiveTalentEnum.arurandeisu.rawValue, names: [.en: "Arurandeisu", .ja: "アルランディス"], inGeneration: HololiveGeneration.starsFirstGen),
+    .rikka: HololiveTalent(id: HololiveTalentEnum.rikka.rawValue, names: [.en: "Rikka", .ja: "律可"], inGeneration: HololiveGeneration.starsFirstGen),
     
     // MARK: - holostars 2nd gen
-    .astel: Talent(id: hololiveTalents.astel.rawValue, names: [.en: "Astel Leda", .ja: "アステル・レダ"], inGeneration: .starsSecondGen),
-    .temma: Talent(id: hololiveTalents.temma.rawValue, names: [.en: "Kishido Temma", .ja: "岸堂天真"], inGeneration: .starsSecondGen),
-    .roberu: Talent(id: hololiveTalents.roberu.rawValue, names: [.en: "Yukoku Roberu", .ja: "夕刻ロベル"], inGeneration: .starsSecondGen),
+    .astel: HololiveTalent(id: HololiveTalentEnum.astel.rawValue, names: [.en: "Astel Leda", .ja: "アステル・レダ"], inGeneration: HololiveGeneration.starsSecondGen),
+    .temma: HololiveTalent(id: HololiveTalentEnum.temma.rawValue, names: [.en: "Kishido Temma", .ja: "岸堂天真"], inGeneration: HololiveGeneration.starsSecondGen),
+    .roberu: HololiveTalent(id: HololiveTalentEnum.roberu.rawValue, names: [.en: "Yukoku Roberu", .ja: "夕刻ロベル"], inGeneration: HololiveGeneration.starsSecondGen),
     
     // MARK: - holostars 3rd gen
-    .shien: Talent(id: hololiveTalents.shien.rawValue, names: [.en: "Kageyama Shien", .ja: "影山シエン"], inGeneration: .starsThirdGen),
-    .oga: Talent(id: hololiveTalents.oga.rawValue, names: [.en: "Aragami Oga", .ja: "荒咬オウガ"], inGeneration: .starsThirdGen),
+    .shien: HololiveTalent(id: HololiveTalentEnum.shien.rawValue, names: [.en: "Kageyama Shien", .ja: "影山シエン"], inGeneration: HololiveGeneration.starsThirdGen),
+    .oga: HololiveTalent(id: HololiveTalentEnum.oga.rawValue, names: [.en: "Aragami Oga", .ja: "荒咬オウガ"], inGeneration: HololiveGeneration.starsThirdGen),
     
     // MARK: - holostars UPROAR!!
-    .fuma: Talent(id: hololiveTalents.fuma.rawValue, names: [.en: "Yatogami Fuma", .ja: "夜十神封魔"], inGeneration: .uproar),
-    .uyu: Talent(id: hololiveTalents.uyu.rawValue, names: [.en: "Utsugi Uyu", .ja: "羽継烏有"], inGeneration: .uproar),
-    .gamma: Talent(id: hololiveTalents.gamma.rawValue, names: [.en: "Hizaki Gamma", .ja: "緋崎ガンマ"], inGeneration: .uproar),
-    .rio: Talent(id: hololiveTalents.rio.rawValue, names: [.en: "Minase Rio", .ja: "水無世燐央"], inGeneration: .uproar),
+    .fuma: HololiveTalent(id: HololiveTalentEnum.fuma.rawValue, names: [.en: "Yatogami Fuma", .ja: "夜十神封魔"], inGeneration: HololiveGeneration.uproar),
+    .uyu: HololiveTalent(id: HololiveTalentEnum.uyu.rawValue, names: [.en: "Utsugi Uyu", .ja: "羽継烏有"], inGeneration: HololiveGeneration.uproar),
+    .gamma: HololiveTalent(id: HololiveTalentEnum.gamma.rawValue, names: [.en: "Hizaki Gamma", .ja: "緋崎ガンマ"], inGeneration: HololiveGeneration.uproar),
+    .rio: HololiveTalent(id: HololiveTalentEnum.rio.rawValue, names: [.en: "Minase Rio", .ja: "水無世燐央"], inGeneration: HololiveGeneration.uproar),
     
     // MARK: - holostars TEMPUS
-    .altare: Talent(id: hololiveTalents.altare.rawValue, names: [.en: "Regis Altare", .ja: "リージス・アルテア"], inGeneration: .tempus),
-    .vesper: Talent(id: hololiveTalents.vesper.rawValue, names: [.en: "Noir Vesper", .ja: "ノワール・ヴェスパー"], inGeneration: .tempus),
-    .syrios: Talent(id: hololiveTalents.syrios.rawValue, names: [.en: "Axel Syrios", .ja: "アクセル・シリオス"], inGeneration: .tempus),
-    .dezmond: Talent(id: hololiveTalents.dezmond.rawValue, names: [.en: "Magni Dezmond", .ja: "マグニ・デズモンド"], inGeneration: .tempus),
+    .altare: HololiveTalent(id: HololiveTalentEnum.altare.rawValue, names: [.en: "Regis Altare", .ja: "リージス・アルテア"], inGeneration: HololiveGeneration.tempus),
+    .vesper: HololiveTalent(id: HololiveTalentEnum.vesper.rawValue, names: [.en: "Noir Vesper", .ja: "ノワール・ヴェスパー"], inGeneration: HololiveGeneration.tempus),
+    .syrios: HololiveTalent(id: HololiveTalentEnum.syrios.rawValue, names: [.en: "Axel Syrios", .ja: "アクセル・シリオス"], inGeneration: HololiveGeneration.tempus),
+    .dezmond: HololiveTalent(id: HololiveTalentEnum.dezmond.rawValue, names: [.en: "Magni Dezmond", .ja: "マグニ・デズモンド"], inGeneration: HololiveGeneration.tempus),
     
     // MARK: - Official Channels
-    .hololive: Talent(id: hololiveTalents.hololive.rawValue, names: [.en: "hololive", .ja: "ホロライブ"], inGeneration: .official),
-    .hololiveEN: Talent(id: hololiveTalents.hololiveEN.rawValue, names: [.en: "hololive English", .ja: "hololive English"], inGeneration: .official),
-    .hololiveID: Talent(id: hololiveTalents.hololiveID.rawValue, names: [.en: "hololive Indonesia", .ja: "hololive Indonesia"], inGeneration: .official),
-    .holostars: Talent(id: hololiveTalents.holostars.rawValue, names: [.en: "holostars", .ja: "ホロスターズ"], inGeneration: .official),
-    .midnight: Talent(id: hololiveTalents.midnight.rawValue, names: [.en: "Midnight Grand Orchestra", .ja: "Midnight Grand Orchestra"], inGeneration: .official)
+    .hololive: HololiveTalent(id: HololiveTalentEnum.hololive.rawValue, names: [.en: "hololive", .ja: "ホロライブ"], inGeneration: HololiveGeneration.official),
+    .hololiveEN: HololiveTalent(id: HololiveTalentEnum.hololiveEN.rawValue, names: [.en: "hololive English", .ja: "hololive English"], inGeneration: HololiveGeneration.official),
+    .hololiveID: HololiveTalent(id: HololiveTalentEnum.hololiveID.rawValue, names: [.en: "hololive Indonesia", .ja: "hololive Indonesia"], inGeneration: HololiveGeneration.official),
+    .holostars: HololiveTalent(id: HololiveTalentEnum.holostars.rawValue, names: [.en: "holostars", .ja: "ホロスターズ"], inGeneration: HololiveGeneration.official),
+    .midnight: HololiveTalent(id: HololiveTalentEnum.midnight.rawValue, names: [.en: "Midnight Grand Orchestra", .ja: "Midnight Grand Orchestra"], inGeneration: HololiveGeneration.official)
 ]
 
-let talentsByGeneration: OrderedDictionary<hololiveGenerations, GenerationGroup> = [
-    .zerothGen: GenerationGroup(id: .zerothGen, names: [.en: "0th gen", .ja: "0期生"], members: [.sora, .roboco, .azki, .miko, .suisei]),
-    .firstGen: GenerationGroup(id: .firstGen, names: [.en: "1st gen", .ja: "1期生"], members: [.mel, .aki, .haato, .fubuki, .matsuri]),
-    .secondGen: GenerationGroup(id: .secondGen, names: [.en: "2nd gen", .ja: "2期生"], members: [.aqua, .shion, .ayame, .choco, .subaru]),
-    .gamers: GenerationGroup(id: .gamers, names: [.en: "Gamers", .ja: "ゲーマーズ"], members: [.mio, .okayu, .korone]),
-    .thirdGen: GenerationGroup(id: .thirdGen, names: [.en: "3rd gen", .ja: "3期生"], members: [.pekora, .flare, .noel, .marine]),
-    .forthGen: GenerationGroup(id: .forthGen, names: [.en: "4th gen", .ja: "4期生"], members: [.kanata, .watame, .towa, .luna]),
-    .fifthGen: GenerationGroup(id: .fifthGen, names: [.en: "5th gen", .ja: "5期生"], members: [.lamy, .nene, .botan, .polka]),
-    .holox: GenerationGroup(id: .holox, names: [.en: "holoX", .ja: "秘密結社holoX"], members: [.laplus, .lui, .koyori, .chloe, .iroha]),
-    .idFirstGen: GenerationGroup(id: .idFirstGen, names: [.en: "ID 1st gen", .ja: "ID 1期生"], members: [.risu, .moona, .iofi]),
-    .idSecondGen: GenerationGroup(id: .idSecondGen, names: [.en: "ID 2nd gen", .ja: "ID 2期生"], members: [.ollie, .anya, .reine]),
-    .idThirdGen: GenerationGroup(id: .idThirdGen, names: [.en: "ID 3rd gen", .ja: "ID 3期生"], members: [.zeta, .kaela, .kobo]),
-    .enMyth: GenerationGroup(id: .enMyth, names: [.en: "hololive English -Myth-", .ja: "hololive English -Myth-"], members: [.mori, .kiara, .ina, .gura, .ame]),
-    .projectHope: GenerationGroup(id: .projectHope, names: [.en: "Project: HOPE", .ja: "Project: HOPE"], members: [.irys]),
-    .enCouncil: GenerationGroup(id: .enCouncil, names: [.en: "hololive English -Council-", .ja: "hololive English -議会-"], members: [.ceres, .kronii, .mumei, .baelz]),
-    .starsFirstGen: GenerationGroup(id: .starsFirstGen, names: [.en: "holostars 1st gen", .ja: "ホロスターズ 1期生"], members: [.miyabi, .izuru, .arurandeisu, .rikka]),
-    .starsSecondGen: GenerationGroup(id: .starsSecondGen, names: [.en: "holostars 2nd gen", .ja: "ホロスターズ 2期生"], members: [.astel, .temma, .roberu]),
-    .starsThirdGen: GenerationGroup(id: .starsThirdGen, names: [.en: "holostars 3nd gen", .ja: "ホロスターズ 3期生"], members: [.shien, .oga]),
-    .uproar: GenerationGroup(id: .uproar, names: [.en: "holostars UPROAR!!", .ja: "ホロスターズ アップロー!!"], members: [.fuma, .uyu, .gamma, .rio]),
-    .tempus: GenerationGroup(id: .tempus, names: [.en: "HOLOSTARS English -TEMPUS-", .ja: "HOLOSTARS English -TEMPUS-"], members: [.altare, .dezmond, .syrios, .vesper]),
-    .official: GenerationGroup(id: .official, names: [.en: "Official Channels", .ja: "公式チャンネル"], members: [.hololive, .hololiveEN, .hololiveID, .holostars, .midnight])
+let hololiveTalentsByGeneration: OrderedDictionary<HololiveGeneration, HololiveGenerationGroup> = [
+    .zerothGen: HololiveGenerationGroup(id: .zerothGen, names: [.en: "0th gen", .ja: "0期生"], members: [.sora, .roboco, .azki, .miko, .suisei]),
+    .firstGen: HololiveGenerationGroup(id: .firstGen, names: [.en: "1st gen", .ja: "1期生"], members: [.mel, .aki, .haato, .fubuki, .matsuri]),
+    .secondGen: HololiveGenerationGroup(id: .secondGen, names: [.en: "2nd gen", .ja: "2期生"], members: [.aqua, .shion, .ayame, .choco, .subaru]),
+    .gamers: HololiveGenerationGroup(id: .gamers, names: [.en: "Gamers", .ja: "ゲーマーズ"], members: [.mio, .okayu, .korone]),
+    .thirdGen: HololiveGenerationGroup(id: .thirdGen, names: [.en: "3rd gen", .ja: "3期生"], members: [.pekora, .flare, .noel, .marine]),
+    .forthGen: HololiveGenerationGroup(id: .forthGen, names: [.en: "4th gen", .ja: "4期生"], members: [.kanata, .watame, .towa, .luna]),
+    .fifthGen: HololiveGenerationGroup(id: .fifthGen, names: [.en: "5th gen", .ja: "5期生"], members: [.lamy, .nene, .botan, .polka]),
+    .holox: HololiveGenerationGroup(id: .holox, names: [.en: "holoX", .ja: "秘密結社holoX"], members: [.laplus, .lui, .koyori, .chloe, .iroha]),
+    .idFirstGen: HololiveGenerationGroup(id: .idFirstGen, names: [.en: "ID 1st gen", .ja: "ID 1期生"], members: [.risu, .moona, .iofi]),
+    .idSecondGen: HololiveGenerationGroup(id: .idSecondGen, names: [.en: "ID 2nd gen", .ja: "ID 2期生"], members: [.ollie, .anya, .reine]),
+    .idThirdGen: HololiveGenerationGroup(id: .idThirdGen, names: [.en: "ID 3rd gen", .ja: "ID 3期生"], members: [.zeta, .kaela, .kobo]),
+    .enMyth: HololiveGenerationGroup(id: .enMyth, names: [.en: "hololive English -Myth-", .ja: "hololive English -Myth-"], members: [.mori, .kiara, .ina, .gura, .ame]),
+    .projectHope: HololiveGenerationGroup(id: .projectHope, names: [.en: "Project: HOPE", .ja: "Project: HOPE"], members: [.irys]),
+    .enCouncil: HololiveGenerationGroup(id: .enCouncil, names: [.en: "hololive English -Council-", .ja: "hololive English -議会-"], members: [.ceres, .kronii, .mumei, .baelz]),
+    .starsFirstGen: HololiveGenerationGroup(id: .starsFirstGen, names: [.en: "holostars 1st gen", .ja: "ホロスターズ 1期生"], members: [.miyabi, .izuru, .arurandeisu, .rikka]),
+    .starsSecondGen: HololiveGenerationGroup(id: .starsSecondGen, names: [.en: "holostars 2nd gen", .ja: "ホロスターズ 2期生"], members: [.astel, .temma, .roberu]),
+    .starsThirdGen: HololiveGenerationGroup(id: .starsThirdGen, names: [.en: "holostars 3nd gen", .ja: "ホロスターズ 3期生"], members: [.shien, .oga]),
+    .uproar: HololiveGenerationGroup(id: .uproar, names: [.en: "holostars UPROAR!!", .ja: "ホロスターズ アップロー!!"], members: [.fuma, .uyu, .gamma, .rio]),
+    .tempus: HololiveGenerationGroup(id: .tempus, names: [.en: "HOLOSTARS English -TEMPUS-", .ja: "HOLOSTARS English -TEMPUS-"], members: [.altare, .dezmond, .syrios, .vesper]),
+    .official: HololiveGenerationGroup(id: .official, names: [.en: "Official Channels", .ja: "公式チャンネル"], members: [.hololive, .hololiveEN, .hololiveID, .holostars, .midnight])
 ]

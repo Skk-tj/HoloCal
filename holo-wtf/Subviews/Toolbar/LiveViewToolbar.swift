@@ -16,7 +16,7 @@ struct LiveViewToolbar: View {
     /// Defines the current sorting strategy
     @State var sortingStrategy: SortingStrategy = .notSorting
     
-    @EnvironmentObject var liveViewModel: VideoViewModel
+    @EnvironmentObject var liveViewModel: HololiveVideoViewModel
     
     var body: some View {
         Menu {

@@ -6,8 +6,37 @@
 //
 
 import Foundation
+import OrderedCollections
 
-enum nijisanjiTalents: String, Codable {
+enum NijisanjiGeneration: Int, CaseIterable, Codable, Hashable {
+    case firstGen
+    case secondGen
+    case gamers
+    case seedsFirstGen
+    case seedsSecondGen
+    case wave2019
+    case wave2020
+    case wave2021
+    case wave2022
+    case id1stWave
+    case id2ndWave
+    case id3rdWave
+    case id4thWave
+    case id5thWave
+    case id6thWave
+    case en1stWave
+    case en2ndWave
+    case en3rdWave
+    case en4thWave
+    case en5thWave
+    case en6thWave
+    case official
+    
+    // For all the channels that we may not recognize
+    case other
+}
+
+enum NijisanjiTalentEnum: String, Codable {
     // MARK: - NIJISANJI First Generation
     case moira = "UCvmppcdYf4HOv-tFQhHHJMA"
     case suzuya = "UCpnvhOIJ6BN-vPkYU9ls-Eg" // Suzuya Aki
@@ -221,3 +250,13 @@ enum nijisanjiTalents: String, Codable {
     case Nornis = "UCxWcO9CLti4uouUIS5IIF-Q" // None
     case ChroNoiR = "UCz6vnIbgiqFT9xUcD6Bp65Q" // None
 }
+
+extension NijisanjiTalentEnum: Identifiable {
+    var id: String { rawValue }
+}
+
+let nijisanjiTalentEnumToTalent: [NijisanjiTalentEnum: NijisanjiTalent] = [
+    .moira: NijisanjiTalent(id: NijisanjiTalentEnum.moira.rawValue, names: [.en: "Moira", .ja: "モイラ"], inGeneration: NijisanjiGeneration.firstGen)
+]
+
+let nijisanjiTalentsByGenerations: OrderedDictionary<NijisanjiGeneration, NijisanjiGenerationGroup> = [:]

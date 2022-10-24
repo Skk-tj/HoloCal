@@ -9,12 +9,12 @@ import SwiftUI
 
 struct LiveCollabListView: View {
     @Environment(\.dismiss) var dismiss
-    let mentions: [Channel]
+    let mentions: [any Channel]
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(mentions) { channel in
+                ForEach(mentions, id: \.id) { channel in
                     HStack {
                         LiveAvatarView(url: channel.photo, avatarRadius: 64)
                         
@@ -50,7 +50,7 @@ struct LiveCollabListView: View {
 struct LiveCollabListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            LiveCollabListView(mentions: [Channel.testChannel, Channel.testChannel2])
+            LiveCollabListView(mentions: [HololiveChannel.testChannel, HololiveChannel.testChannel2])
         }
     }
 }

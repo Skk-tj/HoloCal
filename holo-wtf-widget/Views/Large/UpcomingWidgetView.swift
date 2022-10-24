@@ -9,7 +9,7 @@ import SwiftUI
 import WidgetKit
 
 struct UpcomingWidgetView: View {
-    let upcoming: LiveVideo
+    let upcoming: any LiveVideo
     let thumbnailData: Data
     let avatarData: Data
     
@@ -66,7 +66,7 @@ struct UpcomingWidgetView: View {
 
 struct UpcomingWidgetView_Previews: PreviewProvider {
     static var previews: some View {
-        UpcomingWidgetView(upcoming: LiveVideo.previewLive, thumbnailData: Data(), avatarData: Data())
+        UpcomingWidgetView(upcoming: HololiveLiveVideo.previewLive, thumbnailData: Data(), avatarData: Data())
             .previewContext(WidgetPreviewContext(family: .systemLarge))
     }
 }

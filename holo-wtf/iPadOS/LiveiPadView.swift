@@ -29,7 +29,7 @@ struct LiveiPadView: View {
                 LiveCountView()
             }
         })
-        .environmentObject(live as VideoViewModel)
+        .environmentObject(live as HololiveVideoViewModel)
         .task {
             await live.getLive()
             
@@ -40,7 +40,7 @@ struct LiveiPadView: View {
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {
                 LiveViewToolbar(currentPresentationMode: $currentPresentationMode)
-                    .environmentObject(live as VideoViewModel)
+                    .environmentObject(live as HololiveVideoViewModel)
                 Button(action: {
                     Task {
                         await live.getLive()

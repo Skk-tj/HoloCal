@@ -1,24 +1,33 @@
 //
-//  VideoNew.swift
+//  LiveVideo.swift
 //  holo-wtf
 //
-//  Created by Haoyi An on 2022-04-12.
+//  Created by Haoyi An on 2022-10-22.
 //
 
 import Foundation
 
-struct LiveVideo: Codable, Identifiable, Hashable {
-    let id: String
-    let title: String
-    let topicId: String?
-    let startScheduled: Date?
-    let startActual: Date?
-    let liveViewers: Int
-    let mentions: [Channel]?
+protocol LiveVideo: Codable, Identifiable, Hashable {
+    associatedtype ChannelType: Channel
     
-    var songs: [SongInStream]?
-    var channel: Channel
+    var id: String { get }
+    var title: String { get }
+    var topicId: String? { get }
+    var startScheduled: Date? { get }
+    var startActual: Date? { get }
+    var liveViewers: Int { get }
     
+    var mentions: [ChannelType]? { get }
+    
+    var songs: [SongInStream]? { get set }
+    var channel: ChannelType { get set }
+    
+    var url: URL? { get }
+    
+    var isMengen: Bool { get }
+}
+
+extension LiveVideo {
     var url: URL? {
         URL(string: "https://www.youtube.com/watch?v=\(id)")
     }
@@ -52,8 +61,4 @@ struct LiveVideo: Codable, Identifiable, Hashable {
     var isNijisanji: Bool {
         channel.org == Agencies.nijisanji.rawValue
     }
-    
-    static let previewLive = LiveVideo(id: "abcd", title: "my debut live, but a really long title, aaaaaaa", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, mentions: [Channel.testChannel, Channel.testChannel2], songs: nil, channel: Channel.testChannel)
-    
-    static let previewLiveMemberOnly = LiveVideo(id: "abcd", title: "my debut live member only", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, mentions: [Channel.testChannel, Channel.testChannel2], songs: nil, channel: Channel.testChannel)
 }
