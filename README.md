@@ -8,6 +8,4 @@ Report bug and suggest features at Issues above.
 
 ## Open Source Projects Used
 
-HTMLString: https://github.com/alexaubry/HTMLString. MIT license. 
-
 ActivityView: https://github.com/SwiftUI-Plus/ActivityView. MIT license. 
