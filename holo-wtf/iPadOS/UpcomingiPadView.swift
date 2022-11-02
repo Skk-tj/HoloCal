@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UpcomingiPadView: View {
-    @StateObject var upcoming: UpcomingViewModel
+    @StateObject var upcoming: HololiveUpcomingViewModel
     
     @State var currentPresentationMode: PresentationMode = .normal
     

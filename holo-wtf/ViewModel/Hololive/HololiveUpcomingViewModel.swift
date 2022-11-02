@@ -6,10 +6,9 @@
 //
 
 import Foundation
-import OSLog
 
 @MainActor
-class UpcomingViewModel: HololiveVideoViewModel {
+class HololiveUpcomingViewModel: HololiveVideoViewModel {
     func getUpcoming() async {
         let upcomingLookAhead = getUpcomingStreamLookAheadHoursFromUserDefaults()
         
