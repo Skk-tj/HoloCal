@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LiveiPadView: View {
-    @StateObject var live: LiveViewModel
+    @StateObject var live: HololiveLiveViewModel
     
     @State var currentPresentationMode: PresentationMode = .normal
     

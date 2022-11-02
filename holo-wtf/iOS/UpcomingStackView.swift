@@ -9,7 +9,7 @@ import SwiftUI
 
 @available(iOS 16.0, *)
 struct UpcomingStackView: View {
-    @StateObject var upcoming: UpcomingViewModel
+    @StateObject var upcoming: HololiveUpcomingViewModel
     
     @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingView) var isShowingCompactInUpcomingView: Bool = false
     

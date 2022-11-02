@@ -15,6 +15,8 @@ let hololiveLiveURL = "https://holodex.net/api/v2/live?org=Hololive&status=live&
 
 let hololiveWidgetUpcomingURL = "https://holodex.net/api/v2/live?org=Hololive&status=upcoming&type=stream"
 
+let nijisanjiLiveURL = "https://holodex.net/api/v2/live?org=Nijisanji&status=live&type=stream&include=songs,mentions"
+
 func liveSortStrategy(l1: any LiveVideo, l2: any LiveVideo) -> Bool {
     l1.startActual ?? Date.distantFuture > l2.startActual ?? Date.distantFuture
 }

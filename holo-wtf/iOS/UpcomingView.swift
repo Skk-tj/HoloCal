@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UpcomingView: View {
-    @StateObject var upcoming: UpcomingViewModel
+    @StateObject var upcoming: HololiveUpcomingViewModel
     
     @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingView) var isShowingCompactInUpcomingView: Bool = false
     

@@ -7,6 +7,30 @@
 
 import Foundation
 
+enum DataStatus {
+    case working
+    case success
+    case fail
+}
+
+enum SortingStrategy: Hashable {
+    case notSorting
+    case viewersAsc
+    case viewersDesc
+    case timeAsc
+    case timeDesc
+}
+
+enum SearchSuggestionCategory {
+    case name
+    case tag
+}
+
+struct SearchSuggestion: Hashable {
+    let searchText: String
+    let category: SearchSuggestionCategory
+}
+
 @MainActor
 class VideoViewModel<LiveVideoType: LiveVideo, ChannelType: Channel>: ObservableObject {
     @Published var videoList: [LiveVideoType]

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LiveView: View {
-    @StateObject var live: LiveViewModel
+    @StateObject var live: HololiveLiveViewModel
     
     @AppStorage(UserDefaultKeys.isShowingCompactInLiveView) var isShowingCompactInLiveView: Bool = false
     

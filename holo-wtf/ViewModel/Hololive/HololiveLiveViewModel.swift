@@ -6,11 +6,9 @@
 //
 
 import Foundation
-import MusicKit
-import OSLog
 
 @MainActor
-class LiveViewModel: HololiveVideoViewModel {
+class HololiveLiveViewModel: HololiveVideoViewModel {
     func getLive() async {
         await getVideo(url: hololiveLiveURL) { responseResult in
             self.videoList = responseResult
