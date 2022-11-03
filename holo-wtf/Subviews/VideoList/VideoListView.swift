@@ -38,6 +38,7 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
                     if isShowingDSTReminder {
                         DSTReminderView(numberOfDaysToChange: days, changeType: TimeZone.current.isDaylightSavingTime() ? .ending : .starting)
                             .listRowSeparator(.hidden)
+                            .listRowBackground(EmptyView())
                     }
                 }
             }
