@@ -3,4 +3,177 @@
    uuid = "77292575-54B6-498A-90B8-956C42FE70A0"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E83DAD13-49AF-4642-9CD5-368875DF7D4D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "holo-wtf/ViewModel/SongsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "updateAllSongsWithMusicKit()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E83DAD13-49AF-4642-9CD5-368875DF7D4D - 4d4411bc85df422"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for HoloCal.SongsViewModel.updateAllSongsWithMusicKit() async -&gt; ()"
+                  moduleName = "HoloCal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/haoyian/Desktop/holo-wtf/holo-wtf/ViewModel/SongsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "E83DAD13-49AF-4642-9CD5-368875DF7D4D - 525c9113fe78285"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for HoloCal.SongsViewModel.updateAllSongsWithMusicKit() async -&gt; ()"
+                  moduleName = "HoloCal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/haoyian/Desktop/holo-wtf/holo-wtf/ViewModel/SongsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "E83DAD13-49AF-4642-9CD5-368875DF7D4D - c813576a3dd83320"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for HoloCal.SongsViewModel.updateAllSongsWithMusicKit() async -&gt; ()"
+                  moduleName = "HoloCal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/haoyian/Desktop/holo-wtf/holo-wtf/ViewModel/SongsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "E83DAD13-49AF-4642-9CD5-368875DF7D4D - ca18f74227bf829d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (inout Swift.TaskGroup&lt;HoloCal.SongInStream&gt;) async -&gt; () in HoloCal.SongsViewModel.updateAllSongsWithMusicKit() async -&gt; ()"
+                  moduleName = "HoloCal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/haoyian/Desktop/holo-wtf/holo-wtf/ViewModel/SongsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "E83DAD13-49AF-4642-9CD5-368875DF7D4D - 4a2a3bfd5c6739c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 (inout Swift.TaskGroup&lt;HoloCal.SongInStream&gt;) async -&gt; () in HoloCal.SongsViewModel.updateAllSongsWithMusicKit() async -&gt; ()"
+                  moduleName = "HoloCal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/haoyian/Desktop/holo-wtf/holo-wtf/ViewModel/SongsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "E83DAD13-49AF-4642-9CD5-368875DF7D4D - 27e764dcafe1e760"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 (inout Swift.TaskGroup&lt;HoloCal.SongInStream&gt;) async -&gt; () in HoloCal.SongsViewModel.updateAllSongsWithMusicKit() async -&gt; ()"
+                  moduleName = "HoloCal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/haoyian/Desktop/holo-wtf/holo-wtf/ViewModel/SongsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C24ECB3-7BBB-433F-A0F3-14B150BBA30B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "holo-wtf/Subviews/SongListStackView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "4C24ECB3-7BBB-433F-A0F3-14B150BBA30B - 36c0ebde43adf555"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 () -&gt; SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.toolbar&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ToolbarContent&gt;(content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.toolbar&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ToolbarContent&gt;(content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0&gt; in HoloCal.SongListStackView.body.getter : some"
+                  moduleName = "HoloCal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/haoyian/Desktop/holo-wtf/holo-wtf/Subviews/SongListStackView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "4C24ECB3-7BBB-433F-A0F3-14B150BBA30B - 5407515abd8bb843"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 () -&gt; SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.toolbar&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ToolbarContent&gt;(content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.toolbar&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ToolbarContent&gt;(content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0&gt; in HoloCal.SongListStackView.body.getter : some"
+                  moduleName = "HoloCal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/haoyian/Desktop/holo-wtf/holo-wtf/Subviews/SongListStackView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "4C24ECB3-7BBB-433F-A0F3-14B150BBA30B - 4e25ff303239b95f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in closure #1 () -&gt; SwiftUI._ConditionalContent&lt;&lt;&lt;opaque return type of SwiftUI.View.toolbar&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ToolbarContent&gt;(content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.toolbar&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ToolbarContent&gt;(content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0&gt; in HoloCal.SongListStackView.body.getter : some"
+                  moduleName = "HoloCal"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/haoyian/Desktop/holo-wtf/holo-wtf/Subviews/SongListStackView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

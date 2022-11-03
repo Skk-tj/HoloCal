@@ -84,12 +84,10 @@ struct PaneViewButtonRowView: View {
                 })
                 .sheet(isPresented: $isShowingSheet) {
                     if #available(iOS 16.0, *) {
-                        SongListView(videoURL: video.url!)
+                        SongListStackView(videoURL: video.url!, songsRaw: songs)
                             .presentationDetents([.medium, .large])
-                            .environmentObject(SongsViewModel(songsRaw: songs))
                     } else {
-                        SongListView(videoURL: video.url!)
-                            .environmentObject(SongsViewModel(songsRaw: songs))
+                        SongListView(videoURL: video.url!, songsRaw: songs)
                     }
                 }
             }

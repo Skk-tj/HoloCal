@@ -13,7 +13,12 @@ struct SongListView: View {
     
     let videoURL: URL
     
-    @EnvironmentObject var songsViewModel: SongsViewModel
+    @StateObject var songsViewModel: SongsViewModel
+    
+    init(videoURL: URL, songsRaw: [SongInStream]) {
+        self.videoURL = videoURL
+        self._songsViewModel = StateObject(wrappedValue: SongsViewModel(songsRaw: songsRaw))
+    }
     
     var body: some View {
         NavigationView {
@@ -50,7 +55,6 @@ struct SongListView: View {
 
 struct SongListView_Previews: PreviewProvider {
     static var previews: some View {
-        SongListView(videoURL: URL(string: "https://www.youtube.com/watch?v=0ntqQpqO0J4")!)
-            .environmentObject(SongsViewModel(songsRaw: SongInStream.exampleSongs))
+        SongListView(videoURL: URL(string: "https://www.youtube.com/watch?v=0ntqQpqO0J4")!, songsRaw: SongInStream.exampleSongs)
     }
 }
