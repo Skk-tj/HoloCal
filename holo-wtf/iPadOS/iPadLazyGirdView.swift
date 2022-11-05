@@ -28,7 +28,7 @@ struct iPadLazyGirdView<VideoContent: View, DataStatusView: View>: View {
             if let nextDSTTransition = TimeZone.current.nextDaylightSavingTimeTransition {
                 if let days = Calendar.current.dateComponents([.day], from: Date(), to: nextDSTTransition).day {
                     if isShowingDSTReminder {
-                        DSTReminderView(numberOfDaysToChange: days, changeType: TimeZone.current.isDaylightSavingTime() ? .ending : .starting)
+                        DSTReminderView(numberOfDaysToChange: days, changeType: TimeZone.current.isDaylightSavingTime() ? .ending : .starting, isShowingDSTReminder: $isShowingDSTReminder)
                             .padding(.horizontal, 30)
                     }
                 }
