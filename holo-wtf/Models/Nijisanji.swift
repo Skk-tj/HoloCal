@@ -11,9 +11,13 @@ import OrderedCollections
 enum NijisanjiGeneration: Int, CaseIterable, Codable, Hashable {
     case firstGen
     case secondGen
-    case gamers
+    case gamersFirstWave
+    case gamersSecondWave
+    case gamersThirdWave
     case seedsFirstGen
-    case seedsSecondGen
+    case seedsSecondGenFirstWave
+    case seedsSecondGenSecondWave
+    case seedsSecondGenThirdWave
     case wave2019
     case wave2020
     case wave2021
@@ -59,11 +63,15 @@ enum NijisanjiTalentEnum: String, Codable {
     case fumino = "UCBiqkFJljoxAj10SoP2w2Cg" // Fumino Tamaki
     case morinaka = "UCtpB6Bvhs1Um93ziEDACQ8g" // Morinaka Kazaki
     
-    // MARK: - NIJISANJI Gamers
+    // MARK: - NIJISANJI Gamers First Wave
     case kanae = "UCspv01oxUFf_MTSipURRhkA" // Kanae
     case akabane = "UCBi8YaVyZpiKWN3_Z0dCTfQ" // Akabane Youko
+
+    // MARK: - NIJISANJI Gamers Second Wave
     case sasaki = "UCoztvTULBYd3WmStqYeoHcA" // Sasaki Saku
     case honma = "UC0g1AE0DOjBYnLhkgoRWN1w" // Honma Himawari
+
+    // MARK: - NIJISANJI Gamers Third Wave
     case makaino = "UC9EjSJ8pvxtvPdxLOElv73w" // Makaino Ririmu
     case kuzuha = "UCSFCh5NL4qXrAy9u-u2lX3g" // Kuzuha
     case shiina = "UC_4tXjqecqox5Uc05ncxpxg" // Shiina Yuika
@@ -78,20 +86,23 @@ enum NijisanjiTalentEnum: String, Codable {
     case suzuki = "UCryOPk2GZ1meIDt53tL30Tw" // Suzuki Masaru
     case uzuki = "UC3lNFeJiTq6L3UWoz4g1e-A" // Uzuki Kou
     case ryushen = "UCt5-0i4AVHXaWJrL8Wql3mw" // Ryushen
-    case ryushenGaming = "UCTi_rzf5QIkXjhJjkbcAdTg" // Ryushen (Gaming)
     
-    // MARK: - NIJISANJI SEEDs Second Generation
+    // MARK: - NIJISANJI SEEDs Second Generation First Wave
     case kanda = "UCWz0CSYCxf4MhRKPDm220AQ" // Kanda Shoichi
     case asuka = "UCiSRx1a2k-0tOg-fs6gAolQ" // Asuka Hina
     case harusaki = "UCtAvQ5U0aXyKwm2i4GqFgJg" // Harusaki Air
     case amemori = "UCRWOdwLRsenx2jLaiCAIU4A" // Amemori Sayo
     case takamiya = "UCV5ZZlLjk5MKGg3L0n0vbzw" // Takamiya Rion
     case maimoto = "UCJubINhCcFXlsBwnHp0wl_g" // Maimoto Keisuke
+    
+    // MARK: - NIJISANJI SEEDs Second Generation Second Wave
     case rindou = "UCPvGypSgfDkVe7JG2KygK7A" // Rindou Mikoto
     case debidebi = "UCjlmCrq4TP1I4xguOtJ-31w" // Debidebi Debiru
     case sakura = "UCfQVs_KuXeNAlGa3fb8rlnQ" // Sakura Ritsuki
     case machita = "UCo7TRj3cS-f_1D9ZDmuTsjw" // Machita Chima
     case joe = "UChUJbHiTVeGrSkTdBzVfNCQ" // Joe Rikiichi
+
+    // MARK: - NIJISANJI SEEDs Second Generation Third Wave
     case naruse = "UCoM_XmK45j504hfUWvN06Qg" // Naruse Naru
     case belmond = "UCbc8fwhdUNlqi-J99ISYu4A" // Belmond Banderas
     case yaguruma = "UCvzVB-EYuHFXHZrObB8a_Og" // Yaguruma Rine
@@ -256,7 +267,51 @@ extension NijisanjiTalentEnum: Identifiable {
 }
 
 let nijisanjiTalentEnumToTalent: [NijisanjiTalentEnum: NijisanjiTalent] = [
-    .moira: NijisanjiTalent(id: NijisanjiTalentEnum.moira.rawValue, names: [.en: "Moira", .ja: "モイラ"], inGeneration: NijisanjiGeneration.firstGen)
+    // MARK: - NIJISANJI First Generation
+    .moira: NijisanjiTalent(id: NijisanjiTalentEnum.moira.rawValue, names: [.en: "Moira", .ja: "モイラ"], inGeneration: NijisanjiGeneration.firstGen),
+    .suzuya: NijisanjiTalent(id: NijisanjiTalentEnum.suzuya.rawValue, names: [.en: "Suzuya Aki", .ja: "鈴谷アキ"], inGeneration: NijisanjiGeneration.firstGen),
+    .shibuya: NijisanjiTalent(id: NijisanjiTalentEnum.shibuya.rawValue, names: [.en: "Shibuya Hajime", .ja: "渋谷ハジメ"], inGeneration: NijisanjiGeneration.firstGen),
+    .higuchi: NijisanjiTalent(id: NijisanjiTalentEnum.shibuya.rawValue, names: [.en: "Higuchi Kaede", .ja: "樋口楓"], inGeneration: NijisanjiGeneration.firstGen),
+    .tsukino: NijisanjiTalent(id: NijisanjiTalentEnum.tsukino.rawValue, names: [.en: "Tsukino Mito", .ja: "月ノ美兎"], inGeneration: NijisanjiGeneration.firstGen),
+    .yuuki: NijisanjiTalent(id: NijisanjiTalentEnum.yuuki.rawValue, names: [.en: "Yuuki Chihiro", .ja: "勇気ちひろ"], inGeneration: NijisanjiGeneration.firstGen),
+    .shizuka: NijisanjiTalent(id: NijisanjiTalentEnum.shizuka.rawValue, names: [.en: "Shizuka Rin", .ja: "静凛"], inGeneration: NijisanjiGeneration.firstGen),
+    .elu: NijisanjiTalent(id: NijisanjiTalentEnum.elu.rawValue, names: [.en: "Elu", .ja: "える"], inGeneration: NijisanjiGeneration.firstGen),
+
+    // MARK: - NIJISANJI Second Generation
+    .ienaga: NijisanjiTalent(id: NijisanjiTalentEnum.ienaga.rawValue, names: [.en: "Ienaga Mugi", .ja: "家長むぎ"], inGeneration: NijisanjiGeneration.secondGen),
+    .yuuhi: NijisanjiTalent(id: NijisanjiTalentEnum.yuuhi.rawValue, names: [.en: "Yuuhi Riri", .ja: "夕陽リリ"], inGeneration: NijisanjiGeneration.secondGen),
+    .fushimi: NijisanjiTalent(id: NijisanjiTalentEnum.fushimi.rawValue, names: [.en: "Fushimi Gaku", .ja: "伏見ガク"], inGeneration: NijisanjiGeneration.secondGen),
+    .kenmochi: NijisanjiTalent(id: NijisanjiTalentEnum.kenmochi.rawValue, names: [.en: "Kenmochi Toya", .ja: "剣持刀也"], inGeneration: NijisanjiGeneration.secondGen),
+    .mononobe: NijisanjiTalent(id: NijisanjiTalentEnum.mononobe.rawValue, names: [.en: "Mononobe Alice", .ja: "物述有栖"], inGeneration: NijisanjiGeneration.secondGen),
+    .ushimi: NijisanjiTalent(id: NijisanjiTalentEnum.ushimi.rawValue, names: [.en: "Ushimi Ichigo", .ja: "宇志海いちご"], inGeneration: NijisanjiGeneration.secondGen),
+    .suzuka: NijisanjiTalent(id: NijisanjiTalentEnum.suzuka.rawValue, names: [.en: "Suzuka Utako", .ja: "鈴鹿詩子"], inGeneration: NijisanjiGeneration.secondGen),
+    .gilzaren: NijisanjiTalent(id: NijisanjiTalentEnum.gilzaren.rawValue, names: [.en: "Gilzaren III", .ja: "ギルザレンⅢ世"], inGeneration: NijisanjiGeneration.secondGen),
+    .fumino: NijisanjiTalent(id: NijisanjiTalentEnum.fumino.rawValue, names: [.en: "Fumino Tamaki", .ja: "文野環"], inGeneration: NijisanjiGeneration.secondGen),
+    .morinaka: NijisanjiTalent(id: NijisanjiTalentEnum.morinaka.rawValue, names: [.en: "Morinaka Kazaki", .ja: "森中花咲"], inGeneration: NijisanjiGeneration.secondGen),
+
+    // MARK: - NIJISANJI Gamers First Wave
+    .kanae: NijisanjiTalent(id: NijisanjiTalentEnum.kanae.rawValue, names: [.en: "Kanae", .ja: "叶"], inGeneration: NijisanjiGeneration.gamersFirstWave),
+    .akabane: NijisanjiTalent(id: NijisanjiTalentEnum.akabane.rawValue, names: [.en: "Akabane Youko", .ja: "赤羽葉子"], inGeneration: NijisanjiGeneration.gamersFirstWave),
+
+    // MARK: - NIJISANJI Gamers Second Wave
+    .sasaki: NijisanjiTalent(id: NijisanjiTalentEnum.sasaki.rawValue, names: [.en: "Sasaki Saku", .ja: "笹木咲"], inGeneration: NijisanjiGeneration.gamersSecondWave),
+    .honma: NijisanjiTalent(id: NijisanjiTalentEnum.honma.rawValue, names: [.en: "Honma Himawari", .ja: "本間ひまわり"], inGeneration: NijisanjiGeneration.gamersSecondWave),
+
+    // MARK: - NIJISANJI Gamers Third Wave
+    .makaino: NijisanjiTalent(id: NijisanjiTalentEnum.makaino.rawValue, names: [.en: "Makaino Ririmu", .ja: "魔界ノりりむ"], inGeneration: NijisanjiGeneration.gamersThirdWave),
+    .kuzuha: NijisanjiTalent(id: NijisanjiTalentEnum.kuzuha.rawValue, names: [.en: "Kuzuha", .ja: "葛葉"], inGeneration: NijisanjiGeneration.gamersThirdWave),
+    .shiina: NijisanjiTalent(id: NijisanjiTalentEnum.shiina.rawValue, names: [.en: "Shiina Yuika", .ja: "椎名唯華"], inGeneration: NijisanjiGeneration.gamersThirdWave),
+
+    // MARK: - NIJISANJI SEEDs First Generation
+    .dola: NijisanjiTalent(id: NijisanjiTalentEnum.dola.rawValue, names: [.en: "Dola", .ja: "ドーラ"], inGeneration: NijisanjiGeneration.seedsFirstGen),
+    .todoroki: NijisanjiTalent(id: NijisanjiTalentEnum.todoroki.rawValue, names: [.en: "Todoroki Kyoko", .ja: "轟京子"], inGeneration: NijisanjiGeneration.seedsFirstGen),
+    .sister: NijisanjiTalent(id: NijisanjiTalentEnum.sister.rawValue, names: [.en: "Sister Claire", .ja: "シスター・クレア"], inGeneration: NijisanjiGeneration.seedsFirstGen),
+    .hanabatake: NijisanjiTalent(id: NijisanjiTalentEnum.hanabatake.rawValue, names: [.en: "Hanabatake Chaika", .ja: "花畑チャイカ"], inGeneration: NijisanjiGeneration.seedsFirstGen),
+    .yashiro: NijisanjiTalent(id: NijisanjiTalentEnum.yashiro.rawValue, names: [.en: "Yashiro Kizuku", .ja: "社築"], inGeneration: NijisanjiGeneration.seedsFirstGen),
+    .azuchi: NijisanjiTalent(id: NijisanjiTalentEnum.azuchi.rawValue, names: [.en: "Azuchi Momo", .ja: "安土桃"], inGeneration: NijisanjiGeneration.seedsFirstGen),
+    .suzuki: NijisanjiTalent(id: NijisanjiTalentEnum.suzuki.rawValue, names: [.en: "Suzuki Masaru", .ja: "卯月コウ"], inGeneration: NijisanjiGeneration.seedsFirstGen),
+    .uzuki: NijisanjiTalent(id: NijisanjiTalentEnum.uzuki.rawValue, names: [.en: "Uzuki Kou", .ja: "鈴木勝"], inGeneration: NijisanjiGeneration.seedsFirstGen),
+    .ryushen: NijisanjiTalent(id: NijisanjiTalentEnum.ryushen.rawValue, names: [.en: "Ryushen", .ja: "緑仙"], inGeneration: NijisanjiGeneration.seedsFirstGen),
 ]
 
 let nijisanjiTalentsByGenerations: OrderedDictionary<NijisanjiGeneration, NijisanjiGenerationGroup> = [:]
