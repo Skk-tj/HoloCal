@@ -50,10 +50,10 @@ struct LiveVideo: Codable, Identifiable, Hashable {
     }
     
     var isHololive: Bool {
-        channel.org == Agencies.hololive.rawValue
+        channel.org == AgencyEnum.hololive.rawValue
     }
     
     var isNijisanji: Bool {
-        channel.org == Agencies.nijisanji.rawValue
+        channel.org == AgencyEnum.nijisanji.rawValue
     }
 }
