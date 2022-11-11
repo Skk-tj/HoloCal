@@ -13,7 +13,7 @@ struct LiveiPadView: View {
     @State var currentPresentationMode: PresentationMode = .normal
     
     init() {
-        self._live = StateObject(wrappedValue: LiveViewModel())
+        self._live = StateObject(wrappedValue: HololiveLiveViewModel())
     }
     
     var body: some View {
@@ -29,7 +29,7 @@ struct LiveiPadView: View {
                 LiveCountView()
             }
         })
-        .environmentObject(live as HololiveVideoViewModel)
+        .environmentObject(live as VideoViewModel)
         .task {
             await live.getLive()
             
@@ -40,7 +40,7 @@ struct LiveiPadView: View {
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {
                 LiveViewToolbar(currentPresentationMode: $currentPresentationMode)
-                    .environmentObject(live as HololiveVideoViewModel)
+                    .environmentObject(live as VideoViewModel)
                 Button(action: {
                     Task {
                         await live.getLive()

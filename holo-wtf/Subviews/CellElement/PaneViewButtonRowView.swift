@@ -15,7 +15,7 @@ struct PaneViewButtonRowView: View {
     @State var isCalendarAccessAlertPresented: Bool = false
     @State var isShowingSheet: Bool = false
     
-    let video: any LiveVideo
+    let video: LiveVideo
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
     var body: some View {
@@ -100,6 +100,6 @@ struct PaneViewButtonRowView: View {
 
 struct PaneViewButtonRowView_Previews: PreviewProvider {
     static var previews: some View {
-        PaneViewButtonRowView(video: HololiveLiveVideo.previewLive)
+        PaneViewButtonRowView(video: LiveVideo.previewLive)
     }
 }

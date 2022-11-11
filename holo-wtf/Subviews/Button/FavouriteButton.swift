@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FavouriteButton<Content: View>: View {
-    let video: any LiveVideo
+    let video: LiveVideo
     @ViewBuilder let content: () -> Content
     
     @AppStorage("favouritedChannel") var favourited = Favourited()
@@ -31,7 +31,7 @@ struct FavouriteButton<Content: View>: View {
 
 struct FavouriteButton_Previews: PreviewProvider {
     static var previews: some View {
-        FavouriteButton(video: HololiveLiveVideo.previewLive) {
+        FavouriteButton(video: LiveVideo.previewLive) {
             Label("VIDEO_CONTEXT_MENU_FAVOURITE_CHANNEL", systemImage: "star")
         }
     }

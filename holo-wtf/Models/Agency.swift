@@ -50,39 +50,23 @@ extension Vtuberable {
     }
 }
 
-enum Agencies: String {
+enum AgencyEnum: String {
     case hololive = "Hololive"
     case nijisanji = "Nijisanji"
 }
 
-struct Agency: Vtuberable {
-    let id: Agencies
+struct Agency: Identifiable, Hashable, Vtuberable {
+    let id: AgencyEnum
     let names: [NameLanguage: String]
 }
 
-protocol Talent: Codable, Identifiable, Hashable, Vtuberable {
-    associatedtype Generation
-    
-    var id: String { get }
-    
-    var names: [NameLanguage: String] { get }
-    
-    var inGeneration: Generation { get }
-}
-
-protocol Generation: Hashable, Vtuberable {
-    associatedtype Generation
-    associatedtype TalentEnum
-    
-    var id: Generation { get }
-    
-    var names: [NameLanguage: String] { get }
-    
-    var members: [TalentEnum] { get }
-}
+let agencyEnumToAgency = [
+    AgencyEnum.hololive: Agency(id: AgencyEnum.hololive, names: [.en: "Hololive", .ja: "ホロライブ"]),
+    AgencyEnum.nijisanji: Agency(id: AgencyEnum.nijisanji, names: [.en: "Nijisanji", .ja: "にじさんじ"]),
+]
 
 /// Represent a person.
-struct HololiveTalent: Talent {
+struct Talent: Identifiable, Vtuberable {
     /// The ID shall correspond to the ID given by the API, HoloDex API uses YT channel ID.
     let id: String
     
@@ -92,35 +76,19 @@ struct HololiveTalent: Talent {
     let names: [NameLanguage: String]
     
     /// Represent which generation (group) this talent is in.
-    let inGeneration: HololiveGeneration
-}
-
-struct NijisanjiTalent: Talent {
-    let id: String
-    
-    let names: [NameLanguage: String]
-    
-    let inGeneration: NijisanjiGeneration
+    let inGeneration: Generation
 }
 
 /// Represent a group of talents in a VTuber agency
-struct HololiveGenerationGroup: Generation {
+struct GenerationGroup: Identifiable, Hashable, Vtuberable {
     /// Represents the generation of this instance as an enum.
-    let id: HololiveGeneration
+    let id: Generation
     
     /// Represent the names of a generation group
     let names: [NameLanguage: String]
     
     /// Represents a list of members.
-    let members: [HololiveTalentEnum]
-}
-
-struct NijisanjiGenerationGroup: Generation {
-    let id: NijisanjiGeneration
-    
-    let names: [NameLanguage : String]
-    
-    let members: [NijisanjiTalentEnum]
+    let members: [TalentEnum]
 }
 
 

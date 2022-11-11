@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LiveCollabAvatarView: View {
-    let mentions: [any Channel]
+    let mentions: [Channel]
     var avatarRadius: Double = 64.0
     
     var body: some View {
@@ -32,8 +32,8 @@ struct LiveCollabAvatarView: View {
 struct LiveCollabAvatarView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            LiveCollabAvatarView(mentions: [HololiveChannel.testChannel, HololiveChannel.testChannel2, HololiveChannel.testChannel, HololiveChannel.testChannel])
-            LiveCollabAvatarView(mentions: [HololiveChannel.testChannel, HololiveChannel.testChannel2])
+            LiveCollabAvatarView(mentions: [Channel.testChannel, Channel.testChannel2, Channel.testChannel, Channel.testChannel])
+            LiveCollabAvatarView(mentions: [Channel.testChannel, Channel.testChannel2])
         }
     }
 }

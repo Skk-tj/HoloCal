@@ -9,10 +9,10 @@ import SwiftUI
 import WidgetKit
 
 struct MultipleLiveWidgetView: View {
-    let leftVideo: any LiveVideo
+    let leftVideo: LiveVideo
     let leftVideoThumbnail: Data
     
-    let rightVideo: any LiveVideo
+    let rightVideo: LiveVideo
     let rightVideoThumbnail: Data
     
     var body: some View {
@@ -82,7 +82,7 @@ struct MultipleLiveWidgetView: View {
 
 struct MultipleLiveWidgetView_Previews: PreviewProvider {
     static var previews: some View {
-        MultipleLiveWidgetView(leftVideo: HololiveLiveVideo.previewLive, leftVideoThumbnail: Data(), rightVideo: HololiveLiveVideo.previewLiveMemberOnly, rightVideoThumbnail: Data())
+        MultipleLiveWidgetView(leftVideo: LiveVideo.previewLive, leftVideoThumbnail: Data(), rightVideo: LiveVideo.previewLiveMemberOnly, rightVideoThumbnail: Data())
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

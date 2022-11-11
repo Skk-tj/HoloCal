@@ -15,29 +15,29 @@ struct UpcomingView: View {
     @State var currentPresentationMode: PresentationMode = .normal
     
     init() {
-        self._upcoming = StateObject(wrappedValue: UpcomingViewModel())
+        self._upcoming = StateObject(wrappedValue: HololiveUpcomingViewModel())
     }
     
     var body: some View {
         NavigationView {
             if isShowingCompactInUpcomingView {
                 UpcomingCompactListView(currentPresentationMode: $currentPresentationMode)
-                    .environmentObject(upcoming as HololiveVideoViewModel)
+                    .environmentObject(upcoming as VideoViewModel)
                     .navigationTitle("UPCOMING_VIEW_TITLE")
                     .toolbar {
                         ToolbarItemGroup {
                             UpcomingViewToolbar(currentPresentationMode: $currentPresentationMode)
-                                .environmentObject(upcoming as HololiveVideoViewModel)
+                                .environmentObject(upcoming as VideoViewModel)
                         }
                     }
             } else {
                 UpcomingCardListView(currentPresentationMode: $currentPresentationMode)
-                    .environmentObject(upcoming as HololiveVideoViewModel)
+                    .environmentObject(upcoming as VideoViewModel)
                     .navigationTitle("UPCOMING_VIEW_TITLE")
                     .toolbar {
                         ToolbarItem(placement: .primaryAction) {
                             UpcomingViewToolbar(currentPresentationMode: $currentPresentationMode)
-                                .environmentObject(upcoming as HololiveVideoViewModel)
+                                .environmentObject(upcoming as VideoViewModel)
                         }
                     }
             }

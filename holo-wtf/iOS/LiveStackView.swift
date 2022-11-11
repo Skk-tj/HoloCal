@@ -16,29 +16,29 @@ struct LiveStackView: View {
     @State var currentPresentationMode: PresentationMode = .normal
     
     init() {
-        self._live = StateObject(wrappedValue: LiveViewModel())
+        self._live = StateObject(wrappedValue: HololiveLiveViewModel())
     }
     
     var body: some View {
         NavigationStack {
             if isShowingCompactInLiveView {
                 LiveCompactListView(currentPresentationMode: $currentPresentationMode)
-                    .environmentObject(live as HololiveVideoViewModel)
+                    .environmentObject(live as VideoViewModel)
                     .navigationTitle("LIVE_VIEW_TITLE")
                     .toolbar {
                         ToolbarItemGroup {
                             LiveViewToolbar(currentPresentationMode: $currentPresentationMode)
-                                .environmentObject(live as HololiveVideoViewModel)
+                                .environmentObject(live as VideoViewModel)
                         }
                     }
             } else {
                 LiveCardListView(currentPresentationMode: $currentPresentationMode)
-                    .environmentObject(live as HololiveVideoViewModel)
+                    .environmentObject(live as VideoViewModel)
                     .navigationTitle("LIVE_VIEW_TITLE")
                     .toolbar {
                         ToolbarItem(placement: .primaryAction) {
                             LiveViewToolbar(currentPresentationMode: $currentPresentationMode)
-                                .environmentObject(live as HololiveVideoViewModel)
+                                .environmentObject(live as VideoViewModel)
                         }
                     }
             }

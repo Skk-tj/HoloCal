@@ -14,13 +14,13 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     
     @AppStorage(UserDefaultKeys.isShowingDSTReminder) var isShowingDSTReminder = false
     
-    @EnvironmentObject var viewModel: HololiveVideoViewModel
+    @EnvironmentObject var viewModel: VideoViewModel
     
     @State var searchText: String = ""
     @Binding var currentPresentationMode: PresentationMode
     
     /// The view of a single video.
-    @ViewBuilder let singleVideoView: (_ live: any LiveVideo) -> VideoContent
+    @ViewBuilder let singleVideoView: (_ live: LiveVideo) -> VideoContent
     
     /// The view of the counter at the bottom.
     @ViewBuilder let dataStatusView: () -> DataStatusContent

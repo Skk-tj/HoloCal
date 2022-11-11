@@ -1,5 +1,5 @@
 //
-//  LiveChannelsProvider.swift
+//  ChannelsProvider.swift
 //  holo-wtf-widgetExtension
 //
 //
@@ -12,7 +12,7 @@ struct ChannelsWidgetProvider: TimelineProvider {
     typealias Entry = ChannelsEntry
     
     let url: String
-    let sortStrategy: (any LiveVideo, any LiveVideo) -> Bool
+    let sortStrategy: (LiveVideo, LiveVideo) -> Bool
     
     func placeholder(in context: Context) -> Entry {
         return Entry(date: .now, status: .ok, channels: [widgetSampleChannel], thumbnails: [Data()])

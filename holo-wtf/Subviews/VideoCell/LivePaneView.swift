@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LivePaneView: View {
-    let live: any LiveVideo
+    let live: LiveVideo
     
     @State var isShowingCollabSheet: Bool = false
     
@@ -126,7 +126,7 @@ struct LivePaneView: View {
 
 struct LivePaneView_Previews: PreviewProvider {
     static var previews: some View {
-        LivePaneView(live: HololiveLiveVideo.previewLive)
-        LivePaneView(live: HololiveLiveVideo.previewLive).preferredColorScheme(.dark)
+        LivePaneView(live: LiveVideo.previewLive)
+        LivePaneView(live: LiveVideo.previewLive).preferredColorScheme(.dark)
     }
 }

@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct iPadLazyGirdView<VideoContent: View, DataStatusView: View>: View {
-    @EnvironmentObject var videoViewModel: HololiveVideoViewModel
+    @EnvironmentObject var videoViewModel: VideoViewModel
     
     @AppStorage("favouritedChannel") var favourited = Favourited()
-    @AppStorage("generationListSelection") var generationListSelection = Set(HololiveGeneration.allCases)
+    @AppStorage("generationListSelection") var generationListSelection = Set(Generation.allCases)
     @AppStorage(UserDefaultKeys.isShowingDSTReminder) var isShowingDSTReminder = false
     
     @State var searchText: String = ""
     
-    @ViewBuilder let singleVideoView: (_ live: any LiveVideo) -> VideoContent
+    @ViewBuilder let singleVideoView: (_ live: LiveVideo) -> VideoContent
     @ViewBuilder let dataStatusView: () -> DataStatusView
     
     let layout = [

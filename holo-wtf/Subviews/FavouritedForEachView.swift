@@ -10,8 +10,8 @@ import SwiftUI
 struct FavouritedForEachView<Content: View>: View {
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
-    @EnvironmentObject var viewModel: HololiveVideoViewModel
-    @ViewBuilder let cellView: (_ video: any LiveVideo) -> Content
+    @EnvironmentObject var viewModel: VideoViewModel
+    @ViewBuilder let cellView: (_ video: LiveVideo) -> Content
     
     @ViewBuilder
     var body: some View {

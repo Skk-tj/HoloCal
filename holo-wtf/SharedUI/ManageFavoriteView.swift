@@ -13,10 +13,10 @@ struct ManageFavoriteView: View {
     
     var body: some View {
         List {
-            ForEach(hololiveTalentsByGeneration.values, id: \.self) { generation in
+            ForEach(talentsByGeneration.values, id: \.self) { generation in
                 Section(generation.localizedName) {
                     ForEach(generation.members) { talent in
-                        SettingsTalentStarView(talent: hololiveTalentEnumToTalent[talent]!, favourited: $favourited)
+                        SettingsTalentStarView(talent: talentEnumToTalent[talent]!, favourited: $favourited)
                     }
                 }
             }

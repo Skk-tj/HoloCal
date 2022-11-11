@@ -25,12 +25,12 @@ struct LinkedVideoView<Content: View>: View {
 struct LinkedVideoView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            LinkedVideoView(url: HololiveLiveVideo.previewLive.url) {
-                LiveCellView(live: HololiveLiveVideo.previewLive)
+            LinkedVideoView(url: LiveVideo.previewLive.url) {
+                LiveCellView(live: LiveVideo.previewLive)
             }
             
-            LinkedVideoView(url: HololiveLiveVideo.previewLive.url) {
-                LivePaneView(live: HololiveLiveVideo.previewLive)
+            LinkedVideoView(url: LiveVideo.previewLive.url) {
+                LivePaneView(live: LiveVideo.previewLive)
             }
         }
     }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ManageGenerationOrderView: View {
-    @AppStorage("generationListOrder") var generationOrder = HololiveGeneration.allCases
+    @AppStorage("generationListOrder") var generationOrder = Generation.allCases
     @State var showResetAlert = false
     
     var body: some View {
@@ -35,7 +35,7 @@ struct ManageGenerationOrderView: View {
                 })
                 .confirmationDialog("SETTINGS_MANAGE_GENERATION_ORDER_RESET_ALERT_TEXT", isPresented: $showResetAlert, actions: {
                     Button("SETTINGS_MANAGE_GENERATION_RESET_ALERT_RESET", role: .destructive) {
-                        generationOrder = HololiveGeneration.allCases
+                        generationOrder = Generation.allCases
                     }
                 }, message: {
                     Text("SETTINGS_MANAGE_GENERATION_ORDER_RESET_ALERT_TEXT")

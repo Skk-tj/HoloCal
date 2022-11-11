@@ -10,7 +10,7 @@ import WidgetKit
 
 @available(iOSApplicationExtension 16.0, *)
 struct UpcomingAccessoryCornerView: View {
-    let upcoming: any LiveVideo
+    let upcoming: LiveVideo
     
     var body: some View {
         ZStack {
@@ -28,6 +28,6 @@ struct UpcomingAccessoryCornerView: View {
 @available(iOSApplicationExtension 16.0, *)
 struct UpcomingAccessoryCornerView_Previews: PreviewProvider {
     static var previews: some View {
-        UpcomingAccessoryCornerView(upcoming: HololiveLiveVideo.previewLive)
+        UpcomingAccessoryCornerView(upcoming: LiveVideo.previewLive)
     }
 }

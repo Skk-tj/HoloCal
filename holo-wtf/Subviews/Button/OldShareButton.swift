@@ -9,10 +9,10 @@ import SwiftUI
 
 // FIXME: Remove after iOS 16
 struct OldShareButton<Content: View>: View {
-    let video: any LiveVideo
+    let video: LiveVideo
     let content: () -> Content
     
-    init(video: any LiveVideo, @ViewBuilder content: @escaping () -> Content) {
+    init(video: LiveVideo, @ViewBuilder content: @escaping () -> Content) {
         self.video = video
         self.content = content
     }
@@ -28,7 +28,7 @@ struct OldShareButton<Content: View>: View {
 
 struct OldShareButton_Previews: PreviewProvider {
     static var previews: some View {
-        OldShareButton(video: HololiveLiveVideo.previewLive) {
+        OldShareButton(video: LiveVideo.previewLive) {
             Label("VIDEO_CONTEXT_MENU_SHARE", systemImage: "square.and.arrow.up")
         }
     }
