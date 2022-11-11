@@ -11,7 +11,7 @@ struct SingleVideoWidgetEntry: VideoTimelineEntry {
     let date: Date
     let status: WidgetDataStatus
     
-    let video: (any LiveVideo)?
+    let video: (LiveVideo)?
     
     let avatarData: Data
     let thumbnailData: Data

@@ -14,7 +14,7 @@ enum VideoFetchServiceError: Error {
     case network
 }
 
-func getVideos<T: LiveVideo>(from url: String) async throws -> [T] {
+func getVideos(from url: String) async throws -> [LiveVideo] {
     let logger = Logger()
     
     guard let apiURL = URL(string: url) else {
@@ -34,7 +34,7 @@ func getVideos<T: LiveVideo>(from url: String) async throws -> [T] {
         
         let decoder = getLiveVideoJSONDecoder()
         
-        let responseResult: [T] = try decoder.decode([T].self, from: data)
+        let responseResult = try decoder.decode([LiveVideo].self, from: data)
         
         return responseResult
     } catch {

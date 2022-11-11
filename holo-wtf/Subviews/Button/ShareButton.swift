@@ -12,7 +12,7 @@ import ActivityView
 
 // FIXME: Remove after iOS 16
 struct ShareButton<Content: View>: View {
-    let video: any LiveVideo
+    let video: LiveVideo
     @ViewBuilder let content: () -> Content
     
     @State private var item: ActivityItem?
@@ -30,7 +30,7 @@ struct ShareButton<Content: View>: View {
 
 struct ShareButton_Previews: PreviewProvider {    
     static var previews: some View {
-        ShareButton(video: HololiveLiveVideo.previewLive) {
+        ShareButton(video: LiveVideo.previewLive) {
             Label("VIDEO_CONTEXT_MENU_SHARE", systemImage: "square.and.arrow.up")
         }
     }

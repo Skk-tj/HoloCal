@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LiveCellView: View {
-    let live: any LiveVideo
+    let live: LiveVideo
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
     var body: some View {
@@ -57,7 +57,7 @@ struct LiveCellView: View {
 
 struct LiveCellView_Previews: PreviewProvider {
     static var previews: some View {
-        LiveCellView(live: HololiveLiveVideo.previewLive)
-        LiveCellView(live: HololiveLiveVideo.previewLiveMemberOnly)
+        LiveCellView(live: LiveVideo.previewLive)
+        LiveCellView(live: LiveVideo.previewLiveMemberOnly)
     }
 }

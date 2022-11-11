@@ -11,7 +11,7 @@ struct MultipleVideoWidgetProvider: TimelineProvider {
     typealias Entry = MultipleVideoWidgetEntry
     
     let url: String
-    let sortStrategy: (any LiveVideo, any LiveVideo) -> Bool
+    let sortStrategy: (LiveVideo, LiveVideo) -> Bool
     
     func placeholder(in context: Context) -> Entry {
         return MultipleVideoWidgetEntry(date: Date(), status: .ok, videoLeft: widgetSampleVideo, thumbnailDataLeft: Data(), videoRight: widgetSampleVideo, thumbnailDataRight: Data())

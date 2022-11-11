@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ManageGenerationVisibilityView: View {
-    @AppStorage("generationListSelection") var generationSelected = Set(HololiveGeneration.allCases)
-    @AppStorage("excludedGenerations") var excludedGenerations = Set<HololiveGeneration>()
+    @AppStorage("generationListSelection") var generationSelected = Set(Generation.allCases)
+    @AppStorage("excludedGenerations") var excludedGenerations = Set<Generation>()
     @State var showResetAlert = false
     
     var body: some View {
         List {
             Section(content: {
-                ForEach(HololiveGeneration.allCases, id: \.self) { generation in
+                ForEach(Generation.allCases, id: \.self) { generation in
                     HStack {
                         VStack(alignment: .leading) {
                             Text("\(generation.getLocalizedName())")
@@ -49,7 +49,7 @@ struct ManageGenerationVisibilityView: View {
                 })
                 .confirmationDialog("SETTINGS_MANAGE_GENERATION_VISIBILITY_RESET_ALERT_TEXT", isPresented: $showResetAlert, actions: {
                     Button("SETTINGS_MANAGE_GENERATION_RESET_ALERT_RESET", role: .destructive) {
-                        generationSelected = Set(HololiveGeneration.allCases)
+                        generationSelected = Set(Generation.allCases)
                     }
                 }, message: {
                     Text("SETTINGS_MANAGE_GENERATION_VISIBILITY_RESET_ALERT_TEXT")
@@ -57,7 +57,7 @@ struct ManageGenerationVisibilityView: View {
             }
         }
         .onChange(of: generationSelected, perform: { newValue in
-            excludedGenerations =  Set(HololiveGeneration.allCases).symmetricDifference(newValue)
+            excludedGenerations =  Set(Generation.allCases).symmetricDifference(newValue)
         })
         .navigationTitle("SETTINGS_MANAGE_GENERATION_VISIBILITY_VIEW_TITLE")
     }

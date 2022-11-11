@@ -13,11 +13,11 @@ import SwiftUI
 /// This view accepts another `View` for what the video will be fit into.
 struct SectionedNotFavouritedForEachView<Content: View>: View {
     @AppStorage("favouritedChannel") var favourited = Favourited()
-    @AppStorage("generationListSelection") var generationListSelection = Set(HololiveGeneration.allCases)
-    @AppStorage("generationListOrder") var generationListOrder = HololiveGeneration.allCases
+    @AppStorage("generationListSelection") var generationListSelection = Set(Generation.allCases)
+    @AppStorage("generationListOrder") var generationListOrder = Generation.allCases
     
-    @EnvironmentObject var viewModel: HololiveVideoViewModel
-    @ViewBuilder let cellView: (_ video: any LiveVideo) -> Content
+    @EnvironmentObject var viewModel: VideoViewModel
+    @ViewBuilder let cellView: (_ video: LiveVideo) -> Content
     
     @ViewBuilder
     var body: some View {
@@ -25,7 +25,7 @@ struct SectionedNotFavouritedForEachView<Content: View>: View {
             !favourited.contains(where: { video.channel.id == $0 })
         }
         
-        let groupedDictionary = Dictionary<HololiveGeneration, [HololiveLiveVideo]>(grouping: filteredVideos, by: { $0.channel.talent?.inGeneration ?? .other })
+        let groupedDictionary = Dictionary<Generation, [LiveVideo]>(grouping: filteredVideos, by: { $0.channel.talent?.inGeneration ?? .other })
         let filteredGenerationListOrder = generationListOrder.filter { generation in
             generationListSelection.contains(generation)
         }

@@ -1,5 +1,5 @@
 //
-//  LiveChannelsView.swift
+//  ChannelsView.swift
 //  holo-wtf-widgetExtension
 //
 //  Created by Haoyi An on 2022-10-08.
@@ -9,7 +9,7 @@ import SwiftUI
 import WidgetKit
 
 struct LiveChannelsView: View {
-    let channels: [any Channel]
+    let channels: [Channel]
     let thumbnails: [Data]
     
     var body: some View {
@@ -39,7 +39,7 @@ struct LiveChannelsView: View {
 
 struct LiveChannelsView_Previews: PreviewProvider {
     static var previews: some View {
-        LiveChannelsView(channels: [HololiveChannel.testChannel, HololiveChannel.testChannel2], thumbnails: [Data(), Data()])
+        LiveChannelsView(channels: [Channel.testChannel, Channel.testChannel2], thumbnails: [Data(), Data()])
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

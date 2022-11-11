@@ -8,7 +8,7 @@
 import Foundation
 
 @MainActor
-class HololiveLiveViewModel: HololiveVideoViewModel {
+class HololiveLiveViewModel: VideoViewModel {
     func getLive() async {
         await getVideo(url: hololiveLiveURL) { responseResult in
             self.videoList = responseResult

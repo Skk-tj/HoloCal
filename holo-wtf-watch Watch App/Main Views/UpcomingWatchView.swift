@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct UpcomingWatchView: View {
-    @StateObject var upcoming: UpcomingViewModel
+    @StateObject var upcoming: HololiveUpcomingViewModel
     
     init() {
-        self._upcoming = StateObject(wrappedValue: UpcomingViewModel())
+        self._upcoming = StateObject(wrappedValue: HololiveUpcomingViewModel())
     }
     
     var body: some View {
-        WatchVideoListView<WatchUpcomingCellView, DataStatusIndicatorView, HololiveLiveVideo, HololiveChannel, HololiveVideoViewModel>(singleVideoView: { video in
+        WatchVideoListView(singleVideoView: { video in
             WatchUpcomingCellView(upcoming: video)
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: upcoming.dataStatus) {

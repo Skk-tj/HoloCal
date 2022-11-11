@@ -9,8 +9,7 @@ import SwiftUI
 
 struct UpcomingCardListView: View {
     @Binding var currentPresentationMode: PresentationMode
-    
-    @EnvironmentObject var upcoming: HololiveVideoViewModel
+    @EnvironmentObject var upcoming: VideoViewModel
     
     var body: some View {
         CardListView(currentPresentationMode: $currentPresentationMode, paneView: { live in

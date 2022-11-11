@@ -12,9 +12,9 @@ struct holo_wtfApp: App {
     @AppStorage(UserDefaultKeys.dstDays) var dstDays: Int = 5
     @AppStorage(UserDefaultKeys.isShowingDSTReminder) var isShowingDSTReminder = false
     
-    @AppStorage("generationListSelection") var generationSelected = Set(HololiveGeneration.allCases)
-    @AppStorage("generationListOrder") var generationOrder = HololiveGeneration.allCases
-    @AppStorage("excludedGenerations") var excludedGenerations = Set<HololiveGeneration>()
+    @AppStorage("generationListSelection") var generationSelected = Set(Generation.allCases)
+    @AppStorage("generationListOrder") var generationOrder = Generation.allCases
+    @AppStorage("excludedGenerations") var excludedGenerations = Set<Generation>()
     
     init() {
         // MARK: - Setup DST Warning
@@ -33,11 +33,11 @@ struct holo_wtfApp: App {
         }
         
         // MARK: - When we add generations, we need to handle previous user preferences
-        generationSelected = Set(HololiveGeneration.allCases).subtracting(excludedGenerations)
+        generationSelected = Set(Generation.allCases).subtracting(excludedGenerations)
         
         // MARK: - Also add the new generation to the order list
-        if generationOrder.count != HololiveGeneration.allCases.count {
-            let difference = Set(HololiveGeneration.allCases).symmetricDifference(generationOrder)
+        if generationOrder.count != Generation.allCases.count {
+            let difference = Set(Generation.allCases).symmetricDifference(generationOrder)
             generationOrder.append(contentsOf: difference)
         }
     }

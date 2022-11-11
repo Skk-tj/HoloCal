@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LiveCollabListView: View {
     @Environment(\.dismiss) var dismiss
-    let mentions: [any Channel]
+    let mentions: [Channel]
     
     var body: some View {
         NavigationView {
@@ -50,7 +50,7 @@ struct LiveCollabListView: View {
 struct LiveCollabListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            LiveCollabListView(mentions: [HololiveChannel.testChannel, HololiveChannel.testChannel2])
+            LiveCollabListView(mentions: [Channel.testChannel, Channel.testChannel2])
         }
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 @available(iOS 16.0, *)
 struct LiveCollabListStackView: View {
     @Environment(\.dismiss) var dismiss
-    let mentions: [any Channel]
+    let mentions: [Channel]
     
     var body: some View {
         NavigationStack {
@@ -49,6 +49,6 @@ struct LiveCollabListStackView: View {
 
 struct LiveCollabListStackView_Previews: PreviewProvider {
     static var previews: some View {
-        LiveCollabListView(mentions: [HololiveChannel.testChannel, HololiveChannel.testChannel2])
+        LiveCollabListView(mentions: [Channel.testChannel, Channel.testChannel2])
     }
 }

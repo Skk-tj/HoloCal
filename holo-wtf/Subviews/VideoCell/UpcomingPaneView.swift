@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UpcomingPaneView: View {
-    var upcoming: any LiveVideo
+    var upcoming: LiveVideo
     
     @State var isShowingCollabSheet: Bool = false
     
@@ -101,6 +101,6 @@ struct UpcomingPaneView: View {
 
 struct UpcomingPaneView_Previews: PreviewProvider {
     static var previews: some View {
-        UpcomingPaneView(upcoming: HololiveLiveVideo.previewLive)
+        UpcomingPaneView(upcoming: LiveVideo.previewLive)
     }
 }

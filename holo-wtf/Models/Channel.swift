@@ -1,39 +1,46 @@
 //
-//  Channelable.swift
+//  ChannelNew.swift
 //  holo-wtf
 //
-//  Created by Haoyi An on 2022-10-22.
+//  Created by Haoyi An on 2022-04-12.
 //
 
 import Foundation
 import OSLog
 
-protocol Channel: Codable, Identifiable, Hashable, Equatable {
-    associatedtype TalentType: Vtuberable
+struct Channel: Codable, Identifiable, Hashable {
+    let id: String
+    let name: String
+    let photo: URL?
+    let org: String?
     
-    var id: String { get }
-    var name: String { get }
-    var photo: URL? { get }
-    var org: String? { get }
+    var twitter: String?
     
-    var twitter: String? { get set }
+    var talent: Talent? {
+        if let talentEnum = TalentEnum(rawValue: id) {
+            return talentEnumToTalent[talentEnum]!
+        } else {
+            // Don't recognize this ID
+            return nil
+        }
+    }
     
-    var talent: TalentType? { get }
+    static let testChannel = Channel(id: "UCp6993wxpyDPHUpavwDFqgg", name: "test vtuber", photo: URL(string: "https://yt3.ggpht.com/ytc/AKedOLQH3CqU4dL9EWjrYl6aKn26_DAAHbCXEBVyMTaWZA=s800-c-k-c0x00ffffff-no-rj"), org: "Hololive", twitter: "aaaa")
     
-    var channelURL: URL? { get }
+    static let testChannel2 = Channel(id: "UCDqI2jOz0weumE8s7paEk6g", name: "test vtuber 2", photo: URL(string: "https://yt3.ggpht.com/wIqM7MWDN94PoibzPmeog7WOt8jFKTKZBOBFEbLBaiUAdKLwoqdLC_CN7B7Gby-FWH-076rN=s800-c-k-c0x00ffffff-no-rj"), org: "Hololive", twitter: "aaaa")
     
-    func getTalentName() -> String
+    func getTalentGenerationName() -> String {
+        if let talent = talent {
+            if let generationGroup = talentsByGeneration[talent.inGeneration] {
+                return generationGroup.localizedName
+            } else {
+                return talentsByGeneration[.other]!.localizedName
+            }
+        } else {
+            return talentsByGeneration[.other]!.localizedName
+        }
+    }
     
-    func getAltTalentName() -> String
-    
-    func getTalentGenerationName() -> String
-    
-    func getTwitterId() async throws -> String?
-}
-
-
-/// Default implementation for Channels
-extension Channel {
     static func ==(c1: Self, c2: Self) -> Bool {
         c1.id == c2.id
     }
@@ -77,7 +84,7 @@ extension Channel {
         
         let decoder = getLiveVideoJSONDecoder()
         
-        let responseResult: HololiveChannel = try decoder.decode(HololiveChannel.self, from: data)
+        let responseResult: Channel = try decoder.decode(Channel.self, from: data)
         
         return responseResult.twitter
     }

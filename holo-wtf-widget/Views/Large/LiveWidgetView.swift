@@ -9,7 +9,7 @@ import SwiftUI
 import WidgetKit
 
 struct LiveWidgetView: View {
-    let live: any LiveVideo
+    let live: LiveVideo
     let thumbnailData: Data
     let avatarData: Data
     
@@ -73,7 +73,7 @@ struct LiveWidgetView: View {
 
 struct LiveWidgetView_Previews: PreviewProvider {
     static var previews: some View {
-        LiveWidgetView(live: HololiveLiveVideo.previewLive, thumbnailData: Data(), avatarData: Data())
+        LiveWidgetView(live: LiveVideo.previewLive, thumbnailData: Data(), avatarData: Data())
             .previewContext(WidgetPreviewContext(family: .systemLarge))
     }
 }

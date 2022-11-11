@@ -11,7 +11,7 @@ import WidgetKit
 @available(iOSApplicationExtension 16.0, *)
 struct LiveAccessoryRectangularWidgetView: View {
     @Environment(\.widgetRenderingMode) var renderingMode
-    let live: any LiveVideo
+    let live: LiveVideo
     
     var body: some View {
         switch renderingMode {
@@ -53,7 +53,7 @@ struct LiveAccessoryRectangularWidgetView: View {
 @available(iOSApplicationExtension 16.0, *)
 struct LiveAccessoryRectangularWidgetView_Previews: PreviewProvider {
     static var previews: some View {
-        LiveAccessoryRectangularWidgetView(live: HololiveLiveVideo.previewLive)
+        LiveAccessoryRectangularWidgetView(live: LiveVideo.previewLive)
             .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
     }
 }

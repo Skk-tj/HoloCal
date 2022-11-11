@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct LiveWatchView: View {
-    @StateObject var live: LiveViewModel
+    @StateObject var live: HololiveLiveViewModel
     
     init() {
-        self._live = StateObject(wrappedValue: LiveViewModel())
+        self._live = StateObject(wrappedValue: HololiveLiveViewModel())
     }
     
     var body: some View {
-        WatchVideoListView<WatchLiveCellView, DataStatusIndicatorView, HololiveLiveVideo, HololiveChannel, HololiveVideoViewModel>(singleVideoView: { video in
+        WatchVideoListView(singleVideoView: { video in
             WatchLiveCellView(live: video)
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: live.dataStatus) {
