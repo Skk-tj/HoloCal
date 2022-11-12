@@ -41,10 +41,29 @@ enum Generation: Int, CaseIterable, Codable, Hashable {
     case seedsSecondGenFirstWave
     case seedsSecondGenSecondWave
     case seedsSecondGenThirdWave
-    case wave2019
-    case wave2020
+    case wave2019Usa
+    case wave2019Jan28
+    case wave2019Sanbaka
+    case wave2019Beni
+    case wave2019Apr29
+    case wave2019May17
+    case wave2019Jun19
+    case wave2019SMC
+    case wave2019Blues
+    case wave2019Posanke
+    case wave2019Tulip
+    case wave2019Orihimeboshi
+    case wave2019AkaNoSoshiki
+    case wave2019NightKingdom
+    case wave2019Mananatsu
+    case wave2020Meifu
+    case wave2020Valz
+    case wave2020Jun30
+    case wave2020SereineJogakuin
     case wave2021
-    case wave2022
+    case wave2022Ranunculus
+    case wave2022May21
+    case wave2022Voltaction
     case id1stWave
     case id2ndWave
     case id3rdWave
@@ -240,54 +259,88 @@ enum TalentEnum: String, Codable {
     case yumeoi = "UCTIE7LM5X15NVugV7Krp9Hw" // Yumeoi Kakeru
     case kuroi = "UCmeyo5pRj_6PXG-CsGUuWWg" // Kuroi Shiba
     
-    // MARK: - 2019 Wave
+    // MARK: - 2019 Wave: Usa-chan club
     case gundo = "UCeShTCVgZyq2lsBW9QwIJcw" // Gundo Mirei
     case yuzuki = "UCCVwhI5trmaSxfcze_Ovzfw" // Yuzuki Roa
+
+    // MARK: - 2019 Wave: January 28
     case onomachi = "UCg63a3lk6PNeWhVvMRM_mrQ" // Onomachi Haruka
     case kataribe = "UCufQu4q65z63IgE4cfKs1BQ" // Kataribe Tsumugu
     case seto = "UCHK5wkevfaGrPr7j3g56Jmw" // Seto Miyako
+
+    // MARK: - 2019 Wave: Sanbaka
     case inui = "UCXRlIK3Cw_TJIQC5kSJJQMg" // Inui Toko
     case ange = "UCHVXbQzkl3rDfsXWo8xi2qw" // Ange Katrina
     case lize = "UCZ1xuCK1kNmn5RzPYIZop3w" // Lize Helesta
+
+    // MARK: - 2019 Wave: Beni zuwaigani
     case saegusa = "UCNW1Ex0r6HsWRD4LCtPwvoQ" // Saegusa Akina
     case aizono = "UC0WwEfE-jOM2rzjpdfhTzZA" // Aizono Manami
+
+    // MARK: - 2019 Wave: April 29
     case yukishiro = "UCHX7YpFG8rVwhsHCx34xt7w" // Yukishiro Mahiro
+
+    // MARK: - 2019 Wave: May 17
     case ex = "UCIytNcoz4pWzXfLda0DoULQ" // Ex Albio
     case levi = "UCtnO2N4kPTXmyvedjGWdx3Q" // Levi Elipha
+
+    // MARK: - 2019 Wave: June 19
     case hayama = "UCfipDDn7wY-C-SoUChgxCQQ" // Hayama Marin
     case nui = "UCUc8GZfFxtmk7ZwSO7ccQ0g" // Nui Sociere
+
+    // MARK: - 2019 Wave: SMC-gumi
     case hakase = "UCGYAYLDE7TZiiC8U6teciDQ" // Hakase Fuyuki
     case kagami = "UCmovZ2th3Sqpd00F5RdeigQ" // Kagami Hayato
     case yorumi = "UCL34fAoFim9oHLbVzMKFavQ" // Yorumi Rena
+
+    // MARK: - 2019 Wave: Blues
     case ars = "UCdpUojq0KWZCN9bxXnZwz5w" // Ars Almal
     case aiba = "UCnRQYHTnRLSF0cLJwMnedCg" // Aiba Uiha
+
+    // MARK: - 2019 Wave: Posanke
     case amamiya = "UCkIimWZ9gBJRamKF0rmPU8w" // Amamiya Kokoro
     case eli = "UCpNH2Zk2gw3JBjWAKSyZcQQ" // Eli Conifer
     case ratna = "UCIG9rDtgR45VCZmYnd-4DUw" // Ratna Petit
     case ratnaASMR = "UCpfjQCCavrO-rnKaAaIF9dg" // Ratna Petit ASMR
+
+    // MARK: - 2019 Wave: Tulip-gumi
     case hayase = "UC2OacIzd2UxGHRGhdHl1Rhw" // Hayase Sou
     case sukoya = "UC8C1LLhBhf_E2IBPLSDJXlQ" // Sukoya Kana
     case shellin = "UCHBhnG2G-qN0JrrWmMO2FTA" // Shellin Burgundy
+
+    // MARK: - 2019 Wave: Orihimeboshi
     case fumi = "UCwrjITPwG4q71HzihV2C7Nw" // Fumi
     case hoshikawa = "UC9V3Y3_uzU5e-usObb6IE1w" // Hoshikawa Sara
     case yamagami = "UCllKI7VjyANuS1RXatizfLQ" // Yamagami Karuta
+
+    // MARK: - 2019 Wave: Aka no Soshiki
     case emmaAugust = "UCl1oLKcAq93p-pwKfDGhiYQ" // Emma★August
     case luis = "UCb6ObE-XGCctO3WrjRZC-cw" // Luis Cammy
     case matsukai = "UCerkculBD7YLc_vOGrF7tKg" // Matsukai Mao
+
+    // MARK: - 2019 Wave: Night Kingdom
     case fuwa = "UC6wvdADTJ88OfIbJYIpAaDA" // Fuwa Minato
     case shirayuki = "UCuvk5PilcvDECU7dDZhQiEw" // Shirayuki Tomoe
     case gwelu = "UC1QgXt46-GEvtNjEC1paHnw" // Gwelu Os Gar
+
+    // MARK: - 2019 Wave: Mananatsu
     case mashiro = "UCS-XXTgVkotkbkDnGEprXpg" // Mashiro
     case naraka = "UC-o-E6I3IC2q8sAoAuM6Umg" // Naraka
     case kurusu = "UCRcLAVTbmx2-iNcXSsupdNA" // Kurusu Natsume
     
-    // MARK: - 2020 Wave
+    // MARK: - 2020 Wave: Meifu
     case furen = "UCuep1JCrMvSxOGgGhBfJuYw" // Furen E Lustario
     case ibrahim = "UCmZ1Rbthn-6Jm_qOGjYsh5A" // Ibrahim
+
+    // MARK: - 2020 Wave: VΔLZ
     case nagao = "UCXW4MqCQn-jCaxlX-nn-BYg" // Nagao Kei
     case genzuki = "UCGw7lrT-rVZCWHfdG9Frcgg" // Genzuki Tojiro
     case kaida = "UCo2N7C-Z91waaR6lF3LL_jw" // Kaida Haru
+
+    // MARK: - 2020 Wave: June 30
     case sorahoshi = "UC_82HBGtvwN1hcGeOGHzUBQ" // Sorahoshi Kirame
+
+    // MARK: - 2020 Wave: Sereine Jogakuin
     case asahina = "UCe_p3YEuYJb8Np0Ip9dk-FQ" // Asahina Akane
     case suo = "UCL_O_HXgLJx3Auteer0n0pA" // Suo Sango
     case todo = "UCebT4Aq-3XWb5je1S1FvR_A" // Todo Kohaku
@@ -301,11 +354,15 @@ enum TalentEnum: String, Codable {
     case oliver = "UCqjTqdVlvIipZXIKeCkHKUA" // Oliver Evans
     case lain = "UCRm6lqtdxs_Qo6HeL-SRQ-w" // Lain Paterson
     
-    // MARK: - 2022 Wave
+    // MARK: - 2022 Wave: Ranunculus
     case amagase = "UCAQDFeCTVdx90GtwohwjHzQ" // Amagase Muyu
     case ponto = "UCe22Bcwd_GCpTjLxn83zl7A" // Ponto Nei
     case umise = "UCtHY-tP0dyykhTRMmnfPs_g" // Umise Yotsuh
+
+    // MARK: - 2022 Wave: May 21
     case hyakumantenbara = "UCgIfLpQvelloDi8I0Ycbwpg" // Hyakumantenbara Salome
+    
+    // MARK: - 2022 Wave: VOLTACTION
     case fura = "UCC7rRD6P7RQcx0hKv9RQP4w" // Fura Kanato
     case watarai = "UC4l9gz3q65lTBFfFtW5LLeA" // Watarai Hibari
     case shikinagi = "UCcDDxnoQcezyTUzHg5uHaKg" // Shikinagi Akira
@@ -320,6 +377,7 @@ enum TalentEnum: String, Codable {
     case rai = "UC8Snw5i4eOJXEQqURAK17hQ" // Rai Galilei
     case amicia = "UCrR7JxkbeLY82e8gsj_I0pQ" // Amicia Michella
     case miyu = "UCOmjciHZ8Au3iKMElKXCF_g" // Miyu Ottavia
+    case riksa = "UCkL9OLKjIQbKk2CztbpOCFg" // Riksa Dhirendra
     
     // MARK: - ID Third Wave: LAN_NEE3S
     case azura = "UCk5r533QVMgJUdWwqegH2TA" // Azura Cecillia
@@ -383,14 +441,13 @@ enum TalentEnum: String, Codable {
     case nijisanji = "UCX7YkU9nEeaoZbkVLVajcMg" // Nijisanji
     case nijisanjiID = "UCbLgcjfsUaCUgJh9SVit8kw" // NIJISANJI ID Official
     case nijisanjiEN = "UC-JSeFfovhNsEhftt1WHMvg"
-    
     case virtual = "UC4Jyg9gFStHO8r5n4ya7XCQ" // Virtual Talent Academy
-    case JuvveL = "UC_D2DNy-KUNQJ_NGMppgmyg" // None
-    case VOLTACTION = "UCNRh9kkByBTYLo0IJupnAug" // None
+    case JuvveL = "UC_D2DNy-KUNQJ_NGMppgmyg"
+    case VOLTACTION = "UCNRh9kkByBTYLo0IJupnAug"
     case luxiem = "UCtHFXfrn52juTqGBN4WbMVw" // Luxiem Channel
-    case rofmao = "UCwi4P78SVunSYAGrvC9aKcw" // ROF-MAO
-    case Nornis = "UCxWcO9CLti4uouUIS5IIF-Q" // None
-    case ChroNoiR = "UCz6vnIbgiqFT9xUcD6Bp65Q" // None
+    case rofmao = "UCwi4P78SVunSYAGrvC9aKcw" 
+    case Nornis = "UCxWcO9CLti4uouUIS5IIF-Q"
+    case ChroNoiR = "UCz6vnIbgiqFT9xUcD6Bp65Q"
 }
 
 extension TalentEnum: Identifiable {
@@ -559,6 +616,148 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .suzuki: Talent(id: TalentEnum.suzuki.rawValue, names: [.en: "Suzuki Masaru", .ja: "卯月コウ"], inGeneration: Generation.seedsFirstGen),
     .uzuki: Talent(id: TalentEnum.uzuki.rawValue, names: [.en: "Uzuki Kou", .ja: "鈴木勝"], inGeneration: Generation.seedsFirstGen),
     .ryushen: Talent(id: TalentEnum.ryushen.rawValue, names: [.en: "Ryushen", .ja: "緑仙"], inGeneration: Generation.seedsFirstGen),
+
+    // MARK: - NIJISANJI SEEDs Second Generation First Wave
+    .kanda: Talent(id: TalentEnum.kanda.rawValue, names: [.en: "Kanda Shoichi", .ja: "神田笑一"], inGeneration: Generation.seedsSecondGenFirstWave),
+    .asuka: Talent(id: TalentEnum.asuka.rawValue, names: [.en: " Asuka Hina", .ja: "飛鳥ひな"], inGeneration: Generation.seedsSecondGenFirstWave),
+    .harusaki: Talent(id: TalentEnum.harusaki.rawValue, names: [.en: "Harusaki Air", .ja: "春崎エアル"], inGeneration: Generation.seedsSecondGenFirstWave),
+    .amemori: Talent(id: TalentEnum.amemori.rawValue, names: [.en: "Amemori Sayo", .ja: "雨森小夜"], inGeneration: Generation.seedsSecondGenFirstWave),
+    .takamiya: Talent(id: TalentEnum.takamiya.rawValue, names: [.en: "Takamiya Rion", .ja: "鷹宮リオン"], inGeneration: Generation.seedsSecondGenFirstWave),
+    .maimoto: Talent(id: TalentEnum.maimoto.rawValue, names: [.en: "Maimoto Keisuke", .ja: "舞元啓介"], inGeneration: Generation.seedsSecondGenFirstWave),
+
+    // MARK: - NIJISANJI SEEDs Second Generation Second Wave
+    .rindou: Talent(id: TalentEnum.rindou.rawValue, names: [.en: "Rindou Mikoto", .ja: "竜胆尊"], inGeneration: Generation.seedsSecondGenSecondWave),
+    .debidebi: Talent(id: TalentEnum.debidebi.rawValue, names: [.en: "Debidebi Debiru", .ja: "でびでび・でびる"], inGeneration: Generation.seedsSecondGenSecondWave),
+    .sakura: Talent(id: TalentEnum.sakura.rawValue, names: [.en: "Sakura Ritsuki", .ja: "桜凛月"], inGeneration: Generation.seedsSecondGenSecondWave),
+    .machita: Talent(id: TalentEnum.machita.rawValue, names: [.en: "Machita Chima", .ja: "町田ちま"], inGeneration: Generation.seedsSecondGenSecondWave),
+    .joe: Talent(id: TalentEnum.joe.rawValue, names: [.en: "Joe Rikiichi", .ja: "ジョー・力一"], inGeneration: Generation.seedsSecondGenSecondWave),
+
+    // MARK: - NIJISANJI SEEDs Second Generation Third Wave
+    .naruse: Talent(id: TalentEnum.naruse.rawValue, names: [.en: "Naruse Naru", .ja: "成瀬鳴"], inGeneration: Generation.seedsSecondGenThirdWave),
+    .belmond: Talent(id: TalentEnum.belmond.rawValue, names: [.en: "Belmond Banderas", .ja: "ベルモンド・バンデラス"], inGeneration: Generation.seedsSecondGenThirdWave),
+    .yaguruma: Talent(id: TalentEnum.yaguruma.rawValue, names: [.en: "Yaguruma Rine", .ja: "矢車りね"], inGeneration: Generation.seedsSecondGenThirdWave),
+    .yumeoi: Talent(id: TalentEnum.yumeoi.rawValue, names: [.en: "Yumeoi Kakeru", .ja: "夢追翔"], inGeneration: Generation.seedsSecondGenThirdWave),
+    .kuroi: Talent(id: TalentEnum.kuroi.rawValue, names: [.en: "Kuroi Shiba", .ja: "黒井しば"], inGeneration: Generation.seedsSecondGenThirdWave),
+
+    // MARK: - 2019 Wave: Usa-chan club
+    .gundo: Talent(id: TalentEnum.gundo.rawValue, names: [.en: "Gundo Mirei", .ja: "郡道美玲"], inGeneration: Generation.wave2019Usa),
+    .yuzuki: Talent(id: TalentEnum.yuzuki.rawValue, names: [.en: "Yuzuki Roa", .ja: "夢月ロア"], inGeneration: Generation.wave2019Usa),
+
+    // MARK: - 2019 Wave: January 28
+    .onomachi: Talent(id: TalentEnum.onomachi.rawValue, names: [.en: "Onomachi Haruka", .ja: "小野町春香"], inGeneration: Generation.wave2019Jan28),
+    .kataribe: Talent(id: TalentEnum.kataribe.rawValue, names: [.en: "Kataribe Tsumugu", .ja: "語部紡"], inGeneration: Generation.wave2019Jan28),
+    .seto: Talent(id: TalentEnum.seto.rawValue, names: [.en: "Seto Miyako", .ja: "瀬戸美夜子"], inGeneration: Generation.wave2019Jan28),
+
+    // MARK: - 2019 Wave: Sanbaka
+    .inui: Talent(id: TalentEnum.inui.rawValue, names: [.en: "Inui Toko", .ja: "戌亥とこ"], inGeneration: Generation.wave2019Sanbaka),
+    .ange: Talent(id: TalentEnum.ange.rawValue, names: [.en: "Ange Katrina", .ja: "アンジュ・カトリーナ"], inGeneration: Generation.wave2019Sanbaka),
+    .lize: Talent(id: TalentEnum.lize.rawValue, names: [.en: "Lize Helesta", .ja: "リゼ・ヘルエスタ"], inGeneration: Generation.wave2019Sanbaka),
+
+    // MARK: - 2019 Wave: Beni zuwaigani
+    .saegusa: Talent(id: TalentEnum.saegusa.rawValue, names: [.en: "Saegusa Akina", .ja: "三枝明那"], inGeneration: Generation.wave2019Beni),
+    .aizono: Talent(id: TalentEnum.aizono.rawValue, names: [.en: "Aizono Manami", .ja: "愛園愛美"], inGeneration: Generation.wave2019Beni),
+
+    // MARK: - 2019 Wave: April 29
+    .yukishiro: Talent(id: TalentEnum.yukishiro.rawValue, names: [.en: "Yukishiro Mahiro", .ja: "雪城眞尋"], inGeneration: Generation.wave2019Apr29),
+
+    // MARK: - 2019 Wave: May 17
+    .ex: Talent(id: TalentEnum.ex.rawValue, names: [.en: "Ex Albio", .ja: "エクス・アルビオ"], inGeneration: Generation.wave2019May17),
+    .levi: Talent(id: TalentEnum.levi.rawValue, names: [.en: "Levi Elipha", .ja: "レヴィ・エリファ"], inGeneration: Generation.wave2019May17),
+
+    // MARK: - 2019 Wave: June 19
+    .hayama: Talent(id: TalentEnum.hayama.rawValue, names: [.en: "Hayama Marin", .ja: "葉山舞鈴"], inGeneration: Generation.wave2019Jun19),
+    .nui: Talent(id: TalentEnum.nui.rawValue, names: [.en: "Nui Sociere", .ja: "ニュイ・ソシエール"], inGeneration: Generation.wave2019Jun19),
+
+    // MARK: - 2019 Wave: SMC-gumi
+    .hakase: Talent(id: TalentEnum.hakase.rawValue, names: [.en: "Hakase Fuyuki", .ja: "葉加瀬冬雪"], inGeneration: Generation.wave2019SMC),
+    .kagami: Talent(id: TalentEnum.kagami.rawValue, names: [.en: "Kagami Hayato", .ja: "加賀美ハヤト"], inGeneration: Generation.wave2019SMC),
+    .yorumi: Talent(id: TalentEnum.yorumi.rawValue, names: [.en: "Yorumi Rena", .ja: "夜見れな"], inGeneration: Generation.wave2019SMC),
+
+    // MARK: - 2019 Wave: Blues
+    .ars: Talent(id: TalentEnum.ars.rawValue, names: [.en: "Ars Almal", .ja: "アルス・アルマル"], inGeneration: Generation.wave2019Blues),
+    .aiba: Talent(id: TalentEnum.aiba.rawValue, names: [.en: "Aiba Uiha", .ja: "相羽ういは"], inGeneration: Generation.wave2019Blues),
+
+    // MARK: - 2019 Wave: Posanke
+    .amamiya: Talent(id: TalentEnum.amamiya.rawValue, names: [.en: "Amamiya Kokoro", .ja: "天宮こころ"], inGeneration: Generation.wave2019Posanke),
+    .eli: Talent(id: TalentEnum.eli.rawValue, names: [.en: "Eli Conifer", .ja: "エリー・コニファー"], inGeneration: Generation.wave2019Posanke),
+    .ratna: Talent(id: TalentEnum.ratna.rawValue, names: [.en: "Ratna Petit", .ja: "ラトナ・プティ"], inGeneration: Generation.wave2019Posanke),
+    .ratnaASMR: Talent(id: TalentEnum.ratnaASMR.rawValue, names: [.en: "Ratna Petit ASMR", .ja: "ラトナ・プティ ASMR"], inGeneration: Generation.wave2019Posanke),
+
+    // MARK: - 2019 Wave: Tulip-gumi
+    .hayase: Talent(id: TalentEnum.hayase.rawValue, names: [.en: "Hayase Sou", .ja: "早瀬走"], inGeneration: Generation.wave2019Tulip),
+    .sukoya: Talent(id: TalentEnum.sukoya.rawValue, names: [.en: "Sukoya Kana", .ja: "健屋花那"], inGeneration: Generation.wave2019Tulip),
+    .shellin: Talent(id: TalentEnum.shellin.rawValue, names: [.en: "Shellin Burgundy", .ja: "シェリン・バーガンディ"], inGeneration: Generation.wave2019Tulip),
+
+    // MARK: - 2019 Wave: Orihimeboshi
+    .fumi: Talent(id: TalentEnum.fumi.rawValue, names: [.en: "Fumi", .ja: "フミ"], inGeneration: Generation.wave2019Orihimeboshi),
+    .hoshikawa: Talent(id: TalentEnum.hoshikawa.rawValue, names: [.en: "Hoshikawa Sara", .ja: "星川サラ"], inGeneration: Generation.wave2019Orihimeboshi),
+    .yamagami: Talent(id: TalentEnum.yamagami.rawValue, names: [.en: "Yamagami Karuta", .ja: "山神カルタ"], inGeneration: Generation.wave2019Orihimeboshi),
+
+    // MARK: - 2019 Wave: Aka no Soshiki
+    .emmaAugust: Talent(id: TalentEnum.emmaAugust.rawValue, names: [.en: "Emma★August", .ja: "えま★おうがすと"], inGeneration: Generation.wave2019AkaNoSoshiki),
+    .luis: Talent(id: TalentEnum.luis.rawValue, names: [.en: "Luis Cammy", .ja: "ルイス・キャミー"], inGeneration: Generation.wave2019AkaNoSoshiki),
+    .matsukai: Talent(id: TalentEnum.matsukai.rawValue, names: [.en: "Matsukai Mao", .ja: "魔使マオ"], inGeneration: Generation.wave2019AkaNoSoshiki),
+
+    // MARK: - 2019 Wave: Night Kingdom
+    .fuwa: Talent(id: TalentEnum.fuwa.rawValue, names: [.en: "Fuwa Minato", .ja: "不破湊"], inGeneration: Generation.wave2019NightKingdom),
+    .shirayuki: Talent(id: TalentEnum.shirayuki.rawValue, names: [.en: "Shirayuki Tomoe", .ja: "白雪巴"], inGeneration: Generation.wave2019NightKingdom),
+    .gwelu: Talent(id: TalentEnum.gwelu.rawValue, names: [.en: "Gwelu Os Gar", .ja: "グウェル・オス・ガール"], inGeneration: Generation.wave2019NightKingdom),
+
+    // MARK: - 2019 Wave: Mananatsu
+    .mashiro: Talent(id: TalentEnum.mashiro.rawValue, names: [.en: "Mashiro Meme", .ja: "ましろ爻"], inGeneration: Generation.wave2019Mananatsu),
+    .naraka: Talent(id: TalentEnum.naraka.rawValue, names: [.en: "Naraka", .ja: "奈羅花"], inGeneration: Generation.wave2019Mananatsu),
+    .kurusu: Talent(id: TalentEnum.kurusu.rawValue, names: [.en: "Kurusu Natsume", .ja: "来栖夏芽"], inGeneration: Generation.wave2019Mananatsu),
+
+    // MARK: - 2020 Wave: Meifu
+    .furen: Talent(id: TalentEnum.furen.rawValue, names: [.en: "Furen E Lustario", .ja: "フレン・E・ルスタリオ"], inGeneration: Generation.wave2020Meifu),
+    .ibrahim: Talent(id: TalentEnum.ibrahim.rawValue, names: [.en: "Ibrahim", .ja: "イブラヒム"], inGeneration: Generation.wave2020Meifu),
+
+    // MARK: - 2020 Wave: VΔLZ
+    .nagao: Talent(id: TalentEnum.nagao.rawValue, names: [.en: "Nagao Kei", .ja: "イブラヒム"], inGeneration: Generation.wave2020Valz),
+    .genzuki: Talent(id: TalentEnum.genzuki.rawValue, names: [.en: "Genzuki Tojiro", .ja: "イブラヒム"], inGeneration: Generation.wave2020Valz),
+    .kaida: Talent(id: TalentEnum.kaida.rawValue, names: [.en: "Kaida Haru", .ja: "イブラヒム"], inGeneration: Generation.wave2020Valz),
+
+    // MARK: - 2020 Wave: June 30
+    .sorahoshi: Talent(id: TalentEnum.sorahoshi.rawValue, names: [.en: "Sorahoshi Kirame", .ja: "空星きらめ"], inGeneration: Generation.wave2020Jun30),
+
+    // MARK: - 2020 Wave: Sereine Jogakuin
+    .asahina: Talent(id: TalentEnum.asahina.rawValue, names: [.en: "Asahina Akane", .ja: "朝日南アカネ"], inGeneration: Generation.wave2020SereineJogakuin),
+    .suo: Talent(id: TalentEnum.suo.rawValue, names: [.en: "Suo Sango", .ja: "周央サンゴ"], inGeneration: Generation.wave2020SereineJogakuin),
+    .todo: Talent(id: TalentEnum.todo.rawValue, names: [.en: "Todo Kohaku", .ja: "東堂コハク"], inGeneration: Generation.wave2020SereineJogakuin),
+    .kitakoji: Talent(id: TalentEnum.kitakoji.rawValue, names: [.en: "Kitakoji Hisui", .ja: "北小路ヒスイ"], inGeneration: Generation.wave2020SereineJogakuin),
+    .nishizono: Talent(id: TalentEnum.nishizono.rawValue, names: [.en: "Nishizono Chigusa", .ja: "西園チグサ"], inGeneration: Generation.wave2020SereineJogakuin),
+
+    // MARK: - 2021 Wave
+    .axia: Talent(id: TalentEnum.axia.rawValue, names: [.en: "Axia Krone", .ja: "アクシア・クローネ"], inGeneration: Generation.wave2021),
+    .lauren: Talent(id: TalentEnum.lauren.rawValue, names: [.en: "Lauren Iroas", .ja: "ローレン・イロアス"], inGeneration: Generation.wave2021),
+    .leos: Talent(id: TalentEnum.leos.rawValue, names: [.en: "Leos Vincent", .ja: "レオス・ヴィンセント"], inGeneration: Generation.wave2021),
+    .oliver: Talent(id: TalentEnum.oliver.rawValue, names: [.en: "Oliver Evans", .ja: "オリバー・エバンス"], inGeneration: Generation.wave2021),
+    .lain: Talent(id: TalentEnum.lain.rawValue, names: [.en: "Lain Paterson", .ja: "レイン・パターソン"], inGeneration: Generation.wave2021),
+
+    // MARK: - 2022 Wave: Ranunculus
+    .amagase: Talent(id: TalentEnum.amagase.rawValue, names: [.en: "Amagase Muyu", .ja: "天ヶ瀬むゆ"], inGeneration: Generation.wave2022Ranunculus),
+    .ponto: Talent(id: TalentEnum.ponto.rawValue, names: [.en: "Ponto Nei", .ja: "先斗寧"], inGeneration: Generation.wave2022Ranunculus),
+    .umise: Talent(id: TalentEnum.umise.rawValue, names: [.en: "Umise Yotsuh", .ja: "海妹四葉"], inGeneration: Generation.wave2022Ranunculus),
+
+    // MARK: - 2022 Wave: May 21
+    .hyakumantenbara: Talent(id: TalentEnum.hyakumantenbara.rawValue, names: [.en: "Hyakumantenbara Salome", .ja: "壱百満天原サロメ"], inGeneration: Generation.wave2022May21),
+
+    // MARK: - 2022 Wave: VOLTACTION
+    .fura: Talent(id: TalentEnum.fura.rawValue, names: [.en: "Fura Kanato", .ja: "風楽奏斗"], inGeneration: Generation.wave2022Voltaction),
+    .watarai: Talent(id: TalentEnum.watarai.rawValue, names: [.en: "Watarai Hibari", .ja: "渡会雲雀"], inGeneration: Generation.wave2022Voltaction),
+    .shikinagi: Talent(id: TalentEnum.shikinagi.rawValue, names: [.en: "Shikinagi Akira", .ja: "四季凪アキラ"], inGeneration: Generation.wave2022Voltaction),
+    .seraph: Talent(id: TalentEnum.seraph.rawValue, names: [.en: "Seraph Dazzlegarden", .ja: "セラフ・ダズルガーデン"], inGeneration: Generation.wave2022Voltaction),
+
+    // MARK: - ID First Wave: 3setBBQ
+    .taka: Talent(id: TalentEnum.taka.rawValue, names: [.en: "Taka Radjiman", .ja: "タカ ラジマン"], inGeneration: Generation.id1stWave),
+    .zea: Talent(id: TalentEnum.zea.rawValue, names: [.en: "ZEA Cornelia", .ja: "ゼア コルネリア"], inGeneration: Generation.id1stWave),
+    .hana: Talent(id: TalentEnum.hana.rawValue, names: [.en: "Hana Macchia", .ja: "ハナ マキア"], inGeneration: Generation.id1stWave),
+
+    // MARK: - ID Second Wave: CloverMcOver
+    .rai: Talent(id: TalentEnum.rai.rawValue, names: [.en: "Rai Galilei", .ja: "ライ ガリレイ"], inGeneration: Generation.id2ndWave),
+    .amicia: Talent(id: TalentEnum.amicia.rawValue, names: [.en: "Amicia Michella", .ja: "アミシア ミシェラ"], inGeneration: Generation.id2ndWave),
+    .miyu: Talent(id: TalentEnum.miyu.rawValue, names: [.en: "Miyu Ottavia", .ja: "ミユ オッタフィア"], inGeneration: Generation.id2ndWave),
+    .riksa: Talent(id: TalentEnum.riksa.rawValue, names: [.en: "Riksa Dhirendra", .ja: "リクサ ディレンドラ"], inGeneration: Generation.id2ndWave),
 ]
 
 let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
