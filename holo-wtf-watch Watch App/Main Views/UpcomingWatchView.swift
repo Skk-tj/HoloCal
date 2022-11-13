@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct UpcomingWatchView: View {
-    @StateObject var upcoming: HololiveUpcomingViewModel
+    @StateObject var upcoming: UpcomingViewModel
     
     init() {
-        self._upcoming = StateObject(wrappedValue: HololiveUpcomingViewModel())
+        self._upcoming = StateObject(wrappedValue: UpcomingViewModel(for: .hololive))
     }
     
     var body: some View {
