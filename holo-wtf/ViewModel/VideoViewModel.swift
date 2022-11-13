@@ -38,9 +38,12 @@ class VideoViewModel: ObservableObject {
     @Published var videoList: [LiveVideo]
     @Published var dataStatus: DataStatus
     
-    init() {
+    let agency: AgencyEnum
+    
+    init(for agency: AgencyEnum) {
         self.videoList = []
         self.dataStatus = .working
+        self.agency = agency
     }
     
     let logger = Logger()

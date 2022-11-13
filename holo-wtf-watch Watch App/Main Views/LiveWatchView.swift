@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct LiveWatchView: View {
-    @StateObject var live: HololiveLiveViewModel
+    @StateObject var live: LiveViewModel
     
     init() {
-        self._live = StateObject(wrappedValue: HololiveLiveViewModel())
+        self._live = StateObject(wrappedValue: LiveViewModel(for: .hololive))
     }
     
     var body: some View {

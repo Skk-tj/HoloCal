@@ -22,9 +22,9 @@ struct LiveAccessoryCornerEntryView: View {
                     .font(.title.bold())
             }
             .widgetAccentable()
-                .widgetLabel {
-                    Text("NO_ONE_IS_STREAMING")
-                }
+            .widgetLabel {
+                Text("NO_ONE_IS_STREAMING")
+            }
         }
     }
 }

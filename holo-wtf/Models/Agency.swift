@@ -24,10 +24,10 @@ extension Vtuberable {
     var localizedName: String {
         if #available(iOS 16, *) {
             if let langCode = Locale.current.language.languageCode?.identifier {
-                let lang: NameLanguage = langCode == "ja" ? .en : .ja
+                let lang: NameLanguage = langCode == "ja" ? .ja : .en
                 return names[lang]!
             } else {
-                return names[.ja]!
+                return names[.en]!
             }
         } else {
             let lang: NameLanguage = Locale.current.languageCode == "ja" ? .en : .ja
@@ -38,7 +38,7 @@ extension Vtuberable {
     var altLocalizedName: String {
         if #available(iOS 16, *) {
             if let langCode = Locale.current.language.languageCode?.identifier {
-                let lang: NameLanguage = langCode == "ja" ? .ja : .en
+                let lang: NameLanguage = langCode == "ja" ? .en : .ja
                 return names[lang]!
             } else {
                 return names[.en]!

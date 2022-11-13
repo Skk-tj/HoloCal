@@ -9,14 +9,14 @@ import SwiftUI
 
 @available(iOS 16.0, *)
 struct LiveStackView: View {
-    @StateObject var live: HololiveLiveViewModel
+    @StateObject var live: LiveViewModel
     
     @AppStorage(UserDefaultKeys.isShowingCompactInLiveView) var isShowingCompactInLiveView: Bool = false
     
     @State var currentPresentationMode: PresentationMode = .normal
     
     init() {
-        self._live = StateObject(wrappedValue: HololiveLiveViewModel())
+        self._live = StateObject(wrappedValue: LiveViewModel(for: .hololive))
     }
     
     var body: some View {
