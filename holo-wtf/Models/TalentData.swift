@@ -758,6 +758,75 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .amicia: Talent(id: TalentEnum.amicia.rawValue, names: [.en: "Amicia Michella", .ja: "アミシア ミシェラ"], inGeneration: Generation.id2ndWave),
     .miyu: Talent(id: TalentEnum.miyu.rawValue, names: [.en: "Miyu Ottavia", .ja: "ミユ オッタフィア"], inGeneration: Generation.id2ndWave),
     .riksa: Talent(id: TalentEnum.riksa.rawValue, names: [.en: "Riksa Dhirendra", .ja: "リクサ ディレンドラ"], inGeneration: Generation.id2ndWave),
+
+    // MARK: - ID Third Wave: LAN_NEE3S
+    .azura: Talent(id: TalentEnum.azura.rawValue, names: [.en: "Azura Cecillia", .ja: "アズラ セシリア"], inGeneration: Generation.id3rdWave),
+    .layla: Talent(id: TalentEnum.layla.rawValue, names: [.en: "Layla Alstroemeria", .ja: "ライラ アルストロエメリア"], inGeneration: Generation.id3rdWave),
+    .nara: Talent(id: TalentEnum.nara.rawValue, names: [.en: "Nara Haramaung", .ja: "ライラ アルストロエメリア"], inGeneration: Generation.id3rdWave),
+
+    // MARK: - ID Fourth Wave: 3FicLite
+    .etna: Talent(id: TalentEnum.etna.rawValue, names: [.en: "Etna Crimson", .ja: "エトナ クリムソン"], inGeneration: Generation.id4thWave),
+    .bonnivier: Talent(id: TalentEnum.bonnivier.rawValue, names: [.en: "Bonnivier Pranaja", .ja: "ボンニフィエール プラナジャ"], inGeneration: Generation.id4thWave),
+    .siska: Talent(id: TalentEnum.siska.rawValue, names: [.en: "Siska Leontyne", .ja: "シスカ レオンタイン"], inGeneration: Generation.id4thWave),
+
+    // MARK: - ID Fifth Wave: 53renade
+    .nagisa: Talent(id: TalentEnum.nagisa.rawValue, names: [.en: "Nagisa Arcinia", .ja: "ナギサ アルシニア"], inGeneration: Generation.id5thWave),
+    .derem: Talent(id: TalentEnum.derem.rawValue, names: [.en: "Derem Kado", .ja: "デレム カド"], inGeneration: Generation.id5thWave),
+    .reza: Talent(id: TalentEnum.reza.rawValue, names: [.en: "Reza Avanluna", .ja: "レザ アファンルナ"], inGeneration: Generation.id5thWave),
+
+    // MARK: - ID Sixth Wave: 6WS
+    .hyona: Talent(id: TalentEnum.hyona.rawValue, names: [.en: "Hyona Elatiora", .ja: "ヒョナ エラティオラ"], inGeneration: Generation.id6thWave),
+    .xia: Talent(id: TalentEnum.xia.rawValue, names: [.en: "Xia Ekavira", .ja: "シア エカフィラ"], inGeneration: Generation.id6thWave),
+    .mika: Talent(id: TalentEnum.mika.rawValue, names: [.en: "Mika Melatika", .ja: "ミカ メラティカ"], inGeneration: Generation.id6thWave),
+
+    // MARK: - EN First Wave: LazuLight
+    .pomu: Talent(id: TalentEnum.pomu.rawValue, names: [.en: "Pomu Rainpuff", .ja: "ぽむ れいんぱふ"], inGeneration: Generation.en1stWave),
+    .elira: Talent(id: TalentEnum.elira.rawValue, names: [.en: "Elira Pendora", .ja: "エリーラ ペンドラ"], inGeneration: Generation.en1stWave),
+    .finana: Talent(id: TalentEnum.finana.rawValue, names: [.en: "Finana Ryugu", .ja: "フィナーナ 竜宮"], inGeneration: Generation.en1stWave),
+
+    // MARK: - EN Second Wave: OBSYDIA
+    .rosemi: Talent(id: TalentEnum.rosemi.rawValue, names: [.en: "Rosemi Lovelock", .ja: "ロゼミ ラブロック"], inGeneration: Generation.en2ndWave),
+    .petra: Talent(id: TalentEnum.petra.rawValue, names: [.en: "Petra Gurin", .ja: "ペトラ グリン"], inGeneration: Generation.en2ndWave),
+    .selen: Talent(id: TalentEnum.selen.rawValue, names: [.en: "Selen Tatsuki", .ja: "セレン 龍月"], inGeneration: Generation.en2ndWave),
+
+    // MARK: - EN Third Wave: Ethyria
+    .nina: Talent(id: TalentEnum.nina.rawValue, names: [.en: "Nina Kosaka", .ja: "狐坂ニナ"], inGeneration: Generation.en3rdWave),
+    .millie: Talent(id: TalentEnum.millie.rawValue, names: [.en: "Millie Parfait", .ja: "ミリー・パフェ"], inGeneration: Generation.en3rdWave),
+    .enna: Talent(id: TalentEnum.enna.rawValue, names: [.en: "Enna Alouette", .ja: "エナー・アールウェット"], inGeneration: Generation.en3rdWave),
+    .reimu: Talent(id: TalentEnum.reimu.rawValue, names: [.en: "Reimu Endou", .ja: "遠藤霊夢"], inGeneration: Generation.en3rdWave),
+
+    // MARK: - EN Fourth Wave: Luxiem
+    .luca: Talent(id: TalentEnum.luca.rawValue, names: [.en: "Luca Kaneshiro", .ja: "ルカ・カネシロ"], inGeneration: Generation.en4thWave),
+    .shu: Talent(id: TalentEnum.shu.rawValue, names: [.en: "Shu Yamino", .ja: "闇ノシュウ"], inGeneration: Generation.en4thWave),
+    .ike: Talent(id: TalentEnum.ike.rawValue, names: [.en: "Ike Eveland", .ja: "アイク・イーヴランド"], inGeneration: Generation.en4thWave),
+    .mysta: Talent(id: TalentEnum.mysta.rawValue, names: [.en: "Mysta Rias", .ja: "ミスタ・リアス"], inGeneration: Generation.en4thWave),
+    .vox: Talent(id: TalentEnum.vox.rawValue, names: [.en: "Vox Akuma", .ja: "ヴォックス・アクマ"], inGeneration: Generation.en4thWave),
+
+    // MARK: - EN Fifth Wave: Noctyx
+    .sonny: Talent(id: TalentEnum.sonny.rawValue, names: [.en: "Sonny Brisko", .ja: "サニー・ブリスコー"], inGeneration: Generation.en5thWave),
+    .uki: Talent(id: TalentEnum.uki.rawValue, names: [.en: "Uki Violeta", .ja: "浮奇・ヴィオレタ"], inGeneration: Generation.en5thWave),
+    .alban: Talent(id: TalentEnum.alban.rawValue, names: [.en: "Alban Knox", .ja: "アルバーン・ノックス"], inGeneration: Generation.en5thWave),
+    .fulgur: Talent(id: TalentEnum.fulgur.rawValue, names: [.en: "Fulgur Ovid", .ja: "ファルガー・オーヴィド"], inGeneration: Generation.en5thWave),
+    .yugo: Talent(id: TalentEnum.yugo.rawValue, names: [.en: "Yugo Asuma", .ja: "遊間ユーゴ"], inGeneration: Generation.en5thWave),
+
+    // MARK: - EN Sixth Wave: ILUNA
+    .kyo: Talent(id: TalentEnum.kyo.rawValue, names: [.en: "Kyo Kaneko", .ja: "金子 鏡"], inGeneration: Generation.en6thWave),
+    .maria: Talent(id: TalentEnum.maria.rawValue, names: [.en: "Maria Marionette", .ja: "マリア マリオネット"], inGeneration: Generation.en6thWave),
+    .aster: Talent(id: TalentEnum.aster.rawValue, names: [.en: "Aster Arcadia", .ja: "アスター アルカディア"], inGeneration: Generation.en6thWave),
+    .aia: Talent(id: TalentEnum.aia.rawValue, names: [.en: "Aia Amare", .ja: "アイア アマレ"], inGeneration: Generation.en6thWave),
+    .ren: Talent(id: TalentEnum.ren.rawValue, names: [.en: "Ren Zotto", .ja: "レン ゾット"], inGeneration: Generation.en6thWave),
+    .scarle: Talent(id: TalentEnum.scarle.rawValue, names: [.en: "Scarle Yonaguni", .ja: "スカーレ ヨナグニ"], inGeneration: Generation.en6thWave),
+
+    // MARK: - Official/Other Channels
+    .nijisanji: Talent(id: TalentEnum.nijisanji.rawValue, names: [.en: "Nijisanji", .ja: "にじさんじ"], inGeneration: Generation.nijisanjiOfficial),
+    .nijisanjiID: Talent(id: TalentEnum.nijisanjiID.rawValue, names: [.en: "NIJISANJI ID Official", .ja: "NIJISANJI ID Official"], inGeneration: Generation.nijisanjiOfficial),
+    .nijisanjiEN: Talent(id: TalentEnum.nijisanjiEN.rawValue, names: [.en: "NIJISANJI EN Official", .ja: "NIJISANJI EN Official"], inGeneration: Generation.nijisanjiOfficial),
+    .virtual: Talent(id: TalentEnum.virtual.rawValue, names: [.en: "Virtual Talent Academy", .ja: "バーチャル・タレント・アカデミー"], inGeneration: Generation.nijisanjiOfficial),
+    .VOLTACTION: Talent(id: TalentEnum.VOLTACTION.rawValue, names: [.en: "VOLTACTION", .ja: "VOLTACTION"], inGeneration: Generation.nijisanjiOfficial),
+    .luxiem: Talent(id: TalentEnum.luxiem.rawValue, names: [.en: "Luxiem Channel", .ja: "Luxiem Channel"], inGeneration: Generation.nijisanjiOfficial),
+    .rofmao: Talent(id: TalentEnum.rofmao.rawValue, names: [.en: "ROF-MAO Channel", .ja: "ろふまおチャンネル"], inGeneration: Generation.nijisanjiOfficial),
+    .Nornis: Talent(id: TalentEnum.Nornis.rawValue, names: [.en: "Nornis", .ja: "Nornis"], inGeneration: Generation.nijisanjiOfficial),
+    .ChroNoiR: Talent(id: TalentEnum.ChroNoiR.rawValue, names: [.en: "ChroNoiR", .ja: "ChroNoiR"], inGeneration: Generation.nijisanjiOfficial),
 ]
 
 let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
