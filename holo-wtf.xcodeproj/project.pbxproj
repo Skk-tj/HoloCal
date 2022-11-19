@@ -13,6 +13,9 @@
 		F004E8CB285D058000ABDFED /* SingleSongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004E8CA285D058000ABDFED /* SingleSongView.swift */; };
 		F0050DAA28CFEDE1004532CB /* UpcomingAccessoryRectangularWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0050DA928CFEDE1004532CB /* UpcomingAccessoryRectangularWidgetView.swift */; };
 		F008BBA229235DBA00034AF4 /* ManageGenerationOrderAgencySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F008BBA129235DBA00034AF4 /* ManageGenerationOrderAgencySelectionView.swift */; };
+		F008BBA42928DA4600034AF4 /* AgencySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F008BBA32928DA4600034AF4 /* AgencySelectionView.swift */; };
+		F008BBA52928DA4600034AF4 /* AgencySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F008BBA32928DA4600034AF4 /* AgencySelectionView.swift */; };
+		F008BBA72928DD5100034AF4 /* ManageFavoriteAgencySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F008BBA62928DD5100034AF4 /* ManageFavoriteAgencySelectionView.swift */; };
 		F009023827EDB6AE00E343B0 /* LiveTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009023727EDB6AE00E343B0 /* LiveTimeView.swift */; };
 		F009023A27EDB85100E343B0 /* LiveViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009023927EDB85100E343B0 /* LiveViewToolbar.swift */; };
 		F009023B27EE255B00E343B0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F009023D27EE255B00E343B0 /* Localizable.strings */; };
@@ -300,6 +303,8 @@
 		F004E8CA285D058000ABDFED /* SingleSongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSongView.swift; sourceTree = "<group>"; };
 		F0050DA928CFEDE1004532CB /* UpcomingAccessoryRectangularWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingAccessoryRectangularWidgetView.swift; sourceTree = "<group>"; };
 		F008BBA129235DBA00034AF4 /* ManageGenerationOrderAgencySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageGenerationOrderAgencySelectionView.swift; sourceTree = "<group>"; };
+		F008BBA32928DA4600034AF4 /* AgencySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgencySelectionView.swift; sourceTree = "<group>"; };
+		F008BBA62928DD5100034AF4 /* ManageFavoriteAgencySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageFavoriteAgencySelectionView.swift; sourceTree = "<group>"; };
 		F009023727EDB6AE00E343B0 /* LiveTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTimeView.swift; sourceTree = "<group>"; };
 		F009023927EDB85100E343B0 /* LiveViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewToolbar.swift; sourceTree = "<group>"; };
 		F009023C27EE255B00E343B0 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -705,11 +710,13 @@
 			children = (
 				F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */,
 				F080A05027F993DC00DBC08D /* ManageFavoriteView.swift */,
+				F008BBA62928DD5100034AF4 /* ManageFavoriteAgencySelectionView.swift */,
 				F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */,
 				F065857C28CFF4C6001672E1 /* ManageGenerationVisibilityView.swift */,
 				F04EB66628D2A0A000F168CB /* ManageGenerationOrderView.swift */,
-				F025203628E10AB600976972 /* SpecialThanksView.swift */,
 				F008BBA129235DBA00034AF4 /* ManageGenerationOrderAgencySelectionView.swift */,
+				F025203628E10AB600976972 /* SpecialThanksView.swift */,
+				F008BBA32928DA4600034AF4 /* AgencySelectionView.swift */,
 			);
 			path = SharedUI;
 			sourceTree = "<group>";
@@ -1206,9 +1213,11 @@
 				F009024027EE57BA00E343B0 /* LinkedVideoView.swift in Sources */,
 				F009024627EE6A9F00E343B0 /* VideoContextMenu.swift in Sources */,
 				F080A04F27F95D9E00DBC08D /* TalentData.swift in Sources */,
+				F008BBA72928DD5100034AF4 /* ManageFavoriteAgencySelectionView.swift in Sources */,
 				F0EB53B62812BD6F0024E089 /* FavouriteButton.swift in Sources */,
 				F080A05127F993DC00DBC08D /* ManageFavoriteView.swift in Sources */,
 				F05E9EB927EB3C6100EF48DD /* LivePaneView.swift in Sources */,
+				F008BBA42928DA4600034AF4 /* AgencySelectionView.swift in Sources */,
 				F0673C1227732CE7009C65C6 /* UpcomingCellView.swift in Sources */,
 				F009023A27EDB85100E343B0 /* LiveViewToolbar.swift in Sources */,
 				F09D25BE27FC2552001A7D71 /* SettingsTalentStarView.swift in Sources */,
@@ -1302,6 +1311,7 @@
 				F0CA6EB228D7C0410028CB11 /* holo_wtf_watchApp.swift in Sources */,
 				F04D755028D7CC1F0096B8AB /* DataStatusIndicatorView.swift in Sources */,
 				F04D148128DD523C00750B71 /* LiveAccessoryCornerEntryView.swift in Sources */,
+				F008BBA52928DA4600034AF4 /* AgencySelectionView.swift in Sources */,
 				F04D148528DD53CE00750B71 /* SingleVideoWidgetEntry.swift in Sources */,
 				F00BD6D229052AC400D7932E /* VideoViewModel.swift in Sources */,
 				F0CA6EC928D7C2BE0028CB11 /* TalentData.swift in Sources */,
