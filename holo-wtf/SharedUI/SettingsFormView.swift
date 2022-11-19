@@ -95,7 +95,7 @@ struct SettingsFormView: View {
                     Text("SETTINGS_MANAGE_GENERATION_VISIBILITY")
                 }
                 
-                NavigationLink(destination: ManageGenerationOrderView(), label: {
+                NavigationLink(destination: ManageGenerationOrderAgencySelectionView(), label: {
                     Text("SETTINGS_MANAGE_GENERATION_ORDER")
                 })
             }

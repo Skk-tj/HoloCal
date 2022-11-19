@@ -12,6 +12,7 @@
 		F004E8C9285D045D00ABDFED /* SongListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004E8C8285D045D00ABDFED /* SongListView.swift */; };
 		F004E8CB285D058000ABDFED /* SingleSongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004E8CA285D058000ABDFED /* SingleSongView.swift */; };
 		F0050DAA28CFEDE1004532CB /* UpcomingAccessoryRectangularWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0050DA928CFEDE1004532CB /* UpcomingAccessoryRectangularWidgetView.swift */; };
+		F008BBA229235DBA00034AF4 /* ManageGenerationOrderAgencySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F008BBA129235DBA00034AF4 /* ManageGenerationOrderAgencySelectionView.swift */; };
 		F009023827EDB6AE00E343B0 /* LiveTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009023727EDB6AE00E343B0 /* LiveTimeView.swift */; };
 		F009023A27EDB85100E343B0 /* LiveViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009023927EDB85100E343B0 /* LiveViewToolbar.swift */; };
 		F009023B27EE255B00E343B0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F009023D27EE255B00E343B0 /* Localizable.strings */; };
@@ -154,7 +155,6 @@
 		F09D25C928020B12001A7D71 /* UpcomingViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25C828020B12001A7D71 /* UpcomingViewToolbar.swift */; };
 		F09D25E52802EA09001A7D71 /* SwipableLinkedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25E42802EA09001A7D71 /* SwipableLinkedCellView.swift */; };
 		F09D25F328041CC3001A7D71 /* iPadSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25F228041CC3001A7D71 /* iPadSidebarView.swift */; };
-		F0A5B7BC282112FF004E319F /* ManageGenerationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A5B7BB282112FF004E319F /* ManageGenerationView.swift */; };
 		F0AC584728CFCA5C0088151C /* LiveStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AC584628CFCA5C0088151C /* LiveStackView.swift */; };
 		F0AC584928CFCBC20088151C /* UpcomingStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AC584828CFCBC20088151C /* UpcomingStackView.swift */; };
 		F0AC584B28CFCC580088151C /* SettingsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AC584A28CFCC580088151C /* SettingsStackView.swift */; };
@@ -299,6 +299,7 @@
 		F004E8C8285D045D00ABDFED /* SongListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListView.swift; sourceTree = "<group>"; };
 		F004E8CA285D058000ABDFED /* SingleSongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSongView.swift; sourceTree = "<group>"; };
 		F0050DA928CFEDE1004532CB /* UpcomingAccessoryRectangularWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingAccessoryRectangularWidgetView.swift; sourceTree = "<group>"; };
+		F008BBA129235DBA00034AF4 /* ManageGenerationOrderAgencySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageGenerationOrderAgencySelectionView.swift; sourceTree = "<group>"; };
 		F009023727EDB6AE00E343B0 /* LiveTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTimeView.swift; sourceTree = "<group>"; };
 		F009023927EDB85100E343B0 /* LiveViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewToolbar.swift; sourceTree = "<group>"; };
 		F009023C27EE255B00E343B0 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -380,7 +381,6 @@
 		F09D25C828020B12001A7D71 /* UpcomingViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewToolbar.swift; sourceTree = "<group>"; };
 		F09D25E42802EA09001A7D71 /* SwipableLinkedCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipableLinkedCellView.swift; sourceTree = "<group>"; };
 		F09D25F228041CC3001A7D71 /* iPadSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadSidebarView.swift; sourceTree = "<group>"; };
-		F0A5B7BB282112FF004E319F /* ManageGenerationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageGenerationView.swift; sourceTree = "<group>"; };
 		F0AC584628CFCA5C0088151C /* LiveStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStackView.swift; sourceTree = "<group>"; };
 		F0AC584828CFCBC20088151C /* UpcomingStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingStackView.swift; sourceTree = "<group>"; };
 		F0AC584A28CFCC580088151C /* SettingsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStackView.swift; sourceTree = "<group>"; };
@@ -708,8 +708,8 @@
 				F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */,
 				F065857C28CFF4C6001672E1 /* ManageGenerationVisibilityView.swift */,
 				F04EB66628D2A0A000F168CB /* ManageGenerationOrderView.swift */,
-				F0A5B7BB282112FF004E319F /* ManageGenerationView.swift */,
 				F025203628E10AB600976972 /* SpecialThanksView.swift */,
+				F008BBA129235DBA00034AF4 /* ManageGenerationOrderAgencySelectionView.swift */,
 			);
 			path = SharedUI;
 			sourceTree = "<group>";
@@ -1229,7 +1229,6 @@
 				F0954BEA2817D0C500369EC4 /* CompactListView.swift in Sources */,
 				F05E9EB327EB27F800EF48DD /* LiveiPadView.swift in Sources */,
 				F0C657D627732690004AF802 /* Util.swift in Sources */,
-				F0A5B7BC282112FF004E319F /* ManageGenerationView.swift in Sources */,
 				F09D25C327FEC12D001A7D71 /* SettingsFormView.swift in Sources */,
 				F05E9EB527EB290000EF48DD /* UpcomingiPadView.swift in Sources */,
 				F0ED2AEA280AA37B00683E6C /* LiveCardListView.swift in Sources */,
@@ -1254,6 +1253,7 @@
 				F025203728E10AB600976972 /* SpecialThanksView.swift in Sources */,
 				F009024427EE5F3100E343B0 /* UpcomingTimeView.swift in Sources */,
 				F0C657BB2771F47C004AF802 /* holo_wtfApp.swift in Sources */,
+				F008BBA229235DBA00034AF4 /* ManageGenerationOrderAgencySelectionView.swift in Sources */,
 				F0673C0E27732BA3009C65C6 /* UpcomingView.swift in Sources */,
 				F0E45D1828F39AD90091474A /* Agency.swift in Sources */,
 				F0954BE82817CD7800369EC4 /* CardListView.swift in Sources */,
