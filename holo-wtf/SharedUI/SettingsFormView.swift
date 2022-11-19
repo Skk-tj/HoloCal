@@ -87,7 +87,7 @@ struct SettingsFormView: View {
             }
             
             Section("SETTINGS_CHANNEL_MANAGEMENT_HEADER") {
-                NavigationLink(destination: ManageFavoriteView()) {
+                NavigationLink(destination: ManageFavoriteAgencySelectionView()) {
                     Text("SETTINGS_MANAGE_FAVOURITE")
                 }
                 
