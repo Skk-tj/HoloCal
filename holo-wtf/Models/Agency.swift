@@ -50,7 +50,7 @@ extension Vtuberable {
     }
 }
 
-enum AgencyEnum: String {
+enum AgencyEnum: String, CaseIterable {
     case hololive = "Hololive"
     case nijisanji = "Nijisanji"
 }
@@ -58,11 +58,12 @@ enum AgencyEnum: String {
 struct Agency: Identifiable, Hashable, Vtuberable {
     let id: AgencyEnum
     let names: [NameLanguage: String]
+    let icon: String
 }
 
 let agencyEnumToAgency = [
-    AgencyEnum.hololive: Agency(id: AgencyEnum.hololive, names: [.en: "Hololive", .ja: "ホロライブ"]),
-    AgencyEnum.nijisanji: Agency(id: AgencyEnum.nijisanji, names: [.en: "Nijisanji", .ja: "にじさんじ"]),
+    AgencyEnum.hololive: Agency(id: AgencyEnum.hololive, names: [.en: "Hololive", .ja: "ホロライブ"], icon: "arrowtriangle.right.fill"),
+    AgencyEnum.nijisanji: Agency(id: AgencyEnum.nijisanji, names: [.en: "Nijisanji", .ja: "にじさんじ"], icon: "dot.radiowaves.right"),
 ]
 
 let agencyEnumToGenerations: [AgencyEnum: [Generation]] = [

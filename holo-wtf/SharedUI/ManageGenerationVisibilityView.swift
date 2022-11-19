@@ -14,34 +14,36 @@ struct ManageGenerationVisibilityView: View {
     
     var body: some View {
         List {
-            Section(content: {
-                ForEach(Generation.allCases, id: \.self) { generation in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("\(generation.getLocalizedName())")
-                            Text("\(generation.getAltLocalizedName())")
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-                        }
-                        Spacer()
-                        
-                        Button(action: {
-                            if !generationSelected.contains(generation) {
-                                generationSelected.insert(generation)
-                            } else {
-                                generationSelected.remove(generation)
+            ForEach(AgencyEnum.allCases, id: \.self) { agency in
+                Section(content: {
+                    ForEach(agencyEnumToGenerations[agency]!, id: \.self) { generation in
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text("\(generation.getLocalizedName())")
+                                Text("\(generation.getAltLocalizedName())")
+                                    .font(.caption)
+                                    .foregroundColor(.secondary)
                             }
-                        }) {
-                            Label("Show", systemImage: generationSelected.contains(generation) ? "star.fill" : "star")
-                                .labelStyle(.iconOnly)
+                            Spacer()
+                            
+                            Button(action: {
+                                if !generationSelected.contains(generation) {
+                                    generationSelected.insert(generation)
+                                } else {
+                                    generationSelected.remove(generation)
+                                }
+                            }) {
+                                Label("Show", systemImage: generationSelected.contains(generation) ? "star.fill" : "star")
+                                    .labelStyle(.iconOnly)
+                            }
                         }
                     }
-                }
-            }, footer: {
-                Text("SETTINGS_MANAGE_GENERATION_VISIBILITY_SECTION_FOOTER")
-            })
+                }, header: {
+                    Text(agencyEnumToAgency[agency]!.localizedName)
+                })
+            }
             
-            Section {
+            Section(content: {
                 Button(role: .destructive, action: {
                     showResetAlert = true
                 }, label: {
@@ -54,10 +56,12 @@ struct ManageGenerationVisibilityView: View {
                 }, message: {
                     Text("SETTINGS_MANAGE_GENERATION_VISIBILITY_RESET_ALERT_TEXT")
                 })
-            }
+            }, footer: {
+                Text("SETTINGS_MANAGE_GENERATION_VISIBILITY_SECTION_FOOTER")
+            })
         }
         .onChange(of: generationSelected, perform: { newValue in
-            excludedGenerations =  Set(Generation.allCases).symmetricDifference(newValue)
+            excludedGenerations = Set(Generation.allCases).symmetricDifference(newValue)
         })
         .navigationTitle("SETTINGS_MANAGE_GENERATION_VISIBILITY_VIEW_TITLE")
     }

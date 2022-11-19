@@ -179,3 +179,6 @@
 "DST_REMINDER_VIEW_TITLE" = "夏時間リマインダー";
 "DST_REMINDER_VIEW_TEXT %@ %lld" = "Daylight Saving Time is %@ in **%lld days**. As Japan does not observe Daylight Saving Time, please double-check the stream time. ";
 "DST_REMINDER_VIEW_FOOTER" = "このデバイスは、夏時間タイムゾーンに設定されています。位置情報は使用されていません。";
+
+// Agency related
+"SETTINGS_SELECT_AGENCY_NAVIGATION_TITLE" = "事務所";

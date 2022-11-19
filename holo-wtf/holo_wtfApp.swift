@@ -13,8 +13,10 @@ struct holo_wtfApp: App {
     @AppStorage(UserDefaultKeys.isShowingDSTReminder) var isShowingDSTReminder = false
     
     @AppStorage("generationListSelection") var generationSelected = Set(Generation.allCases)
-    @AppStorage("generationListOrder") var generationOrder = Generation.allCases
     @AppStorage("excludedGenerations") var excludedGenerations = Set<Generation>()
+    
+    @AppStorage("hololiveGenerationListOrder") var hololiveGenerationListOrder = agencyEnumToGenerations[AgencyEnum.hololive]!
+    @AppStorage("nijisanjiGenerationListOrder") var nijisanjiGenerationListOrder = agencyEnumToGenerations[AgencyEnum.nijisanji]!
     
     init() {
         // MARK: - Setup DST Warning
@@ -32,13 +34,18 @@ struct holo_wtfApp: App {
             isShowingDSTReminder = false
         }
         
-        // MARK: - When we add generations, we need to handle previous user preferences
+        // When we add generations, we need to handle previous user preferences
         generationSelected = Set(Generation.allCases).subtracting(excludedGenerations)
         
-        // MARK: - Also add the new generation to the order list
-        if generationOrder.count != Generation.allCases.count {
-            let difference = Set(Generation.allCases).symmetricDifference(generationOrder)
-            generationOrder.append(contentsOf: difference)
+        // Also add the new generation to the order list
+        if hololiveGenerationListOrder.count != agencyEnumToGenerations[AgencyEnum.hololive]!.count {
+            let difference = Set(agencyEnumToGenerations[AgencyEnum.hololive]!).symmetricDifference(hololiveGenerationListOrder)
+            hololiveGenerationListOrder.append(contentsOf: difference)
+        }
+        
+        if nijisanjiGenerationListOrder.count != agencyEnumToGenerations[AgencyEnum.nijisanji]!.count {
+            let difference = Set(agencyEnumToGenerations[AgencyEnum.nijisanji]!).symmetricDifference(nijisanjiGenerationListOrder)
+            nijisanjiGenerationListOrder.append(contentsOf: difference)
         }
     }
     
