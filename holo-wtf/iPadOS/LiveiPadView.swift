@@ -8,13 +8,9 @@
 import SwiftUI
 
 struct LiveiPadView: View {
-    @StateObject var live: LiveViewModel
+    @StateObject var live: LiveViewModel = LiveViewModel(for: .hololive)
     
     @State var currentPresentationMode: PresentationMode = .normal
-    
-    init() {
-        self._live = StateObject(wrappedValue: LiveViewModel(for: .hololive))
-    }
     
     var body: some View {
         iPadLazyGirdView(singleVideoView: { live in

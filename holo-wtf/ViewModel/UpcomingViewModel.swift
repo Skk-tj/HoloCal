@@ -7,7 +7,6 @@
 
 import Foundation
 
-@MainActor
 class UpcomingViewModel: VideoViewModel {
     let videoUrl: String
     
@@ -22,6 +21,7 @@ class UpcomingViewModel: VideoViewModel {
         super.init(for: agency)
     }
     
+    @MainActor
     func getUpcoming() async {
         let upcomingLookAhead = getUpcomingStreamLookAheadHoursFromUserDefaults()
         

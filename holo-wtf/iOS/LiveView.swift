@@ -8,15 +8,11 @@
 import SwiftUI
 
 struct LiveView: View {
-    @StateObject var live: LiveViewModel
+    @StateObject var live: LiveViewModel = LiveViewModel(for: .hololive)
     
     @AppStorage(UserDefaultKeys.isShowingCompactInLiveView) var isShowingCompactInLiveView: Bool = false
     
     @State var currentPresentationMode: PresentationMode = .normal
-    
-    init() {
-        self._live = StateObject(wrappedValue: LiveViewModel(for: .hololive))
-    }
     
     var body: some View {
         NavigationView {

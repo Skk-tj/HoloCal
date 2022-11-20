@@ -7,7 +7,6 @@
 
 import Foundation
 
-@MainActor
 class LiveViewModel: VideoViewModel {
     let videoUrl: String
     
@@ -22,6 +21,7 @@ class LiveViewModel: VideoViewModel {
         super.init(for: agency)
     }
     
+    @MainActor
     func getLive() async {
         await getVideo(url: videoUrl) { responseResult in
             self.videoList = responseResult

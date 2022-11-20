@@ -8,15 +8,11 @@
 import SwiftUI
 
 struct UpcomingView: View {
-    @StateObject var upcoming: UpcomingViewModel
+    @StateObject var upcoming: UpcomingViewModel = UpcomingViewModel(for: .hololive)
     
     @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingView) var isShowingCompactInUpcomingView: Bool = false
     
     @State var currentPresentationMode: PresentationMode = .normal
-    
-    init() {
-        self._upcoming = StateObject(wrappedValue: UpcomingViewModel(for: .hololive))
-    }
     
     var body: some View {
         NavigationView {
