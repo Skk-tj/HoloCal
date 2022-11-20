@@ -53,6 +53,10 @@ extension Vtuberable {
 enum AgencyEnum: String, CaseIterable {
     case hololive = "Hololive"
     case nijisanji = "Nijisanji"
+    
+    func getAgency() -> Agency {
+        return agencyEnumToAgency[self]!
+    }
 }
 
 struct Agency: Identifiable, Hashable, Vtuberable {

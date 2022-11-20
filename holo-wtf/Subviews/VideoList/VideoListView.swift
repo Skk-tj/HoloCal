@@ -73,7 +73,7 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
             }
             .listRowSeparator(.hidden)
         }
-        .searchable(text: $searchText, prompt: "SEARCH_BY_NAME_OR_TAG") {
+        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "SEARCH_BY_NAME_OR_TAG") {
             if searchText.isEmpty {
                 ForEach(viewModel.getSearchSuggestions(), id: \.self) { suggestion in
                     HStack {
