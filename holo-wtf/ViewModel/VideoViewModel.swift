@@ -33,7 +33,6 @@ struct SearchSuggestion: Hashable {
     let category: SearchSuggestionCategory
 }
 
-@MainActor
 class VideoViewModel: ObservableObject {
     @Published var videoList: [LiveVideo]
     @Published var dataStatus: DataStatus
@@ -48,6 +47,7 @@ class VideoViewModel: ObservableObject {
     
     let logger = Logger()
     
+    @MainActor
     func getVideo(url: String, completion: @escaping ([LiveVideo]) -> Void) async {
         self.dataStatus = .working
         
@@ -71,6 +71,7 @@ class VideoViewModel: ObservableObject {
         return LiveVideo(id: video.id, title: video.title, topicId: video.topicId, startScheduled: video.startScheduled, startActual: video.startActual, liveViewers: video.liveViewers, mentions: video.mentions, songs: video.songs, channel: await self.updatedWithTwitter(channel: video.channel))
     }
     
+    @MainActor
     func getTwitterForAll(videoList: [LiveVideo]) async throws -> [LiveVideo] {
         try await withThrowingTaskGroup(of: LiveVideo.self) { group in
             videoList.forEach { video in
@@ -116,6 +117,7 @@ class VideoViewModel: ObservableObject {
         return suggestionsList
     }
     
+    @MainActor
     func sortVideos(by strategy: SortingStrategy) {
         switch strategy {
         case .viewersAsc:

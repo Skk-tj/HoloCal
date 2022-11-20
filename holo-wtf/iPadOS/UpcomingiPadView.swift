@@ -8,13 +8,9 @@
 import SwiftUI
 
 struct UpcomingiPadView: View {
-    @StateObject var upcoming: UpcomingViewModel
+    @StateObject var upcoming: UpcomingViewModel = UpcomingViewModel(for: .hololive)
     
     @State var currentPresentationMode: PresentationMode = .normal
-    
-    init() {
-        self._upcoming = StateObject(wrappedValue: UpcomingViewModel(for: .hololive))
-    }
     
     var body: some View {
         iPadLazyGirdView(singleVideoView: { live in
