@@ -8,7 +8,18 @@
 import SwiftUI
 
 struct AgencySelectionView<Content: View>: View {
+    let viewTitle: String?
     @ViewBuilder let targetView: (_ agency: AgencyEnum) -> Content
+    
+    init(targetView: @escaping (_ agency: AgencyEnum) -> Content) {
+        self.viewTitle = nil
+        self.targetView = targetView
+    }
+    
+    init(viewTitle: String, targetView: @escaping (_ agency: AgencyEnum) -> Content) {
+        self.viewTitle = viewTitle
+        self.targetView = targetView
+    }
     
     var body: some View {
         List {
@@ -23,7 +34,7 @@ struct AgencySelectionView<Content: View>: View {
                 })
             }
         }
-        .navigationTitle("SETTINGS_SELECT_AGENCY_NAVIGATION_TITLE")
+        .navigationTitle(LocalizedStringKey(viewTitle ?? "SETTINGS_SELECT_AGENCY_NAVIGATION_TITLE"))
     }
 }
 

@@ -61,27 +61,47 @@ struct holo_wtfApp: App {
                 // iOS
                 TabView {
                     if #available(iOS 16.0, *) {
-                        LiveStackView()
-                            .tabItem {
-                                Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
-                            }
-                        UpcomingStackView()
-                            .tabItem() {
-                                Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
-                            }
+                        NavigationStack {
+                            AgencySelectionView(viewTitle: "ROOT_VIEW_LIVE", targetView: { agency in
+                                LiveStackView(for: agency)
+                            })
+                        }
+                        .tabItem {
+                            Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
+                        }
+                        
+                        NavigationStack {
+                            AgencySelectionView(viewTitle: "ROOT_VIEW_UPCOMING", targetView: { agency in
+                                UpcomingStackView(for: agency)
+                            })
+                        }
+                        .tabItem() {
+                            Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
+                        }
+                        
                         SettingsStackView()
                             .tabItem {
                                 Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
                             }
                     } else {
-                        LiveView()
-                            .tabItem {
-                                Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
-                            }
-                        UpcomingView()
-                            .tabItem() {
-                                Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
-                            }
+                        NavigationView {
+                            AgencySelectionView(viewTitle: "ROOT_VIEW_LIVE", targetView: { agency in
+                                LiveView(for: agency)
+                            })
+                        }
+                        .tabItem {
+                            Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
+                        }
+                        
+                        NavigationView {
+                            AgencySelectionView(viewTitle: "ROOT_VIEW_UPCOMING", targetView: { agency in
+                                UpcomingView(for: agency)
+                            })
+                        }
+                        .tabItem() {
+                            Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
+                        }
+                        
                         SettingsView()
                             .tabItem {
                                 Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
