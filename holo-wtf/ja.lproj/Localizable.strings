@@ -10,6 +10,7 @@
 "ROOT_VIEW_LIVE" = "ライブ配信中";
 "ROOT_VIEW_UPCOMING" = "今後のライブ配信";
 "ROOT_VIEW_SETTINGS" = "設定";
+"ROOT_VIEW_FAVOURITES" = "お気に入り";
 
 // Settings
 
@@ -74,6 +75,7 @@
 // Upcoming Cell View
 
 "UPCOMING_CELL_VIEW_STARTING_IN %@" = "%@後にライブ配信";
+"UPCOMING_CELL_VIEW_STARTING_IN_SHORT %@" = "%@後";
 "UPCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN" = "開始時間不明";
 "UPCOMING_CELL_VIEW_STARTING_AT %@" = "%@に予定";
 

@@ -74,6 +74,7 @@
 // Upcoming Cell View
 
 "UPCOMING_CELL_VIEW_STARTING_IN %@" = "Starting in %@";
+"UPCOMING_CELL_VIEW_STARTING_IN_SHORT %@" = "In %@";
 "UPCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN" = "No starting time";
 "UPCOMING_CELL_VIEW_STARTING_AT %@" = "Starting at %@";
 

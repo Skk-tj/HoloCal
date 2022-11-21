@@ -234,6 +234,7 @@
 		F0F0EAB7292B47CF0091DBD7 /* UIFavouriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F0EAB6292B47CF0091DBD7 /* UIFavouriteListView.swift */; };
 		F0F0EAB9292B48910091DBD7 /* UIListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F0EAB8292B48910091DBD7 /* UIListView.swift */; };
 		F0F0EABB292B49BD0091DBD7 /* VideoUIListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F0EABA292B49BD0091DBD7 /* VideoUIListView.swift */; };
+		F0F0EABD292B4EE80091DBD7 /* UpcomingFavouritesViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F0EABC292B4EE80091DBD7 /* UpcomingFavouritesViewToolbar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -446,6 +447,7 @@
 		F0F0EAB6292B47CF0091DBD7 /* UIFavouriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFavouriteListView.swift; sourceTree = "<group>"; };
 		F0F0EAB8292B48910091DBD7 /* UIListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIListView.swift; sourceTree = "<group>"; };
 		F0F0EABA292B49BD0091DBD7 /* VideoUIListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoUIListView.swift; sourceTree = "<group>"; };
+		F0F0EABC292B4EE80091DBD7 /* UpcomingFavouritesViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingFavouritesViewToolbar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -869,6 +871,7 @@
 				F009023927EDB85100E343B0 /* LiveViewToolbar.swift */,
 				F09D25C828020B12001A7D71 /* UpcomingViewToolbar.swift */,
 				F0F0EAA1292B306E0091DBD7 /* LiveFavouritesViewToolbar.swift */,
+				F0F0EABC292B4EE80091DBD7 /* UpcomingFavouritesViewToolbar.swift */,
 			);
 			path = Toolbar;
 			sourceTree = "<group>";
@@ -1240,6 +1243,7 @@
 				F09D25BE27FC2552001A7D71 /* SettingsTalentStarView.swift in Sources */,
 				F0954BEC2817D63100369EC4 /* VideoListView.swift in Sources */,
 				F0ED2AE22806858300683E6C /* Channel.swift in Sources */,
+				F0F0EABD292B4EE80091DBD7 /* UpcomingFavouritesViewToolbar.swift in Sources */,
 				F0F0EAB1292B41250091DBD7 /* VideoUIFavouriteListView.swift in Sources */,
 				F0954BDE2817B73E00369EC4 /* SearchSectionView.swift in Sources */,
 				F0E4873F2877F73500118BBB /* LiveCollabListView.swift in Sources */,

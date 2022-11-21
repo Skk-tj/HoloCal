@@ -10,9 +10,11 @@ import Foundation
 class UpcomingFavoritesViewModel: VideoViewModel {
     @MainActor
     func getUpcoming() async {
-        await getVideo(url: allUpcomingURL) { responseResult in
+        let upcomingLookAhead = getUpcomingStreamLookAheadHoursFromUserDefaults()
+        
+        await getVideo(url: String(format: allUpcomingURL, upcomingLookAhead)) { responseResult in
             self.videoList = responseResult
-            self.videoList.sort(by: upcomingSortStrategy)
+            self.sortVideos(by: .timeAsc)
             self.videoList = self.videoList.filter {
                 return $0.isHololive || $0.isNijisanji
             }

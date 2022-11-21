@@ -25,7 +25,7 @@ class LiveViewModel: VideoViewModel {
     func getLive() async {
         await getVideo(url: videoUrl) { responseResult in
             self.videoList = responseResult
-            self.videoList.sort(by: liveSortStrategy)
+            self.sortVideos(by: .timeDesc)
             self.videoList = self.videoList.filter {
                 switch self.agency {
                 case .hololive:

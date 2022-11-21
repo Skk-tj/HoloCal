@@ -24,7 +24,7 @@ struct WatchUpcomingCellView: View {
                     .lineLimit(1)
                     .foregroundColor(.secondary)
                 
-                UpcomingTimeView(liveSchedule: upcoming.startScheduled, fontSize: .caption2)
+                UpcomingTimeView(liveSchedule: upcoming.startScheduled, fontSize: .caption2, shortMode: true)
             }
         }
     }
