@@ -11,8 +11,7 @@ import SwiftUI
 ///
 /// The logic that filters non-favourited videos and the logic that determines the category are stored here.
 /// This view accepts another `View` for what the video will be fit into.
-struct SectionedNotFavouritedForEachView<Content: View>: View {
-    @AppStorage("favouritedChannel") var favourited = Favourited()
+struct SectionedForEachView<Content: View>: View {
     @AppStorage("generationListSelection") var generationListSelection = Set(Generation.allCases)
     @AppStorage("generationListOrder") var generationListOrder = Generation.allCases
     
@@ -21,11 +20,7 @@ struct SectionedNotFavouritedForEachView<Content: View>: View {
     
     @ViewBuilder
     var body: some View {
-        let filteredVideos = viewModel.videoList.filter { video in
-            !favourited.contains(where: { video.channel.id == $0 })
-        }
-        
-        let groupedDictionary = Dictionary<Generation, [LiveVideo]>(grouping: filteredVideos, by: { $0.channel.talent?.inGeneration ?? .other })
+        let groupedDictionary = Dictionary<Generation, [LiveVideo]>(grouping: viewModel.videoList, by: { $0.channel.talent?.inGeneration ?? .other })
         let filteredGenerationListOrder = generationListOrder.filter { generation in
             generationListSelection.contains(generation)
         }

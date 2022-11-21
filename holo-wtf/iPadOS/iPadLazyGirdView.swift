@@ -42,7 +42,7 @@ struct iPadLazyGirdView<VideoContent: View, DataStatusView: View>: View {
                         })
                     }
                     
-                    NotFavouritedForEachView(cellView: { live in
+                    VideoForEachView(cellView: { live in
                         singleVideoView(live)
                     })
                 } else {
