@@ -40,7 +40,7 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
             
             switch currentPresentationMode {
             case .normal:                
-                SectionedNotFavouritedForEachView(cellView: { live in
+                SectionedForEachView(cellView: { live in
                     singleVideoView(live)
                 })
             case .searching:
@@ -48,7 +48,7 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
                     singleVideoView(live)
                 })
             case .sorting:
-                NotFavouritedForEachView(cellView: { live in
+                VideoForEachView(cellView: { live in
                     singleVideoView(live)
                 })
             }

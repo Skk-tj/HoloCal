@@ -86,7 +86,7 @@
 		F04D755828D7D8430096B8AB /* SettingsWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D755728D7D8430096B8AB /* SettingsWatchView.swift */; };
 		F04D755B28D7D8DD0096B8AB /* OpenSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */; };
 		F04EB66728D2A0A000F168CB /* ManageGenerationOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04EB66628D2A0A000F168CB /* ManageGenerationOrderView.swift */; };
-		F058189A281BFFDA0064EF94 /* SectionedNotFavouritedForEachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0581899281BFFDA0064EF94 /* SectionedNotFavouritedForEachView.swift */; };
+		F058189A281BFFDA0064EF94 /* SectionedForEachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0581899281BFFDA0064EF94 /* SectionedForEachView.swift */; };
 		F05818A2281CAAF50064EF94 /* HoloCalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05818A1281CAAF50064EF94 /* HoloCalUITests.swift */; };
 		F05818A4281CAAF50064EF94 /* HoloCalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05818A3281CAAF50064EF94 /* HoloCalUITestsLaunchTests.swift */; };
 		F05DFA362853CA7800D62D19 /* BaseVideoEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05DFA352853CA7800D62D19 /* BaseVideoEntryView.swift */; };
@@ -149,7 +149,7 @@
 		F093D1ED2830372900E2A6FF /* LiveWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1E3283034AF00E2A6FF /* LiveWidgetView.swift */; };
 		F0954BDE2817B73E00369EC4 /* SearchSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BDD2817B73E00369EC4 /* SearchSectionView.swift */; };
 		F0954BE22817C52700369EC4 /* FavouritedForEachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BE12817C52700369EC4 /* FavouritedForEachView.swift */; };
-		F0954BE62817C8BF00369EC4 /* NotFavouritedForEachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BE52817C8BF00369EC4 /* NotFavouritedForEachView.swift */; };
+		F0954BE62817C8BF00369EC4 /* VideoForEachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BE52817C8BF00369EC4 /* VideoForEachView.swift */; };
 		F0954BEC2817D63100369EC4 /* VideoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BEB2817D63100369EC4 /* VideoListView.swift */; };
 		F09D25BE27FC2552001A7D71 /* SettingsTalentStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25BD27FC2552001A7D71 /* SettingsTalentStarView.swift */; };
 		F09D25C327FEC12D001A7D71 /* SettingsFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */; };
@@ -353,7 +353,7 @@
 		F04D755528D7D0CC0096B8AB /* WatchUpcomingCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchUpcomingCellView.swift; sourceTree = "<group>"; };
 		F04D755728D7D8430096B8AB /* SettingsWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWatchView.swift; sourceTree = "<group>"; };
 		F04EB66628D2A0A000F168CB /* ManageGenerationOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageGenerationOrderView.swift; sourceTree = "<group>"; };
-		F0581899281BFFDA0064EF94 /* SectionedNotFavouritedForEachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedNotFavouritedForEachView.swift; sourceTree = "<group>"; };
+		F0581899281BFFDA0064EF94 /* SectionedForEachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedForEachView.swift; sourceTree = "<group>"; };
 		F058189F281CAAF50064EF94 /* HoloCalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoloCalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F05818A1281CAAF50064EF94 /* HoloCalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoloCalUITests.swift; sourceTree = "<group>"; };
 		F05818A3281CAAF50064EF94 /* HoloCalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoloCalUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -388,7 +388,7 @@
 		F093D1E62830358400E2A6FF /* ViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtil.swift; sourceTree = "<group>"; };
 		F0954BDD2817B73E00369EC4 /* SearchSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSectionView.swift; sourceTree = "<group>"; };
 		F0954BE12817C52700369EC4 /* FavouritedForEachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritedForEachView.swift; sourceTree = "<group>"; };
-		F0954BE52817C8BF00369EC4 /* NotFavouritedForEachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotFavouritedForEachView.swift; sourceTree = "<group>"; };
+		F0954BE52817C8BF00369EC4 /* VideoForEachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoForEachView.swift; sourceTree = "<group>"; };
 		F0954BEB2817D63100369EC4 /* VideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListView.swift; sourceTree = "<group>"; };
 		F09D25BD27FC2552001A7D71 /* SettingsTalentStarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTalentStarView.swift; sourceTree = "<group>"; };
 		F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFormView.swift; sourceTree = "<group>"; };
@@ -624,8 +624,8 @@
 				F09D25BD27FC2552001A7D71 /* SettingsTalentStarView.swift */,
 				F0114D4E2815F81600B99D4D /* DataStatusIndicatorView.swift */,
 				F0954BE12817C52700369EC4 /* FavouritedForEachView.swift */,
-				F0954BE52817C8BF00369EC4 /* NotFavouritedForEachView.swift */,
-				F0581899281BFFDA0064EF94 /* SectionedNotFavouritedForEachView.swift */,
+				F0954BE52817C8BF00369EC4 /* VideoForEachView.swift */,
+				F0581899281BFFDA0064EF94 /* SectionedForEachView.swift */,
 				F0954BDD2817B73E00369EC4 /* SearchSectionView.swift */,
 				F0EB53B12812A2E90024E089 /* EventEditView.swift */,
 				F004E8C8285D045D00ABDFED /* SongListView.swift */,
@@ -1228,7 +1228,7 @@
 				F0CA6EA328D791BE0028CB11 /* Modes.swift in Sources */,
 				F0673C172775F7FB009C65C6 /* LiveAvatarView.swift in Sources */,
 				F0BD611B27EC594300A2FBED /* UpcomingPaneView.swift in Sources */,
-				F0954BE62817C8BF00369EC4 /* NotFavouritedForEachView.swift in Sources */,
+				F0954BE62817C8BF00369EC4 /* VideoForEachView.swift in Sources */,
 				F0C657BD2771F47C004AF802 /* LiveView.swift in Sources */,
 				F0EB53BD2812C5680024E089 /* OldShareButton.swift in Sources */,
 				F0AC584B28CFCC580088151C /* SettingsStackView.swift in Sources */,
@@ -1279,7 +1279,7 @@
 				F00BD6D029052AC400D7932E /* VideoViewModel.swift in Sources */,
 				F0433C5227EAEDDB000FEADD /* OpenSourceView.swift in Sources */,
 				F004E8C9285D045D00ABDFED /* SongListView.swift in Sources */,
-				F058189A281BFFDA0064EF94 /* SectionedNotFavouritedForEachView.swift in Sources */,
+				F058189A281BFFDA0064EF94 /* SectionedForEachView.swift in Sources */,
 				F0ED2B13280CB73D00683E6C /* TopicTagView.swift in Sources */,
 				F0EB53B22812A2E90024E089 /* EventEditView.swift in Sources */,
 				F0114D4F2815F81600B99D4D /* DataStatusIndicatorView.swift in Sources */,
