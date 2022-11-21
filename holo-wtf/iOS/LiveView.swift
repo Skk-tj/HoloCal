@@ -11,7 +11,7 @@ struct LiveView: View {
     @StateObject var live: LiveViewModel
     let agency: AgencyEnum
     
-    @AppStorage(UserDefaultKeys.isShowingCompactInLiveView) var isShowingCompactInLiveView: Bool = false
+    @AppStorage(UserDefaultKeys.isShowingCompactInLiveView) var isShowingCompact: Bool = false
     
     @State var currentPresentationMode: PresentationMode = .normal
     
@@ -21,51 +21,30 @@ struct LiveView: View {
     }
     
     var body: some View {
-            if isShowingCompactInLiveView {
-                LiveCompactListView(currentPresentationMode: $currentPresentationMode)
-                    .environmentObject(live as VideoViewModel)
-                    .navigationTitle(agency.getAgency().localizedName)
-                    .toolbar {
-                        ToolbarItemGroup {
-                            LiveViewToolbar(currentPresentationMode: $currentPresentationMode)
-                                .environmentObject(live as VideoViewModel)
-                        }
-                    }
-                    .task {
-                        await live.getLive()
-                        currentPresentationMode = .normal
-                    }
-                    .refreshable {
-                        await live.getLive()
-                        currentPresentationMode = .normal
-                    }
-            } else {
-                LiveCardListView(currentPresentationMode: $currentPresentationMode)
-                    .environmentObject(live as VideoViewModel)
-                    .navigationTitle(agency.getAgency().localizedName)
-                    .toolbar {
-                        ToolbarItem(placement: .primaryAction) {
-                            LiveViewToolbar(currentPresentationMode: $currentPresentationMode)
-                                .environmentObject(live as VideoViewModel)
-                        }
-                    }
-                    .task {
-                        await live.getLive()
-                        currentPresentationMode = .normal
-                    }
-                    .refreshable {
-                        await live.getLive()
-                        currentPresentationMode = .normal
-                    }
+        VideoUIListView(currentPresentationMode: $currentPresentationMode, videoType: .live, uiMode: isShowingCompact ? .compact : .card)
+            .environmentObject(live as VideoViewModel)
+            .navigationTitle(agency.getAgency().localizedName)
+            .toolbar {
+                ToolbarItemGroup {
+                    LiveViewToolbar(currentPresentationMode: $currentPresentationMode)
+                        .environmentObject(live as VideoViewModel)
+                }
+            }
+            .task {
+                await live.getLive()
+                currentPresentationMode = .normal
+            }
+            .refreshable {
+                await live.getLive()
+                currentPresentationMode = .normal
             }
     }
 }
 
 struct LiveView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            LiveView(for: .hololive)
-            LiveView(for: .nijisanji).preferredColorScheme(.dark)
-        }
+        LiveView(for: .hololive)
+        LiveView(for: .nijisanji)
+            .preferredColorScheme(.dark)
     }
 }

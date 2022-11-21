@@ -1,5 +1,5 @@
 //
-//  LiveViewToolbar.swift
+//  LiveFavouritesViewToolbar.swift
 //  holo-wtf
 //
 //
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct LiveViewToolbar: View {
-    @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInLiveView) var isShowingAbsoluteTime: Bool = false
-    @AppStorage(UserDefaultKeys.isShowingCompactInLiveView) var isShowingCompact: Bool = false
+struct LiveFavouritesViewToolbar: View {
+    @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInLiveFavouritesView) var isShowingAbsoluteTime: Bool = false
+    @AppStorage(UserDefaultKeys.isShowingCompactInLiveFavouritesView) var isShowingCompact: Bool = false
     
     @Binding var currentPresentationMode: PresentationMode
     
     /// Defines the current sorting strategy
-    @State var sortingStrategy: SortingStrategy = .notSorting
+    @State var sortingStrategy: SortingStrategy = .timeDesc
     
     @EnvironmentObject var liveViewModel: VideoViewModel
     
@@ -28,7 +28,7 @@ struct LiveViewToolbar: View {
                 if UIDevice.current.userInterfaceIdiom == .phone {
                     Button {
                         isShowingCompact.toggle()
-                        UserDefaults.standard.set(isShowingCompact, forKey: UserDefaultKeys.isShowingCompactInLiveView)
+                        UserDefaults.standard.set(isShowingCompact, forKey: UserDefaultKeys.isShowingCompactInLiveFavouritesView)
                     } label: {
                         Label(isShowingCompact ? "LIVE_VIEW_TOOLBAR_SHOW_CARD" : "LIVE_VIEW_TOOLBAR_SHOW_COMPACT", systemImage: isShowingCompact ? "rectangle.grid.1x2" : "list.bullet")
                     }
@@ -36,10 +36,6 @@ struct LiveViewToolbar: View {
             }
             
             Menu {
-                Picker("Order", selection: $sortingStrategy) {
-                    Label(UIDevice.current.userInterfaceIdiom == .phone ? "LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION" : "LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION_IPAD", systemImage: "person.fill").tag(SortingStrategy.notSorting)
-                }
-                
                 Menu {
                     Picker("Order", selection: $sortingStrategy) {
                         Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST", systemImage: "arrow.down").tag(SortingStrategy.timeDesc)
@@ -75,8 +71,8 @@ struct LiveViewToolbar: View {
     }
 }
 
-//struct LiveViewToolbar_Previews: PreviewProvider {
+//struct LiveFavouritesViewToolbar_Previews: PreviewProvider {
 //    static var previews: some View {
-//        LiveViewToolbar()
+//        LiveFavouritesViewToolbar()
 //    }
 //}

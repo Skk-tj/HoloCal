@@ -63,7 +63,11 @@ struct holo_wtfApp: App {
                     if #available(iOS 16.0, *) {
                         NavigationStack {
                             AgencySelectionView(viewTitle: "ROOT_VIEW_LIVE", targetView: { agency in
-                                LiveStackView(for: agency)
+                                LiveView(for: agency)
+                            }, extraLinks: {
+                                NavigationLink(destination: LiveFavouritesView(), label: {
+                                    Text("ROOT_VIEW_FAVOURITES")
+                                })
                             })
                         }
                         .tabItem {
@@ -72,7 +76,11 @@ struct holo_wtfApp: App {
                         
                         NavigationStack {
                             AgencySelectionView(viewTitle: "ROOT_VIEW_UPCOMING", targetView: { agency in
-                                UpcomingStackView(for: agency)
+                                UpcomingView(for: agency)
+                            }, extraLinks: {
+                                NavigationLink(destination: UpcomingFavouritesView(), label: {
+                                    Text("ROOT_VIEW_FAVOURITES")
+                                })
                             })
                         }
                         .tabItem() {
@@ -87,6 +95,10 @@ struct holo_wtfApp: App {
                         NavigationView {
                             AgencySelectionView(viewTitle: "ROOT_VIEW_LIVE", targetView: { agency in
                                 LiveView(for: agency)
+                            }, extraLinks: {
+                                NavigationLink(destination: LiveFavouritesView(), label: {
+                                    Text("ROOT_VIEW_FAVOURITES")
+                                })
                             })
                         }
                         .tabItem {
@@ -96,6 +108,10 @@ struct holo_wtfApp: App {
                         NavigationView {
                             AgencySelectionView(viewTitle: "ROOT_VIEW_UPCOMING", targetView: { agency in
                                 UpcomingView(for: agency)
+                            }, extraLinks: {
+                                NavigationLink(destination: UpcomingFavouritesView(), label: {
+                                    Text("ROOT_VIEW_FAVOURITES")
+                                })
                             })
                         }
                         .tabItem() {

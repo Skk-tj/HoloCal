@@ -1,5 +1,5 @@
 //
-//  VideoListView.swift
+//  FavouritesVideoListView.swift
 //  holo-wtf
 //
 //
@@ -7,15 +7,13 @@
 
 import SwiftUI
 
-
-/// The view that represents a general list of videos.
-struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
+struct FavouritesVideoListView<VideoContent: View, DataStatusContent: View>: View {
     @AppStorage(UserDefaultKeys.isShowingDSTReminder) var isShowingDSTReminder = false
     
+    /// Defines the current sorting strategy
     @EnvironmentObject var viewModel: VideoViewModel
     
     @State var searchText: String = ""
-    @Binding var currentPresentationMode: PresentationMode
     
     /// The view of a single video.
     @ViewBuilder let singleVideoView: (_ live: LiveVideo) -> VideoContent
@@ -24,11 +22,7 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     @ViewBuilder let dataStatusView: () -> DataStatusContent
     
     var body: some View {
-        if !searchText.isEmpty {
-            currentPresentationMode = .searching
-        }
-        
-        return List {
+        List {
             if let nextDSTTransition = TimeZone.current.nextDaylightSavingTimeTransition {
                 if let days = Calendar.current.dateComponents([.day], from: Date(), to: nextDSTTransition).day {
                     if isShowingDSTReminder {
@@ -38,20 +32,9 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
                 }
             }
             
-            switch currentPresentationMode {
-            case .normal:                
-                SectionedNotFavouritedForEachView(cellView: { live in
-                    singleVideoView(live)
-                })
-            case .searching:
-                SearchSectionView(searchText: searchText, cellView: { live in
-                    singleVideoView(live)
-                })
-            case .sorting:
-                NotFavouritedForEachView(cellView: { live in
-                    singleVideoView(live)
-                })
-            }
+            FavouritedForEachView(cellView: { video in
+                singleVideoView(video)
+            })
             
             HStack {
                 Spacer()
@@ -78,3 +61,9 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
         }
     }
 }
+
+//struct FavouritesVideoListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FavouritesVideoListView()
+//    }
+//}
