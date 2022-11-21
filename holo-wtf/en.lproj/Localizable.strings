@@ -10,6 +10,7 @@
 "ROOT_VIEW_LIVE" = "Live";
 "ROOT_VIEW_UPCOMING" = "Upcoming";
 "ROOT_VIEW_SETTINGS" = "Settings";
+"ROOT_VIEW_FAVOURITES" = "My Favourites";
 
 // Settings
 
@@ -101,6 +102,7 @@
 "LIVE_VIEW_TOOLBAR_SHOW_CARD" = "Show card view";
 "LIVE_VIEW_TOOLBAR_SORT" = "Sort...";
 "LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION" = "Sort by generation";
+"LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION_IPAD" = "Default sort";
 "LIVE_VIEW_TOOLBAR_FAVOURITES_ONLY" = "Show favourites only";
 "LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME" = "Sort by start time...";
 "LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS" = "Sort by viewers...";

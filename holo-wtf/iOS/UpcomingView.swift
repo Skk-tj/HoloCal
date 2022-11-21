@@ -11,7 +11,7 @@ struct UpcomingView: View {
     @StateObject var upcoming: UpcomingViewModel
     let agency: AgencyEnum
     
-    @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingView) var isShowingCompactInUpcomingView: Bool = false
+    @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingView) var isShowingCompact: Bool = false
     
     @State var currentPresentationMode: PresentationMode = .normal
     
@@ -21,43 +21,23 @@ struct UpcomingView: View {
     }
     
     var body: some View {
-        if isShowingCompactInUpcomingView {
-            UpcomingCompactListView(currentPresentationMode: $currentPresentationMode)
-                .environmentObject(upcoming as VideoViewModel)
-                .navigationTitle(agency.getAgency().localizedName)
-                .toolbar {
-                    ToolbarItemGroup {
-                        UpcomingViewToolbar(currentPresentationMode: $currentPresentationMode)
-                            .environmentObject(upcoming as VideoViewModel)
-                    }
+        VideoUIListView(currentPresentationMode: $currentPresentationMode, videoType: .upcoming, uiMode: isShowingCompact ? .compact : .card)
+            .environmentObject(upcoming as VideoViewModel)
+            .navigationTitle(agency.getAgency().localizedName)
+            .toolbar {
+                ToolbarItemGroup {
+                    UpcomingViewToolbar(currentPresentationMode: $currentPresentationMode)
+                        .environmentObject(upcoming as VideoViewModel)
                 }
-                .task {
-                    await upcoming.getUpcoming()
-                    currentPresentationMode = .normal
-                }
-                .refreshable {
-                    await upcoming.getUpcoming()
-                    currentPresentationMode = .normal
-                }
-        } else {
-            UpcomingCardListView(currentPresentationMode: $currentPresentationMode)
-                .environmentObject(upcoming as VideoViewModel)
-                .navigationTitle(agency.getAgency().localizedName)
-                .toolbar {
-                    ToolbarItem(placement: .primaryAction) {
-                        UpcomingViewToolbar(currentPresentationMode: $currentPresentationMode)
-                            .environmentObject(upcoming as VideoViewModel)
-                    }
-                }
-                .task {
-                    await upcoming.getUpcoming()
-                    currentPresentationMode = .normal
-                }
-                .refreshable {
-                    await upcoming.getUpcoming()
-                    currentPresentationMode = .normal
-                }
-        }
+            }
+            .task {
+                await upcoming.getUpcoming()
+                currentPresentationMode = .normal
+            }
+            .refreshable {
+                await upcoming.getUpcoming()
+                currentPresentationMode = .normal
+            }
     }
 }
 

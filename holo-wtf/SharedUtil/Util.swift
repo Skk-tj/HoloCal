@@ -126,18 +126,22 @@ enum UserDefaultKeys {
     static let upcomingLookAhead = "upcomingLookAhead"
     static let isShowingAbsoluteTimeInLiveView = "isShowingAbsoluteTimeInLiveView"
     static let isShowingAbsoluteTimeInUpcomingView = "isShowingAbsoluteTimeInUpcomingView"
+    static let isShowingAbsoluteTimeInLiveFavouritesView = "isShowingAbsoluteTimeInLiveFavouritesView"
+    static let isShowingAbsoluteTimeInUpcomingFavouritesView = "isShowingAbsoluteTimeInUpcomingFavouritesView"
     static let isShowingCompactInLiveView = "isShowingCompactInLiveView"
     static let isShowingCompactInUpcomingView = "isShowingCompactInUpcomingView"
     static let isShowingDSTReminder = "isShowingDSTReminder"
+    static let isShowingCompactInLiveFavouritesView = "isShowingCompactInLiveFavouritesView"
+    static let isShowingCompactInUpcomingFavouritesView = "isShowingCompactInUpcomingFavouritesView"
     static let dstDays = "dstDays"
 }
 
 extension Bundle {
     public var appName: String { getInfo("CFBundleName")  }
-    public var displayName: String {getInfo("CFBundleDisplayName")}
-    public var language: String {getInfo("CFBundleDevelopmentRegion")}
-    public var identifier: String {getInfo("CFBundleIdentifier")}
-    public var copyright: String {getInfo("NSHumanReadableCopyright").replacingOccurrences(of: "\\\\n", with: "\n") }
+    public var displayName: String { getInfo("CFBundleDisplayName") }
+    public var language: String { getInfo("CFBundleDevelopmentRegion") }
+    public var identifier: String { getInfo("CFBundleIdentifier") }
+    public var copyright: String { getInfo("NSHumanReadableCopyright").replacingOccurrences(of: "\\\\n", with: "\n") }
     
     public var appBuild: String { getInfo("CFBundleVersion") }
     public var appVersionLong: String { getInfo("CFBundleShortVersionString") }

@@ -7,23 +7,26 @@
 
 import SwiftUI
 
-struct AgencySelectionView<Content: View>: View {
+struct AgencySelectionView<Content: View, ExtraContent: View>: View {
     let viewTitle: String?
     @ViewBuilder let targetView: (_ agency: AgencyEnum) -> Content
+    @ViewBuilder let extraLinks: () -> ExtraContent
     
-    init(targetView: @escaping (_ agency: AgencyEnum) -> Content) {
-        self.viewTitle = nil
-        self.targetView = targetView
-    }
-    
-    init(viewTitle: String, targetView: @escaping (_ agency: AgencyEnum) -> Content) {
+    init(viewTitle: String? = nil, targetView: @escaping (_ agency: AgencyEnum) -> Content, extraLinks: @escaping () -> ExtraContent) {
         self.viewTitle = viewTitle
         self.targetView = targetView
+        self.extraLinks = extraLinks
+    }
+    
+    init(viewTitle: String? = nil, targetView: @escaping (_ agency: AgencyEnum) -> Content) where ExtraContent == EmptyView {
+        self.viewTitle = viewTitle
+        self.targetView = targetView
+        self.extraLinks = { EmptyView() }
     }
     
     var body: some View {
         List {
-            ForEach(AgencyEnum.allCases, id: \.self) { agency in
+            AgencyForEachView(singleAgency: { agency in
                 NavigationLink(destination: targetView(agency), label: {
                     VStack {
                         Text(agencyEnumToAgency[agency]!.localizedName)
@@ -32,7 +35,9 @@ struct AgencySelectionView<Content: View>: View {
                             .foregroundColor(.secondary)
                     }
                 })
-            }
+            })
+            
+            extraLinks()
         }
         .navigationTitle(LocalizedStringKey(viewTitle ?? "SETTINGS_SELECT_AGENCY_NAVIGATION_TITLE"))
     }

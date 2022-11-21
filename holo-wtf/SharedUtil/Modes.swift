@@ -12,3 +12,13 @@ enum PresentationMode {
     case searching
     case sorting
 }
+
+enum VideoType {
+    case live
+    case upcoming
+}
+
+enum UIMode {
+    case compact
+    case card
+}
