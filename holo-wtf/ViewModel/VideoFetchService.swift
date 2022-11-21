@@ -11,7 +11,7 @@ import OSLog
 enum VideoFetchServiceError: Error {
     case apiUrlError
     case serialization
-    case network
+    case network(Int)
 }
 
 func getVideos(from url: String) async throws -> [LiveVideo] {
@@ -30,7 +30,11 @@ func getVideos(from url: String) async throws -> [LiveVideo] {
     request.cachePolicy = .useProtocolCachePolicy
     
     do {
-        let (data, _) = try await URLSession.shared.data(for: request)
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+            throw VideoFetchServiceError.network((response as? HTTPURLResponse)?.statusCode ?? 0)
+        }
         
         let decoder = getLiveVideoJSONDecoder()
         
@@ -42,6 +46,6 @@ func getVideos(from url: String) async throws -> [LiveVideo] {
         debugPrint(error)
         logger.error("Error is: \(error.localizedDescription)")
         
-        throw VideoFetchServiceError.network
+        throw VideoFetchServiceError.network(-1)
     }
 }

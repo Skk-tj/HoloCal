@@ -17,10 +17,10 @@ struct UpcomingFavouritesView: View {
             .environmentObject(upcoming as VideoViewModel)
             .navigationTitle("ROOT_VIEW_FAVOURITES")
             .task {
-                await upcoming.getUpcoming()
+                await upcoming.getUpcomingForFavourites()
             }
             .refreshable {
-                await upcoming.getUpcoming()
+                await upcoming.getUpcomingForFavourites()
             }
     }
 }

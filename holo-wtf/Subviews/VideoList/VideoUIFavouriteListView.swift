@@ -36,9 +36,9 @@ struct VideoUIFavouriteListView: View {
             DataStatusIndicatorView(dataStatus: video.dataStatus) {
                 switch videoType {
                 case .live:
-                    LiveCountView()
+                    LiveFavouriteCountView()
                 case .upcoming:
-                    UpcomingCountView()
+                    UpcomingFavouriteCountView()
                 }
             }
         }, uiMode: uiMode)
