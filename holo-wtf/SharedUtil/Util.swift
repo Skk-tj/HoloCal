@@ -41,62 +41,6 @@ func getUpcomingStreamLookAheadHoursFromUserDefaults() -> Int {
     return defaults.integer(forKey: UserDefaultKeys.upcomingLookAhead) == 0 ? 48 : defaults.integer(forKey: UserDefaultKeys.upcomingLookAhead)
 }
 
-func getIsShowingAbsoluteTimeInLiveViewFromUserDefaults() -> Bool {
-    let defaults = UserDefaults.standard
-    
-    return defaults.bool(forKey: UserDefaultKeys.isShowingAbsoluteTimeInLiveView)
-}
-
-func getIsShowingAbsoluteTimeInUpcomingViewFromUserDefaults() -> Bool {
-    let defaults = UserDefaults.standard
-    
-    return defaults.bool(forKey: UserDefaultKeys.isShowingAbsoluteTimeInUpcomingView)
-}
-
-func getIfChannelIdIsFavouriteFromUserDefault(id: Int) -> Bool {
-    let defaults = UserDefaults.standard
-    
-    if let favouritedArray = defaults.array(forKey: "favouritedChannel2") as? [Int] {
-        return favouritedArray.contains(where: {$0 == id})
-    } else {
-        defaults.set([], forKey: "favouritedChannel2")
-        return false
-    }
-}
-
-func appendChannelIdToFavouriteInUserDefault(id: Int) -> Void {
-    let defaults = UserDefaults.standard
-    
-    if var favouritedArray = defaults.array(forKey: "favouritedChannel2") as? [Int] {
-        // print("before append: \(favouritedArray)")
-        favouritedArray.append(id)
-        defaults.set(favouritedArray, forKey: "favouritedChannel2")
-        
-        // print("after append: \(defaults.array(forKey: UserDefaultKeys.favouritedChannel)!)")
-    } else {
-        defaults.set([], forKey: "favouritedChannel2")
-    }
-}
-
-func removeChannelIdFromFavouriteInUserDefault(id: Int) -> Void {
-    let defaults = UserDefaults.standard
-    
-    if var favouritedArray = defaults.array(forKey: "favouritedChannel2") as? [Int] {
-        // print("before remove: \(favouritedArray)")
-        favouritedArray.removeAll(where: { $0 == id })
-        defaults.set(favouritedArray, forKey: "favouritedChannel2")
-        
-        // print("after remove: \(defaults.array(forKey: UserDefaultKeys.favouritedChannel)!)")
-    } else {
-        defaults.set([], forKey: "favouritedChannel2")
-    }
-}
-
-func resetFavouriteInUserDefault() -> Void {
-    let defaults = UserDefaults.standard
-    defaults.set([], forKey: "favouritedChannel2")
-}
-
 func getLiveVideoJSONDecoder() -> JSONDecoder {
     let decoder = JSONDecoder()
     decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -154,24 +98,6 @@ extension Bundle {
 // MARK: - AppStorage Support for Arrays
 // https://stackoverflow.com/a/65598711/8233415
 typealias Favourited = [String]
-
-//extension Favourited: RawRepresentable {
-//    public init?(rawValue: String) {
-//        guard let data = rawValue.data(using: .utf8), let result = try? JSONDecoder().decode(Favourited.self, from: data)
-//        else {
-//            return nil
-//        }
-//        self = result
-//    }
-//
-//    public var rawValue: String {
-//        guard let data = try? JSONEncoder().encode(self), let result = String(data: data, encoding: .utf8)
-//        else {
-//            return "[]"
-//        }
-//        return result
-//    }
-//}
 
 extension Array: RawRepresentable where Element: Codable {
     public init?(rawValue: String) {

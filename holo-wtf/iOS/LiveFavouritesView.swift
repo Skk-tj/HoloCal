@@ -16,6 +16,12 @@ struct LiveFavouritesView: View {
         VideoUIFavouriteListView(videoType: .live, uiMode: isShowingCompact ? .compact : .card)
             .environmentObject(live as VideoViewModel)
             .navigationTitle("ROOT_VIEW_FAVOURITES")
+            .toolbar {
+                ToolbarItemGroup {
+                    LiveFavouritesViewToolbar()
+                        .environmentObject(live as VideoViewModel)
+                }
+            }
             .task {
                 await live.getLive()
             }

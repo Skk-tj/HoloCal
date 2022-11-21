@@ -11,8 +11,6 @@ struct LiveFavouritesViewToolbar: View {
     @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInLiveFavouritesView) var isShowingAbsoluteTime: Bool = false
     @AppStorage(UserDefaultKeys.isShowingCompactInLiveFavouritesView) var isShowingCompact: Bool = false
     
-    @Binding var currentPresentationMode: PresentationMode
-    
     /// Defines the current sorting strategy
     @State var sortingStrategy: SortingStrategy = .timeDesc
     
@@ -60,12 +58,6 @@ struct LiveFavouritesViewToolbar: View {
             Label("Display Settings", systemImage: "ellipsis")
         }
         .onChange(of: self.sortingStrategy, perform: { sortingSelection in
-            if sortingSelection == .notSorting {
-                currentPresentationMode = .normal
-            } else {
-                currentPresentationMode = .sorting
-            }
-            
             self.liveViewModel.sortVideos(by: sortingSelection)
         })
     }

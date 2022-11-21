@@ -15,8 +15,7 @@ struct LiveCountView: View {
     var body: some View {
         let filteredVideoCount = live.videoList.filter { video in
             !generationListSelection.contains(video.channel.talent?.inGeneration ?? .other)
-        }
-            .count
+        }.count
         
         if filteredVideoCount == 0 {
             Text("LIVE_VIEW_CURRENT_COUNT \(live.videoList.count)")

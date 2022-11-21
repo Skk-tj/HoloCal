@@ -27,7 +27,7 @@ class UpcomingViewModel: VideoViewModel {
         
         await getVideo(url: String(format: videoUrl, upcomingLookAhead)) { responseResult in
             self.videoList = responseResult
-            self.videoList.sort(by: upcomingSortStrategy)
+            self.sortVideos(by: .timeAsc)
             self.videoList = self.videoList.filter {
                 switch self.agency {
                 case .hololive:

@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct UpcomingWatchView: View {
-    @StateObject var upcoming: UpcomingViewModel
-    
-    init() {
-        self._upcoming = StateObject(wrappedValue: UpcomingViewModel(for: .hololive))
-    }
+    @StateObject var upcoming: UpcomingViewModel = UpcomingViewModel(for: .hololive)
     
     var body: some View {
         WatchVideoListView(singleVideoView: { video in

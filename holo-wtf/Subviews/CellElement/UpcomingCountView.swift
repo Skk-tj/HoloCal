@@ -16,8 +16,7 @@ struct UpcomingCountView: View {
     var body: some View {
         let filteredVideoCount = upcoming.videoList.filter { video in
             !generationListSelection.contains(video.channel.talent?.inGeneration ?? .other)
-        }
-            .count
+        }.count
         
         if filteredVideoCount == 0 {
             Text("UPCOMING_VIEW_STREAM_COUNT_IN_HOURS \(upcoming.videoList.count) \(upcomingLookAhead)")

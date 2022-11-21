@@ -12,7 +12,7 @@ class LiveFavoritesViewModel: VideoViewModel {
     func getLive() async {
         await getVideo(url: allLiveURL) { responseResult in
             self.videoList = responseResult
-            self.videoList.sort(by: liveSortStrategy)
+            self.sortVideos(by: .timeDesc)
             self.videoList = self.videoList.filter {
                 return $0.isHololive || $0.isNijisanji
             }

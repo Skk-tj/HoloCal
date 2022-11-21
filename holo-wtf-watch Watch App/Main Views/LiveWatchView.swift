@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct LiveWatchView: View {
-    @StateObject var live: LiveViewModel
-    
-    init() {
-        self._live = StateObject(wrappedValue: LiveViewModel(for: .hololive))
-    }
+    @StateObject var live: LiveViewModel = LiveViewModel(for: .hololive)
     
     var body: some View {
         WatchVideoListView(singleVideoView: { video in
