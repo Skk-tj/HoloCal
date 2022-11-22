@@ -66,7 +66,11 @@ struct holo_wtfApp: App {
                                 LiveView(for: agency)
                             }, extraLinks: {
                                 NavigationLink(destination: LiveFavouritesView(), label: {
-                                    Text("ROOT_VIEW_FAVOURITES")
+                                    HStack {
+                                        Image(systemName: "star.fill")
+                                            .foregroundColor(.accentColor)
+                                        Text("ROOT_VIEW_FAVOURITES")
+                                    }
                                 })
                             })
                         }
@@ -79,7 +83,11 @@ struct holo_wtfApp: App {
                                 UpcomingView(for: agency)
                             }, extraLinks: {
                                 NavigationLink(destination: UpcomingFavouritesView(), label: {
-                                    Text("ROOT_VIEW_FAVOURITES")
+                                    HStack {
+                                        Image(systemName: "star.fill")
+                                            .foregroundColor(.accentColor)
+                                        Text("ROOT_VIEW_FAVOURITES")
+                                    }
                                 })
                             })
                         }
@@ -97,7 +105,11 @@ struct holo_wtfApp: App {
                                 LiveView(for: agency)
                             }, extraLinks: {
                                 NavigationLink(destination: LiveFavouritesView(), label: {
-                                    Text("ROOT_VIEW_FAVOURITES")
+                                    HStack {
+                                        Image(systemName: "star.fill")
+                                            .foregroundColor(.accentColor)
+                                        Text("ROOT_VIEW_FAVOURITES")
+                                    }
                                 })
                             })
                         }
@@ -110,7 +122,11 @@ struct holo_wtfApp: App {
                                 UpcomingView(for: agency)
                             }, extraLinks: {
                                 NavigationLink(destination: UpcomingFavouritesView(), label: {
-                                    Text("ROOT_VIEW_FAVOURITES")
+                                    HStack {
+                                        Image(systemName: "star.fill")
+                                            .foregroundColor(.accentColor)
+                                        Text("ROOT_VIEW_FAVOURITES")
+                                    }
                                 })
                             })
                         }

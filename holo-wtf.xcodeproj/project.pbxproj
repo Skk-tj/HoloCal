@@ -29,6 +29,11 @@
 		F0114D4F2815F81600B99D4D /* DataStatusIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0114D4E2815F81600B99D4D /* DataStatusIndicatorView.swift */; };
 		F011C42828303CA400FD1364 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F009023D27EE255B00E343B0 /* Localizable.strings */; };
 		F01E95B3286FB4B900CDF0F9 /* iPadLazyGirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01E95B2286FB4B900CDF0F9 /* iPadLazyGirdView.swift */; };
+		F022119C292B6CF5009EC2CC /* SingleAgencyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022119B292B6CF5009EC2CC /* SingleAgencyItemView.swift */; };
+		F022119D292B6CF5009EC2CC /* SingleAgencyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022119B292B6CF5009EC2CC /* SingleAgencyItemView.swift */; };
+		F02211A1292C9CF7009EC2CC /* ForEachVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A0292C9CF7009EC2CC /* ForEachVideoView.swift */; };
+		F02211A3292C9FF8009EC2CC /* ViewerCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A2292C9FF8009EC2CC /* ViewerCounterView.swift */; };
+		F02211A5292CA914009EC2CC /* NewLiveTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A4292CA914009EC2CC /* NewLiveTimeView.swift */; };
 		F025203728E10AB600976972 /* SpecialThanksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025203628E10AB600976972 /* SpecialThanksView.swift */; };
 		F025203F28EE94B700976972 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025203E28EE94B700976972 /* Constants.swift */; };
 		F025204028EE95F900976972 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025203E28EE94B700976972 /* Constants.swift */; };
@@ -148,8 +153,7 @@
 		F093D1E82830359900E2A6FF /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657D527732690004AF802 /* Util.swift */; };
 		F093D1ED2830372900E2A6FF /* LiveWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1E3283034AF00E2A6FF /* LiveWidgetView.swift */; };
 		F0954BDE2817B73E00369EC4 /* SearchSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BDD2817B73E00369EC4 /* SearchSectionView.swift */; };
-		F0954BE22817C52700369EC4 /* FavouritedForEachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BE12817C52700369EC4 /* FavouritedForEachView.swift */; };
-		F0954BE62817C8BF00369EC4 /* VideoForEachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BE52817C8BF00369EC4 /* VideoForEachView.swift */; };
+		F0954BE62817C8BF00369EC4 /* GenerationFilteredForEachVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BE52817C8BF00369EC4 /* GenerationFilteredForEachVideoView.swift */; };
 		F0954BEC2817D63100369EC4 /* VideoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BEB2817D63100369EC4 /* VideoListView.swift */; };
 		F09D25BE27FC2552001A7D71 /* SettingsTalentStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25BD27FC2552001A7D71 /* SettingsTalentStarView.swift */; };
 		F09D25C327FEC12D001A7D71 /* SettingsFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */; };
@@ -328,6 +332,10 @@
 		F01E95B2286FB4B900CDF0F9 /* iPadLazyGirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadLazyGirdView.swift; sourceTree = "<group>"; };
 		F0204DB827E91A920083750F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F0204DB927E925220083750F /* PRIVACY-POLICY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "PRIVACY-POLICY.md"; sourceTree = "<group>"; };
+		F022119B292B6CF5009EC2CC /* SingleAgencyItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAgencyItemView.swift; sourceTree = "<group>"; };
+		F02211A0292C9CF7009EC2CC /* ForEachVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForEachVideoView.swift; sourceTree = "<group>"; };
+		F02211A2292C9FF8009EC2CC /* ViewerCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewerCounterView.swift; sourceTree = "<group>"; };
+		F02211A4292CA914009EC2CC /* NewLiveTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLiveTimeView.swift; sourceTree = "<group>"; };
 		F025203628E10AB600976972 /* SpecialThanksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialThanksView.swift; sourceTree = "<group>"; };
 		F025203E28EE94B700976972 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F025204328EEA5FC00976972 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -387,8 +395,7 @@
 		F093D1E3283034AF00E2A6FF /* LiveWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveWidgetView.swift; sourceTree = "<group>"; };
 		F093D1E62830358400E2A6FF /* ViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtil.swift; sourceTree = "<group>"; };
 		F0954BDD2817B73E00369EC4 /* SearchSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSectionView.swift; sourceTree = "<group>"; };
-		F0954BE12817C52700369EC4 /* FavouritedForEachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritedForEachView.swift; sourceTree = "<group>"; };
-		F0954BE52817C8BF00369EC4 /* VideoForEachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoForEachView.swift; sourceTree = "<group>"; };
+		F0954BE52817C8BF00369EC4 /* GenerationFilteredForEachVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationFilteredForEachVideoView.swift; sourceTree = "<group>"; };
 		F0954BEB2817D63100369EC4 /* VideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListView.swift; sourceTree = "<group>"; };
 		F09D25BD27FC2552001A7D71 /* SettingsTalentStarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTalentStarView.swift; sourceTree = "<group>"; };
 		F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFormView.swift; sourceTree = "<group>"; };
@@ -623,8 +630,8 @@
 				F0EB53B32812BCBF0024E089 /* Toolbar */,
 				F09D25BD27FC2552001A7D71 /* SettingsTalentStarView.swift */,
 				F0114D4E2815F81600B99D4D /* DataStatusIndicatorView.swift */,
-				F0954BE12817C52700369EC4 /* FavouritedForEachView.swift */,
-				F0954BE52817C8BF00369EC4 /* VideoForEachView.swift */,
+				F02211A0292C9CF7009EC2CC /* ForEachVideoView.swift */,
+				F0954BE52817C8BF00369EC4 /* GenerationFilteredForEachVideoView.swift */,
 				F0581899281BFFDA0064EF94 /* SectionedForEachView.swift */,
 				F0954BDD2817B73E00369EC4 /* SearchSectionView.swift */,
 				F0EB53B12812A2E90024E089 /* EventEditView.swift */,
@@ -719,6 +726,8 @@
 				F0C50A1E2827C6FA00A93225 /* UpcomingCountView.swift */,
 				F0F0EAC1292B56D20091DBD7 /* UpcomingFavouriteCountView.swift */,
 				F0E4873C2876586F00118BBB /* LiveCollabAvatarView.swift */,
+				F02211A2292C9FF8009EC2CC /* ViewerCounterView.swift */,
+				F02211A4292CA914009EC2CC /* NewLiveTimeView.swift */,
 			);
 			path = CellElement;
 			sourceTree = "<group>";
@@ -736,6 +745,7 @@
 				F025203628E10AB600976972 /* SpecialThanksView.swift */,
 				F008BBA32928DA4600034AF4 /* AgencySelectionView.swift */,
 				F0F0EA9B292B062A0091DBD7 /* AgencyForEachView.swift */,
+				F022119B292B6CF5009EC2CC /* SingleAgencyItemView.swift */,
 			);
 			path = SharedUI;
 			sourceTree = "<group>";
@@ -1228,10 +1238,11 @@
 				F0CA6EA328D791BE0028CB11 /* Modes.swift in Sources */,
 				F0673C172775F7FB009C65C6 /* LiveAvatarView.swift in Sources */,
 				F0BD611B27EC594300A2FBED /* UpcomingPaneView.swift in Sources */,
-				F0954BE62817C8BF00369EC4 /* VideoForEachView.swift in Sources */,
+				F0954BE62817C8BF00369EC4 /* GenerationFilteredForEachVideoView.swift in Sources */,
 				F0C657BD2771F47C004AF802 /* LiveView.swift in Sources */,
 				F0EB53BD2812C5680024E089 /* OldShareButton.swift in Sources */,
 				F0AC584B28CFCC580088151C /* SettingsStackView.swift in Sources */,
+				F022119C292B6CF5009EC2CC /* SingleAgencyItemView.swift in Sources */,
 				F0EB53B0281290490024E089 /* PaneViewButtonRowView.swift in Sources */,
 				F093D1DE282FA5E600E2A6FF /* VideoFetchService.swift in Sources */,
 				F09D25C928020B12001A7D71 /* UpcomingViewToolbar.swift in Sources */,
@@ -1242,6 +1253,7 @@
 				F080A04F27F95D9E00DBC08D /* TalentData.swift in Sources */,
 				F008BBA72928DD5100034AF4 /* ManageFavoriteAgencySelectionView.swift in Sources */,
 				F0EB53B62812BD6F0024E089 /* FavouriteButton.swift in Sources */,
+				F02211A5292CA914009EC2CC /* NewLiveTimeView.swift in Sources */,
 				F080A05127F993DC00DBC08D /* ManageFavoriteView.swift in Sources */,
 				F05E9EB927EB3C6100EF48DD /* LivePaneView.swift in Sources */,
 				F0F0EAB9292B48910091DBD7 /* UIListView.swift in Sources */,
@@ -1263,6 +1275,7 @@
 				F025203F28EE94B700976972 /* Constants.swift in Sources */,
 				F0ED2AF3280AD60D00683E6C /* UpcomingViewModel.swift in Sources */,
 				F065857D28CFF4C6001672E1 /* ManageGenerationVisibilityView.swift in Sources */,
+				F02211A3292C9FF8009EC2CC /* ViewerCounterView.swift in Sources */,
 				F04EB66728D2A0A000F168CB /* ManageGenerationOrderView.swift in Sources */,
 				F0EB53B82812BEAD0024E089 /* ShareButton.swift in Sources */,
 				F0F0EA99292B01510091DBD7 /* LiveFavoritesViewModel.swift in Sources */,
@@ -1279,12 +1292,12 @@
 				F00BD6D029052AC400D7932E /* VideoViewModel.swift in Sources */,
 				F0433C5227EAEDDB000FEADD /* OpenSourceView.swift in Sources */,
 				F004E8C9285D045D00ABDFED /* SongListView.swift in Sources */,
+				F02211A1292C9CF7009EC2CC /* ForEachVideoView.swift in Sources */,
 				F058189A281BFFDA0064EF94 /* SectionedForEachView.swift in Sources */,
 				F0ED2B13280CB73D00683E6C /* TopicTagView.swift in Sources */,
 				F0EB53B22812A2E90024E089 /* EventEditView.swift in Sources */,
 				F0114D4F2815F81600B99D4D /* DataStatusIndicatorView.swift in Sources */,
 				F05E9EB727EB291900EF48DD /* SettingsiPadView.swift in Sources */,
-				F0954BE22817C52700369EC4 /* FavouritedForEachView.swift in Sources */,
 				F0C50A1D2827C4CA00A93225 /* LiveCountView.swift in Sources */,
 				F0C657D22771F7CE004AF802 /* LiveCellView.swift in Sources */,
 				F025203728E10AB600976972 /* SpecialThanksView.swift in Sources */,
@@ -1310,6 +1323,7 @@
 				F025204628EEA5FC00976972 /* Common.swift in Sources */,
 				F04D755428D7CF3F0096B8AB /* UpcomingWatchView.swift in Sources */,
 				F04D755B28D7D8DD0096B8AB /* OpenSourceView.swift in Sources */,
+				F022119D292B6CF5009EC2CC /* SingleAgencyItemView.swift in Sources */,
 				F06D28F628D83AA6007D06FB /* UpcomingAccessoryRectangularWidgetView.swift in Sources */,
 				F04D755628D7D0CC0096B8AB /* WatchUpcomingCellView.swift in Sources */,
 				F0E45D1628F34CA10091474A /* SpecialThanksView.swift in Sources */,

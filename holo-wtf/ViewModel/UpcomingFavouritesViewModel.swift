@@ -11,12 +11,13 @@ class UpcomingFavoritesViewModel: VideoViewModel {
     @MainActor
     func getUpcoming() async {
         let upcomingLookAhead = getUpcomingStreamLookAheadHoursFromUserDefaults()
+        let favourites = getFavouritesFromUserDefaults()
         
         await getVideo(url: String(format: allUpcomingURL, upcomingLookAhead)) { responseResult in
             self.videoList = responseResult
             self.sortVideos(by: .timeAsc)
             self.videoList = self.videoList.filter {
-                return $0.isHololive || $0.isNijisanji
+                return ($0.isHololive || $0.isNijisanji) && favourites.contains($0.channel.id)
             }
         }
     }
@@ -24,6 +25,7 @@ class UpcomingFavoritesViewModel: VideoViewModel {
     @MainActor
     func getUpcomingForFavourites() async {
         let upcomingLookAhead = getUpcomingStreamLookAheadHoursFromUserDefaults()
+        let favourites = getFavouritesFromUserDefaults()
         self.dataStatus = .working
         
         do {
@@ -48,7 +50,7 @@ class UpcomingFavoritesViewModel: VideoViewModel {
             
             self.sortVideos(by: .timeAsc)
             self.videoList = self.videoList.filter {
-                return $0.isHololive || $0.isNijisanji
+                return ($0.isHololive || $0.isNijisanji) && favourites.contains($0.channel.id)
             }
             
             self.dataStatus = .success

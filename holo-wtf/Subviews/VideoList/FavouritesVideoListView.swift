@@ -32,9 +32,15 @@ struct FavouritesVideoListView<VideoContent: View, DataStatusContent: View>: Vie
                 }
             }
             
-            FavouritedForEachView(cellView: { video in
-                singleVideoView(video)
-            })
+            if searchText.isEmpty {
+                ForEachVideoView(cellView: { video in
+                    singleVideoView(video)
+                })
+            } else {
+                SearchSectionView(searchText: searchText, cellView: { video in
+                    singleVideoView(video)
+                })
+            }
             
             HStack {
                 Spacer()

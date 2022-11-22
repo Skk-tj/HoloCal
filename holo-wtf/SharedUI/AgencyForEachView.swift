@@ -22,12 +22,7 @@ struct AgencyForEachView_Previews: PreviewProvider {
     static var previews: some View {
         List {
             AgencyForEachView(singleAgency: { agency in
-                VStack {
-                    Text(agencyEnumToAgency[agency]!.localizedName)
-                    Text(agencyEnumToAgency[agency]!.altLocalizedName)
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                }
+                SingleAgencyItemView(agency: agency)
             })
         }
     }

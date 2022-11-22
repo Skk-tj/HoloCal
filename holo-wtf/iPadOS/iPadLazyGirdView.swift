@@ -37,12 +37,12 @@ struct iPadLazyGirdView<VideoContent: View, DataStatusView: View>: View {
             LazyVGrid(columns: layout, spacing: 50) {
                 if searchText.isEmpty {
                     if videoViewModel.videoList.filter { video in favourited.contains(where: { video.channel.id == $0 })}.count != 0 && videoViewModel.dataStatus == .success {
-                        FavouritedForEachView(cellView: { live in
+                        ForEachVideoView(cellView: { live in
                             singleVideoView(live)
                         })
                     }
                     
-                    VideoForEachView(cellView: { live in
+                    GenerationFilteredForEachVideoView(cellView: { live in
                         singleVideoView(live)
                     })
                 } else {
