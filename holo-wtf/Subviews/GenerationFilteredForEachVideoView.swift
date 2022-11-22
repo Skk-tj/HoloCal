@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct VideoForEachView<Content: View>: View {
+struct GenerationFilteredForEachVideoView<Content: View>: View {
     @AppStorage("generationListSelection") var generationListSelection = Set(Generation.allCases)
     
     @EnvironmentObject var viewModel: VideoViewModel

@@ -48,7 +48,7 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
                     singleVideoView(live)
                 })
             case .sorting:
-                VideoForEachView(cellView: { live in
+                GenerationFilteredForEachVideoView(cellView: { live in
                     singleVideoView(live)
                 })
             }

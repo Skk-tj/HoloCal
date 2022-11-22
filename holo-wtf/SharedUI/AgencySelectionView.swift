@@ -28,12 +28,7 @@ struct AgencySelectionView<Content: View, ExtraContent: View>: View {
         List {
             AgencyForEachView(singleAgency: { agency in
                 NavigationLink(destination: targetView(agency), label: {
-                    VStack {
-                        Text(agencyEnumToAgency[agency]!.localizedName)
-                        Text(agencyEnumToAgency[agency]!.altLocalizedName)
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                    }
+                    SingleAgencyItemView(agency: agency)
                 })
             })
             

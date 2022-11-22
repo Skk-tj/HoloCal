@@ -41,6 +41,16 @@ func getUpcomingStreamLookAheadHoursFromUserDefaults() -> Int {
     return defaults.integer(forKey: UserDefaultKeys.upcomingLookAhead) == 0 ? 48 : defaults.integer(forKey: UserDefaultKeys.upcomingLookAhead)
 }
 
+func getFavouritesFromUserDefaults() -> [String] {
+    let defaults = UserDefaults.standard
+    
+    let rawString = defaults.string(forKey: "favouritedChannel") ?? ""
+    
+    let decoded = try? JSONDecoder().decode([String].self, from: rawString.data(using: .utf8)!)
+    
+    return decoded ?? []
+}
+
 func getLiveVideoJSONDecoder() -> JSONDecoder {
     let decoder = JSONDecoder()
     decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -101,18 +111,14 @@ typealias Favourited = [String]
 
 extension Array: RawRepresentable where Element: Codable {
     public init?(rawValue: String) {
-        guard let data = rawValue.data(using: .utf8),
-              let result = try? JSONDecoder().decode([Element].self, from: data)
-        else {
+        guard let data = rawValue.data(using: .utf8), let result = try? JSONDecoder().decode([Element].self, from: data) else {
             return nil
         }
         self = result
     }
     
     public var rawValue: String {
-        guard let data = try? JSONEncoder().encode(self),
-              let result = String(data: data, encoding: .utf8)
-        else {
+        guard let data = try? JSONEncoder().encode(self), let result = String(data: data, encoding: .utf8) else {
             return "[]"
         }
         return result
@@ -121,18 +127,14 @@ extension Array: RawRepresentable where Element: Codable {
 
 extension Set: RawRepresentable where Element: Codable {
     public init?(rawValue: String) {
-        guard let data = rawValue.data(using: .utf8),
-              let result = try? JSONDecoder().decode(Set<Element>.self, from: data)
-        else {
+        guard let data = rawValue.data(using: .utf8), let result = try? JSONDecoder().decode(Set<Element>.self, from: data) else {
             return nil
         }
         self = result
     }
     
     public var rawValue: String {
-        guard let data = try? JSONEncoder().encode(self),
-              let result = String(data: data, encoding: .utf8)
-        else {
+        guard let data = try? JSONEncoder().encode(self), let result = String(data: data, encoding: .utf8) else {
             return "[]"
         }
         return result

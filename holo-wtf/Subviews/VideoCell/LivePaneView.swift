@@ -65,29 +65,19 @@ struct LivePaneView: View {
                         }
                     }
                     
-                    Divider()
-                    
                     // MARK: - Time and other information
                     HStack {
-                        if live.isMengen {
-                            Text("LIVE_CELL_VIEW_MEMBER_ONLY_STREAM")
-                                .font(.footnote)
-                                .foregroundColor(.secondary)
-                                .multilineTextAlignment(.leading)
-                        } else {
-                            Text("LIVE_CELL_VIEW_PEOPLE_WATCHING \(live.liveViewers)")
-                                .font(.footnote)
-                                .foregroundColor(.secondary)
-                        }
+                        ViewerCounterView(viewer: live.liveViewers, memberOnly: live.isMengen)
+                            .padding(.trailing)
                         
-                        Spacer()
-                        
-                        LiveTimeView(liveTime: live.startActual)
-                            .multilineTextAlignment(.trailing)
+                        NewLiveTimeView(liveTime: live.startActual)
                     }
-                    .padding(.bottom)
+                    .padding(.top, 5)
+                    
+                    Divider()
                     
                     PaneViewButtonRowView(video: live)
+                        .padding(.top)
                 }
                 .padding(.horizontal)
             }
