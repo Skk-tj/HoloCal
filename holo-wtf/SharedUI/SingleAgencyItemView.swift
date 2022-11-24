@@ -15,7 +15,7 @@ struct SingleAgencyItemView: View {
             Image(systemName: agencyEnumToAgency[agency]!.icon)
                 .foregroundColor(.accentColor)
             
-            VStack {
+            VStack(alignment: .leading) {
                 Text(agencyEnumToAgency[agency]!.localizedName)
                 Text(agencyEnumToAgency[agency]!.altLocalizedName)
                     .font(.caption)

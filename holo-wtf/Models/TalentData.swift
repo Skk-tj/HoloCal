@@ -265,6 +265,7 @@ enum TalentEnum: String, Codable {
 
     // MARK: - 2019 Wave: January 28
     case onomachi = "UCg63a3lk6PNeWhVvMRM_mrQ" // Onomachi Haruka
+    case onomachiASMR = "UCSUZugdxy9Wcrkp781cFt1w"
     case kataribe = "UCufQu4q65z63IgE4cfKs1BQ" // Kataribe Tsumugu
     case seto = "UCHK5wkevfaGrPr7j3g56Jmw" // Seto Miyako
 
@@ -644,6 +645,7 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
 
     // MARK: - 2019 Wave: January 28
     .onomachi: Talent(id: TalentEnum.onomachi.rawValue, names: [.en: "Onomachi Haruka", .ja: "小野町春香"], inGeneration: Generation.wave2019Jan28),
+    .onomachiASMR: Talent(id: TalentEnum.onomachiASMR.rawValue, names: [.en: "Onomachi Haruka ASMR", .ja: "小野町春香 ASMR"], inGeneration: Generation.wave2019Jan28),
     .kataribe: Talent(id: TalentEnum.kataribe.rawValue, names: [.en: "Kataribe Tsumugu", .ja: "語部紡"], inGeneration: Generation.wave2019Jan28),
     .seto: Talent(id: TalentEnum.seto.rawValue, names: [.en: "Seto Miyako", .ja: "瀬戸美夜子"], inGeneration: Generation.wave2019Jan28),
 
@@ -862,7 +864,7 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .seeds2ndGen2ndWave: GenerationGroup(id: .seeds2ndGen2ndWave, names: [.en: "SEEDs 2nd Gen 2nd Wave", .ja: "SEEDs2期生第2弾"], members: [.rindou, .debidebi, .sakura, .machita, .joe]),
     .seeds2ndGen3rdWave: GenerationGroup(id: .seeds2ndGen3rdWave, names: [.en: "SEEDs 2nd Gen 3rd Wave", .ja: "SEEDs2期生第3弾"], members: [.naruse, .belmond, .yaguruma, .yumeoi, .kuroi]),
     .wave2019Usa: GenerationGroup(id: .wave2019Usa, names: [.en: "2019 Wave: January 17", .ja: "2019年1月17日デビュー"], members: [.gundo, .yuzuki]),
-    .wave2019Jan28: GenerationGroup(id: .wave2019Jan28, names: [.en: "2019 Wave: January 28", .ja: "2019年1月28日デビュー"], members: [.onomachi, .kataribe, .seto]),
+    .wave2019Jan28: GenerationGroup(id: .wave2019Jan28, names: [.en: "2019 Wave: January 28", .ja: "2019年1月28日デビュー"], members: [.onomachi, .onomachiASMR, .kataribe, .seto]),
     .wave2019Sanbaka: GenerationGroup(id: .wave2019Sanbaka, names: [.en: "2019 Wave: March 22", .ja: "2019年3月22日デビュー"], members: [.inui, .ange, .lize]),
     .wave2019Beni: GenerationGroup(id: .wave2019Beni, names: [.en: "2019 Wave: April 2", .ja: "2019年4月2日デビュー"], members: [.saegusa, .aizono]),
     .wave2019Apr29: GenerationGroup(id: .wave2019Apr29, names: [.en: "2019 Wave: April 29", .ja: "2019年4月29日デビュー"], members: [.yukishiro]),

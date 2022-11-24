@@ -71,6 +71,29 @@
 "LIVE_CELL_VIEW_WAITING" = "Waiting...";
 "LIVE_CELL_VIEW_STARTED_AT %@" = "%@";
 
+// Block Live Time View
+
+"BLOCK_LIVE_TIME_VIEW_AGO" = "ago";
+"BLOCK_LIVE_TIME_VIEW_STARTED_AT" = "Started at";
+"BLOCK_LIVE_TIME_VIEW_WAITING" = "waiting...";
+"BLOCK_LIVE_TIME_VIEW_NA" = "N/A";
+
+// Block Upcoming Time View
+
+"BLOCK_UPCOMING_TIME_VIEW_STARTING_IN" = "Starting in";
+"BLOCK_UPCOMING_TIME_VIEW_STARTING_TIME_UNKNOWN" = "N/A";
+"BLOCK_UPCOMING_TIME_VIEW_STARTING_AT" = "Starting at";
+
+// Viewer Counter View
+
+"VIEWER_COUNTER_VIEW_WATCHING" = "watching";
+"VIEWER_COUNTER_VIEW_MEMBER_ONLY" = "member-only";
+"VIEWER_COUNTER_VIEW_MEMBER_NA" = "N/A";
+
+// Block Member Only View
+
+"BLOCK_MEMBER_ONLY_MEMBER" = "Member";
+
 // Upcoming Cell View
 
 "UPCOMING_CELL_VIEW_STARTING_IN %@" = "Starting in %@";
