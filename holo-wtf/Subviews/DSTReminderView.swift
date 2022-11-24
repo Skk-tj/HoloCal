@@ -16,7 +16,7 @@ struct DSTReminderView: View {
     let numberOfDaysToChange: Int
     let changeType: DSTChangeType
     
-    @AppStorage(UserDefaultKeys.isShowingDSTReminder) var isShowingDSTReminder = false
+    @Binding var isShowingDSTReminder: Bool
     
     var body: some View {
         VStack {
@@ -35,6 +35,7 @@ struct DSTReminderView: View {
                     Image(systemName: "xmark")
                         .foregroundColor(.secondary)
                 })
+                .buttonStyle(.borderless)
             }
             .padding(.bottom)
             
@@ -61,11 +62,11 @@ struct DSTReminderView: View {
 struct DSTReminderView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            DSTReminderView(numberOfDaysToChange: 5, changeType: .starting)
+            DSTReminderView(numberOfDaysToChange: 5, changeType: .starting, isShowingDSTReminder: Binding.constant(true))
                 .padding(.horizontal)
                 .preferredColorScheme(.dark)
                 
-            DSTReminderView(numberOfDaysToChange: 5, changeType: .ending)
+            DSTReminderView(numberOfDaysToChange: 5, changeType: .ending, isShowingDSTReminder: Binding.constant(false))
                 .padding(.horizontal)
         }
     }

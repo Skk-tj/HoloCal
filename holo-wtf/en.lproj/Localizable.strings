@@ -202,7 +202,7 @@
 
 // DST Reminder View
 "DST_REMINDER_VIEW_TITLE" = "**DAYLIGHT SAVING TIME REMINDER**";
-"DST_REMINDER_VIEW_TEXT %@ %lld" = "Daylight Saving Time is %@ in **%lld days**. As Japan does not observe Daylight Saving Time, please double-check the stream time.";
+"DST_REMINDER_VIEW_TEXT %@ %lld" = "Daylight Saving Time is %@ in **%lld day(s)**. As Japan does not observe Daylight Saving Time, please double-check the stream time.";
 "DST_REMINDER_VIEW_FOOTER" = "Your device is set to a timezone that observes Daylight Saving Time. No location data was used.";
 
 // Agency related

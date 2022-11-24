@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import OrderedCollections
 
 /// A view that `ForEach` a list of non-favourited videos, but put the videos into generation categories.
 ///
@@ -20,7 +21,11 @@ struct SectionedForEachView<Content: View>: View {
     
     @ViewBuilder
     var body: some View {
-        let groupedDictionary = Dictionary<Generation, [LiveVideo]>(grouping: viewModel.videoList, by: { $0.channel.talent?.inGeneration ?? .other })
+        let filteredVideos = viewModel.videoList.filter { video in
+            !favourited.contains(where: { video.channel.id == $0 })
+        }
+        
+        let groupedDictionary = OrderedDictionary<GenerationEnum, [LiveVideo]>(grouping: filteredVideos, by: { $0.channel.talent?.inGeneration ?? .other })
         let filteredGenerationListOrder = generationListOrder.filter { generation in
             generationListSelection.contains(generation)
         }

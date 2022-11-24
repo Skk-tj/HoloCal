@@ -180,8 +180,8 @@
 "MULTIPLE_UPCOMING_WIDGET_DISPLAY_NAME" = "複数の今後のライブ配信";
 "MULTIPLE_UPCOMING_WIDGET_DESCRIPTION" = "複数の今後のライブ配信を表示する";
 
-"LIVE_CHANNELS_DISPLAY_NAME" = "配信中チャンネル";
-"LIVE_CHANNELS_DESCRIPTION" = "配信中チャンネルを表示する";
+"LIVE_CHANNELS_WIDGET_DISPLAY_NAME" = "配信中チャンネル";
+"LIVE_CHANNELS_WIDGET_DESCRIPTION" = "配信中チャンネルを表示する";
 
 "UPCOMING_CHANNELS_WIDGET_DISPLAY_NAME" = "ライブ予定チャンネル";
 "UPCOMING_CHANNELS_WIDGET_DESCRIPTION" = "ライブ予定をしたチャンネルを表示する";
@@ -202,7 +202,7 @@
 
 // DST Reminder View
 "DST_REMINDER_VIEW_TITLE" = "夏時間リマインダー";
-"DST_REMINDER_VIEW_TEXT %@ %lld" = "Daylight Saving Time is %@ in **%lld days**. As Japan does not observe Daylight Saving Time, please double-check the stream time. ";
+"DST_REMINDER_VIEW_TEXT %@ %lld" = "Daylight Saving Time is %@ in **%lld day(s)**. As Japan does not observe Daylight Saving Time, please double-check the stream time. ";
 "DST_REMINDER_VIEW_FOOTER" = "このデバイスは、夏時間タイムゾーンに設定されています。位置情報は使用されていません。";
 
 // Agency related
