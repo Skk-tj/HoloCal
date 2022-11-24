@@ -33,7 +33,10 @@
 		F022119D292B6CF5009EC2CC /* SingleAgencyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022119B292B6CF5009EC2CC /* SingleAgencyItemView.swift */; };
 		F02211A1292C9CF7009EC2CC /* ForEachVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A0292C9CF7009EC2CC /* ForEachVideoView.swift */; };
 		F02211A3292C9FF8009EC2CC /* ViewerCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A2292C9FF8009EC2CC /* ViewerCounterView.swift */; };
-		F02211A5292CA914009EC2CC /* NewLiveTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A4292CA914009EC2CC /* NewLiveTimeView.swift */; };
+		F02211A5292CA914009EC2CC /* BlockLiveTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A4292CA914009EC2CC /* BlockLiveTimeView.swift */; };
+		F02211A7292E1893009EC2CC /* BlockUpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A6292E1893009EC2CC /* BlockUpcomingTimeView.swift */; };
+		F02211A9292E1E4B009EC2CC /* PaneViewChannelInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A8292E1E4B009EC2CC /* PaneViewChannelInfoView.swift */; };
+		F02211AB292F68DF009EC2CC /* BlockMemberOnlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211AA292F68DF009EC2CC /* BlockMemberOnlyView.swift */; };
 		F025203728E10AB600976972 /* SpecialThanksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025203628E10AB600976972 /* SpecialThanksView.swift */; };
 		F025203F28EE94B700976972 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025203E28EE94B700976972 /* Constants.swift */; };
 		F025204028EE95F900976972 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025203E28EE94B700976972 /* Constants.swift */; };
@@ -335,7 +338,10 @@
 		F022119B292B6CF5009EC2CC /* SingleAgencyItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAgencyItemView.swift; sourceTree = "<group>"; };
 		F02211A0292C9CF7009EC2CC /* ForEachVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForEachVideoView.swift; sourceTree = "<group>"; };
 		F02211A2292C9FF8009EC2CC /* ViewerCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewerCounterView.swift; sourceTree = "<group>"; };
-		F02211A4292CA914009EC2CC /* NewLiveTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLiveTimeView.swift; sourceTree = "<group>"; };
+		F02211A4292CA914009EC2CC /* BlockLiveTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockLiveTimeView.swift; sourceTree = "<group>"; };
+		F02211A6292E1893009EC2CC /* BlockUpcomingTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUpcomingTimeView.swift; sourceTree = "<group>"; };
+		F02211A8292E1E4B009EC2CC /* PaneViewChannelInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaneViewChannelInfoView.swift; sourceTree = "<group>"; };
+		F02211AA292F68DF009EC2CC /* BlockMemberOnlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockMemberOnlyView.swift; sourceTree = "<group>"; };
 		F025203628E10AB600976972 /* SpecialThanksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialThanksView.swift; sourceTree = "<group>"; };
 		F025203E28EE94B700976972 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F025204328EEA5FC00976972 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -727,7 +733,10 @@
 				F0F0EAC1292B56D20091DBD7 /* UpcomingFavouriteCountView.swift */,
 				F0E4873C2876586F00118BBB /* LiveCollabAvatarView.swift */,
 				F02211A2292C9FF8009EC2CC /* ViewerCounterView.swift */,
-				F02211A4292CA914009EC2CC /* NewLiveTimeView.swift */,
+				F02211A4292CA914009EC2CC /* BlockLiveTimeView.swift */,
+				F02211A6292E1893009EC2CC /* BlockUpcomingTimeView.swift */,
+				F02211A8292E1E4B009EC2CC /* PaneViewChannelInfoView.swift */,
+				F02211AA292F68DF009EC2CC /* BlockMemberOnlyView.swift */,
 			);
 			path = CellElement;
 			sourceTree = "<group>";
@@ -1242,6 +1251,7 @@
 				F0C657BD2771F47C004AF802 /* LiveView.swift in Sources */,
 				F0EB53BD2812C5680024E089 /* OldShareButton.swift in Sources */,
 				F0AC584B28CFCC580088151C /* SettingsStackView.swift in Sources */,
+				F02211A9292E1E4B009EC2CC /* PaneViewChannelInfoView.swift in Sources */,
 				F022119C292B6CF5009EC2CC /* SingleAgencyItemView.swift in Sources */,
 				F0EB53B0281290490024E089 /* PaneViewButtonRowView.swift in Sources */,
 				F093D1DE282FA5E600E2A6FF /* VideoFetchService.swift in Sources */,
@@ -1253,11 +1263,12 @@
 				F080A04F27F95D9E00DBC08D /* TalentData.swift in Sources */,
 				F008BBA72928DD5100034AF4 /* ManageFavoriteAgencySelectionView.swift in Sources */,
 				F0EB53B62812BD6F0024E089 /* FavouriteButton.swift in Sources */,
-				F02211A5292CA914009EC2CC /* NewLiveTimeView.swift in Sources */,
+				F02211A5292CA914009EC2CC /* BlockLiveTimeView.swift in Sources */,
 				F080A05127F993DC00DBC08D /* ManageFavoriteView.swift in Sources */,
 				F05E9EB927EB3C6100EF48DD /* LivePaneView.swift in Sources */,
 				F0F0EAB9292B48910091DBD7 /* UIListView.swift in Sources */,
 				F0F0EAC2292B56D20091DBD7 /* UpcomingFavouriteCountView.swift in Sources */,
+				F02211AB292F68DF009EC2CC /* BlockMemberOnlyView.swift in Sources */,
 				F008BBA42928DA4600034AF4 /* AgencySelectionView.swift in Sources */,
 				F0673C1227732CE7009C65C6 /* UpcomingCellView.swift in Sources */,
 				F009023A27EDB85100E343B0 /* LiveViewToolbar.swift in Sources */,
@@ -1294,6 +1305,7 @@
 				F004E8C9285D045D00ABDFED /* SongListView.swift in Sources */,
 				F02211A1292C9CF7009EC2CC /* ForEachVideoView.swift in Sources */,
 				F058189A281BFFDA0064EF94 /* SectionedForEachView.swift in Sources */,
+				F02211A7292E1893009EC2CC /* BlockUpcomingTimeView.swift in Sources */,
 				F0ED2B13280CB73D00683E6C /* TopicTagView.swift in Sources */,
 				F0EB53B22812A2E90024E089 /* EventEditView.swift in Sources */,
 				F0114D4F2815F81600B99D4D /* DataStatusIndicatorView.swift in Sources */,

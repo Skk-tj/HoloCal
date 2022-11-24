@@ -36,41 +36,14 @@ struct LivePaneView: View {
                     }
                     
                     // MARK: - Channel information
-                    HStack {
-                        LiveAvatarView(url: live.channel.photo, avatarRadius: 40.0)
-                        
-                        if let mentions = live.mentions {
-                            Text("\(live.channel.name) \(String(localized: "LIVE_PANE_VIEW_WITH"))")
-                                .lineLimit(1)
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                            
-                            LiveCollabAvatarView(mentions: mentions, avatarRadius: 40.0)
-                                .onTapGesture {
-                                    isShowingCollabSheet.toggle()
-                                }
-                                .sheet(isPresented: $isShowingCollabSheet, content: {
-                                    if #available(iOS 16.0, *) {
-                                        LiveCollabListStackView(mentions: mentions)
-                                            .presentationDetents([.medium, .large])
-                                    } else {
-                                        LiveCollabListView(mentions: mentions)
-                                    }
-                                })
-                        } else {
-                            Text(live.channel.name)
-                                .lineLimit(1)
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                        }
-                    }
+                    PaneViewChannelInfoView(video: live)
                     
                     // MARK: - Time and other information
                     HStack {
                         ViewerCounterView(viewer: live.liveViewers, memberOnly: live.isMengen)
                             .padding(.trailing)
                         
-                        NewLiveTimeView(liveTime: live.startActual)
+                        BlockLiveTimeView(liveTime: live.startActual)
                     }
                     .padding(.top, 5)
                     

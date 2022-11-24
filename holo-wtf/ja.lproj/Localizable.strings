@@ -72,6 +72,29 @@
 
 "LIVE_CELL_VIEW_STARTED_AT %@" = "%@";
 
+// Block Live Time View
+
+"BLOCK_LIVE_TIME_VIEW_AGO" = "前にライブ開始";
+"BLOCK_LIVE_TIME_VIEW_WAITING" = "待機中";
+"BLOCK_LIVE_TIME_VIEW_NA" = "開始時間不明";
+"BLOCK_LIVE_TIME_VIEW_STARTED_AT" = "に開始した";
+
+// Block Upcoming Time View
+
+"BLOCK_UPCOMING_TIME_VIEW_STARTING_IN" = "後にライブ配信";
+"BLOCK_UPCOMING_TIME_VIEW_STARTING_TIME_UNKNOWN" = "開始時間不明";
+"BLOCK_UPCOMING_TIME_VIEW_STARTING_AT" = "に予定";
+
+// Viewer Counter View
+
+"VIEWER_COUNTER_VIEW_WATCHING" = "視聴中";
+"VIEWER_COUNTER_VIEW_MEMBER_ONLY" = "メンバー限定";
+"VIEWER_COUNTER_VIEW_MEMBER_NA" = "不明";
+
+// Block Member Only View
+
+"BLOCK_MEMBER_ONLY_MEMBER" = "メンバー";
+
 // Upcoming Cell View
 
 "UPCOMING_CELL_VIEW_STARTING_IN %@" = "%@後にライブ配信";

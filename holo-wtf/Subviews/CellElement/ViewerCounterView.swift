@@ -15,12 +15,12 @@ struct ViewerCounterView: View {
         VStack(alignment: .leading) {
             HStack {
                 Image(systemName: "person.fill")
-                Text(memberOnly ? "N/A" : "\(viewer)")
+                Text(memberOnly ? "VIEWER_COUNTER_VIEW_MEMBER_NA" : "\(viewer)")
                     .font(.title3)
                     .fontWeight(.bold)
             }
             
-            Text(memberOnly ? "member only" : "watching")
+            Text(memberOnly ? "VIEWER_COUNTER_VIEW_MEMBER_ONLY" : "VIEWER_COUNTER_VIEW_WATCHING")
                 .font(.callout)
                 .foregroundColor(.secondary)
         }
