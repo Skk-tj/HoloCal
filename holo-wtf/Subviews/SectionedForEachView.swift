@@ -21,11 +21,7 @@ struct SectionedForEachView<Content: View>: View {
     
     @ViewBuilder
     var body: some View {
-        let filteredVideos = viewModel.videoList.filter { video in
-            !favourited.contains(where: { video.channel.id == $0 })
-        }
-        
-        let groupedDictionary = OrderedDictionary<GenerationEnum, [LiveVideo]>(grouping: filteredVideos, by: { $0.channel.talent?.inGeneration ?? .other })
+        let groupedDictionary = OrderedDictionary<Generation, [LiveVideo]>(grouping: viewModel.videoList, by: { $0.channel.talent?.inGeneration ?? .other })
         let filteredGenerationListOrder = generationListOrder.filter { generation in
             generationListSelection.contains(generation)
         }

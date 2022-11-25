@@ -37,6 +37,7 @@
 		F02211A7292E1893009EC2CC /* BlockUpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A6292E1893009EC2CC /* BlockUpcomingTimeView.swift */; };
 		F02211A9292E1E4B009EC2CC /* PaneViewChannelInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A8292E1E4B009EC2CC /* PaneViewChannelInfoView.swift */; };
 		F02211AB292F68DF009EC2CC /* BlockMemberOnlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211AA292F68DF009EC2CC /* BlockMemberOnlyView.swift */; };
+		F02211AD292F73DA009EC2CC /* iPadSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211AC292F73DA009EC2CC /* iPadSplitView.swift */; };
 		F025203728E10AB600976972 /* SpecialThanksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025203628E10AB600976972 /* SpecialThanksView.swift */; };
 		F025203F28EE94B700976972 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025203E28EE94B700976972 /* Constants.swift */; };
 		F025204028EE95F900976972 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025203E28EE94B700976972 /* Constants.swift */; };
@@ -342,6 +343,7 @@
 		F02211A6292E1893009EC2CC /* BlockUpcomingTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUpcomingTimeView.swift; sourceTree = "<group>"; };
 		F02211A8292E1E4B009EC2CC /* PaneViewChannelInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaneViewChannelInfoView.swift; sourceTree = "<group>"; };
 		F02211AA292F68DF009EC2CC /* BlockMemberOnlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockMemberOnlyView.swift; sourceTree = "<group>"; };
+		F02211AC292F73DA009EC2CC /* iPadSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadSplitView.swift; sourceTree = "<group>"; };
 		F025203628E10AB600976972 /* SpecialThanksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialThanksView.swift; sourceTree = "<group>"; };
 		F025203E28EE94B700976972 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F025204328EEA5FC00976972 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -621,6 +623,7 @@
 				F05E9EB427EB290000EF48DD /* UpcomingiPadView.swift */,
 				F05E9EB627EB291900EF48DD /* SettingsiPadView.swift */,
 				F09D25F228041CC3001A7D71 /* iPadSidebarView.swift */,
+				F02211AC292F73DA009EC2CC /* iPadSplitView.swift */,
 				F01E95B2286FB4B900CDF0F9 /* iPadLazyGirdView.swift */,
 			);
 			path = iPadOS;
@@ -1289,6 +1292,7 @@
 				F02211A3292C9FF8009EC2CC /* ViewerCounterView.swift in Sources */,
 				F04EB66728D2A0A000F168CB /* ManageGenerationOrderView.swift in Sources */,
 				F0EB53B82812BEAD0024E089 /* ShareButton.swift in Sources */,
+				F02211AD292F73DA009EC2CC /* iPadSplitView.swift in Sources */,
 				F0F0EA99292B01510091DBD7 /* LiveFavoritesViewModel.swift in Sources */,
 				F004E8CB285D058000ABDFED /* SingleSongView.swift in Sources */,
 				F05E9EB327EB27F800EF48DD /* LiveiPadView.swift in Sources */,
