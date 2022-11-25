@@ -24,8 +24,6 @@ struct holo_wtfApp: App {
     @AppStorage("hololiveGenerationListOrder") var hololiveGenerationListOrder = agencyEnumToGenerations[AgencyEnum.hololive]!
     @AppStorage("nijisanjiGenerationListOrder") var nijisanjiGenerationListOrder = agencyEnumToGenerations[AgencyEnum.nijisanji]!
     
-    @State var viewSelection: Views? = Views.live
-    
     init() {
         // MARK: - Setup DST Warning
         let tz = TimeZone.current
@@ -63,34 +61,7 @@ struct holo_wtfApp: App {
                 // iPadOS
                 // TODO: https://stackoverflow.com/questions/73279601/swiftui-navigationstack-inside-navigationsplitview-not-working-on-iphone-and-ipa
                 if #available(iOS 16.0, *) {
-                    NavigationSplitView(sidebar: {
-                        List(selection: $viewSelection) {
-                            NavigationLink(value: Views.live) {
-                                Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
-                            }
-                            NavigationLink(value: Views.upcoming) {
-                                Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
-                            }
-                            NavigationLink(value: Views.settings) {
-                                Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
-                            }
-                        }
-                        .listStyle(.sidebar)
-                        .navigationTitle("HoloCal")
-                    }, detail: {
-                        NavigationStack {
-                            if let viewSelection {
-                                switch viewSelection {
-                                case Views.live:
-                                    LiveiPadView()
-                                case Views.upcoming:
-                                    UpcomingiPadView()
-                                case Views.settings:
-                                    SettingsiPadView()
-                                }
-                            }
-                        }
-                    })
+                    iPadSplitView()
                 } else {
                     NavigationView {
                         iPadSidebarView()

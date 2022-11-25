@@ -19,6 +19,8 @@ struct VideoThumbnailView: View {
             }, placeholder: {
                 ProgressView()
                     .padding(.vertical)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .aspectRatio(1.78, contentMode: .fit)
             })
         }
     }
