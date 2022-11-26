@@ -94,11 +94,23 @@ func getEntryWithIntent(for agency: IntentAgency, videoType: VideoType, sortBy: 
     }
 }
 
-func getMultipleEntry(url: String, sortBy sortAlgorithm: (LiveVideo, LiveVideo) -> Bool, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> MultipleVideoWidgetEntry {
+func getMultipleEntry(for agency: IntentAgency, videoType: VideoType, sortBy: IntentSortBy, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> MultipleVideoWidgetEntry {
     do {
-        var lives: [LiveVideo] = try await getVideos(from: url)
+        var lives: [LiveVideo] = try await getVideos(from: getVideoURLForWidget(agency: agency, videoType: videoType))
+        
         lives = lives.filter(filterAlgorithm)
-        lives.sort(by: sortAlgorithm)
+        
+        switch sortBy {
+        case .unknown, .mostRecent:
+            switch videoType {
+            case .live:
+                lives.sort(by: liveSortStrategy)
+            case .upcoming:
+                lives.sort(by: upcomingSortStrategy)
+            }
+        case .mostViewer:
+            lives.sort(by: {$0.liveViewers > $1.liveViewers})
+        }
         
         if lives.isEmpty {
             let entry = MultipleVideoWidgetEntry(date: .now, status: .noVideo, videoLeft: nil, thumbnailDataLeft: Data(), videoRight: nil, thumbnailDataRight: Data())
@@ -126,11 +138,22 @@ func getMultipleEntry(url: String, sortBy sortAlgorithm: (LiveVideo, LiveVideo) 
     }
 }
 
-func getChannelsEntry(from url: String, sortBy sortAlgorithm: (LiveVideo, LiveVideo) -> Bool, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> ChannelsEntry {
+func getChannelsEntry(for agency: IntentAgency, videoType: VideoType, sortBy: IntentSortBy, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> ChannelsEntry {
     do {
-        var lives: [LiveVideo] = try await getVideos(from: url)
-        lives.sort(by: sortAlgorithm)
+        var lives: [LiveVideo] = try await getVideos(from: getVideoURLForWidget(agency: agency, videoType: videoType))
         lives = lives.filter(filterAlgorithm)
+        
+        switch sortBy {
+        case .unknown, .mostRecent:
+            switch videoType {
+            case .live:
+                lives.sort(by: liveSortStrategy)
+            case .upcoming:
+                lives.sort(by: upcomingSortStrategy)
+            }
+        case .mostViewer:
+            lives.sort(by: {$0.liveViewers > $1.liveViewers})
+        }
         
         if lives.isEmpty {
             let entry = ChannelsEntry(date: .now, status: .noVideo, channels: [], thumbnails: [])

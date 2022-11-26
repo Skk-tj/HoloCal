@@ -5,7 +5,6 @@
 //  Created by Haoyi An on 2022-11-26.
 //
 
-import Foundation
 import WidgetKit
 
 struct VideoWidgetProvider: TimelineProvider {

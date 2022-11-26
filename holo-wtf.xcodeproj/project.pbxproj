@@ -57,8 +57,6 @@
 		F03A138328F0004C00BB8E51 /* ChannelsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A138228F0004C00BB8E51 /* ChannelsEntry.swift */; };
 		F03A138428F0004C00BB8E51 /* ChannelsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A138228F0004C00BB8E51 /* ChannelsEntry.swift */; };
 		F03A138528F0004C00BB8E51 /* ChannelsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A138228F0004C00BB8E51 /* ChannelsEntry.swift */; };
-		F03A138C28F0010A00BB8E51 /* MultipleVideoWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B71FCC283CACA000DC4260 /* MultipleVideoWidgetProvider.swift */; };
-		F03A138E28F0010B00BB8E51 /* MultipleVideoWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B71FCC283CACA000DC4260 /* MultipleVideoWidgetProvider.swift */; };
 		F03A139228F1FE0700BB8E51 /* ChannelsWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A139128F1FE0700BB8E51 /* ChannelsWidgetProvider.swift */; };
 		F03A139428F2018000BB8E51 /* LiveChannelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A139328F2018000BB8E51 /* LiveChannelsView.swift */; };
 		F0433C5227EAEDDB000FEADD /* OpenSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */; };
@@ -1163,7 +1161,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0E45D1B28F39AF90091474A /* Agency.swift in Sources */,
-				F03A138E28F0010B00BB8E51 /* MultipleVideoWidgetProvider.swift in Sources */,
 				F025204228EE95FB00976972 /* Constants.swift in Sources */,
 				F00BD6D329052AC400D7932E /* VideoViewModel.swift in Sources */,
 				F06D28F428D83A9D007D06FB /* LiveAccessoryRectangularWidgetView.swift in Sources */,
@@ -1361,7 +1358,6 @@
 				F06D28F628D83AA6007D06FB /* UpcomingAccessoryRectangularWidgetView.swift in Sources */,
 				F04D755628D7D0CC0096B8AB /* WatchUpcomingCellView.swift in Sources */,
 				F0E45D1628F34CA10091474A /* SpecialThanksView.swift in Sources */,
-				F03A138C28F0010A00BB8E51 /* MultipleVideoWidgetProvider.swift in Sources */,
 				F0CA6ED328D7C4A40028CB11 /* LiveTimeView.swift in Sources */,
 				F0CA6ED428D7C4A40028CB11 /* UpcomingTimeView.swift in Sources */,
 				F04D754828D7C94F0096B8AB /* Util.swift in Sources */,
