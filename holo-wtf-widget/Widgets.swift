@@ -38,7 +38,7 @@ struct MultipleLiveWidget: Widget {
     let kind: String = "io.skk-tj.holo-wtf-widget.multiple-live"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: MultipleVideoWidgetProvider(url: hololiveLiveURL, sortStrategy: liveSortStrategy)) { entry in
+        IntentConfiguration(kind: kind, intent: SelectAgencyIntent.self, provider: MultipleVideoWidgetProvider(videoType: .live)) { entry in
             MultipleLiveWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("MULTIPLE_CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
@@ -77,7 +77,7 @@ struct MultipleUpcomingWidget: Widget {
     let kind: String = "io.skk-tj.holo-wtf-widget.multiple-upcoming"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: MultipleVideoWidgetProvider(url: hololiveWidgetUpcomingURL, sortStrategy: upcomingSortStrategy)) { entry in
+        IntentConfiguration(kind: kind, intent: SelectAgencyIntent.self, provider: MultipleVideoWidgetProvider(videoType: .upcoming)) { entry in
             MultipleUpcomingWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("MULTIPLE_UPCOMING_WIDGET_DISPLAY_NAME")
@@ -90,7 +90,7 @@ struct LiveChannelsWidget: Widget {
     let kind: String = "io.skk-tj.holo-wtf-widget.live-channels"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: ChannelsWidgetProvider(url: hololiveLiveURL, sortStrategy: liveSortStrategy)) { entry in
+        IntentConfiguration(kind: kind, intent: SelectAgencyIntent.self, provider: ChannelsWidgetProvider(videoType: .live)) { entry in
             LiveChannelsEntryView(entry: entry)
         }
         .configurationDisplayName("LIVE_CHANNELS_WIDGET_DISPLAY_NAME")
@@ -103,7 +103,7 @@ struct UpcomingChannelsWidget: Widget {
     let kind: String = "io.skk-tj.holo-wtf-widget.upcoming-channels"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: ChannelsWidgetProvider(url: hololiveWidgetUpcomingURL, sortStrategy: upcomingSortStrategy)) { entry in
+        IntentConfiguration(kind: kind, intent: SelectAgencyIntent.self, provider: ChannelsWidgetProvider(videoType: .upcoming)) { entry in
             UpcomingChannelsEntryView(entry: entry)
         }
         .configurationDisplayName("UPCOMING_CHANNELS_WIDGET_DISPLAY_NAME")

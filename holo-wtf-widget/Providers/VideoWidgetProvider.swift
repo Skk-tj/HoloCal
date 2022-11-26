@@ -5,7 +5,6 @@
 //
 //
 
-import Foundation
 import WidgetKit
 
 struct VideoWidgetProvider: TimelineProvider {
