@@ -31,11 +31,11 @@ struct LiveView: View {
                 }
             }
             .task {
-                await live.getLive()
+                await live.getVideoForUI()
                 currentPresentationMode = .normal
             }
             .refreshable {
-                await live.getLive()
+                await live.getVideoForUI()
                 currentPresentationMode = .normal
             }
     }

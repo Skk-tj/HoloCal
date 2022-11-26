@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LiveViewModel: VideoViewModel {
+class LiveViewModel: VideoViewModel, VideoGettable {
     let videoUrl: String
     
     override init(for agency: AgencyEnum) {
@@ -22,7 +22,7 @@ class LiveViewModel: VideoViewModel {
     }
     
     @MainActor
-    func getLive() async {
+    func getVideoForUI() async {
         await getVideo(url: videoUrl) { responseResult in
             self.videoList = responseResult
             self.sortVideos(by: .timeDesc)

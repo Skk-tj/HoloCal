@@ -8,7 +8,6 @@
 import SwiftUI
 import WidgetKit
 
-@available(iOSApplicationExtension 16.0, *)
 struct UpcomingAccessoryRectangularWidgetView: View {
     @Environment(\.widgetRenderingMode) var renderingMode
     let upcoming: LiveVideo
@@ -52,7 +51,6 @@ struct UpcomingAccessoryRectangularWidgetView: View {
     }
 }
 
-@available(iOSApplicationExtension 16.0, *)
 struct UpcomingAccessoryRectangularWidgetView_Previews: PreviewProvider {
     static var previews: some View {
         UpcomingAccessoryRectangularWidgetView(upcoming: LiveVideo.previewLive)

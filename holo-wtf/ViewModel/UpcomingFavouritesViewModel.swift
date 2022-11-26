@@ -7,23 +7,9 @@
 
 import Foundation
 
-class UpcomingFavoritesViewModel: VideoViewModel {
+class UpcomingFavoritesViewModel: VideoViewModel, VideoGettable {
     @MainActor
-    func getUpcoming() async {
-        let upcomingLookAhead = getUpcomingStreamLookAheadHoursFromUserDefaults()
-        let favourites = getFavouritesFromUserDefaults()
-        
-        await getVideo(url: String(format: allUpcomingURL, upcomingLookAhead)) { responseResult in
-            self.videoList = responseResult
-            self.sortVideos(by: .timeAsc)
-            self.videoList = self.videoList.filter {
-                return ($0.isHololive || $0.isNijisanji) && favourites.contains($0.channel.id)
-            }
-        }
-    }
-    
-    @MainActor
-    func getUpcomingForFavourites() async {
+    func getVideoForUI() async {
         let upcomingLookAhead = getUpcomingStreamLookAheadHoursFromUserDefaults()
         let favourites = getFavouritesFromUserDefaults()
         self.dataStatus = .working
@@ -31,17 +17,14 @@ class UpcomingFavoritesViewModel: VideoViewModel {
         do {
             var getResult: [LiveVideo] = []
             
-            try await withThrowingTaskGroup(of: [LiveVideo].self) { group in
-                group.addTask {
-                    return try await getVideos(from: String(format: hololiveUpcomingURL, upcomingLookAhead))
-                }
-                group.addTask {
-                    return try await getVideos(from: String(format: nijisanjiUpcomingURL, upcomingLookAhead))
-                }
-                
-                for try await videos in group {
-                    getResult.append(contentsOf: videos)
-                }
+            async let hololiveUpcoming = getVideos(from: String(format: hololiveUpcomingURL, upcomingLookAhead))
+            async let nijisanjiUpcoming = getVideos(from: String(format: nijisanjiUpcomingURL, upcomingLookAhead))
+            
+            getResult.append(contentsOf: (try? await hololiveUpcoming) ?? [])
+            getResult.append(contentsOf: (try? await nijisanjiUpcoming) ?? [])
+            
+            getResult = getResult.filter {
+                favourites.contains($0.channel.id)
             }
             
             let getResultWithTwitter: [LiveVideo] = try await getTwitterForAll(videoList: getResult)

@@ -23,10 +23,10 @@ struct UpcomingFavouritesView: View {
                 }
             }
             .task {
-                await upcoming.getUpcomingForFavourites()
+                await upcoming.getVideoForUI()
             }
             .refreshable {
-                await upcoming.getUpcomingForFavourites()
+                await upcoming.getVideoForUI()
             }
     }
 }

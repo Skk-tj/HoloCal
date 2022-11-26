@@ -31,11 +31,11 @@ struct UpcomingView: View {
                 }
             }
             .task {
-                await upcoming.getUpcoming()
+                await upcoming.getVideoForUI()
                 currentPresentationMode = .normal
             }
             .refreshable {
-                await upcoming.getUpcoming()
+                await upcoming.getVideoForUI()
                 currentPresentationMode = .normal
             }
     }

@@ -23,10 +23,10 @@ struct LiveFavouritesView: View {
                 }
             }
             .task {
-                await live.getLive()
+                await live.getVideoForUI()
             }
             .refreshable {
-                await live.getLive()
+                await live.getVideoForUI()
             }
     }
 }

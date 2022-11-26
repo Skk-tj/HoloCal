@@ -33,11 +33,11 @@ struct LiveiPadView: View {
         }, isFavourite: false)
         .environmentObject(live as VideoViewModel)
         .task {
-            await live.getLive()
+            await live.getVideoForUI()
             currentPresentationMode = .normal
         }
         .refreshable {
-            await live.getLive()
+            await live.getVideoForUI()
             currentPresentationMode = .normal
         }
         .navigationTitle("LIVE_VIEW_TITLE")
