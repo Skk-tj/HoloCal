@@ -20,7 +20,7 @@ struct iPadLazyGridView<VideoContent: View, DataStatusView: View>: View {
     let isFavourite: Bool
     
     let layout = [
-        GridItem(.adaptive(minimum: 300), spacing: 10)
+        GridItem(.adaptive(minimum: 300))
     ]
     
     var body: some View {
@@ -29,12 +29,11 @@ struct iPadLazyGridView<VideoContent: View, DataStatusView: View>: View {
                 if let days = Calendar.current.dateComponents([.day], from: Date(), to: nextDSTTransition).day {
                     if isShowingDSTReminder {
                         DSTReminderView(numberOfDaysToChange: days, changeType: TimeZone.current.isDaylightSavingTime() ? .ending : .starting, isShowingDSTReminder: $isShowingDSTReminder)
-                            .padding(.horizontal, 30)
                     }
                 }
             }
             
-            LazyVGrid(columns: layout, spacing: 30) {
+            LazyVGrid(columns: layout, alignment: .leading, spacing: 30) {
                 if searchText.isEmpty {
                     if isFavourite {
                         ForEachVideoView { live in
@@ -51,10 +50,10 @@ struct iPadLazyGridView<VideoContent: View, DataStatusView: View>: View {
                     }
                 }
             }
-            .padding(30)
             
             dataStatusView()
         }
+        .padding(.horizontal, 30)
         .searchable(text: $searchText, prompt: "SEARCH_BY_NAME_OR_TAG") {
             if searchText.isEmpty {
                 ForEach(videoViewModel.getSearchSuggestions(), id: \.self) { suggestion in

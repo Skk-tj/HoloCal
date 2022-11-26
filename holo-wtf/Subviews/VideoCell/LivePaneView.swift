@@ -26,6 +26,7 @@ struct LivePaneView: View {
                     if UIDevice.current.userInterfaceIdiom == .pad {
                         Text(live.title)
                             .font(.headline)
+                            .frame(maxHeight: .infinity)
                             .lineLimit(2, reservesSpace: true)
                             .multilineTextAlignment(.leading)
                     } else {

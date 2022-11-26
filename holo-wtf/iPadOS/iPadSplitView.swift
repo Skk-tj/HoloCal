@@ -16,10 +16,9 @@ enum iPadAgencies {
 struct iPadSplitView: View {
     @State var viewSelection: Views? = Views.live
     @State var agencySelection: iPadAgencies? = .hololive
-    @State var visibility: NavigationSplitViewVisibility = .automatic
     
     var body: some View {
-        NavigationSplitView(columnVisibility: $visibility, sidebar: {
+        NavigationSplitView(sidebar: {
             List(selection: $viewSelection) {
                 NavigationLink(value: Views.live) {
                     Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
@@ -33,13 +32,6 @@ struct iPadSplitView: View {
             }
             .listStyle(.sidebar)
             .navigationTitle("HoloCal")
-            .onChange(of: viewSelection) { selection in
-                if let selection {
-                    if selection == .settings {
-                        visibility = .detailOnly
-                    }
-                }
-            }
         }, content: {
             if let viewSelection {
                 switch viewSelection {
@@ -76,7 +68,9 @@ struct iPadSplitView: View {
                     .listStyle(.sidebar)
                     .navigationTitle(LocalizedStringKey("SETTINGS_SELECT_AGENCY_NAVIGATION_TITLE"))
                 case .settings:
-                    Text("text")
+                    NavigationStack {
+                        SettingsiPadView()
+                    }
                 }
             }
         }, detail: {
@@ -106,7 +100,7 @@ struct iPadSplitView: View {
                     }
                 case .settings:
                     NavigationStack {
-                        SettingsiPadView()
+                        EmptyView()
                     }
                 }
             }
