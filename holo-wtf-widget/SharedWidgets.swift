@@ -13,7 +13,7 @@ struct LiveAccessoryRectangularWidget: Widget {
     let kind: String = "LiveAccessoryRectangularWidget"
     
     var body: some WidgetConfiguration {
-        return StaticConfiguration(kind: kind, provider: VideoWidgetProvider(url: hololiveLiveURL, sortStrategy: liveSortStrategy)) { entry in
+        StaticConfiguration(kind: kind, provider: VideoWidgetProvider(url: hololiveLiveURL, sortStrategy: liveSortStrategy)) { entry in
             LiveAccessoryRectangularWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
@@ -26,7 +26,7 @@ struct UpcomingAccessoryRectangularWidget: Widget {
     let kind: String = "UpcomingAccessoryRectangularWidget"
     
     var body: some WidgetConfiguration {
-        return StaticConfiguration(kind: kind, provider: VideoWidgetProvider(url: hololiveWidgetUpcomingURL, sortStrategy: upcomingSortStrategy)) { entry in
+        StaticConfiguration(kind: kind, provider: VideoWidgetProvider(url: hololiveWidgetUpcomingURL, sortStrategy: upcomingSortStrategy)) { entry in
             UpcomingAccessoryRectangularWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("UPCOMING_WIDGET_DISPLAY_NAME")

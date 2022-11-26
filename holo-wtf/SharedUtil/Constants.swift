@@ -21,9 +21,13 @@ let nijisanjiUpcomingURL = "https://holodex.net/api/v2/live?status=upcoming&type
 
 let hololiveWidgetUpcomingURL = "https://holodex.net/api/v2/live?org=Hololive&status=upcoming&type=stream"
 
+let nijisanjiWidgetUpcomingURL = "https://holodex.net/api/v2/live?org=nijisanji&status=upcoming&type=stream"
+
 let allLiveURL = "https://holodex.net/api/v2/live?&status=live&type=stream&include=songs,mentions"
 
 let allUpcomingURL = "https://holodex.net/api/v2/live?status=upcoming&type=stream&include=songs,mentions&max_upcoming_hours=%d"
+
+let allWidgetUpcomingURL = "https://holodex.net/api/v2/live?status=upcoming&type=stream&include=songs,mentions"
 
 
 func liveSortStrategy(l1: LiveVideo, l2: LiveVideo) -> Bool {
