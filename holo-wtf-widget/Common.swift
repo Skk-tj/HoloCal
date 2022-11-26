@@ -58,12 +58,23 @@ func getEntry(url: String, sortBy sortAlgorithm: (LiveVideo, LiveVideo) -> Bool,
     }
 }
 
-func getEntryWithIntent(for agency: IntentAgency, videoType: VideoType, sortBy sortAlgorithm: (LiveVideo, LiveVideo) -> Bool, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> SingleVideoWidgetEntry {
+func getEntryWithIntent(for agency: IntentAgency, videoType: VideoType, sortBy: IntentSortBy, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> SingleVideoWidgetEntry {
     do {
         var lives: [LiveVideo] = try await getVideos(from: getVideoURLForWidget(agency: agency, videoType: videoType))
         
         lives = lives.filter(filterAlgorithm)
-        lives.sort(by: sortAlgorithm)
+        
+        switch sortBy {
+        case .unknown, .mostRecent:
+            switch videoType {
+            case .live:
+                lives.sort(by: liveSortStrategy)
+            case .upcoming:
+                lives.sort(by: upcomingSortStrategy)
+            }
+        case .mostViewer:
+            lives.sort(by: {$0.liveViewers > $1.liveViewers})
+        }
         
         if lives.isEmpty {
             let entry = SingleVideoWidgetEntry(date: .now, status: .noVideo, video: nil, avatarData: Data(), thumbnailData: Data())

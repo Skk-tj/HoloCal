@@ -12,7 +12,7 @@ struct SmallLiveWidget: Widget {
     let kind: String = "io.skk-tj.holo-wtf-widget.small-live"
     
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: SelectAgencyIntent.self, provider: VideoWidgetProviderWithIntent(videoType: .live, sortStrategy: liveSortStrategy)) { entry in
+        IntentConfiguration(kind: kind, intent: SelectAgencyIntent.self, provider: VideoWidgetProviderWithIntent(videoType: .live)) { entry in
             SmallLiveWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
@@ -25,7 +25,7 @@ struct LivePaneWidget: Widget {
     let kind: String = "io.skk-tj.holo-wtf-widget.live-pane"
     
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: SelectAgencyIntent.self, provider: VideoWidgetProviderWithIntent(videoType: .live, sortStrategy: liveSortStrategy)) { entry in
+        IntentConfiguration(kind: kind, intent: SelectAgencyIntent.self, provider: VideoWidgetProviderWithIntent(videoType: .live)) { entry in
             LivePaneWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
@@ -51,7 +51,7 @@ struct SmallUpcomingWidget: Widget {
     let kind: String = "io.skk-tj.holo-wtf-widget.small-upcoming"
     
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: SelectAgencyIntent.self, provider: VideoWidgetProviderWithIntent(videoType: .upcoming, sortStrategy: liveSortStrategy)) { entry in
+        IntentConfiguration(kind: kind, intent: SelectAgencyIntent.self, provider: VideoWidgetProviderWithIntent(videoType: .upcoming)) { entry in
             SmallUpcomingWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("UPCOMING_WIDGET_DISPLAY_NAME")
@@ -64,7 +64,7 @@ struct UpcomingPaneWidget: Widget {
     let kind: String = "io.skk-tj.holo-wtf-widget.upcoming-pane"
     
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: SelectAgencyIntent.self, provider: VideoWidgetProviderWithIntent(videoType: .upcoming, sortStrategy: liveSortStrategy)) { entry in
+        IntentConfiguration(kind: kind, intent: SelectAgencyIntent.self, provider: VideoWidgetProviderWithIntent(videoType: .upcoming)) { entry in
             UpcomingPaneWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("UPCOMING_WIDGET_DISPLAY_NAME")
