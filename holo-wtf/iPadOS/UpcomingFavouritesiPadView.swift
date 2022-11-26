@@ -29,10 +29,10 @@ struct UpcomingFavouritesiPadView: View {
         }, isFavourite: true)
         .environmentObject(upcoming as VideoViewModel)
         .task {
-            await upcoming.getUpcoming()
+            await upcoming.getVideoForUI()
         }
         .refreshable {
-            await upcoming.getUpcoming()
+            await upcoming.getVideoForUI()
         }
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {

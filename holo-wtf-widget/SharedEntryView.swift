@@ -9,8 +9,6 @@ import SwiftUI
 import WidgetKit
 
 /// These views are shared between iOS Lock Screen widgets and watchOS complications
-
-@available(iOSApplicationExtension 16.0, *)
 struct LiveAccessoryRectangularWidgetEntryView: View {
     var entry: VideoWidgetProvider.Entry
     
@@ -29,7 +27,6 @@ struct LiveAccessoryRectangularWidgetEntryView: View {
     }
 }
 
-@available(iOSApplicationExtension 16.0, *)
 struct UpcomingAccessoryRectangularWidgetEntryView: View {
     var entry: VideoWidgetProvider.Entry
     

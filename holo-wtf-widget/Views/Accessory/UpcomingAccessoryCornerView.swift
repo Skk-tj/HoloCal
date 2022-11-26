@@ -8,7 +8,6 @@
 import SwiftUI
 import WidgetKit
 
-@available(iOSApplicationExtension 16.0, *)
 struct UpcomingAccessoryCornerView: View {
     let upcoming: LiveVideo
     
@@ -25,7 +24,6 @@ struct UpcomingAccessoryCornerView: View {
     }
 }
 
-@available(iOSApplicationExtension 16.0, *)
 struct UpcomingAccessoryCornerView_Previews: PreviewProvider {
     static var previews: some View {
         UpcomingAccessoryCornerView(upcoming: LiveVideo.previewLive)

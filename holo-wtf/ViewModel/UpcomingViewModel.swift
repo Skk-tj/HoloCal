@@ -7,7 +7,7 @@
 
 import Foundation
 
-class UpcomingViewModel: VideoViewModel {
+class UpcomingViewModel: VideoViewModel, VideoGettable {
     let videoUrl: String
     
     override init(for agency: AgencyEnum) {
@@ -22,7 +22,7 @@ class UpcomingViewModel: VideoViewModel {
     }
     
     @MainActor
-    func getUpcoming() async {
+    func getVideoForUI() async {
         let upcomingLookAhead = getUpcomingStreamLookAheadHoursFromUserDefaults()
         
         await getVideo(url: String(format: videoUrl, upcomingLookAhead)) { responseResult in

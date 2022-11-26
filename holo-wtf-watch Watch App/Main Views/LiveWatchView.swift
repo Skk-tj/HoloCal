@@ -26,10 +26,10 @@ struct LiveWatchView: View {
         .navigationTitle("LIVE_VIEW_TITLE")
         .environmentObject(live as VideoViewModel)
         .task {
-            await live.getLive()
+            await live.getVideoForUI()
         }
         .refreshable {
-            await live.getLive()
+            await live.getVideoForUI()
         }
     }
 }

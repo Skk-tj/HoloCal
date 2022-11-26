@@ -33,11 +33,11 @@ struct UpcomingiPadView: View {
         }, isFavourite: false)
         .environmentObject(upcoming as VideoViewModel)
         .task {
-            await upcoming.getUpcoming()
+            await upcoming.getVideoForUI()
             currentPresentationMode = .normal
         }
         .refreshable {
-            await upcoming.getUpcoming()
+            await upcoming.getVideoForUI()
             currentPresentationMode = .normal
         }
         .toolbar {

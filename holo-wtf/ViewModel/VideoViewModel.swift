@@ -33,6 +33,11 @@ struct SearchSuggestion: Hashable {
     let category: SearchSuggestionCategory
 }
 
+protocol VideoGettable {
+    @MainActor
+    func getVideoForUI() async
+}
+
 class VideoViewModel: ObservableObject {
     @Published var videoList: [LiveVideo]
     @Published var dataStatus: DataStatus
@@ -61,7 +66,6 @@ class VideoViewModel: ObservableObject {
             self.dataStatus = .fail
         }
     }
-    
     
     func updatedWithTwitter(channel: Channel) async -> Channel {
         return Channel(id: channel.id, name: channel.name, photo: channel.photo, org: channel.org, twitter: try? await channel.getTwitterId())

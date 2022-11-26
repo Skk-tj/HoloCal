@@ -27,10 +27,10 @@ struct UpcomingWatchView: View {
         .navigationTitle("UPCOMING_VIEW_TITLE")
         .environmentObject(upcoming as VideoViewModel)
         .task {
-            await upcoming.getUpcoming()
+            await upcoming.getVideoForUI()
         }
         .refreshable {
-            await upcoming.getUpcoming()
+            await upcoming.getVideoForUI()
         }
     }
 }

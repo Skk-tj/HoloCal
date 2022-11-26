@@ -8,7 +8,6 @@
 import SwiftUI
 import WidgetKit
 
-@available(iOSApplicationExtension 16.0, *)
 struct UpcomingAccessoryCornerEntryView: View {
     var entry: VideoWidgetProvider.Entry
     
