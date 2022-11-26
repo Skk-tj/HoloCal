@@ -25,7 +25,7 @@ struct UpcomingWidgetView: View {
             VStack(alignment: .leading) {
                 Text(upcoming.title)
                     .font(.headline)
-                    .lineLimit(2)
+                    .lineLimit(2, reservesSpace: true)
                     .multilineTextAlignment(.leading)
                 
                 HStack {
@@ -41,22 +41,25 @@ struct UpcomingWidgetView: View {
                             .shadow(radius: 1)
                     }
                     
-                    Text(upcoming.channel.name)
-                        .lineLimit(1)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
+                    VStack(alignment: .leading) {
+                        Text(upcoming.channel.getTalentName())
+                            .lineLimit(1)
+                            .font(.subheadline)
+                        Text(upcoming.channel.getAltTalentName())
+                            .lineLimit(1)
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                    }
                 }
                 
-                Divider()
-                
                 HStack {
-                    UpcomingTimeView(liveSchedule: upcoming.startScheduled)
-                    
                     if upcoming.isMengen {
-                        Spacer()
-                        Text("LIVE_CELL_VIEW_MEMBER_ONLY_STREAM")
-                            .font(.footnote)
-                            .foregroundColor(.secondary)
+                        BlockUpcomingTimeView(liveSchedule: upcoming.startScheduled)
+                            .padding(.trailing)
+                        BlockMemberOnlyView()
+                    }
+                    else {
+                        BlockUpcomingTimeView(liveSchedule: upcoming.startScheduled)
                     }
                 }
             }
