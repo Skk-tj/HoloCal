@@ -1,10 +1,11 @@
 //
-//  LiveWidgetProvider.swift
+//  VideoWidgetProvider.swift
 //  holo-wtf
 //
-//  Created by Haoyi An on 2022-05-22.
+//  Created by Haoyi An on 2022-11-26.
 //
 
+import Foundation
 import WidgetKit
 
 struct VideoWidgetProvider: TimelineProvider {
@@ -19,13 +20,13 @@ struct VideoWidgetProvider: TimelineProvider {
     
     func getSnapshot(in context: Context, completion: @escaping (SingleVideoWidgetEntry) -> ()) {
         Task {
-            completion(await getEntry(url: url, sortBy: sortStrategy, filterBy: { $0.isHololive }))
+            completion(await getEntry(url: url, sortBy: sortStrategy, filterBy: { $0.isHololive || $0.isNijisanji }))
         }
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         Task {
-            let entries: [SingleVideoWidgetEntry] = [await getEntry(url: url, sortBy: sortStrategy, filterBy: { $0.isHololive })]
+            let entries: [SingleVideoWidgetEntry] = [await getEntry(url: url, sortBy: sortStrategy, filterBy: { $0.isHololive || $0.isNijisanji })]
             let timeline = Timeline(entries: entries, policy: .atEnd)
             completion(timeline)
         }

@@ -9,6 +9,7 @@
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>ConfigurationIntent</string>
+		<string>SelectAgencyIntent</string>
 	</array>
 </dict>
 </plist>

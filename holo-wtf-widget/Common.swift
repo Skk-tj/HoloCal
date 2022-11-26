@@ -7,9 +7,61 @@
 
 import Foundation
 
+func getVideoURLForWidget(agency: IntentAgency, videoType: VideoType) -> String {
+    switch agency {
+    case .hololive:
+        switch videoType {
+        case .live:
+            return hololiveLiveURL
+        case .upcoming:
+            return hololiveWidgetUpcomingURL
+        }
+    case .nijisanji:
+        switch videoType {
+        case .live:
+            return nijisanjiLiveURL
+        case .upcoming:
+            return nijisanjiWidgetUpcomingURL
+        }
+    case .unknown:
+        switch videoType {
+        case .live:
+            return allLiveURL
+        case .upcoming:
+            return allWidgetUpcomingURL
+        }
+    }
+}
+
 func getEntry(url: String, sortBy sortAlgorithm: (LiveVideo, LiveVideo) -> Bool, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> SingleVideoWidgetEntry {
     do {
         var lives: [LiveVideo] = try await getVideos(from: url)
+        
+        lives = lives.filter(filterAlgorithm)
+        lives.sort(by: sortAlgorithm)
+        
+        if lives.isEmpty {
+            let entry = SingleVideoWidgetEntry(date: .now, status: .noVideo, video: nil, avatarData: Data(), thumbnailData: Data())
+            return entry
+        }
+        
+        let firstVideo = lives[0]
+        
+        let (avatarData, _) = try await URLSession.shared.data(from: firstVideo.channel.photo!)
+        let (thumbnailData, _) = try await URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(firstVideo.id)/maxresdefault.jpg")!)
+        
+        let entry = SingleVideoWidgetEntry(date: .now, status: .ok, video: lives[0], avatarData: avatarData, thumbnailData: thumbnailData)
+        
+        return entry
+    } catch {
+        return SingleVideoWidgetEntry(date: .now, status: .network, video: nil, avatarData: Data(), thumbnailData: Data())
+    }
+}
+
+func getEntryWithIntent(for agency: IntentAgency, videoType: VideoType, sortBy sortAlgorithm: (LiveVideo, LiveVideo) -> Bool, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> SingleVideoWidgetEntry {
+    do {
+        var lives: [LiveVideo] = try await getVideos(from: getVideoURLForWidget(agency: agency, videoType: videoType))
+        
         lives = lives.filter(filterAlgorithm)
         lives.sort(by: sortAlgorithm)
         

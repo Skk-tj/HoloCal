@@ -4,5 +4,9 @@
 <dict>
 	<key>HOLODEX_API_KEY</key>
 	<string>$(HOLODEX_API_KEY)</string>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>SelectAgencyIntent</string>
+	</array>
 </dict>
 </plist>
