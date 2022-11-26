@@ -29,6 +29,7 @@ struct iPadLazyGridView<VideoContent: View, DataStatusView: View>: View {
                 if let days = Calendar.current.dateComponents([.day], from: Date(), to: nextDSTTransition).day {
                     if isShowingDSTReminder {
                         DSTReminderView(numberOfDaysToChange: days, changeType: TimeZone.current.isDaylightSavingTime() ? .ending : .starting, isShowingDSTReminder: $isShowingDSTReminder)
+                            .padding(.horizontal, 30)
                     }
                 }
             }
@@ -50,10 +51,10 @@ struct iPadLazyGridView<VideoContent: View, DataStatusView: View>: View {
                     }
                 }
             }
+            .padding(.horizontal, 30)
             
             dataStatusView()
         }
-        .padding(.horizontal, 30)
         .searchable(text: $searchText, prompt: "SEARCH_BY_NAME_OR_TAG") {
             if searchText.isEmpty {
                 ForEach(videoViewModel.getSearchSuggestions(), id: \.self) { suggestion in

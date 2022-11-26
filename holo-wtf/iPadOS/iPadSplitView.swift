@@ -13,6 +13,28 @@ enum iPadAgencies {
     case favourites
 }
 
+struct iPadAgencySelectionView: View {
+    @Binding var agencySelection: iPadAgencies?
+    
+    var body: some View {
+        List(selection: $agencySelection) {
+            NavigationLink(value: iPadAgencies.hololive) {
+                SingleAgencyItemView(agency: .hololive)
+            }
+            
+            NavigationLink(value: iPadAgencies.nijisanji) {
+                SingleAgencyItemView(agency: .nijisanji)
+            }
+            
+            NavigationLink(value: iPadAgencies.favourites) {
+                Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
+            }
+        }
+        .listStyle(.sidebar)
+        .navigationTitle(LocalizedStringKey("SETTINGS_SELECT_AGENCY_NAVIGATION_TITLE"))
+    }
+}
+
 struct iPadSplitView: View {
     @State var viewSelection: Views? = Views.live
     @State var agencySelection: iPadAgencies? = .hololive
@@ -32,41 +54,12 @@ struct iPadSplitView: View {
             }
             .listStyle(.sidebar)
             .navigationTitle("HoloCal")
+            .navigationSplitViewColumnWidth(ideal: 250)
         }, content: {
             if let viewSelection {
                 switch viewSelection {
-                case .live:
-                    List(selection: $agencySelection) {
-                        NavigationLink(value: iPadAgencies.hololive) {
-                            SingleAgencyItemView(agency: .hololive)
-                        }
-                        
-                        NavigationLink(value: iPadAgencies.nijisanji) {
-                            SingleAgencyItemView(agency: .nijisanji)
-                        }
-                        
-                        NavigationLink(value: iPadAgencies.favourites) {
-                            Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
-                        }
-                    }
-                    .listStyle(.sidebar)
-                    .navigationTitle(LocalizedStringKey("SETTINGS_SELECT_AGENCY_NAVIGATION_TITLE"))
-                case .upcoming:
-                    List(selection: $agencySelection) {
-                        NavigationLink(value: iPadAgencies.hololive) {
-                            SingleAgencyItemView(agency: .hololive)
-                        }
-                        
-                        NavigationLink(value: iPadAgencies.nijisanji) {
-                            SingleAgencyItemView(agency: .nijisanji)
-                        }
-                        
-                        NavigationLink(value: iPadAgencies.favourites) {
-                            Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
-                        }
-                    }
-                    .listStyle(.sidebar)
-                    .navigationTitle(LocalizedStringKey("SETTINGS_SELECT_AGENCY_NAVIGATION_TITLE"))
+                case .live, .upcoming:
+                    iPadAgencySelectionView(agencySelection: $agencySelection)
                 case .settings:
                     NavigationStack {
                         SettingsiPadView()
