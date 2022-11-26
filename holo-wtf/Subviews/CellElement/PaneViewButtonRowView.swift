@@ -20,20 +20,12 @@ struct PaneViewButtonRowView: View {
     
     var body: some View {
         ControlGroup {
-            if #available(iOS 16.0, *) {
-                ShareLink(item: URL(string: "https://www.youtube.com/watch?v=\(video.id)")!, label: {
-                    Label("LINKED_VIDEO_SWIPE_ACTIONS_SHARE", systemImage: "square.and.arrow.up")
-                        .labelStyle(.iconOnly)
-                        .hoverEffect()
-                })
-                .buttonStyle(.borderless)
-            } else {
-                ShareButton(video: video) {
-                    Label("LINKED_VIDEO_SWIPE_ACTIONS_SHARE", systemImage: "square.and.arrow.up")
-                        .labelStyle(.iconOnly)
-                        .hoverEffect()
-                }
-            }
+            ShareLink(item: URL(string: "https://www.youtube.com/watch?v=\(video.id)")!, label: {
+                Label("LINKED_VIDEO_SWIPE_ACTIONS_SHARE", systemImage: "square.and.arrow.up")
+                    .labelStyle(.iconOnly)
+                    .hoverEffect()
+            })
+            .buttonStyle(.borderless)
             
             Spacer()
             
@@ -83,12 +75,8 @@ struct PaneViewButtonRowView: View {
                     Image(systemName: "music.note.list")
                 })
                 .sheet(isPresented: $isShowingSheet) {
-                    if #available(iOS 16.0, *) {
-                        SongListStackView(videoURL: video.url!, songsRaw: songs)
-                            .presentationDetents([.medium, .large])
-                    } else {
-                        SongListView(videoURL: video.url!, songsRaw: songs)
-                    }
+                    SongListStackView(videoURL: video.url!, songsRaw: songs)
+                        .presentationDetents([.medium, .large])
                 }
             }
         }

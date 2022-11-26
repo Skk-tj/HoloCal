@@ -1,5 +1,5 @@
 //
-//  UpcomingiPadView.swift
+//  UpcomingFavouritesiPadView.swift
 //  holo-wtf
 //
 //
@@ -7,15 +7,11 @@
 
 import SwiftUI
 
-struct UpcomingiPadView: View {
-    @StateObject var upcoming: UpcomingViewModel
-    let agency: AgencyEnum
+struct UpcomingFavouritesiPadView: View {
+    @StateObject var upcoming: UpcomingFavoritesViewModel
     
-    @State var currentPresentationMode: PresentationMode = .normal
-    
-    init(for agency: AgencyEnum) {
-        self.agency = agency
-        _upcoming = StateObject(wrappedValue: UpcomingViewModel(for: agency))
+    init() {
+        _upcoming = StateObject(wrappedValue: UpcomingFavoritesViewModel(for: .hololive))
     }
     
     var body: some View {
@@ -28,21 +24,19 @@ struct UpcomingiPadView: View {
             }
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: upcoming.dataStatus) {
-                UpcomingCountView()
+                UpcomingFavouriteCountView()
             }
-        }, isFavourite: false)
+        }, isFavourite: true)
         .environmentObject(upcoming as VideoViewModel)
         .task {
             await upcoming.getUpcoming()
-            currentPresentationMode = .normal
         }
         .refreshable {
             await upcoming.getUpcoming()
-            currentPresentationMode = .normal
         }
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {
-                UpcomingViewToolbar(currentPresentationMode: $currentPresentationMode)
+                UpcomingFavouritesViewToolbar()
                     .environmentObject(upcoming as VideoViewModel)
             }
         }
@@ -50,8 +44,8 @@ struct UpcomingiPadView: View {
     }
 }
 
-struct UpcomingiPadView_Previews: PreviewProvider {
+struct UpcomingFavouritesiPadView_Previews: PreviewProvider {
     static var previews: some View {
-        UpcomingiPadView(for: .hololive)
+        UpcomingFavouritesiPadView()
     }
 }

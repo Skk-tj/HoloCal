@@ -60,96 +60,40 @@ struct holo_wtfApp: App {
             if UIDevice.current.userInterfaceIdiom == .pad {
                 // iPadOS
                 // TODO: https://stackoverflow.com/questions/73279601/swiftui-navigationstack-inside-navigationsplitview-not-working-on-iphone-and-ipa
-                if #available(iOS 16.0, *) {
-                    iPadSplitView()
-                } else {
-                    NavigationView {
-                        iPadSidebarView()
-                        LiveiPadView()
-                    }
-                }
+                iPadSplitView()
             } else {
                 // iOS
                 TabView {
-                    if #available(iOS 16.0, *) {
-                        NavigationStack {
-                            AgencySelectionView(viewTitle: "ROOT_VIEW_LIVE", targetView: { agency in
-                                LiveView(for: agency)
-                            }, extraLinks: {
-                                NavigationLink(destination: LiveFavouritesView(), label: {
-                                    HStack {
-                                        Image(systemName: "star.fill")
-                                            .foregroundColor(.accentColor)
-                                        Text("ROOT_VIEW_FAVOURITES")
-                                    }
-                                })
+                    NavigationStack {
+                        AgencySelectionView(viewTitle: "ROOT_VIEW_LIVE", targetView: { agency in
+                            LiveView(for: agency)
+                        }, extraLinks: {
+                            NavigationLink(destination: LiveFavouritesView(), label: {
+                                Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
                             })
-                        }
-                        .tabItem {
-                            Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
-                        }
-                        
-                        NavigationStack {
-                            AgencySelectionView(viewTitle: "ROOT_VIEW_UPCOMING", targetView: { agency in
-                                UpcomingView(for: agency)
-                            }, extraLinks: {
-                                NavigationLink(destination: UpcomingFavouritesView(), label: {
-                                    HStack {
-                                        Image(systemName: "star.fill")
-                                            .foregroundColor(.accentColor)
-                                        Text("ROOT_VIEW_FAVOURITES")
-                                    }
-                                })
-                            })
-                        }
-                        .tabItem() {
-                            Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
-                        }
-                        
-                        SettingsStackView()
-                            .tabItem {
-                                Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
-                            }
-                    } else {
-                        NavigationView {
-                            AgencySelectionView(viewTitle: "ROOT_VIEW_LIVE", targetView: { agency in
-                                LiveView(for: agency)
-                            }, extraLinks: {
-                                NavigationLink(destination: LiveFavouritesView(), label: {
-                                    HStack {
-                                        Image(systemName: "star.fill")
-                                            .foregroundColor(.accentColor)
-                                        Text("ROOT_VIEW_FAVOURITES")
-                                    }
-                                })
-                            })
-                        }
-                        .tabItem {
-                            Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
-                        }
-                        
-                        NavigationView {
-                            AgencySelectionView(viewTitle: "ROOT_VIEW_UPCOMING", targetView: { agency in
-                                UpcomingView(for: agency)
-                            }, extraLinks: {
-                                NavigationLink(destination: UpcomingFavouritesView(), label: {
-                                    HStack {
-                                        Image(systemName: "star.fill")
-                                            .foregroundColor(.accentColor)
-                                        Text("ROOT_VIEW_FAVOURITES")
-                                    }
-                                })
-                            })
-                        }
-                        .tabItem() {
-                            Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
-                        }
-                        
-                        SettingsView()
-                            .tabItem {
-                                Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
-                            }
+                        })
                     }
+                    .tabItem {
+                        Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
+                    }
+                    
+                    NavigationStack {
+                        AgencySelectionView(viewTitle: "ROOT_VIEW_UPCOMING", targetView: { agency in
+                            UpcomingView(for: agency)
+                        }, extraLinks: {
+                            NavigationLink(destination: UpcomingFavouritesView(), label: {
+                                Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
+                            })
+                        })
+                    }
+                    .tabItem() {
+                        Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
+                    }
+                    
+                    SettingsStackView()
+                        .tabItem {
+                            Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
+                        }
                 }
             }
         }

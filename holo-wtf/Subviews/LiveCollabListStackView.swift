@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-@available(iOS 16.0, *)
 struct LiveCollabListStackView: View {
     @Environment(\.dismiss) var dismiss
     let mentions: [Channel]
@@ -49,6 +48,6 @@ struct LiveCollabListStackView: View {
 
 struct LiveCollabListStackView_Previews: PreviewProvider {
     static var previews: some View {
-        LiveCollabListView(mentions: [Channel.testChannel, Channel.testChannel2])
+        LiveCollabListStackView(mentions: [Channel.testChannel, Channel.testChannel2])
     }
 }

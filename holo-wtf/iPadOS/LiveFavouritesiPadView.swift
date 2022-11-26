@@ -1,5 +1,5 @@
 //
-//  LiveiPadView.swift
+//  LiveFavouritesiPadView.swift
 //  holo-wtf
 //
 //
@@ -7,15 +7,11 @@
 
 import SwiftUI
 
-struct LiveiPadView: View {
-    @StateObject var live: LiveViewModel
-    let agency: AgencyEnum
+struct LiveFavouritesiPadView: View {
+    @StateObject var live: LiveFavoritesViewModel
     
-    @State var currentPresentationMode: PresentationMode = .normal
-    
-    init(for agency: AgencyEnum) {
-        self.agency = agency
-        _live = StateObject(wrappedValue: LiveViewModel(for: agency))
+    init() {
+        _live = StateObject(wrappedValue: LiveFavoritesViewModel(for: .hololive))
     }
     
     var body: some View {
@@ -28,30 +24,28 @@ struct LiveiPadView: View {
             }
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: live.dataStatus) {
-                LiveCountView()
+                LiveFavouriteCountView()
             }
-        }, isFavourite: false)
+        }, isFavourite: true)
         .environmentObject(live as VideoViewModel)
         .task {
             await live.getLive()
-            currentPresentationMode = .normal
         }
         .refreshable {
             await live.getLive()
-            currentPresentationMode = .normal
         }
         .navigationTitle("LIVE_VIEW_TITLE")
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {
-                LiveViewToolbar(currentPresentationMode: $currentPresentationMode)
+                LiveFavouritesViewToolbar()
                     .environmentObject(live as VideoViewModel)
             }
         }
     }
 }
 
-struct LiveiPadView_Previews: PreviewProvider {
+struct LiveFavouritesiPadView_Previews: PreviewProvider {
     static var previews: some View {
-        LiveiPadView(for: .hololive)
+        LiveFavouritesiPadView()
     }
 }

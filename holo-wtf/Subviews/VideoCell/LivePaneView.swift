@@ -24,9 +24,9 @@ struct LivePaneView: View {
                     // MARK: - Stream title
                     // Force the title to be two lines
                     if UIDevice.current.userInterfaceIdiom == .pad {
-                        Text(live.title + "\n")
+                        Text(live.title)
                             .font(.headline)
-                            .lineLimit(2)
+                            .lineLimit(2, reservesSpace: true)
                             .multilineTextAlignment(.leading)
                     } else {
                         Text(live.title)

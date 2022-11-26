@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-@available(iOS 16.0, *)
 struct SongListStackView: View {
     @Environment(\.dismiss) var dismiss
     
@@ -53,7 +52,6 @@ struct SongListStackView: View {
     }
 }
 
-@available(iOS 16.0, *)
 struct SongListStackView_Previews: PreviewProvider {
     static var previews: some View {
         SongListStackView(videoURL: URL(string: "https://www.youtube.com/watch?v=0ntqQpqO0J4")!, songsRaw: SongInStream.exampleSongs)

@@ -1,5 +1,5 @@
 //
-//  iPadLazyGirdView.swift
+//  iPadLazyGridView.swift
 //  holo-wtf
 //
 //
@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct iPadLazyGirdView<VideoContent: View, DataStatusView: View>: View {
+struct iPadLazyGridView<VideoContent: View, DataStatusView: View>: View {
     @EnvironmentObject var videoViewModel: VideoViewModel
     
-    @AppStorage("favouritedChannel") var favourited = Favourited()
-    @AppStorage("generationListSelection") var generationListSelection = Set(Generation.allCases)
     @AppStorage(UserDefaultKeys.isShowingDSTReminder) var isShowingDSTReminder = false
     
     @State var searchText: String = ""
     
     @ViewBuilder let singleVideoView: (_ live: LiveVideo) -> VideoContent
     @ViewBuilder let dataStatusView: () -> DataStatusView
+    
+    let isFavourite: Bool
     
     let layout = [
         GridItem(.adaptive(minimum: 300), spacing: 10)
@@ -34,32 +34,24 @@ struct iPadLazyGirdView<VideoContent: View, DataStatusView: View>: View {
                 }
             }
             
-            LazyVGrid(columns: layout, spacing: 50) {
+            LazyVGrid(columns: layout, spacing: 30) {
                 if searchText.isEmpty {
-                    if videoViewModel.videoList.filter { video in favourited.contains(where: { video.channel.id == $0 })}.count != 0 && videoViewModel.dataStatus == .success {
-                        ForEachVideoView(cellView: { live in
+                    if isFavourite {
+                        ForEachVideoView { live in
                             singleVideoView(live)
-                        })
+                        }
+                    } else {
+                        GenerationFilteredForEachVideoView { live in
+                            singleVideoView(live)
+                        }
                     }
-                    
-                    GenerationFilteredForEachVideoView(cellView: { live in
-                        singleVideoView(live)
-                    })
                 } else {
-                    SearchSectionView(searchText: searchText, cellView: { live in
-                        LinkedVideoView(url: live.url) {
-                            singleVideoView(live)
-                        }
-                        .contextMenu {
-                            VideoContextMenu(video: live)
-                        }
-                    })
+                    SearchSectionView(searchText: searchText) { live in
+                        singleVideoView(live)
+                    }
                 }
             }
             .padding(30)
-            
-            Divider()
-                .padding(.horizontal)
             
             dataStatusView()
         }

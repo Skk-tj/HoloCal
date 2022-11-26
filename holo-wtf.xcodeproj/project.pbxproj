@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F004E8C6285D004A00ABDFED /* SongInStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004E8C5285D004A00ABDFED /* SongInStream.swift */; };
 		F004E8C7285D013300ABDFED /* SongInStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004E8C5285D004A00ABDFED /* SongInStream.swift */; };
-		F004E8C9285D045D00ABDFED /* SongListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004E8C8285D045D00ABDFED /* SongListView.swift */; };
 		F004E8CB285D058000ABDFED /* SingleSongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004E8CA285D058000ABDFED /* SingleSongView.swift */; };
 		F0050DAA28CFEDE1004532CB /* UpcomingAccessoryRectangularWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0050DA928CFEDE1004532CB /* UpcomingAccessoryRectangularWidgetView.swift */; };
 		F008BBA229235DBA00034AF4 /* ManageGenerationOrderAgencySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F008BBA129235DBA00034AF4 /* ManageGenerationOrderAgencySelectionView.swift */; };
@@ -28,7 +27,7 @@
 		F00BD6D329052AC400D7932E /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00BD6CF29052AC400D7932E /* VideoViewModel.swift */; };
 		F0114D4F2815F81600B99D4D /* DataStatusIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0114D4E2815F81600B99D4D /* DataStatusIndicatorView.swift */; };
 		F011C42828303CA400FD1364 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F009023D27EE255B00E343B0 /* Localizable.strings */; };
-		F01E95B3286FB4B900CDF0F9 /* iPadLazyGirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01E95B2286FB4B900CDF0F9 /* iPadLazyGirdView.swift */; };
+		F01E95B3286FB4B900CDF0F9 /* iPadLazyGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01E95B2286FB4B900CDF0F9 /* iPadLazyGridView.swift */; };
 		F022119C292B6CF5009EC2CC /* SingleAgencyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022119B292B6CF5009EC2CC /* SingleAgencyItemView.swift */; };
 		F022119D292B6CF5009EC2CC /* SingleAgencyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022119B292B6CF5009EC2CC /* SingleAgencyItemView.swift */; };
 		F02211A1292C9CF7009EC2CC /* ForEachVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A0292C9CF7009EC2CC /* ForEachVideoView.swift */; };
@@ -50,6 +49,8 @@
 		F02830802853DB0E00CBFCE7 /* Widgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028307F2853DB0E00CBFCE7 /* Widgets.swift */; };
 		F02830822853DB5E00CBFCE7 /* WidgetEntryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02830812853DB5E00CBFCE7 /* WidgetEntryViews.swift */; };
 		F028308828545B1200CBFCE7 /* SingleVideoWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028308728545B1200CBFCE7 /* SingleVideoWidgetEntry.swift */; };
+		F0328555293201EF0079F46A /* LiveFavouritesiPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0328554293201EF0079F46A /* LiveFavouritesiPadView.swift */; };
+		F0328557293202B30079F46A /* UpcomingFavouritesiPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0328556293202B30079F46A /* UpcomingFavouritesiPadView.swift */; };
 		F0396E7928CFD60900A3EDCB /* LiveAccessoryRectangularWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0396E7728CFD60600A3EDCB /* LiveAccessoryRectangularWidgetView.swift */; };
 		F03A138328F0004C00BB8E51 /* ChannelsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A138228F0004C00BB8E51 /* ChannelsEntry.swift */; };
 		F03A138428F0004C00BB8E51 /* ChannelsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A138228F0004C00BB8E51 /* ChannelsEntry.swift */; };
@@ -58,7 +59,6 @@
 		F03A138E28F0010B00BB8E51 /* MultipleVideoWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B71FCC283CACA000DC4260 /* MultipleVideoWidgetProvider.swift */; };
 		F03A139228F1FE0700BB8E51 /* ChannelsWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A139128F1FE0700BB8E51 /* ChannelsWidgetProvider.swift */; };
 		F03A139428F2018000BB8E51 /* LiveChannelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A139328F2018000BB8E51 /* LiveChannelsView.swift */; };
-		F0433C4E27E99F85000FEADD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0433C4D27E99F85000FEADD /* SettingsView.swift */; };
 		F0433C5227EAEDDB000FEADD /* OpenSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */; };
 		F047F0862851C74500B2E2B9 /* SmallLiveWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F047F0852851C74500B2E2B9 /* SmallLiveWidgetView.swift */; };
 		F04D147B28DD4ED300750B71 /* LiveAccessoryCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D147928DD4ED300750B71 /* LiveAccessoryCornerView.swift */; };
@@ -74,7 +74,6 @@
 		F04D148C28DD66AD00750B71 /* UpcomingAccessoryCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D148928DD66AD00750B71 /* UpcomingAccessoryCornerView.swift */; };
 		F04D148F28DD673A00750B71 /* UpcomingAccessoryCornerEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D148D28DD673A00750B71 /* UpcomingAccessoryCornerEntryView.swift */; };
 		F04D149028DD673A00750B71 /* UpcomingAccessoryCornerEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D148D28DD673A00750B71 /* UpcomingAccessoryCornerEntryView.swift */; };
-		F04D149328DD82C400750B71 /* ActivityView in Frameworks */ = {isa = PBXBuildFile; productRef = F04D149228DD82C400750B71 /* ActivityView */; };
 		F04D149628DD82DA00750B71 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = F04D149528DD82DA00750B71 /* Algorithms */; };
 		F04D149928DD82E500750B71 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = F04D149828DD82E500750B71 /* Collections */; };
 		F04D149B28DD82E500750B71 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = F04D149A28DD82E500750B71 /* OrderedCollections */; };
@@ -153,7 +152,6 @@
 		F093D1DF282FA5FE00E2A6FF /* VideoFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */; };
 		F093D1E0282FAA0500E2A6FF /* TopicTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2B12280CB73D00683E6C /* TopicTagView.swift */; };
 		F093D1E5283034DA00E2A6FF /* TalentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A04E27F95D9E00DBC08D /* TalentData.swift */; };
-		F093D1E72830358400E2A6FF /* ViewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1E62830358400E2A6FF /* ViewUtil.swift */; };
 		F093D1E82830359900E2A6FF /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657D527732690004AF802 /* Util.swift */; };
 		F093D1ED2830372900E2A6FF /* LiveWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1E3283034AF00E2A6FF /* LiveWidgetView.swift */; };
 		F0954BDE2817B73E00369EC4 /* SearchSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BDD2817B73E00369EC4 /* SearchSectionView.swift */; };
@@ -163,7 +161,6 @@
 		F09D25C327FEC12D001A7D71 /* SettingsFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */; };
 		F09D25C928020B12001A7D71 /* UpcomingViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25C828020B12001A7D71 /* UpcomingViewToolbar.swift */; };
 		F09D25E52802EA09001A7D71 /* SwipableLinkedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25E42802EA09001A7D71 /* SwipableLinkedCellView.swift */; };
-		F09D25F328041CC3001A7D71 /* iPadSidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25F228041CC3001A7D71 /* iPadSidebarView.swift */; };
 		F0AC584B28CFCC580088151C /* SettingsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AC584A28CFCC580088151C /* SettingsStackView.swift */; };
 		F0B2AF0928C13C7600635CAD /* SmallUpcomingWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0828C13C7600635CAD /* SmallUpcomingWidgetView.swift */; };
 		F0B2AF0A28C13D0F00635CAD /* UpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */; };
@@ -215,12 +212,9 @@
 		F0E45D1A28F39AF90091474A /* Agency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E45D1728F39AD90091474A /* Agency.swift */; };
 		F0E45D1B28F39AF90091474A /* Agency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E45D1728F39AD90091474A /* Agency.swift */; };
 		F0E4873D2876586F00118BBB /* LiveCollabAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E4873C2876586F00118BBB /* LiveCollabAvatarView.swift */; };
-		F0E4873F2877F73500118BBB /* LiveCollabListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E4873E2877F73500118BBB /* LiveCollabListView.swift */; };
 		F0EB53B0281290490024E089 /* PaneViewButtonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EB53AF281290490024E089 /* PaneViewButtonRowView.swift */; };
 		F0EB53B22812A2E90024E089 /* EventEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EB53B12812A2E90024E089 /* EventEditView.swift */; };
 		F0EB53B62812BD6F0024E089 /* FavouriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EB53B52812BD6F0024E089 /* FavouriteButton.swift */; };
-		F0EB53B82812BEAD0024E089 /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EB53B72812BEAD0024E089 /* ShareButton.swift */; };
-		F0EB53BD2812C5680024E089 /* OldShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EB53BC2812C5680024E089 /* OldShareButton.swift */; };
 		F0ED2AE22806858300683E6C /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AE12806858300683E6C /* Channel.swift */; };
 		F0ED2AE4280685FD00683E6C /* LiveVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AE3280685FD00683E6C /* LiveVideo.swift */; };
 		F0ED2AE62808253700683E6C /* VideoThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2AE52808253700683E6C /* VideoThumbnailView.swift */; };
@@ -318,7 +312,6 @@
 
 /* Begin PBXFileReference section */
 		F004E8C5285D004A00ABDFED /* SongInStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongInStream.swift; sourceTree = "<group>"; };
-		F004E8C8285D045D00ABDFED /* SongListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListView.swift; sourceTree = "<group>"; };
 		F004E8CA285D058000ABDFED /* SingleSongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSongView.swift; sourceTree = "<group>"; };
 		F0050DA928CFEDE1004532CB /* UpcomingAccessoryRectangularWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingAccessoryRectangularWidgetView.swift; sourceTree = "<group>"; };
 		F008BBA129235DBA00034AF4 /* ManageGenerationOrderAgencySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageGenerationOrderAgencySelectionView.swift; sourceTree = "<group>"; };
@@ -333,7 +326,7 @@
 		F009024527EE6A9F00E343B0 /* VideoContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoContextMenu.swift; sourceTree = "<group>"; };
 		F00BD6CF29052AC400D7932E /* VideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
 		F0114D4E2815F81600B99D4D /* DataStatusIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStatusIndicatorView.swift; sourceTree = "<group>"; };
-		F01E95B2286FB4B900CDF0F9 /* iPadLazyGirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadLazyGirdView.swift; sourceTree = "<group>"; };
+		F01E95B2286FB4B900CDF0F9 /* iPadLazyGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadLazyGridView.swift; sourceTree = "<group>"; };
 		F0204DB827E91A920083750F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F0204DB927E925220083750F /* PRIVACY-POLICY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "PRIVACY-POLICY.md"; sourceTree = "<group>"; };
 		F022119B292B6CF5009EC2CC /* SingleAgencyItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAgencyItemView.swift; sourceTree = "<group>"; };
@@ -350,11 +343,12 @@
 		F028307F2853DB0E00CBFCE7 /* Widgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widgets.swift; sourceTree = "<group>"; };
 		F02830812853DB5E00CBFCE7 /* WidgetEntryViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetEntryViews.swift; sourceTree = "<group>"; };
 		F028308728545B1200CBFCE7 /* SingleVideoWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleVideoWidgetEntry.swift; sourceTree = "<group>"; };
+		F0328554293201EF0079F46A /* LiveFavouritesiPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveFavouritesiPadView.swift; sourceTree = "<group>"; };
+		F0328556293202B30079F46A /* UpcomingFavouritesiPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingFavouritesiPadView.swift; sourceTree = "<group>"; };
 		F0396E7728CFD60600A3EDCB /* LiveAccessoryRectangularWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAccessoryRectangularWidgetView.swift; sourceTree = "<group>"; };
 		F03A138228F0004C00BB8E51 /* ChannelsEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsEntry.swift; sourceTree = "<group>"; };
 		F03A139128F1FE0700BB8E51 /* ChannelsWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsWidgetProvider.swift; sourceTree = "<group>"; };
 		F03A139328F2018000BB8E51 /* LiveChannelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChannelsView.swift; sourceTree = "<group>"; };
-		F0433C4D27E99F85000FEADD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceView.swift; sourceTree = "<group>"; };
 		F04705B728D8232300E227B9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS9.0.sdk/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
 		F047F0852851C74500B2E2B9 /* SmallLiveWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallLiveWidgetView.swift; sourceTree = "<group>"; };
@@ -401,7 +395,6 @@
 		F093D1C8282C32D100E2A6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFetchService.swift; sourceTree = "<group>"; };
 		F093D1E3283034AF00E2A6FF /* LiveWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveWidgetView.swift; sourceTree = "<group>"; };
-		F093D1E62830358400E2A6FF /* ViewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtil.swift; sourceTree = "<group>"; };
 		F0954BDD2817B73E00369EC4 /* SearchSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSectionView.swift; sourceTree = "<group>"; };
 		F0954BE52817C8BF00369EC4 /* GenerationFilteredForEachVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationFilteredForEachVideoView.swift; sourceTree = "<group>"; };
 		F0954BEB2817D63100369EC4 /* VideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListView.swift; sourceTree = "<group>"; };
@@ -409,7 +402,6 @@
 		F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFormView.swift; sourceTree = "<group>"; };
 		F09D25C828020B12001A7D71 /* UpcomingViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewToolbar.swift; sourceTree = "<group>"; };
 		F09D25E42802EA09001A7D71 /* SwipableLinkedCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipableLinkedCellView.swift; sourceTree = "<group>"; };
-		F09D25F228041CC3001A7D71 /* iPadSidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadSidebarView.swift; sourceTree = "<group>"; };
 		F0AC584A28CFCC580088151C /* SettingsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStackView.swift; sourceTree = "<group>"; };
 		F0B2AF0828C13C7600635CAD /* SmallUpcomingWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallUpcomingWidgetView.swift; sourceTree = "<group>"; };
 		F0B2AF0B28C1A82400635CAD /* MultipleVideoWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleVideoWidgetEntry.swift; sourceTree = "<group>"; };
@@ -441,12 +433,9 @@
 		F0E219C2287AB47D0080697F /* LiveWidgetMediumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveWidgetMediumView.swift; sourceTree = "<group>"; };
 		F0E45D1728F39AD90091474A /* Agency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agency.swift; sourceTree = "<group>"; };
 		F0E4873C2876586F00118BBB /* LiveCollabAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCollabAvatarView.swift; sourceTree = "<group>"; };
-		F0E4873E2877F73500118BBB /* LiveCollabListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveCollabListView.swift; sourceTree = "<group>"; };
 		F0EB53AF281290490024E089 /* PaneViewButtonRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaneViewButtonRowView.swift; sourceTree = "<group>"; };
 		F0EB53B12812A2E90024E089 /* EventEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditView.swift; sourceTree = "<group>"; };
 		F0EB53B52812BD6F0024E089 /* FavouriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteButton.swift; sourceTree = "<group>"; };
-		F0EB53B72812BEAD0024E089 /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
-		F0EB53BC2812C5680024E089 /* OldShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldShareButton.swift; sourceTree = "<group>"; };
 		F0ED2AE12806858300683E6C /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		F0ED2AE3280685FD00683E6C /* LiveVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveVideo.swift; sourceTree = "<group>"; };
 		F0ED2AE52808253700683E6C /* VideoThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailView.swift; sourceTree = "<group>"; };
@@ -510,7 +499,6 @@
 				F04D149928DD82E500750B71 /* Collections in Frameworks */,
 				F04D149628DD82DA00750B71 /* Algorithms in Frameworks */,
 				F04D149B28DD82E500750B71 /* OrderedCollections in Frameworks */,
-				F04D149328DD82C400750B71 /* ActivityView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,7 +519,6 @@
 			isa = PBXGroup;
 			children = (
 				F0C657D527732690004AF802 /* Util.swift */,
-				F093D1E62830358400E2A6FF /* ViewUtil.swift */,
 				F0CA6EA228D791BE0028CB11 /* Modes.swift */,
 				F025203E28EE94B700976972 /* Constants.swift */,
 			);
@@ -610,7 +597,6 @@
 				F0F0EA9E292B2A390091DBD7 /* LiveFavouritesView.swift */,
 				F0673C0D27732BA3009C65C6 /* UpcomingView.swift */,
 				F0F0EAAB292B3FD10091DBD7 /* UpcomingFavouritesView.swift */,
-				F0433C4D27E99F85000FEADD /* SettingsView.swift */,
 				F0AC584A28CFCC580088151C /* SettingsStackView.swift */,
 			);
 			path = iOS;
@@ -620,11 +606,12 @@
 			isa = PBXGroup;
 			children = (
 				F05E9EB227EB27F800EF48DD /* LiveiPadView.swift */,
+				F0328554293201EF0079F46A /* LiveFavouritesiPadView.swift */,
 				F05E9EB427EB290000EF48DD /* UpcomingiPadView.swift */,
+				F0328556293202B30079F46A /* UpcomingFavouritesiPadView.swift */,
 				F05E9EB627EB291900EF48DD /* SettingsiPadView.swift */,
-				F09D25F228041CC3001A7D71 /* iPadSidebarView.swift */,
 				F02211AC292F73DA009EC2CC /* iPadSplitView.swift */,
-				F01E95B2286FB4B900CDF0F9 /* iPadLazyGirdView.swift */,
+				F01E95B2286FB4B900CDF0F9 /* iPadLazyGridView.swift */,
 			);
 			path = iPadOS;
 			sourceTree = "<group>";
@@ -644,10 +631,8 @@
 				F0581899281BFFDA0064EF94 /* SectionedForEachView.swift */,
 				F0954BDD2817B73E00369EC4 /* SearchSectionView.swift */,
 				F0EB53B12812A2E90024E089 /* EventEditView.swift */,
-				F004E8C8285D045D00ABDFED /* SongListView.swift */,
 				F0CA6EA928D7B5DD0028CB11 /* SongListStackView.swift */,
 				F004E8CA285D058000ABDFED /* SingleSongView.swift */,
-				F0E4873E2877F73500118BBB /* LiveCollabListView.swift */,
 				F0CA6EA728D794320028CB11 /* LiveCollabListStackView.swift */,
 				F07D891828834FBB008D3057 /* DSTReminderView.swift */,
 			);
@@ -910,8 +895,6 @@
 			isa = PBXGroup;
 			children = (
 				F0EB53B52812BD6F0024E089 /* FavouriteButton.swift */,
-				F0EB53B72812BEAD0024E089 /* ShareButton.swift */,
-				F0EB53BC2812C5680024E089 /* OldShareButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -999,7 +982,6 @@
 			);
 			name = "holo-wtf";
 			packageProductDependencies = (
-				F04D149228DD82C400750B71 /* ActivityView */,
 				F04D149528DD82DA00750B71 /* Algorithms */,
 				F04D149828DD82E500750B71 /* Collections */,
 				F04D149A28DD82E500750B71 /* OrderedCollections */,
@@ -1071,7 +1053,6 @@
 			);
 			mainGroup = F0C657AE2771F47C004AF802;
 			packageReferences = (
-				F04D149128DD82C400750B71 /* XCRemoteSwiftPackageReference "ActivityView" */,
 				F04D149428DD82DA00750B71 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 				F04D149728DD82E500750B71 /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
@@ -1240,19 +1221,18 @@
 				F09D25E52802EA09001A7D71 /* SwipableLinkedCellView.swift in Sources */,
 				F0E4873D2876586F00118BBB /* LiveCollabAvatarView.swift in Sources */,
 				F009023827EDB6AE00E343B0 /* LiveTimeView.swift in Sources */,
-				F09D25F328041CC3001A7D71 /* iPadSidebarView.swift in Sources */,
 				F0F0EAAE292B40220091DBD7 /* UpcomingFavouritesViewModel.swift in Sources */,
 				F0F0EAAC292B3FD10091DBD7 /* UpcomingFavouritesView.swift in Sources */,
 				F004E8C6285D004A00ABDFED /* SongInStream.swift in Sources */,
 				F0F0EA9C292B062A0091DBD7 /* AgencyForEachView.swift in Sources */,
 				F0F0EAA4292B36780091DBD7 /* FavouritesVideoListView.swift in Sources */,
 				F0CA6EA828D794320028CB11 /* LiveCollabListStackView.swift in Sources */,
+				F0328555293201EF0079F46A /* LiveFavouritesiPadView.swift in Sources */,
 				F0CA6EA328D791BE0028CB11 /* Modes.swift in Sources */,
 				F0673C172775F7FB009C65C6 /* LiveAvatarView.swift in Sources */,
 				F0BD611B27EC594300A2FBED /* UpcomingPaneView.swift in Sources */,
 				F0954BE62817C8BF00369EC4 /* GenerationFilteredForEachVideoView.swift in Sources */,
 				F0C657BD2771F47C004AF802 /* LiveView.swift in Sources */,
-				F0EB53BD2812C5680024E089 /* OldShareButton.swift in Sources */,
 				F0AC584B28CFCC580088151C /* SettingsStackView.swift in Sources */,
 				F02211A9292E1E4B009EC2CC /* PaneViewChannelInfoView.swift in Sources */,
 				F022119C292B6CF5009EC2CC /* SingleAgencyItemView.swift in Sources */,
@@ -1260,7 +1240,7 @@
 				F093D1DE282FA5E600E2A6FF /* VideoFetchService.swift in Sources */,
 				F09D25C928020B12001A7D71 /* UpcomingViewToolbar.swift in Sources */,
 				F0F0EABB292B49BD0091DBD7 /* VideoUIListView.swift in Sources */,
-				F01E95B3286FB4B900CDF0F9 /* iPadLazyGirdView.swift in Sources */,
+				F01E95B3286FB4B900CDF0F9 /* iPadLazyGridView.swift in Sources */,
 				F009024027EE57BA00E343B0 /* LinkedVideoView.swift in Sources */,
 				F009024627EE6A9F00E343B0 /* VideoContextMenu.swift in Sources */,
 				F080A04F27F95D9E00DBC08D /* TalentData.swift in Sources */,
@@ -1278,12 +1258,11 @@
 				F09D25BE27FC2552001A7D71 /* SettingsTalentStarView.swift in Sources */,
 				F0954BEC2817D63100369EC4 /* VideoListView.swift in Sources */,
 				F0ED2AE22806858300683E6C /* Channel.swift in Sources */,
+				F0328557293202B30079F46A /* UpcomingFavouritesiPadView.swift in Sources */,
 				F0F0EABD292B4EE80091DBD7 /* UpcomingFavouritesViewToolbar.swift in Sources */,
 				F0F0EAB1292B41250091DBD7 /* VideoUIFavouriteListView.swift in Sources */,
 				F0954BDE2817B73E00369EC4 /* SearchSectionView.swift in Sources */,
-				F0E4873F2877F73500118BBB /* LiveCollabListView.swift in Sources */,
 				F0F0EAB7292B47CF0091DBD7 /* UIFavouriteListView.swift in Sources */,
-				F093D1E72830358400E2A6FF /* ViewUtil.swift in Sources */,
 				F064A5B628BB3765008C51C2 /* SongsViewModel.swift in Sources */,
 				F0ED2AE4280685FD00683E6C /* LiveVideo.swift in Sources */,
 				F025203F28EE94B700976972 /* Constants.swift in Sources */,
@@ -1291,7 +1270,6 @@
 				F065857D28CFF4C6001672E1 /* ManageGenerationVisibilityView.swift in Sources */,
 				F02211A3292C9FF8009EC2CC /* ViewerCounterView.swift in Sources */,
 				F04EB66728D2A0A000F168CB /* ManageGenerationOrderView.swift in Sources */,
-				F0EB53B82812BEAD0024E089 /* ShareButton.swift in Sources */,
 				F02211AD292F73DA009EC2CC /* iPadSplitView.swift in Sources */,
 				F0F0EA99292B01510091DBD7 /* LiveFavoritesViewModel.swift in Sources */,
 				F004E8CB285D058000ABDFED /* SingleSongView.swift in Sources */,
@@ -1302,11 +1280,9 @@
 				F0ED2AF0280AC27400683E6C /* LiveViewModel.swift in Sources */,
 				F0ED2AE62808253700683E6C /* VideoThumbnailView.swift in Sources */,
 				F07D891928834FBB008D3057 /* DSTReminderView.swift in Sources */,
-				F0433C4E27E99F85000FEADD /* SettingsView.swift in Sources */,
 				F0CA6EAA28D7B5DD0028CB11 /* SongListStackView.swift in Sources */,
 				F00BD6D029052AC400D7932E /* VideoViewModel.swift in Sources */,
 				F0433C5227EAEDDB000FEADD /* OpenSourceView.swift in Sources */,
-				F004E8C9285D045D00ABDFED /* SongListView.swift in Sources */,
 				F02211A1292C9CF7009EC2CC /* ForEachVideoView.swift in Sources */,
 				F058189A281BFFDA0064EF94 /* SectionedForEachView.swift in Sources */,
 				F02211A7292E1893009EC2CC /* BlockUpcomingTimeView.swift in Sources */,
@@ -1633,7 +1609,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1691,7 +1667,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1725,7 +1701,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1765,7 +1741,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1912,14 +1888,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F04D149128DD82C400750B71 /* XCRemoteSwiftPackageReference "ActivityView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftUI-Plus/ActivityView";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		F04D149428DD82DA00750B71 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-algorithms.git";
@@ -1939,11 +1907,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F04D149228DD82C400750B71 /* ActivityView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F04D149128DD82C400750B71 /* XCRemoteSwiftPackageReference "ActivityView" */;
-			productName = ActivityView;
-		};
 		F04D149528DD82DA00750B71 /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F04D149428DD82DA00750B71 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
