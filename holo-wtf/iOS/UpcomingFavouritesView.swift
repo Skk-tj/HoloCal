@@ -16,6 +16,12 @@ struct UpcomingFavouritesView: View {
         VideoUIFavouriteListView(videoType: .upcoming, uiMode: isShowingCompact ? .compact : .card)
             .environmentObject(upcoming as VideoViewModel)
             .navigationTitle("ROOT_VIEW_FAVOURITES")
+            .toolbar {
+                ToolbarItemGroup {
+                    UpcomingFavouritesViewToolbar()
+                        .environmentObject(upcoming as VideoViewModel)
+                }
+            }
             .task {
                 await upcoming.getUpcomingForFavourites()
             }
