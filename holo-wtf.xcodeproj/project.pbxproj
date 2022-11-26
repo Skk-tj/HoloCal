@@ -51,6 +51,8 @@
 		F028308828545B1200CBFCE7 /* SingleVideoWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028308728545B1200CBFCE7 /* SingleVideoWidgetEntry.swift */; };
 		F0328555293201EF0079F46A /* LiveFavouritesiPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0328554293201EF0079F46A /* LiveFavouritesiPadView.swift */; };
 		F0328557293202B30079F46A /* UpcomingFavouritesiPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0328556293202B30079F46A /* UpcomingFavouritesiPadView.swift */; };
+		F0328559293218220079F46A /* LiveFavouritesWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0328558293218220079F46A /* LiveFavouritesWatchView.swift */; };
+		F032855B293218300079F46A /* UpcomingFavouritesWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F032855A293218300079F46A /* UpcomingFavouritesWatchView.swift */; };
 		F0396E7928CFD60900A3EDCB /* LiveAccessoryRectangularWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0396E7728CFD60600A3EDCB /* LiveAccessoryRectangularWidgetView.swift */; };
 		F03A138328F0004C00BB8E51 /* ChannelsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A138228F0004C00BB8E51 /* ChannelsEntry.swift */; };
 		F03A138428F0004C00BB8E51 /* ChannelsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A138228F0004C00BB8E51 /* ChannelsEntry.swift */; };
@@ -345,6 +347,8 @@
 		F028308728545B1200CBFCE7 /* SingleVideoWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleVideoWidgetEntry.swift; sourceTree = "<group>"; };
 		F0328554293201EF0079F46A /* LiveFavouritesiPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveFavouritesiPadView.swift; sourceTree = "<group>"; };
 		F0328556293202B30079F46A /* UpcomingFavouritesiPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingFavouritesiPadView.swift; sourceTree = "<group>"; };
+		F0328558293218220079F46A /* LiveFavouritesWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveFavouritesWatchView.swift; sourceTree = "<group>"; };
+		F032855A293218300079F46A /* UpcomingFavouritesWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingFavouritesWatchView.swift; sourceTree = "<group>"; };
 		F0396E7728CFD60600A3EDCB /* LiveAccessoryRectangularWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAccessoryRectangularWidgetView.swift; sourceTree = "<group>"; };
 		F03A138228F0004C00BB8E51 /* ChannelsEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsEntry.swift; sourceTree = "<group>"; };
 		F03A139128F1FE0700BB8E51 /* ChannelsWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsWidgetProvider.swift; sourceTree = "<group>"; };
@@ -575,7 +579,9 @@
 			children = (
 				F0CA6EB328D7C0410028CB11 /* WatchRootView.swift */,
 				F0CA6EC228D7C2620028CB11 /* LiveWatchView.swift */,
+				F0328558293218220079F46A /* LiveFavouritesWatchView.swift */,
 				F04D755328D7CF3F0096B8AB /* UpcomingWatchView.swift */,
+				F032855A293218300079F46A /* UpcomingFavouritesWatchView.swift */,
 				F04D755728D7D8430096B8AB /* SettingsWatchView.swift */,
 			);
 			path = "Main Views";
@@ -1313,6 +1319,8 @@
 				F0CA6ED128D7C49A0028CB11 /* UpcomingCountView.swift in Sources */,
 				F0CA6EC428D7C2880028CB11 /* UpcomingViewModel.swift in Sources */,
 				F025204628EEA5FC00976972 /* Common.swift in Sources */,
+				F032855B293218300079F46A /* UpcomingFavouritesWatchView.swift in Sources */,
+				F0328559293218220079F46A /* LiveFavouritesWatchView.swift in Sources */,
 				F04D755428D7CF3F0096B8AB /* UpcomingWatchView.swift in Sources */,
 				F04D755B28D7D8DD0096B8AB /* OpenSourceView.swift in Sources */,
 				F022119D292B6CF5009EC2CC /* SingleAgencyItemView.swift in Sources */,

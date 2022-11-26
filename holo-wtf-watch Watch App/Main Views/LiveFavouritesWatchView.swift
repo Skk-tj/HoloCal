@@ -1,25 +1,21 @@
 //
-//  LiveWatchView.swift
+//  LiveFavouritesWatchView.swift
 //  holo-wtf-watch Watch App
 //
-//  Created by Haoyi An on 2022-09-18.
+//  Created by Haoyi An on 2022-11-26.
 //
 
 import SwiftUI
 
-struct LiveWatchView: View {
-    @StateObject var live: LiveViewModel
-    
-    init(for agency: AgencyEnum) {
-        _live = StateObject(wrappedValue: LiveViewModel(for: agency))
-    }
+struct LiveFavouritesWatchView: View {
+    @StateObject var live: LiveFavoritesViewModel = LiveFavoritesViewModel(for: .hololive)
     
     var body: some View {
         WatchVideoListView(singleVideoView: { video in
             WatchLiveCellView(live: video)
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: live.dataStatus) {
-                LiveCountView()
+                LiveFavouriteCountView()
                     .environmentObject(live as VideoViewModel)
             }
         })
@@ -34,8 +30,8 @@ struct LiveWatchView: View {
     }
 }
 
-struct LiveWatchView_Previews: PreviewProvider {
+struct LiveFavouritesWatchView_Previews: PreviewProvider {
     static var previews: some View {
-        LiveWatchView(for: .hololive)
+        LiveFavouritesWatchView()
     }
 }
