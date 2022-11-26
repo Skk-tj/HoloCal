@@ -129,9 +129,9 @@ class VideoViewModel: ObservableObject {
         case .viewersDesc:
             self.videoList.sort(by: {$0.liveViewers > $1.liveViewers})
         case .timeAsc:
-            self.videoList.sort(by: {$0.startActual ?? ($0.startScheduled ?? Date.distantFuture) < $1.startActual ?? ($1.startScheduled ?? Date.distantFuture)})
+            self.videoList.sort(by: upcomingSortStrategy)
         case .timeDesc:
-            self.videoList.sort(by: {$0.startActual ?? ($0.startScheduled ?? Date.distantFuture) > $1.startActual ?? ($1.startScheduled ?? Date.distantFuture)})
+            self.videoList.sort(by: liveSortStrategy)
         default:
             return
         }
