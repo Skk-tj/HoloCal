@@ -25,7 +25,7 @@ struct LiveWidgetView: View {
             VStack(alignment: .leading) {
                 Text(live.title)
                     .font(.headline)
-                    .lineLimit(2)
+                    .lineLimit(2, reservesSpace: true)
                     .multilineTextAlignment(.leading)
                 
                 HStack {
@@ -41,30 +41,22 @@ struct LiveWidgetView: View {
                             .shadow(radius: 1)
                     }
                     
-                    Text(live.channel.name)
-                        .lineLimit(1)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                }
-                
-                Divider()
-                
-                HStack {
-                    if live.isMengen {
-                        Text("LIVE_CELL_VIEW_MEMBER_ONLY_STREAM")
-                            .font(.footnote)
-                            .foregroundColor(.secondary)
-                            .multilineTextAlignment(.leading)
-                    } else {
-                        Text("LIVE_CELL_VIEW_PEOPLE_WATCHING \(live.liveViewers)")
-                            .font(.footnote)
+                    VStack(alignment: .leading) {
+                        Text(live.channel.getTalentName())
+                            .lineLimit(1)
+                            .font(.subheadline)
+                        Text(live.channel.getAltTalentName())
+                            .lineLimit(1)
+                            .font(.subheadline)
                             .foregroundColor(.secondary)
                     }
+                }
+                
+                HStack {
+                    ViewerCounterView(viewer: live.liveViewers, memberOnly: live.isMengen)
+                        .padding(.trailing)
                     
-                    Spacer()
-                    
-                    LiveTimeView(liveTime: live.startActual)
-                        .multilineTextAlignment(.trailing)
+                    BlockLiveTimeView(liveTime: live.startActual)
                 }
             }
         }
