@@ -7,13 +7,19 @@
 
 import SwiftUI
 
-@available(iOS 16.0, *)
+enum iPadAgencies {
+    case hololive
+    case nijisanji
+    case favourites
+}
+
 struct iPadSplitView: View {
     @State var viewSelection: Views? = Views.live
-    
+    @State var agencySelection: iPadAgencies? = .hololive
+    @State var visibility: NavigationSplitViewVisibility = .automatic
     
     var body: some View {
-        NavigationSplitView(sidebar: {
+        NavigationSplitView(columnVisibility: $visibility, sidebar: {
             List(selection: $viewSelection) {
                 NavigationLink(value: Views.live) {
                     Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
@@ -27,15 +33,79 @@ struct iPadSplitView: View {
             }
             .listStyle(.sidebar)
             .navigationTitle("HoloCal")
+            .onChange(of: viewSelection) { selection in
+                if let selection {
+                    if selection == .settings {
+                        visibility = .detailOnly
+                    }
+                }
+            }
+        }, content: {
+            if let viewSelection {
+                switch viewSelection {
+                case .live:
+                    List(selection: $agencySelection) {
+                        NavigationLink(value: iPadAgencies.hololive) {
+                            SingleAgencyItemView(agency: .hololive)
+                        }
+                        
+                        NavigationLink(value: iPadAgencies.nijisanji) {
+                            SingleAgencyItemView(agency: .nijisanji)
+                        }
+                        
+                        NavigationLink(value: iPadAgencies.favourites) {
+                            Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
+                        }
+                    }
+                    .listStyle(.sidebar)
+                    .navigationTitle(LocalizedStringKey("SETTINGS_SELECT_AGENCY_NAVIGATION_TITLE"))
+                case .upcoming:
+                    List(selection: $agencySelection) {
+                        NavigationLink(value: iPadAgencies.hololive) {
+                            SingleAgencyItemView(agency: .hololive)
+                        }
+                        
+                        NavigationLink(value: iPadAgencies.nijisanji) {
+                            SingleAgencyItemView(agency: .nijisanji)
+                        }
+                        
+                        NavigationLink(value: iPadAgencies.favourites) {
+                            Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
+                        }
+                    }
+                    .listStyle(.sidebar)
+                    .navigationTitle(LocalizedStringKey("SETTINGS_SELECT_AGENCY_NAVIGATION_TITLE"))
+                case .settings:
+                    Text("text")
+                }
+            }
         }, detail: {
-            NavigationStack {
-                if let viewSelection {
-                    switch viewSelection {
-                    case Views.live:
-                        LiveiPadView()
-                    case Views.upcoming:
-                        UpcomingiPadView()
-                    case Views.settings:
+            if let viewSelection {
+                switch viewSelection {
+                case .live:
+                    if let agencySelection {
+                        switch agencySelection {
+                        case .hololive:
+                            LiveiPadView(for: .hololive)
+                        case .nijisanji:
+                            LiveiPadView(for: .nijisanji)
+                        case .favourites:
+                            LiveFavouritesiPadView()
+                        }
+                    }
+                case .upcoming:
+                    if let agencySelection {
+                        switch agencySelection {
+                        case .hololive:
+                            UpcomingiPadView(for: .hololive)
+                        case .nijisanji:
+                            UpcomingiPadView(for: .nijisanji)
+                        case .favourites:
+                            UpcomingFavouritesiPadView()
+                        }
+                    }
+                case .settings:
+                    NavigationStack {
                         SettingsiPadView()
                     }
                 }
@@ -44,7 +114,6 @@ struct iPadSplitView: View {
     }
 }
 
-@available(iOS 16.0, *)
 struct iPadSplitView_Previews: PreviewProvider {
     static var previews: some View {
         iPadSplitView()

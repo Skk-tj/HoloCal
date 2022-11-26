@@ -29,16 +29,9 @@ struct SwipableLinkedCellView<Content: View>: View {
             }
             .tint(.yellow)
             
-            if #available(iOS 16.0, *) {
-                ShareLink(item: URL(string: "https://www.youtube.com/watch?v=\(video.id)")!, label: { Label("VIDEO_CONTEXT_MENU_SHARE", systemImage: "square.and.arrow.up")
-                })
-                .tint(.blue)
-            } else {
-                OldShareButton(video: video) {
-                    Label("LINKED_VIDEO_SWIPE_ACTIONS_SHARE", systemImage: "square.and.arrow.up")
-                }
-                .tint(.blue)
-            }
+            ShareLink(item: URL(string: "https://www.youtube.com/watch?v=\(video.id)")!, label: { Label("VIDEO_CONTEXT_MENU_SHARE", systemImage: "square.and.arrow.up")
+            })
+            .tint(.blue)
         }
     }
 }

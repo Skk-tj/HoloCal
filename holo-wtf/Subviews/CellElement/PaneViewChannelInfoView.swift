@@ -32,12 +32,8 @@ struct PaneViewChannelInfoView: View {
                         isShowingCollabSheet.toggle()
                     }
                     .sheet(isPresented: $isShowingCollabSheet, content: {
-                        if #available(iOS 16.0, *) {
-                            LiveCollabListStackView(mentions: mentions)
-                                .presentationDetents([.medium, .large])
-                        } else {
-                            LiveCollabListView(mentions: mentions)
-                        }
+                        LiveCollabListStackView(mentions: mentions)
+                            .presentationDetents([.medium, .large])
                     })
             } else {
                 VStack(alignment: .leading) {

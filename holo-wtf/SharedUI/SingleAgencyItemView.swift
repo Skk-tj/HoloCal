@@ -11,17 +11,17 @@ struct SingleAgencyItemView: View {
     let agency: AgencyEnum
     
     var body: some View {
-        HStack {
-            Image(systemName: agencyEnumToAgency[agency]!.icon)
-                .foregroundColor(.accentColor)
-            
-            VStack(alignment: .leading) {
-                Text(agencyEnumToAgency[agency]!.localizedName)
-                Text(agencyEnumToAgency[agency]!.altLocalizedName)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-            }
-        }
+        Label(agencyEnumToAgency[agency]!.localizedName, systemImage: agencyEnumToAgency[agency]!.icon)
+//        Label(title: {
+//            VStack(alignment: .leading, content: {
+//                Text(agencyEnumToAgency[agency]!.localizedName)
+//                Text(agencyEnumToAgency[agency]!.altLocalizedName)
+//                    .foregroundColor(.secondary)
+//                    .font(.caption)
+//            })
+//        }, icon: {
+//            Image(systemName: agencyEnumToAgency[agency]!.icon)
+//        })
     }
 }
 

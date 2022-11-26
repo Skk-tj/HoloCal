@@ -46,7 +46,5 @@ struct UIFavouriteListView<ElementContent: View, StatusContent: View>: View {
             })
             .listStyle(.plain)
         }
-        
-        
     }
 }
