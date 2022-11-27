@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -85,7 +85,7 @@
 		F04D14A928DD832200750B71 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = F04D14A828DD832200750B71 /* Collections */; };
 		F04D14AB28DD832400750B71 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = F04D14AA28DD832400750B71 /* OrderedCollections */; };
 		F04D14AD28DD832C00750B71 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = F04D14AC28DD832C00750B71 /* Algorithms */; };
-		F04D1B3E283A304E0026340D /* VideoWidgetProviderWithIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D1B3C283A300E0026340D /* VideoWidgetProviderWithIntent.swift */; };
+		F04D1B3E283A304E0026340D /* VideoWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D1B3C283A300E0026340D /* VideoWidgetProvider.swift */; };
 		F04D754828D7C94F0096B8AB /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657D527732690004AF802 /* Util.swift */; };
 		F04D755028D7CC1F0096B8AB /* DataStatusIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0114D4E2815F81600B99D4D /* DataStatusIndicatorView.swift */; };
 		F04D755428D7CF3F0096B8AB /* UpcomingWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D755328D7CF3F0096B8AB /* UpcomingWatchView.swift */; };
@@ -203,6 +203,8 @@
 		F0CA6ED428D7C4A40028CB11 /* UpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */; };
 		F0CA6ED528D7C4A70028CB11 /* LiveAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0673C162775F7FB009C65C6 /* LiveAvatarView.swift */; };
 		F0CA6ED728D7C4DB0028CB11 /* WatchLiveCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA6ED628D7C4DB0028CB11 /* WatchLiveCellView.swift */; };
+		F0E05C722932E27C00B3C774 /* VideoWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D1B3C283A300E0026340D /* VideoWidgetProvider.swift */; };
+		F0E05C732932E27E00B3C774 /* VideoWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D1B3C283A300E0026340D /* VideoWidgetProvider.swift */; };
 		F0E06D0729322BEC00BF6812 /* BlockLiveTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A4292CA914009EC2CC /* BlockLiveTimeView.swift */; };
 		F0E06D0829322BF200BF6812 /* BlockUpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A6292E1893009EC2CC /* BlockUpcomingTimeView.swift */; };
 		F0E06D0A29322C2100BF6812 /* ViewerCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A2292C9FF8009EC2CC /* ViewerCounterView.swift */; };
@@ -210,9 +212,6 @@
 		F0E06D162932376300BF6812 /* Modes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA6EA228D791BE0028CB11 /* Modes.swift */; };
 		F0E06D182932A4FA00BF6812 /* Modes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA6EA228D791BE0028CB11 /* Modes.swift */; };
 		F0E06D192932A50100BF6812 /* Modes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA6EA228D791BE0028CB11 /* Modes.swift */; };
-		F0E06D1B2932A5C700BF6812 /* VideoWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E06D1A2932A5C700BF6812 /* VideoWidgetProvider.swift */; };
-		F0E06D1C2932A5C700BF6812 /* VideoWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E06D1A2932A5C700BF6812 /* VideoWidgetProvider.swift */; };
-		F0E06D1E2932A60F00BF6812 /* VideoWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E06D1A2932A5C700BF6812 /* VideoWidgetProvider.swift */; };
 		F0E06D202932AB0400BF6812 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F0E06D1F2932AB0400BF6812 /* Intents.intentdefinition */; };
 		F0E06D212932AB0400BF6812 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F0E06D1F2932AB0400BF6812 /* Intents.intentdefinition */; };
 		F0E06D222932AB0400BF6812 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F0E06D1F2932AB0400BF6812 /* Intents.intentdefinition */; };
@@ -370,7 +369,7 @@
 		F04D147E28DD523C00750B71 /* LiveAccessoryCornerEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAccessoryCornerEntryView.swift; sourceTree = "<group>"; };
 		F04D148928DD66AD00750B71 /* UpcomingAccessoryCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingAccessoryCornerView.swift; sourceTree = "<group>"; };
 		F04D148D28DD673A00750B71 /* UpcomingAccessoryCornerEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingAccessoryCornerEntryView.swift; sourceTree = "<group>"; };
-		F04D1B3C283A300E0026340D /* VideoWidgetProviderWithIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoWidgetProviderWithIntent.swift; sourceTree = "<group>"; };
+		F04D1B3C283A300E0026340D /* VideoWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoWidgetProvider.swift; sourceTree = "<group>"; };
 		F04D1B40283A3AE70026340D /* MultipleLiveWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleLiveWidgetView.swift; sourceTree = "<group>"; };
 		F04D754F28D7CB770096B8AB /* holo-wtf-watch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "holo-wtf-watch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F04D755328D7CF3F0096B8AB /* UpcomingWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingWatchView.swift; sourceTree = "<group>"; };
@@ -444,7 +443,6 @@
 		F0CA6EC228D7C2620028CB11 /* LiveWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveWatchView.swift; sourceTree = "<group>"; };
 		F0CA6ECF28D7C31D0028CB11 /* WatchVideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchVideoListView.swift; sourceTree = "<group>"; };
 		F0CA6ED628D7C4DB0028CB11 /* WatchLiveCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchLiveCellView.swift; sourceTree = "<group>"; };
-		F0E06D1A2932A5C700BF6812 /* VideoWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoWidgetProvider.swift; sourceTree = "<group>"; };
 		F0E06D1F2932AB0400BF6812 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
 		F0E219C2287AB47D0080697F /* LiveWidgetMediumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveWidgetMediumView.swift; sourceTree = "<group>"; };
 		F0E45D1728F39AD90091474A /* Agency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agency.swift; sourceTree = "<group>"; };
@@ -555,8 +553,7 @@
 		F02830842853DB9200CBFCE7 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
-				F04D1B3C283A300E0026340D /* VideoWidgetProviderWithIntent.swift */,
-				F0E06D1A2932A5C700BF6812 /* VideoWidgetProvider.swift */,
+				F04D1B3C283A300E0026340D /* VideoWidgetProvider.swift */,
 				F0B71FCC283CACA000DC4260 /* MultipleVideoWidgetProvider.swift */,
 				F03A139128F1FE0700BB8E51 /* ChannelsWidgetProvider.swift */,
 			);
@@ -1071,7 +1068,7 @@
 				};
 			};
 			buildConfigurationList = F0C657B22771F47C004AF802 /* Build configuration list for PBXProject "holo-wtf" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1172,12 +1169,12 @@
 				F06D28E128D8390F007D06FB /* SharedEntryView.swift in Sources */,
 				F04D148C28DD66AD00750B71 /* UpcomingAccessoryCornerView.swift in Sources */,
 				F0E06D182932A4FA00BF6812 /* Modes.swift in Sources */,
-				F0E06D1C2932A5C700BF6812 /* VideoWidgetProvider.swift in Sources */,
 				F0E06D222932AB0400BF6812 /* Intents.intentdefinition in Sources */,
 				F06D28F828D83ABB007D06FB /* VideoFetchService.swift in Sources */,
 				F06D28FA28D83AD3007D06FB /* UpcomingTimeView.swift in Sources */,
 				F06D28F728D83AA6007D06FB /* UpcomingAccessoryRectangularWidgetView.swift in Sources */,
 				F06D28DE28D838C7007D06FB /* SharedWidgets.swift in Sources */,
+				F0E05C722932E27C00B3C774 /* VideoWidgetProvider.swift in Sources */,
 				F06D28E228D839E4007D06FB /* MultipleVideoWidgetEntry.swift in Sources */,
 				F06D28EC28D83A2D007D06FB /* SharedUtil.swift in Sources */,
 				F025204728EEA5FC00976972 /* Common.swift in Sources */,
@@ -1195,7 +1192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F093D1DC282FA0CF00E2A6FF /* LiveTimeView.swift in Sources */,
-				F04D1B3E283A304E0026340D /* VideoWidgetProviderWithIntent.swift in Sources */,
+				F04D1B3E283A304E0026340D /* VideoWidgetProvider.swift in Sources */,
 				F093D1DA282FA0C000E2A6FF /* UpcomingViewModel.swift in Sources */,
 				F03A139428F2018000BB8E51 /* LiveChannelsView.swift in Sources */,
 				F0E06D0B29322C7800BF6812 /* BlockMemberOnlyView.swift in Sources */,
@@ -1220,7 +1217,6 @@
 				F0B2AF1228C2E28700635CAD /* MultipleUpcomingWidgetView.swift in Sources */,
 				F00BD6D129052AC400D7932E /* VideoViewModel.swift in Sources */,
 				F04D147B28DD4ED300750B71 /* LiveAccessoryCornerView.swift in Sources */,
-				F0E06D1B2932A5C700BF6812 /* VideoWidgetProvider.swift in Sources */,
 				F093D1D6282FA0A600E2A6FF /* VideoThumbnailView.swift in Sources */,
 				F0B2AF0928C13C7600635CAD /* SmallUpcomingWidgetView.swift in Sources */,
 				F0B71FCF283E08C300DC4260 /* MultipleLiveWidgetView.swift in Sources */,
@@ -1361,7 +1357,6 @@
 				F0CA6ED328D7C4A40028CB11 /* LiveTimeView.swift in Sources */,
 				F0CA6ED428D7C4A40028CB11 /* UpcomingTimeView.swift in Sources */,
 				F04D754828D7C94F0096B8AB /* Util.swift in Sources */,
-				F0E06D1E2932A60F00BF6812 /* VideoWidgetProvider.swift in Sources */,
 				F025204D28EEAEE000976972 /* MultipleVideoWidgetEntry.swift in Sources */,
 				F0CA6ED728D7C4DB0028CB11 /* WatchLiveCellView.swift in Sources */,
 				F0E45D1A28F39AF90091474A /* Agency.swift in Sources */,
@@ -1374,6 +1369,7 @@
 				F06D28F528D83AA0007D06FB /* LiveAccessoryRectangularWidgetView.swift in Sources */,
 				F04D755828D7D8430096B8AB /* SettingsWatchView.swift in Sources */,
 				F0CA6ED528D7C4A70028CB11 /* LiveAvatarView.swift in Sources */,
+				F0E05C732932E27E00B3C774 /* VideoWidgetProvider.swift in Sources */,
 				F0CA6ECC28D7C2BE0028CB11 /* LiveVideo.swift in Sources */,
 				F0F0EAC3292B56D20091DBD7 /* UpcomingFavouriteCountView.swift in Sources */,
 				F0CA6EC328D7C2620028CB11 /* LiveWatchView.swift in Sources */,
@@ -1498,7 +1494,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.watchkitapp.complications";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.watch.complications";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1529,7 +1525,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.watchkitapp.complications";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.watch.complications";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1559,7 +1555,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.holo-wtf-widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1587,7 +1583,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.holo-wtf-widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1822,7 +1818,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1857,7 +1853,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
