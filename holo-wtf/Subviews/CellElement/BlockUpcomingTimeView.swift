@@ -19,7 +19,7 @@ struct BlockUpcomingTimeView: View {
                 if isShowingAbsoluteTime {
                     HStack {
                         Image(systemName: "clock")
-                        Text("\(liveSchedule.formatted(date: .abbreviated, time: .shortened))")
+                        Text("\(liveSchedule.formatted(date: .numeric, time: .shortened))")
                             .font(.title3)
                             .fontWeight(.bold)
                     }

@@ -32,7 +32,7 @@ struct UpcomingTitleView: View {
 }
 
 struct SmallLiveWidgetEntryView: View {
-    var entry: VideoWidgetProvider.Entry
+    var entry: VideoLiveWidgetProvider.Entry
     
     var body: some View {
         BaseVideoEntryView(entry: entry, mainView: {
@@ -51,7 +51,7 @@ struct SmallLiveWidgetEntryView: View {
 }
 
 struct LivePaneWidgetEntryView: View {
-    var entry: VideoWidgetProvider.Entry
+    var entry: VideoLiveWidgetProvider.Entry
     
     var body: some View {
         BaseVideoEntryView(entry: entry, mainView: {
@@ -69,7 +69,7 @@ struct LivePaneWidgetEntryView: View {
 }
 
 struct MultipleLiveWidgetEntryView: View {
-    var entry: MultipleVideoWidgetProvider.Entry
+    var entry: MultipleVideoLiveWidgetProvider.Entry
     
     var body: some View {
         BaseVideoEntryView(entry: entry, mainView: {
@@ -93,7 +93,7 @@ struct MultipleLiveWidgetEntryView: View {
 }
 
 struct SmallUpcomingWidgetEntryView: View {
-    var entry: VideoWidgetProvider.Entry
+    var entry: VideoUpcomingWidgetProvider.Entry
     
     var body: some View {
         BaseVideoEntryView(entry: entry, mainView: {
@@ -111,7 +111,7 @@ struct SmallUpcomingWidgetEntryView: View {
 }
 
 struct UpcomingPaneWidgetEntryView: View {
-    var entry: VideoWidgetProvider.Entry
+    var entry: VideoUpcomingWidgetProvider.Entry
     
     var body: some View {
         BaseVideoEntryView(entry: entry, mainView: {
@@ -129,7 +129,7 @@ struct UpcomingPaneWidgetEntryView: View {
 }
 
 struct MultipleUpcomingWidgetEntryView: View {
-    var entry: MultipleVideoWidgetProvider.Entry
+    var entry: MultipleVideoUpcomingWidgetProvider.Entry
     
     var body: some View {
         BaseVideoEntryView(entry: entry, mainView: {
@@ -153,7 +153,7 @@ struct MultipleUpcomingWidgetEntryView: View {
 }
 
 struct LiveChannelsEntryView: View {
-    var entry: ChannelsWidgetProvider.Entry
+    var entry: ChannelsLiveWidgetProvider.Entry
     
     var body: some View {
         BaseVideoEntryView(entry: entry, mainView: {
@@ -171,7 +171,7 @@ struct LiveChannelsEntryView: View {
 }
 
 struct UpcomingChannelsEntryView: View {
-    var entry: ChannelsWidgetProvider.Entry
+    var entry: ChannelsUpcomingWidgetProvider.Entry
     
     var body: some View {
         BaseVideoEntryView(entry: entry, mainView: {

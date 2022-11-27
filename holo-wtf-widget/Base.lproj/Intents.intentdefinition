@@ -8,7 +8,7 @@
 			<key>INEnumDisplayName</key>
 			<string>Agency</string>
 			<key>INEnumDisplayNameID</key>
-			<string>12xoqc</string>
+			<string>pqXegX</string>
 			<key>INEnumGeneratesHeader</key>
 			<true/>
 			<key>INEnumName</key>
@@ -21,7 +21,7 @@
 					<key>INEnumValueDisplayName</key>
 					<string>All</string>
 					<key>INEnumValueDisplayNameID</key>
-					<string>sHyvSq</string>
+					<string>PrX5Pz</string>
 					<key>INEnumValueName</key>
 					<string>unknown</string>
 				</dict>
@@ -29,7 +29,7 @@
 					<key>INEnumValueDisplayName</key>
 					<string>Hololive</string>
 					<key>INEnumValueDisplayNameID</key>
-					<string>DEULCw</string>
+					<string>329KFu</string>
 					<key>INEnumValueIndex</key>
 					<integer>1</integer>
 					<key>INEnumValueName</key>
@@ -39,7 +39,7 @@
 					<key>INEnumValueDisplayName</key>
 					<string>Nijisanji</string>
 					<key>INEnumValueDisplayNameID</key>
-					<string>Exwll4</string>
+					<string>pBKEAu</string>
 					<key>INEnumValueIndex</key>
 					<integer>2</integer>
 					<key>INEnumValueName</key>
@@ -51,7 +51,7 @@
 			<key>INEnumDisplayName</key>
 			<string>Sort By</string>
 			<key>INEnumDisplayNameID</key>
-			<string>k3ZImx</string>
+			<string>Zorcmj</string>
 			<key>INEnumGeneratesHeader</key>
 			<true/>
 			<key>INEnumName</key>
@@ -64,7 +64,7 @@
 					<key>INEnumValueDisplayName</key>
 					<string>Default</string>
 					<key>INEnumValueDisplayNameID</key>
-					<string>cdHB1G</string>
+					<string>MGQrOC</string>
 					<key>INEnumValueName</key>
 					<string>unknown</string>
 				</dict>
@@ -72,7 +72,7 @@
 					<key>INEnumValueDisplayName</key>
 					<string>Most Viewer</string>
 					<key>INEnumValueDisplayNameID</key>
-					<string>3Tza9J</string>
+					<string>o5HrN6</string>
 					<key>INEnumValueIndex</key>
 					<integer>1</integer>
 					<key>INEnumValueName</key>
@@ -82,7 +82,7 @@
 					<key>INEnumValueDisplayName</key>
 					<string>Most Recent</string>
 					<key>INEnumValueDisplayNameID</key>
-					<string>NaxRYD</string>
+					<string>imTF2F</string>
 					<key>INEnumValueIndex</key>
 					<integer>2</integer>
 					<key>INEnumValueName</key>
@@ -94,7 +94,7 @@
 	<key>INIntentDefinitionModelVersion</key>
 	<string>1.2</string>
 	<key>INIntentDefinitionNamespace</key>
-	<string>zULxve</string>
+	<string>4QR6NB</string>
 	<key>INIntentDefinitionSystemVersion</key>
 	<string>22A400</string>
 	<key>INIntentDefinitionToolsBuildVersion</key>
@@ -106,10 +106,8 @@
 		<dict>
 			<key>INIntentCategory</key>
 			<string>information</string>
-			<key>INIntentDescription</key>
-			<string>Choose videos of which agency to show in the widget</string>
 			<key>INIntentDescriptionID</key>
-			<string>JHW5MT</string>
+			<string>Cx8kXL</string>
 			<key>INIntentEligibleForWidgets</key>
 			<true/>
 			<key>INIntentIneligibleForSuggestions</key>
@@ -117,7 +115,7 @@
 			<key>INIntentLastParameterTag</key>
 			<integer>4</integer>
 			<key>INIntentName</key>
-			<string>SelectAgency</string>
+			<string>LiveWidget</string>
 			<key>INIntentParameters</key>
 			<array>
 				<dict>
@@ -126,13 +124,13 @@
 					<key>INIntentParameterDisplayName</key>
 					<string>Agency</string>
 					<key>INIntentParameterDisplayNameID</key>
-					<string>rbB8DN</string>
+					<string>qylnCt</string>
 					<key>INIntentParameterDisplayPriority</key>
 					<integer>1</integer>
 					<key>INIntentParameterEnumType</key>
 					<string>IntentAgency</string>
 					<key>INIntentParameterEnumTypeNamespace</key>
-					<string>zULxve</string>
+					<string>4QR6NB</string>
 					<key>INIntentParameterName</key>
 					<string>agency</string>
 					<key>INIntentParameterPromptDialogs</key>
@@ -155,7 +153,7 @@
 							<key>INIntentParameterPromptDialogFormatString</key>
 							<string>There are ${count} options matching ‘${agency}’.</string>
 							<key>INIntentParameterPromptDialogFormatStringID</key>
-							<string>H6Mrvd</string>
+							<string>JjcI35</string>
 							<key>INIntentParameterPromptDialogType</key>
 							<string>DisambiguationIntroduction</string>
 						</dict>
@@ -165,7 +163,7 @@
 							<key>INIntentParameterPromptDialogFormatString</key>
 							<string>Just to confirm, you wanted ‘${agency}’?</string>
 							<key>INIntentParameterPromptDialogFormatStringID</key>
-							<string>HUUAby</string>
+							<string>5bY6o3</string>
 							<key>INIntentParameterPromptDialogType</key>
 							<string>Confirmation</string>
 						</dict>
@@ -181,18 +179,13 @@
 					<key>INIntentParameterDisplayName</key>
 					<string>Sort By</string>
 					<key>INIntentParameterDisplayNameID</key>
-					<string>Nok6z0</string>
+					<string>FGwDZx</string>
 					<key>INIntentParameterDisplayPriority</key>
 					<integer>2</integer>
 					<key>INIntentParameterEnumType</key>
 					<string>IntentSortBy</string>
 					<key>INIntentParameterEnumTypeNamespace</key>
-					<string>zULxve</string>
-					<key>INIntentParameterMetadata</key>
-					<dict>
-						<key>INIntentParameterMetadataDefaultValue</key>
-						<string>mostRecent</string>
-					</dict>
+					<string>4QR6NB</string>
 					<key>INIntentParameterName</key>
 					<string>sortBy</string>
 					<key>INIntentParameterPromptDialogs</key>
@@ -215,7 +208,7 @@
 							<key>INIntentParameterPromptDialogFormatString</key>
 							<string>There are ${count} options matching ‘${sortBy}’.</string>
 							<key>INIntentParameterPromptDialogFormatStringID</key>
-							<string>vG0d9w</string>
+							<string>uSY1ES</string>
 							<key>INIntentParameterPromptDialogType</key>
 							<string>DisambiguationIntroduction</string>
 						</dict>
@@ -225,7 +218,7 @@
 							<key>INIntentParameterPromptDialogFormatString</key>
 							<string>Just to confirm, you wanted ‘${sortBy}’?</string>
 							<key>INIntentParameterPromptDialogFormatStringID</key>
-							<string>qC6kOs</string>
+							<string>s1jaV3</string>
 							<key>INIntentParameterPromptDialogType</key>
 							<string>Confirmation</string>
 						</dict>
@@ -253,9 +246,105 @@
 				</array>
 			</dict>
 			<key>INIntentTitle</key>
-			<string>Select Agency</string>
+			<string>Live Widget</string>
 			<key>INIntentTitleID</key>
-			<string>f52Wh1</string>
+			<string>r8FKdf</string>
+			<key>INIntentType</key>
+			<string>Custom</string>
+			<key>INIntentVerb</key>
+			<string>View</string>
+		</dict>
+		<dict>
+			<key>INIntentCategory</key>
+			<string>information</string>
+			<key>INIntentDescriptionID</key>
+			<string>jDnAen</string>
+			<key>INIntentEligibleForWidgets</key>
+			<true/>
+			<key>INIntentIneligibleForSuggestions</key>
+			<true/>
+			<key>INIntentLastParameterTag</key>
+			<integer>2</integer>
+			<key>INIntentName</key>
+			<string>UpcomingWidget</string>
+			<key>INIntentParameters</key>
+			<array>
+				<dict>
+					<key>INIntentParameterConfigurable</key>
+					<true/>
+					<key>INIntentParameterDisplayName</key>
+					<string>Agency</string>
+					<key>INIntentParameterDisplayNameID</key>
+					<string>IJvLjT</string>
+					<key>INIntentParameterDisplayPriority</key>
+					<integer>1</integer>
+					<key>INIntentParameterEnumType</key>
+					<string>IntentAgency</string>
+					<key>INIntentParameterEnumTypeNamespace</key>
+					<string>4QR6NB</string>
+					<key>INIntentParameterName</key>
+					<string>agency</string>
+					<key>INIntentParameterPromptDialogs</key>
+					<array>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>Configuration</string>
+						</dict>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>Primary</string>
+						</dict>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogFormatString</key>
+							<string>There are ${count} options matching ‘${agency}’.</string>
+							<key>INIntentParameterPromptDialogFormatStringID</key>
+							<string>lwhIi4</string>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>DisambiguationIntroduction</string>
+						</dict>
+						<dict>
+							<key>INIntentParameterPromptDialogCustom</key>
+							<true/>
+							<key>INIntentParameterPromptDialogFormatString</key>
+							<string>Just to confirm, you wanted ‘${agency}’?</string>
+							<key>INIntentParameterPromptDialogFormatStringID</key>
+							<string>QcYZAm</string>
+							<key>INIntentParameterPromptDialogType</key>
+							<string>Confirmation</string>
+						</dict>
+					</array>
+					<key>INIntentParameterTag</key>
+					<integer>2</integer>
+					<key>INIntentParameterType</key>
+					<string>Integer</string>
+				</dict>
+			</array>
+			<key>INIntentResponse</key>
+			<dict>
+				<key>INIntentResponseCodes</key>
+				<array>
+					<dict>
+						<key>INIntentResponseCodeName</key>
+						<string>success</string>
+						<key>INIntentResponseCodeSuccess</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>INIntentResponseCodeName</key>
+						<string>failure</string>
+					</dict>
+				</array>
+			</dict>
+			<key>INIntentTitle</key>
+			<string>Upcoming Widget</string>
+			<key>INIntentTitleID</key>
+			<string>Kg5KsP</string>
 			<key>INIntentType</key>
 			<string>Custom</string>
 			<key>INIntentVerb</key>

@@ -19,7 +19,7 @@ struct BlockLiveTimeView: View {
                 if isShowingAbsoluteTime {
                     HStack {
                         Image(systemName: "clock")
-                        Text("\(liveTime.formatted(date: .abbreviated, time: .shortened))")
+                        Text("\(liveTime.formatted(date: .numeric, time: .shortened))")
                             .font(.title3)
                             .fontWeight(.bold)
                     }
@@ -57,7 +57,7 @@ struct BlockLiveTimeView: View {
 
 struct NewLiveTimeView_Previews: PreviewProvider {
     static var previews: some View {
-        BlockLiveTimeView(liveTime: Date() - 30000)
+        BlockLiveTimeView(liveTime: Date() - 30000, isShowingAbsoluteTime: true)
         BlockLiveTimeView(liveTime: nil)
     }
 }

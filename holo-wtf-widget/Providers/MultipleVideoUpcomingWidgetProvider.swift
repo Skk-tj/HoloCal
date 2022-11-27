@@ -1,0 +1,31 @@
+//
+//  MultipleVideoUpcomingWidgetProvider.swift
+//  holo-wtf-widgetExtension
+//
+//  Created by Haoyi An on 2022-11-27.
+//
+
+import WidgetKit
+
+struct MultipleVideoUpcomingWidgetProvider: IntentTimelineProvider {
+    typealias Entry = MultipleVideoWidgetEntry
+    typealias Intent = UpcomingWidgetIntent
+    
+    func placeholder(in context: Context) -> Entry {
+        return MultipleVideoWidgetEntry(date: Date(), status: .ok, videoLeft: widgetSampleVideo, thumbnailDataLeft: Data(), videoRight: widgetSampleVideo, thumbnailDataRight: Data())
+    }
+    
+    func getSnapshot(for configuration: Intent, in context: Context, completion: @escaping (Entry) -> Void) {
+        Task {
+            completion(await getMultipleEntry(for: configuration.agency, videoType: .upcoming, sortBy: IntentSortBy.mostRecent, filterBy: {$0.isHololive || $0.isNijisanji}))
+        }
+    }
+    
+    func getTimeline(for configuration: Intent, in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
+        Task {
+            let entries: [MultipleVideoWidgetEntry] = [await getMultipleEntry(for: configuration.agency, videoType: .upcoming, sortBy: IntentSortBy.mostRecent, filterBy: {$0.isHololive || $0.isNijisanji})]
+            let timeline = Timeline(entries: entries, policy: .atEnd)
+            completion(timeline)
+        }
+    }
+}

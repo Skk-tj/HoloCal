@@ -10,7 +10,7 @@ import WidgetKit
 
 /// These views are shared between iOS Lock Screen widgets and watchOS complications
 struct LiveAccessoryRectangularWidgetEntryView: View {
-    var entry: VideoWidgetProvider.Entry
+    var entry: VideoLiveWidgetProvider.Entry
     
     var body: some View {
         if let video = entry.video {
@@ -29,7 +29,7 @@ struct LiveAccessoryRectangularWidgetEntryView: View {
 }
 
 struct UpcomingAccessoryRectangularWidgetEntryView: View {
-    var entry: VideoWidgetProvider.Entry
+    var entry: VideoLiveWidgetProvider.Entry
     
     var body: some View {
         if let video = entry.video {

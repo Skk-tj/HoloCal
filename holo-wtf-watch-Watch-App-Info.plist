@@ -6,7 +6,9 @@
 	<string>$(HOLODEX_API_KEY)</string>
 	<key>NSUserActivityTypes</key>
 	<array>
+		<string>LiveWidgetIntent</string>
 		<string>SelectAgencyIntent</string>
+		<string>UpcomingWidgetIntent</string>
 	</array>
 </dict>
 </plist>
