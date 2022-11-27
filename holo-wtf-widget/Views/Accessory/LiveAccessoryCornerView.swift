@@ -12,15 +12,12 @@ struct LiveAccessoryCornerView: View {
     let live: LiveVideo
     
     var body: some View {
-        ZStack {
-            AccessoryWidgetBackground()
-            Image(systemName: "person.wave.2.fill")
-                .font(.title.bold())
-        }
-        .widgetAccentable()
-        .widgetLabel {
-            Text(live.channel.getTalentName())
-        }
+        Image(systemName: "person.wave.2.fill")
+            .font(.title.bold())
+            .widgetAccentable()
+            .widgetLabel {
+                Text(live.channel.getTalentName())
+            }
     }
 }
 

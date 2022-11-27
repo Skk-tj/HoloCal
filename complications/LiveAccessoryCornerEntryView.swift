@@ -15,15 +15,11 @@ struct LiveAccessoryCornerEntryView: View {
         if let video = entry.video {
             LiveAccessoryCornerView(live: video)
         } else {
-            ZStack {
-                AccessoryWidgetBackground()
-                Image(systemName: "person.wave.2.fill")
-                    .font(.title.bold())
-            }
-            .widgetAccentable()
-            .widgetLabel {
-                Text("NO_ONE_IS_STREAMING")
-            }
+            Image(systemName: "person.wave.2.fill")
+                .widgetAccentable()
+                .widgetLabel {
+                    Text("NO_ONE_IS_STREAMING")
+                }
         }
     }
 }

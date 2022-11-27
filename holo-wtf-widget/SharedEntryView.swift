@@ -23,6 +23,7 @@ struct LiveAccessoryRectangularWidgetEntryView: View {
                 
                 Text("NO_ONE_IS_STREAMING")
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }
@@ -41,6 +42,7 @@ struct UpcomingAccessoryRectangularWidgetEntryView: View {
                 
                 Text("NO_ONE_IS_STREAMING")
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }

@@ -32,7 +32,7 @@ struct UpcomingTitleView: View {
 }
 
 struct SmallLiveWidgetEntryView: View {
-    var entry: VideoWidgetProviderWithIntent.Entry
+    var entry: VideoWidgetProvider.Entry
     
     var body: some View {
         BaseVideoEntryView(entry: entry, mainView: {
@@ -51,7 +51,7 @@ struct SmallLiveWidgetEntryView: View {
 }
 
 struct LivePaneWidgetEntryView: View {
-    var entry: VideoWidgetProviderWithIntent.Entry
+    var entry: VideoWidgetProvider.Entry
     
     var body: some View {
         BaseVideoEntryView(entry: entry, mainView: {
@@ -93,7 +93,7 @@ struct MultipleLiveWidgetEntryView: View {
 }
 
 struct SmallUpcomingWidgetEntryView: View {
-    var entry: VideoWidgetProviderWithIntent.Entry
+    var entry: VideoWidgetProvider.Entry
     
     var body: some View {
         BaseVideoEntryView(entry: entry, mainView: {
@@ -111,7 +111,7 @@ struct SmallUpcomingWidgetEntryView: View {
 }
 
 struct UpcomingPaneWidgetEntryView: View {
-    var entry: VideoWidgetProviderWithIntent.Entry
+    var entry: VideoWidgetProvider.Entry
     
     var body: some View {
         BaseVideoEntryView(entry: entry, mainView: {
