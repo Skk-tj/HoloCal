@@ -17,6 +17,11 @@ struct VideoUpcomingWidgetProvider: IntentTimelineProvider {
     }
     
     func getSnapshot(for configuration: Intent, in context: Context, completion: @escaping (Entry) -> ()) {
+        if context.isPreview && context.family == .accessoryRectangular {
+            completion(SingleVideoWidgetEntry(date: Date(), status: .ok, video: widgetSampleVideo, avatarData: Data(), thumbnailData: Data()))
+            return
+        }
+        
         Task {
             completion(await getEntryWithIntent(for: configuration.agency, videoType: .upcoming, sortBy: IntentSortBy.mostRecent, filterBy: { $0.isHololive || $0.isNijisanji }))
         }
