@@ -9,7 +9,7 @@ import SwiftUI
 import WidgetKit
 
 struct LiveAccessoryCornerEntryView: View {
-    var entry: VideoWidgetProvider.Entry
+    var entry: VideoLiveWidgetProvider.Entry
     
     var body: some View {
         if let video = entry.video {

@@ -8,28 +8,29 @@
 import WidgetKit
 import Algorithms
 
-struct VideoWidgetProvider: IntentTimelineProvider {
-    let videoType: VideoType
+struct VideoLiveWidgetProvider: IntentTimelineProvider {
+    typealias Entry = SingleVideoWidgetEntry
+    typealias Intent = LiveWidgetIntent
     
-    func placeholder(in context: Context) -> SingleVideoWidgetEntry {
+    func placeholder(in context: Context) -> Entry {
         return SingleVideoWidgetEntry(date: Date(), status: .ok, video: widgetSampleVideo, avatarData: Data(), thumbnailData: Data())
     }
     
-    func getSnapshot(for configuration: SelectAgencyIntent, in context: Context, completion: @escaping (SingleVideoWidgetEntry) -> ()) {
+    func getSnapshot(for configuration: Intent, in context: Context, completion: @escaping (Entry) -> ()) {
         Task {
-            completion(await getEntryWithIntent(for: configuration.agency, videoType: videoType, sortBy: configuration.sortBy, filterBy: { $0.isHololive || $0.isNijisanji }))
+            completion(await getEntryWithIntent(for: configuration.agency, videoType: .live, sortBy: configuration.sortBy, filterBy: { $0.isHololive || $0.isNijisanji }))
         }
     }
     
-    func getTimeline(for configuration: SelectAgencyIntent, in context: Context, completion: @escaping (Timeline<SingleVideoWidgetEntry>) -> ()) {
+    func getTimeline(for configuration: Intent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         Task {
-            let entries: [SingleVideoWidgetEntry] = [await getEntryWithIntent(for: configuration.agency, videoType: videoType, sortBy: configuration.sortBy, filterBy: { $0.isHololive || $0.isNijisanji })]
+            let entries: [SingleVideoWidgetEntry] = [await getEntryWithIntent(for: configuration.agency, videoType: .live, sortBy: configuration.sortBy, filterBy: { $0.isHololive || $0.isNijisanji })]
             let timeline = Timeline(entries: entries, policy: .atEnd)
             completion(timeline)
         }
     }
     
-    func recommendations() -> [IntentRecommendation<SelectAgencyIntent>] {
+    func recommendations() -> [IntentRecommendation<Intent>] {
         let intentAgencyToString: [IntentAgency: String] = [
             .unknown: "All",
             .hololive: "Hololive",
@@ -44,8 +45,8 @@ struct VideoWidgetProvider: IntentTimelineProvider {
         let availableSortBy: [IntentSortBy] = [.mostViewer, .mostRecent]
         let availableAgency: [IntentAgency] = [.unknown, .hololive, .nijisanji]
 
-        let result: [IntentRecommendation<SelectAgencyIntent>] = product(availableSortBy, availableAgency).map { pair in
-            let intent = SelectAgencyIntent()
+        let result: [IntentRecommendation<Intent>] = product(availableSortBy, availableAgency).map { pair in
+            let intent = LiveWidgetIntent()
             intent.sortBy = pair.0
             intent.agency = pair.1
             

@@ -13,7 +13,7 @@ struct LiveAccessoryRectangularWidget: Widget {
     let kind: String = "LiveAccessoryRectangularWidget"
     
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: SelectAgencyIntent.self, provider: VideoWidgetProvider(videoType: .live)) { entry in
+        IntentConfiguration(kind: kind, intent: LiveWidgetIntent.self, provider: VideoLiveWidgetProvider()) { entry in
             LiveAccessoryRectangularWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
@@ -26,7 +26,7 @@ struct UpcomingAccessoryRectangularWidget: Widget {
     let kind: String = "UpcomingAccessoryRectangularWidget"
     
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: SelectAgencyIntent.self, provider: VideoWidgetProvider(videoType: .upcoming)) { entry in
+        IntentConfiguration(kind: kind, intent: UpcomingWidgetIntent.self, provider: VideoUpcomingWidgetProvider()) { entry in
             UpcomingAccessoryRectangularWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("UPCOMING_WIDGET_DISPLAY_NAME")

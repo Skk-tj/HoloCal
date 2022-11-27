@@ -12,7 +12,7 @@ struct LiveAccessoryCornerWidget: Widget {
     let kind: String = "LiveAccessoryCornerWidget"
     
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: SelectAgencyIntent.self, provider: VideoWidgetProvider(videoType: .live)) { entry in
+        IntentConfiguration(kind: kind, intent: LiveWidgetIntent.self, provider: VideoLiveWidgetProvider()) { entry in
             LiveAccessoryCornerEntryView(entry: entry)
         }
         .configurationDisplayName("CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
@@ -25,7 +25,7 @@ struct UpcomingAccessoryCornerWidget: Widget {
     let kind: String = "UpcomingAccessoryCornerWidget"
     
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: SelectAgencyIntent.self, provider: VideoWidgetProvider(videoType: .upcoming)) { entry in
+        IntentConfiguration(kind: kind, intent: UpcomingWidgetIntent.self, provider: VideoUpcomingWidgetProvider()) { entry in
             UpcomingAccessoryCornerEntryView(entry: entry)
         }
         .configurationDisplayName("UPCOMING_WIDGET_DISPLAY_NAME")

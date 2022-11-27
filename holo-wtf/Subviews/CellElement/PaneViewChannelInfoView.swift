@@ -40,6 +40,7 @@ struct PaneViewChannelInfoView: View {
                     Text(video.channel.getTalentName())
                         .lineLimit(1)
                         .font(.subheadline)
+                        .fontWeight(.bold)
                     Text(video.channel.getAltTalentName())
                         .lineLimit(1)
                         .font(.subheadline)
