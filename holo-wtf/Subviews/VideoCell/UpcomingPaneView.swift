@@ -22,9 +22,10 @@ struct UpcomingPaneView: View {
                 VStack(alignment: .leading) {
                     // Force the title to be two lines
                     if UIDevice.current.userInterfaceIdiom == .pad {
-                        Text(upcoming.title + "\n")
+                        Text(upcoming.title)
                             .font(.headline)
-                            .lineLimit(2)
+                            .frame(maxHeight: .infinity)
+                            .lineLimit(2, reservesSpace: true)
                             .multilineTextAlignment(.leading)
                     } else {
                         Text(upcoming.title)

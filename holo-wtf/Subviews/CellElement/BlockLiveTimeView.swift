@@ -19,7 +19,7 @@ struct BlockLiveTimeView: View {
                 if isShowingAbsoluteTime {
                     HStack {
                         Image(systemName: "clock")
-                        Text("\(liveTime.formatted(date: .numeric, time: .shortened))")
+                        Text("\(getDateFormatter().string(from: liveTime))")
                             .font(.title3)
                             .fontWeight(.bold)
                     }

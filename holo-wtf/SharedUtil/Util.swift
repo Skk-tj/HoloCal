@@ -27,6 +27,15 @@ func getDSTReminderTimeIntervalFormatter() -> DateComponentsFormatter {
     return formatter
 }
 
+func getDateFormatter() -> DateFormatter {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateStyle = .short
+    dateFormatter.timeStyle = .short
+    dateFormatter.locale = .autoupdatingCurrent
+    
+    return dateFormatter
+}
+
 func getTimeIntervalStringFromReferenceDate(reference date: Date) -> String? {
     let dateDifference = date.timeIntervalSinceNow
     

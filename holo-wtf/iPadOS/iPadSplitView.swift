@@ -60,9 +60,11 @@ struct iPadSplitView: View {
                 switch viewSelection {
                 case .live, .upcoming:
                     iPadAgencySelectionView(agencySelection: $agencySelection)
+                        .navigationSplitViewColumnWidth(ideal: 250)
                 case .settings:
                     NavigationStack {
                         SettingsiPadView()
+                            .navigationSplitViewColumnWidth(ideal: 250)
                     }
                 }
             }

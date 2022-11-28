@@ -29,12 +29,12 @@ struct iPadLazyGridView<VideoContent: View, DataStatusView: View>: View {
                 if let days = Calendar.current.dateComponents([.day], from: Date(), to: nextDSTTransition).day {
                     if isShowingDSTReminder {
                         DSTReminderView(numberOfDaysToChange: days, changeType: TimeZone.current.isDaylightSavingTime() ? .ending : .starting, isShowingDSTReminder: $isShowingDSTReminder)
-                            .padding(.horizontal, 30)
+                            .padding(.horizontal, 20)
                     }
                 }
             }
             
-            LazyVGrid(columns: layout, alignment: .leading, spacing: 30) {
+            LazyVGrid(columns: layout, spacing: 20) {
                 if searchText.isEmpty {
                     if isFavourite {
                         ForEachVideoView { live in
@@ -51,24 +51,21 @@ struct iPadLazyGridView<VideoContent: View, DataStatusView: View>: View {
                     }
                 }
             }
-            .padding(.horizontal, 30)
+            .padding(.horizontal, 20)
             
             dataStatusView()
         }
         .searchable(text: $searchText, prompt: "SEARCH_BY_NAME_OR_TAG") {
             if searchText.isEmpty {
                 ForEach(videoViewModel.getSearchSuggestions(), id: \.self) { suggestion in
-                    HStack {
-                        switch suggestion.category {
-                        case .name:
-                            Image(systemName: "person")
-                        case .tag:
-                            Image(systemName: "tag")
-                        }
-                        
-                        Text("\(suggestion.searchText)")
+                    switch suggestion.category {
+                    case .name:
+                        Label(suggestion.searchText, systemImage: "person")
+                            .searchCompletion(suggestion.searchText)
+                    case .tag:
+                        Label(suggestion.searchText, systemImage: "tag")
+                            .searchCompletion(suggestion.searchText)
                     }
-                    .searchCompletion(suggestion.searchText)
                 }
             }
         }
