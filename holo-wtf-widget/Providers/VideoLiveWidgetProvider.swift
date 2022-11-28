@@ -36,17 +36,6 @@ struct VideoLiveWidgetProvider: IntentTimelineProvider {
     }
     
     func recommendations() -> [IntentRecommendation<Intent>] {
-        let intentAgencyToString: [IntentAgency: String] = [
-            .unknown: "All",
-            .hololive: "Hololive",
-            .nijisanji: "Nijisanji"
-        ]
-        
-        let intentSortByToString: [IntentSortBy: String] = [
-            .mostViewer: "Most Viewer",
-            .mostRecent: "Most Recent"
-        ]
-        
         let availableSortBy: [IntentSortBy] = [.mostViewer, .mostRecent]
         let availableAgency: [IntentAgency] = [.unknown, .hololive, .nijisanji]
 
@@ -55,7 +44,7 @@ struct VideoLiveWidgetProvider: IntentTimelineProvider {
             intent.sortBy = pair.0
             intent.agency = pair.1
             
-            let text = "\(intentSortByToString[pair.0]!) Stream (\(intentAgencyToString[pair.1]!))"
+            let text = "\(pair.0.localizedName) (\(pair.1.localizedName))"
 
             return IntentRecommendation(intent: intent, description: text)
         }

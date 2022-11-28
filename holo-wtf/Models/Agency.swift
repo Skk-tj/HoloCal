@@ -22,30 +22,20 @@ protocol Vtuberable {
 /// Default implementation of getting the names.
 extension Vtuberable {
     var localizedName: String {
-        if #available(iOS 16, *) {
-            if let langCode = Locale.current.language.languageCode?.identifier {
-                let lang: NameLanguage = langCode == "ja" ? .ja : .en
-                return names[lang]!
-            } else {
-                return names[.en]!
-            }
-        } else {
-            let lang: NameLanguage = Locale.current.languageCode == "ja" ? .en : .ja
+        if let langCode = Locale.current.language.languageCode?.identifier {
+            let lang: NameLanguage = langCode == "ja" ? .ja : .en
             return names[lang]!
+        } else {
+            return names[.en]!
         }
     }
     
     var altLocalizedName: String {
-        if #available(iOS 16, *) {
-            if let langCode = Locale.current.language.languageCode?.identifier {
-                let lang: NameLanguage = langCode == "ja" ? .en : .ja
-                return names[lang]!
-            } else {
-                return names[.en]!
-            }
-        } else {
-            let lang: NameLanguage = Locale.current.languageCode == "ja" ? .ja : .en
+        if let langCode = Locale.current.language.languageCode?.identifier {
+            let lang: NameLanguage = langCode == "ja" ? .en : .ja
             return names[lang]!
+        } else {
+            return names[.ja]!
         }
     }
 }
