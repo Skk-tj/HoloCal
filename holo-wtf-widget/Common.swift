@@ -7,6 +7,57 @@
 
 import Foundation
 
+let intentAgencyToString: [IntentAgency: [NameLanguage: String]] = [
+    .unknown: [.en: "All", .ja: "全部"],
+    .hololive: [.en: "Hololive", .ja: "ホロライブ"],
+    .nijisanji: [.en: "Nijisanji", .ja: "にじさんじ"]
+]
+
+let intentSortByToString: [IntentSortBy: [NameLanguage: String]] = [
+    .mostViewer: [.en: "Most Viewer", .ja: "視聴者数順"],
+    .mostRecent: [.en: "Most Recent", .ja: "開始時間順"]
+]
+
+extension IntentAgency {
+    var localizedName: String {
+        if let langCode = Locale.current.language.languageCode?.identifier {
+            let lang: NameLanguage = langCode == "ja" ? .ja : .en
+            return intentAgencyToString[self]![lang]!
+        } else {
+            return intentAgencyToString[self]![.en]!
+        }
+    }
+    
+    var altLocalizedName: String {
+        if let langCode = Locale.current.language.languageCode?.identifier {
+            let lang: NameLanguage = langCode == "ja" ? .en : .ja
+            return intentAgencyToString[self]![lang]!
+        } else {
+            return intentAgencyToString[self]![.ja]!
+        }
+    }
+}
+
+extension IntentSortBy {
+    var localizedName: String {
+        if let langCode = Locale.current.language.languageCode?.identifier {
+            let lang: NameLanguage = langCode == "ja" ? .ja : .en
+            return intentSortByToString[self]![lang]!
+        } else {
+            return intentSortByToString[self]![.en]!
+        }
+    }
+    
+    var altLocalizedName: String {
+        if let langCode = Locale.current.language.languageCode?.identifier {
+            let lang: NameLanguage = langCode == "ja" ? .en : .ja
+            return intentSortByToString[self]![lang]!
+        } else {
+            return intentSortByToString[self]![.ja]!
+        }
+    }
+}
+
 func getVideoURLForWidget(agency: IntentAgency, videoType: VideoType) -> String {
     switch agency {
     case .hololive:
@@ -33,48 +84,29 @@ func getVideoURLForWidget(agency: IntentAgency, videoType: VideoType) -> String 
     }
 }
 
-func getEntry(url: String, sortBy sortAlgorithm: (LiveVideo, LiveVideo) -> Bool, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> SingleVideoWidgetEntry {
-    do {
-        var lives: [LiveVideo] = try await getVideos(from: url)
-        
-        lives = lives.filter(filterAlgorithm)
-        lives.sort(by: sortAlgorithm)
-        
-        if lives.isEmpty {
-            let entry = SingleVideoWidgetEntry(date: .now, status: .noVideo, video: nil, avatarData: Data(), thumbnailData: Data())
-            return entry
+func getAndFilterAndSortVideosCommon(for agency: IntentAgency, videoType: VideoType, sortBy: IntentSortBy, filterBy filterAlgorithm: (LiveVideo) -> Bool) async throws -> [LiveVideo] {
+    var lives: [LiveVideo] = try await getVideos(from: getVideoURLForWidget(agency: agency, videoType: videoType))
+    
+    lives = lives.filter(filterAlgorithm)
+    
+    switch sortBy {
+    case .unknown, .mostRecent:
+        switch videoType {
+        case .live:
+            lives.sort(by: liveSortStrategy)
+        case .upcoming:
+            lives.sort(by: upcomingSortStrategy)
         }
-        
-        let firstVideo = lives[0]
-        
-        let (avatarData, _) = try await URLSession.shared.data(from: firstVideo.channel.photo!)
-        let (thumbnailData, _) = try await URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(firstVideo.id)/maxresdefault.jpg")!)
-        
-        let entry = SingleVideoWidgetEntry(date: .now, status: .ok, video: lives[0], avatarData: avatarData, thumbnailData: thumbnailData)
-        
-        return entry
-    } catch {
-        return SingleVideoWidgetEntry(date: .now, status: .network, video: nil, avatarData: Data(), thumbnailData: Data())
+    case .mostViewer:
+        lives.sort(by: {$0.liveViewers > $1.liveViewers})
     }
+    
+    return lives
 }
 
 func getEntryWithIntent(for agency: IntentAgency, videoType: VideoType, sortBy: IntentSortBy, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> SingleVideoWidgetEntry {
     do {
-        var lives: [LiveVideo] = try await getVideos(from: getVideoURLForWidget(agency: agency, videoType: videoType))
-        
-        lives = lives.filter(filterAlgorithm)
-        
-        switch sortBy {
-        case .unknown, .mostRecent:
-            switch videoType {
-            case .live:
-                lives.sort(by: liveSortStrategy)
-            case .upcoming:
-                lives.sort(by: upcomingSortStrategy)
-            }
-        case .mostViewer:
-            lives.sort(by: {$0.liveViewers > $1.liveViewers})
-        }
+        let lives = try await getAndFilterAndSortVideosCommon(for: agency, videoType: videoType, sortBy: sortBy, filterBy: filterAlgorithm)
         
         if lives.isEmpty {
             let entry = SingleVideoWidgetEntry(date: .now, status: .noVideo, video: nil, avatarData: Data(), thumbnailData: Data())
@@ -96,21 +128,7 @@ func getEntryWithIntent(for agency: IntentAgency, videoType: VideoType, sortBy: 
 
 func getMultipleEntry(for agency: IntentAgency, videoType: VideoType, sortBy: IntentSortBy, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> MultipleVideoWidgetEntry {
     do {
-        var lives: [LiveVideo] = try await getVideos(from: getVideoURLForWidget(agency: agency, videoType: videoType))
-        
-        lives = lives.filter(filterAlgorithm)
-        
-        switch sortBy {
-        case .unknown, .mostRecent:
-            switch videoType {
-            case .live:
-                lives.sort(by: liveSortStrategy)
-            case .upcoming:
-                lives.sort(by: upcomingSortStrategy)
-            }
-        case .mostViewer:
-            lives.sort(by: {$0.liveViewers > $1.liveViewers})
-        }
+        let lives = try await getAndFilterAndSortVideosCommon(for: agency, videoType: videoType, sortBy: sortBy, filterBy: filterAlgorithm)
         
         if lives.isEmpty {
             let entry = MultipleVideoWidgetEntry(date: .now, status: .noVideo, videoLeft: nil, thumbnailDataLeft: Data(), videoRight: nil, thumbnailDataRight: Data())
@@ -140,20 +158,7 @@ func getMultipleEntry(for agency: IntentAgency, videoType: VideoType, sortBy: In
 
 func getChannelsEntry(for agency: IntentAgency, videoType: VideoType, sortBy: IntentSortBy, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> ChannelsEntry {
     do {
-        var lives: [LiveVideo] = try await getVideos(from: getVideoURLForWidget(agency: agency, videoType: videoType))
-        lives = lives.filter(filterAlgorithm)
-        
-        switch sortBy {
-        case .unknown, .mostRecent:
-            switch videoType {
-            case .live:
-                lives.sort(by: liveSortStrategy)
-            case .upcoming:
-                lives.sort(by: upcomingSortStrategy)
-            }
-        case .mostViewer:
-            lives.sort(by: {$0.liveViewers > $1.liveViewers})
-        }
+        let lives = try await getAndFilterAndSortVideosCommon(for: agency, videoType: videoType, sortBy: sortBy, filterBy: filterAlgorithm)
         
         if lives.isEmpty {
             let entry = ChannelsEntry(date: .now, status: .noVideo, channels: [], thumbnails: [])

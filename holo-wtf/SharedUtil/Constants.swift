@@ -21,7 +21,7 @@ let nijisanjiUpcomingURL = "https://holodex.net/api/v2/live?status=upcoming&type
 
 let hololiveWidgetUpcomingURL = "https://holodex.net/api/v2/live?org=Hololive&status=upcoming&type=stream"
 
-let nijisanjiWidgetUpcomingURL = "https://holodex.net/api/v2/live?org=nijisanji&status=upcoming&type=stream"
+let nijisanjiWidgetUpcomingURL = "https://holodex.net/api/v2/live?org=Nijisanji&status=upcoming&type=stream"
 
 let allLiveURL = "https://holodex.net/api/v2/live?&status=live&type=stream&include=songs,mentions"
 
