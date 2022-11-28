@@ -65,8 +65,8 @@ class HoloCalUITests: XCTestCase {
         
         app.launch()
         
-        XCTAssertTrue(app.tabBars.buttons["ライブ配信中"].exists)
-        XCTAssertTrue(app.tabBars.buttons["今後のライブ配信"].exists)
+        XCTAssertTrue(app.tabBars.buttons["配信中"].exists)
+        XCTAssertTrue(app.tabBars.buttons["今後の配信"].exists)
         XCTAssertTrue(app.tabBars.buttons["設定"].exists)
     }
     
