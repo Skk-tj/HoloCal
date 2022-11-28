@@ -24,13 +24,6 @@ struct SettingsWatchView: View {
             }
             
             Section(header: Text("SETTINGS_ABOUT_SECTION_HEADER"), footer: Text("HoloCal \(Bundle.main.appVersionLong) (\(Bundle.main.appBuild)) \nCodename: \(Bundle.main.codeName)")) {
-//                Link(destination: URL(string: "https://github.com/Skk-tj/HoloCal/issues")!) {
-//                    Text("SETTINGS_ABOUT_BUG_REPORT")
-//                }
-//
-//                Link(destination: URL(string: "https://twitter.com/skk_tj")!) {
-//                    Text("SETTINGS_TWITTER")
-//                }
                 NavigationLink(destination: SpecialThanksView(), label: {
                     Text("SETTINGS_SPECIAL_THANKS")
                 })
