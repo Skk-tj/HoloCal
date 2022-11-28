@@ -52,15 +52,13 @@ struct FavouritesVideoListView<VideoContent: View, DataStatusContent: View>: Vie
         .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "SEARCH_BY_NAME_OR_TAG") {
             if searchText.isEmpty {
                 ForEach(viewModel.getSearchSuggestions(), id: \.self) { suggestion in
-                    HStack {
-                        switch suggestion.category {
-                        case .name:
-                            Image(systemName: "person")
-                        case .tag:
-                            Image(systemName: "tag")
-                        }
-                        
-                        Text("\(suggestion.searchText)").searchCompletion(suggestion.searchText)
+                    switch suggestion.category {
+                    case .name:
+                        Label(suggestion.searchText, systemImage: "person")
+                            .searchCompletion(suggestion.searchText)
+                    case .tag:
+                        Label(suggestion.searchText, systemImage: "tag")
+                            .searchCompletion(suggestion.searchText)
                     }
                 }
             }
