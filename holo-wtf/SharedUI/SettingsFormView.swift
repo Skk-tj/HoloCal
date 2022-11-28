@@ -113,10 +113,6 @@ struct SettingsFormView: View {
                     Text("SETTINGS_HELP_TRANSLATE")
                 })
                 
-                Link(destination: URL(string: "https://twitter.com/skk_tj")!) {
-                    Text("SETTINGS_TWITTER")
-                }
-                
                 NavigationLink(destination: SpecialThanksView(), label: {
                     Text("SETTINGS_SPECIAL_THANKS")
                 })
