@@ -106,6 +106,8 @@
 		<dict>
 			<key>INIntentCategory</key>
 			<string>information</string>
+			<key>INIntentDescription</key>
+			<string>Intent for Live Widget</string>
 			<key>INIntentDescriptionID</key>
 			<string>Cx8kXL</string>
 			<key>INIntentEligibleForWidgets</key>
@@ -257,6 +259,8 @@
 		<dict>
 			<key>INIntentCategory</key>
 			<string>information</string>
+			<key>INIntentDescription</key>
+			<string>Intent for Upcoming Widget</string>
 			<key>INIntentDescriptionID</key>
 			<string>jDnAen</string>
 			<key>INIntentEligibleForWidgets</key>
