@@ -18,6 +18,11 @@ let intentSortByToString: [IntentSortBy: [NameLanguage: String]] = [
     .mostRecent: [.en: "Most Recent", .ja: "開始時間順"]
 ]
 
+let intentVideoTypeToString: [VideoType: [NameLanguage: String]] = [
+    .live: [.en: "Live", .ja: "配信中"],
+    .upcoming: [.en: "Upcoming", .ja: "今後の配信"]
+]
+
 extension IntentAgency {
     var localizedName: String {
         if let langCode = Locale.current.language.languageCode?.identifier {
@@ -55,6 +60,24 @@ extension IntentSortBy {
         } else {
             return intentSortByToString[self]![.ja]!
         }
+    }
+}
+
+func getIntentVideoTypeLocalizedName(_ videoType: VideoType) -> String {
+    if let langCode = Locale.current.language.languageCode?.identifier {
+        let lang: NameLanguage = langCode == "ja" ? .ja : .en
+        return intentVideoTypeToString[videoType]![lang]!
+    } else {
+        return intentVideoTypeToString[videoType]![.en]!
+    }
+}
+
+func getIntentVideoTypeAltLocalizedName(_ videoType: VideoType) -> String {
+    if let langCode = Locale.current.language.languageCode?.identifier {
+        let lang: NameLanguage = langCode == "ja" ? .en : .ja
+        return intentVideoTypeToString[videoType]![lang]!
+    } else {
+        return intentVideoTypeToString[videoType]![.ja]!
     }
 }
 

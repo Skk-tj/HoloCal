@@ -42,7 +42,7 @@ struct VideoUpcomingWidgetProvider: IntentTimelineProvider {
             let intent = UpcomingWidgetIntent()
             intent.agency = item
             
-            let text = "\(IntentSortBy.mostRecent.localizedName) (\(item.localizedName))"
+            let text = "\(IntentSortBy.mostRecent.localizedName) (\(getIntentVideoTypeLocalizedName(.upcoming))) (\(item.localizedName))"
             
             return IntentRecommendation(intent: intent, description: text)
         }

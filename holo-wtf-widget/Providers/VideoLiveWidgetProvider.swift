@@ -44,7 +44,7 @@ struct VideoLiveWidgetProvider: IntentTimelineProvider {
             intent.sortBy = pair.0
             intent.agency = pair.1
             
-            let text = "\(pair.0.localizedName) (\(pair.1.localizedName))"
+            let text = "\(pair.0.localizedName) (\(getIntentVideoTypeLocalizedName(.live))) (\(pair.1.localizedName))"
 
             return IntentRecommendation(intent: intent, description: text)
         }
