@@ -9,10 +9,8 @@ import SwiftUI
 import WidgetKit
 
 /// These views are shared between iOS Lock Screen widgets and watchOS complications
-
-@available(iOSApplicationExtension 16.0, *)
 struct LiveAccessoryRectangularWidgetEntryView: View {
-    var entry: VideoWidgetProvider.Entry
+    var entry: VideoLiveWidgetProvider.Entry
     
     var body: some View {
         if let video = entry.video {
@@ -25,13 +23,13 @@ struct LiveAccessoryRectangularWidgetEntryView: View {
                 
                 Text("NO_ONE_IS_STREAMING")
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }
 
-@available(iOSApplicationExtension 16.0, *)
 struct UpcomingAccessoryRectangularWidgetEntryView: View {
-    var entry: VideoWidgetProvider.Entry
+    var entry: VideoLiveWidgetProvider.Entry
     
     var body: some View {
         if let video = entry.video {
@@ -44,6 +42,7 @@ struct UpcomingAccessoryRectangularWidgetEntryView: View {
                 
                 Text("NO_ONE_IS_STREAMING")
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }

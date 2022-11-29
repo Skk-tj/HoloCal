@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct LiveCountView: View {
-    @AppStorage("generationListSelection") var generationListSelection = Set(GenerationEnum.allCases)
+    @AppStorage("generationListSelection") var generationListSelection = Set(Generation.allCases)
     
     @EnvironmentObject var live: VideoViewModel
     
     var body: some View {
         let filteredVideoCount = live.videoList.filter { video in
             !generationListSelection.contains(video.channel.talent?.inGeneration ?? .other)
-        }
-            .count
+        }.count
         
         if filteredVideoCount == 0 {
             Text("LIVE_VIEW_CURRENT_COUNT \(live.videoList.count)")

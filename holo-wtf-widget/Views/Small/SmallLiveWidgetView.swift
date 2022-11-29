@@ -28,7 +28,7 @@ struct SmallLiveWidgetView: View {
             
             Text(live.title)
                 .font(.caption)
-                .lineLimit(2)
+                .lineLimit(2, reservesSpace: true)
                 .fixedSize(horizontal: false, vertical: true)
             Text(live.channel.getTalentName())
                 .lineLimit(1)

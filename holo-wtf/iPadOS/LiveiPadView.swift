@@ -9,15 +9,17 @@ import SwiftUI
 
 struct LiveiPadView: View {
     @StateObject var live: LiveViewModel
+    let agency: AgencyEnum
     
     @State var currentPresentationMode: PresentationMode = .normal
     
-    init() {
-        self._live = StateObject(wrappedValue: LiveViewModel())
+    init(for agency: AgencyEnum) {
+        self.agency = agency
+        _live = StateObject(wrappedValue: LiveViewModel(for: agency))
     }
     
     var body: some View {
-        iPadLazyGirdView(singleVideoView: { live in
+        iPadLazyGridView(singleVideoView: { live in
             LinkedVideoView(url: live.url) {
                 LivePaneView(live: live)
             }
@@ -28,12 +30,14 @@ struct LiveiPadView: View {
             DataStatusIndicatorView(dataStatus: live.dataStatus) {
                 LiveCountView()
             }
-        })
+        }, isFavourite: false)
         .environmentObject(live as VideoViewModel)
         .task {
-            await live.getLive()
-            
-            // Reset sorting state, go back to section view
+            await live.getVideoForUI()
+            currentPresentationMode = .normal
+        }
+        .refreshable {
+            await live.getVideoForUI()
             currentPresentationMode = .normal
         }
         .navigationTitle("LIVE_VIEW_TITLE")
@@ -41,14 +45,6 @@ struct LiveiPadView: View {
             ToolbarItemGroup(placement: .primaryAction) {
                 LiveViewToolbar(currentPresentationMode: $currentPresentationMode)
                     .environmentObject(live as VideoViewModel)
-                Button(action: {
-                    Task {
-                        await live.getLive()
-                        currentPresentationMode = .normal
-                    }
-                }, label: {
-                    Label("Refresh", systemImage: "arrow.triangle.2.circlepath")
-                })
             }
         }
     }
@@ -56,6 +52,6 @@ struct LiveiPadView: View {
 
 struct LiveiPadView_Previews: PreviewProvider {
     static var previews: some View {
-        LiveiPadView()
+        LiveiPadView(for: .hololive)
     }
 }

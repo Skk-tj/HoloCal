@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct ManageFavoriteView: View {
+    let agency: AgencyEnum
+    
     @State var showResetAlert: Bool = false
     @AppStorage("favouritedChannel") var favourited = Favourited()
     
     var body: some View {
         List {
-            ForEach(talentsByGeneration.values, id: \.self) { generation in
-                if generation.generation != .other {
-                    Section(generation.localizedName) {
-                        ForEach(generation.members) { talent in
-                            SettingsTalentStarView(talent: talentsToName[talent]!, favourited: $favourited)
-                        }
+            ForEach(agencyEnumToGenerations[agency]!, id: \.self) { generation in
+                Section(talentsByGeneration[generation]!.localizedName) {
+                    ForEach(talentsByGeneration[generation]!.members) { talent in
+                        SettingsTalentStarView(talent: talentEnumToTalent[talent]!, favourited: $favourited)
                     }
                 }
             }
@@ -30,7 +30,14 @@ struct ManageFavoriteView: View {
                 })
                 .confirmationDialog("SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_TEXT", isPresented: $showResetAlert, actions: {
                     Button("SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_RESET", role: .destructive) {
-                        favourited.removeAll()
+                        favourited.removeAll(where: {
+                            if let talent = TalentEnum(rawValue: $0) {
+                                let inGeneration = talentEnumToTalent[talent]!.inGeneration
+                                return agencyEnumToGenerations[agency]!.contains(where: {$0 == inGeneration})
+                            } else {
+                                return true
+                            }
+                        })
                     }
                 }, message: {
                    Text("SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_TEXT")
@@ -43,6 +50,7 @@ struct ManageFavoriteView: View {
 
 struct ManageFavoriteView_Previews: PreviewProvider {
     static var previews: some View {
-        ManageFavoriteView()
+        ManageFavoriteView(agency: .hololive)
+        ManageFavoriteView(agency: .nijisanji)
     }
 }

@@ -17,21 +17,33 @@ struct Channel: Codable, Identifiable, Hashable {
     var twitter: String?
     
     var talent: Talent? {
-        if let talentEnum = TalentsEnum(rawValue: id) {
-            return talentsToName[talentEnum]!
+        if let talentEnum = TalentEnum(rawValue: id) {
+            return talentEnumToTalent[talentEnum]!
         } else {
             // Don't recognize this ID
             return nil
         }
     }
     
-    var channelURL: URL? {
-        URL(string: "https://www.youtube.com/channel/\(id)")
-    }
-    
     static let testChannel = Channel(id: "UCp6993wxpyDPHUpavwDFqgg", name: "test vtuber", photo: URL(string: "https://yt3.ggpht.com/ytc/AKedOLQH3CqU4dL9EWjrYl6aKn26_DAAHbCXEBVyMTaWZA=s800-c-k-c0x00ffffff-no-rj"), org: "Hololive", twitter: "aaaa")
     
     static let testChannel2 = Channel(id: "UCDqI2jOz0weumE8s7paEk6g", name: "test vtuber 2", photo: URL(string: "https://yt3.ggpht.com/wIqM7MWDN94PoibzPmeog7WOt8jFKTKZBOBFEbLBaiUAdKLwoqdLC_CN7B7Gby-FWH-076rN=s800-c-k-c0x00ffffff-no-rj"), org: "Hololive", twitter: "aaaa")
+    
+    func getTalentGenerationName() -> String {
+        if let talent = talent {
+            if let generationGroup = talentsByGeneration[talent.inGeneration] {
+                return generationGroup.localizedName
+            } else {
+                return talentsByGeneration[.other]!.localizedName
+            }
+        } else {
+            return talentsByGeneration[.other]!.localizedName
+        }
+    }
+    
+    static func ==(c1: Self, c2: Self) -> Bool {
+        c1.id == c2.id
+    }
     
     func getTalentName() -> String {
         if let talent = talent {
@@ -49,16 +61,8 @@ struct Channel: Codable, Identifiable, Hashable {
         }
     }
     
-    func getTalentGenerationName() -> String {
-        if let talent = talent {
-            if let generationGroup = talentsByGeneration[talent.inGeneration] {
-                return generationGroup.localizedName
-            } else {
-                return talentsByGeneration[.other]!.localizedName
-            }
-        } else {
-            return talentsByGeneration[.other]!.localizedName
-        }
+    var channelURL: URL? {
+        URL(string: "https://www.youtube.com/channel/\(id)")
     }
     
     func getTwitterId() async throws -> String? {
@@ -83,9 +87,5 @@ struct Channel: Codable, Identifiable, Hashable {
         let responseResult: Channel = try decoder.decode(Channel.self, from: data)
         
         return responseResult.twitter
-    }
-    
-    static func ==(c1: Channel, c2: Channel) -> Bool {
-        c1.id == c2.id
     }
 }

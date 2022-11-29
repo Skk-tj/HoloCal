@@ -7,16 +7,17 @@
 */
 // Root View
 
-"ROOT_VIEW_LIVE" = "ライブ配信中";
-"ROOT_VIEW_UPCOMING" = "今後のライブ配信";
+"ROOT_VIEW_LIVE" = "配信中";
+"ROOT_VIEW_UPCOMING" = "今後の配信";
 "ROOT_VIEW_SETTINGS" = "設定";
+"ROOT_VIEW_FAVOURITES" = "お気に入り";
 
 // Settings
 
 "SETTINGS_TITLE" = "設定";
 
-"SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER" = "今後のライブ配信";
-"SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT %lld" = "%lld時間内のライブ配信を表示";
+"SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER" = "今後の配信";
+"SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT %lld" = "%lld時間内の配信を表示";
 "WATCH_SETTINGS_UPCOMING_SCHEDULE_PICKER_TEXT %lld" = "%lld時間";
 
 "SETTINGS_STREAM_TIME_HEADER" = "配信時間";
@@ -34,11 +35,11 @@
 
 "SETTINGS_MANAGE_GENERATION_VISIBILITY" = "グループフィルター";
 "SETTINGS_MANAGE_GENERATION_VISIBILITY_VIEW_TITLE" = "グループフィルター";
-"SETTINGS_MANAGE_GENERATION_VISIBILITY_SECTION_FOOTER" = "グループを選択解除するで、「ライブ配信中」と「今後のライブ配信」に表示されないようにすることができます。\nお気に入りに登録したタレントが所属するグループが選択解除するても、タレントを表示されます。";
+"SETTINGS_MANAGE_GENERATION_VISIBILITY_SECTION_FOOTER" = "グループを選択解除するで、「配信中」と「今後の配信」に表示されないようにすることができます。\nお気に入りに登録したタレントが所属するグループが選択解除するても、タレントを表示されます。";
 
 "SETTINGS_MANAGE_GENERATION_ORDER" = "グループ序次";
 "SETTINGS_MANAGE_GENERATION_ORDER_VIEW_TITLE" = "グループ序次";
-"SETTINGS_MANAGE_GENERATION_ORDER_SECTION_FOOTER" = "グループ序次を並び替えて、「ライブ配信中」と「今後のライブ配信」で表示される順番を変更することも可能です。";
+"SETTINGS_MANAGE_GENERATION_ORDER_SECTION_FOOTER" = "グループ序次を並び替えて、「配信中」と「今後の配信」で表示される順番を変更することも可能です。";
 
 "SETTINGS_MANAGE_GENERATION_VISIBILITY_RESET" = "フィルターをリセット";
 "SETTINGS_MANAGE_GENERATION_VISIBILITY_RESET_ALERT_TEXT" = "フィルターをリセットします、よろしいですか？";
@@ -71,9 +72,33 @@
 
 "LIVE_CELL_VIEW_STARTED_AT %@" = "%@";
 
+// Block Live Time View
+
+"BLOCK_LIVE_TIME_VIEW_AGO" = "前にライブ開始";
+"BLOCK_LIVE_TIME_VIEW_WAITING" = "待機中";
+"BLOCK_LIVE_TIME_VIEW_NA" = "開始時間不明";
+"BLOCK_LIVE_TIME_VIEW_STARTED_AT" = "に開始した";
+
+// Block Upcoming Time View
+
+"BLOCK_UPCOMING_TIME_VIEW_STARTING_IN" = "後に配信";
+"BLOCK_UPCOMING_TIME_VIEW_STARTING_TIME_UNKNOWN" = "開始時間不明";
+"BLOCK_UPCOMING_TIME_VIEW_STARTING_AT" = "に予定";
+
+// Viewer Counter View
+
+"VIEWER_COUNTER_VIEW_WATCHING" = "視聴中";
+"VIEWER_COUNTER_VIEW_MEMBER_ONLY" = "メンバー限定";
+"VIEWER_COUNTER_VIEW_MEMBER_NA" = "不明";
+
+// Block Member Only View
+
+"BLOCK_MEMBER_ONLY_MEMBER" = "メンバー";
+
 // Upcoming Cell View
 
-"UPCOMING_CELL_VIEW_STARTING_IN %@" = "%@後にライブ配信";
+"UPCOMING_CELL_VIEW_STARTING_IN %@" = "%@後に配信";
+"UPCOMING_CELL_VIEW_STARTING_IN_SHORT %@" = "%@後";
 "UPCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN" = "開始時間不明";
 "UPCOMING_CELL_VIEW_STARTING_AT %@" = "%@に予定";
 
@@ -83,14 +108,14 @@
 
 // LiveView
 
-"LIVE_VIEW_TITLE" = "ライブ配信中";
-"LIVE_VIEW_CURRENT_COUNT %lld" = "%lld人がライブ配信中";
-"LIVE_VIEW_CURRENT_COUNT %lld %lld" = "%lld人がライブ配信中（%lld人表示されていない）";
+"LIVE_VIEW_TITLE" = "配信中";
+"LIVE_VIEW_CURRENT_COUNT %lld" = "%lld人が配信中";
+"LIVE_VIEW_CURRENT_COUNT %lld %lld" = "%lld人が配信中（%lld人表示されていない）";
 "LIVE_VIEW_FAVOURITE_SECTION_TITLE" = "お気に入り";
 
 // UpcomingView
 
-"UPCOMING_VIEW_TITLE" = "今後のライブ配信";
+"UPCOMING_VIEW_TITLE" = "今後の配信";
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld" = "%2$lld時間内に%1$lld人が配信予定";
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld %lld" = "%2$lld時間内に%1$lld人が配信予定（%3$lld人表示されていない）";
 
@@ -102,6 +127,7 @@
 "LIVE_VIEW_TOOLBAR_SHOW_CARD" = "カードビューを表示";
 "LIVE_VIEW_TOOLBAR_SORT" = "並べ替え...";
 "LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION" = "グループ順";
+"LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION_IPAD" = "デフォルト";
 "LIVE_VIEW_TOOLBAR_FAVOURITES_ONLY" = "お気に入りのみ";
 "LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME" = "開始時間順...";
 "LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS" = "視聴者数順...";
@@ -135,8 +161,8 @@
 "NETWORK_ERROR" = "ネットワークエラーが発生しました。";
 
 // LiveWidget
-"LIVE_WIDGET_TITLE" = "**ライブ配信中**";
-"LIVE_WIDGET_TITLE_NON_BOLD" = "ライブ配信中";
+"LIVE_WIDGET_TITLE" = "**配信中**";
+"LIVE_WIDGET_TITLE_NON_BOLD" = "配信中";
 
 // Upcoming Widget
 "UPCOMING_WIDGET_TITLE" = "**今後の配信**";
@@ -149,17 +175,17 @@
 "MULTIPLE_CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "複数のライブ配信";
 "MULTIPLE_CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "複数のライブ配信を表示する";
 
-"UPCOMING_WIDGET_DISPLAY_NAME" = "今後のライブ配信";
-"UPCOMING_WIDGET_DESCRIPTION" = "今後のライブ配信を表示する";
+"UPCOMING_WIDGET_DISPLAY_NAME" = "今後の配信";
+"UPCOMING_WIDGET_DESCRIPTION" = "今後の配信を表示する";
 
-"MULTIPLE_UPCOMING_WIDGET_DISPLAY_NAME" = "複数の今後のライブ配信";
-"MULTIPLE_UPCOMING_WIDGET_DESCRIPTION" = "複数の今後のライブ配信を表示する";
+"MULTIPLE_UPCOMING_WIDGET_DISPLAY_NAME" = "複数の今後の配信";
+"MULTIPLE_UPCOMING_WIDGET_DESCRIPTION" = "複数の今後の配信を表示する";
 
 "LIVE_CHANNELS_WIDGET_DISPLAY_NAME" = "配信中チャンネル";
 "LIVE_CHANNELS_WIDGET_DESCRIPTION" = "配信中チャンネルを表示する";
 
-"UPCOMING_CHANNELS_WIDGET_DISPLAY_NAME" = "ライブ予定チャンネル";
-"UPCOMING_CHANNELS_WIDGET_DESCRIPTION" = "ライブ予定をしたチャンネルを表示する";
+"UPCOMING_CHANNELS_WIDGET_DISPLAY_NAME" = "配信予定チャンネル";
+"UPCOMING_CHANNELS_WIDGET_DESCRIPTION" = "配信予定をしたチャンネルを表示する";
 
 // Song List View
 "SONG_LIST_VIEW_NAVIGATION_TITLE" = "曲";
@@ -179,3 +205,6 @@
 "DST_REMINDER_VIEW_TITLE" = "夏時間リマインダー";
 "DST_REMINDER_VIEW_TEXT %@ %lld" = "Daylight Saving Time is %@ in **%lld day(s)**. As Japan does not observe Daylight Saving Time, please double-check the stream time. ";
 "DST_REMINDER_VIEW_FOOTER" = "このデバイスは、夏時間タイムゾーンに設定されています。位置情報は使用されていません。";
+
+// Agency related
+"SETTINGS_SELECT_AGENCY_NAVIGATION_TITLE" = "事務所";

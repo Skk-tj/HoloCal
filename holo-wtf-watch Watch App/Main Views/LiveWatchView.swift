@@ -10,8 +10,8 @@ import SwiftUI
 struct LiveWatchView: View {
     @StateObject var live: LiveViewModel
     
-    init() {
-        self._live = StateObject(wrappedValue: LiveViewModel())
+    init(for agency: AgencyEnum) {
+        _live = StateObject(wrappedValue: LiveViewModel(for: agency))
     }
     
     var body: some View {
@@ -26,16 +26,16 @@ struct LiveWatchView: View {
         .navigationTitle("LIVE_VIEW_TITLE")
         .environmentObject(live as VideoViewModel)
         .task {
-            await live.getLive()
+            await live.getVideoForUI()
         }
         .refreshable {
-            await live.getLive()
+            await live.getVideoForUI()
         }
     }
 }
 
 struct LiveWatchView_Previews: PreviewProvider {
     static var previews: some View {
-        LiveWatchView()
+        LiveWatchView(for: .hololive)
     }
 }

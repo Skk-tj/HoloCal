@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import OSLog
 import Algorithms
+import OSLog
 
 enum DataStatus {
     case working
@@ -33,27 +33,33 @@ struct SearchSuggestion: Hashable {
     let category: SearchSuggestionCategory
 }
 
-@MainActor
+protocol VideoGettable {
+    @MainActor
+    func getVideoForUI() async
+}
+
 class VideoViewModel: ObservableObject {
     @Published var videoList: [LiveVideo]
     @Published var dataStatus: DataStatus
     
-    let service = VideoFetchService()
+    let agency: AgencyEnum
     
-    init() {
+    init(for agency: AgencyEnum) {
         self.videoList = []
         self.dataStatus = .working
+        self.agency = agency
     }
     
     let logger = Logger()
     
+    @MainActor
     func getVideo(url: String, completion: @escaping ([LiveVideo]) -> Void) async {
         self.dataStatus = .working
         
         do {
-            let getResult = try await VideoFetchService.shared.getVideos(from: url)
-            let getResultWithTwitter = try await getTwitterForAll(videoList: getResult)
-        
+            let getResult: [LiveVideo] = try await getVideos(from: url)
+            let getResultWithTwitter: [LiveVideo] = try await getTwitterForAll(videoList: getResult)
+            
             completion(getResultWithTwitter)
             self.dataStatus = .success
         } catch {
@@ -61,15 +67,16 @@ class VideoViewModel: ObservableObject {
         }
     }
     
-    private func updatedWithTwitter(channel: Channel) async -> Channel {
+    func updatedWithTwitter(channel: Channel) async -> Channel {
         return Channel(id: channel.id, name: channel.name, photo: channel.photo, org: channel.org, twitter: try? await channel.getTwitterId())
     }
     
-    private func updatedWithTwitter(video: LiveVideo) async -> LiveVideo {
+    func updatedWithTwitter(video: LiveVideo) async -> LiveVideo {
         return LiveVideo(id: video.id, title: video.title, topicId: video.topicId, startScheduled: video.startScheduled, startActual: video.startActual, liveViewers: video.liveViewers, mentions: video.mentions, songs: video.songs, channel: await self.updatedWithTwitter(channel: video.channel))
     }
     
-    func getTwitterForAll(videoList: [LiveVideo]) async throws -> [LiveVideo] {        
+    @MainActor
+    func getTwitterForAll(videoList: [LiveVideo]) async throws -> [LiveVideo] {
         try await withThrowingTaskGroup(of: LiveVideo.self) { group in
             videoList.forEach { video in
                 group.addTask {
@@ -90,7 +97,7 @@ class VideoViewModel: ObservableObject {
     
     func getSearchSuggestions() -> [SearchSuggestion] {
         let englishNames: [SearchSuggestion] = self.videoList.map { video in
-            if let talentEnum = TalentsEnum(rawValue: video.channel.id), let talent = talentsToName[talentEnum] {
+            if let talentEnum = TalentEnum(rawValue: video.channel.id), let talent = talentEnumToTalent[talentEnum] {
                 // talent exists here
                 return SearchSuggestion(searchText: talent.names[.en]!, category: .name)
             } else {
@@ -99,7 +106,7 @@ class VideoViewModel: ObservableObject {
         }
         
         let japaneseNames: [SearchSuggestion] = self.videoList.map { video in
-            if let talentEnum = TalentsEnum(rawValue: video.channel.id), let talent = talentsToName[talentEnum] {
+            if let talentEnum = TalentEnum(rawValue: video.channel.id), let talent = talentEnumToTalent[talentEnum] {
                 // talent exists here
                 return SearchSuggestion(searchText: talent.names[.ja]!, category: .name)
             } else {
@@ -114,6 +121,7 @@ class VideoViewModel: ObservableObject {
         return suggestionsList
     }
     
+    @MainActor
     func sortVideos(by strategy: SortingStrategy) {
         switch strategy {
         case .viewersAsc:
@@ -121,9 +129,9 @@ class VideoViewModel: ObservableObject {
         case .viewersDesc:
             self.videoList.sort(by: {$0.liveViewers > $1.liveViewers})
         case .timeAsc:
-            self.videoList.sort(by: {$0.startActual ?? ($0.startScheduled ?? Date.distantFuture) < $1.startActual ?? ($1.startScheduled ?? Date.distantFuture)})
+            self.videoList.sort(by: upcomingSortStrategy)
         case .timeDesc:
-            self.videoList.sort(by: {$0.startActual ?? ($0.startScheduled ?? Date.distantFuture) > $1.startActual ?? ($1.startScheduled ?? Date.distantFuture)})
+            self.videoList.sort(by: liveSortStrategy)
         default:
             return
         }

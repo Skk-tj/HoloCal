@@ -12,13 +12,17 @@ struct WatchRootView: View {
         NavigationStack {
             List {
                 NavigationLink(destination: {
-                    LiveWatchView()
+                    AgencySelectionView(viewTitle: "ROOT_VIEW_LIVE", targetView: { agency in
+                        LiveWatchView(for: agency)
+                    })
                 }, label: {
                     Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
                 })
                 
                 NavigationLink(destination: {
-                    UpcomingWatchView()
+                    AgencySelectionView(viewTitle: "ROOT_VIEW_UPCOMING", targetView: { agency in
+                        UpcomingWatchView(for: agency)
+                    })
                 }, label: {
                     Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
                 })

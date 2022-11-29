@@ -19,6 +19,10 @@ struct LiveVideo: Codable, Identifiable, Hashable {
     var songs: [SongInStream]?
     var channel: Channel
     
+    static let previewLive = LiveVideo(id: "abcd", title: "my debut live, but a really long title, aaaaaaamy debut live, but a really long title, aaaaaaamy debut live, but a really long title, aaaaaaamy debut live, but a really long title, aaaaaaamy debut live, but a really long title, aaaaaaamy debut live, but a really long title, aaaaaaamy debut live, but a really long title, aaaaaaamy debut live, but a really long title, aaaaaaa", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, mentions: [Channel.testChannel, Channel.testChannel2], songs: nil, channel: Channel.testChannel)
+    
+    static let previewLiveMemberOnly = LiveVideo(id: "abcd", title: "my debut live member only", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, mentions: [Channel.testChannel, Channel.testChannel2], songs: nil, channel: Channel.testChannel)
+    
     var url: URL? {
         URL(string: "https://www.youtube.com/watch?v=\(id)")
     }
@@ -46,14 +50,10 @@ struct LiveVideo: Codable, Identifiable, Hashable {
     }
     
     var isHololive: Bool {
-        channel.org == Organization.hololive.rawValue
+        channel.org == AgencyEnum.hololive.rawValue
     }
     
     var isNijisanji: Bool {
-        channel.org == Organization.nijisanji.rawValue
+        channel.org == AgencyEnum.nijisanji.rawValue
     }
-    
-    static let previewLive = LiveVideo(id: "abcd", title: "my debut live, but a really long title, aaaaaaa", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, mentions: [Channel.testChannel, Channel.testChannel2], songs: nil, channel: Channel.testChannel)
-    
-    static let previewLiveMemberOnly = LiveVideo(id: "abcd", title: "my debut live member only", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, mentions: [Channel.testChannel, Channel.testChannel2], songs: nil, channel: Channel.testChannel)
 }

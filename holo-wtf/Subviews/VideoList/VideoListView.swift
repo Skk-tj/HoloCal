@@ -10,8 +10,6 @@ import SwiftUI
 
 /// The view that represents a general list of videos.
 struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
-    @AppStorage("favouritedChannel") var favourited = Favourited()
-    
     @AppStorage(UserDefaultKeys.isShowingDSTReminder) var isShowingDSTReminder = false
     
     @EnvironmentObject var viewModel: VideoViewModel
@@ -30,8 +28,6 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
             currentPresentationMode = .searching
         }
         
-        let isThereFavouriteToShow = viewModel.videoList.filter { video in favourited.contains(where: { video.channel.id == $0 })}.count != 0 && viewModel.dataStatus == .success
-        
         return List {
             if let nextDSTTransition = TimeZone.current.nextDaylightSavingTimeTransition {
                 if let days = Calendar.current.dateComponents([.day], from: Date(), to: nextDSTTransition).day {
@@ -44,17 +40,8 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
             }
             
             switch currentPresentationMode {
-            case .normal:
-                if isThereFavouriteToShow {
-                    Section(header: Text("LIVE_VIEW_FAVOURITE_SECTION_TITLE")) {
-                        FavouritedForEachView(cellView: { live in
-                            singleVideoView(live)
-                        })
-                    }
-                    .headerProminence(.increased)
-                }
-                
-                SectionedNotFavouritedForEachView(cellView: { live in
+            case .normal:                
+                SectionedForEachView(cellView: { live in
                     singleVideoView(live)
                 })
             case .searching:
@@ -62,7 +49,7 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
                     singleVideoView(live)
                 })
             case .sorting:
-                NotFavouritedForEachView(cellView: { live in
+                GenerationFilteredForEachVideoView(cellView: { live in
                     singleVideoView(live)
                 })
             }
@@ -74,18 +61,16 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
             }
             .listRowSeparator(.hidden)
         }
-        .searchable(text: $searchText, prompt: "SEARCH_BY_NAME_OR_TAG") {
+        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "SEARCH_BY_NAME_OR_TAG") {
             if searchText.isEmpty {
                 ForEach(viewModel.getSearchSuggestions(), id: \.self) { suggestion in
-                    HStack {
-                        switch suggestion.category {
-                        case .name:
-                            Image(systemName: "person")
-                        case .tag:
-                            Image(systemName: "tag")
-                        }
-                        
-                        Text("\(suggestion.searchText)").searchCompletion(suggestion.searchText)
+                    switch suggestion.category {
+                    case .name:
+                        Label(suggestion.searchText, systemImage: "person")
+                            .searchCompletion(suggestion.searchText)
+                    case .tag:
+                        Label(suggestion.searchText, systemImage: "tag")
+                            .searchCompletion(suggestion.searchText)
                     }
                 }
             }

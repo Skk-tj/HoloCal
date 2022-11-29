@@ -9,6 +9,9 @@
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>ConfigurationIntent</string>
+		<string>LiveWidgetIntent</string>
+		<string>SelectAgencyIntent</string>
+		<string>UpcomingWidgetIntent</string>
 	</array>
 </dict>
 </plist>

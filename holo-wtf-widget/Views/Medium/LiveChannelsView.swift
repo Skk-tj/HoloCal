@@ -1,5 +1,5 @@
 //
-//  LiveChannelsView.swift
+//  ChannelsView.swift
 //  holo-wtf-widgetExtension
 //
 //

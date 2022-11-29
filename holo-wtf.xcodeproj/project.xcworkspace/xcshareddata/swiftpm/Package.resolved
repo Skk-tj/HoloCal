@@ -1,15 +1,6 @@
 {
   "pins" : [
     {
-      "identity" : "activityview",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SwiftUI-Plus/ActivityView",
-      "state" : {
-        "branch" : "master",
-        "revision" : "a53e1f09254f9280f04a6b14c05865c702d2d5eb"
-      }
-    },
-    {
       "identity" : "swift-algorithms",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-algorithms.git",

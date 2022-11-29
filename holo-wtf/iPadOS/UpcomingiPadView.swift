@@ -9,15 +9,17 @@ import SwiftUI
 
 struct UpcomingiPadView: View {
     @StateObject var upcoming: UpcomingViewModel
+    let agency: AgencyEnum
     
     @State var currentPresentationMode: PresentationMode = .normal
     
-    init() {
-        self._upcoming = StateObject(wrappedValue: UpcomingViewModel())
+    init(for agency: AgencyEnum) {
+        self.agency = agency
+        _upcoming = StateObject(wrappedValue: UpcomingViewModel(for: agency))
     }
     
     var body: some View {
-        iPadLazyGirdView(singleVideoView: { live in
+        iPadLazyGridView(singleVideoView: { live in
             LinkedVideoView(url: live.url) {
                 UpcomingPaneView(upcoming: live)
             }
@@ -28,26 +30,20 @@ struct UpcomingiPadView: View {
             DataStatusIndicatorView(dataStatus: upcoming.dataStatus) {
                 UpcomingCountView()
             }
-        })
+        }, isFavourite: false)
         .environmentObject(upcoming as VideoViewModel)
         .task {
-            await upcoming.getUpcoming()
-            
-            // Reset sorting state, go back to section view
+            await upcoming.getVideoForUI()
+            currentPresentationMode = .normal
+        }
+        .refreshable {
+            await upcoming.getVideoForUI()
             currentPresentationMode = .normal
         }
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {
                 UpcomingViewToolbar(currentPresentationMode: $currentPresentationMode)
                     .environmentObject(upcoming as VideoViewModel)
-                Button(action: {
-                    Task {
-                        await upcoming.getUpcoming()
-                        currentPresentationMode = .normal
-                    }
-                }, label: {
-                    Label("Refresh", systemImage: "arrow.triangle.2.circlepath")
-                })
             }
         }
         .navigationTitle("UPCOMING_VIEW_TITLE")
@@ -56,6 +52,6 @@ struct UpcomingiPadView: View {
 
 struct UpcomingiPadView_Previews: PreviewProvider {
     static var previews: some View {
-        UpcomingiPadView()
+        UpcomingiPadView(for: .hololive)
     }
 }

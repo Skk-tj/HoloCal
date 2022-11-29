@@ -9,15 +9,14 @@ import SwiftUI
 
 struct UpcomingCountView: View {
     @AppStorage(UserDefaultKeys.upcomingLookAhead) var upcomingLookAhead = 48
-    @AppStorage("generationListSelection") var generationListSelection = Set(GenerationEnum.allCases)
+    @AppStorage("generationListSelection") var generationListSelection = Set(Generation.allCases)
     
     @EnvironmentObject var upcoming: VideoViewModel
     
     var body: some View {
         let filteredVideoCount = upcoming.videoList.filter { video in
             !generationListSelection.contains(video.channel.talent?.inGeneration ?? .other)
-        }
-            .count
+        }.count
         
         if filteredVideoCount == 0 {
             Text("UPCOMING_VIEW_STREAM_COUNT_IN_HOURS \(upcoming.videoList.count) \(upcomingLookAhead)")

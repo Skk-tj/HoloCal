@@ -24,9 +24,10 @@ struct LivePaneView: View {
                     // MARK: - Stream title
                     // Force the title to be two lines
                     if UIDevice.current.userInterfaceIdiom == .pad {
-                        Text(live.title + "\n")
+                        Text(live.title)
                             .font(.headline)
-                            .lineLimit(2)
+                            .frame(maxHeight: .infinity)
+                            .lineLimit(2, reservesSpace: true)
                             .multilineTextAlignment(.leading)
                     } else {
                         Text(live.title)
@@ -36,58 +37,21 @@ struct LivePaneView: View {
                     }
                     
                     // MARK: - Channel information
-                    HStack {
-                        LiveAvatarView(url: live.channel.photo, avatarRadius: 40.0)
-                        
-                        if let mentions = live.mentions {
-                            Text("\(live.channel.name) \(String(localized: "LIVE_PANE_VIEW_WITH"))")
-                                .lineLimit(1)
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                            
-                            LiveCollabAvatarView(mentions: mentions, avatarRadius: 40.0)
-                                .onTapGesture {
-                                    isShowingCollabSheet.toggle()
-                                }
-                                .sheet(isPresented: $isShowingCollabSheet, content: {
-                                    if #available(iOS 16.0, *) {
-                                        LiveCollabListStackView(mentions: mentions)
-                                            .presentationDetents([.medium, .large])
-                                    } else {
-                                        LiveCollabListView(mentions: mentions)
-                                    }
-                                })
-                        } else {
-                            Text(live.channel.name)
-                                .lineLimit(1)
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                        }
-                    }
-                    
-                    Divider()
+                    PaneViewChannelInfoView(video: live)
                     
                     // MARK: - Time and other information
                     HStack {
-                        if live.isMengen {
-                            Text("LIVE_CELL_VIEW_MEMBER_ONLY_STREAM")
-                                .font(.footnote)
-                                .foregroundColor(.secondary)
-                                .multilineTextAlignment(.leading)
-                        } else {
-                            Text("LIVE_CELL_VIEW_PEOPLE_WATCHING \(live.liveViewers)")
-                                .font(.footnote)
-                                .foregroundColor(.secondary)
-                        }
+                        ViewerCounterView(viewer: live.liveViewers, memberOnly: live.isMengen)
+                            .padding(.trailing)
                         
-                        Spacer()
-                        
-                        LiveTimeView(liveTime: live.startActual)
-                            .multilineTextAlignment(.trailing)
+                        BlockLiveTimeView(liveTime: live.startActual)
                     }
-                    .padding(.bottom)
+                    .padding(.top, 5)
+                    
+                    Divider()
                     
                     PaneViewButtonRowView(video: live)
+                        .padding(.top)
                 }
                 .padding(.horizontal)
             }

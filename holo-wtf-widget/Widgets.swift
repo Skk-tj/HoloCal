@@ -9,10 +9,10 @@ import WidgetKit
 import SwiftUI
 
 struct SmallLiveWidget: Widget {
-    let kind: String = "SmallLiveWidget"
+    let kind: String = "io.skk-tj.holo-wtf-widget.small-live"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: VideoWidgetProvider(url: hololiveLiveURL, sortStrategy: liveSortStrategy)) { entry in
+        IntentConfiguration(kind: kind, intent: LiveWidgetIntent.self, provider: VideoLiveWidgetProvider()) { entry in
             SmallLiveWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
@@ -22,10 +22,10 @@ struct SmallLiveWidget: Widget {
 }
 
 struct LivePaneWidget: Widget {
-    let kind: String = "LivePaneWidget"
+    let kind: String = "io.skk-tj.holo-wtf-widget.live-pane"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: VideoWidgetProvider(url: hololiveLiveURL, sortStrategy: liveSortStrategy)) { entry in
+        IntentConfiguration(kind: kind, intent: LiveWidgetIntent.self, provider: VideoLiveWidgetProvider()) { entry in
             LivePaneWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
@@ -35,10 +35,10 @@ struct LivePaneWidget: Widget {
 }
 
 struct MultipleLiveWidget: Widget {
-    let kind: String = "MultipleLiveWidget"
+    let kind: String = "io.skk-tj.holo-wtf-widget.multiple-live"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: MultipleVideoWidgetProvider(url: hololiveLiveURL, sortStrategy: liveSortStrategy)) { entry in
+        IntentConfiguration(kind: kind, intent: LiveWidgetIntent.self, provider: MultipleVideoLiveWidgetProvider()) { entry in
             MultipleLiveWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("MULTIPLE_CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
@@ -48,10 +48,10 @@ struct MultipleLiveWidget: Widget {
 }
 
 struct SmallUpcomingWidget: Widget {
-    let kind: String = "SmallUpcomingWidget"
+    let kind: String = "io.skk-tj.holo-wtf-widget.small-upcoming"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: VideoWidgetProvider(url: hololiveWidgetUpcomingURL, sortStrategy: upcomingSortStrategy)) { entry in
+        IntentConfiguration(kind: kind, intent: UpcomingWidgetIntent.self, provider: VideoUpcomingWidgetProvider()) { entry in
             SmallUpcomingWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("UPCOMING_WIDGET_DISPLAY_NAME")
@@ -61,10 +61,10 @@ struct SmallUpcomingWidget: Widget {
 }
 
 struct UpcomingPaneWidget: Widget {
-    let kind: String = "UpcomingPaneWidget"
+    let kind: String = "io.skk-tj.holo-wtf-widget.upcoming-pane"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: VideoWidgetProvider(url: hololiveWidgetUpcomingURL, sortStrategy: upcomingSortStrategy)) { entry in
+        IntentConfiguration(kind: kind, intent: UpcomingWidgetIntent.self, provider: VideoUpcomingWidgetProvider()) { entry in
             UpcomingPaneWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("UPCOMING_WIDGET_DISPLAY_NAME")
@@ -74,10 +74,10 @@ struct UpcomingPaneWidget: Widget {
 }
 
 struct MultipleUpcomingWidget: Widget {
-    let kind: String = "MultipleUpcomingWidget"
+    let kind: String = "io.skk-tj.holo-wtf-widget.multiple-upcoming"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: MultipleVideoWidgetProvider(url: hololiveWidgetUpcomingURL, sortStrategy: upcomingSortStrategy)) { entry in
+        IntentConfiguration(kind: kind, intent: UpcomingWidgetIntent.self, provider: MultipleVideoUpcomingWidgetProvider()) { entry in
             MultipleUpcomingWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("MULTIPLE_UPCOMING_WIDGET_DISPLAY_NAME")
@@ -87,10 +87,10 @@ struct MultipleUpcomingWidget: Widget {
 }
 
 struct LiveChannelsWidget: Widget {
-    let kind: String = "LiveChannelsWidget"
+    let kind: String = "io.skk-tj.holo-wtf-widget.live-channels"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: ChannelsWidgetProvider(url: hololiveLiveURL, sortStrategy: liveSortStrategy)) { entry in
+        IntentConfiguration(kind: kind, intent: LiveWidgetIntent.self, provider: ChannelsLiveWidgetProvider()) { entry in
             LiveChannelsEntryView(entry: entry)
         }
         .configurationDisplayName("LIVE_CHANNELS_WIDGET_DISPLAY_NAME")
@@ -100,10 +100,10 @@ struct LiveChannelsWidget: Widget {
 }
 
 struct UpcomingChannelsWidget: Widget {
-    let kind: String = "UpcomingChannelsWidget"
+    let kind: String = "io.skk-tj.holo-wtf-widget.upcoming-channels"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: ChannelsWidgetProvider(url: hololiveWidgetUpcomingURL, sortStrategy: upcomingSortStrategy)) { entry in
+        IntentConfiguration(kind: kind, intent: UpcomingWidgetIntent.self, provider: ChannelsUpcomingWidgetProvider()) { entry in
             UpcomingChannelsEntryView(entry: entry)
         }
         .configurationDisplayName("UPCOMING_CHANNELS_WIDGET_DISPLAY_NAME")

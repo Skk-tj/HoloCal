@@ -87,7 +87,7 @@ struct SettingsFormView: View {
             }
             
             Section("SETTINGS_CHANNEL_MANAGEMENT_HEADER") {
-                NavigationLink(destination: ManageFavoriteView()) {
+                NavigationLink(destination: ManageFavoriteAgencySelectionView()) {
                     Text("SETTINGS_MANAGE_FAVOURITE")
                 }
                 
@@ -95,7 +95,7 @@ struct SettingsFormView: View {
                     Text("SETTINGS_MANAGE_GENERATION_VISIBILITY")
                 }
                 
-                NavigationLink(destination: ManageGenerationOrderView(), label: {
+                NavigationLink(destination: ManageGenerationOrderAgencySelectionView(), label: {
                     Text("SETTINGS_MANAGE_GENERATION_ORDER")
                 })
             }
@@ -112,10 +112,6 @@ struct SettingsFormView: View {
                 Link(destination: URL(string: "https://crowdin.com/project/holocal/invite?d=p6a556u4l6f5339323b363c5b3o4a3p4a323")!, label: {
                     Text("SETTINGS_HELP_TRANSLATE")
                 })
-                
-                Link(destination: URL(string: "https://twitter.com/skk_tj")!) {
-                    Text("SETTINGS_TWITTER")
-                }
                 
                 NavigationLink(destination: SpecialThanksView(), label: {
                     Text("SETTINGS_SPECIAL_THANKS")

@@ -10,6 +10,7 @@ import SwiftUI
 struct UpcomingTimeView: View {
     var liveSchedule: Date?
     var fontSize: Font = .footnote
+    var shortMode = false
     
     @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInUpcomingView) var isShowingAbsoluteTime: Bool = false
     
@@ -21,9 +22,15 @@ struct UpcomingTimeView: View {
                     .foregroundColor(.secondary)
             } else {
                 if let futureTimeString = getTimeIntervalStringFromReferenceDate(reference: liveSchedule) {
-                    Text("UPCOMING_CELL_VIEW_STARTING_IN \(futureTimeString)")
-                        .font(fontSize)
-                        .foregroundColor(.secondary)
+                    if shortMode {
+                        Text("UPCOMING_CELL_VIEW_STARTING_IN_SHORT \(futureTimeString)")
+                            .font(fontSize)
+                            .foregroundColor(.secondary)
+                    } else {
+                        Text("UPCOMING_CELL_VIEW_STARTING_IN \(futureTimeString)")
+                            .font(fontSize)
+                            .foregroundColor(.secondary)
+                    }
                 }
             }
         } else {

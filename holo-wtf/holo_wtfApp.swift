@@ -18,11 +18,11 @@ struct holo_wtfApp: App {
     @AppStorage(UserDefaultKeys.dstDays) var dstDays: Int = 5
     @AppStorage(UserDefaultKeys.isShowingDSTReminder) var isShowingDSTReminder = false
     
-    @AppStorage("generationListSelection") var generationSelected = Set(GenerationEnum.allCases)
-    @AppStorage("generationListOrder") var generationOrder = GenerationEnum.allCases
-    @AppStorage("excludedGenerations") var excludedGenerations = Set<GenerationEnum>()
+    @AppStorage("generationListSelection") var generationSelected = Set(Generation.allCases)
+    @AppStorage("excludedGenerations") var excludedGenerations = Set<Generation>()
     
-    @State var viewSelection: Views? = Views.live
+    @AppStorage("hololiveGenerationListOrder") var hololiveGenerationListOrder = agencyEnumToGenerations[AgencyEnum.hololive]!
+    @AppStorage("nijisanjiGenerationListOrder") var nijisanjiGenerationListOrder = agencyEnumToGenerations[AgencyEnum.nijisanji]!
     
     init() {
         // MARK: - Setup DST Warning
@@ -40,13 +40,18 @@ struct holo_wtfApp: App {
             isShowingDSTReminder = false
         }
         
-        // MARK: - When we add generations, we need to handle previous user preferences
-        generationSelected = Set(GenerationEnum.allCases).subtracting(excludedGenerations)
+        // When we add generations, we need to handle previous user preferences
+        generationSelected = Set(Generation.allCases).subtracting(excludedGenerations)
         
-        // MARK: - Also add the new generation to the order list
-        if generationOrder.count != GenerationEnum.allCases.count {
-            let difference = Set(GenerationEnum.allCases).symmetricDifference(generationOrder)
-            generationOrder.append(contentsOf: difference)
+        // Also add the new generation to the order list
+        if hololiveGenerationListOrder.count != agencyEnumToGenerations[AgencyEnum.hololive]!.count {
+            let difference = Set(agencyEnumToGenerations[AgencyEnum.hololive]!).symmetricDifference(hololiveGenerationListOrder)
+            hololiveGenerationListOrder.append(contentsOf: difference)
+        }
+        
+        if nijisanjiGenerationListOrder.count != agencyEnumToGenerations[AgencyEnum.nijisanji]!.count {
+            let difference = Set(agencyEnumToGenerations[AgencyEnum.nijisanji]!).symmetricDifference(nijisanjiGenerationListOrder)
+            nijisanjiGenerationListOrder.append(contentsOf: difference)
         }
     }
     
@@ -55,71 +60,40 @@ struct holo_wtfApp: App {
             if UIDevice.current.userInterfaceIdiom == .pad {
                 // iPadOS
                 // TODO: https://stackoverflow.com/questions/73279601/swiftui-navigationstack-inside-navigationsplitview-not-working-on-iphone-and-ipa
-                if #available(iOS 16.0, *) {
-                    NavigationSplitView(sidebar: {
-                        List(selection: $viewSelection) {
-                            NavigationLink(value: Views.live) {
-                                Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
-                            }
-                            NavigationLink(value: Views.upcoming) {
-                                Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
-                            }
-                            NavigationLink(value: Views.settings) {
-                                Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
-                            }
-                        }
-                        .listStyle(.sidebar)
-                        .navigationTitle("HoloCal")
-                    }, detail: {
-                        NavigationStack {
-                            if let viewSelection {
-                                switch viewSelection {
-                                case Views.live:
-                                    LiveiPadView()
-                                case Views.upcoming:
-                                    UpcomingiPadView()
-                                case Views.settings:
-                                    SettingsiPadView()
-                                }
-                            }
-                        }
-                    })
-                } else {
-                    NavigationView {
-                        iPadSidebarView()
-                        LiveiPadView()
-                    }
-                }
+                iPadSplitView()
             } else {
                 // iOS
                 TabView {
-                    if #available(iOS 16.0, *) {
-                        LiveStackView()
-                            .tabItem {
-                                Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
-                            }
-                        UpcomingStackView()
-                            .tabItem() {
-                                Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
-                            }
-                        SettingsStackView()
-                            .tabItem {
-                                Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
-                            }
-                    } else {
-                        LiveView()
-                            .tabItem {
-                                Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
-                            }
-                        UpcomingView()
-                            .tabItem() {
-                                Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
-                            }
-                        SettingsView()
-                            .tabItem {
-                                Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
-                            }
+                    NavigationStack {
+                        AgencySelectionView(viewTitle: "ROOT_VIEW_LIVE", targetView: { agency in
+                            LiveView(for: agency)
+                        }, extraLinks: {
+                            NavigationLink(destination: LiveFavouritesView(), label: {
+                                Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
+                            })
+                        })
                     }
+                    .tabItem {
+                        Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
+                    }
+                    
+                    NavigationStack {
+                        AgencySelectionView(viewTitle: "ROOT_VIEW_UPCOMING", targetView: { agency in
+                            UpcomingView(for: agency)
+                        }, extraLinks: {
+                            NavigationLink(destination: UpcomingFavouritesView(), label: {
+                                Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
+                            })
+                        })
+                    }
+                    .tabItem() {
+                        Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
+                    }
+                    
+                    SettingsStackView()
+                        .tabItem {
+                            Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
+                        }
                 }
             }
         }

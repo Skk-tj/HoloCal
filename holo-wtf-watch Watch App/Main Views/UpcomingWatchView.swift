@@ -10,8 +10,8 @@ import SwiftUI
 struct UpcomingWatchView: View {
     @StateObject var upcoming: UpcomingViewModel
     
-    init() {
-        self._upcoming = StateObject(wrappedValue: UpcomingViewModel())
+    init(for agency: AgencyEnum) {
+        _upcoming = StateObject(wrappedValue: UpcomingViewModel(for: agency))
     }
     
     var body: some View {
@@ -27,16 +27,16 @@ struct UpcomingWatchView: View {
         .navigationTitle("UPCOMING_VIEW_TITLE")
         .environmentObject(upcoming as VideoViewModel)
         .task {
-            await upcoming.getUpcoming()
+            await upcoming.getVideoForUI()
         }
         .refreshable {
-            await upcoming.getUpcoming()
+            await upcoming.getVideoForUI()
         }
     }
 }
 
 struct UpcomingWatchView_Previews: PreviewProvider {
     static var previews: some View {
-        UpcomingWatchView()
+        UpcomingWatchView(for: .hololive)
     }
 }

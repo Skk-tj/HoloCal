@@ -10,7 +10,7 @@ import SwiftUI
 struct LiveTimeView: View {
     let liveTime: Date?
     var fontSize: Font = .footnote
-    var shortMode: Bool = false
+    var shortMode = false
     
     @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInLiveView) var isShowingAbsoluteTime: Bool = false
     

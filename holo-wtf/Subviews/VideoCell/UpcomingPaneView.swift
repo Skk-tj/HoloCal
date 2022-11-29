@@ -22,9 +22,10 @@ struct UpcomingPaneView: View {
                 VStack(alignment: .leading) {
                     // Force the title to be two lines
                     if UIDevice.current.userInterfaceIdiom == .pad {
-                        Text(upcoming.title + "\n")
+                        Text(upcoming.title)
                             .font(.headline)
-                            .lineLimit(2)
+                            .frame(maxHeight: .infinity)
+                            .lineLimit(2, reservesSpace: true)
                             .multilineTextAlignment(.leading)
                     } else {
                         Text(upcoming.title)
@@ -33,47 +34,25 @@ struct UpcomingPaneView: View {
                             .multilineTextAlignment(.leading)
                     }
                     
+                    PaneViewChannelInfoView(video: upcoming)
+                    
+                    // MARK: - Time and other information
                     HStack {
-                        LiveAvatarView(url: upcoming.channel.photo, avatarRadius: 40.0)
-                        
-                        if let mentions = upcoming.mentions {
-                            Text("\(upcoming.channel.name) \(String(localized: "LIVE_PANE_VIEW_WITH"))")
-                                .lineLimit(1)
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                            
-                            LiveCollabAvatarView(mentions: mentions, avatarRadius: 40.0)
-                                .onTapGesture {
-                                    isShowingCollabSheet.toggle()
-                                }
-                                .sheet(isPresented: $isShowingCollabSheet, content: {
-                                    if #available(iOS 16.0, *) {
-                                        LiveCollabListStackView(mentions: mentions)
-                                            .presentationDetents([.medium, .large])
-                                    } else {
-                                        LiveCollabListView(mentions: mentions)
-                                    }
-                                })
-                        } else {
-                            Text(upcoming.channel.name)
-                                .lineLimit(1)
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                        }
-                    }
-                    Divider()
-                    HStack {
-                        UpcomingTimeView(liveSchedule: upcoming.startScheduled)
                         if upcoming.isMengen {
-                            Spacer()
-                            Text("LIVE_CELL_VIEW_MEMBER_ONLY_STREAM")
-                                .font(.footnote)
-                                .foregroundColor(.secondary)
+                            BlockUpcomingTimeView(liveSchedule: upcoming.startScheduled)
+                                .padding(.trailing)
+                            BlockMemberOnlyView()
+                        }
+                        else {
+                            BlockUpcomingTimeView(liveSchedule: upcoming.startScheduled)
                         }
                     }
-                    .padding(.bottom)
+                    .padding(.top, 5)
+                    
+                    Divider()
                     
                     PaneViewButtonRowView(video: upcoming)
+                        .padding(.top)
                 }
                 .padding(.horizontal)
             }
@@ -102,5 +81,10 @@ struct UpcomingPaneView: View {
 struct UpcomingPaneView_Previews: PreviewProvider {
     static var previews: some View {
         UpcomingPaneView(upcoming: LiveVideo.previewLive)
+        UpcomingPaneView(upcoming: LiveVideo.previewLiveMemberOnly)
+        UpcomingPaneView(upcoming: LiveVideo.previewLive)
+            .environment(\.locale, .init(identifier: "ja"))
+        UpcomingPaneView(upcoming: LiveVideo.previewLiveMemberOnly)
+            .environment(\.locale, .init(identifier: "ja"))
     }
 }
