@@ -377,7 +377,6 @@ enum TalentEnum: String, Codable {
     // MARK: - ID Second Wave: CloverMcOver
     case rai = "UC8Snw5i4eOJXEQqURAK17hQ" // Rai Galilei
     case amicia = "UCrR7JxkbeLY82e8gsj_I0pQ" // Amicia Michella
-    case miyu = "UCOmjciHZ8Au3iKMElKXCF_g" // Miyu Ottavia
     case riksa = "UCkL9OLKjIQbKk2CztbpOCFg" // Riksa Dhirendra
     
     // MARK: - ID Third Wave: LAN_NEE3S
@@ -757,7 +756,6 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     // MARK: - ID Second Wave: CloverMcOver
     .rai: Talent(id: TalentEnum.rai.rawValue, names: [.en: "Rai Galilei", .ja: "ライ ガリレイ"], inGeneration: Generation.id2ndWave),
     .amicia: Talent(id: TalentEnum.amicia.rawValue, names: [.en: "Amicia Michella", .ja: "アミシア ミシェラ"], inGeneration: Generation.id2ndWave),
-    .miyu: Talent(id: TalentEnum.miyu.rawValue, names: [.en: "Miyu Ottavia", .ja: "ミユ オッタフィア"], inGeneration: Generation.id2ndWave),
     .riksa: Talent(id: TalentEnum.riksa.rawValue, names: [.en: "Riksa Dhirendra", .ja: "リクサ ディレンドラ"], inGeneration: Generation.id2ndWave),
 
     // MARK: - ID Third Wave: LAN_NEE3S
@@ -887,7 +885,7 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .wave2022May21: GenerationGroup(id: .wave2022May21, names: [.en: "2022 Wave: May 21", .ja: "2022年05月21日デビュー"], members: [.hyakumantenbara]),
     .wave2022Voltaction: GenerationGroup(id: .wave2022Voltaction, names: [.en: "VOLTACTION", .ja: "VOLTACTION"], members: [.fura, .watarai, .shikinagi, .seraph]),
     .id1stWave: GenerationGroup(id: .id1stWave, names: [.en: "ID 1st Wave", .ja: "ID 1期生"], members: [.taka, .zea, .hana]),
-    .id2ndWave: GenerationGroup(id: .id2ndWave, names: [.en: "ID 2nd Wave", .ja: "ID 2期生"], members: [.rai, .amicia, .miyu, .riksa]),
+    .id2ndWave: GenerationGroup(id: .id2ndWave, names: [.en: "ID 2nd Wave", .ja: "ID 2期生"], members: [.rai, .amicia, .riksa]),
     .id3rdWave: GenerationGroup(id: .id3rdWave, names: [.en: "ID 3rd Wave", .ja: "ID 3期生"], members: [.azura, .layla, .nara]),
     .id4thWave: GenerationGroup(id: .id4thWave, names: [.en: "ID 4th Wave", .ja: "ID 4期生"], members: [.etna, .bonnivier, .siska]),
     .id5thWave: GenerationGroup(id: .id5thWave, names: [.en: "ID 5th Wave", .ja: "ID 5期生"], members: [.nagisa, .derem, .reza]),
