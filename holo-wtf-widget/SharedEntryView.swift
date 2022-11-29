@@ -48,6 +48,8 @@ struct VideoLiveWidgetEntryView: View {
             LiveAccessoryRectangularWidgetEntryView(entry: entry)
         case .accessoryCorner:
             LiveAccessoryCornerEntryView(entry: entry)
+        case .accessoryCircular:
+            LiveAccessoryCircularWidgetEntryView(entry: entry)
         default:
             EmptyView()
         }
@@ -107,6 +109,8 @@ struct VideoUpcomingWidgetEntryView: View {
             UpcomingAccessoryRectangularWidgetEntryView(entry: entry)
         case .accessoryCorner:
             UpcomingAccessoryCornerEntryView(entry: entry)
+        case .accessoryCircular:
+            UpcomingAccessoryCircularWidgetEntryView(entry: entry)
         default:
             EmptyView()
         }
@@ -184,6 +188,30 @@ struct UpcomingAccessoryRectangularWidgetEntryView: View {
                 Text("NO_ONE_IS_STREAMING")
             }
             .frame(maxWidth: .infinity, alignment: .leading)
+        }
+    }
+}
+
+struct LiveAccessoryCircularWidgetEntryView: View {
+    var entry: VideoLiveWidgetProvider.Entry
+    
+    var body: some View {
+        if let video = entry.video {
+            LiveAccessoryCircularView(live: video, avatarData: entry.avatarData)
+        } else {
+            Text("N/A")
+        }
+    }
+}
+
+struct UpcomingAccessoryCircularWidgetEntryView: View {
+    var entry: VideoUpcomingWidgetProvider.Entry
+    
+    var body: some View {
+        if let video = entry.video {
+            LiveAccessoryCircularView(live: video, avatarData: entry.avatarData)
+        } else {
+            Text("N/A")
         }
     }
 }

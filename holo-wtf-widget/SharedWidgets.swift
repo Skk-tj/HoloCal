@@ -20,7 +20,7 @@ struct SingleLiveWidget: Widget {
 #if os(watchOS)
         .supportedFamilies([.accessoryRectangular, .accessoryCorner])
 #else
-        .supportedFamilies([.systemSmall, .systemLarge, .accessoryRectangular])
+        .supportedFamilies([.systemSmall, .systemLarge, .accessoryRectangular, .accessoryCircular])
 #endif
     }
 }
@@ -37,7 +37,7 @@ struct SingleUpcomingWidget: Widget {
 #if os(watchOS)
         .supportedFamilies([.accessoryRectangular, .accessoryCorner])
 #else
-        .supportedFamilies([.systemSmall, .systemLarge, .accessoryRectangular])
+        .supportedFamilies([.systemSmall, .systemLarge, .accessoryRectangular, .accessoryCircular])
 #endif
     }
 }
