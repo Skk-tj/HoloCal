@@ -43,6 +43,8 @@ struct SmallUpcomingWidgetView: View {
 struct SmallUpcomingWidgetView_Previews: PreviewProvider {
     static var previews: some View {
         SmallUpcomingWidgetView(upcoming: LiveVideo.previewLive, avatarData: Data())
+        #if os(iOS)
             .previewContext(WidgetPreviewContext(family: .systemSmall))
+        #endif
     }
 }

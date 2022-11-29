@@ -8,29 +8,36 @@
 import SwiftUI
 import WidgetKit
 
-/// These widgets are shared between iOS Lock Screen widgets and watchOS complications
-struct LiveAccessoryRectangularWidget: Widget {
-    let kind: String = "LiveAccessoryRectangularWidget"
+struct SingleLiveWidget: Widget {
+    let kind: String = "io.skk-tj.holo-wtf-widget.live-single"
     
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: LiveWidgetIntent.self, provider: VideoLiveWidgetProvider()) { entry in
-            LiveAccessoryRectangularWidgetEntryView(entry: entry)
+            VideoLiveWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
         .description("CURRENTLY_LIVE_WIDGET_DESCRIPTION")
-        .supportedFamilies([.accessoryRectangular])
+#if os(watchOS)
+        .supportedFamilies([.accessoryRectangular, .accessoryCorner])
+#else
+        .supportedFamilies([.systemSmall, .systemLarge, .accessoryRectangular])
+#endif
     }
 }
 
-struct UpcomingAccessoryRectangularWidget: Widget {
-    let kind: String = "UpcomingAccessoryRectangularWidget"
+struct SingleUpcomingWidget: Widget {
+    let kind: String = "io.skk-tj.holo-wtf-widget.upcoming-single"
     
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: UpcomingWidgetIntent.self, provider: VideoUpcomingWidgetProvider()) { entry in
-            UpcomingAccessoryRectangularWidgetEntryView(entry: entry)
+            VideoUpcomingWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("UPCOMING_WIDGET_DISPLAY_NAME")
         .description("UPCOMING_WIDGET_DESCRIPTION")
-        .supportedFamilies([.accessoryRectangular])
+#if os(watchOS)
+        .supportedFamilies([.accessoryRectangular, .accessoryCorner])
+#else
+        .supportedFamilies([.systemSmall, .systemLarge, .accessoryRectangular])
+#endif
     }
 }

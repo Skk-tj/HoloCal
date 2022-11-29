@@ -12,14 +12,10 @@ import SwiftUI
 struct HoloCalWidgetBundle: WidgetBundle {
     @WidgetBundleBuilder
     var body: some Widget {
-        SmallLiveWidget()
-        LivePaneWidget()
+        SingleLiveWidget()
+        SingleUpcomingWidget()
         MultipleLiveWidget()
-        SmallUpcomingWidget()
-        UpcomingPaneWidget()
         MultipleUpcomingWidget()
-        LiveAccessoryRectangularWidget()
-        UpcomingAccessoryRectangularWidget()
         LiveChannelsWidget()
         UpcomingChannelsWidget()
     }

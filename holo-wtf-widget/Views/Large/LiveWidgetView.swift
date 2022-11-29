@@ -66,6 +66,8 @@ struct LiveWidgetView: View {
 struct LiveWidgetView_Previews: PreviewProvider {
     static var previews: some View {
         LiveWidgetView(live: LiveVideo.previewLive, thumbnailData: Data(), avatarData: Data())
+        #if os(iOS)
             .previewContext(WidgetPreviewContext(family: .systemLarge))
+        #endif
     }
 }

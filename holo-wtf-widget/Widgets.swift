@@ -8,32 +8,6 @@
 import WidgetKit
 import SwiftUI
 
-struct SmallLiveWidget: Widget {
-    let kind: String = "io.skk-tj.holo-wtf-widget.small-live"
-    
-    var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: LiveWidgetIntent.self, provider: VideoLiveWidgetProvider()) { entry in
-            SmallLiveWidgetEntryView(entry: entry)
-        }
-        .configurationDisplayName("CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
-        .description("CURRENTLY_LIVE_WIDGET_DESCRIPTION")
-        .supportedFamilies([.systemSmall])
-    }
-}
-
-struct LivePaneWidget: Widget {
-    let kind: String = "io.skk-tj.holo-wtf-widget.live-pane"
-    
-    var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: LiveWidgetIntent.self, provider: VideoLiveWidgetProvider()) { entry in
-            LivePaneWidgetEntryView(entry: entry)
-        }
-        .configurationDisplayName("CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
-        .description("CURRENTLY_LIVE_WIDGET_DESCRIPTION")
-        .supportedFamilies([.systemLarge])
-    }
-}
-
 struct MultipleLiveWidget: Widget {
     let kind: String = "io.skk-tj.holo-wtf-widget.multiple-live"
     
@@ -44,32 +18,6 @@ struct MultipleLiveWidget: Widget {
         .configurationDisplayName("MULTIPLE_CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
         .description("MULTIPLE_CURRENTLY_LIVE_WIDGET_DESCRIPTION")
         .supportedFamilies([.systemMedium])
-    }
-}
-
-struct SmallUpcomingWidget: Widget {
-    let kind: String = "io.skk-tj.holo-wtf-widget.small-upcoming"
-    
-    var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: UpcomingWidgetIntent.self, provider: VideoUpcomingWidgetProvider()) { entry in
-            SmallUpcomingWidgetEntryView(entry: entry)
-        }
-        .configurationDisplayName("UPCOMING_WIDGET_DISPLAY_NAME")
-        .description("UPCOMING_WIDGET_DESCRIPTION")
-        .supportedFamilies([.systemSmall])
-    }
-}
-
-struct UpcomingPaneWidget: Widget {
-    let kind: String = "io.skk-tj.holo-wtf-widget.upcoming-pane"
-    
-    var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: UpcomingWidgetIntent.self, provider: VideoUpcomingWidgetProvider()) { entry in
-            UpcomingPaneWidgetEntryView(entry: entry)
-        }
-        .configurationDisplayName("UPCOMING_WIDGET_DISPLAY_NAME")
-        .description("UPCOMING_WIDGET_DESCRIPTION")
-        .supportedFamilies([.systemLarge])
     }
 }
 

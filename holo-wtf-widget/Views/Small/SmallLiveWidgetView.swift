@@ -42,9 +42,12 @@ struct SmallLiveWidgetView: View {
     }
 }
 
+@available(iOS 16.0, *)
 struct SmallLiveWidgetView_Previews: PreviewProvider {
     static var previews: some View {
         SmallLiveWidgetView(live: LiveVideo.previewLive, avatarData: Data())
+        #if os(iOS)
             .previewContext(WidgetPreviewContext(family: .systemSmall))
+        #endif
     }
 }
