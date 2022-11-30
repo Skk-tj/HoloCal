@@ -12,17 +12,21 @@ struct LiveAccessoryCornerView: View {
     let live: LiveVideo
     
     var body: some View {
-        Image(systemName: "person.wave.2.fill")
-            .font(.title.bold())
-            .widgetAccentable()
-            .widgetLabel {
-                Text(live.channel.getTalentName())
-            }
+        ZStack {
+            AccessoryWidgetBackground()
+            Image(systemName: "person.wave.2.fill")
+        }
+        .font(.title.bold())
+        .widgetAccentable()
+        .widgetLabel(live.channel.getTalentName())
     }
 }
 
 struct LiveAccessoryCornerView_Previews: PreviewProvider {
     static var previews: some View {
         LiveAccessoryCornerView(live: LiveVideo.previewLive)
+        #if os(watchOS)
+            .previewContext(WidgetPreviewContext(family: .accessoryCorner))
+        #endif
     }
 }
