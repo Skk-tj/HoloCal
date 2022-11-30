@@ -19,6 +19,11 @@ struct UpcomingWidgetMediumView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(10)
+            } else {
+                Image("WidgetPlaceholder")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(10)
             }
             
             VStack(alignment: .leading) {

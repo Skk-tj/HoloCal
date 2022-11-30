@@ -34,8 +34,6 @@
 		F012419A2935E27A007C8FE9 /* SmallLiveWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F047F0852851C74500B2E2B9 /* SmallLiveWidgetView.swift */; };
 		F012419B2935E27B007C8FE9 /* SmallUpcomingWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0828C13C7600635CAD /* SmallUpcomingWidgetView.swift */; };
 		F012419C2935E27B007C8FE9 /* SmallUpcomingWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0828C13C7600635CAD /* SmallUpcomingWidgetView.swift */; };
-		F012419D2935E27F007C8FE9 /* LiveWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1E3283034AF00E2A6FF /* LiveWidgetView.swift */; };
-		F012419E2935E27F007C8FE9 /* LiveWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1E3283034AF00E2A6FF /* LiveWidgetView.swift */; };
 		F012419F2935E281007C8FE9 /* UpcomingWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0D28C2940200635CAD /* UpcomingWidgetView.swift */; };
 		F01241A02935E281007C8FE9 /* UpcomingWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0D28C2940200635CAD /* UpcomingWidgetView.swift */; };
 		F01241A12935E2BA007C8FE9 /* ViewerCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A2292C9FF8009EC2CC /* ViewerCounterView.swift */; };
@@ -52,6 +50,8 @@
 		F01241AF2935EA51007C8FE9 /* LiveAccessoryCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01241AE2935EA51007C8FE9 /* LiveAccessoryCircularView.swift */; };
 		F01241B02935EA51007C8FE9 /* LiveAccessoryCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01241AE2935EA51007C8FE9 /* LiveAccessoryCircularView.swift */; };
 		F01241B12935EA51007C8FE9 /* LiveAccessoryCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01241AE2935EA51007C8FE9 /* LiveAccessoryCircularView.swift */; };
+		F01241B4293725FC007C8FE9 /* LiveWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1E3283034AF00E2A6FF /* LiveWidgetView.swift */; };
+		F01241B5293725FD007C8FE9 /* LiveWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1E3283034AF00E2A6FF /* LiveWidgetView.swift */; };
 		F01E95B3286FB4B900CDF0F9 /* iPadLazyGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01E95B2286FB4B900CDF0F9 /* iPadLazyGridView.swift */; };
 		F022119C292B6CF5009EC2CC /* SingleAgencyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022119B292B6CF5009EC2CC /* SingleAgencyItemView.swift */; };
 		F022119D292B6CF5009EC2CC /* SingleAgencyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022119B292B6CF5009EC2CC /* SingleAgencyItemView.swift */; };
@@ -1200,7 +1200,6 @@
 				F0E45D1B28F39AF90091474A /* Agency.swift in Sources */,
 				F025204228EE95FB00976972 /* Constants.swift in Sources */,
 				F00BD6D329052AC400D7932E /* VideoViewModel.swift in Sources */,
-				F012419E2935E27F007C8FE9 /* LiveWidgetView.swift in Sources */,
 				F06D28F428D83A9D007D06FB /* LiveAccessoryRectangularWidgetView.swift in Sources */,
 				F06D28E828D839F5007D06FB /* LiveVideo.swift in Sources */,
 				F06D28F928D83AC9007D06FB /* Util.swift in Sources */,
@@ -1232,6 +1231,7 @@
 				F01241B12935EA51007C8FE9 /* LiveAccessoryCircularView.swift in Sources */,
 				F012419A2935E27A007C8FE9 /* SmallLiveWidgetView.swift in Sources */,
 				F06D28D128D83826007D06FB /* complications.swift in Sources */,
+				F01241B5293725FD007C8FE9 /* LiveWidgetView.swift in Sources */,
 				F06D28E728D839F5007D06FB /* TalentData.swift in Sources */,
 				F06D28F328D83A92007D06FB /* SongInStream.swift in Sources */,
 				F04D149028DD673A00750B71 /* UpcomingAccessoryCornerEntryView.swift in Sources */,
@@ -1437,7 +1437,6 @@
 				F01241A72935E33E007C8FE9 /* BlockUpcomingTimeView.swift in Sources */,
 				F01241A22935E2BB007C8FE9 /* ViewerCounterView.swift in Sources */,
 				F0CA6ED528D7C4A70028CB11 /* LiveAvatarView.swift in Sources */,
-				F012419D2935E27F007C8FE9 /* LiveWidgetView.swift in Sources */,
 				F0E05C732932E27E00B3C774 /* VideoLiveWidgetProvider.swift in Sources */,
 				F0CA6ECC28D7C2BE0028CB11 /* LiveVideo.swift in Sources */,
 				F0F0EAC3292B56D20091DBD7 /* UpcomingFavouriteCountView.swift in Sources */,
@@ -1460,6 +1459,7 @@
 				F0F0EA9A292B01510091DBD7 /* LiveFavoritesViewModel.swift in Sources */,
 				F00BD6D229052AC400D7932E /* VideoViewModel.swift in Sources */,
 				F09D53BF29337378003C4F80 /* Intents.intentdefinition in Sources */,
+				F01241B4293725FC007C8FE9 /* LiveWidgetView.swift in Sources */,
 				F0CA6EC928D7C2BE0028CB11 /* TalentData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1561,7 +1561,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 137;
+				CURRENT_PROJECT_VERSION = 138;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = complications/Info.plist;
@@ -1592,7 +1592,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 137;
+				CURRENT_PROJECT_VERSION = 138;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = complications/Info.plist;
@@ -1622,7 +1622,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 137;
+				CURRENT_PROJECT_VERSION = 138;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "holo-wtf-widget/Info.plist";
@@ -1650,7 +1650,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 137;
+				CURRENT_PROJECT_VERSION = 138;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "holo-wtf-widget/Info.plist";
@@ -1801,7 +1801,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 137;
+				CURRENT_PROJECT_VERSION = 138;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -1841,7 +1841,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 137;
+				CURRENT_PROJECT_VERSION = 138;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -1883,7 +1883,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 137;
+				CURRENT_PROJECT_VERSION = 138;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf-watch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -1918,7 +1918,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 137;
+				CURRENT_PROJECT_VERSION = 138;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf-watch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;

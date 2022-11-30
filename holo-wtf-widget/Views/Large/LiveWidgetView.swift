@@ -20,6 +20,9 @@ struct LiveWidgetView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(10)
+            } else {
+                ProgressView()
+                    .frame(width: .infinity, height: .infinity)
             }
             
             VStack(alignment: .leading) {
@@ -66,6 +69,7 @@ struct LiveWidgetView: View {
 struct LiveWidgetView_Previews: PreviewProvider {
     static var previews: some View {
         LiveWidgetView(live: LiveVideo.previewLive, thumbnailData: Data(), avatarData: Data())
+            .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro Max"))
         #if os(iOS)
             .previewContext(WidgetPreviewContext(family: .systemLarge))
         #endif

@@ -19,17 +19,22 @@ struct MultipleUpcomingWidgetView: View {
         HStack {
             // Left stream
             VStack(alignment: .leading) {
-                if let image = UIImage(data: leftVideoThumbnail) {
-                    HStack {
-                        Spacer()
+                HStack {
+                    Spacer()
+                    if let image = UIImage(data: leftVideoThumbnail) {
                         Image(uiImage: image)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .cornerRadius(10)
-                        Spacer()
+                    } else {
+                        Image("WidgetPlaceholder")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .cornerRadius(10)
                     }
-                    
+                    Spacer()
                 }
+                    
                 
                 Text(leftVideo.title)
                     .lineLimit(1)
@@ -57,15 +62,20 @@ struct MultipleUpcomingWidgetView: View {
             
             // Right stream
             VStack(alignment: .leading) {
-                if let image = UIImage(data: rightVideoThumbnail) {
-                    HStack {
-                        Spacer()
+                HStack {
+                    Spacer()
+                    if let image = UIImage(data: rightVideoThumbnail) {
                         Image(uiImage: image)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .cornerRadius(10)
-                        Spacer()
+                    } else {
+                        Image("WidgetPlaceholder")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .cornerRadius(10)
                     }
+                    Spacer()
                 }
                 
                 Text(rightVideo.title)

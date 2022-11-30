@@ -20,6 +20,9 @@ struct UpcomingWidgetView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(10)
+            } else {
+                ProgressView()
+                    .frame(width: .infinity, height: .infinity)
             }
             
             VStack(alignment: .leading) {

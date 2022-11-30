@@ -24,6 +24,16 @@ struct SmallUpcomingWidgetView: View {
                         Circle().stroke(.white, lineWidth: 1)
                     }
                     .shadow(radius: 1)
+            } else {
+                Image(systemName: "person.fill")
+                    .resizable()
+                    .aspectRatio(1, contentMode: .fill)
+                    .frame(width: 40, height: 40)
+                    .clipShape(Circle())
+                    .overlay {
+                        Circle().stroke(.white, lineWidth: 1)
+                    }
+                    .shadow(radius: 1)
             }
             
             Text(upcoming.title)
