@@ -28,6 +28,7 @@ struct UpcomingFavouritesView: View {
             .refreshable {
                 await upcoming.getVideoForUI()
             }
+            .animation(.easeInOut, value: upcoming.dataStatus)
     }
 }
 

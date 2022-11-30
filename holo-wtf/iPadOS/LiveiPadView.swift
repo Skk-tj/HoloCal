@@ -47,6 +47,7 @@ struct LiveiPadView: View {
                     .environmentObject(live as VideoViewModel)
             }
         }
+        .animation(.easeInOut, value: live.dataStatus)
     }
 }
 

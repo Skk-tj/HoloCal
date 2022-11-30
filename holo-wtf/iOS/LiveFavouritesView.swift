@@ -28,6 +28,7 @@ struct LiveFavouritesView: View {
             .refreshable {
                 await live.getVideoForUI()
             }
+            .animation(.easeInOut, value: live.dataStatus)
     }
 }
 

@@ -47,6 +47,7 @@ struct UpcomingiPadView: View {
             }
         }
         .navigationTitle("UPCOMING_VIEW_TITLE")
+        .animation(.easeInOut, value: upcoming.dataStatus)
     }
 }
 

@@ -38,6 +38,7 @@ struct UpcomingView: View {
                 await upcoming.getVideoForUI()
                 currentPresentationMode = .normal
             }
+            .animation(.easeInOut, value: upcoming.dataStatus)
     }
 }
 

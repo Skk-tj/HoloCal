@@ -38,6 +38,7 @@ struct LiveView: View {
                 await live.getVideoForUI()
                 currentPresentationMode = .normal
             }
+            .animation(.easeInOut, value: live.dataStatus)
     }
 }
 

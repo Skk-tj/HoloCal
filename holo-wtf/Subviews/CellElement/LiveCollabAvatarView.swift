@@ -13,8 +13,8 @@ struct LiveCollabAvatarView: View {
     
     var body: some View {
         HStack {
-            if mentions.count > 3 {
-                ForEach(0..<3, id: \.self) {
+            if mentions.count > 5 {
+                ForEach(0..<5, id: \.self) {
                     LiveAvatarView(url: mentions[$0].photo, avatarRadius: avatarRadius)
                         .offset(x: -CGFloat(CGFloat($0) * (CGFloat(avatarRadius) / 2.0)), y: 0)
                 }
@@ -25,7 +25,7 @@ struct LiveCollabAvatarView: View {
                 }
             }
         }
-        .padding(.trailing, -Double(mentions.count > 3 ? 2 : mentions.count-1) * (avatarRadius / 2))
+        .padding(.trailing, -Double(mentions.count > 5 ? 4 : mentions.count-1) * (avatarRadius / 2))
     }
 }
 
