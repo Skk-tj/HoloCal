@@ -21,8 +21,10 @@ struct LiveWidgetView: View {
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(10)
             } else {
-                ProgressView()
-                    .frame(width: .infinity, height: .infinity)
+                Image("WidgetPlaceholder")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(10)
             }
             
             VStack(alignment: .leading) {

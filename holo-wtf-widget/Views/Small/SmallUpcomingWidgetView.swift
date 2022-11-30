@@ -25,8 +25,7 @@ struct SmallUpcomingWidgetView: View {
                     }
                     .shadow(radius: 1)
             } else {
-                Image(systemName: "person.fill")
-                    .resizable()
+                Image(systemName: "person")
                     .aspectRatio(1, contentMode: .fill)
                     .frame(width: 40, height: 40)
                     .clipShape(Circle())
