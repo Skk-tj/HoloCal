@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 let intentAgencyToString: [IntentAgency: [NameLanguage: String]] = [
     .unknown: [.en: "All", .ja: "全部"],
@@ -107,6 +108,15 @@ func getVideoURLForWidget(agency: IntentAgency, videoType: VideoType) -> String 
     }
 }
 
+extension UIImage {
+    func resizeWithUIKit(to newSize: CGSize) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(newSize, true, 1.0)
+        self.draw(in: CGRect(origin: .zero, size: newSize))
+        defer { UIGraphicsEndImageContext() }
+        return UIGraphicsGetImageFromCurrentImageContext()
+    }
+}
+
 func getAndFilterAndSortVideosCommon(for agency: IntentAgency, videoType: VideoType, sortBy: IntentSortBy, filterBy filterAlgorithm: (LiveVideo) -> Bool) async throws -> [LiveVideo] {
     var lives: [LiveVideo] = try await getVideos(from: getVideoURLForWidget(agency: agency, videoType: videoType))
     
@@ -138,8 +148,23 @@ func getEntryWithIntent(for agency: IntentAgency, videoType: VideoType, sortBy: 
         
         let firstVideo = lives[0]
         
-        let (avatarData, _) = try await URLSession.shared.data(from: firstVideo.channel.photo!)
-        let (thumbnailData, _) = try await URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(firstVideo.id)/maxresdefault.jpg")!)
+        let (avatarData, avatarResponse) = try await URLSession.shared.data(from: firstVideo.channel.photo!)
+        
+        guard let response = avatarResponse as? HTTPURLResponse, response.statusCode == 200 else {
+            return SingleVideoWidgetEntry(date: .now, status: .network, video: nil, avatarData: Data(), thumbnailData: Data())
+        }
+        
+        let (thumbnailData, thumbnailResponse) = try await URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(firstVideo.id)/maxresdefault.jpg")!)
+        
+        guard let response = thumbnailResponse as? HTTPURLResponse, response.statusCode == 200 else {
+            return SingleVideoWidgetEntry(date: .now, status: .network, video: nil, avatarData: Data(), thumbnailData: Data())
+        }
+        
+        // MARK: - Resize image to 120x120
+        // let newSize = CGSize(width: 120, height: 120)
+        // let imageToBeResized: UIImage = UIImage(data: avatarData)!
+        
+        // let resizedImage = imageToBeResized.resizeWithUIKit(to: newSize)
         
         let entry = SingleVideoWidgetEntry(date: .now, status: .ok, video: lives[0], avatarData: avatarData, thumbnailData: thumbnailData)
         

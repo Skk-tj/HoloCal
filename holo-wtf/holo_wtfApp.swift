@@ -59,7 +59,6 @@ struct holo_wtfApp: App {
         WindowGroup {
             if UIDevice.current.userInterfaceIdiom == .pad {
                 // iPadOS
-                // TODO: https://stackoverflow.com/questions/73279601/swiftui-navigationstack-inside-navigationsplitview-not-working-on-iphone-and-ipa
                 iPadSplitView()
             } else {
                 // iOS

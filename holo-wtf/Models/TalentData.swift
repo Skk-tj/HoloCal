@@ -236,6 +236,7 @@ enum TalentEnum: String, Codable {
     case suzuki = "UCryOPk2GZ1meIDt53tL30Tw" // Suzuki Masaru
     case uzuki = "UC3lNFeJiTq6L3UWoz4g1e-A" // Uzuki Kou
     case ryushen = "UCt5-0i4AVHXaWJrL8Wql3mw" // Ryushen
+    case ryushenGaming = "UCTi_rzf5QIkXjhJjkbcAdTg"
     
     // MARK: - NIJISANJI SEEDs Second Generation First Wave
     case kanda = "UCWz0CSYCxf4MhRKPDm220AQ" // Kanda Shoichi
@@ -349,7 +350,6 @@ enum TalentEnum: String, Codable {
     case nishizono = "UCkngxfPbmGyGl_RIq4FA3MQ" // Nishizono Chigusa
     
     // MARK: - 2021 Wave
-    case axia = "UC8oPnditPSp5lZu45fnXWCA" // Axia Krone
     case lauren = "UCgmFrRcyH7d1zR9sIVQhFow" // Lauren Iroas
     case leos = "UC-6rZgmxZSIbq786j3RD5ow" // Leos Vincent
     case oliver = "UCqjTqdVlvIipZXIKeCkHKUA" // Oliver Evans
@@ -615,6 +615,7 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .suzuki: Talent(id: TalentEnum.suzuki.rawValue, names: [.en: "Suzuki Masaru", .ja: "卯月コウ"], inGeneration: Generation.seeds1stGen),
     .uzuki: Talent(id: TalentEnum.uzuki.rawValue, names: [.en: "Uzuki Kou", .ja: "鈴木勝"], inGeneration: Generation.seeds1stGen),
     .ryushen: Talent(id: TalentEnum.ryushen.rawValue, names: [.en: "Ryushen", .ja: "緑仙"], inGeneration: Generation.seeds1stGen),
+    .ryushenGaming: Talent(id: TalentEnum.ryushenGaming.rawValue, names: [.en: "Ryushen Gaming", .ja: "緑仙のゲームちゃんねる"], inGeneration: Generation.seeds1stGen),
 
     // MARK: - NIJISANJI SEEDs Second Generation First Wave
     .kanda: Talent(id: TalentEnum.kanda.rawValue, names: [.en: "Kanda Shoichi", .ja: "神田笑一"], inGeneration: Generation.seeds2ndGen1stWave),
@@ -728,7 +729,6 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .nishizono: Talent(id: TalentEnum.nishizono.rawValue, names: [.en: "Nishizono Chigusa", .ja: "西園チグサ"], inGeneration: Generation.wave2020SereineJogakuin),
 
     // MARK: - 2021 Wave
-    .axia: Talent(id: TalentEnum.axia.rawValue, names: [.en: "Axia Krone", .ja: "アクシア・クローネ"], inGeneration: Generation.wave2021),
     .lauren: Talent(id: TalentEnum.lauren.rawValue, names: [.en: "Lauren Iroas", .ja: "ローレン・イロアス"], inGeneration: Generation.wave2021),
     .leos: Talent(id: TalentEnum.leos.rawValue, names: [.en: "Leos Vincent", .ja: "レオス・ヴィンセント"], inGeneration: Generation.wave2021),
     .oliver: Talent(id: TalentEnum.oliver.rawValue, names: [.en: "Oliver Evans", .ja: "オリバー・エバンス"], inGeneration: Generation.wave2021),
@@ -857,7 +857,7 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .gamers1stWave: GenerationGroup(id: .gamers1stWave, names: [.en: "Gamers 1st Wave", .ja: "ゲーマーズ第1弾"], members: [.kanae, .akabane]),
     .gamers2ndWave: GenerationGroup(id: .gamers2ndWave, names: [.en: "Gamers 2nd Wave", .ja: "ゲーマーズ第2弾"], members: [.sasaki, .honma]),
     .gamers3rdWave: GenerationGroup(id: .gamers3rdWave, names: [.en: "Gamers 3rd Wave", .ja: "ゲーマーズ第3弾"], members: [.makaino, .kuzuha, .shiina]),
-    .seeds1stGen: GenerationGroup(id: .seeds1stGen, names: [.en: "SEEDs 1st Gen", .ja: "SEEDs1期生"], members: [.dola, .todoroki, .sister, .hanabatake, .yashiro, .azuchi, .suzuki, .uzuki, .ryushen]),
+    .seeds1stGen: GenerationGroup(id: .seeds1stGen, names: [.en: "SEEDs 1st Gen", .ja: "SEEDs1期生"], members: [.dola, .todoroki, .sister, .hanabatake, .yashiro, .azuchi, .suzuki, .uzuki, .ryushen, .ryushenGaming]),
     .seeds2ndGen1stWave: GenerationGroup(id: .seeds2ndGen1stWave, names: [.en: "SEEDs 2nd Gen 1st Wave", .ja: "SEEDs2期生第1弾"], members: [.kanda, .asuka, .harusaki, .amemori, .takamiya, .maimoto]),
     .seeds2ndGen2ndWave: GenerationGroup(id: .seeds2ndGen2ndWave, names: [.en: "SEEDs 2nd Gen 2nd Wave", .ja: "SEEDs2期生第2弾"], members: [.rindou, .debidebi, .sakura, .machita, .joe]),
     .seeds2ndGen3rdWave: GenerationGroup(id: .seeds2ndGen3rdWave, names: [.en: "SEEDs 2nd Gen 3rd Wave", .ja: "SEEDs2期生第3弾"], members: [.naruse, .belmond, .yaguruma, .yumeoi, .kuroi]),
@@ -880,7 +880,7 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .wave2020Valz: GenerationGroup(id: .wave2020Valz, names: [.en: "2020 Wave: April 2", .ja: "2020年4月2日デビュー"], members: [.nagao, .genzuki, .kaida]),
     .wave2020Jun30: GenerationGroup(id: .wave2020Jun30, names: [.en: "2020 Wave: June 30", .ja: "2020年6月30日デビュー"], members: [.sorahoshi]),
     .wave2020SereineJogakuin: GenerationGroup(id: .wave2020SereineJogakuin, names: [.en: "2020 Wave: August 6", .ja: "2020年8月6日デビュー"], members: [.asahina, .suo, .todo, .kitakoji, .nishizono]),
-    .wave2021: GenerationGroup(id: .wave2021, names: [.en: "2021 Wave", .ja: "2021年デビュー"], members: [.axia, .lauren, .leos, .oliver, .lain]),
+    .wave2021: GenerationGroup(id: .wave2021, names: [.en: "2021 Wave", .ja: "2021年デビュー"], members: [.lauren, .leos, .oliver, .lain]),
     .wave2022Ranunculus: GenerationGroup(id: .wave2022Ranunculus, names: [.en: "Ranunculus", .ja: "Ranunculus"], members: [.amagase, .ponto, .umise]),
     .wave2022May21: GenerationGroup(id: .wave2022May21, names: [.en: "2022 Wave: May 21", .ja: "2022年05月21日デビュー"], members: [.hyakumantenbara]),
     .wave2022Voltaction: GenerationGroup(id: .wave2022Voltaction, names: [.en: "VOLTACTION", .ja: "VOLTACTION"], members: [.fura, .watarai, .shikinagi, .seraph]),
