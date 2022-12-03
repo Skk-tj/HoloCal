@@ -54,6 +54,7 @@ struct iPadLazyGridView<VideoContent: View, DataStatusView: View>: View {
             .padding(.horizontal, 20)
             
             dataStatusView()
+                .padding(.vertical)
         }
         .searchable(text: $searchText, prompt: "SEARCH_BY_NAME_OR_TAG") {
             if searchText.isEmpty {

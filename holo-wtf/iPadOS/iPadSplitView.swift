@@ -38,9 +38,10 @@ struct iPadAgencySelectionView: View {
 struct iPadSplitView: View {
     @State var viewSelection: Views? = Views.live
     @State var agencySelection: iPadAgencies? = .hololive
+    @State var columnVis: NavigationSplitViewVisibility = .all
     
     var body: some View {
-        NavigationSplitView(sidebar: {
+        NavigationSplitView(columnVisibility: $columnVis) {
             List(selection: $viewSelection) {
                 NavigationLink(value: Views.live) {
                     Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
@@ -54,19 +55,21 @@ struct iPadSplitView: View {
             }
             .listStyle(.sidebar)
             .navigationTitle("HoloCal")
-            .navigationSplitViewColumnWidth(ideal: 250)
-        }, content: {
+            .navigationSplitViewColumnWidth(ideal: 230)
+        } content: {
             if let viewSelection {
                 switch viewSelection {
                 case .live, .upcoming:
                     iPadAgencySelectionView(agencySelection: $agencySelection)
+                        .navigationSplitViewColumnWidth(min: 230, ideal: 280, max: 300)
                 case .settings:
                     NavigationStack {
                         SettingsiPadView()
                     }
+                    .navigationSplitViewColumnWidth(min: 230, ideal: 280, max: 300)
                 }
             }
-        }, detail: {
+        } detail: {
             if let viewSelection {
                 switch viewSelection {
                 case .live:
@@ -97,7 +100,7 @@ struct iPadSplitView: View {
                     }
                 }
             }
-        })
+        }
     }
 }
 

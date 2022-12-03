@@ -22,26 +22,7 @@ struct SettingsFormView: View {
     var body: some View {
         Form {
             Section(header: Text("SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER")) {
-                Button(action: {
-                    withAnimation(.easeInOut) {
-                        showUpcomingPicker.toggle()
-                        if showUpcomingPicker {
-                            upcomingChevronRotationAngle += 90
-                        } else {
-                            upcomingChevronRotationAngle -= 90
-                        }
-                    }
-                }, label: {
-                    HStack {
-                        Text("SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT \(hoursLookAhead)")
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                            .foregroundColor(.secondary)
-                            .rotationEffect(Angle(degrees: upcomingChevronRotationAngle))
-                    }
-                })
-                
-                if showUpcomingPicker {
+                DisclosureGroup("SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT \(hoursLookAhead)", content: {
                     Picker("Upcoming look ahead", selection: $hoursLookAhead) {
                         ForEach([12, 24, 48, 72, 96, 120], id: \.self) {
                             Text("\($0)")
@@ -51,29 +32,11 @@ struct SettingsFormView: View {
                     .onChange(of: hoursLookAhead, perform: { newHours in
                         UserDefaults.standard.set(newHours, forKey: UserDefaultKeys.upcomingLookAhead)
                     })
-                }
+                })
             }
             
             Section(header: Text("SETTINGS_STREAM_TIME_HEADER"), footer: Text("SETTINGS_STREAM_TIME_FOOTER")) {
-                Button(action: {
-                    withAnimation(.easeInOut) {
-                        showDSTPicker.toggle()
-                        if showDSTPicker {
-                            dstChevronRotationAngle += 90
-                        } else {
-                            dstChevronRotationAngle -= 90
-                        }
-                    }
-                }, label: {
-                    HStack {
-                        Text("SETTINGS_DST_CHANGE_TEXT \(dstDays)")
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                            .foregroundColor(.secondary)
-                            .rotationEffect(Angle(degrees: dstChevronRotationAngle))
-                    }
-                })
-                if showDSTPicker {
+                DisclosureGroup("SETTINGS_DST_CHANGE_TEXT \(dstDays)", content: {
                     Picker("DST change", selection: $dstDays) {
                         ForEach(1...10, id: \.self) {
                             Text("\($0)")
@@ -83,7 +46,7 @@ struct SettingsFormView: View {
                     .onChange(of: dstDays, perform: { newHours in
                         UserDefaults.standard.set(newHours, forKey: UserDefaultKeys.dstDays)
                     })
-                }
+                })
             }
             
             Section("SETTINGS_CHANNEL_MANAGEMENT_HEADER") {

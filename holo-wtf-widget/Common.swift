@@ -154,11 +154,7 @@ func getEntryWithIntent(for agency: IntentAgency, videoType: VideoType, sortBy: 
             return SingleVideoWidgetEntry(date: .now, status: .network, video: nil, avatarData: Data(), thumbnailData: Data())
         }
         
-        let (thumbnailData, thumbnailResponse) = try await URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(firstVideo.id)/maxresdefault.jpg")!)
-        
-        guard let response = thumbnailResponse as? HTTPURLResponse, response.statusCode == 200 else {
-            return SingleVideoWidgetEntry(date: .now, status: .network, video: nil, avatarData: Data(), thumbnailData: Data())
-        }
+        let (thumbnailData, _) = try await URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(firstVideo.id)/maxresdefault.jpg")!)
         
         // MARK: - Resize image to 120x120
         // let newSize = CGSize(width: 120, height: 120)
