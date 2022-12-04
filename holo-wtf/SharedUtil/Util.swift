@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import OSLog
 import EventKit
 
 func getTimeIntervalFormatter() -> DateComponentsFormatter {
