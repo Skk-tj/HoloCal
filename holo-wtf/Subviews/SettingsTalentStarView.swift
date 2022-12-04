@@ -16,9 +16,9 @@ struct SettingsTalentStarView: View {
             let isFavourited: Bool = favourited.contains(where: {$0 == talent.id})
             
             VStack(alignment: .leading) {
-                Text("\(talent.localizedName)")
+                Text(talent.localizedName)
                     .font(.body)
-                Text("\(talent.altLocalizedName)")
+                Text(talent.altLocalizedName)
                     .font(.caption)
                     .foregroundColor(.secondary)
             }

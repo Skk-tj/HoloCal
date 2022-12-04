@@ -22,8 +22,8 @@ struct ManageGenerationOrderView: View {
                 case .hololive:
                     ForEach(hololiveGenerationListOrder, id: \.self) { generation in
                         VStack(alignment: .leading) {
-                            Text("\(generation.getLocalizedName())")
-                            Text("\(generation.getAltLocalizedName())")
+                            Text(generation.getLocalizedName())
+                            Text(generation.getAltLocalizedName())
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                         }
@@ -32,8 +32,8 @@ struct ManageGenerationOrderView: View {
                 case .nijisanji:
                     ForEach(nijisanjiGenerationListOrder, id: \.self) { generation in
                         VStack(alignment: .leading) {
-                            Text("\(generation.getLocalizedName())")
-                            Text("\(generation.getAltLocalizedName())")
+                            Text(generation.getLocalizedName())
+                            Text(generation.getAltLocalizedName())
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                         }

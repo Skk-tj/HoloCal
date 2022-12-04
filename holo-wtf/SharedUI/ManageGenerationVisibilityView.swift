@@ -17,26 +17,37 @@ struct ManageGenerationVisibilityView: View {
             ForEach(AgencyEnum.allCases, id: \.self) { agency in
                 Section(content: {
                     ForEach(agencyEnumToGenerations[agency]!, id: \.self) { generation in
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text("\(generation.getLocalizedName())")
-                                Text("\(generation.getAltLocalizedName())")
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
-                            }
-                            Spacer()
-                            
-                            Button(action: {
-                                if !generationSelected.contains(generation) {
-                                    generationSelected.insert(generation)
-                                } else {
-                                    generationSelected.remove(generation)
+                        DisclosureGroup(content: {
+                            ForEach(talentsByGeneration[generation]!.members) { talent in
+                                VStack(alignment: .leading) {
+                                    Text(talentEnumToTalent[talent]!.localizedName)
+                                    Text(talentEnumToTalent[talent]!.altLocalizedName)
+                                        .font(.caption)
+                                        .foregroundColor(.secondary)
                                 }
-                            }) {
-                                Label("Show", systemImage: generationSelected.contains(generation) ? "star.fill" : "star")
-                                    .labelStyle(.iconOnly)
                             }
-                        }
+                        }, label: {
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text(generation.getLocalizedName())
+                                    Text(generation.getAltLocalizedName())
+                                        .font(.caption)
+                                        .foregroundColor(.secondary)
+                                }
+                                Spacer()
+                                
+                                Button(action: {
+                                    if !generationSelected.contains(generation) {
+                                        generationSelected.insert(generation)
+                                    } else {
+                                        generationSelected.remove(generation)
+                                    }
+                                }) {
+                                    Label("Show", systemImage: generationSelected.contains(generation) ? "star.fill" : "star")
+                                        .labelStyle(.iconOnly)
+                                }
+                            }
+                        })
                     }
                 }, header: {
                     Text(agencyEnumToAgency[agency]!.localizedName)

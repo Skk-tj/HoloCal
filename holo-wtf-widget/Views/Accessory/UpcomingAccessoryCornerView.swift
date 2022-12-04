@@ -22,9 +22,11 @@ struct UpcomingAccessoryCornerView: View {
     }
 }
 
-@available(watchOS 9.0, *)
 struct UpcomingAccessoryCornerView_Previews: PreviewProvider {
     static var previews: some View {
         UpcomingAccessoryCornerView(upcoming: LiveVideo.previewLive)
+#if os(watchOS)
+            .previewContext(WidgetPreviewContext(family: .accessoryCorner))
+#endif
     }
 }
