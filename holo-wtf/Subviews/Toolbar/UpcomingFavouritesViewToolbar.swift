@@ -25,7 +25,6 @@ struct UpcomingFavouritesViewToolbar: View {
                 if UIDevice.current.userInterfaceIdiom == .phone {
                     Button {
                         isShowingCompact.toggle()
-                        UserDefaults.standard.set(isShowingCompact, forKey: UserDefaultKeys.isShowingCompactInUpcomingFavouritesView)
                     } label: {
                         Label(isShowingCompact ? "LIVE_VIEW_TOOLBAR_SHOW_CARD" : "LIVE_VIEW_TOOLBAR_SHOW_COMPACT", systemImage: isShowingCompact ? "rectangle.grid.1x2" : "list.bullet")
                     }

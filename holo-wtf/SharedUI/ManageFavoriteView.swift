@@ -11,7 +11,7 @@ struct ManageFavoriteView: View {
     let agency: AgencyEnum
     
     @State var showResetAlert: Bool = false
-    @AppStorage(UserDefaultKeys.favouritedChannel) var favourited = Favourited()
+    @AppStorage(UserDefaultKeys.favouritedChannel, store: UserDefaults(suiteName: "group.io.skk-tj.holo-wtf.ios")) var favourited = Favourited()
     
     var body: some View {
         List {

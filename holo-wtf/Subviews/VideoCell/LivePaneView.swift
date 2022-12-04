@@ -12,7 +12,7 @@ struct LivePaneView: View {
     
     @State var isShowingCollabSheet: Bool = false
     
-    @AppStorage(UserDefaultKeys.favouritedChannel) var favourited = Favourited()
+    @AppStorage(UserDefaultKeys.favouritedChannel, store: UserDefaults(suiteName: "group.io.skk-tj.holo-wtf.ios")) var favourited = Favourited()
     @State var liveIconOpcality: Double = 0
     
     var body: some View {

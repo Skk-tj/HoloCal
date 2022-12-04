@@ -105,6 +105,74 @@ func getVideoURLForWidget(agency: IntentAgency, videoType: VideoType) -> String 
         case .upcoming:
             return allWidgetUpcomingURL
         }
+    case .favourites:
+        switch videoType {
+        case .live:
+            return allLiveURL
+        case .upcoming:
+            return allWidgetUpcomingURL
+        }
+    }
+}
+
+func getVideosForWidget(agency: IntentAgency, videoType: VideoType) async throws -> [LiveVideo] {
+    switch agency {
+    case .hololive:
+        switch videoType {
+        case .live:
+            return try await getVideos(from: hololiveLiveURL)
+        case .upcoming:
+            return try await getVideos(from: hololiveWidgetUpcomingURL)
+        }
+    case .nijisanji:
+        switch videoType {
+        case .live:
+            return try await getVideos(from: nijisanjiLiveURL)
+        case .upcoming:
+            return try await getVideos(from: nijisanjiWidgetUpcomingURL)
+        }
+    case .unknown:
+        switch videoType {
+        case .live:
+            return try await getVideos(from: allLiveURL)
+        case .upcoming:
+            return try await getVideos(from: allWidgetUpcomingURL)
+        }
+    case .favourites:
+        switch videoType {
+        case .live:
+            let favourites = getFavouritesFromUserDefaults(groupName: "group.io.skk-tj.holo-wtf.ios")
+            
+            var getResult: [LiveVideo] = []
+            
+            async let hololiveLive = getVideos(from: hololiveLiveURL)
+            async let nijisanjiLive = getVideos(from: nijisanjiLiveURL)
+            
+            getResult.append(contentsOf: (try? await hololiveLive) ?? [])
+            getResult.append(contentsOf: (try? await nijisanjiLive) ?? [])
+            
+            getResult = getResult.filter {
+                favourites.contains($0.channel.id)
+            }
+            
+            return getResult
+        case .upcoming:
+            let favourites = getFavouritesFromUserDefaults(groupName: "group.io.skk-tj.holo-wtf.ios")
+            
+            var getResult: [LiveVideo] = []
+            
+            async let hololiveLive = getVideos(from: hololiveWidgetUpcomingURL)
+            async let nijisanjiLive = getVideos(from: nijisanjiWidgetUpcomingURL)
+            
+            getResult.append(contentsOf: (try? await hololiveLive) ?? [])
+            getResult.append(contentsOf: (try? await nijisanjiLive) ?? [])
+            
+            getResult = getResult.filter {
+                favourites.contains($0.channel.id)
+            }
+            
+            return getResult
+        }
     }
 }
 
@@ -118,7 +186,7 @@ extension UIImage {
 }
 
 func getAndFilterAndSortVideosCommon(for agency: IntentAgency, videoType: VideoType, sortBy: IntentSortBy, filterBy filterAlgorithm: (LiveVideo) -> Bool) async throws -> [LiveVideo] {
-    var lives: [LiveVideo] = try await getVideos(from: getVideoURLForWidget(agency: agency, videoType: videoType))
+    var lives: [LiveVideo] = try await getVideosForWidget(agency: agency, videoType: videoType)
     
     lives = lives.filter(filterAlgorithm)
     

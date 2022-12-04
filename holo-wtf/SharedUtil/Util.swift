@@ -49,14 +49,26 @@ func getUpcomingStreamLookAheadHoursFromUserDefaults() -> Int {
     return defaults.integer(forKey: UserDefaultKeys.upcomingLookAhead) == 0 ? 48 : defaults.integer(forKey: UserDefaultKeys.upcomingLookAhead)
 }
 
-func getFavouritesFromUserDefaults() -> [String] {
-    let defaults = UserDefaults.standard
-    
-    let rawString = defaults.string(forKey: UserDefaultKeys.favouritedChannel) ?? ""
-    
-    let decoded = try? JSONDecoder().decode([String].self, from: rawString.data(using: .utf8)!)
-    
-    return decoded ?? []
+func getFavouritesFromUserDefaults(groupName: String? = nil) -> [String] {
+    if let groupName {
+        if let defaults = UserDefaults(suiteName: groupName) {
+            let rawString = defaults.string(forKey: UserDefaultKeys.favouritedChannel) ?? ""
+            
+            let decoded = try? JSONDecoder().decode([String].self, from: rawString.data(using: .utf8)!)
+            
+            return decoded ?? []
+        } else {
+            return []
+        }
+    } else {
+        let defaults = UserDefaults.standard
+        
+        let rawString = defaults.string(forKey: UserDefaultKeys.favouritedChannel) ?? ""
+        
+        let decoded = try? JSONDecoder().decode([String].self, from: rawString.data(using: .utf8)!)
+        
+        return decoded ?? []
+    }
 }
 
 func getLiveVideoJSONDecoder() -> JSONDecoder {

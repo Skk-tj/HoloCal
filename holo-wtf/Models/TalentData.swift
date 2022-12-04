@@ -612,8 +612,8 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .hanabatake: Talent(id: TalentEnum.hanabatake.rawValue, names: [.en: "Hanabatake Chaika", .ja: "花畑チャイカ"], inGeneration: Generation.seeds1stGen),
     .yashiro: Talent(id: TalentEnum.yashiro.rawValue, names: [.en: "Yashiro Kizuku", .ja: "社築"], inGeneration: Generation.seeds1stGen),
     .azuchi: Talent(id: TalentEnum.azuchi.rawValue, names: [.en: "Azuchi Momo", .ja: "安土桃"], inGeneration: Generation.seeds1stGen),
-    .suzuki: Talent(id: TalentEnum.suzuki.rawValue, names: [.en: "Suzuki Masaru", .ja: "卯月コウ"], inGeneration: Generation.seeds1stGen),
-    .uzuki: Talent(id: TalentEnum.uzuki.rawValue, names: [.en: "Uzuki Kou", .ja: "鈴木勝"], inGeneration: Generation.seeds1stGen),
+    .suzuki: Talent(id: TalentEnum.suzuki.rawValue, names: [.en: "Suzuki Masaru", .ja: "鈴木勝"], inGeneration: Generation.seeds1stGen),
+    .uzuki: Talent(id: TalentEnum.uzuki.rawValue, names: [.en: "Uzuki Kou", .ja: "卯月コウ"], inGeneration: Generation.seeds1stGen),
     .ryushen: Talent(id: TalentEnum.ryushen.rawValue, names: [.en: "Ryushen", .ja: "緑仙"], inGeneration: Generation.seeds1stGen),
     .ryushenGaming: Talent(id: TalentEnum.ryushenGaming.rawValue, names: [.en: "Ryushen Gaming", .ja: "緑仙のゲームちゃんねる"], inGeneration: Generation.seeds1stGen),
 

@@ -45,6 +45,16 @@
 					<key>INEnumValueName</key>
 					<string>nijisanji</string>
 				</dict>
+				<dict>
+					<key>INEnumValueDisplayName</key>
+					<string>Favourites</string>
+					<key>INEnumValueDisplayNameID</key>
+					<string>DYXTCR</string>
+					<key>INEnumValueIndex</key>
+					<integer>3</integer>
+					<key>INEnumValueName</key>
+					<string>favourites</string>
+				</dict>
 			</array>
 		</dict>
 		<dict>

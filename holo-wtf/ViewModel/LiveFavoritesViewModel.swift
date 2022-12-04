@@ -10,7 +10,7 @@ import Foundation
 class LiveFavoritesViewModel: VideoViewModel, VideoGettable {
     @MainActor
     func getVideoForUI() async {
-        let favourites = getFavouritesFromUserDefaults()
+        let favourites = getFavouritesFromUserDefaults(groupName: "group.io.skk-tj.holo-wtf.ios")
         self.dataStatus = .working
         
         do {

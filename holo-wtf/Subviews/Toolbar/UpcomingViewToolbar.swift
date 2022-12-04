@@ -29,7 +29,6 @@ struct UpcomingViewToolbar: View {
                     Button {
                         isShowingCompact.toggle()
                         currentPresentationMode = .normal
-                        UserDefaults.standard.set(isShowingCompact, forKey: UserDefaultKeys.isShowingCompactInUpcomingView)
                     } label: {
                         Label(isShowingCompact ? "LIVE_VIEW_TOOLBAR_SHOW_CARD" : "LIVE_VIEW_TOOLBAR_SHOW_COMPACT", systemImage: isShowingCompact ? "rectangle.grid.1x2" : "list.bullet")
                     }
