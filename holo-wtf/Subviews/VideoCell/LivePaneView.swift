@@ -12,7 +12,7 @@ struct LivePaneView: View {
     
     @State var isShowingCollabSheet: Bool = false
     
-    @AppStorage("favouritedChannel") var favourited = Favourited()
+    @AppStorage(UserDefaultKeys.favouritedChannel) var favourited = Favourited()
     @State var liveIconOpcality: Double = 0
     
     var body: some View {
@@ -56,8 +56,7 @@ struct LivePaneView: View {
                 .padding(.horizontal)
             }
             .padding(.bottom)
-            .background(.thickMaterial)
-            .clipShape(RoundedRectangle(cornerRadius: 10))
+            
             
             // MARK: - Live icon and tags
             HStack(alignment: .top) {
@@ -85,6 +84,8 @@ struct LivePaneView: View {
                 Spacer()
             }
         }
+        .background(.thickMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
 

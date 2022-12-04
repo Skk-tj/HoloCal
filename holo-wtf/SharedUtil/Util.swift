@@ -53,7 +53,7 @@ func getUpcomingStreamLookAheadHoursFromUserDefaults() -> Int {
 func getFavouritesFromUserDefaults() -> [String] {
     let defaults = UserDefaults.standard
     
-    let rawString = defaults.string(forKey: "favouritedChannel") ?? ""
+    let rawString = defaults.string(forKey: UserDefaultKeys.favouritedChannel) ?? ""
     
     let decoded = try? JSONDecoder().decode([String].self, from: rawString.data(using: .utf8)!)
     
@@ -87,6 +87,7 @@ func getCalendarEventFromVideo(eventStore: EKEventStore, video: LiveVideo) -> EK
 
 enum UserDefaultKeys {
     static let upcomingLookAhead = "upcomingLookAhead"
+    static let favouritedChannel = "favouritedChannel"
     static let isShowingAbsoluteTimeInLiveView = "isShowingAbsoluteTimeInLiveView"
     static let isShowingAbsoluteTimeInUpcomingView = "isShowingAbsoluteTimeInUpcomingView"
     static let isShowingAbsoluteTimeInLiveFavouritesView = "isShowingAbsoluteTimeInLiveFavouritesView"

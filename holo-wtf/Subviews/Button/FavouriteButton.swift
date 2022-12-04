@@ -11,7 +11,7 @@ struct FavouriteButton<Content: View>: View {
     let video: LiveVideo
     @ViewBuilder let content: () -> Content
     
-    @AppStorage("favouritedChannel") var favourited = Favourited()
+    @AppStorage(UserDefaultKeys.favouritedChannel) var favourited = Favourited()
     
     var body: some View {
         let isFavourited = favourited.contains(where: {$0 == video.channel.id})

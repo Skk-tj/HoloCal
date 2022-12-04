@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UpcomingCellView: View {
     let upcoming: LiveVideo
-    @AppStorage("favouritedChannel") var favourited = Favourited()
+    @AppStorage(UserDefaultKeys.favouritedChannel) var favourited = Favourited()
     
     var body: some View {
         HStack {

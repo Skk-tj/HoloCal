@@ -10,7 +10,7 @@ import SwiftUI
 struct VideoContextMenu: View {
     let video: LiveVideo
     
-    @AppStorage("favouritedChannel") var favourited = Favourited()
+    @AppStorage(UserDefaultKeys.favouritedChannel) var favourited = Favourited()
     
     var body: some View {
         // MARK: - Twitter Button

@@ -16,7 +16,7 @@ struct PaneViewButtonRowView: View {
     @State var isShowingSheet: Bool = false
     
     let video: LiveVideo
-    @AppStorage("favouritedChannel") var favourited = Favourited()
+    @AppStorage(UserDefaultKeys.favouritedChannel) var favourited = Favourited()
     
     var body: some View {
         ControlGroup {

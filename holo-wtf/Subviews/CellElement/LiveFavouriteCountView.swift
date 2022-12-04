@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LiveFavouriteCountView: View {
-    @AppStorage("favouritedChannel") var favourited = Favourited()
+    @AppStorage(UserDefaultKeys.favouritedChannel) var favourited = Favourited()
     
     @EnvironmentObject var live: VideoViewModel
     

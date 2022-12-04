@@ -12,7 +12,7 @@ struct UpcomingPaneView: View {
     
     @State var isShowingCollabSheet: Bool = false
     
-    @AppStorage("favouritedChannel") var favourited = Favourited()
+    @AppStorage(UserDefaultKeys.favouritedChannel) var favourited = Favourited()
     
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -57,24 +57,16 @@ struct UpcomingPaneView: View {
                 .padding(.horizontal)
             }
             .padding(.bottom)
-            .background(.thickMaterial)
-            .clipShape(RoundedRectangle(cornerRadius: 10))
             
             HStack {
                 TopicTagView(topicId: upcoming.topicId)
                     .padding()
                 
                 Spacer()
-                
-                if favourited.contains(where: {$0 == upcoming.channel.id}) {
-                    Image(systemName: "star.fill")
-                        .foregroundColor(.yellow) // iOS needs it cause plain list style does not show tint
-                        .tint(.yellow)
-                        .padding()
-                        .shadow(radius: 5)
-                }
             }
         }
+        .background(.thickMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
 

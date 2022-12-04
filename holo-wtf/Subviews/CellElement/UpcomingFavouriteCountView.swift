@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UpcomingFavouriteCountView: View {
     @AppStorage(UserDefaultKeys.upcomingLookAhead) var upcomingLookAhead = 48
-    @AppStorage("favouritedChannel") var favourited = Favourited()
+    @AppStorage(UserDefaultKeys.favouritedChannel) var favourited = Favourited()
     
     @EnvironmentObject var upcoming: VideoViewModel
     

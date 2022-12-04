@@ -11,7 +11,7 @@ struct SwipableLinkedCellView<Content: View>: View {
     let video: LiveVideo
     let content: () -> Content
     
-    @AppStorage("favouritedChannel") var favourited = Favourited()
+    @AppStorage(UserDefaultKeys.favouritedChannel) var favourited = Favourited()
     
     init(video: LiveVideo, @ViewBuilder content: @escaping () -> Content) {
         self.video = video
