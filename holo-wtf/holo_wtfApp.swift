@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-enum Views {
-    case live
-    case upcoming
-    case settings
-}
-
 @main
 struct holo_wtfApp: App {
     @AppStorage(UserDefaultKeys.dstDays) var dstDays: Int = 5

@@ -7,6 +7,12 @@
 
 import SwiftUI
 
+enum Views: Hashable {
+    case live(iPadAgencies)
+    case upcoming(iPadAgencies)
+    case settings
+}
+
 enum iPadAgencies {
     case hololive
     case nijisanji
@@ -36,19 +42,44 @@ struct iPadAgencySelectionView: View {
 }
 
 struct iPadSplitView: View {
-    @State var viewSelection: Views? = Views.live
-    @State var agencySelection: iPadAgencies? = .hololive
+    @State var viewSelection: Views? = Views.live(.hololive)
     @State var columnVis: NavigationSplitViewVisibility = .all
     
     var body: some View {
         NavigationSplitView(columnVisibility: $columnVis) {
             List(selection: $viewSelection) {
-                NavigationLink(value: Views.live) {
+                Section(content: {
+                    NavigationLink(value: Views.live(.hololive)) {
+                        SingleAgencyItemView(agency: .hololive)
+                    }
+                    
+                    NavigationLink(value: Views.live(.nijisanji)) {
+                        SingleAgencyItemView(agency: .nijisanji)
+                    }
+                    
+                    NavigationLink(value: Views.live(.favourites)) {
+                        Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
+                    }
+                }, header: {
                     Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
-                }
-                NavigationLink(value: Views.upcoming) {
+                })
+                
+                Section(content: {
+                    NavigationLink(value: Views.upcoming(.hololive)) {
+                        SingleAgencyItemView(agency: .hololive)
+                    }
+                    
+                    NavigationLink(value: Views.upcoming(.nijisanji)) {
+                        SingleAgencyItemView(agency: .nijisanji)
+                    }
+                    
+                    NavigationLink(value: Views.upcoming(.favourites)) {
+                        Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
+                    }
+                }, header: {
                     Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
-                }
+                })
+                
                 NavigationLink(value: Views.settings) {
                     Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
                 }
@@ -56,47 +87,30 @@ struct iPadSplitView: View {
             .listStyle(.sidebar)
             .navigationTitle("HoloCal")
             .navigationSplitViewColumnWidth(ideal: 230)
-        } content: {
-            if let viewSelection {
-                switch viewSelection {
-                case .live, .upcoming:
-                    iPadAgencySelectionView(agencySelection: $agencySelection)
-                        .navigationSplitViewColumnWidth(min: 230, ideal: 280, max: 300)
-                case .settings:
-                    NavigationStack {
-                        SettingsiPadView()
-                    }
-                    .navigationSplitViewColumnWidth(min: 230, ideal: 280, max: 300)
-                }
-            }
         } detail: {
             if let viewSelection {
                 switch viewSelection {
-                case .live:
-                    if let agencySelection {
-                        switch agencySelection {
-                        case .hololive:
-                            LiveiPadView(for: .hololive)
-                        case .nijisanji:
-                            LiveiPadView(for: .nijisanji)
-                        case .favourites:
-                            LiveFavouritesiPadView()
-                        }
+                case .live(let agencySelection):
+                    switch agencySelection {
+                    case .hololive:
+                        LiveiPadView(for: .hololive)
+                    case .nijisanji:
+                        LiveiPadView(for: .nijisanji)
+                    case .favourites:
+                        LiveFavouritesiPadView()
                     }
-                case .upcoming:
-                    if let agencySelection {
-                        switch agencySelection {
-                        case .hololive:
-                            UpcomingiPadView(for: .hololive)
-                        case .nijisanji:
-                            UpcomingiPadView(for: .nijisanji)
-                        case .favourites:
-                            UpcomingFavouritesiPadView()
-                        }
+                case .upcoming(let agencySelection):
+                    switch agencySelection {
+                    case .hololive:
+                        UpcomingiPadView(for: .hololive)
+                    case .nijisanji:
+                        UpcomingiPadView(for: .nijisanji)
+                    case .favourites:
+                        UpcomingFavouritesiPadView()
                     }
                 case .settings:
                     NavigationStack {
-                        EmptyView()
+                        SettingsiPadView()
                     }
                 }
             }
