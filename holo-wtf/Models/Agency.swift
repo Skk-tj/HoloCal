@@ -122,12 +122,19 @@ let agencyEnumToGenerations: [AgencyEnum: [Generation]] = [
         .id4thWave,
         .id5thWave,
         .id6thWave,
+        .kr1stWave,
+        .kr2ndWave,
+        .kr3rdWave,
+        .kr4thWave,
+        .kr5thWave,
+        .kr6thWave,
         .en1stWave,
         .en2ndWave,
         .en3rdWave,
         .en4thWave,
         .en5thWave,
         .en6thWave,
+        .en7thWave,
         .nijisanjiOfficial
     ]
 ]

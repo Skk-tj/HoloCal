@@ -70,12 +70,19 @@ enum Generation: Int, CaseIterable, Codable, Hashable {
     case id4thWave
     case id5thWave
     case id6thWave
+    case kr1stWave
+    case kr2ndWave
+    case kr3rdWave
+    case kr4thWave
+    case kr5thWave
+    case kr6thWave
     case en1stWave
     case en2ndWave
     case en3rdWave
     case en4thWave
     case en5thWave
     case en6thWave
+    case en7thWave
     case nijisanjiOfficial
     
     // For all the channels that we may not recognize
@@ -403,6 +410,30 @@ enum TalentEnum: String, Codable {
     case xia = "UCoJ0Ct-jdas4cLPpSp06gZg" // Xia Ekavira
     case mika = "UCahgMxSIQ2zIRrPKhM6Mjvg" // Mika Melatika
     
+    // MARK: - KR First Wave
+    case minSuha = "UCUtKkGKef8BYMs3h-3zQm9A"
+    case gaon = "UCpRXCTyNNa-MnjhK6gisnRw"
+    
+    // MARK: - KR Second Wave
+    case soNagi = "UC5ek2GWKvUKFgnKSHuuCFrw"
+    
+    // MARK: - KR Third Wave
+    case akiraRay = "UC7hffDQLKIEG-_zoAQkMIvg"
+    case leeRoha = "UCClwIqTUn5LDpFucHyaAhHg"
+    
+    // MARK: - KR Fourth Wave
+    case yangNari = "UCCHH0nWYXFZmtDS_4tvMxHQ"
+    case ryuHari = "UClS6k3w1sPwlVFqK3-yID5A"
+    case ohJiyu = "UCnzZmBOSrQf2wDBbnsDajVw"
+    
+    // MARK: - KR Fifth Wave
+    case seffyna = "UCeGendL8CO5RkffB6IFwHow"
+    case banHada = "UCLjx3lqIkYkPCBJop8czJ2A"
+    
+    // MARK: - KR Sixth Wave
+    case haYun = "UCrhhJPNsOqzNIkUfTABoSpg"
+    case naSera = "UCX88Pe54pxbJDSGIyGrzNdg"
+    
     // MARK: - EN First Wave: LazuLight
     case pomu = "UCP4nMSTdwU1KqYWu3UH5DHQ" // Pomu Rainpuff
     case elira = "UCIeSUTOTkF9Hs7q3SGcO-Ow" // Elira Pendora
@@ -440,6 +471,14 @@ enum TalentEnum: String, Codable {
     case aia = "UCN68LoM3khS4gdBMiWJO8WA" // Aia Amare
     case ren = "UCKu59gTZ_rdEmerdx5rV4Yg" // Ren Zotto
     case scarle = "UCFgXWZOUZA2oYHNr6qDmsTQ" // Scarle Yonaguni
+    
+    // MARK: - EN Seventh Wave: XSOLEIL
+    case zaion = "UCIairB9UMDvqSKfMdv1jmjg"
+    case doppio = "UCy91xBlY_Brh3bnHxKtjrrg"
+    case meloco = "UChKXd7oqD18qiIYBoRIHTlw"
+    case hex = "UCz_ZRw6ak4Foy8zZy0kEprQ"
+    case kotoka = "UCggO2c1unS-oLwTLT0ICywg"
+    case ver = "UCO8WcDsF5znr-qsXlzZNpqg"
     
     // MARK: - Official/Other Channels
     case nijisanji = "UCX7YkU9nEeaoZbkVLVajcMg" // Nijisanji
@@ -781,6 +820,30 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .hyona: Talent(id: TalentEnum.hyona.rawValue, names: [.en: "Hyona Elatiora", .ja: "ヒョナ エラティオラ"], inGeneration: Generation.id6thWave),
     .xia: Talent(id: TalentEnum.xia.rawValue, names: [.en: "Xia Ekavira", .ja: "シア エカフィラ"], inGeneration: Generation.id6thWave),
     .mika: Talent(id: TalentEnum.mika.rawValue, names: [.en: "Mika Melatika", .ja: "ミカ メラティカ"], inGeneration: Generation.id6thWave),
+    
+    // MARK: - KR First Wave
+    .minSuha: Talent(id: TalentEnum.minSuha.rawValue, names: [.en: "Min Suha", .ja: "ミン・スゥーハ"], inGeneration: Generation.kr1stWave),
+    .gaon: Talent(id: TalentEnum.gaon.rawValue, names: [.en: "Gaon", .ja: "ガオン"], inGeneration: Generation.kr1stWave),
+    
+    // MARK: - KR Second Wave
+    .soNagi: Talent(id: TalentEnum.soNagi.rawValue, names: [.en: "So Nagi", .ja: "ソ・ナギ"], inGeneration: Generation.kr2ndWave),
+    
+    // MARK: - KR Third Wave
+    .akiraRay: Talent(id: TalentEnum.akiraRay.rawValue, names: [.en: "Akira Ray", .ja: "明楽レイ"], inGeneration: Generation.kr3rdWave),
+    .leeRoha: Talent(id: TalentEnum.leeRoha.rawValue, names: [.en: "Lee Roha", .ja: "イ・ロハ"], inGeneration: Generation.kr3rdWave),
+    
+    // MARK: - KR Fourth Wave
+    .yangNari: Talent(id: TalentEnum.yangNari.rawValue, names: [.en: "Yang Nari", .ja: "ヤン・ナリ"], inGeneration: Generation.kr4thWave),
+    .ryuHari: Talent(id: TalentEnum.ryuHari.rawValue, names: [.en: "Ryu Hari", .ja: "リュ・ハリ"], inGeneration: Generation.kr4thWave),
+    .ohJiyu: Talent(id: TalentEnum.ohJiyu.rawValue, names: [.en: "Oh Jiyu", .ja: "オ・ジユ"], inGeneration: Generation.kr4thWave),
+    
+    // MARK: - KR Fifth Wave
+    .seffyna: Talent(id: TalentEnum.seffyna.rawValue, names: [.en: "Seffyna", .ja: "セフィナ"], inGeneration: Generation.kr5thWave),
+    .banHada: Talent(id: TalentEnum.banHada.rawValue, names: [.en: "Ban Hada", .ja: "バン・ハダ"], inGeneration: Generation.kr5thWave),
+    
+    // MARK: - KR Sixth Wave
+    .haYun: Talent(id: TalentEnum.haYun.rawValue, names: [.en: "Ha Yun", .ja: "ハ・ユン"], inGeneration: Generation.kr6thWave),
+    .naSera: Talent(id: TalentEnum.naSera.rawValue, names: [.en: "Na Sera", .ja: "ナ・セラ"], inGeneration: Generation.kr6thWave),
 
     // MARK: - EN First Wave: LazuLight
     .pomu: Talent(id: TalentEnum.pomu.rawValue, names: [.en: "Pomu Rainpuff", .ja: "ぽむ れいんぱふ"], inGeneration: Generation.en1stWave),
@@ -819,6 +882,14 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .aia: Talent(id: TalentEnum.aia.rawValue, names: [.en: "Aia Amare", .ja: "アイア アマレ"], inGeneration: Generation.en6thWave),
     .ren: Talent(id: TalentEnum.ren.rawValue, names: [.en: "Ren Zotto", .ja: "レン ゾット"], inGeneration: Generation.en6thWave),
     .scarle: Talent(id: TalentEnum.scarle.rawValue, names: [.en: "Scarle Yonaguni", .ja: "スカーレ ヨナグニ"], inGeneration: Generation.en6thWave),
+    
+    // MARK: - EN Seventh Wave: XSOLEIL
+    .zaion: Talent(id: TalentEnum.zaion.rawValue, names: [.en: "Zaion Lanza", .ja: "ランザー 罪恩"], inGeneration: Generation.en7thWave),
+    .doppio: Talent(id: TalentEnum.doppio.rawValue, names: [.en: "Doppio Dropscythe", .ja: "ドッピオ ドロップサイト"], inGeneration: Generation.en7thWave),
+    .meloco: Talent(id: TalentEnum.meloco.rawValue, names: [.en: "Meloco Kyoran", .ja: "狂蘭 メロコ"], inGeneration: Generation.en7thWave),
+    .hex: Talent(id: TalentEnum.hex.rawValue, names: [.en: "Hex Haywire", .ja: "ヘックス ヘイワイヤー"], inGeneration: Generation.en7thWave),
+    .kotoka: Talent(id: TalentEnum.kotoka.rawValue, names: [.en: "Kotoka Korahime", .ja: "虎姫 コトカ"], inGeneration: Generation.en7thWave),
+    .ver: Talent(id: TalentEnum.ver.rawValue, names: [.en: "Ver Vermillion", .ja: "ヴェール ヴァーミリオン"], inGeneration: Generation.en7thWave),
 
     // MARK: - Official/Other Channels
     .nijisanji: Talent(id: TalentEnum.nijisanji.rawValue, names: [.en: "Nijisanji", .ja: "にじさんじ"], inGeneration: Generation.nijisanjiOfficial),
@@ -894,12 +965,19 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .id4thWave: GenerationGroup(id: .id4thWave, names: [.en: "ID 4th Wave", .ja: "ID 4期生"], members: [.etna, .bonnivier, .siska]),
     .id5thWave: GenerationGroup(id: .id5thWave, names: [.en: "ID 5th Wave", .ja: "ID 5期生"], members: [.nagisa, .derem, .reza]),
     .id6thWave: GenerationGroup(id: .id6thWave, names: [.en: "ID 6th Wave", .ja: "ID 6期生"], members: [.hyona, .xia, .mika]),
+    .kr1stWave: GenerationGroup(id: .kr1stWave, names: [.en: "KR 1st Wave", .ja: "KR 1期生"], members: [.minSuha, .gaon]),
+    .kr2ndWave: GenerationGroup(id: .kr2ndWave, names: [.en: "KR 2nd Wave", .ja: "KR 2期生"], members: [.soNagi]),
+    .kr3rdWave: GenerationGroup(id: .kr3rdWave, names: [.en: "KR 3rd Wave", .ja: "KR 3期生"], members: [.akiraRay, .leeRoha]),
+    .kr4thWave: GenerationGroup(id: .kr4thWave, names: [.en: "KR 4th Wave", .ja: "KR 4期生"], members: [.yangNari, .ryuHari, .ohJiyu]),
+    .kr5thWave: GenerationGroup(id: .kr5thWave, names: [.en: "KR 5th Wave", .ja: "KR 5期生"], members: [.seffyna, .banHada]),
+    .kr6thWave: GenerationGroup(id: .kr6thWave, names: [.en: "KR 6th Wave", .ja: "KR 6期生"], members: [.haYun, .naSera]),
     .en1stWave: GenerationGroup(id: .en1stWave, names: [.en: "EN 1st Wave: LazuLight", .ja: "EN 第1弾「LazuLight」"], members: [.pomu, .elira, .finana]),
     .en2ndWave: GenerationGroup(id: .en2ndWave, names: [.en: "EN 2nd Wave: OBSYDIA", .ja: "EN 第2弾「OBSYDIA」"], members: [.rosemi, .petra, .selen]),
     .en3rdWave: GenerationGroup(id: .en3rdWave, names: [.en: "EN 3rd Wave: Ethyria", .ja: "EN 第3弾「Ethyria」"], members: [.nina, .millie, .enna, .reimu]),
     .en4thWave: GenerationGroup(id: .en4thWave, names: [.en: "EN 4th Wave: Luxiem", .ja: "EN 第4弾「Luxiem」"], members: [.luca, .shu, .ike, .mysta, .vox]),
     .en5thWave: GenerationGroup(id: .en5thWave, names: [.en: "EN 5th Wave: Noctyx", .ja: "EN 第5弾「Noctyx」"], members: [.sonny, .uki, .alban, .fulgur, .yugo]),
     .en6thWave: GenerationGroup(id: .en6thWave, names: [.en: "EN 6th Wave: ILUNA", .ja: "EN 第6弾「ILUNA」"], members: [.kyo, .maria, .aster, .aia, .ren, .scarle]),
+    .en7thWave: GenerationGroup(id: .en7thWave, names: [.en: "EN 7th Wave: XSOLEIL", .ja: "EN 第7弾「XSOLEIL」"], members: [.zaion, .doppio, .meloco ,.hex, .kotoka, .ver]),
     .nijisanjiOfficial: GenerationGroup(id: .nijisanjiOfficial, names: [.en: "Nijisanji Official Channels", .ja: "にじさんじ公式チャンネル"], members: [.nijisanji, .nijisanjiID, .nijisanjiEN, .virtual, .voltacation, .luxiem, .rofmao, .nornis, .chronoir]),
     
     .other: GenerationGroup(id: .other, names: [.en: "Other", .ja: "他"], members: [])
