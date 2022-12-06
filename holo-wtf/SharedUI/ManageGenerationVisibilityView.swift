@@ -19,23 +19,12 @@ struct ManageGenerationVisibilityView: View {
                     ForEach(agencyEnumToGenerations[agency]!, id: \.self) { generation in
                         DisclosureGroup(content: {
                             ForEach(talentsByGeneration[generation]!.members) { talent in
-                                VStack(alignment: .leading) {
-                                    Text(talentEnumToTalent[talent]!.localizedName)
-                                    Text(talentEnumToTalent[talent]!.altLocalizedName)
-                                        .font(.caption)
-                                        .foregroundColor(.secondary)
-                                }
+                                MultiLanguageNameView(entity: talentEnumToTalent[talent]!)
                             }
                         }, label: {
                             HStack {
-                                VStack(alignment: .leading) {
-                                    Text(generation.getLocalizedName())
-                                    Text(generation.getAltLocalizedName())
-                                        .font(.caption)
-                                        .foregroundColor(.secondary)
-                                }
+                                MultiLanguageNameView(entity: generation.getGeneration())
                                 Spacer()
-                                
                                 Button(action: {
                                     if !generationSelected.contains(generation) {
                                         generationSelected.insert(generation)
@@ -50,7 +39,7 @@ struct ManageGenerationVisibilityView: View {
                         })
                     }
                 }, header: {
-                    Text(agencyEnumToAgency[agency]!.localizedName)
+                    Text(agency.getAgency().localizedName)
                 })
             }
             

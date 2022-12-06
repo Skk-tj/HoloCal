@@ -88,6 +88,10 @@ enum Generation: Int, CaseIterable, Codable, Hashable {
     func getAltLocalizedName() -> String {
         return talentsByGeneration[self]!.altLocalizedName
     }
+    
+    func getGeneration() -> GenerationGroup {
+        return talentsByGeneration[self]!
+    }
 }
 
 enum TalentEnum: String, Codable {

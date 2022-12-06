@@ -45,9 +45,6 @@ struct UpcomingCellView: View {
                 }
             }
         }
-        .contextMenu {
-            VideoContextMenu(video: upcoming)
-        }
     }
 }
 

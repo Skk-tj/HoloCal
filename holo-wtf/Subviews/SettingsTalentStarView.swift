@@ -12,16 +12,10 @@ struct SettingsTalentStarView: View {
     @Binding var favourited: [String]
     
     var body: some View {
+        let isFavourited: Bool = favourited.contains(where: {$0 == talent.id})
+        
         HStack {
-            let isFavourited: Bool = favourited.contains(where: {$0 == talent.id})
-            
-            VStack(alignment: .leading) {
-                Text(talent.localizedName)
-                    .font(.body)
-                Text(talent.altLocalizedName)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-            }
+            MultiLanguageNameView(entity: talent)
             Spacer()
             Button(action: {
                 if !isFavourited {

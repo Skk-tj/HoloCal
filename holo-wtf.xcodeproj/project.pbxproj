@@ -282,6 +282,10 @@
 		F0F0EAC0292B55EA0091DBD7 /* LiveFavouriteCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F0EABE292B55E60091DBD7 /* LiveFavouriteCountView.swift */; };
 		F0F0EAC2292B56D20091DBD7 /* UpcomingFavouriteCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F0EAC1292B56D20091DBD7 /* UpcomingFavouriteCountView.swift */; };
 		F0F0EAC3292B56D20091DBD7 /* UpcomingFavouriteCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F0EAC1292B56D20091DBD7 /* UpcomingFavouriteCountView.swift */; };
+		F0F40973293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F40972293D6F46001C4F48 /* MultiLanguageNameView.swift */; };
+		F0F40974293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F40972293D6F46001C4F48 /* MultiLanguageNameView.swift */; };
+		F0F40975293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F40972293D6F46001C4F48 /* MultiLanguageNameView.swift */; };
+		F0F40976293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F40972293D6F46001C4F48 /* MultiLanguageNameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -511,6 +515,7 @@
 		F0F0EAC1292B56D20091DBD7 /* UpcomingFavouriteCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingFavouriteCountView.swift; sourceTree = "<group>"; };
 		F0F40970293C90CA001C4F48 /* holo-wtf.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "holo-wtf.entitlements"; sourceTree = "<group>"; };
 		F0F40971293C91AC001C4F48 /* holo-wtf-widgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "holo-wtf-widgetExtension.entitlements"; sourceTree = "<group>"; };
+		F0F40972293D6F46001C4F48 /* MultiLanguageNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLanguageNameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -690,6 +695,7 @@
 				F004E8CA285D058000ABDFED /* SingleSongView.swift */,
 				F0CA6EA728D794320028CB11 /* LiveCollabListStackView.swift */,
 				F07D891828834FBB008D3057 /* DSTReminderView.swift */,
+				F0F40972293D6F46001C4F48 /* MultiLanguageNameView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -1217,6 +1223,7 @@
 				F04D148C28DD66AD00750B71 /* UpcomingAccessoryCornerView.swift in Sources */,
 				F0E06D182932A4FA00BF6812 /* Modes.swift in Sources */,
 				F06D28F828D83ABB007D06FB /* VideoFetchService.swift in Sources */,
+				F0F40976293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */,
 				F01241A42935E2C7007C8FE9 /* BlockLiveTimeView.swift in Sources */,
 				F09D53C029337378003C4F80 /* Intents.intentdefinition in Sources */,
 				F01241AA2935E344007C8FE9 /* BlockMemberOnlyView.swift in Sources */,
@@ -1271,6 +1278,7 @@
 				F0B2AF0A28C13D0F00635CAD /* UpcomingTimeView.swift in Sources */,
 				F0E219C3287AB47D0080697F /* LiveWidgetMediumView.swift in Sources */,
 				F047F0862851C74500B2E2B9 /* SmallLiveWidgetView.swift in Sources */,
+				F0F40974293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */,
 				F0CA6ECD28D7C2C30028CB11 /* SongsViewModel.swift in Sources */,
 				F0396E7928CFD60900A3EDCB /* LiveAccessoryRectangularWidgetView.swift in Sources */,
 				F0B2AF1228C2E28700635CAD /* MultipleUpcomingWidgetView.swift in Sources */,
@@ -1346,6 +1354,7 @@
 				F05E9EB927EB3C6100EF48DD /* LivePaneView.swift in Sources */,
 				F0F0EAB9292B48910091DBD7 /* UIListView.swift in Sources */,
 				F0F0EAC2292B56D20091DBD7 /* UpcomingFavouriteCountView.swift in Sources */,
+				F0F40973293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */,
 				F02211AB292F68DF009EC2CC /* BlockMemberOnlyView.swift in Sources */,
 				F008BBA42928DA4600034AF4 /* AgencySelectionView.swift in Sources */,
 				F0673C1227732CE7009C65C6 /* UpcomingCellView.swift in Sources */,
@@ -1430,6 +1439,7 @@
 				F025204D28EEAEE000976972 /* MultipleVideoWidgetEntry.swift in Sources */,
 				F0CA6ED728D7C4DB0028CB11 /* WatchLiveCellView.swift in Sources */,
 				F0E45D1A28F39AF90091474A /* Agency.swift in Sources */,
+				F0F40975293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */,
 				F0CA6ED228D7C49A0028CB11 /* LiveCountView.swift in Sources */,
 				F0CA6ECB28D7C2BE0028CB11 /* SongInStream.swift in Sources */,
 				F01241A92935E344007C8FE9 /* BlockMemberOnlyView.swift in Sources */,

@@ -11,7 +11,7 @@ struct SingleAgencyItemView: View {
     let agency: AgencyEnum
     
     var body: some View {
-        Label(agencyEnumToAgency[agency]!.localizedName, systemImage: agencyEnumToAgency[agency]!.icon)
+        Label(agency.getAgency().localizedName, systemImage: agency.getAgency().icon)
 //        Label(title: {
 //            VStack(alignment: .leading, content: {
 //                Text(agencyEnumToAgency[agency]!.localizedName)

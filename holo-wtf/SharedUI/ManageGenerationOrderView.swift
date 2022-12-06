@@ -21,22 +21,12 @@ struct ManageGenerationOrderView: View {
                 switch agency {
                 case .hololive:
                     ForEach(hololiveGenerationListOrder, id: \.self) { generation in
-                        VStack(alignment: .leading) {
-                            Text(generation.getLocalizedName())
-                            Text(generation.getAltLocalizedName())
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-                        }
+                        MultiLanguageNameView(entity: generation.getGeneration())
                     }
                     .onMove(perform: moveHololive)
                 case .nijisanji:
                     ForEach(nijisanjiGenerationListOrder, id: \.self) { generation in
-                        VStack(alignment: .leading) {
-                            Text(generation.getLocalizedName())
-                            Text(generation.getAltLocalizedName())
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-                        }
+                        MultiLanguageNameView(entity: generation.getGeneration())
                     }
                     .onMove(perform: moveNijisanji)
                 }

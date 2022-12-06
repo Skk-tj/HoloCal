@@ -20,7 +20,6 @@ struct UpcomingPaneView: View {
                 VideoThumbnailView(ytVideoKey: upcoming.id)
                 
                 VStack(alignment: .leading) {
-                    // Force the title to be two lines
                     if UIDevice.current.userInterfaceIdiom == .pad {
                         Text(upcoming.title)
                             .font(.headline)
@@ -34,6 +33,7 @@ struct UpcomingPaneView: View {
                             .multilineTextAlignment(.leading)
                     }
                     
+                    // MARK: - Channel information
                     PaneViewChannelInfoView(video: upcoming)
                     
                     // MARK: - Time and other information

@@ -33,7 +33,6 @@ struct LiveCellView: View {
                             .tint(.yellow)
                     }
                 }
-                
                 Divider()
                 HStack {
                     if live.isMengen {
