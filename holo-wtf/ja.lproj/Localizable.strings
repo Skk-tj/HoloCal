@@ -8,7 +8,7 @@
 // Root View
 
 "ROOT_VIEW_LIVE" = "ライブ配信中";
-"ROOT_VIEW_UPCOMING" = "ライブ配信の予定";
+"ROOT_VIEW_UPCOMING" = "今後の配信";
 "ROOT_VIEW_SETTINGS" = "設定";
 "ROOT_VIEW_FAVOURITES" = "お気に入り";
 
