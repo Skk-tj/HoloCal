@@ -10,13 +10,14 @@
 "ROOT_VIEW_LIVE" = "Live";
 "ROOT_VIEW_UPCOMING" = "Upcoming";
 "ROOT_VIEW_SETTINGS" = "ตั้งค่า";
+"ROOT_VIEW_FAVOURITES" = "My Favourites";
 
 // Settings
 
 "SETTINGS_TITLE" = "ตั้งค่า";
 
 "SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER" = "Upcoming Schedule";
-"SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT %lld" = "Show upcoming streams in %lld hours";
+"SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT %lld" = "Get upcoming streams for the next %lld hours";
 "WATCH_SETTINGS_UPCOMING_SCHEDULE_PICKER_TEXT %lld" = "%lld hours";
 
 "SETTINGS_STREAM_TIME_HEADER" = "Stream Time";
@@ -70,9 +71,33 @@
 "LIVE_CELL_VIEW_WAITING" = "Waiting...";
 "LIVE_CELL_VIEW_STARTED_AT %@" = "%@";
 
+// Block Live Time View
+
+"BLOCK_LIVE_TIME_VIEW_AGO" = "ago";
+"BLOCK_LIVE_TIME_VIEW_STARTED_AT" = "Started at";
+"BLOCK_LIVE_TIME_VIEW_WAITING" = "waiting...";
+"BLOCK_LIVE_TIME_VIEW_NA" = "N/A";
+
+// Block Upcoming Time View
+
+"BLOCK_UPCOMING_TIME_VIEW_STARTING_IN" = "Starting in";
+"BLOCK_UPCOMING_TIME_VIEW_STARTING_TIME_UNKNOWN" = "N/A";
+"BLOCK_UPCOMING_TIME_VIEW_STARTING_AT" = "Starting at";
+
+// Viewer Counter View
+
+"VIEWER_COUNTER_VIEW_WATCHING" = "watching";
+"VIEWER_COUNTER_VIEW_MEMBER_ONLY" = "member-only";
+"VIEWER_COUNTER_VIEW_MEMBER_NA" = "N/A";
+
+// Block Member Only View
+
+"BLOCK_MEMBER_ONLY_MEMBER" = "Member";
+
 // Upcoming Cell View
 
 "UPCOMING_CELL_VIEW_STARTING_IN %@" = "จะเริ่มใน %@";
+"UPCOMING_CELL_VIEW_STARTING_IN_SHORT %@" = "In %@";
 "UPCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN" = "ไม่มีเวลากำหนด";
 "UPCOMING_CELL_VIEW_STARTING_AT %@" = "จะเริ่มเวลา %@";
 
@@ -101,6 +126,7 @@
 "LIVE_VIEW_TOOLBAR_SHOW_CARD" = "Show card view";
 "LIVE_VIEW_TOOLBAR_SORT" = "จัดเรียงตาม";
 "LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION" = "Sort by generation";
+"LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION_IPAD" = "Default sort";
 "LIVE_VIEW_TOOLBAR_FAVOURITES_ONLY" = "Show favourites only";
 "LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME" = "เวลาเริ่ม";
 "LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS" = "จำนวนผู้ชม";
@@ -178,3 +204,6 @@
 "DST_REMINDER_VIEW_TITLE" = "**DAYLIGHT SAVING TIME REMINDER**";
 "DST_REMINDER_VIEW_TEXT %@ %lld" = "Daylight Saving Time is %@ in **%lld day(s)**. As Japan does not observe Daylight Saving Time, please double-check the stream time.";
 "DST_REMINDER_VIEW_FOOTER" = "Your device is set to a timezone that observes Daylight Saving Time. No location data was used.";
+
+// Agency related
+"SETTINGS_SELECT_AGENCY_NAVIGATION_TITLE" = "Agency";
