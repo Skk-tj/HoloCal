@@ -56,4 +56,12 @@ struct LiveVideo: Codable, Identifiable, Hashable {
     var isNijisanji: Bool {
         channel.org == AgencyEnum.nijisanji.rawValue
     }
+    
+    var isReact: Bool {
+        channel.org == AgencyEnum.react.rawValue
+    }
+    
+    func isAgency(agency: AgencyEnum) -> Bool {
+        channel.org == agency.rawValue
+    }
 }

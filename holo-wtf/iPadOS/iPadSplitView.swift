@@ -13,32 +13,11 @@ enum Views: Hashable {
     case settings
 }
 
-enum iPadAgencies {
+enum iPadAgencies: CaseIterable {
     case hololive
     case nijisanji
+    case react
     case favourites
-}
-
-struct iPadAgencySelectionView: View {
-    @Binding var agencySelection: iPadAgencies?
-    
-    var body: some View {
-        List(selection: $agencySelection) {
-            NavigationLink(value: iPadAgencies.hololive) {
-                SingleAgencyItemView(agency: .hololive)
-            }
-            
-            NavigationLink(value: iPadAgencies.nijisanji) {
-                SingleAgencyItemView(agency: .nijisanji)
-            }
-            
-            NavigationLink(value: iPadAgencies.favourites) {
-                Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
-            }
-        }
-        .listStyle(.sidebar)
-        .navigationTitle(LocalizedStringKey("SETTINGS_SELECT_AGENCY_NAVIGATION_TITLE"))
-    }
 }
 
 struct iPadSplitView: View {
@@ -57,6 +36,10 @@ struct iPadSplitView: View {
                         SingleAgencyItemView(agency: .nijisanji)
                     }
                     
+                    NavigationLink(value: Views.live(.react)) {
+                        SingleAgencyItemView(agency: .react)
+                    }
+                    
                     NavigationLink(value: Views.live(.favourites)) {
                         Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
                     }
@@ -71,6 +54,10 @@ struct iPadSplitView: View {
                     
                     NavigationLink(value: Views.upcoming(.nijisanji)) {
                         SingleAgencyItemView(agency: .nijisanji)
+                    }
+                    
+                    NavigationLink(value: Views.upcoming(.react)) {
+                        SingleAgencyItemView(agency: .react)
                     }
                     
                     NavigationLink(value: Views.upcoming(.favourites)) {
@@ -96,6 +83,8 @@ struct iPadSplitView: View {
                         LiveiPadView(for: .hololive)
                     case .nijisanji:
                         LiveiPadView(for: .nijisanji)
+                    case .react:
+                        LiveiPadView(for: .react)
                     case .favourites:
                         LiveFavouritesiPadView()
                     }
@@ -105,6 +94,8 @@ struct iPadSplitView: View {
                         UpcomingiPadView(for: .hololive)
                     case .nijisanji:
                         UpcomingiPadView(for: .nijisanji)
+                    case .react:
+                        UpcomingiPadView(for: .react)
                     case .favourites:
                         UpcomingFavouritesiPadView()
                     }

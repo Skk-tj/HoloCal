@@ -85,6 +85,14 @@ enum Generation: Int, CaseIterable, Codable, Hashable {
     case en7thWave
     case nijisanjiOfficial
     
+    // MARK: - Re:AcT
+    case reAliz
+    case kaleidscope
+    case sinkirow
+    case parfait
+    case reMixx
+    case reactOfficial
+    
     // For all the channels that we may not recognize
     case other
     
@@ -490,6 +498,43 @@ enum TalentEnum: String, Codable {
     case rofmao = "UCwi4P78SVunSYAGrvC9aKcw" 
     case nornis = "UCxWcO9CLti4uouUIS5IIF-Q"
     case chronoir = "UCz6vnIbgiqFT9xUcD6Bp65Q"
+    
+    // MARK: - Re:AcT
+    
+    // MARK: - ReAliz
+    case leona = "UCB1s_IdO-r0nUkY2mXeti-A"
+    case mia = "UCpPuEfqwYbpn7e2jWdQeWew"
+    case rose = "UCVbRXkQP-LumaBzfw-wsrrg"
+    case lisa = "UCDrG8pzkq_cCCLcN5wgrzNw"
+    
+    // MARK: - kaleidscope
+    case yuno = "UCJQMHCFjVZOVRYafR6gY04Q"
+    case hanabasami = "UC4OeUf_KfYRrwksschtRYow"
+    case mari = "UCfiK42sBHraMBK6eNWtsy7A"
+    case nono = "UCtKH7ZHAJ7TcTjyiLJRHhvg"
+    case suu = "UCeqIMtLuGc3YgwkhEaG8oDg"
+    
+    // MARK: - sinkirow
+    case matoi = "UCFrH3bfn7gDeV29wrHHM80g"
+    case ribon = "UC6HjtF2rHZO8gAsX5FXF-Kg"
+    case tsukimi = "UCTEZGNJDqv-isWSPRsEhnRA"
+    case yukino = "UCoFEbNyIRUS26-hf2AucwFw"
+    case lie = "UCxLgvntienV0kwNLxrbcmyQ"
+    
+    // MARK: - Parfait
+    case kanau = "UC8jskpQfW9fn2NLK3PdaGdg"
+    case hano = "UCxJ9SJLG7dA00M7VoEe4ltw"
+    case aria = "UC5XQhzMH08PgWa4Zp02Gcsw"
+    
+    // MARK: - Re:Mixx
+    case isana = "UC01dI90qNB6RhCt1tdXnQAg"
+    case syuka = "UCY5jwnUvdsrsfqsMQWHau-w"
+    case creil = "UCIueYPQm6sk8oaKxq0hSjyQ"
+    case nemu = "UCi6nuuHhOj_usxkjlcHdRXw"
+    case taran = "UCShDuyxe-cDewxtcPbBmi_Q"
+    
+    // MARK: - Official
+    case reactOfficial = "UC90vyzmRgWCE17-uWNsKW2Q"
 }
 
 extension TalentEnum: Identifiable {
@@ -901,6 +946,43 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .rofmao: Talent(id: TalentEnum.rofmao.rawValue, names: [.en: "ROF-MAO Channel", .ja: "ろふまおチャンネル"], inGeneration: Generation.nijisanjiOfficial),
     .nornis: Talent(id: TalentEnum.nornis.rawValue, names: [.en: "Nornis", .ja: "Nornis"], inGeneration: Generation.nijisanjiOfficial),
     .chronoir: Talent(id: TalentEnum.chronoir.rawValue, names: [.en: "ChroNoiR", .ja: "ChroNoiR"], inGeneration: Generation.nijisanjiOfficial),
+    
+    // MARK: - Re:AcT
+    
+    // MARK: - ReAliz
+    .leona: Talent(id: TalentEnum.leona.rawValue, names: [.en: "Shishigami Leona", .ja: "獅子神レオナ"], inGeneration: Generation.reAliz),
+    .mia: Talent(id: TalentEnum.mia.rawValue, names: [.en: "Mizugame Mia", .ja: "水瓶ミア"], inGeneration: Generation.reAliz),
+    .rose: Talent(id: TalentEnum.rose.rawValue, names: [.en: "Sumeragi Rose", .ja: "皇ロゼ"], inGeneration: Generation.reAliz),
+    .lisa: Talent(id: TalentEnum.lisa.rawValue, names: [.en: "Makou Lisa", .ja: "魔光リサ"], inGeneration: Generation.reAliz),
+    
+    // MARK: - kaleidscope
+    .yuno: Talent(id: TalentEnum.yuno.rawValue, names: [.en: "Usami Yuno", .ja: "宇佐美ユノ"], inGeneration: Generation.kaleidscope),
+    .hanabasami: Talent(id: TalentEnum.hanabasami.rawValue, names: [.en: "Hanabasami Kyo", .ja: "花鋏キョウ"], inGeneration: Generation.kaleidscope),
+    .mari: Talent(id: TalentEnum.mari.rawValue, names: [.en: "Kashiko Mari", .ja: "かしこまり"], inGeneration: Generation.kaleidscope),
+    .nono: Talent(id: TalentEnum.nono.rawValue, names: [.en: "Nono Ayamo", .ja: "彩雲のの"], inGeneration: Generation.kaleidscope),
+    .suu: Talent(id: TalentEnum.suu.rawValue, names: [.en: "Usuwa Suu", .ja: "稀羽すう"], inGeneration: Generation.kaleidscope),
+    
+    // MARK: - sinkirow
+    .matoi: Talent(id: TalentEnum.matoi.rawValue, names: [.en: "Inuki Matoi", .ja: "射貫まとい"], inGeneration: Generation.sinkirow),
+    .ribon: Talent(id: TalentEnum.ribon.rawValue, names: [.en: "Himekuma Ribon", .ja: "姫熊りぼん"], inGeneration: Generation.sinkirow),
+    .tsukimi: Talent(id: TalentEnum.tsukimi.rawValue, names: [.en: "Marumochi Tsukimi", .ja: "丸餅つきみ"], inGeneration: Generation.sinkirow),
+    .yukino: Talent(id: TalentEnum.yukino.rawValue, names: [.en: "Nekono Yukino", .ja: "猫乃ユキノ"], inGeneration: Generation.sinkirow),
+    .lie: Talent(id: TalentEnum.lie.rawValue, names: [.en: "Kulaku Lie", .ja: "九楽ライ"], inGeneration: Generation.sinkirow),
+    
+    // MARK: - Parfait
+    .kanau: Talent(id: TalentEnum.kanau.rawValue, names: [.en: "Yumekawa Kanau", .ja: "夢川かなう"], inGeneration: Generation.parfait),
+    .hano: Talent(id: TalentEnum.hano.rawValue, names: [.en: "Amakawa Hano", .ja: "天川はの"], inGeneration: Generation.parfait),
+    .aria: Talent(id: TalentEnum.aria.rawValue, names: [.en: "Tsukushi Aria", .ja: "月紫アリア"], inGeneration: Generation.parfait),
+    
+    // MARK: - Re:Mixx
+    .isana: Talent(id: TalentEnum.isana.rawValue, names: [.en: "Isana Kuryu", .ja: "紅龍イサナ"], inGeneration: Generation.reMixx),
+    .syuka: Talent(id: TalentEnum.syuka.rawValue, names: [.en: "Syuka Bisui", .ja: "美睡シュカ"], inGeneration: Generation.reMixx),
+    .creil: Talent(id: TalentEnum.creil.rawValue, names: [.en: "Coucourua Creil", .ja: "ククルア・クレイユ"], inGeneration: Generation.reMixx),
+    .nemu: Talent(id: TalentEnum.nemu.rawValue, names: [.en: "Nemu Otogi", .ja: "音伽ねむ"], inGeneration: Generation.reMixx),
+    .taran: Talent(id: TalentEnum.taran.rawValue, names: [.en: "Taran Mikoshi", .ja: "神輿たらん"], inGeneration: Generation.reMixx),
+    
+    // MARK: - Re:AcT Official
+    .reactOfficial: Talent(id: TalentEnum.reactOfficial.rawValue, names: [.en: "Re:AcT Official Channel", .ja: "Re:AcT公式チャンネル"], inGeneration: Generation.reactOfficial),
 ]
 
 let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
@@ -979,6 +1061,14 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .en6thWave: GenerationGroup(id: .en6thWave, names: [.en: "EN 6th Wave: ILUNA", .ja: "EN 第6弾「ILUNA」"], members: [.kyo, .maria, .aster, .aia, .ren, .scarle]),
     .en7thWave: GenerationGroup(id: .en7thWave, names: [.en: "EN 7th Wave: XSOLEIL", .ja: "EN 第7弾「XSOLEIL」"], members: [.zaion, .doppio, .meloco ,.hex, .kotoka, .ver]),
     .nijisanjiOfficial: GenerationGroup(id: .nijisanjiOfficial, names: [.en: "Nijisanji Official Channels", .ja: "にじさんじ公式チャンネル"], members: [.nijisanji, .nijisanjiID, .nijisanjiEN, .virtual, .voltacation, .luxiem, .rofmao, .nornis, .chronoir]),
+    
+    // MARK: - Re:AcT
+    .reAliz: GenerationGroup(id: .reAliz, names: [.en: "ReAliz", .ja: "ReAliz"], members: [.leona, .mia, .rose, .lisa]),
+    .kaleidscope: GenerationGroup(id: .kaleidscope, names: [.en: "kaleidscope", .ja: "kaleidscope"], members: [.yuno, .hanabasami, .mari, .nono, .suu]),
+    .sinkirow: GenerationGroup(id: .sinkirow, names: [.en: "sinkirow", .ja: "sinkirow"], members: [.matoi, .ribon, .tsukimi, .yukino, .lie]),
+    .parfait: GenerationGroup(id: .parfait, names: [.en: "Parfait", .ja: "Parfait"], members: [.kanau, .hano, .aria]),
+    .reMixx: GenerationGroup(id: .reMixx, names: [.en: "Re:Mixx", .ja: "Re:Mixx"], members: [.isana, .syuka, .creil, .nemu, .taran]),
+    .reactOfficial: GenerationGroup(id: .reactOfficial, names: [.en: "Re:AcT Official Channels", .ja: "Re:AcT公式チャンネル"], members: [.reactOfficial]),
     
     .other: GenerationGroup(id: .other, names: [.en: "Other", .ja: "他"], members: [])
 ]

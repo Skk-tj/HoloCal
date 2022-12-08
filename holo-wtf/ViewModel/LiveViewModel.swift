@@ -16,6 +16,8 @@ class LiveViewModel: VideoViewModel, VideoGettable {
             self.videoUrl = hololiveLiveURL
         case .nijisanji:
             self.videoUrl = nijisanjiLiveURL
+        case .react:
+            self.videoUrl = reactLiveURL
         }
         
         super.init(for: agency)
@@ -27,12 +29,7 @@ class LiveViewModel: VideoViewModel, VideoGettable {
             self.videoList = responseResult
             self.sortVideos(by: .timeDesc)
             self.videoList = self.videoList.filter {
-                switch self.agency {
-                case .hololive:
-                    return $0.isHololive
-                case .nijisanji:
-                    return $0.isNijisanji
-                }
+                $0.isAgency(agency: self.agency)
             }
         }
     }

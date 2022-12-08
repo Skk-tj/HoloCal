@@ -12,6 +12,7 @@ struct ManageGenerationOrderView: View {
     
     @AppStorage("hololiveGenerationListOrder") var hololiveGenerationListOrder = agencyEnumToGenerations[AgencyEnum.hololive]!
     @AppStorage("nijisanjiGenerationListOrder") var nijisanjiGenerationListOrder = agencyEnumToGenerations[AgencyEnum.nijisanji]!
+    @AppStorage("reactGenerationListOrder") var reactGenerationListOrder = agencyEnumToGenerations[AgencyEnum.react]!
     
     @State var showResetAlert = false
     
@@ -29,6 +30,11 @@ struct ManageGenerationOrderView: View {
                         MultiLanguageNameView(entity: generation.getGeneration())
                     }
                     .onMove(perform: moveNijisanji)
+                case .react:
+                    ForEach(reactGenerationListOrder, id: \.self) { generation in
+                        MultiLanguageNameView(entity: generation.getGeneration())
+                    }
+                    .onMove(perform: moveReact)
                 }
             }, footer: {
                 Text("SETTINGS_MANAGE_GENERATION_ORDER_SECTION_FOOTER")
@@ -47,6 +53,8 @@ struct ManageGenerationOrderView: View {
                             hololiveGenerationListOrder = agencyEnumToGenerations[AgencyEnum.hololive]!
                         case .nijisanji:
                             nijisanjiGenerationListOrder = agencyEnumToGenerations[AgencyEnum.nijisanji]!
+                        case .react:
+                            reactGenerationListOrder = agencyEnumToGenerations[AgencyEnum.react]!
                         }
                     }
                 }, message: {
@@ -66,6 +74,10 @@ struct ManageGenerationOrderView: View {
     
     func moveNijisanji(from source: IndexSet, to destination: Int) {
         nijisanjiGenerationListOrder.move(fromOffsets: source, toOffset: destination)
+    }
+    
+    func moveReact(from source: IndexSet, to destination: Int) {
+        reactGenerationListOrder.move(fromOffsets: source, toOffset: destination)
     }
 }
 

@@ -17,6 +17,7 @@ struct holo_wtfApp: App {
     
     @AppStorage("hololiveGenerationListOrder") var hololiveGenerationListOrder = agencyEnumToGenerations[AgencyEnum.hololive]!
     @AppStorage("nijisanjiGenerationListOrder") var nijisanjiGenerationListOrder = agencyEnumToGenerations[AgencyEnum.nijisanji]!
+    @AppStorage("reactGenerationListOrder") var reactGenerationListOrder = agencyEnumToGenerations[AgencyEnum.react]!
     
     init() {
         // MARK: - Setup DST Warning
@@ -46,6 +47,11 @@ struct holo_wtfApp: App {
         if nijisanjiGenerationListOrder.count != agencyEnumToGenerations[AgencyEnum.nijisanji]!.count {
             let difference = Set(agencyEnumToGenerations[AgencyEnum.nijisanji]!).symmetricDifference(nijisanjiGenerationListOrder)
             nijisanjiGenerationListOrder.append(contentsOf: difference)
+        }
+        
+        if reactGenerationListOrder.count != agencyEnumToGenerations[AgencyEnum.react]!.count {
+            let difference = Set(agencyEnumToGenerations[AgencyEnum.react]!).symmetricDifference(reactGenerationListOrder)
+            reactGenerationListOrder.append(contentsOf: difference)
         }
     }
     

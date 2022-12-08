@@ -18,9 +18,11 @@ class LiveFavoritesViewModel: VideoViewModel, VideoGettable {
             
             async let hololiveLive = getVideos(from: hololiveLiveURL)
             async let nijisanjiLive = getVideos(from: nijisanjiLiveURL)
+            async let reactLive = getVideos(from: reactLiveURL)
             
             getResult.append(contentsOf: (try? await hololiveLive) ?? [])
             getResult.append(contentsOf: (try? await nijisanjiLive) ?? [])
+            getResult.append(contentsOf: (try? await reactLive) ?? [])
             
             getResult = getResult.filter {
                 favourites.contains($0.channel.id)
@@ -32,7 +34,7 @@ class LiveFavoritesViewModel: VideoViewModel, VideoGettable {
             
             self.sortVideos(by: .timeAsc)
             self.videoList = self.videoList.filter {
-                return ($0.isHololive || $0.isNijisanji) && favourites.contains($0.channel.id)
+                return ($0.isHololive || $0.isNijisanji || $0.isReact) && favourites.contains($0.channel.id)
             }
             
             self.dataStatus = .success

@@ -16,6 +16,8 @@ class UpcomingViewModel: VideoViewModel, VideoGettable {
             self.videoUrl = hololiveUpcomingURL
         case .nijisanji:
             self.videoUrl = nijisanjiUpcomingURL
+        case .react:
+            self.videoUrl = reactUpcomingURL
         }
         
         super.init(for: agency)
@@ -29,12 +31,7 @@ class UpcomingViewModel: VideoViewModel, VideoGettable {
             self.videoList = responseResult
             self.sortVideos(by: .timeAsc)
             self.videoList = self.videoList.filter {
-                switch self.agency {
-                case .hololive:
-                    return $0.isHololive
-                case .nijisanji:
-                    return $0.isNijisanji
-                }
+                $0.isAgency(agency: self.agency)
             }
         }
     }

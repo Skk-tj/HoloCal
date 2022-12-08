@@ -14,7 +14,10 @@ import OrderedCollections
 /// This view accepts another `View` for what the video will be fit into.
 struct SectionedForEachView<Content: View>: View {
     @AppStorage("generationListSelection") var generationListSelection = Set(Generation.allCases)
-    @AppStorage("generationListOrder") var generationListOrder = Generation.allCases
+    
+    @AppStorage("hololiveGenerationListOrder") var hololiveGenerationListOrder = agencyEnumToGenerations[AgencyEnum.hololive]!
+    @AppStorage("nijisanjiGenerationListOrder") var nijisanjiGenerationListOrder = agencyEnumToGenerations[AgencyEnum.nijisanji]!
+    @AppStorage("reactGenerationListOrder") var reactGenerationListOrder = agencyEnumToGenerations[AgencyEnum.react]!
     
     @EnvironmentObject var viewModel: VideoViewModel
     @ViewBuilder let cellView: (_ video: LiveVideo) -> Content
@@ -22,17 +25,14 @@ struct SectionedForEachView<Content: View>: View {
     @ViewBuilder
     var body: some View {
         let groupedDictionary = OrderedDictionary<Generation, [LiveVideo]>(grouping: viewModel.videoList, by: { $0.channel.talent?.inGeneration ?? .other })
-        let filteredGenerationListOrder = generationListOrder.filter { generation in
-            generationListSelection.contains(generation)
-        }
         
         let filteredGroupedDictionary = groupedDictionary.filter { element in
-            filteredGenerationListOrder.contains(element.key)
+            generationListSelection.contains(element.key)
         }
         
         let sortedFilteredGroupedDictionary = filteredGroupedDictionary.sorted {
-            let orderOfFirst = filteredGenerationListOrder.firstIndex(of: $0.key) ?? 0
-            let orderOfSecond = filteredGenerationListOrder.firstIndex(of: $1.key) ?? 0
+            let orderOfFirst = hololiveGenerationListOrder.firstIndex(of: $0.key) ?? nijisanjiGenerationListOrder.firstIndex(of: $0.key) ?? reactGenerationListOrder.firstIndex(of: $0.key) ?? 0
+            let orderOfSecond = hololiveGenerationListOrder.firstIndex(of: $1.key) ?? nijisanjiGenerationListOrder.firstIndex(of: $1.key) ?? reactGenerationListOrder.firstIndex(of: $1.key) ?? 0
             
             return orderOfFirst < orderOfSecond
         }

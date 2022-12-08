@@ -40,7 +40,7 @@ struct LiveiPadView: View {
             await live.getVideoForUI()
             currentPresentationMode = .normal
         }
-        .navigationTitle("LIVE_VIEW_TITLE")
+        .navigationTitle(agencyEnumToAgency[agency]!.localizedName)
         .toolbar {
             ToolbarItemGroup(placement: .primaryAction) {
                 LiveViewToolbar(currentPresentationMode: $currentPresentationMode)
