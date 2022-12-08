@@ -47,11 +47,21 @@
 				</dict>
 				<dict>
 					<key>INEnumValueDisplayName</key>
-					<string>Favourites</string>
+					<string>Re:AcT</string>
 					<key>INEnumValueDisplayNameID</key>
-					<string>DYXTCR</string>
+					<string>487Mjn</string>
 					<key>INEnumValueIndex</key>
 					<integer>3</integer>
+					<key>INEnumValueName</key>
+					<string>react</string>
+				</dict>
+				<dict>
+					<key>INEnumValueDisplayName</key>
+					<string>Favourites</string>
+					<key>INEnumValueDisplayNameID</key>
+					<string>1SmN5y</string>
+					<key>INEnumValueIndex</key>
+					<integer>4</integer>
 					<key>INEnumValueName</key>
 					<string>favourites</string>
 				</dict>

@@ -90,6 +90,7 @@ struct LivePaneWidgetEntryView: View {
         }, titleView: {
             LiveTitleView()
         })
+        .frame(width: .infinity)
     }
 }
 
@@ -153,7 +154,6 @@ struct UpcomingPaneWidgetEntryView: View {
     }
 }
 
-/// These views are shared between iOS Lock Screen widgets and watchOS complications
 struct LiveAccessoryRectangularWidgetEntryView: View {
     var entry: VideoLiveWidgetProvider.Entry
     

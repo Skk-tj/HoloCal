@@ -30,7 +30,7 @@ struct UpcomingWidgetView: View {
             VStack(alignment: .leading) {
                 Text(upcoming.title)
                     .font(.headline)
-                    .lineLimit(2, reservesSpace: true)
+                    .lineLimit(2)
                     .multilineTextAlignment(.leading)
                 
                 HStack {

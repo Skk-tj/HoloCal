@@ -17,13 +17,13 @@ struct MultipleVideoUpcomingWidgetProvider: IntentTimelineProvider {
     
     func getSnapshot(for configuration: Intent, in context: Context, completion: @escaping (Entry) -> Void) {
         Task {
-            completion(await getMultipleEntry(for: configuration.agency, videoType: .upcoming, sortBy: IntentSortBy.mostRecent, filterBy: {$0.isHololive || $0.isNijisanji}))
+            completion(await getMultipleEntry(for: configuration.agency, videoType: .upcoming, sortBy: IntentSortBy.mostRecent, filterBy: { $0.isHololive || $0.isNijisanji || $0.isReact }))
         }
     }
     
     func getTimeline(for configuration: Intent, in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
         Task {
-            let entries: [MultipleVideoWidgetEntry] = [await getMultipleEntry(for: configuration.agency, videoType: .upcoming, sortBy: IntentSortBy.mostRecent, filterBy: {$0.isHololive || $0.isNijisanji})]
+            let entries: [MultipleVideoWidgetEntry] = [await getMultipleEntry(for: configuration.agency, videoType: .upcoming, sortBy: IntentSortBy.mostRecent, filterBy: { $0.isHololive || $0.isNijisanji || $0.isReact })]
             let timeline = Timeline(entries: entries, policy: .atEnd)
             completion(timeline)
         }

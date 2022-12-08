@@ -11,7 +11,8 @@ import UIKit
 let intentAgencyToString: [IntentAgency: [NameLanguage: String]] = [
     .unknown: [.en: "All", .ja: "全部"],
     .hololive: [.en: "Hololive", .ja: "ホロライブ"],
-    .nijisanji: [.en: "Nijisanji", .ja: "にじさんじ"]
+    .nijisanji: [.en: "Nijisanji", .ja: "にじさんじ"],
+    .react: [.en: "Re:AcT", .ja: "Re:AcT"]
 ]
 
 let intentSortByToString: [IntentSortBy: [NameLanguage: String]] = [
@@ -112,6 +113,13 @@ func getVideoURLForWidget(agency: IntentAgency, videoType: VideoType) -> String 
         case .upcoming:
             return allWidgetUpcomingURL
         }
+    case .react:
+        switch videoType {
+        case .live:
+            return reactLiveURL
+        case .upcoming:
+            return reactUpcomingURL
+        }
     }
 }
 
@@ -131,6 +139,13 @@ func getVideosForWidget(agency: IntentAgency, videoType: VideoType) async throws
         case .upcoming:
             return try await getVideos(from: nijisanjiWidgetUpcomingURL)
         }
+    case .react:
+        switch videoType {
+        case .live:
+            return try await getVideos(from: reactLiveURL)
+        case .upcoming:
+            return try await getVideos(from: reactWidgetUpcomingURL)
+        }
     case .unknown:
         switch videoType {
         case .live:
@@ -147,9 +162,11 @@ func getVideosForWidget(agency: IntentAgency, videoType: VideoType) async throws
             
             async let hololiveLive = getVideos(from: hololiveLiveURL)
             async let nijisanjiLive = getVideos(from: nijisanjiLiveURL)
+            async let reactLive = getVideos(from: reactLiveURL)
             
             getResult.append(contentsOf: (try? await hololiveLive) ?? [])
             getResult.append(contentsOf: (try? await nijisanjiLive) ?? [])
+            getResult.append(contentsOf: (try? await reactLive) ?? [])
             
             getResult = getResult.filter {
                 favourites.contains($0.channel.id)
@@ -163,9 +180,11 @@ func getVideosForWidget(agency: IntentAgency, videoType: VideoType) async throws
             
             async let hololiveLive = getVideos(from: hololiveWidgetUpcomingURL)
             async let nijisanjiLive = getVideos(from: nijisanjiWidgetUpcomingURL)
+            async let reactLive = getVideos(from: reactWidgetUpcomingURL)
             
             getResult.append(contentsOf: (try? await hololiveLive) ?? [])
             getResult.append(contentsOf: (try? await nijisanjiLive) ?? [])
+            getResult.append(contentsOf: (try? await reactLive) ?? [])
             
             getResult = getResult.filter {
                 favourites.contains($0.channel.id)

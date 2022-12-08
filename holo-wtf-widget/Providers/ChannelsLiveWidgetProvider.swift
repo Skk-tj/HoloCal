@@ -17,13 +17,13 @@ struct ChannelsLiveWidgetProvider: IntentTimelineProvider {
     
     func getSnapshot(for configuration: Intent, in context: Context, completion: @escaping (Entry) -> Void) {
         Task {
-            completion(await getChannelsEntry(for: configuration.agency, videoType: .live, sortBy: configuration.sortBy, filterBy: {$0.isHololive || $0.isNijisanji}))
+            completion(await getChannelsEntry(for: configuration.agency, videoType: .live, sortBy: configuration.sortBy, filterBy: { $0.isHololive || $0.isNijisanji || $0.isReact }))
         }
     }
     
     func getTimeline(for configuration: Intent, in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
         Task {
-            let entries = [await getChannelsEntry(for: configuration.agency, videoType: .live, sortBy: configuration.sortBy, filterBy: {$0.isHololive || $0.isNijisanji})]
+            let entries = [await getChannelsEntry(for: configuration.agency, videoType: .live, sortBy: configuration.sortBy, filterBy: { $0.isHololive || $0.isNijisanji || $0.isReact })]
             let timeline = Timeline(entries: entries, policy: .atEnd)
             completion(timeline)
         }
