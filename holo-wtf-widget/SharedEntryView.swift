@@ -167,6 +167,8 @@ struct LiveAccessoryRectangularWidgetEntryView: View {
                     .widgetAccentable()
                 
                 Text("NO_ONE_IS_STREAMING")
+                
+                Spacer()
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
@@ -186,6 +188,8 @@ struct UpcomingAccessoryRectangularWidgetEntryView: View {
                     .widgetAccentable()
                 
                 Text("NO_ONE_IS_STREAMING")
+                
+                Spacer()
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
