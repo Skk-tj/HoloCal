@@ -55,7 +55,6 @@
 "SETTINGS_OPEN_SOURCE" = "Open Source";
 "SETTINGS_BETA_TESTING" = "เข้าร่วมเป็นผู้ทดสอบระบบ";
 "SETTINGS_SPECIAL_THANKS" = "Special Thanks";
-"SETTINGS_TWITTER" = "ติดตามทวิตเตอร์ของผู้พัฒนาเพื่อไม่พลาดข่าวสารใหม่ๆ เกี่ยวกับ HoloCal";
 "SETTINGS_HELP_TRANSLATE" = "Help translate this app";
 
 // OpenSourceView
@@ -110,7 +109,7 @@
 "LIVE_VIEW_TITLE" = "Live";
 "LIVE_VIEW_CURRENT_COUNT %lld" = "%lld คนกำลังไลฟ์";
 "LIVE_VIEW_CURRENT_COUNT %lld %lld" = "%lld Currently Live (%lld excluded)";
-"LIVE_VIEW_FAVOURITE_SECTION_TITLE" = "รายการโปรด";
+"LIVE_VIEW_FAVOURITE_SECTION_TITLE" = "Favourited";
 
 // UpcomingView
 
@@ -121,25 +120,23 @@
 // LiveViewToolbar & UpcomingViewToolbar
 
 "LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE" = "แสดงวันเดือนปี";
-"LIVE_VIEW_TOOLBAR_SHOW_RELATIVE" = "Show relative time";
 "LIVE_VIEW_TOOLBAR_SHOW_COMPACT" = "Show Express Mode";
 "LIVE_VIEW_TOOLBAR_SHOW_CARD" = "Show card view";
 "LIVE_VIEW_TOOLBAR_SORT" = "จัดเรียงตาม";
 "LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION" = "Sort by generation";
 "LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION_IPAD" = "Default sort";
-"LIVE_VIEW_TOOLBAR_FAVOURITES_ONLY" = "Show favourites only";
 "LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME" = "เวลาเริ่ม";
 "LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS" = "จำนวนผู้ชม";
-"LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS_ASCENDING" = "Ascending";
-"LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS_DESCENDING" = "Descending";
-"LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST" = "Nearest to furthest";
-"LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_FURTHEST_TO_NEAREST" = "Furthest to nearest";
+"LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS_ASCENDING" = "Least watched first";
+"LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS_DESCENDING" = "Most watched first";
+"LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST" = "Recently started first";
+"LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_FURTHEST_TO_NEAREST" = "Oldest stream first";
 
 // VideoContextMenu
 "VIDEO_CONTEXT_MENU_TWITTER_PROFILE" = "Open Twitter profile";
 "VIDEO_CONTEXT_MENU_YOUTUBE_CHANNEL" = "Open YouTube channel";
-"VIDEO_CONTEXT_MENU_FAVOURITE_CHANNEL" = "Add channel to favorite";
-"VIDEO_CONTEXT_MENU_REMOVE_FAVOURITE" = "Remove favorite";
+"VIDEO_CONTEXT_MENU_FAVOURITE_CHANNEL" = "Add channel to favourite";
+"VIDEO_CONTEXT_MENU_REMOVE_FAVOURITE" = "Remove favourite";
 "VIDEO_CONTEXT_MENU_SHARE" = "แชร์";
 "VIDEO_CONTEXT_MENU_ADD_TO_CALENDAR" = "เพิ่มเข้าปฎิทิน";
 
@@ -148,7 +145,7 @@
 "LINKED_VIDEO_SWIPE_ACTIONS_UNFAVOURITE" = "Unfavourite";
 "LINKED_VIDEO_SWIPE_ACTIONS_SHARE" = "แชร์";
 
-// Calendar acess
+// Calendar access
 "CALENDAR_ACCESS_TITLE" = "การเข้าถึงปฎิทิน";
 "CALENDAR_ACCESS_MESSAGE" = "การเข้าถึงปฎิทินถูกระงับ กรุณาตรวจตอบการตั้งค่าความปลอดภัยของท่าน";
 
