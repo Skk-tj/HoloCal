@@ -17,7 +17,7 @@ struct UpcomingFavouritesView: View {
             .environmentObject(upcoming as VideoViewModel)
             .navigationTitle("ROOT_VIEW_FAVOURITES")
             .toolbar {
-                ToolbarItemGroup {
+                ToolbarItemGroup(placement: .secondaryAction) {
                     UpcomingFavouritesViewToolbar()
                         .environmentObject(upcoming as VideoViewModel)
                 }

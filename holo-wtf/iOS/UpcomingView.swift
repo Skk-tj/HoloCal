@@ -25,7 +25,7 @@ struct UpcomingView: View {
             .environmentObject(upcoming as VideoViewModel)
             .navigationTitle(agency.getAgency().localizedName)
             .toolbar {
-                ToolbarItemGroup {
+                ToolbarItemGroup(placement: .secondaryAction) {
                     UpcomingViewToolbar(currentPresentationMode: $currentPresentationMode)
                         .environmentObject(upcoming as VideoViewModel)
                 }

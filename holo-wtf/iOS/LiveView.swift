@@ -25,7 +25,7 @@ struct LiveView: View {
             .environmentObject(live as VideoViewModel)
             .navigationTitle(agency.getAgency().localizedName)
             .toolbar {
-                ToolbarItemGroup {
+                ToolbarItemGroup(placement: .secondaryAction) {
                     LiveViewToolbar(currentPresentationMode: $currentPresentationMode)
                         .environmentObject(live as VideoViewModel)
                 }

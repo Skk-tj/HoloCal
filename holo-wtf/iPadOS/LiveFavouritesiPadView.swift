@@ -36,7 +36,7 @@ struct LiveFavouritesiPadView: View {
         }
         .navigationTitle("LIVE_VIEW_TITLE")
         .toolbar {
-            ToolbarItemGroup(placement: .primaryAction) {
+            ToolbarItemGroup(placement: .secondaryAction) {
                 LiveFavouritesViewToolbar()
                     .environmentObject(live as VideoViewModel)
             }

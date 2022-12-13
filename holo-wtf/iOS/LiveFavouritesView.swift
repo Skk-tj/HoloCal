@@ -17,7 +17,7 @@ struct LiveFavouritesView: View {
             .environmentObject(live as VideoViewModel)
             .navigationTitle("ROOT_VIEW_FAVOURITES")
             .toolbar {
-                ToolbarItemGroup {
+                ToolbarItemGroup(placement: .secondaryAction) {
                     LiveFavouritesViewToolbar()
                         .environmentObject(live as VideoViewModel)
                 }

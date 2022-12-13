@@ -35,7 +35,7 @@ struct UpcomingFavouritesiPadView: View {
             await upcoming.getVideoForUI()
         }
         .toolbar {
-            ToolbarItemGroup(placement: .primaryAction) {
+            ToolbarItemGroup(placement: .secondaryAction) {
                 UpcomingFavouritesViewToolbar()
                     .environmentObject(upcoming as VideoViewModel)
             }

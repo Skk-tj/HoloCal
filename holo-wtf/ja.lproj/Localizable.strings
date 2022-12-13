@@ -149,7 +149,7 @@
 "LINKED_VIDEO_SWIPE_ACTIONS_UNFAVOURITE" = "お気に入りを削除";
 "LINKED_VIDEO_SWIPE_ACTIONS_SHARE" = "シェア";
 
-// Calendar acess
+// Calendar access
 "CALENDAR_ACCESS_TITLE" = "カレンダーアクセス許可";
 "CALENDAR_ACCESS_MESSAGE" = "カレンダーにアクセスできません。プライバシー設定をご確認ください。";
 

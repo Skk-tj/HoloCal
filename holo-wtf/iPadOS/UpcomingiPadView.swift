@@ -41,7 +41,7 @@ struct UpcomingiPadView: View {
             currentPresentationMode = .normal
         }
         .toolbar {
-            ToolbarItemGroup(placement: .primaryAction) {
+            ToolbarItemGroup(placement: .secondaryAction) {
                 UpcomingViewToolbar(currentPresentationMode: $currentPresentationMode)
                     .environmentObject(upcoming as VideoViewModel)
             }

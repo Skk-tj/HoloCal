@@ -42,7 +42,7 @@ struct LiveiPadView: View {
         }
         .navigationTitle(agencyEnumToAgency[agency]!.localizedName)
         .toolbar {
-            ToolbarItemGroup(placement: .primaryAction) {
+            ToolbarItemGroup(placement: .secondaryAction) {
                 LiveViewToolbar(currentPresentationMode: $currentPresentationMode)
                     .environmentObject(live as VideoViewModel)
             }

@@ -19,40 +19,36 @@ struct UpcomingViewToolbar: View {
     @EnvironmentObject var upcomingViewModel: VideoViewModel
     
     var body: some View {
-        Menu {
-            Section {
-                Toggle(isOn: $isShowingAbsoluteTime, label: {
-                    Label("LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE", systemImage: "clock")
-                })
-                
-                if UIDevice.current.userInterfaceIdiom == .phone {
-                    Button {
-                        isShowingCompact.toggle()
-                        currentPresentationMode = .normal
-                    } label: {
-                        Label(isShowingCompact ? "LIVE_VIEW_TOOLBAR_SHOW_CARD" : "LIVE_VIEW_TOOLBAR_SHOW_COMPACT", systemImage: isShowingCompact ? "rectangle.grid.1x2" : "list.bullet")
-                    }
+        Section {
+            Toggle(isOn: $isShowingAbsoluteTime, label: {
+                Label("LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE", systemImage: "clock")
+            })
+            
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                Button {
+                    isShowingCompact.toggle()
+                    currentPresentationMode = .normal
+                } label: {
+                    Label(isShowingCompact ? "LIVE_VIEW_TOOLBAR_SHOW_CARD" : "LIVE_VIEW_TOOLBAR_SHOW_COMPACT", systemImage: isShowingCompact ? "rectangle.grid.1x2" : "list.bullet")
                 }
+            }
+        }
+        
+        Menu {
+            Picker("Order", selection: $sortingStrategy) {
+                Label(UIDevice.current.userInterfaceIdiom == .phone ? "LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION" : "LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION_IPAD", systemImage: "person.fill").tag(SortingStrategy.notSorting)
             }
             
             Menu {
                 Picker("Order", selection: $sortingStrategy) {
-                    Label(UIDevice.current.userInterfaceIdiom == .phone ? "LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION" : "LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION_IPAD", systemImage: "person.fill").tag(SortingStrategy.notSorting)
-                }
-                
-                Menu {
-                    Picker("Order", selection: $sortingStrategy) {
-                        Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST", systemImage: "arrow.down").tag(SortingStrategy.timeAsc)
-                        Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_FURTHEST_TO_NEAREST", systemImage: "arrow.up").tag(SortingStrategy.timeDesc)
-                    }
-                } label: {
-                    Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME", systemImage: "clock")
+                    Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST", systemImage: "hourglass.tophalf.filled").tag(SortingStrategy.timeDesc)
+                    Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_FURTHEST_TO_NEAREST", systemImage: "hourglass.bottomhalf.filled").tag(SortingStrategy.timeAsc)
                 }
             } label: {
-                Label("LIVE_VIEW_TOOLBAR_SORT", systemImage: "arrow.up.arrow.down")
+                Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME", systemImage: "clock")
             }
         } label: {
-            Label("Display Settings", systemImage: "ellipsis")
+            Label("LIVE_VIEW_TOOLBAR_SORT", systemImage: "arrow.up.arrow.down")
         }
         .onChange(of: sortingStrategy, perform: { sortingSelection in
             if sortingSelection == .notSorting {
@@ -65,9 +61,3 @@ struct UpcomingViewToolbar: View {
         })
     }
 }
-
-//struct UpcomingViewToolbar_Previews: PreviewProvider {
-//    static var previews: some View {
-//        UpcomingViewToolbar()
-//    }
-//}
