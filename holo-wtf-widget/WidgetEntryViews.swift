@@ -61,7 +61,9 @@ struct LiveChannelsEntryView: View {
     var body: some View {
         BaseVideoEntryView(entry: entry, mainView: {
             if !entry.channels.isEmpty {
+                Spacer()
                 LiveChannelsView(channels: entry.channels, thumbnails: entry.thumbnails)
+                Spacer()
             } else {
                 Spacer()
                 Text("NO_ONE_IS_STREAMING")
@@ -79,7 +81,9 @@ struct UpcomingChannelsEntryView: View {
     var body: some View {
         BaseVideoEntryView(entry: entry, mainView: {
             if !entry.channels.isEmpty {
+                Spacer()
                 LiveChannelsView(channels: entry.channels, thumbnails: entry.thumbnails)
+                Spacer()
             } else {
                 Spacer()
                 Text("NO_ONE_IS_STREAMING")

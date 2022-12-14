@@ -33,8 +33,8 @@ struct UpcomingFavouritesViewToolbar: View {
         Menu {
             Menu {
                 Picker("Order", selection: $sortingStrategy) {
-                    Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST", systemImage: "hourglass.tophalf.filled").tag(SortingStrategy.timeDesc)
-                    Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_FURTHEST_TO_NEAREST", systemImage: "hourglass.bottomhalf.filled").tag(SortingStrategy.timeAsc)
+                    Label("UPCOMING_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST", systemImage: "hourglass.tophalf.filled").tag(SortingStrategy.timeAsc)
+                    Label("UPCOMING_VIEW_TOOLBAR_SORT_BY_START_TIME_FURTHEST_TO_NEAREST", systemImage: "hourglass.bottomhalf.filled").tag(SortingStrategy.timeDesc)
                 }
             } label: {
                 Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME", systemImage: "clock")

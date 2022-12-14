@@ -24,7 +24,6 @@ struct LiveChannelsView: View {
                         Image(uiImage: avatarImage)
                             .resizable()
                             .aspectRatio(1, contentMode: .fill)
-                            .frame(width: 80, height: 80)
                             .clipShape(Circle())
                             .overlay {
                                 Circle().stroke(.white, lineWidth: 1)
@@ -33,7 +32,6 @@ struct LiveChannelsView: View {
                     } else {
                         Image(systemName: "person")
                             .aspectRatio(1, contentMode: .fill)
-                            .frame(width: 80, height: 80)
                             .background(.ultraThickMaterial)
                             .clipShape(Circle())
                             .overlay {
@@ -43,6 +41,7 @@ struct LiveChannelsView: View {
                     }
                 }
             }
+            .scaledToFit()
             
             Spacer()
         }
