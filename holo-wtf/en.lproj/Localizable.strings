@@ -17,12 +17,13 @@
 "SETTINGS_TITLE" = "Settings"; 
 
 "SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER" = "Upcoming Schedule";
-"SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT %lld" = "Get upcoming streams for the next %lld hours";
+"SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT" = "Upcoming streams lookahead";
 "WATCH_SETTINGS_UPCOMING_SCHEDULE_PICKER_TEXT %lld" = "%lld hours";
 
 "SETTINGS_STREAM_TIME_HEADER" = "Stream Time";
 "SETTINGS_STREAM_TIME_FOOTER" = "If your device is set to a timezone that observes Daylight Saving Time, HoloCal will remind you about DST transitions.";
-"SETTINGS_DST_CHANGE_TEXT %lld" = "Remind me about DST change %lld days before";
+"SETTINGS_DST_CHANGE_TEXT" = "DST change reminder";
+"SETTINGS_DST_CHANGE_PICKER_TEXT %lld" = "%lld days before";
 
 "SETTINGS_CHANNEL_MANAGEMENT_HEADER" = "Channels";
 "SETTINGS_MANAGE_FAVOURITE" = "Manage Channel Favorites";

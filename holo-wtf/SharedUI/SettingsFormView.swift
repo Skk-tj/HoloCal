@@ -11,41 +11,27 @@ struct SettingsFormView: View {
     @AppStorage(UserDefaultKeys.upcomingLookAhead) var hoursLookAhead: Int = 48
     @AppStorage(UserDefaultKeys.dstDays) var dstDays: Int = 5
     
-    // Upcoming picker hiding/showing management states
-    @State var showUpcomingPicker = false
-    @State var upcomingChevronRotationAngle: Double = 0
-    
-    // DST change picker hiding/showing management states
-    @State var showDSTPicker = false
-    @State var dstChevronRotationAngle: Double = 0
-    
     var body: some View {
         Form {
             Section(header: Text("SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER")) {
-                DisclosureGroup("SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT \(hoursLookAhead)", content: {
-                    Picker("Upcoming look ahead", selection: $hoursLookAhead) {
-                        ForEach([12, 24, 48, 72, 96, 120], id: \.self) {
-                            Text("\($0)")
-                        }
+                Picker("SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT", selection: $hoursLookAhead) {
+                    ForEach([12, 24, 48, 72, 96, 120], id: \.self) {
+                        Text("WATCH_SETTINGS_UPCOMING_SCHEDULE_PICKER_TEXT \($0)")
                     }
-                    .pickerStyle(.wheel)
-                    .onChange(of: hoursLookAhead, perform: { newHours in
-                        UserDefaults.standard.set(newHours, forKey: UserDefaultKeys.upcomingLookAhead)
-                    })
+                }
+                .onChange(of: hoursLookAhead, perform: { newHours in
+                    hoursLookAhead = newHours
                 })
             }
             
             Section(header: Text("SETTINGS_STREAM_TIME_HEADER"), footer: Text("SETTINGS_STREAM_TIME_FOOTER")) {
-                DisclosureGroup("SETTINGS_DST_CHANGE_TEXT \(dstDays)", content: {
-                    Picker("DST change", selection: $dstDays) {
-                        ForEach(1...10, id: \.self) {
-                            Text("\($0)")
-                        }
+                Picker("SETTINGS_DST_CHANGE_TEXT", selection: $dstDays) {
+                    ForEach(1...10, id: \.self) {
+                        Text("SETTINGS_DST_CHANGE_PICKER_TEXT \($0)")
                     }
-                    .pickerStyle(.wheel)
-                    .onChange(of: dstDays, perform: { newHours in
-                        UserDefaults.standard.set(newHours, forKey: UserDefaultKeys.dstDays)
-                    })
+                }
+                .onChange(of: dstDays, perform: { newDays in
+                    dstDays = newDays
                 })
             }
             
