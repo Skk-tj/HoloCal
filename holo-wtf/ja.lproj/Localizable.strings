@@ -17,12 +17,13 @@
 "SETTINGS_TITLE" = "設定";
 
 "SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER" = "ライブ配信の予定";
-"SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT %lld" = "%lld時間内の配信を表示";
+"SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT" = "Upcoming streams lookahead";
 "WATCH_SETTINGS_UPCOMING_SCHEDULE_PICKER_TEXT %lld" = "%lld時間";
 
 "SETTINGS_STREAM_TIME_HEADER" = "配信時間";
 "SETTINGS_STREAM_TIME_FOOTER" = "HoloCalは夏時間が適用されるタイムゾーンに設定されている場合、夏時間への移行をお知らせします。";
-"SETTINGS_DST_CHANGE_TEXT %lld" = "%lld日前に夏時間の移行をお知らせ";
+"SETTINGS_DST_CHANGE_TEXT" = "DST change reminder";
+"SETTINGS_DST_CHANGE_PICKER_TEXT %lld" = "%lld days before";
 
 "SETTINGS_CHANNEL_MANAGEMENT_HEADER" = "チャンネル";
 "SETTINGS_MANAGE_FAVOURITE" = "お気に入り";
