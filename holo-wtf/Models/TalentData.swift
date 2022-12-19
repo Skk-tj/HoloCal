@@ -825,7 +825,7 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     // MARK: - 2022 Wave: Ranunculus
     .amagase: Talent(id: TalentEnum.amagase.rawValue, names: [.en: "Amagase Muyu", .ja: "天ヶ瀬むゆ"], inGeneration: Generation.wave2022Ranunculus),
     .ponto: Talent(id: TalentEnum.ponto.rawValue, names: [.en: "Ponto Nei", .ja: "先斗寧"], inGeneration: Generation.wave2022Ranunculus),
-    .umise: Talent(id: TalentEnum.umise.rawValue, names: [.en: "Umise Yotsuh", .ja: "海妹四葉"], inGeneration: Generation.wave2022Ranunculus),
+    .umise: Talent(id: TalentEnum.umise.rawValue, names: [.en: "Umise Yotsuha", .ja: "海妹四葉"], inGeneration: Generation.wave2022Ranunculus),
 
     // MARK: - 2022 Wave: May 21
     .hyakumantenbara: Talent(id: TalentEnum.hyakumantenbara.rawValue, names: [.en: "Hyakumantenbara Salome", .ja: "壱百満天原サロメ"], inGeneration: Generation.wave2022May21),
