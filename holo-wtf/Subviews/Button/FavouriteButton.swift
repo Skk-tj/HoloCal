@@ -26,6 +26,11 @@ struct FavouriteButton<Content: View>: View {
         }) {
             content()
         }
+        .onChange(of: favourited) { favourited in
+            let keyStore = NSUbiquitousKeyValueStore()
+            keyStore.set(favourited, forKey: UserDefaultKeys.favouritedChannel)
+            keyStore.synchronize()
+        }
     }
 }
 

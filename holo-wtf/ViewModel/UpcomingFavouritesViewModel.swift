@@ -8,10 +8,17 @@
 import Foundation
 
 class UpcomingFavoritesViewModel: VideoViewModel, VideoGettable {
+    let groupName: String?
+    
+    init(groupName: String? = nil) {
+        self.groupName = groupName
+        super.init(for: .hololive)
+    }
+    
     @MainActor
     func getVideoForUI() async {
         let upcomingLookAhead = getUpcomingStreamLookAheadHoursFromUserDefaults()
-        let favourites = getFavouritesFromUserDefaults(groupName: "group.io.skk-tj.holo-wtf.ios")
+        let favourites = getFavouritesFromUserDefaults(groupName: groupName)
         self.dataStatus = .working
         
         do {

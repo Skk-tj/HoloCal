@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UpcomingFavouritesWatchView: View {
-    @StateObject var upcoming: UpcomingFavoritesViewModel = UpcomingFavoritesViewModel(for: .hololive)
+    @StateObject var upcoming: UpcomingFavoritesViewModel = UpcomingFavoritesViewModel()
     
     var body: some View {
         WatchVideoListView(singleVideoView: { video in

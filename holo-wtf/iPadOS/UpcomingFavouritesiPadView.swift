@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct UpcomingFavouritesiPadView: View {
-    @StateObject var upcoming: UpcomingFavoritesViewModel
-    
-    init() {
-        _upcoming = StateObject(wrappedValue: UpcomingFavoritesViewModel(for: .hololive))
-    }
+    @StateObject var upcoming: UpcomingFavoritesViewModel = UpcomingFavoritesViewModel()
     
     var body: some View {
         iPadLazyGridView(singleVideoView: { live in

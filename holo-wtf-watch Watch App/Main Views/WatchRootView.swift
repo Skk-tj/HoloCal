@@ -14,6 +14,10 @@ struct WatchRootView: View {
                 NavigationLink(destination: {
                     AgencySelectionView(viewTitle: "ROOT_VIEW_LIVE", targetView: { agency in
                         LiveWatchView(for: agency)
+                    }, extraLinks: {
+                        NavigationLink(destination: LiveFavouritesWatchView(), label: {
+                            Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
+                        })
                     })
                 }, label: {
                     Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
@@ -22,6 +26,10 @@ struct WatchRootView: View {
                 NavigationLink(destination: {
                     AgencySelectionView(viewTitle: "ROOT_VIEW_UPCOMING", targetView: { agency in
                         UpcomingWatchView(for: agency)
+                    }, extraLinks: {
+                        NavigationLink(destination: UpcomingFavouritesWatchView(), label: {
+                            Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
+                        })
                     })
                 }, label: {
                     Label("ROOT_VIEW_UPCOMING", systemImage: "clock")

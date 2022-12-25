@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LiveFavouritesView: View {
-    @StateObject var live: LiveFavoritesViewModel = LiveFavoritesViewModel(for: .hololive)
+    @StateObject var live: LiveFavoritesViewModel = LiveFavoritesViewModel(groupName: "group.io.skk-tj.holo-wtf.ios")
     
     @AppStorage(UserDefaultKeys.isShowingCompactInLiveFavouritesView) var isShowingCompact: Bool = false
     

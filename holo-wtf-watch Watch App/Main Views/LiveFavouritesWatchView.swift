@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LiveFavouritesWatchView: View {
-    @StateObject var live: LiveFavoritesViewModel = LiveFavoritesViewModel(for: .hololive)
+    @StateObject var live: LiveFavoritesViewModel = LiveFavoritesViewModel()
     
     var body: some View {
         WatchVideoListView(singleVideoView: { video in

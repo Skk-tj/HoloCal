@@ -193,6 +193,10 @@
 		F09D53BF29337378003C4F80 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F09D53C229337378003C4F80 /* Intents.intentdefinition */; };
 		F09D53C029337378003C4F80 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F09D53C229337378003C4F80 /* Intents.intentdefinition */; };
 		F0A886642938A01B009AD4CB /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A886632938A01B009AD4CB /* SwiftUI.framework */; };
+		F0AA3F132957CAE10081A610 /* SecretConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */; };
+		F0AA3F142957CAE10081A610 /* SecretConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */; };
+		F0AA3F152957CAE10081A610 /* SecretConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */; };
+		F0AA3F162957CAE10081A610 /* SecretConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */; };
 		F0AC584B28CFCC580088151C /* SettingsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AC584A28CFCC580088151C /* SettingsStackView.swift */; };
 		F0B2AF0928C13C7600635CAD /* SmallUpcomingWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0828C13C7600635CAD /* SmallUpcomingWidgetView.swift */; };
 		F0B2AF0A28C13D0F00635CAD /* UpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */; };
@@ -414,6 +418,7 @@
 		F058189F281CAAF50064EF94 /* HoloCalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoloCalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F05818A1281CAAF50064EF94 /* HoloCalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoloCalUITests.swift; sourceTree = "<group>"; };
 		F05818A3281CAAF50064EF94 /* HoloCalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoloCalUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F05B943B294FE2CD0034A295 /* holo-wtf-watch Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "holo-wtf-watch Watch App.entitlements"; sourceTree = "<group>"; };
 		F05DFA352853CA7800D62D19 /* BaseVideoEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVideoEntryView.swift; sourceTree = "<group>"; };
 		F05E9EB227EB27F800EF48DD /* LiveiPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveiPadView.swift; sourceTree = "<group>"; };
 		F05E9EB427EB290000EF48DD /* UpcomingiPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingiPadView.swift; sourceTree = "<group>"; };
@@ -457,6 +462,7 @@
 		F09D53C629337380003C4F80 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Intents.strings; sourceTree = "<group>"; };
 		F0A886612938A00B009AD4CB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS9.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		F0A886632938A01B009AD4CB /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS9.1.sdk/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
+		F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SecretConfig.xcconfig; sourceTree = "<group>"; };
 		F0AC584A28CFCC580088151C /* SettingsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStackView.swift; sourceTree = "<group>"; };
 		F0B2AF0828C13C7600635CAD /* SmallUpcomingWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallUpcomingWidgetView.swift; sourceTree = "<group>"; };
 		F0B2AF0B28C1A82400635CAD /* MultipleVideoWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleVideoWidgetEntry.swift; sourceTree = "<group>"; };
@@ -495,7 +501,6 @@
 		F0ED2AE3280685FD00683E6C /* LiveVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveVideo.swift; sourceTree = "<group>"; };
 		F0ED2AE52808253700683E6C /* VideoThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailView.swift; sourceTree = "<group>"; };
 		F0ED2AEF280AC27400683E6C /* LiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewModel.swift; sourceTree = "<group>"; };
-		F0ED2AF1280AC58C00683E6C /* SecretConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SecretConfig.xcconfig; sourceTree = "<group>"; };
 		F0ED2AF2280AD60D00683E6C /* UpcomingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewModel.swift; sourceTree = "<group>"; };
 		F0ED2AF4280B606400683E6C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		F0ED2B12280CB73D00683E6C /* TopicTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicTagView.swift; sourceTree = "<group>"; };
@@ -845,6 +850,7 @@
 		F0C657AE2771F47C004AF802 = {
 			isa = PBXGroup;
 			children = (
+				F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */,
 				F0F40971293C91AC001C4F48 /* holo-wtf-widgetExtension.entitlements */,
 				F0C657B92771F47C004AF802 /* holo-wtf */,
 				F05818A0281CAAF50064EF94 /* HoloCalUITests */,
@@ -885,7 +891,6 @@
 				F0204DB827E91A920083750F /* Info.plist */,
 				F009023D27EE255B00E343B0 /* Localizable.strings */,
 				F0204DB927E925220083750F /* PRIVACY-POLICY.md */,
-				F0ED2AF1280AC58C00683E6C /* SecretConfig.xcconfig */,
 				F0ED2AF4280B606400683E6C /* .gitignore */,
 			);
 			path = "holo-wtf";
@@ -928,6 +933,7 @@
 		F0CA6EB028D7C0410028CB11 /* holo-wtf-watch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				F05B943B294FE2CD0034A295 /* holo-wtf-watch Watch App.entitlements */,
 				F04D755A28D7D85C0096B8AB /* Main Views */,
 				F04D755928D7D84E0096B8AB /* Cell */,
 				F04D754F28D7CB770096B8AB /* holo-wtf-watch-Watch-App-Info.plist */,
@@ -1158,6 +1164,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0AA3F162957CAE10081A610 /* SecretConfig.xcconfig in Resources */,
 				F06D28D328D83827007D06FB /* Assets.xcassets in Resources */,
 				F06D28FB28D83B21007D06FB /* Localizable.strings in Resources */,
 			);
@@ -1167,6 +1174,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0AA3F142957CAE10081A610 /* SecretConfig.xcconfig in Resources */,
 				F093D1C7282C32D100E2A6FF /* Assets.xcassets in Resources */,
 				F011C42828303CA400FD1364 /* Localizable.strings in Resources */,
 			);
@@ -1180,6 +1188,7 @@
 				F0C657C22771F47C004AF802 /* Preview Assets.xcassets in Resources */,
 				F009023B27EE255B00E343B0 /* Localizable.strings in Resources */,
 				F0C657BF2771F47C004AF802 /* Assets (Main).xcassets in Resources */,
+				F0AA3F132957CAE10081A610 /* SecretConfig.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1187,6 +1196,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0AA3F152957CAE10081A610 /* SecretConfig.xcconfig in Resources */,
 				F0CA6EB928D7C0420028CB11 /* Preview Assets.xcassets in Resources */,
 				F0CA6EC128D7C20E0028CB11 /* Localizable.strings in Resources */,
 				F0CA6EB628D7C0420028CB11 /* Assets (Watch).xcassets in Resources */,
@@ -1692,7 +1702,6 @@
 		};
 		F0C657C32771F47C004AF802 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0ED2AF1280AC58C00683E6C /* SecretConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -1756,7 +1765,6 @@
 		};
 		F0C657C42771F47C004AF802 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0ED2AF1280AC58C00683E6C /* SecretConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -1902,6 +1910,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = "holo-wtf-watch Watch App/holo-wtf-watch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 155;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf-watch Watch App/Preview Content\"";
@@ -1937,6 +1946,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = "holo-wtf-watch Watch App/holo-wtf-watch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 155;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf-watch Watch App/Preview Content\"";

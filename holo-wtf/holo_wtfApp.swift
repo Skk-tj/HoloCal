@@ -11,6 +11,7 @@ import SwiftUI
 struct holo_wtfApp: App {
     @AppStorage(UserDefaultKeys.dstDays) var dstDays: Int = 5
     @AppStorage(UserDefaultKeys.isShowingDSTReminder) var isShowingDSTReminder = false
+    @AppStorage(UserDefaultKeys.favouritedChannel, store: UserDefaults(suiteName: "group.io.skk-tj.holo-wtf.ios")) var favourited = Favourited()
     
     @AppStorage("generationListSelection") var generationSelected = Set(Generation.allCases)
     @AppStorage("excludedGenerations") var excludedGenerations = Set<Generation>()
@@ -52,6 +53,15 @@ struct holo_wtfApp: App {
         if reactGenerationListOrder.count != agencyEnumToGenerations[AgencyEnum.react]!.count {
             let difference = Set(agencyEnumToGenerations[AgencyEnum.react]!).symmetricDifference(reactGenerationListOrder)
             reactGenerationListOrder.append(contentsOf: difference)
+        }
+        
+        // Get user favourites from iCloud
+        let keyStore = NSUbiquitousKeyValueStore()
+        if let cloudFavouriteChannel = keyStore.array(forKey: UserDefaultKeys.favouritedChannel) {
+            print(cloudFavouriteChannel)
+            if let converted = cloudFavouriteChannel as? [String] {
+                favourited = converted
+            }
         }
     }
     

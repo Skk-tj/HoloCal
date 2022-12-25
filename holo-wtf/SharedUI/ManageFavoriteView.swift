@@ -44,6 +44,11 @@ struct ManageFavoriteView: View {
                 })
             }
         }
+        .onChange(of: favourited) { favourited in
+            let keyStore = NSUbiquitousKeyValueStore()
+            keyStore.set(favourited, forKey: UserDefaultKeys.favouritedChannel)
+            keyStore.synchronize()
+        }
         .navigationTitle("SETTINGS_MANAGE_FAVOURITE_VIEW_TITLE")
     }
 }
