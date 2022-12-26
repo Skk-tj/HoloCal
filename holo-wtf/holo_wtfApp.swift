@@ -58,9 +58,10 @@ struct holo_wtfApp: App {
         // Get user favourites from iCloud
         let keyStore = NSUbiquitousKeyValueStore()
         if let cloudFavouriteChannel = keyStore.array(forKey: UserDefaultKeys.favouritedChannel) {
-            print(cloudFavouriteChannel)
             if let converted = cloudFavouriteChannel as? [String] {
-                favourited = converted
+                let localSet: Set<String> = Set(favourited)
+                let merged = localSet.union(converted)
+                favourited = Array(merged)
             }
         }
     }
