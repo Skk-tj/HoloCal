@@ -194,10 +194,6 @@
 		F09D53BF29337378003C4F80 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F09D53C229337378003C4F80 /* Intents.intentdefinition */; };
 		F09D53C029337378003C4F80 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F09D53C229337378003C4F80 /* Intents.intentdefinition */; };
 		F0A886642938A01B009AD4CB /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A886632938A01B009AD4CB /* SwiftUI.framework */; };
-		F0AA3F132957CAE10081A610 /* SecretConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */; };
-		F0AA3F142957CAE10081A610 /* SecretConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */; };
-		F0AA3F152957CAE10081A610 /* SecretConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */; };
-		F0AA3F162957CAE10081A610 /* SecretConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */; };
 		F0AC584B28CFCC580088151C /* SettingsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AC584A28CFCC580088151C /* SettingsStackView.swift */; };
 		F0B2AF0928C13C7600635CAD /* SmallUpcomingWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0828C13C7600635CAD /* SmallUpcomingWidgetView.swift */; };
 		F0B2AF0A28C13D0F00635CAD /* UpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */; };
@@ -1106,7 +1102,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					F058189E281CAAF50064EF94 = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -1165,7 +1161,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0AA3F162957CAE10081A610 /* SecretConfig.xcconfig in Resources */,
 				F06D28D328D83827007D06FB /* Assets.xcassets in Resources */,
 				F06D28FB28D83B21007D06FB /* Localizable.strings in Resources */,
 			);
@@ -1175,7 +1170,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0AA3F142957CAE10081A610 /* SecretConfig.xcconfig in Resources */,
 				F093D1C7282C32D100E2A6FF /* Assets.xcassets in Resources */,
 				F011C42828303CA400FD1364 /* Localizable.strings in Resources */,
 			);
@@ -1189,7 +1183,6 @@
 				F0C657C22771F47C004AF802 /* Preview Assets.xcassets in Resources */,
 				F009023B27EE255B00E343B0 /* Localizable.strings in Resources */,
 				F0C657BF2771F47C004AF802 /* Assets (Main).xcassets in Resources */,
-				F0AA3F132957CAE10081A610 /* SecretConfig.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1197,7 +1190,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0AA3F152957CAE10081A610 /* SecretConfig.xcconfig in Resources */,
 				F0CA6EB928D7C0420028CB11 /* Preview Assets.xcassets in Resources */,
 				F0CA6EC128D7C20E0028CB11 /* Localizable.strings in Resources */,
 				F0CA6EB628D7C0420028CB11 /* Assets (Watch).xcassets in Resources */,
@@ -1589,7 +1581,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 156;
+				CURRENT_PROJECT_VERSION = 157;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = complications/Info.plist;
@@ -1620,7 +1612,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 156;
+				CURRENT_PROJECT_VERSION = 157;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = complications/Info.plist;
@@ -1651,7 +1643,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf-widgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 156;
+				CURRENT_PROJECT_VERSION = 157;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "holo-wtf-widget/Info.plist";
@@ -1680,7 +1672,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf-widgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 156;
+				CURRENT_PROJECT_VERSION = 157;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "holo-wtf-widget/Info.plist";
@@ -1830,7 +1822,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf/holo-wtf.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 156;
+				CURRENT_PROJECT_VERSION = 157;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -1871,7 +1863,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf/holo-wtf.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 156;
+				CURRENT_PROJECT_VERSION = 157;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -1914,7 +1906,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf-watch Watch App/holo-wtf-watch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 156;
+				CURRENT_PROJECT_VERSION = 157;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf-watch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -1950,7 +1942,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf-watch Watch App/holo-wtf-watch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 156;
+				CURRENT_PROJECT_VERSION = 157;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf-watch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
