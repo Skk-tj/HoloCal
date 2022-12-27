@@ -58,8 +58,8 @@ struct PaneViewButtonRowView: View {
             
             Spacer()
             
+            let isFavourited = favourited.contains(where: {$0 == video.channel.id})
             FavouriteButton(video: video) {
-                let isFavourited = favourited.contains(where: {$0 == video.channel.id})
                 Label(isFavourited ? "LINKED_VIDEO_SWIPE_ACTIONS_UNFAVOURITE" : "LINKED_VIDEO_SWIPE_ACTIONS_FAVOURITE", systemImage: isFavourited ? "star.fill" : "star")
                     .labelStyle(.iconOnly)
             }

@@ -127,6 +127,7 @@
 		F05E9EB727EB291900EF48DD /* SettingsiPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E9EB627EB291900EF48DD /* SettingsiPadView.swift */; };
 		F05E9EB927EB3C6100EF48DD /* LivePaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E9EB827EB3C6100EF48DD /* LivePaneView.swift */; };
 		F064A5B628BB3765008C51C2 /* SongsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064A5B528BB3765008C51C2 /* SongsViewModel.swift */; };
+		F064AE9C295A6B61007FEF73 /* FavouriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EB53B52812BD6F0024E089 /* FavouriteButton.swift */; };
 		F065857D28CFF4C6001672E1 /* ManageGenerationVisibilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F065857C28CFF4C6001672E1 /* ManageGenerationVisibilityView.swift */; };
 		F0673C0E27732BA3009C65C6 /* UpcomingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0673C0D27732BA3009C65C6 /* UpcomingView.swift */; };
 		F0673C1227732CE7009C65C6 /* UpcomingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0673C1127732CE7009C65C6 /* UpcomingCellView.swift */; };
@@ -1473,6 +1474,7 @@
 				F025204128EE95FA00976972 /* Constants.swift in Sources */,
 				F0CA6EC828D7C2880028CB11 /* SongsViewModel.swift in Sources */,
 				F0CA6EC728D7C2880028CB11 /* VideoFetchService.swift in Sources */,
+				F064AE9C295A6B61007FEF73 /* FavouriteButton.swift in Sources */,
 				F04D147C28DD4ED300750B71 /* LiveAccessoryCornerView.swift in Sources */,
 				F0F0EAC0292B55EA0091DBD7 /* LiveFavouriteCountView.swift in Sources */,
 				F04D148B28DD66AD00750B71 /* UpcomingAccessoryCornerView.swift in Sources */,

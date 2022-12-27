@@ -15,7 +15,7 @@ struct LiveFavouritesWatchView: View {
             WatchLiveCellView(live: video)
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: live.dataStatus) {
-                LiveFavouriteCountView()
+                LiveFavouriteCountView(userDefaultSuite: nil)
                     .environmentObject(live as VideoViewModel)
             }
         })

@@ -9,9 +9,20 @@ import SwiftUI
 
 struct FavouriteButton<Content: View>: View {
     let video: LiveVideo
-    @ViewBuilder let content: () -> Content
+    let content: () -> Content
     
-    @AppStorage(UserDefaultKeys.favouritedChannel, store: UserDefaults(suiteName: "group.io.skk-tj.holo-wtf.ios")) var favourited = Favourited()
+    @AppStorage var favourited: Favourited
+    
+    init(video: LiveVideo, content: @escaping () -> Content, userDefaultSuite: String? = "group.io.skk-tj.holo-wtf.ios") {
+        self.video = video
+        self.content = content
+        
+        if let userDefaultSuite {
+            self._favourited = AppStorage(wrappedValue: Favourited(), UserDefaultKeys.favouritedChannel, store: UserDefaults(suiteName: userDefaultSuite))
+        } else {
+            self._favourited = AppStorage(wrappedValue: Favourited(), UserDefaultKeys.favouritedChannel)
+        }
+    }
     
     var body: some View {
         let isFavourited = favourited.contains(where: {$0 == video.channel.id})

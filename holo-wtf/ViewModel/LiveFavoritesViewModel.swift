@@ -17,7 +17,7 @@ class LiveFavoritesViewModel: VideoViewModel, VideoGettable {
     
     @MainActor
     func getVideoForUI() async {
-        let favourites = getFavouritesFromUserDefaults(groupName: "group.io.skk-tj.holo-wtf.ios")
+        let favourites = getFavouritesFromUserDefaults(groupName: self.groupName)
         self.dataStatus = .working
         
         do {

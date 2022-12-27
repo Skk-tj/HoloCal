@@ -15,7 +15,7 @@ struct UpcomingFavouritesWatchView: View {
             WatchUpcomingCellView(upcoming: video)
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: upcoming.dataStatus) {
-                UpcomingFavouriteCountView()
+                UpcomingFavouriteCountView(userDefaultSuite: nil)
                     .font(.footnote)
                     .environmentObject(upcoming as VideoViewModel)
             }

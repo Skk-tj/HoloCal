@@ -32,8 +32,8 @@ struct VideoContextMenu: View {
         }
         
         // MARK: - Favourite Button
+        let isFavourited = favourited.contains(where: {$0 == video.channel.id})
         FavouriteButton(video: video) {
-            let isFavourited = favourited.contains(where: {$0 == video.channel.id})
             Label(isFavourited ? "VIDEO_CONTEXT_MENU_REMOVE_FAVOURITE" : "VIDEO_CONTEXT_MENU_FAVOURITE_CHANNEL", systemImage: isFavourited ? "star.slash" : "star")
         }
         

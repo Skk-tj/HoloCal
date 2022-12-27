@@ -18,7 +18,7 @@ class UpcomingFavoritesViewModel: VideoViewModel, VideoGettable {
     @MainActor
     func getVideoForUI() async {
         let upcomingLookAhead = getUpcomingStreamLookAheadHoursFromUserDefaults()
-        let favourites = getFavouritesFromUserDefaults(groupName: groupName)
+        let favourites = getFavouritesFromUserDefaults(groupName: self.groupName)
         self.dataStatus = .working
         
         do {
