@@ -46,7 +46,7 @@ struct UpcomingiPadView: View {
                     .environmentObject(upcoming as VideoViewModel)
             }
         }
-        .navigationTitle("UPCOMING_VIEW_TITLE")
+        .navigationTitle(agencyEnumToAgency[agency]!.localizedName)
         .animation(.easeInOut, value: upcoming.dataStatus)
     }
 }
