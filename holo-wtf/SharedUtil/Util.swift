@@ -101,8 +101,6 @@ enum UserDefaultKeys {
     static let favouritedChannel = "favouritedChannel"
     static let isShowingAbsoluteTimeInLiveView = "isShowingAbsoluteTimeInLiveView"
     static let isShowingAbsoluteTimeInUpcomingView = "isShowingAbsoluteTimeInUpcomingView"
-    static let isShowingAbsoluteTimeInLiveFavouritesView = "isShowingAbsoluteTimeInLiveFavouritesView"
-    static let isShowingAbsoluteTimeInUpcomingFavouritesView = "isShowingAbsoluteTimeInUpcomingFavouritesView"
     static let isShowingCompactInLiveView = "isShowingCompactInLiveView"
     static let isShowingCompactInUpcomingView = "isShowingCompactInUpcomingView"
     static let isShowingDSTReminder = "isShowingDSTReminder"

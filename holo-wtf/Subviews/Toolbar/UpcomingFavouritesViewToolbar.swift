@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct UpcomingFavouritesViewToolbar: View {
-    @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInUpcomingFavouritesView) var isShowingAbsoluteTime: Bool = false
+    @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInUpcomingView) var isShowingAbsoluteTime: Bool = false
     @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingFavouritesView) var isShowingCompact: Bool = false
-    
-    @State var sortingStrategy: SortingStrategy = .timeAsc
     
     @EnvironmentObject var upcomingViewModel: VideoViewModel
     
@@ -32,7 +30,7 @@ struct UpcomingFavouritesViewToolbar: View {
         
         Menu {
             Menu {
-                Picker("Order", selection: $sortingStrategy) {
+                Picker("Order", selection: $upcomingViewModel.sortingStrategy) {
                     Label("UPCOMING_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST", systemImage: "hourglass.tophalf.filled").tag(SortingStrategy.timeAsc)
                     Label("UPCOMING_VIEW_TOOLBAR_SORT_BY_START_TIME_FURTHEST_TO_NEAREST", systemImage: "hourglass.bottomhalf.filled").tag(SortingStrategy.timeDesc)
                 }
@@ -42,8 +40,8 @@ struct UpcomingFavouritesViewToolbar: View {
         } label: {
             Label("LIVE_VIEW_TOOLBAR_SORT", systemImage: "arrow.up.arrow.down")
         }
-        .onChange(of: sortingStrategy, perform: { sortingSelection in
-            self.upcomingViewModel.sortVideos(by: sortingSelection)
+        .onChange(of: upcomingViewModel.sortingStrategy, perform: { sortingSelection in
+            self.upcomingViewModel.sortVideos()
         })
     }
 }

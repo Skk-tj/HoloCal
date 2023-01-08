@@ -13,9 +13,6 @@ struct LiveViewToolbar: View {
     
     @Binding var currentPresentationMode: PresentationMode
     
-    /// Defines the current sorting strategy
-    @State var sortingStrategy: SortingStrategy = .notSorting
-    
     @EnvironmentObject var liveViewModel: VideoViewModel
     
     var body: some View {
@@ -35,12 +32,12 @@ struct LiveViewToolbar: View {
         }
         
         Menu {
-            Picker("Order", selection: $sortingStrategy) {
+            Picker("Order", selection: $liveViewModel.sortingStrategy) {
                 Label(UIDevice.current.userInterfaceIdiom == .phone ? "LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION" : "LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION_IPAD", systemImage: "person.3.fill").tag(SortingStrategy.notSorting)
             }
             
             Menu {
-                Picker("Order", selection: $sortingStrategy) {
+                Picker("Order", selection: $liveViewModel.sortingStrategy) {
                     Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST", systemImage: "hourglass.tophalf.filled").tag(SortingStrategy.timeDesc)
                     Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_FURTHEST_TO_NEAREST", systemImage: "hourglass.bottomhalf.filled").tag(SortingStrategy.timeAsc)
                 }
@@ -49,7 +46,7 @@ struct LiveViewToolbar: View {
             }
             
             Menu {
-                Picker("Order", selection: $sortingStrategy) {
+                Picker("Order", selection: $liveViewModel.sortingStrategy) {
                     Label(title: {
                         Text("LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS_DESCENDING")
                     }, icon: {
@@ -68,14 +65,14 @@ struct LiveViewToolbar: View {
         } label: {
             Label("LIVE_VIEW_TOOLBAR_SORT", systemImage: "arrow.up.arrow.down")
         }
-        .onChange(of: self.sortingStrategy, perform: { sortingSelection in
+        .onChange(of: liveViewModel.sortingStrategy, perform: { sortingSelection in
             if sortingSelection == .notSorting {
                 currentPresentationMode = .normal
             } else {
                 currentPresentationMode = .sorting
             }
             
-            self.liveViewModel.sortVideos(by: sortingSelection)
+            self.liveViewModel.sortVideos()
         })
     }
 }

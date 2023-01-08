@@ -41,6 +41,7 @@ protocol VideoGettable {
 class VideoViewModel: ObservableObject {
     @Published var videoList: [LiveVideo]
     @Published var dataStatus: DataStatus
+    @Published var sortingStrategy: SortingStrategy
     
     let agency: AgencyEnum
     
@@ -48,6 +49,7 @@ class VideoViewModel: ObservableObject {
         self.videoList = []
         self.dataStatus = .working
         self.agency = agency
+        self.sortingStrategy = .notSorting
     }
     
     let logger = Logger()
@@ -61,6 +63,33 @@ class VideoViewModel: ObservableObject {
             let getResultWithTwitter: [LiveVideo] = try await getTwitterForAll(videoList: getResult)
             
             completion(getResultWithTwitter)
+            self.dataStatus = .success
+        } catch {
+            self.dataStatus = .fail
+        }
+    }
+    
+    @MainActor
+    func getVideosForFavourites(urls: [String], groupName: String?, completion: @escaping ([LiveVideo]) -> Void) async {
+        let favourites = getFavouritesFromUserDefaults(groupName: groupName)
+        self.dataStatus = .working
+        
+        do {
+            var getResult: [LiveVideo] = []
+            
+            for url in urls {
+                async let videos = getVideos(from: url)
+                getResult.append(contentsOf: (try? await videos) ?? [])
+            }
+            
+            getResult = getResult.filter {
+                favourites.contains($0.channel.id)
+            }
+            
+            let getResultWithTwitter: [LiveVideo] = try await getTwitterForAll(videoList: getResult)
+            
+            completion(getResultWithTwitter)
+            
             self.dataStatus = .success
         } catch {
             self.dataStatus = .fail
@@ -122,8 +151,8 @@ class VideoViewModel: ObservableObject {
     }
     
     @MainActor
-    func sortVideos(by strategy: SortingStrategy) {
-        switch strategy {
+    func sortVideos() {
+        switch self.sortingStrategy {
         case .viewersAsc:
             self.videoList.sort(by: {$0.liveViewers < $1.liveViewers})
         case .viewersDesc:

@@ -27,7 +27,7 @@ class LiveViewModel: VideoViewModel, VideoGettable {
     func getVideoForUI() async {
         await getVideo(url: videoUrl) { responseResult in
             self.videoList = responseResult
-            self.sortVideos(by: .timeDesc)
+            self.sortVideos()
             self.videoList = self.videoList.filter {
                 $0.isAgency(agency: self.agency)
             }

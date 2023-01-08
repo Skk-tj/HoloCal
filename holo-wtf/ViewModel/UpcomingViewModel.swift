@@ -29,7 +29,7 @@ class UpcomingViewModel: VideoViewModel, VideoGettable {
         
         await getVideo(url: String(format: videoUrl, upcomingLookAhead)) { responseResult in
             self.videoList = responseResult
-            self.sortVideos(by: .timeAsc)
+            self.sortVideos()
             self.videoList = self.videoList.filter {
                 $0.isAgency(agency: self.agency)
             }

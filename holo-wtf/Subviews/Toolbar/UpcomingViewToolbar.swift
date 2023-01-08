@@ -13,9 +13,6 @@ struct UpcomingViewToolbar: View {
     
     @Binding var currentPresentationMode: PresentationMode
     
-    /// Defines the current sorting strategy.
-    @State var sortingStrategy: SortingStrategy = .notSorting
-    
     @EnvironmentObject var upcomingViewModel: VideoViewModel
     
     var body: some View {
@@ -35,12 +32,12 @@ struct UpcomingViewToolbar: View {
         }
         
         Menu {
-            Picker("Order", selection: $sortingStrategy) {
+            Picker("Order", selection: $upcomingViewModel.sortingStrategy) {
                 Label(UIDevice.current.userInterfaceIdiom == .phone ? "LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION" : "LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION_IPAD", systemImage: "person.fill").tag(SortingStrategy.notSorting)
             }
             
             Menu {
-                Picker("Order", selection: $sortingStrategy) {
+                Picker("Order", selection: $upcomingViewModel.sortingStrategy) {
                     Label("UPCOMING_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST", systemImage: "hourglass.tophalf.filled").tag(SortingStrategy.timeAsc)
                     Label("UPCOMING_VIEW_TOOLBAR_SORT_BY_START_TIME_FURTHEST_TO_NEAREST", systemImage: "hourglass.bottomhalf.filled").tag(SortingStrategy.timeDesc)
                 }
@@ -50,14 +47,14 @@ struct UpcomingViewToolbar: View {
         } label: {
             Label("LIVE_VIEW_TOOLBAR_SORT", systemImage: "arrow.up.arrow.down")
         }
-        .onChange(of: sortingStrategy, perform: { sortingSelection in
+        .onChange(of: upcomingViewModel.sortingStrategy, perform: { sortingSelection in
             if sortingSelection == .notSorting {
                 currentPresentationMode = .normal
             } else {
                 currentPresentationMode = .sorting
             }
             
-            self.upcomingViewModel.sortVideos(by: sortingSelection)
+            self.upcomingViewModel.sortVideos()
         })
     }
 }

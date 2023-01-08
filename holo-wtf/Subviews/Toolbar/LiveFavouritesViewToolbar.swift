@@ -8,11 +8,8 @@
 import SwiftUI
 
 struct LiveFavouritesViewToolbar: View {
-    @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInLiveFavouritesView) var isShowingAbsoluteTime: Bool = false
+    @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInLiveView) var isShowingAbsoluteTime: Bool = false
     @AppStorage(UserDefaultKeys.isShowingCompactInLiveFavouritesView) var isShowingCompact: Bool = false
-    
-    /// Defines the current sorting strategy
-    @State var sortingStrategy: SortingStrategy = .timeDesc
     
     @EnvironmentObject var liveViewModel: VideoViewModel
     
@@ -33,7 +30,7 @@ struct LiveFavouritesViewToolbar: View {
         
         Menu {
             Menu {
-                Picker("Order", selection: $sortingStrategy) {
+                Picker("Order", selection: $liveViewModel.sortingStrategy) {
                     Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST", systemImage: "hourglass.tophalf.filled").tag(SortingStrategy.timeDesc)
                     Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_FURTHEST_TO_NEAREST", systemImage: "hourglass.bottomhalf.filled").tag(SortingStrategy.timeAsc)
                 }
@@ -42,7 +39,7 @@ struct LiveFavouritesViewToolbar: View {
             }
             
             Menu {
-                Picker("Order", selection: $sortingStrategy) {
+                Picker("Order", selection: $liveViewModel.sortingStrategy) {
                     Label(title: {
                         Text("LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS_DESCENDING")
                     }, icon: {
@@ -61,8 +58,8 @@ struct LiveFavouritesViewToolbar: View {
         } label: {
             Label("LIVE_VIEW_TOOLBAR_SORT", systemImage: "arrow.up.arrow.down")
         }
-        .onChange(of: self.sortingStrategy, perform: { sortingSelection in
-            self.liveViewModel.sortVideos(by: sortingSelection)
+        .onChange(of: liveViewModel.sortingStrategy, perform: { sortingSelection in
+            self.liveViewModel.sortVideos()
         })
     }
 }
