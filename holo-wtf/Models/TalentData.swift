@@ -202,6 +202,10 @@ enum TalentEnum: String, Codable {
     case vesper = "UCDRWSO281bIHYVi-OV3iFYA"
     case syrios = "UC2hx0xVkMoHGWijwr_lA01w"
     case dezmond = "UC7MMNHR-kf9EN1rXiesMTMw"
+    case gavis = "UCHP4f7G2dWD4qib7BMatGAw"
+    case machina = "UC060r4zABV18vcahAWR1n7w"
+    case banzoin = "UC7gxU6NXjKF1LrgOddPzgTw"
+    case josuiji = "UCMqGG8BRAiI1lJfKOpETM_w"
     // MARK: - Official Channels
     case hololive = "UCJFZiqLMntJufDCHc6bQixg"
     case hololiveEN = "UCotXwY6s8pWmuWd_snKYjhg"
@@ -650,6 +654,10 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .vesper: Talent(id: TalentEnum.vesper.rawValue, names: [.en: "Noir Vesper", .ja: "ノワール・ヴェスパー"], inGeneration: Generation.tempus),
     .syrios: Talent(id: TalentEnum.syrios.rawValue, names: [.en: "Axel Syrios", .ja: "アクセル・シリオス"], inGeneration: Generation.tempus),
     .dezmond: Talent(id: TalentEnum.dezmond.rawValue, names: [.en: "Magni Dezmond", .ja: "マグニ・デズモンド"], inGeneration: Generation.tempus),
+    .gavis: Talent(id: TalentEnum.gavis.rawValue, names: [.en: "Gavis Bettel", .ja: "ガビス・ベッテル"], inGeneration: Generation.tempus),
+    .machina: Talent(id: TalentEnum.machina.rawValue, names: [.en: "Machina X Flayon", .ja: "マキナ・X・フレオン"], inGeneration: Generation.tempus),
+    .banzoin: Talent(id: TalentEnum.banzoin.rawValue, names: [.en: "Banzoin Hakka", .ja: "万象院ハッカ"], inGeneration: Generation.tempus),
+    .josuiji: Talent(id: TalentEnum.josuiji.rawValue, names: [.en: "Josuiji Shinri", .ja: "定水寺シンリ"], inGeneration: Generation.tempus),
     
     // MARK: - Official Channels
     .hololive: Talent(id: TalentEnum.hololive.rawValue, names: [.en: "hololive", .ja: "ホロライブ"], inGeneration: Generation.hololiveOfficial),
@@ -1005,7 +1013,7 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .stars2ndGen: GenerationGroup(id: .stars2ndGen, names: [.en: "holostars 2nd Gen", .ja: "ホロスターズ 2期生"], members: [.astel, .temma, .roberu]),
     .stars3rdGen: GenerationGroup(id: .stars3rdGen, names: [.en: "holostars 3nd Gen", .ja: "ホロスターズ 3期生"], members: [.shien, .oga]),
     .uproar: GenerationGroup(id: .uproar, names: [.en: "holostars UPROAR!!", .ja: "ホロスターズ アップロー!!"], members: [.fuma, .uyu, .gamma, .rio]),
-    .tempus: GenerationGroup(id: .tempus, names: [.en: "HOLOSTARS English -TEMPUS-", .ja: "HOLOSTARS English -TEMPUS-"], members: [.altare, .dezmond, .syrios, .vesper]),
+    .tempus: GenerationGroup(id: .tempus, names: [.en: "HOLOSTARS English -TEMPUS-", .ja: "HOLOSTARS English -TEMPUS-"], members: [.altare, .dezmond, .syrios, .vesper, .gavis, .machina, .banzoin, .josuiji]),
     .hololiveOfficial: GenerationGroup(id: .hololiveOfficial, names: [.en: "Hololive Official Channels", .ja: "ホロライブ公式チャンネル"], members: [.hololive, .hololiveEN, .hololiveID, .holostars, .midnight]),
 
     // MARK: - Nijisanji
