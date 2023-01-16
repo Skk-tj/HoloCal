@@ -64,6 +64,7 @@ enum Generation: Int, CaseIterable, Codable, Hashable {
     case wave2022Ranunculus
     case wave2022May21
     case wave2022Voltaction
+    case wave2023Jan16
     case id1stWave
     case id2ndWave
     case id3rdWave
@@ -391,6 +392,15 @@ enum TalentEnum: String, Codable {
     case watarai = "UC4l9gz3q65lTBFfFtW5LLeA" // Watarai Hibari
     case shikinagi = "UCcDDxnoQcezyTUzHg5uHaKg" // Shikinagi Akira
     case seraph = "UC5dJFf4m-mEcoyJRfhBljoA" // Seraph Dazzlegarden
+    
+    // MARK: - 2023 Wave: Jan 13
+    case koshimizu = "UCUP8TmlO7NNra88AMqGU_vQ"
+    case shishido = "UCWRPqA0ehhWV4Hnp27PJCkQ"
+    case kaburaiki = "UClrQ7xhRBxS_v_-WuudGKmA"
+    case igarashi = "UCu-rV2gPtJ-CsGxe71z_BrQ"
+    case ishigami = "UCtLfA_qUqCJtjXJM2ZR_keg"
+    case sophia = "UCivwPlOp0ojnMPZj5pNOPPA"
+    case kuramochi = "UCiA-trSZfB0i92V_-dyDqBw"
     
     // MARK: - ID First Wave: 3setBBQ
     case taka = "UCZ5dNZsqBjBzbBl0l_IdmXg" // Taka Radjiman
@@ -843,6 +853,15 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .watarai: Talent(id: TalentEnum.watarai.rawValue, names: [.en: "Watarai Hibari", .ja: "渡会雲雀"], inGeneration: Generation.wave2022Voltaction),
     .shikinagi: Talent(id: TalentEnum.shikinagi.rawValue, names: [.en: "Shikinagi Akira", .ja: "四季凪アキラ"], inGeneration: Generation.wave2022Voltaction),
     .seraph: Talent(id: TalentEnum.seraph.rawValue, names: [.en: "Seraph Dazzlegarden", .ja: "セラフ・ダズルガーデン"], inGeneration: Generation.wave2022Voltaction),
+    
+    // MARK: - 2023 Wave: Jan 13
+    .koshimizu: Talent(id: TalentEnum.koshimizu.rawValue, names: [.en: "Koshimizu Toru", .ja: "小清水透"], inGeneration: Generation.wave2023Jan16),
+    .shishido: Talent(id: TalentEnum.shishido.rawValue, names: [.en: "Shishido Akari", .ja: "獅子堂あかり"], inGeneration: Generation.wave2023Jan16),
+    .kaburaiki: Talent(id: TalentEnum.kaburaiki.rawValue, names: [.en: "Kaburaki Roco", .ja: "鏑木ろこ"], inGeneration: Generation.wave2023Jan16),
+    .igarashi: Talent(id: TalentEnum.igarashi.rawValue, names: [.en: "Igarashi Rika", .ja: "五十嵐梨花"], inGeneration: Generation.wave2023Jan16),
+    .ishigami: Talent(id: TalentEnum.ishigami.rawValue, names: [.en: "Ishigami Nozomi", .ja: "石神のぞみ"], inGeneration: Generation.wave2023Jan16),
+    .sophia: Talent(id: TalentEnum.sophia.rawValue, names: [.en: "Sophia Valentine", .ja: "ソフィア・ヴァレンタイン"], inGeneration: Generation.wave2023Jan16),
+    .kuramochi: Talent(id: TalentEnum.kuramochi.rawValue, names: [.en: "Kuramochi Meruto", .ja: "倉持めると"], inGeneration: Generation.wave2023Jan16),
 
     // MARK: - ID First Wave: 3setBBQ
     .taka: Talent(id: TalentEnum.taka.rawValue, names: [.en: "Taka Radjiman", .ja: "タカ ラジマン"], inGeneration: Generation.id1stWave),
@@ -1049,6 +1068,7 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .wave2022Ranunculus: GenerationGroup(id: .wave2022Ranunculus, names: [.en: "Ranunculus", .ja: "Ranunculus"], members: [.amagase, .ponto, .umise]),
     .wave2022May21: GenerationGroup(id: .wave2022May21, names: [.en: "2022 Wave: May 21", .ja: "2022年05月21日デビュー"], members: [.hyakumantenbara]),
     .wave2022Voltaction: GenerationGroup(id: .wave2022Voltaction, names: [.en: "VOLTACTION", .ja: "VOLTACTION"], members: [.fura, .watarai, .shikinagi, .seraph]),
+    .wave2023Jan16: GenerationGroup(id: .wave2023Jan16, names: [.en: "2023 Wave: Jan 16", .ja: "2023年01月16日デビュー"], members: [.koshimizu, .shishido, .kaburaiki, .igarashi, .ishigami, .sophia, .kuramochi]),
     .id1stWave: GenerationGroup(id: .id1stWave, names: [.en: "ID 1st Wave", .ja: "ID 1期生"], members: [.taka, .zea, .hana]),
     .id2ndWave: GenerationGroup(id: .id2ndWave, names: [.en: "ID 2nd Wave", .ja: "ID 2期生"], members: [.rai, .amicia, .riksa]),
     .id3rdWave: GenerationGroup(id: .id3rdWave, names: [.en: "ID 3rd Wave", .ja: "ID 3期生"], members: [.azura, .layla, .nara]),
