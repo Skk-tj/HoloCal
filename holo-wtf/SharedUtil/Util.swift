@@ -84,6 +84,14 @@ func getLiveVideoJSONDecoder() -> JSONDecoder {
     return decoder
 }
 
+func getLiveConcertJSONDecoder() -> JSONDecoder {
+    let decoder = JSONDecoder()
+    decoder.keyDecodingStrategy = .convertFromSnakeCase
+    decoder.dateDecodingStrategy = .iso8601
+    
+    return decoder
+}
+
 func getCalendarEventFromVideo(eventStore: EKEventStore, video: LiveVideo) -> EKEvent {
     let event = EKEvent(eventStore: eventStore)
     event.title = video.title

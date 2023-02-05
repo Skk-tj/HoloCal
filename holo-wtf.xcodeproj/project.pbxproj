@@ -52,6 +52,9 @@
 		F01241B12935EA51007C8FE9 /* LiveAccessoryCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01241AE2935EA51007C8FE9 /* LiveAccessoryCircularView.swift */; };
 		F01241B4293725FC007C8FE9 /* LiveWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1E3283034AF00E2A6FF /* LiveWidgetView.swift */; };
 		F01241B5293725FD007C8FE9 /* LiveWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1E3283034AF00E2A6FF /* LiveWidgetView.swift */; };
+		F01DAA4F298FACE000052514 /* LiveConcert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA4E298FACE000052514 /* LiveConcert.swift */; };
+		F01DAA51298FB58700052514 /* ConcertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA50298FB58700052514 /* ConcertsView.swift */; };
+		F01DAA55298FB6AB00052514 /* ConcertsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA54298FB6AB00052514 /* ConcertsViewModel.swift */; };
 		F01E95B3286FB4B900CDF0F9 /* iPadLazyGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01E95B2286FB4B900CDF0F9 /* iPadLazyGridView.swift */; };
 		F022119C292B6CF5009EC2CC /* SingleAgencyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022119B292B6CF5009EC2CC /* SingleAgencyItemView.swift */; };
 		F022119D292B6CF5009EC2CC /* SingleAgencyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022119B292B6CF5009EC2CC /* SingleAgencyItemView.swift */; };
@@ -377,6 +380,9 @@
 		F00BD6CF29052AC400D7932E /* VideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
 		F0114D4E2815F81600B99D4D /* DataStatusIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStatusIndicatorView.swift; sourceTree = "<group>"; };
 		F01241AE2935EA51007C8FE9 /* LiveAccessoryCircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAccessoryCircularView.swift; sourceTree = "<group>"; };
+		F01DAA4E298FACE000052514 /* LiveConcert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveConcert.swift; sourceTree = "<group>"; };
+		F01DAA50298FB58700052514 /* ConcertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcertsView.swift; sourceTree = "<group>"; };
+		F01DAA54298FB6AB00052514 /* ConcertsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcertsViewModel.swift; sourceTree = "<group>"; };
 		F01E95B2286FB4B900CDF0F9 /* iPadLazyGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadLazyGridView.swift; sourceTree = "<group>"; };
 		F0204DB827E91A920083750F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F0204DB927E925220083750F /* PRIVACY-POLICY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "PRIVACY-POLICY.md"; sourceTree = "<group>"; };
@@ -664,6 +670,7 @@
 				F0F0EA9E292B2A390091DBD7 /* LiveFavouritesView.swift */,
 				F0673C0D27732BA3009C65C6 /* UpcomingView.swift */,
 				F0F0EAAB292B3FD10091DBD7 /* UpcomingFavouritesView.swift */,
+				F01DAA50298FB58700052514 /* ConcertsView.swift */,
 				F0AC584A28CFCC580088151C /* SettingsStackView.swift */,
 			);
 			path = iOS;
@@ -914,6 +921,7 @@
 				F0ED2AE3280685FD00683E6C /* LiveVideo.swift */,
 				F004E8C5285D004A00ABDFED /* SongInStream.swift */,
 				F0E45D1728F39AD90091474A /* Agency.swift */,
+				F01DAA4E298FACE000052514 /* LiveConcert.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -929,6 +937,7 @@
 				F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */,
 				F064A5B528BB3765008C51C2 /* SongsViewModel.swift */,
 				F03A3CED295D9B0200363348 /* FavouritesVideoModel.swift */,
+				F01DAA54298FB6AB00052514 /* ConcertsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1340,6 +1349,7 @@
 				F004E8C6285D004A00ABDFED /* SongInStream.swift in Sources */,
 				F0F0EA9C292B062A0091DBD7 /* AgencyForEachView.swift in Sources */,
 				F0F0EAA4292B36780091DBD7 /* FavouritesVideoListView.swift in Sources */,
+				F01DAA51298FB58700052514 /* ConcertsView.swift in Sources */,
 				F0CA6EA828D794320028CB11 /* LiveCollabListStackView.swift in Sources */,
 				F0328555293201EF0079F46A /* LiveFavouritesiPadView.swift in Sources */,
 				F0CA6EA328D791BE0028CB11 /* Modes.swift in Sources */,
@@ -1386,6 +1396,7 @@
 				F065857D28CFF4C6001672E1 /* ManageGenerationVisibilityView.swift in Sources */,
 				F02211A3292C9FF8009EC2CC /* ViewerCounterView.swift in Sources */,
 				F09D53BD29337378003C4F80 /* Intents.intentdefinition in Sources */,
+				F01DAA55298FB6AB00052514 /* ConcertsViewModel.swift in Sources */,
 				F04EB66728D2A0A000F168CB /* ManageGenerationOrderView.swift in Sources */,
 				F02211AD292F73DA009EC2CC /* iPadSplitView.swift in Sources */,
 				F0F0EA99292B01510091DBD7 /* LiveFavoritesViewModel.swift in Sources */,
@@ -1396,6 +1407,7 @@
 				F05E9EB527EB290000EF48DD /* UpcomingiPadView.swift in Sources */,
 				F0ED2AF0280AC27400683E6C /* LiveViewModel.swift in Sources */,
 				F0ED2AE62808253700683E6C /* VideoThumbnailView.swift in Sources */,
+				F01DAA4F298FACE000052514 /* LiveConcert.swift in Sources */,
 				F07D891928834FBB008D3057 /* DSTReminderView.swift in Sources */,
 				F0CA6EAA28D7B5DD0028CB11 /* SongListStackView.swift in Sources */,
 				F00BD6D029052AC400D7932E /* VideoViewModel.swift in Sources */,

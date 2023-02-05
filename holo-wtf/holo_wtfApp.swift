@@ -100,6 +100,13 @@ struct holo_wtfApp: App {
                         Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
                     }
                     
+                    NavigationStack {
+                        ConcertsView()
+                    }
+                    .tabItem() {
+                        Label("ROOT_VIEW_CONCERTS", systemImage: "music.mic")
+                    }
+                    
                     SettingsStackView()
                         .tabItem {
                             Label("ROOT_VIEW_SETTINGS", systemImage: "gear")

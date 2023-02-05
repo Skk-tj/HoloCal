@@ -35,6 +35,7 @@ let allUpcomingURL = "https://holodex.net/api/v2/live?status=upcoming&type=strea
 
 let allWidgetUpcomingURL = "https://holodex.net/api/v2/live?status=upcoming&type=stream&include=songs,mentions"
 
+let concertAPIURL = "https://holo-wtf-api-trbge5wfpq-uc.a.run.app"
 
 func liveSortStrategy(l1: LiveVideo, l2: LiveVideo) -> Bool {
     l1.startActual ?? (l1.startScheduled ?? Date.distantFuture) > l2.startActual ?? (l2.startScheduled ?? Date.distantFuture)
