@@ -55,7 +55,7 @@ struct BlockLiveTimeView: View {
     }
 }
 
-struct NewLiveTimeView_Previews: PreviewProvider {
+struct BlockLiveTimeView_Previews: PreviewProvider {
     static var previews: some View {
         BlockLiveTimeView(liveTime: Date() - 30000, isShowingAbsoluteTime: true)
         BlockLiveTimeView(liveTime: nil)

@@ -12,7 +12,11 @@ struct ConcertsView: View {
     
     var body: some View {
         ConcertListView(singleConcertView: { concert in
-            Text(concert.title)
+            NavigationLink(destination: {
+                ConcertView(concert: concert)
+            }) {
+                ConcertCell(concert: concert)
+            }
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: concert.dataStatus) {
                 ConcertCountView()

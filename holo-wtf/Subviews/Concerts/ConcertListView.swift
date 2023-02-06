@@ -28,8 +28,6 @@ struct ConcertListView<Content: View, DataStatusContent: View>: View {
                 dataStatusView()
                 Spacer()
             }
-            .listRowSeparator(.hidden)
         }
-        .listStyle(.plain)
     }
 }

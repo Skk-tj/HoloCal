@@ -68,8 +68,18 @@ struct LiveConcert: Decodable, Hashable, Identifiable {
     let platform: Platform
     let description: String
     let startTime: Date
-    let imageURL: URL?
-    let twitterURL: URL?
+    let imageUrl: URL?
+    let twitterUrl: URL?
     let youtubeLink: URL?
     let ticketLink: URL?
+    
+    static let previewDescription = """
+    Free segment: https://www.youtube.com/watch?v=Ijlhnsx_FiQ
+    Ticket link: https://riotmusic-live.zaiko.io/item/354008
+    
+    https://twitter.com/iori_m_RIOT/status/1616289241906176004
+    """
+    
+    static let previewConcert = LiveConcert(id: UUID(), title: "Iori Matsunaga Birthday Live Part 1", format: .both, jpyPrice: .multiTier(7000), platform: .zaiko, description: previewDescription, startTime: .now - 3600, imageUrl: URL(string: "https://pbs.twimg.com/media/Fm42frAacAAw56R?format=jpg&name=small"), twitterUrl: URL(string: "https://twitter.com/iori_m_RIOT/status/1616289241906176004"), youtubeLink: nil, ticketLink: URL(string: "https://riotmusic-live.zaiko.io/item/354008"))
+    static let previewConcertNoImage = LiveConcert(id: UUID(), title: "Iori Matsunaga Birthday Live Part 1", format: .both, jpyPrice: .multiTier(7000), platform: .zaiko, description: previewDescription, startTime: .now - 3600, imageUrl: nil, twitterUrl: URL(string: "https://twitter.com/iori_m_RIOT/status/1616289241906176004"), youtubeLink: nil, ticketLink: URL(string: "https://riotmusic-live.zaiko.io/item/354008"))
 }
