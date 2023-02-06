@@ -46,15 +46,7 @@ struct UpcomingWidgetView: View {
                             .shadow(radius: 1)
                     }
                     
-                    VStack(alignment: .leading) {
-                        Text(upcoming.channel.getTalentName())
-                            .lineLimit(1)
-                            .font(.subheadline)
-                        Text(upcoming.channel.getAltTalentName())
-                            .lineLimit(1)
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                    }
+                    ChannelNameView(channel: upcoming.channel)
                 }
                 
                 HStack {

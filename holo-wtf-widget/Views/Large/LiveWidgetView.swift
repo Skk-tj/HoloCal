@@ -46,15 +46,7 @@ struct LiveWidgetView: View {
                             .shadow(radius: 1)
                     }
                     
-                    VStack(alignment: .leading) {
-                        Text(live.channel.getTalentName())
-                            .lineLimit(1)
-                            .font(.subheadline)
-                        Text(live.channel.getAltTalentName())
-                            .lineLimit(1)
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                    }
+                    ChannelNameView(channel: live.channel)
                 }
                 
                 HStack {

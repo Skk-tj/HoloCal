@@ -11,14 +11,21 @@ struct ConcertsView: View {
     @StateObject var concert: ConcertsViewModel = ConcertsViewModel()
     
     var body: some View {
-        Text("Test concerts")
-            .navigationTitle("ROOT_VIEW_CONCERTS")
-            .task {
-                await concert.getConcertsForUI()
+        ConcertListView(singleConcertView: { concert in
+            Text(concert.title)
+        }, dataStatusView: {
+            DataStatusIndicatorView(dataStatus: concert.dataStatus) {
+                ConcertCountView()
             }
-            .refreshable {
-                await concert.getConcertsForUI()
-            }
+        })
+        .environmentObject(concert)
+        .navigationTitle("ROOT_VIEW_CONCERTS")
+        .task {
+            await concert.getConcertsForUI()
+        }
+        .refreshable {
+            await concert.getConcertsForUI()
+        }
     }
 }
 

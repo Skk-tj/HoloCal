@@ -119,6 +119,10 @@
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld" = "%lld Upcoming Streams in %lld hours";
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld %lld" = "%lld Upcoming Streams in %lld hours (%lld excluded)";
 
+// ConcertsView
+
+"UPCOMING_CONCERTS_COUNT %lld" = "%lld Upcoming Concerts";
+
 // LiveViewToolbar & UpcomingViewToolbar
 
 "LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE" = "Show absolute time";

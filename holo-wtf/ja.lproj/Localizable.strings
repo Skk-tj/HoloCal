@@ -121,6 +121,10 @@
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld" = "%2$lld時間内に%1$lld人が配信予定";
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld %lld" = "%2$lld時間内に%1$lld人が配信予定（%3$lld人表示されていない）";
 
+// ConcertsView
+
+"UPCOMING_CONCERTS_COUNT %lld" = "%lld ライブコンサート";
+
 
 // LiveViewToolbar & UpcomingViewToolbar
 "LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE" = "絶対時間を表示";
