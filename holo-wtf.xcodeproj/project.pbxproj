@@ -57,7 +57,6 @@
 		F01DAA55298FB6AB00052514 /* ConcertsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA54298FB6AB00052514 /* ConcertsViewModel.swift */; };
 		F01DAA572990837200052514 /* ConcertListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA562990837200052514 /* ConcertListView.swift */; };
 		F01DAA5A2990850200052514 /* ConcertCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA592990850200052514 /* ConcertCountView.swift */; };
-		F01DAA5B2990872400052514 /* PaneViewChannelInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A8292E1E4B009EC2CC /* PaneViewChannelInfoView.swift */; };
 		F01DAA5F2990878F00052514 /* LiveCollabListStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA6EA728D794320028CB11 /* LiveCollabListStackView.swift */; };
 		F01DAA602990878F00052514 /* LiveCollabListStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA6EA728D794320028CB11 /* LiveCollabListStackView.swift */; };
 		F01DAA65299088B600052514 /* LiveCollabListStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA6EA728D794320028CB11 /* LiveCollabListStackView.swift */; };
@@ -1328,7 +1327,6 @@
 				F093D1DC282FA0CF00E2A6FF /* LiveTimeView.swift in Sources */,
 				F04D1B3E283A304E0026340D /* VideoLiveWidgetProvider.swift in Sources */,
 				F093D1DA282FA0C000E2A6FF /* UpcomingViewModel.swift in Sources */,
-				F01DAA5B2990872400052514 /* PaneViewChannelInfoView.swift in Sources */,
 				F03A139428F2018000BB8E51 /* LiveChannelsView.swift in Sources */,
 				F0E06D0B29322C7800BF6812 /* BlockMemberOnlyView.swift in Sources */,
 				F025204528EEA5FC00976972 /* Common.swift in Sources */,

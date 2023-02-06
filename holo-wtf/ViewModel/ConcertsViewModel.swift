@@ -51,7 +51,6 @@ class ConcertsViewModel: ObservableObject {
             let decoder = getLiveConcertJSONDecoder()
             
             let responseResult = try decoder.decode([LiveConcert].self, from: data)
-            print(responseResult)
             
             return responseResult
         } catch {
