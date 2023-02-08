@@ -14,7 +14,7 @@ struct ConcertCell: View {
         VStack(alignment: .leading) {
             Text(concert.title)
                 .font(.title2)
-            Text(getConcertFormatter().string(from: concert.startTime))
+            Text(concert.startTime.formatted(.dateTime.year().month().day().hour().minute().timeZone()))
                 .foregroundColor(.secondary)
         }
     }

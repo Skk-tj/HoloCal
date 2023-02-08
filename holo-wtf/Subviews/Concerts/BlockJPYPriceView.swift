@@ -10,8 +10,6 @@ import SwiftUI
 struct BlockJpyPriceView: View {
     let price: JpyPrice
     var body: some View {
-        let formatter = getCurrencyFormatter()
-        
         VStack(alignment: .leading) {
             HStack {
                 Image(systemName: "ticket")
@@ -25,11 +23,11 @@ struct BlockJpyPriceView: View {
                         .font(.title3)
                         .fontWeight(.bold)
                 case .multiTier(let price):
-                    Text("\(formatter.string(from: NSNumber(value: price))!)+")
+                    Text("\(price.formatted(.currency(code: "JPY")))+")
                         .font(.title3)
                         .fontWeight(.bold)
                 case .fixed(let price):
-                    Text("\(formatter.string(from: NSNumber(value: price))!)")
+                    Text("\(price.formatted(.currency(code: "JPY")))")
                         .font(.title3)
                         .fontWeight(.bold)
                 }
@@ -38,8 +36,6 @@ struct BlockJpyPriceView: View {
                 .font(.callout)
                 .foregroundColor(.secondary)
         }
-        
-        
     }
 }
 

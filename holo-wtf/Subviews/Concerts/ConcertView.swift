@@ -36,7 +36,7 @@ struct ConcertView: View {
                 VStack(alignment: .leading) {
                     Text(concert.title)
                         .font(.title)
-                    Text(getConcertFormatter().string(from: concert.startTime))
+                    Text(concert.startTime.formatted(.dateTime.year().month().day().hour().minute().timeZone()))
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                     
@@ -44,6 +44,7 @@ struct ConcertView: View {
                     
                     HStack {
                         BlockJpyPriceView(price: concert.jpyPrice)
+                            .padding(.trailing, 1)
                         BlockFormatView(format: concert.format)
                     }
                     .padding(.bottom, 1)
@@ -79,15 +80,6 @@ struct ConcertView: View {
         }
         .navigationTitle("Concert")
     }
-}
-
-func getCurrencyFormatter() -> NumberFormatter {
-    let formatter = NumberFormatter()
-    formatter.locale = .init(identifier: "ja_JP")
-    formatter.numberStyle = .currency
-    formatter.maximumFractionDigits = 0
-    
-    return formatter
 }
 
 struct ConcertView_Previews: PreviewProvider {

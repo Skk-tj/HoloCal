@@ -15,12 +15,6 @@ struct OpenSourceView: View {
                     Text("HoloCal is proudly open-source at GitHub")
                 })
             }
-            
-            Section {
-                Link(destination: URL(string: "https://holodex.net")!, label: {
-                    Text("Data graciously provided by Holodex")
-                })
-            }
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("OPEN_SOURCE_VIEW_TITLE")

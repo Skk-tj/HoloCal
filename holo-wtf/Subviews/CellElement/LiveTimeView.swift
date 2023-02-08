@@ -43,6 +43,6 @@ struct LiveTimeView: View {
 
 struct LiveTimeView_Previews: PreviewProvider {
     static var previews: some View {
-        LiveTimeView(liveTime: Date())
+        LiveTimeView(liveTime: Date() - 30000)
     }
 }

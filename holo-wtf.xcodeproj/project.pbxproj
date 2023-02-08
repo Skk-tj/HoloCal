@@ -57,9 +57,6 @@
 		F01DAA55298FB6AB00052514 /* ConcertsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA54298FB6AB00052514 /* ConcertsViewModel.swift */; };
 		F01DAA572990837200052514 /* ConcertListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA562990837200052514 /* ConcertListView.swift */; };
 		F01DAA5A2990850200052514 /* ConcertCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA592990850200052514 /* ConcertCountView.swift */; };
-		F01DAA5F2990878F00052514 /* LiveCollabListStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA6EA728D794320028CB11 /* LiveCollabListStackView.swift */; };
-		F01DAA602990878F00052514 /* LiveCollabListStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA6EA728D794320028CB11 /* LiveCollabListStackView.swift */; };
-		F01DAA65299088B600052514 /* LiveCollabListStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA6EA728D794320028CB11 /* LiveCollabListStackView.swift */; };
 		F01DAA66299088C800052514 /* LiveAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0673C162775F7FB009C65C6 /* LiveAvatarView.swift */; };
 		F01DAA682990917E00052514 /* ConcertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA672990917E00052514 /* ConcertCell.swift */; };
 		F01DAA6A299098AF00052514 /* ConcertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA69299098AF00052514 /* ConcertView.swift */; };
@@ -1281,7 +1278,6 @@
 				F06D28E828D839F5007D06FB /* LiveVideo.swift in Sources */,
 				F03A3CF1295D9B0200363348 /* FavouritesVideoModel.swift in Sources */,
 				F06D28F928D83AC9007D06FB /* Util.swift in Sources */,
-				F01DAA65299088B600052514 /* LiveCollabListStackView.swift in Sources */,
 				F06D28E628D839F5007D06FB /* Channel.swift in Sources */,
 				F06D28E328D839E4007D06FB /* SingleVideoWidgetEntry.swift in Sources */,
 				F09D53A729336944003C4F80 /* VideoUpcomingWidgetProvider.swift in Sources */,
@@ -1348,7 +1344,6 @@
 				F0B2AF0A28C13D0F00635CAD /* UpcomingTimeView.swift in Sources */,
 				F0E219C3287AB47D0080697F /* LiveWidgetMediumView.swift in Sources */,
 				F047F0862851C74500B2E2B9 /* SmallLiveWidgetView.swift in Sources */,
-				F01DAA5F2990878F00052514 /* LiveCollabListStackView.swift in Sources */,
 				F0F40974293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */,
 				F0CA6ECD28D7C2C30028CB11 /* SongsViewModel.swift in Sources */,
 				F0396E7928CFD60900A3EDCB /* LiveAccessoryRectangularWidgetView.swift in Sources */,
@@ -1512,7 +1507,6 @@
 				F04D755B28D7D8DD0096B8AB /* OpenSourceView.swift in Sources */,
 				F03A3CF0295D9B0200363348 /* FavouritesVideoModel.swift in Sources */,
 				F022119D292B6CF5009EC2CC /* SingleAgencyItemView.swift in Sources */,
-				F01DAA602990878F00052514 /* LiveCollabListStackView.swift in Sources */,
 				F06D28F628D83AA6007D06FB /* UpcomingAccessoryRectangularWidgetView.swift in Sources */,
 				F04D755628D7D0CC0096B8AB /* WatchUpcomingCellView.swift in Sources */,
 				F0E45D1628F34CA10091474A /* SpecialThanksView.swift in Sources */,

@@ -44,5 +44,6 @@ struct UpcomingTimeView: View {
 struct UpcomingTimeView_Previews: PreviewProvider {
     static var previews: some View {
         UpcomingTimeView(liveSchedule: Date())
+        UpcomingTimeView(liveSchedule: Date() + 50000)
     }
 }

@@ -35,15 +35,6 @@ func getDateFormatter() -> DateFormatter {
     return dateFormatter
 }
 
-func getConcertFormatter() -> DateFormatter {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateStyle = .medium
-    dateFormatter.timeStyle = .short
-    dateFormatter.locale = .autoupdatingCurrent
-    
-    return dateFormatter
-}
-
 func getTimeIntervalStringFromReferenceDate(reference date: Date) -> String? {
     let dateDifference = date.timeIntervalSinceNow
     
