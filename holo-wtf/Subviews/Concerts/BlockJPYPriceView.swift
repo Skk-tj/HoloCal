@@ -13,26 +13,11 @@ struct BlockJpyPriceView: View {
         VStack(alignment: .leading) {
             HStack {
                 Image(systemName: "ticket")
-                switch price {
-                case .free:
-                    Text("Free")
-                        .font(.title3)
-                        .fontWeight(.bold)
-                case .tbd:
-                    Text("TBD")
-                        .font(.title3)
-                        .fontWeight(.bold)
-                case .multiTier(let price):
-                    Text("\(price.formatted(.currency(code: "JPY")))+")
-                        .font(.title3)
-                        .fontWeight(.bold)
-                case .fixed(let price):
-                    Text("\(price.formatted(.currency(code: "JPY")))")
-                        .font(.title3)
-                        .fontWeight(.bold)
-                }
+                Text(price.localized)
+                    .font(.title3)
+                    .fontWeight(.bold)
             }
-            Text("Ticket Price")
+            Text("BLOCK_JPY_PRICE_TICKET_PRICE")
                 .font(.callout)
                 .foregroundColor(.secondary)
         }

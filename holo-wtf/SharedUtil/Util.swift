@@ -167,3 +167,7 @@ extension Set: RawRepresentable where Element: Codable {
         return result
     }
 }
+
+protocol HoloCalLocalizable {
+    var localized: String { get }
+}

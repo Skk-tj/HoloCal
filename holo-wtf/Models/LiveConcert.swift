@@ -7,13 +7,24 @@
 
 import Foundation
 
-enum LiveFormat: String, Codable {
+enum LiveFormat: String, Codable, HoloCalLocalizable {
     case online = "Online"
     case irl = "Irl"
     case both = "Both"
+    
+    var localized: String {
+        switch self {
+        case .online:
+            return NSLocalizedString("LIVE_FORMAT_ONLINE", comment: "")
+        case .irl:
+            return NSLocalizedString("LIVE_FORMAT_IRL", comment: "")
+        case .both:
+            return NSLocalizedString("LIVE_FORMAT_BOTH", comment: "")
+        }
+    }
 }
 
-enum Platform: String, Codable {
+enum Platform: String, Codable, HoloCalLocalizable {
     case niconico = "Niconico"
     case spwn = "Spwn"
     case tba = "Tba"
@@ -21,9 +32,28 @@ enum Platform: String, Codable {
     case zan = "Zan"
     case zaiko = "Zaiko"
     case other = "Other"
+    
+    var localized: String {
+        switch self {
+        case .niconico:
+            return NSLocalizedString("PLATFORM_NICONICO", comment: "")
+        case .spwn:
+            return NSLocalizedString("PLATFORM_SPWN", comment: "")
+        case .tba:
+            return NSLocalizedString("PLATFORM_TBA", comment: "")
+        case .youtube:
+            return NSLocalizedString("PLATFORM_YOUTUBE", comment: "")
+        case .zan:
+            return NSLocalizedString("PLATFORM_ZAN", comment: "")
+        case .zaiko:
+            return NSLocalizedString("PLATFORM_ZAIKO", comment: "")
+        case .other:
+            return NSLocalizedString("PLATFORM_OTHER", comment: "")
+        }
+    }
 }
 
-enum JpyPrice: Decodable, Equatable, Hashable {
+enum JpyPrice: Decodable, Equatable, Hashable, HoloCalLocalizable {
     case tbd
     case free
     case fixed(Int)
@@ -56,6 +86,19 @@ enum JpyPrice: Decodable, Equatable, Hashable {
         case .multiTier:
             let price = try container.decode(Int.self, forKey: .content)
             self = .multiTier(price)
+        }
+    }
+    
+    var localized: String {
+        switch self {
+        case .tbd:
+            return NSLocalizedString("JPY_PRICE_TBD", comment: "")
+        case .free:
+            return NSLocalizedString("JPY_PRICE_FREE", comment: "")
+        case .fixed(let price):
+            return "\(price.formatted(.currency(code: "JPY")))+"
+        case .multiTier(let price):
+            return "\(price.formatted(.currency(code: "JPY")))"
         }
     }
 }

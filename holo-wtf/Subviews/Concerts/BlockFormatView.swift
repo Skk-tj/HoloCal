@@ -14,22 +14,11 @@ struct BlockFormatView: View {
         VStack(alignment: .leading) {
             HStack {
                 Image(systemName: "music.mic")
-                switch format {
-                case .irl:
-                    Text("On-site")
-                        .font(.title3)
-                        .fontWeight(.bold)
-                case .online:
-                    Text("Online")
-                        .font(.title3)
-                        .fontWeight(.bold)
-                case .both:
-                    Text("On-site + Online")
-                        .font(.title3)
-                        .fontWeight(.bold)
-                }
+                Text(format.localized)
+                    .font(.title3)
+                    .fontWeight(.bold)
             }
-            Text("Format")
+            Text("BLOCK_FORMAT_VIEW_FORMAT")
                 .font(.callout)
                 .foregroundColor(.secondary)
         }

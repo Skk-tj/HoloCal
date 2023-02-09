@@ -122,9 +122,38 @@
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld %lld" = "%2$lld時間内に%1$lld人が配信予定（%3$lld人表示されていない）";
 
 // ConcertsView
-
 "UPCOMING_CONCERTS_COUNT %lld" = "%lld ライブコンサート";
 
+// ConcertView
+"CONCERT_VIEW_TITLE" = "ライブコンサート";
+"CONCERT_VIEW_TWITTER_LINK" = "Twitterリンク";
+"CONCERT_VIEW_YOUTUBE_LINK" = "YouTubeリンク";
+"CONCERT_VIEW_PURCHASE_TICKETS" = "チケット購入";
+
+// BlockJPYPriceView
+"BLOCK_JPY_PRICE_TICKET_PRICE" = "チケット価格";
+
+// JpyPrice
+"JPY_PRICE_TBD" = "未定";
+"JPY_PRICE_FREE" = "無料";
+
+// Platform
+"BLOCK_PLATFORM_VIEW_PLATFORM" = "プラットフォーム";
+
+"PLATFORM_NICONICO" = "ニコニコ動画";
+"PLATFORM_SPWN" = "SPWN";
+"PLATFORM_TBA" = "未定";
+"PLATFORM_YOUTUBE" = "YouTube";
+"PLATFORM_ZAN" = "Za-N";
+"PLATFORM_ZAIKO" = "Zaiko";
+"PLATFORM_OTHER" = "他";
+
+// LiveFormat
+"BLOCK_FORMAT_VIEW_FORMAT" = "形式";
+
+"LIVE_FORMAT_ONLINE" = "オンライン";
+"LIVE_FORMAT_IRL" = "現地";
+"LIVE_FORMAT_BOTH" = "現地＋オンライン";
 
 // LiveViewToolbar & UpcomingViewToolbar
 "LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE" = "絶対時間を表示";

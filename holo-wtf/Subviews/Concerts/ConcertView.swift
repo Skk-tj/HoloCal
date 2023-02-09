@@ -44,7 +44,7 @@ struct ConcertView: View {
                     
                     HStack {
                         BlockJpyPriceView(price: concert.jpyPrice)
-                            .padding(.trailing, 1)
+                            .padding(.trailing)
                         BlockFormatView(format: concert.format)
                     }
                     .padding(.bottom, 1)
@@ -55,21 +55,21 @@ struct ConcertView: View {
                     VStack(alignment: .leading) {
                         if let twitterLink = concert.twitterUrl {
                             Link(destination: twitterLink) {
-                                Text("\(Image(systemName: "link")) Twitter Link")
+                                Text("\(Image(systemName: "link")) \(NSLocalizedString("CONCERT_VIEW_TWITTER_LINK", comment: ""))")
                             }
                             .padding(.bottom, 1)
                         }
                         
                         if let youtubeLink = concert.youtubeLink {
                             Link(destination: youtubeLink) {
-                                Text("\(Image(systemName: "link")) YouTube Link")
+                                Text("\(Image(systemName: "link")) \(NSLocalizedString("CONCERT_VIEW_YOUTUBE_LINK", comment: ""))")
                             }
                             .padding(.bottom, 1)
                         }
                         
                         if let ticketLink = concert.ticketLink {
                             Link(destination: ticketLink) {
-                                Text("\(Image(systemName: "link")) Purchase Tickets")
+                                Text("\(Image(systemName: "link")) \(NSLocalizedString("CONCERT_VIEW_PURCHASE_TICKETS", comment: ""))")
                             }
                             .padding(.bottom, 1)
                         }
@@ -78,7 +78,7 @@ struct ConcertView: View {
                 .padding()
             }
         }
-        .navigationTitle("Concert")
+        .navigationTitle("CONCERT_VIEW_TITLE")
     }
 }
 
