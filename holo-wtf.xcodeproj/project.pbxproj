@@ -67,6 +67,17 @@
 		F01DAA742990F30200052514 /* ChannelNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA722990F2E700052514 /* ChannelNameView.swift */; };
 		F01DAA752990F30300052514 /* ChannelNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA722990F2E700052514 /* ChannelNameView.swift */; };
 		F01DAA762990F30400052514 /* ChannelNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA722990F2E700052514 /* ChannelNameView.swift */; };
+		F01DAA7729963FFD00052514 /* ConcertsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA54298FB6AB00052514 /* ConcertsViewModel.swift */; };
+		F01DAA7A2996405800052514 /* ConcertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA672990917E00052514 /* ConcertCell.swift */; };
+		F01DAA7B299640C300052514 /* LiveConcert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA4E298FACE000052514 /* LiveConcert.swift */; };
+		F01DAA7C299640CE00052514 /* ConcertListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA562990837200052514 /* ConcertListView.swift */; };
+		F01DAA7D299640D100052514 /* BlockJPYPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA6C2990C5CC00052514 /* BlockJPYPriceView.swift */; };
+		F01DAA7E299640D100052514 /* BlockFormatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA6E2990DEFE00052514 /* BlockFormatView.swift */; };
+		F01DAA7F299640D100052514 /* BlockPlatformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA702990E19900052514 /* BlockPlatformView.swift */; };
+		F01DAA80299640DF00052514 /* ConcertCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA592990850200052514 /* ConcertCountView.swift */; };
+		F01DAA822996413A00052514 /* ConcertsWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA812996413A00052514 /* ConcertsWatchView.swift */; };
+		F01DAA842996419900052514 /* ConcertWatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA832996419900052514 /* ConcertWatchCell.swift */; };
+		F01DAA86299641E300052514 /* ConcertWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA85299641E300052514 /* ConcertWatchView.swift */; };
 		F01E95B3286FB4B900CDF0F9 /* iPadLazyGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01E95B2286FB4B900CDF0F9 /* iPadLazyGridView.swift */; };
 		F022119C292B6CF5009EC2CC /* SingleAgencyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022119B292B6CF5009EC2CC /* SingleAgencyItemView.swift */; };
 		F022119D292B6CF5009EC2CC /* SingleAgencyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022119B292B6CF5009EC2CC /* SingleAgencyItemView.swift */; };
@@ -403,6 +414,9 @@
 		F01DAA6E2990DEFE00052514 /* BlockFormatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockFormatView.swift; sourceTree = "<group>"; };
 		F01DAA702990E19900052514 /* BlockPlatformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockPlatformView.swift; sourceTree = "<group>"; };
 		F01DAA722990F2E700052514 /* ChannelNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelNameView.swift; sourceTree = "<group>"; };
+		F01DAA812996413A00052514 /* ConcertsWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcertsWatchView.swift; sourceTree = "<group>"; };
+		F01DAA832996419900052514 /* ConcertWatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcertWatchCell.swift; sourceTree = "<group>"; };
+		F01DAA85299641E300052514 /* ConcertWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcertWatchView.swift; sourceTree = "<group>"; };
 		F01E95B2286FB4B900CDF0F9 /* iPadLazyGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadLazyGridView.swift; sourceTree = "<group>"; };
 		F0204DB827E91A920083750F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F0204DB927E925220083750F /* PRIVACY-POLICY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "PRIVACY-POLICY.md"; sourceTree = "<group>"; };
@@ -622,6 +636,7 @@
 		F01DAA6B2990C5A800052514 /* Concerts */ = {
 			isa = PBXGroup;
 			children = (
+				F01DAA672990917E00052514 /* ConcertCell.swift */,
 				F01DAA562990837200052514 /* ConcertListView.swift */,
 				F01DAA69299098AF00052514 /* ConcertView.swift */,
 				F01DAA6C2990C5CC00052514 /* BlockJPYPriceView.swift */,
@@ -682,6 +697,7 @@
 			children = (
 				F0CA6ED628D7C4DB0028CB11 /* WatchLiveCellView.swift */,
 				F04D755528D7D0CC0096B8AB /* WatchUpcomingCellView.swift */,
+				F01DAA832996419900052514 /* ConcertWatchCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -695,6 +711,8 @@
 				F04D755328D7CF3F0096B8AB /* UpcomingWatchView.swift */,
 				F032855A293218300079F46A /* UpcomingFavouritesWatchView.swift */,
 				F04D755728D7D8430096B8AB /* SettingsWatchView.swift */,
+				F01DAA812996413A00052514 /* ConcertsWatchView.swift */,
+				F01DAA85299641E300052514 /* ConcertWatchView.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -814,7 +832,6 @@
 				F0673C1127732CE7009C65C6 /* UpcomingCellView.swift */,
 				F05E9EB827EB3C6100EF48DD /* LivePaneView.swift */,
 				F0BD611A27EC594300A2FBED /* UpcomingPaneView.swift */,
-				F01DAA672990917E00052514 /* ConcertCell.swift */,
 			);
 			path = VideoCell;
 			sourceTree = "<group>";
@@ -1496,18 +1513,22 @@
 				F012419B2935E27B007C8FE9 /* SmallUpcomingWidgetView.swift in Sources */,
 				F01241A32935E2C7007C8FE9 /* BlockLiveTimeView.swift in Sources */,
 				F0F0EAAF292B40220091DBD7 /* UpcomingFavouritesViewModel.swift in Sources */,
+				F01DAA80299640DF00052514 /* ConcertCountView.swift in Sources */,
 				F0CA6ED128D7C49A0028CB11 /* UpcomingCountView.swift in Sources */,
 				F01241B02935EA51007C8FE9 /* LiveAccessoryCircularView.swift in Sources */,
+				F01DAA7F299640D100052514 /* BlockPlatformView.swift in Sources */,
 				F09D53A629336944003C4F80 /* VideoUpcomingWidgetProvider.swift in Sources */,
 				F0CA6EC428D7C2880028CB11 /* UpcomingViewModel.swift in Sources */,
 				F025204628EEA5FC00976972 /* Common.swift in Sources */,
 				F032855B293218300079F46A /* UpcomingFavouritesWatchView.swift in Sources */,
+				F01DAA7D299640D100052514 /* BlockJPYPriceView.swift in Sources */,
 				F0328559293218220079F46A /* LiveFavouritesWatchView.swift in Sources */,
 				F04D755428D7CF3F0096B8AB /* UpcomingWatchView.swift in Sources */,
 				F04D755B28D7D8DD0096B8AB /* OpenSourceView.swift in Sources */,
 				F03A3CF0295D9B0200363348 /* FavouritesVideoModel.swift in Sources */,
 				F022119D292B6CF5009EC2CC /* SingleAgencyItemView.swift in Sources */,
 				F06D28F628D83AA6007D06FB /* UpcomingAccessoryRectangularWidgetView.swift in Sources */,
+				F01DAA7B299640C300052514 /* LiveConcert.swift in Sources */,
 				F04D755628D7D0CC0096B8AB /* WatchUpcomingCellView.swift in Sources */,
 				F0E45D1628F34CA10091474A /* SpecialThanksView.swift in Sources */,
 				F0CA6ED328D7C4A40028CB11 /* LiveTimeView.swift in Sources */,
@@ -1515,6 +1536,7 @@
 				F04D754828D7C94F0096B8AB /* Util.swift in Sources */,
 				F01241A52935E335007C8FE9 /* BaseVideoEntryView.swift in Sources */,
 				F01241952935E165007C8FE9 /* SharedEntryView.swift in Sources */,
+				F01DAA822996413A00052514 /* ConcertsWatchView.swift in Sources */,
 				F01241992935E278007C8FE9 /* SmallLiveWidgetView.swift in Sources */,
 				F025204D28EEAEE000976972 /* MultipleVideoWidgetEntry.swift in Sources */,
 				F0CA6ED728D7C4DB0028CB11 /* WatchLiveCellView.swift in Sources */,
@@ -1533,7 +1555,9 @@
 				F04D755828D7D8430096B8AB /* SettingsWatchView.swift in Sources */,
 				F01241A72935E33E007C8FE9 /* BlockUpcomingTimeView.swift in Sources */,
 				F01241A22935E2BB007C8FE9 /* ViewerCounterView.swift in Sources */,
+				F01DAA7729963FFD00052514 /* ConcertsViewModel.swift in Sources */,
 				F0CA6ED528D7C4A70028CB11 /* LiveAvatarView.swift in Sources */,
+				F01DAA86299641E300052514 /* ConcertWatchView.swift in Sources */,
 				F0E05C732932E27E00B3C774 /* VideoLiveWidgetProvider.swift in Sources */,
 				F0CA6ECC28D7C2BE0028CB11 /* LiveVideo.swift in Sources */,
 				F0F0EAC3292B56D20091DBD7 /* UpcomingFavouriteCountView.swift in Sources */,
@@ -1551,13 +1575,17 @@
 				F0CA6EB228D7C0410028CB11 /* holo_wtf_watchApp.swift in Sources */,
 				F0E06D192932A50100BF6812 /* Modes.swift in Sources */,
 				F04D755028D7CC1F0096B8AB /* DataStatusIndicatorView.swift in Sources */,
+				F01DAA7E299640D100052514 /* BlockFormatView.swift in Sources */,
 				F04D148128DD523C00750B71 /* LiveAccessoryCornerEntryView.swift in Sources */,
 				F008BBA52928DA4600034AF4 /* AgencySelectionView.swift in Sources */,
 				F04D148528DD53CE00750B71 /* SingleVideoWidgetEntry.swift in Sources */,
 				F0F0EA9A292B01510091DBD7 /* LiveFavoritesViewModel.swift in Sources */,
+				F01DAA7A2996405800052514 /* ConcertCell.swift in Sources */,
 				F00BD6D229052AC400D7932E /* VideoViewModel.swift in Sources */,
 				F09D53BF29337378003C4F80 /* Intents.intentdefinition in Sources */,
 				F01241B4293725FC007C8FE9 /* LiveWidgetView.swift in Sources */,
+				F01DAA842996419900052514 /* ConcertWatchCell.swift in Sources */,
+				F01DAA7C299640CE00052514 /* ConcertListView.swift in Sources */,
 				F0CA6EC928D7C2BE0028CB11 /* TalentData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

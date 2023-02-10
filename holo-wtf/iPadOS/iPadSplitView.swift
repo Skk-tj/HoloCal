@@ -10,6 +10,7 @@ import SwiftUI
 enum Views: Hashable {
     case live(iPadAgencies)
     case upcoming(iPadAgencies)
+    case concerts
     case settings
 }
 
@@ -67,6 +68,10 @@ struct iPadSplitView: View {
                     Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
                 })
                 
+                NavigationLink(value: Views.concerts) {
+                    Label("ROOT_VIEW_CONCERTS", systemImage: "music.mic")
+                }
+                
                 NavigationLink(value: Views.settings) {
                     Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
                 }
@@ -98,6 +103,10 @@ struct iPadSplitView: View {
                         UpcomingiPadView(for: .react)
                     case .favourites:
                         UpcomingFavouritesiPadView()
+                    }
+                case .concerts:
+                    NavigationStack {
+                        ConcertsView()
                     }
                 case .settings:
                     NavigationStack {

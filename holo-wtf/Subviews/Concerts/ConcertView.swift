@@ -42,13 +42,26 @@ struct ConcertView: View {
                     
                     Divider()
                     
-                    HStack {
-                        BlockJpyPriceView(price: concert.jpyPrice)
-                            .padding(.trailing)
-                        BlockFormatView(format: concert.format)
+                    ViewThatFits {
+                        HStack {
+                            BlockJpyPriceView(price: concert.jpyPrice)
+                                .padding(.trailing)
+                            BlockFormatView(format: concert.format)
+                                .padding(.trailing)
+                            BlockPlatformView(platform: concert.platform)
+                        }
+                        .padding(.bottom, 1)
+                        
+                        VStack(alignment: .leading) {
+                            HStack {
+                                BlockJpyPriceView(price: concert.jpyPrice)
+                                    .padding(.trailing)
+                                BlockFormatView(format: concert.format)
+                            }
+                            .padding(.bottom, 1)
+                            BlockPlatformView(platform: concert.platform)
+                        }
                     }
-                    .padding(.bottom, 1)
-                    BlockPlatformView(platform: concert.platform)
                     
                     Divider()
                     

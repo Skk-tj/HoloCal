@@ -36,6 +36,12 @@ struct WatchRootView: View {
                 })
                 
                 NavigationLink(destination: {
+                    ConcertsWatchView()
+                }, label: {
+                    Label("ROOT_VIEW_CONCERTS", systemImage: "music.mic")
+                })
+                
+                NavigationLink(destination: {
                     SettingsWatchView()
                 }, label: {
                     Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
