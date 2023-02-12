@@ -110,10 +110,6 @@
 		F03A138528F0004C00BB8E51 /* ChannelsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A138228F0004C00BB8E51 /* ChannelsEntry.swift */; };
 		F03A139228F1FE0700BB8E51 /* ChannelsLiveWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A139128F1FE0700BB8E51 /* ChannelsLiveWidgetProvider.swift */; };
 		F03A139428F2018000BB8E51 /* LiveChannelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A139328F2018000BB8E51 /* LiveChannelsView.swift */; };
-		F03A3CEE295D9B0200363348 /* FavouritesVideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A3CED295D9B0200363348 /* FavouritesVideoModel.swift */; };
-		F03A3CEF295D9B0200363348 /* FavouritesVideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A3CED295D9B0200363348 /* FavouritesVideoModel.swift */; };
-		F03A3CF0295D9B0200363348 /* FavouritesVideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A3CED295D9B0200363348 /* FavouritesVideoModel.swift */; };
-		F03A3CF1295D9B0200363348 /* FavouritesVideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A3CED295D9B0200363348 /* FavouritesVideoModel.swift */; };
 		F0433C5227EAEDDB000FEADD /* OpenSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */; };
 		F047F0862851C74500B2E2B9 /* SmallLiveWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F047F0852851C74500B2E2B9 /* SmallLiveWidgetView.swift */; };
 		F04D147B28DD4ED300750B71 /* LiveAccessoryCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D147928DD4ED300750B71 /* LiveAccessoryCornerView.swift */; };
@@ -442,7 +438,6 @@
 		F03A138228F0004C00BB8E51 /* ChannelsEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsEntry.swift; sourceTree = "<group>"; };
 		F03A139128F1FE0700BB8E51 /* ChannelsLiveWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsLiveWidgetProvider.swift; sourceTree = "<group>"; };
 		F03A139328F2018000BB8E51 /* LiveChannelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveChannelsView.swift; sourceTree = "<group>"; };
-		F03A3CED295D9B0200363348 /* FavouritesVideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesVideoModel.swift; sourceTree = "<group>"; };
 		F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceView.swift; sourceTree = "<group>"; };
 		F047F0852851C74500B2E2B9 /* SmallLiveWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallLiveWidgetView.swift; sourceTree = "<group>"; };
 		F04D147928DD4ED300750B71 /* LiveAccessoryCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAccessoryCornerView.swift; sourceTree = "<group>"; };
@@ -997,7 +992,6 @@
 				F00BD6CF29052AC400D7932E /* VideoViewModel.swift */,
 				F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */,
 				F064A5B528BB3765008C51C2 /* SongsViewModel.swift */,
-				F03A3CED295D9B0200363348 /* FavouritesVideoModel.swift */,
 				F01DAA54298FB6AB00052514 /* ConcertsViewModel.swift */,
 			);
 			path = ViewModel;
@@ -1293,7 +1287,6 @@
 				F00BD6D329052AC400D7932E /* VideoViewModel.swift in Sources */,
 				F06D28F428D83A9D007D06FB /* LiveAccessoryRectangularWidgetView.swift in Sources */,
 				F06D28E828D839F5007D06FB /* LiveVideo.swift in Sources */,
-				F03A3CF1295D9B0200363348 /* FavouritesVideoModel.swift in Sources */,
 				F06D28F928D83AC9007D06FB /* Util.swift in Sources */,
 				F06D28E628D839F5007D06FB /* Channel.swift in Sources */,
 				F06D28E328D839E4007D06FB /* SingleVideoWidgetEntry.swift in Sources */,
@@ -1373,7 +1366,6 @@
 				F05DFA362853CA7800D62D19 /* BaseVideoEntryView.swift in Sources */,
 				F0E06D0A29322C2100BF6812 /* ViewerCounterView.swift in Sources */,
 				F0E45D1928F39AF90091474A /* Agency.swift in Sources */,
-				F03A3CEF295D9B0200363348 /* FavouritesVideoModel.swift in Sources */,
 				F01241922935E0F5007C8FE9 /* LiveAccessoryCornerEntryView.swift in Sources */,
 				F0B2AF0C28C1A82400635CAD /* MultipleVideoWidgetEntry.swift in Sources */,
 				F093D1E82830359900E2A6FF /* Util.swift in Sources */,
@@ -1444,7 +1436,6 @@
 				F0F0EAB9292B48910091DBD7 /* UIListView.swift in Sources */,
 				F01DAA572990837200052514 /* ConcertListView.swift in Sources */,
 				F0F0EAC2292B56D20091DBD7 /* UpcomingFavouriteCountView.swift in Sources */,
-				F03A3CEE295D9B0200363348 /* FavouritesVideoModel.swift in Sources */,
 				F0F40973293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */,
 				F02211AB292F68DF009EC2CC /* BlockMemberOnlyView.swift in Sources */,
 				F008BBA42928DA4600034AF4 /* AgencySelectionView.swift in Sources */,
@@ -1525,7 +1516,6 @@
 				F0328559293218220079F46A /* LiveFavouritesWatchView.swift in Sources */,
 				F04D755428D7CF3F0096B8AB /* UpcomingWatchView.swift in Sources */,
 				F04D755B28D7D8DD0096B8AB /* OpenSourceView.swift in Sources */,
-				F03A3CF0295D9B0200363348 /* FavouritesVideoModel.swift in Sources */,
 				F022119D292B6CF5009EC2CC /* SingleAgencyItemView.swift in Sources */,
 				F06D28F628D83AA6007D06FB /* UpcomingAccessoryRectangularWidgetView.swift in Sources */,
 				F01DAA7B299640C300052514 /* LiveConcert.swift in Sources */,
