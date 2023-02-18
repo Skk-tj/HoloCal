@@ -27,7 +27,7 @@ class UpcomingFavoritesViewModel: VideoViewModel, VideoGettable {
             self.videoList = responseResult
             
             self.sortVideos()
-            self.videoList = self.videoList.filter { ($0.isHololive || $0.isNijisanji || $0.isReact) }
+            self.videoList = self.videoList.filter { $0.isSupportedAgency }
         }
     }
 }

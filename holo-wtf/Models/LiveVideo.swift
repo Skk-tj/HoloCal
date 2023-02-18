@@ -49,16 +49,8 @@ struct LiveVideo: Codable, Identifiable, Hashable {
         return false
     }
     
-    var isHololive: Bool {
-        channel.org == AgencyEnum.hololive.rawValue
-    }
-    
-    var isNijisanji: Bool {
-        channel.org == AgencyEnum.nijisanji.rawValue
-    }
-    
-    var isReact: Bool {
-        channel.org == AgencyEnum.react.rawValue
+    var isSupportedAgency: Bool {
+        return AgencyEnum.allCases.map { $0.rawValue }.contains(channel.org)
     }
     
     func isAgency(agency: AgencyEnum) -> Bool {

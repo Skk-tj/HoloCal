@@ -10,10 +10,10 @@ import UIKit
 
 let intentAgencyToString: [IntentAgency: [NameLanguage: String]] = [
     .unknown: [.en: "All", .ja: "全部"],
-    .hololive: [.en: "Hololive", .ja: "ホロライブ"],
-    .nijisanji: [.en: "Nijisanji", .ja: "にじさんじ"],
-    .react: [.en: "Re:AcT", .ja: "Re:AcT"],
-    .nanashiInc: [.en: "774 inc.", .ja: "774 inc."]
+    .hololive: intentAgencyToAgency[IntentAgency.hololive]!.getAgency().names,
+    .nijisanji: intentAgencyToAgency[IntentAgency.nijisanji]!.getAgency().names,
+    .react: intentAgencyToAgency[IntentAgency.react]!.getAgency().names,
+    .nanashiInc: intentAgencyToAgency[IntentAgency.nanashiInc]!.getAgency().names
 ]
 
 let intentAgencyToAgency: [IntentAgency: AgencyEnum] = [
@@ -105,7 +105,7 @@ func getVideoURLForWidget(agency: IntentAgency, videoType: VideoType) -> String 
         case .live:
             return getLiveUrl(for: intentAgencyToAgency[agency]!)
         case .upcoming:
-            return getUpcomingUrl(for: intentAgencyToAgency[agency]!)
+            return getWidgetUpcomingUrl(for: intentAgencyToAgency[agency]!)
         }
     }
 }

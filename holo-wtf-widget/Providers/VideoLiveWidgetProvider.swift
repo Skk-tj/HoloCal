@@ -29,13 +29,13 @@ struct VideoLiveWidgetProvider: IntentTimelineProvider {
 #endif
         
         Task {
-            completion(await getEntryWithIntent(for: configuration.agency, videoType: .live, sortBy: configuration.sortBy, filterBy: { $0.isHololive || $0.isNijisanji || $0.isReact }))
+            completion(await getEntryWithIntent(for: configuration.agency, videoType: .live, sortBy: configuration.sortBy, filterBy: { $0.isSupportedAgency }))
         }
     }
     
     func getTimeline(for configuration: Intent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         Task {
-            let entries: [SingleVideoWidgetEntry] = [await getEntryWithIntent(for: configuration.agency, videoType: .live, sortBy: configuration.sortBy, filterBy: { $0.isHololive || $0.isNijisanji || $0.isReact })]
+            let entries: [SingleVideoWidgetEntry] = [await getEntryWithIntent(for: configuration.agency, videoType: .live, sortBy: configuration.sortBy, filterBy: { $0.isSupportedAgency })]
             let timeline = Timeline(entries: entries, policy: .atEnd)
             completion(timeline)
         }
