@@ -18,8 +18,16 @@ enum iPadAgencies: CaseIterable {
     case hololive
     case nijisanji
     case react
+    case nanashiInc
     case favourites
 }
+
+let ipadAgenciesToAgency: [iPadAgencies: AgencyEnum] = [
+    .hololive: .hololive,
+    .nijisanji: .nijisanji,
+    .react: .react,
+    .nanashiInc: .nanashiInc
+]
 
 struct iPadSplitView: View {
     @State var viewSelection: Views? = Views.live(.hololive)
@@ -84,25 +92,17 @@ struct iPadSplitView: View {
                 switch viewSelection {
                 case .live(let agencySelection):
                     switch agencySelection {
-                    case .hololive:
-                        LiveiPadView(for: .hololive)
-                    case .nijisanji:
-                        LiveiPadView(for: .nijisanji)
-                    case .react:
-                        LiveiPadView(for: .react)
                     case .favourites:
                         LiveFavouritesiPadView()
+                    default:
+                        LiveiPadView(for: ipadAgenciesToAgency[agencySelection]!)
                     }
                 case .upcoming(let agencySelection):
                     switch agencySelection {
-                    case .hololive:
-                        UpcomingiPadView(for: .hololive)
-                    case .nijisanji:
-                        UpcomingiPadView(for: .nijisanji)
-                    case .react:
-                        UpcomingiPadView(for: .react)
                     case .favourites:
                         UpcomingFavouritesiPadView()
+                    default:
+                        UpcomingiPadView(for: ipadAgenciesToAgency[agencySelection]!)
                     }
                 case .concerts:
                     NavigationStack {
