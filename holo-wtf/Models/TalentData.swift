@@ -2,7 +2,7 @@
 //  Talents.swift
 //  holo-wtf
 //
-// 
+//
 //
 
 import Foundation
