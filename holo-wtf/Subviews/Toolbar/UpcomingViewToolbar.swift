@@ -33,7 +33,7 @@ struct UpcomingViewToolbar: View {
         
         Menu {
             Picker("Order", selection: $upcomingViewModel.sortingStrategy) {
-                Label(UIDevice.current.userInterfaceIdiom == .phone ? "LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION" : "LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION_IPAD", systemImage: "person.fill").tag(SortingStrategy.notSorting)
+                Label(UIDevice.current.userInterfaceIdiom == .phone ? "LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION" : "LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION_IPAD", systemImage: "person.3.fill").tag(SortingStrategy.notSorting)
             }
             
             Menu {
