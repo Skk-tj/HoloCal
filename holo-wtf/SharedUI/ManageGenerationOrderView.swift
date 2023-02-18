@@ -13,6 +13,7 @@ struct ManageGenerationOrderView: View {
     @AppStorage("hololiveGenerationListOrder") var hololiveGenerationListOrder = agencyEnumToGenerations[AgencyEnum.hololive]!
     @AppStorage("nijisanjiGenerationListOrder") var nijisanjiGenerationListOrder = agencyEnumToGenerations[AgencyEnum.nijisanji]!
     @AppStorage("reactGenerationListOrder") var reactGenerationListOrder = agencyEnumToGenerations[AgencyEnum.react]!
+    @AppStorage("nanashiIncGenerationListOrder") var nanashiIncGenerationListOrder = agencyEnumToGenerations[AgencyEnum.nanashiInc]!
     
     @State var showResetAlert = false
     
@@ -35,6 +36,11 @@ struct ManageGenerationOrderView: View {
                         MultiLanguageNameView(entity: generation.getGeneration())
                     }
                     .onMove(perform: moveReact)
+                case .nanashiInc:
+                    ForEach(nanashiIncGenerationListOrder, id: \.self) { generation in
+                        MultiLanguageNameView(entity: generation.getGeneration())
+                    }
+                    .onMove(perform: moveNanashiInc)
                 }
             }, footer: {
                 Text("SETTINGS_MANAGE_GENERATION_ORDER_SECTION_FOOTER")
@@ -55,6 +61,8 @@ struct ManageGenerationOrderView: View {
                             nijisanjiGenerationListOrder = agencyEnumToGenerations[AgencyEnum.nijisanji]!
                         case .react:
                             reactGenerationListOrder = agencyEnumToGenerations[AgencyEnum.react]!
+                        case .nanashiInc:
+                            nanashiIncGenerationListOrder = agencyEnumToGenerations[AgencyEnum.nanashiInc]!
                         }
                     }
                 }, message: {
@@ -78,6 +86,10 @@ struct ManageGenerationOrderView: View {
     
     func moveReact(from source: IndexSet, to destination: Int) {
         reactGenerationListOrder.move(fromOffsets: source, toOffset: destination)
+    }
+    
+    func moveNanashiInc(from source: IndexSet, to destination: Int) {
+        nanashiIncGenerationListOrder.move(fromOffsets: source, toOffset: destination)
     }
 }
 

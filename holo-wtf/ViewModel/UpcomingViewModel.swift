@@ -11,15 +11,7 @@ class UpcomingViewModel: VideoViewModel, VideoGettable {
     let videoUrl: String
     
     override init(for agency: AgencyEnum) {
-        switch agency {
-        case .hololive:
-            self.videoUrl = hololiveUpcomingURL
-        case .nijisanji:
-            self.videoUrl = nijisanjiUpcomingURL
-        case .react:
-            self.videoUrl = reactUpcomingURL
-        }
-        
+        self.videoUrl = getUpcomingUrl(for: agency)
         super.init(for: agency)
     }
     

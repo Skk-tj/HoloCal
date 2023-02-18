@@ -86,6 +86,13 @@ struct ConcertView: View {
                             }
                             .padding(.bottom, 1)
                         }
+                        
+                        if let officialLink = concert.officialLink {
+                            Link(destination: officialLink) {
+                                Text("\(Image(systemName: "link")) \(NSLocalizedString("CONCERT_VIEW_OFFICIAL_LINK", comment: ""))")
+                            }
+                            .padding(.bottom, 1)
+                        }
                     }
                 }
                 .padding()

@@ -129,6 +129,7 @@
 "CONCERT_VIEW_TWITTER_LINK" = "Twitterリンク";
 "CONCERT_VIEW_YOUTUBE_LINK" = "YouTubeリンク";
 "CONCERT_VIEW_PURCHASE_TICKETS" = "チケット購入";
+"CONCERT_VIEW_OFFICIAL_LINK" = "オフィシャルサイト";
 
 // BlockJPYPriceView
 "BLOCK_JPY_PRICE_TICKET_PRICE" = "チケット価格";

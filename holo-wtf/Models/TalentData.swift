@@ -94,6 +94,14 @@ enum Generation: Int, CaseIterable, Codable, Hashable {
     case reMixx
     case reactOfficial
     
+    // MARK: - 774 inc.
+    case animare
+    case honeyStrap
+    case sugarLyric
+    case hiyocyo
+    case soloTalent
+    case nanashiOfficial
+    
     // For all the channels that we may not recognize
     case other
     
@@ -549,6 +557,48 @@ enum TalentEnum: String, Codable {
     
     // MARK: - Official
     case reactOfficial = "UC90vyzmRgWCE17-uWNsKW2Q"
+    
+    // MARK: - Animare
+    case haneru = "UC0Owc36U9lOyi9Gx9Ic-4qg"
+    case ran = "UCRvpMpzAXBRKJQuk-8-Sdvg"
+    case kuku = "UCXp7sNC0F_qkjickvlYkg-Q"
+    case izumi = "UCW8WKciBixmaqaGqrlTITRQ"
+    case rui = "UC_WOBIopwUih0rytRnr_1Ag"
+    case hikari = "UCFsWaTQ7kT76jNNGeGIKNSA"
+    case rukako = "UC3xG1XWzAKt5dxSxktJvtxg"
+    case chiroru = "UCqskJ0nmw-_eweWfsKvbrzQ"
+    case konanMia = "UC4PrHgUcAtOoj_LKmUL-uLQ"
+    
+    // MARK: - HoneyStrap
+    case sekishiroMiko = "UCDh2bWI5EDu7PavqwICkVpA"
+    case patra = "UCeLzT-7b2PBcunJplmWtoDg"
+    case charlotte = "UCYTz3uIgwVY3ZU-IQJS8r3A"
+    case mary = "UCwePpiw1ocZRSNSkpKvVISw"
+    
+    // MARK: - SugarLyric
+    case chris = "UC--A2dwZW7-M2kID0N6_lfA"
+    case rin = "UC2hc-00y-MSR6eYA4eQ4tjQ"
+    case mei = "UCRY0-zJ1pV4EiKUSLXCXTAg"
+    case tier = "UCrt4cTM_sWH0iySLMkwwYLQ"
+    
+    // MARK: - Hiyocyo
+    case nemo = "UCBJ6nejlzes6mm9UruaxQsA"
+    case kanna = "UCkpqb53xiOvOgNYEbNpFSyw"
+    case sei = "UCBxw5bdrbKO7E60E4s3KgQg"
+    case kiki = "UC3MBUvkVTI9p-p0be7y7TQA"
+    case popo = "UC_hjHmi-ODGhHlSzD16p5Pw"
+    case yuri = "UCGyywYAJd2O5Y7yUyr7qBRQ"
+    
+    // MARK: - Solo talent
+    case ichika = "UC2kyQhzGOB-JPgcQX9OMgEw"
+    case anna = "UCvPPBoTOor5gm8zSlE2tg4w"
+    case yuge = "UC3EhsuKdEkI99TWZwZgWutg"
+    case kanon = "UCmqrvfLMws-GLGHQcB5dasg"
+    case annko = "UChXm-xAYPfygrbyLo2yCASQ"
+    case watto = "UCV4EoK6BVNl7wxuxpUvvSWA"
+    
+    // MARK: - 774inc official
+    case nanashiOfficial = "UCJEpkwwDiTKS5lxwFttEbIQ"
 }
 
 extension TalentEnum: Identifiable {
@@ -1010,6 +1060,48 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     
     // MARK: - Re:AcT Official
     .reactOfficial: Talent(id: TalentEnum.reactOfficial.rawValue, names: [.en: "Re:AcT Official Channel", .ja: "Re:AcT公式チャンネル"], inGeneration: Generation.reactOfficial),
+    
+    // MARK: - Animare
+    .haneru: Talent(id: TalentEnum.haneru.rawValue, names: [.en: "Inaba Haneru", .ja: "因幡はねる"], inGeneration: Generation.animare),
+    .ran: Talent(id: TalentEnum.ran.rawValue, names: [.en: "Hinokuma Ran", .ja: "日ノ隈らん"], inGeneration: Generation.animare),
+    .kuku: Talent(id: TalentEnum.kuku.rawValue, names: [.en: "Kazami Kuku", .ja: "風見くく"], inGeneration: Generation.animare),
+    .izumi: Talent(id: TalentEnum.izumi.rawValue, names: [.en: "Yunohara Izumi", .ja: "柚原いづみ"], inGeneration: Generation.animare),
+    .rui: Talent(id: TalentEnum.rui.rawValue, names: [.en: "Seshima Rui", .ja: "瀬島るい"], inGeneration: Generation.animare),
+    .hikari: Talent(id: TalentEnum.hikari.rawValue, names: [.en: "Hira Hikari", .ja: "飛良ひかり"], inGeneration: Generation.animare),
+    .rukako: Talent(id: TalentEnum.rukako.rawValue, names: [.en: "Oura Rukako", .ja: "大浦るかこ"], inGeneration: Generation.animare),
+    .chiroru: Talent(id: TalentEnum.chiroru.rawValue, names: [.en: "Tsukinoki Tirol", .ja: "月野木ちろる"], inGeneration: Generation.animare),
+    .konanMia: Talent(id: TalentEnum.konanMia.rawValue, names: [.en: "Konan Mia", .ja: "湖南みあ"], inGeneration: Generation.animare),
+    
+    // MARK: - HoneyStrap
+    .sekishiroMiko: Talent(id: TalentEnum.sekishiroMiko.rawValue, names: [.en: "Sekishiro Mico", .ja: "堰代ミコ"], inGeneration: Generation.honeyStrap),
+    .patra: Talent(id: TalentEnum.patra.rawValue, names: [.en: "Suou Patra", .ja: "周防パトラ"], inGeneration: Generation.honeyStrap),
+    .charlotte: Talent(id: TalentEnum.charlotte.rawValue, names: [.en: "Shimamura Charlotte", .ja: "島村シャルロット"], inGeneration: Generation.honeyStrap),
+    .mary: Talent(id: TalentEnum.mary.rawValue, names: [.en: "Saionji Mary", .ja: "西園寺メアリ"], inGeneration: Generation.honeyStrap),
+    
+    // MARK: - SugarLyric
+    .chris: Talent(id: TalentEnum.chris.rawValue, names: [.en: "Shishio Chris", .ja: "獅子王クリス"], inGeneration: Generation.sugarLyric),
+    .rin: Talent(id: TalentEnum.rin.rawValue, names: [.en: "Ryugasaki Rene", .ja: "​龍ヶ崎リン"], inGeneration: Generation.sugarLyric),
+    .mei: Talent(id: TalentEnum.mei.rawValue, names: [.en: "Oinomori May", .ja: "狼森メイ"], inGeneration: Generation.sugarLyric),
+    .tier: Talent(id: TalentEnum.tier.rawValue, names: [.en: "Hebiyoi Tier", .ja: "蛇宵ティア"], inGeneration: Generation.sugarLyric),
+    
+    // MARK: - Hiyocyo
+    .nemo: Talent(id: TalentEnum.nemo.rawValue, names: [.en: "Suzumi Nemo", .ja: "涼海ネモ"], inGeneration: Generation.hiyocyo),
+    .kanna: Talent(id: TalentEnum.kanna.rawValue, names: [.en: "Akane Canna", .ja: "茜音カンナ"], inGeneration: Generation.hiyocyo),
+    .sei: Talent(id: TalentEnum.sei.rawValue, names: [.en: "Touri Sei", .ja: "橙里セイ"], inGeneration: Generation.hiyocyo),
+    .kiki: Talent(id: TalentEnum.kiki.rawValue, names: [.en: "Shisui Kiki", .ja: "紫水キキ"], inGeneration: Generation.hiyocyo),
+    .popo: Talent(id: TalentEnum.popo.rawValue, names: [.en: "Ieiri Popo", .ja: "家入ポポ"], inGeneration: Generation.hiyocyo),
+    .yuri: Talent(id: TalentEnum.yuri.rawValue, names: [.en: "Kohaku Yuri", .ja: "瑚白ユリ"], inGeneration: Generation.hiyocyo),
+    
+    // MARK: - Solo talent
+    .ichika: Talent(id: TalentEnum.ichika.rawValue, names: [.en: "Souya Ichika", .ja: "宗谷いちか"], inGeneration: Generation.soloTalent),
+    .anna: Talent(id: TalentEnum.anna.rawValue, names: [.en: "Kojo Anna", .ja: "虎城アンナ"], inGeneration: Generation.soloTalent),
+    .yuge: Talent(id: TalentEnum.yuge.rawValue, names: [.en: "And Uge", .ja: "杏戸ゆげ"], inGeneration: Generation.soloTalent),
+    .kanon: Talent(id: TalentEnum.kanon.rawValue, names: [.en: "Kanade Kanon", .ja: "花奏かのん"], inGeneration: Generation.soloTalent),
+    .annko: Talent(id: TalentEnum.annko.rawValue, names: [.en: "Kisaki Anko", .ja: "季咲あんこ"], inGeneration: Generation.soloTalent),
+    .watto: Talent(id: TalentEnum.watto.rawValue, names: [.en: "Huma Wat", .ja: "不磨わっと"], inGeneration: Generation.soloTalent),
+    
+    // MARK: - 774inc official
+    .nanashiOfficial: Talent(id: TalentEnum.nanashiOfficial.rawValue, names: [.en: "774 inc Official Channel", .ja: "ななし公式チャンネル"], inGeneration: Generation.nanashiOfficial),
 ]
 
 let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
@@ -1098,5 +1190,13 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .reMixx: GenerationGroup(id: .reMixx, names: [.en: "Re:Mixx", .ja: "Re:Mixx"], members: [.isana, .syuka, .creil, .nemu, .taran]),
     .reactOfficial: GenerationGroup(id: .reactOfficial, names: [.en: "Re:AcT Official Channels", .ja: "Re:AcT公式チャンネル"], members: [.reactOfficial]),
     
-    .other: GenerationGroup(id: .other, names: [.en: "Other", .ja: "他"], members: [])
+    // MARK: - 774 inc
+    .animare: GenerationGroup(id: .animare, names: [.en: "AniMare", .ja: "有閑喫茶あにまーれ"], members: [.haneru, .ran, .kuku, .izumi, .rui, .hikari, .rukako, .chiroru, .konanMia]),
+    .honeyStrap: GenerationGroup(id: .honeyStrap, names: [.en: "HoneyStrap", .ja: "ハニーストラップ"], members: [.sekishiroMiko, .patra, .charlotte, .mary]),
+    .sugarLyric: GenerationGroup(id: .sugarLyric, names: [.en: "Sugar Lyric", .ja: "シュガーリリック"], members: [.chris, .rin, .mei, .tier]),
+    .hiyocyo: GenerationGroup(id: .hiyocyo, names: [.en: "Hiyoku no Crosspiece", .ja: "緋翼のクロスピース"], members: [.nemo, .kanna, .sei, .kiki, .popo, .yuri]),
+    .soloTalent: GenerationGroup(id: .soloTalent, names: [.en: "774 inc. Solo Talent", .ja: "774 inc. ソロータレント"], members: [.ichika, .anna, .yuge, .kanon, .annko, .watto]),
+    .nanashiOfficial: GenerationGroup(id: .nanashiOfficial, names: [.en: "774 inc. Official Channels", .ja: "774 inc.公式チャンネル"], members: [.nanashiOfficial]),
+    
+    .other: GenerationGroup(id: .other, names: [.en: "Other", .ja: "他"], members: []),
 ]

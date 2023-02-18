@@ -127,6 +127,7 @@
 "CONCERT_VIEW_TWITTER_LINK" = "Twitter Link";
 "CONCERT_VIEW_YOUTUBE_LINK" = "YouTube Link";
 "CONCERT_VIEW_PURCHASE_TICKETS" = "Purchase Tickets";
+"CONCERT_VIEW_OFFICIAL_LINK" = "Official Site";
 
 // BlockJPYPriceView
 "BLOCK_JPY_PRICE_TICKET_PRICE" = "Ticket Price";

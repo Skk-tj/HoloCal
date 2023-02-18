@@ -171,3 +171,15 @@ extension Set: RawRepresentable where Element: Codable {
 protocol HoloCalLocalizable {
     var localized: String { get }
 }
+
+func getLiveUrl(for agency: AgencyEnum) -> String {
+    return "https://holodex.net/api/v2/live?org=\(agency.rawValue)&status=live&type=stream&include=songs,mentions"
+}
+
+func getUpcomingUrl(for agency: AgencyEnum) -> String {
+    return "https://holodex.net/api/v2/live?status=upcoming&type=stream&org=\(agency.rawValue)&include=songs,mentions&max_upcoming_hours=%d"
+}
+
+func getWidgetUpcomingUrl(for agency: AgencyEnum) -> String {
+    return "https://holodex.net/api/v2/live?org=\(agency.rawValue)&status=upcoming&type=stream"
+}

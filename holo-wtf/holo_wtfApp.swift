@@ -19,6 +19,7 @@ struct holo_wtfApp: App {
     @AppStorage("hololiveGenerationListOrder") var hololiveGenerationListOrder = agencyEnumToGenerations[AgencyEnum.hololive]!
     @AppStorage("nijisanjiGenerationListOrder") var nijisanjiGenerationListOrder = agencyEnumToGenerations[AgencyEnum.nijisanji]!
     @AppStorage("reactGenerationListOrder") var reactGenerationListOrder = agencyEnumToGenerations[AgencyEnum.react]!
+    @AppStorage("nanashiIncGenerationListOrder") var nanashiIncGenerationListOrder = agencyEnumToGenerations[AgencyEnum.nanashiInc]!
     
     init() {
         // MARK: - Setup DST Warning
@@ -53,6 +54,11 @@ struct holo_wtfApp: App {
         if reactGenerationListOrder.count != agencyEnumToGenerations[AgencyEnum.react]!.count {
             let difference = Set(agencyEnumToGenerations[AgencyEnum.react]!).symmetricDifference(reactGenerationListOrder)
             reactGenerationListOrder.append(contentsOf: difference)
+        }
+        
+        if nanashiIncGenerationListOrder.count != agencyEnumToGenerations[AgencyEnum.nanashiInc]!.count {
+            let difference = Set(agencyEnumToGenerations[AgencyEnum.nanashiInc]!).symmetricDifference(nanashiIncGenerationListOrder)
+            nanashiIncGenerationListOrder.append(contentsOf: difference)
         }
         
         // Get user favourites from iCloud

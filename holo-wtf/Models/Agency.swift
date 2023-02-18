@@ -44,6 +44,7 @@ enum AgencyEnum: String, CaseIterable {
     case hololive = "Hololive"
     case nijisanji = "Nijisanji"
     case react = "ReAcT"
+    case nanashiInc = "774inc"
     
     func getAgency() -> Agency {
         return agencyEnumToAgency[self]!
@@ -60,6 +61,7 @@ let agencyEnumToAgency = [
     AgencyEnum.hololive: Agency(id: AgencyEnum.hololive, names: [.en: "Hololive", .ja: "ホロライブ"], icon: "arrowtriangle.right.fill"),
     AgencyEnum.nijisanji: Agency(id: AgencyEnum.nijisanji, names: [.en: "Nijisanji", .ja: "にじさんじ"], icon: "dot.radiowaves.right"),
     AgencyEnum.react: Agency(id: AgencyEnum.react, names: [.en: "Re:AcT", .ja: "Re:AcT"], icon: "r.square"),
+    AgencyEnum.nanashiInc: Agency(id: AgencyEnum.nanashiInc, names: [.en: "774 inc.", .ja: "774 inc."], icon: "7.circle")
 ]
 
 let agencyEnumToGenerations: [AgencyEnum: [Generation]] = [
@@ -147,6 +149,14 @@ let agencyEnumToGenerations: [AgencyEnum: [Generation]] = [
         .parfait,
         .reMixx,
         .reactOfficial
+    ],
+    .nanashiInc: [
+        .animare,
+        .honeyStrap,
+        .sugarLyric,
+        .hiyocyo,
+        .soloTalent,
+        .nanashiOfficial
     ]
 ]
 

@@ -9,7 +9,7 @@ import Foundation
 
 class UpcomingFavoritesViewModel: VideoViewModel, VideoGettable {
     let groupName: String?
-    var urls: [String] = [hololiveUpcomingURL, nijisanjiUpcomingURL, reactUpcomingURL]
+    var urls: [String] = AgencyEnum.allCases.map { getUpcomingUrl(for: $0) }
     
     init(groupName: String? = nil) {
         self.groupName = groupName

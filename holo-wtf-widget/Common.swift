@@ -12,7 +12,15 @@ let intentAgencyToString: [IntentAgency: [NameLanguage: String]] = [
     .unknown: [.en: "All", .ja: "全部"],
     .hololive: [.en: "Hololive", .ja: "ホロライブ"],
     .nijisanji: [.en: "Nijisanji", .ja: "にじさんじ"],
-    .react: [.en: "Re:AcT", .ja: "Re:AcT"]
+    .react: [.en: "Re:AcT", .ja: "Re:AcT"],
+    .nanashiInc: [.en: "774 inc.", .ja: "774 inc."]
+]
+
+let intentAgencyToAgency: [IntentAgency: AgencyEnum] = [
+    .hololive: .hololive,
+    .nijisanji: .nijisanji,
+    .react: .react,
+    .nanashiInc: .nanashiInc
 ]
 
 let intentSortByToString: [IntentSortBy: [NameLanguage: String]] = [
@@ -85,122 +93,68 @@ func getIntentVideoTypeAltLocalizedName(_ videoType: VideoType) -> String {
 
 func getVideoURLForWidget(agency: IntentAgency, videoType: VideoType) -> String {
     switch agency {
-    case .hololive:
-        switch videoType {
-        case .live:
-            return hololiveLiveURL
-        case .upcoming:
-            return hololiveWidgetUpcomingURL
-        }
-    case .nijisanji:
-        switch videoType {
-        case .live:
-            return nijisanjiLiveURL
-        case .upcoming:
-            return nijisanjiWidgetUpcomingURL
-        }
-    case .unknown:
+    case .unknown, .favourites:
         switch videoType {
         case .live:
             return allLiveURL
         case .upcoming:
             return allWidgetUpcomingURL
         }
-    case .favourites:
+    default:
         switch videoType {
         case .live:
-            return allLiveURL
+            return getLiveUrl(for: intentAgencyToAgency[agency]!)
         case .upcoming:
-            return allWidgetUpcomingURL
-        }
-    case .react:
-        switch videoType {
-        case .live:
-            return reactLiveURL
-        case .upcoming:
-            return reactUpcomingURL
+            return getUpcomingUrl(for: intentAgencyToAgency[agency]!)
         }
     }
 }
 
 func getVideosForWidget(agency: IntentAgency, videoType: VideoType) async throws -> [LiveVideo] {
     switch agency {
-    case .hololive:
-        switch videoType {
-        case .live:
-            return try await getVideos(from: hololiveLiveURL)
-        case .upcoming:
-            return try await getVideos(from: hololiveWidgetUpcomingURL)
-        }
-    case .nijisanji:
-        switch videoType {
-        case .live:
-            return try await getVideos(from: nijisanjiLiveURL)
-        case .upcoming:
-            return try await getVideos(from: nijisanjiWidgetUpcomingURL)
-        }
-    case .react:
-        switch videoType {
-        case .live:
-            return try await getVideos(from: reactLiveURL)
-        case .upcoming:
-            return try await getVideos(from: reactWidgetUpcomingURL)
-        }
-    case .unknown:
-        switch videoType {
-        case .live:
-            return try await getVideos(from: allLiveURL)
-        case .upcoming:
-            return try await getVideos(from: allWidgetUpcomingURL)
-        }
     case .favourites:
         switch videoType {
         case .live:
             let favourites = getFavouritesFromUserDefaults(groupName: "group.io.skk-tj.holo-wtf.ios")
-            
-            var getResult: [LiveVideo] = []
-            
-            async let hololiveLive = getVideos(from: hololiveLiveURL)
-            async let nijisanjiLive = getVideos(from: nijisanjiLiveURL)
-            async let reactLive = getVideos(from: reactLiveURL)
-            
-            getResult.append(contentsOf: (try? await hololiveLive) ?? [])
-            getResult.append(contentsOf: (try? await nijisanjiLive) ?? [])
-            getResult.append(contentsOf: (try? await reactLive) ?? [])
-            
-            getResult = getResult.filter {
-                favourites.contains($0.channel.id)
-            }
+            let getResult: [LiveVideo] = try await withThrowingTaskGroup(of: [LiveVideo].self) { group in
+                var result: [LiveVideo] = []
+                
+                for agency in AgencyEnum.allCases {
+                    group.addTask {
+                        return try await getVideos(from: getLiveUrl(for: agency))
+                    }
+                }
+                
+                for try await videos in group {
+                    result.append(contentsOf: videos)
+                }
+                
+                return result
+            }.filter { favourites.contains($0.channel.id) }
             
             return getResult
         case .upcoming:
             let favourites = getFavouritesFromUserDefaults(groupName: "group.io.skk-tj.holo-wtf.ios")
-            
-            var getResult: [LiveVideo] = []
-            
-            async let hololiveLive = getVideos(from: hololiveWidgetUpcomingURL)
-            async let nijisanjiLive = getVideos(from: nijisanjiWidgetUpcomingURL)
-            async let reactLive = getVideos(from: reactWidgetUpcomingURL)
-            
-            getResult.append(contentsOf: (try? await hololiveLive) ?? [])
-            getResult.append(contentsOf: (try? await nijisanjiLive) ?? [])
-            getResult.append(contentsOf: (try? await reactLive) ?? [])
-            
-            getResult = getResult.filter {
-                favourites.contains($0.channel.id)
-            }
+            let getResult: [LiveVideo] = try await withThrowingTaskGroup(of: [LiveVideo].self) { group in
+                var result: [LiveVideo] = []
+                
+                for agency in AgencyEnum.allCases {
+                    group.addTask {
+                        return try await getVideos(from: getUpcomingUrl(for: agency))
+                    }
+                }
+                
+                for try await videos in group {
+                    result.append(contentsOf: videos)
+                }
+                
+                return result
+            }.filter { favourites.contains($0.channel.id) }
             
             return getResult
         }
-    }
-}
-
-extension UIImage {
-    func resizeWithUIKit(to newSize: CGSize) -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(newSize, true, 1.0)
-        self.draw(in: CGRect(origin: .zero, size: newSize))
-        defer { UIGraphicsEndImageContext() }
-        return UIGraphicsGetImageFromCurrentImageContext()
+    default:
+        return try await getVideos(from: getVideoURLForWidget(agency: agency, videoType: videoType))
     }
 }
 
@@ -242,12 +196,6 @@ func getEntryWithIntent(for agency: IntentAgency, videoType: VideoType, sortBy: 
         }
         
         let (thumbnailData, _) = try await URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(firstVideo.id)/maxresdefault.jpg")!)
-        
-        // MARK: - Resize image to 120x120
-        // let newSize = CGSize(width: 120, height: 120)
-        // let imageToBeResized: UIImage = UIImage(data: avatarData)!
-        
-        // let resizedImage = imageToBeResized.resizeWithUIKit(to: newSize)
         
         let entry = SingleVideoWidgetEntry(date: .now, status: .ok, video: lives[0], avatarData: avatarData, thumbnailData: thumbnailData)
         

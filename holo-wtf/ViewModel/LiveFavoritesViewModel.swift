@@ -9,7 +9,7 @@ import Foundation
 
 class LiveFavoritesViewModel: VideoViewModel, VideoGettable {
     let groupName: String?
-    var urls: [String] = [hololiveLiveURL, nijisanjiLiveURL, reactLiveURL]
+    var urls: [String] = AgencyEnum.allCases.map { getLiveUrl(for: $0) }
     
     init(groupName: String? = nil) {
         self.groupName = groupName

@@ -11,24 +11,6 @@ let widgetSampleChannel: Channel = .init(id: "UCp6993wxpyDPHUpavwDFqgg", name: "
 
 let widgetSampleVideo: LiveVideo = .init(id: "NT6Pf28eCgQ", title: "My Debut Stream!", topicId: "debut", startScheduled: Date(), startActual: Date(), liveViewers: 1000, mentions: nil, songs: nil, channel: widgetSampleChannel)
 
-let hololiveLiveURL = "https://holodex.net/api/v2/live?org=Hololive&status=live&type=stream&include=songs,mentions"
-
-let nijisanjiLiveURL = "https://holodex.net/api/v2/live?org=Nijisanji&status=live&type=stream&include=songs,mentions"
-
-let reactLiveURL = "https://holodex.net/api/v2/live?org=ReAcT&status=live&type=stream&include=songs,mentions"
-
-let hololiveUpcomingURL = "https://holodex.net/api/v2/live?status=upcoming&type=stream&org=Hololive&include=songs,mentions&max_upcoming_hours=%d"
-
-let nijisanjiUpcomingURL = "https://holodex.net/api/v2/live?status=upcoming&type=stream&org=Nijisanji&include=songs,mentions&max_upcoming_hours=%d"
-
-let reactUpcomingURL = "https://holodex.net/api/v2/live?status=upcoming&type=stream&org=ReAcT&include=songs,mentions&max_upcoming_hours=%d"
-
-let hololiveWidgetUpcomingURL = "https://holodex.net/api/v2/live?org=Hololive&status=upcoming&type=stream"
-
-let nijisanjiWidgetUpcomingURL = "https://holodex.net/api/v2/live?org=Nijisanji&status=upcoming&type=stream"
-
-let reactWidgetUpcomingURL = "https://holodex.net/api/v2/live?org=ReAcT&status=upcoming&type=stream"
-
 let allLiveURL = "https://holodex.net/api/v2/live?&status=live&type=stream&include=songs,mentions"
 
 let allUpcomingURL = "https://holodex.net/api/v2/live?status=upcoming&type=stream&include=songs,mentions&max_upcoming_hours=%d"

@@ -18,6 +18,7 @@ struct SectionedForEachView<Content: View>: View {
     @AppStorage("hololiveGenerationListOrder") var hololiveGenerationListOrder = agencyEnumToGenerations[AgencyEnum.hololive]!
     @AppStorage("nijisanjiGenerationListOrder") var nijisanjiGenerationListOrder = agencyEnumToGenerations[AgencyEnum.nijisanji]!
     @AppStorage("reactGenerationListOrder") var reactGenerationListOrder = agencyEnumToGenerations[AgencyEnum.react]!
+    @AppStorage("nanashiIncGenerationListOrder") var nanashiIncGenerationListOrder = agencyEnumToGenerations[AgencyEnum.nanashiInc]!
     
     @EnvironmentObject var viewModel: VideoViewModel
     @ViewBuilder let cellView: (_ video: LiveVideo) -> Content
@@ -31,8 +32,8 @@ struct SectionedForEachView<Content: View>: View {
         }
         
         let sortedFilteredGroupedDictionary = filteredGroupedDictionary.sorted {
-            let orderOfFirst = hololiveGenerationListOrder.firstIndex(of: $0.key) ?? nijisanjiGenerationListOrder.firstIndex(of: $0.key) ?? reactGenerationListOrder.firstIndex(of: $0.key) ?? 0
-            let orderOfSecond = hololiveGenerationListOrder.firstIndex(of: $1.key) ?? nijisanjiGenerationListOrder.firstIndex(of: $1.key) ?? reactGenerationListOrder.firstIndex(of: $1.key) ?? 0
+            let orderOfFirst = hololiveGenerationListOrder.firstIndex(of: $0.key) ?? nijisanjiGenerationListOrder.firstIndex(of: $0.key) ?? reactGenerationListOrder.firstIndex(of: $0.key) ?? nanashiIncGenerationListOrder.firstIndex(of: $0.key) ?? 0
+            let orderOfSecond = hololiveGenerationListOrder.firstIndex(of: $1.key) ?? nijisanjiGenerationListOrder.firstIndex(of: $1.key) ?? reactGenerationListOrder.firstIndex(of: $1.key) ?? nanashiIncGenerationListOrder.firstIndex(of: $1.key) ??  0
             
             return orderOfFirst < orderOfSecond
         }
