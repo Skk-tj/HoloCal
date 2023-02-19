@@ -12,11 +12,11 @@ struct SingleAgencyItemView: View {
     
     var body: some View {
         Label(title: {
-            HStack(alignment: .bottom) {
+            VStack(alignment: .leading) {
                 Text(agency.getAgency().localizedName)
                 Text(agency.getAgency().altLocalizedName)
                     .foregroundColor(.secondary)
-                    .font(.callout)
+                    .font(.caption)
             }
         }, icon: {
             Image(systemName: agency.getAgency().icon)
