@@ -102,6 +102,12 @@ enum Generation: Int, CaseIterable, Codable, Hashable {
     case soloTalent
     case nanashiOfficial
     
+    // MARK: - Nori Pro
+    case noriProSolo
+    case noriPro1stGen
+    case noriProGamers
+    case noriProMusic
+    
     // For all the channels that we may not recognize
     case other
     
@@ -599,6 +605,23 @@ enum TalentEnum: String, Codable {
     
     // MARK: - 774inc official
     case nanashiOfficial = "UCJEpkwwDiTKS5lxwFttEbIQ"
+    
+    // MARK: - Nori Pro Solo
+    case tamaki = "UC8NZiqKx6fsDT3AVcMiVFyA"
+    
+    // MARK: - Nori Pro 1st gen
+    case mishiro = "UCC0i9nECi4Gz7TU63xZwodg"
+    case miruku = "UCJCzy0Fyrm0UhIrGQ7tHpjg"
+    case takuma = "UCCXME7oZmXB2VFHJbz5496A"
+    case yuzuru = "UCle1cz6rcyH0a-xoMYwLlAg"
+    
+    // MARK: - Nori Pro Gamers
+    case inariIroha = "UCWIPfdcux1WxuX5yZLPJDww"
+    case lionheart = "UCuycJ_IsA5ESbTYhe05ozqQ"
+    case shin = "UCMxIxoMdtcLkZ1wTq7qjztg"
+    
+    // MARK: - Nori Pro Music
+    case momo = "UCxrmkJf_X1Yhte_a4devFzA"
 }
 
 extension TalentEnum: Identifiable {
@@ -1102,6 +1125,23 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     
     // MARK: - 774inc official
     .nanashiOfficial: Talent(id: TalentEnum.nanashiOfficial.rawValue, names: [.en: "774 inc Official Channel", .ja: "ななし公式チャンネル"], inGeneration: Generation.nanashiOfficial),
+    
+    // MARK: - Nori Pro Solo
+    .tamaki: Talent(id: TalentEnum.tamaki.rawValue, names: [.en: "Inuyama Tamaki", .ja: "犬山たまき"], inGeneration: Generation.noriProSolo),
+    
+    // MARK: - Nori Pro 1st gen
+    .mishiro: Talent(id: TalentEnum.mishiro.rawValue, names: [.en: "Shirayuki Mishiro", .ja: "白雪みしろ"], inGeneration: Generation.noriPro1stGen),
+    .miruku: Talent(id: TalentEnum.miruku.rawValue, names: [.en: "Enomiya Milk", .ja: "愛宮みるく"], inGeneration: Generation.noriPro1stGen),
+    .takuma: Talent(id: TalentEnum.takuma.rawValue, names: [.en: "Kumagaya Takuma", .ja: "熊谷タクマ"], inGeneration: Generation.noriPro1stGen),
+    .yuzuru: Talent(id: TalentEnum.yuzuru.rawValue, names: [.en: "Himesaki Yuzuru", .ja: "姫咲ゆずる"], inGeneration: Generation.noriPro1stGen),
+    
+    // MARK: - Nori Pro Gamers
+    .inariIroha: Talent(id: TalentEnum.inariIroha.rawValue, names: [.en: "Inari Iroha", .ja: "稲荷いろは"], inGeneration: Generation.noriProGamers),
+    .lionheart: Talent(id: TalentEnum.lionheart.rawValue, names: [.en: "Regrush Lionheart", .ja: "レグルシュ・ライオンハート"], inGeneration: Generation.noriProGamers),
+    .shin: Talent(id: TalentEnum.shin.rawValue, names: [.en: "Nekozeno Shin", .ja: "猫瀬乃しん"], inGeneration: Generation.noriProGamers),
+    
+    // MARK: - Nori Pro Music
+    .momo: Talent(id: TalentEnum.momo.rawValue, names: [.en: "Kurumizawa Momo", .ja: "胡桃澤もも"], inGeneration: Generation.noriProMusic),
 ]
 
 let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
@@ -1196,7 +1236,13 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .sugarLyric: GenerationGroup(id: .sugarLyric, names: [.en: "Sugar Lyric", .ja: "シュガーリリック"], members: [.chris, .rin, .mei, .tier]),
     .hiyocyo: GenerationGroup(id: .hiyocyo, names: [.en: "Hiyoku no Crosspiece", .ja: "緋翼のクロスピース"], members: [.nemo, .kanna, .sei, .kiki, .popo, .yuri]),
     .soloTalent: GenerationGroup(id: .soloTalent, names: [.en: "774 inc. Solo Talent", .ja: "774 inc. ソロータレント"], members: [.ichika, .anna, .yuge, .kanon, .annko, .watto]),
-    .nanashiOfficial: GenerationGroup(id: .nanashiOfficial, names: [.en: "774 inc. Official Channels", .ja: "774 inc.公式チャンネル"], members: [.nanashiOfficial]),
+    .nanashiOfficial: GenerationGroup(id: .nanashiOfficial, names: [.en: "774 inc. Official Channels", .ja: "774 inc. 公式チャンネル"], members: [.nanashiOfficial]),
+    
+    // MARK: - Nori Pro
+    .noriProSolo: GenerationGroup(id: .noriProSolo, names: [.en: "Nori Pro", .ja: "のりプロ"], members: [.tamaki]),
+    .noriPro1stGen: GenerationGroup(id: .noriPro1stGen, names: [.en: "1st Gen", .ja: "一期生"], members: [.mishiro, .miruku, .takuma, .yuzuru]),
+    .noriProGamers: GenerationGroup(id: .noriProGamers, names: [.en: "Gamers", .ja: "ゲーマーズ"], members: [.inariIroha, .lionheart, .shin]),
+    .noriProMusic: GenerationGroup(id: .noriProMusic, names: [.en: "Music", .ja: "ミュージック"], members: [.momo]),
     
     .other: GenerationGroup(id: .other, names: [.en: "Other", .ja: "他"], members: []),
 ]

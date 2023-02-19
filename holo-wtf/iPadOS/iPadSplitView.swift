@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Collections
 
 enum Views: Hashable {
     case live(iPadAgencies)
@@ -14,19 +15,25 @@ enum Views: Hashable {
     case settings
 }
 
-enum iPadAgencies: CaseIterable {
+enum iPadAgencies: CaseIterable, Identifiable {
+    var id: Self {
+        return self
+    }
+    
     case hololive
     case nijisanji
     case react
     case nanashiInc
+    case noriPro
     case favourites
 }
 
-let ipadAgenciesToAgency: [iPadAgencies: AgencyEnum] = [
+let ipadAgenciesToAgency: OrderedDictionary<iPadAgencies, AgencyEnum> = [
     .hololive: .hololive,
     .nijisanji: .nijisanji,
     .react: .react,
-    .nanashiInc: .nanashiInc
+    .nanashiInc: .nanashiInc,
+    .noriPro: .noriPro
 ]
 
 struct iPadSplitView: View {
@@ -37,16 +44,10 @@ struct iPadSplitView: View {
         NavigationSplitView(columnVisibility: $columnVis) {
             List(selection: $viewSelection) {
                 Section(content: {
-                    NavigationLink(value: Views.live(.hololive)) {
-                        SingleAgencyItemView(agency: .hololive)
-                    }
-                    
-                    NavigationLink(value: Views.live(.nijisanji)) {
-                        SingleAgencyItemView(agency: .nijisanji)
-                    }
-                    
-                    NavigationLink(value: Views.live(.react)) {
-                        SingleAgencyItemView(agency: .react)
+                    ForEach(ipadAgenciesToAgency.keys) { agency in
+                        NavigationLink(value: Views.live(agency)) {
+                            SingleAgencyItemView(agency: ipadAgenciesToAgency[agency]!)
+                        }
                     }
                     
                     NavigationLink(value: Views.live(.favourites)) {
@@ -57,16 +58,10 @@ struct iPadSplitView: View {
                 })
                 
                 Section(content: {
-                    NavigationLink(value: Views.upcoming(.hololive)) {
-                        SingleAgencyItemView(agency: .hololive)
-                    }
-                    
-                    NavigationLink(value: Views.upcoming(.nijisanji)) {
-                        SingleAgencyItemView(agency: .nijisanji)
-                    }
-                    
-                    NavigationLink(value: Views.upcoming(.react)) {
-                        SingleAgencyItemView(agency: .react)
+                    ForEach(ipadAgenciesToAgency.keys) { agency in
+                        NavigationLink(value: Views.live(agency)) {
+                            SingleAgencyItemView(agency: ipadAgenciesToAgency[agency]!)
+                        }
                     }
                     
                     NavigationLink(value: Views.upcoming(.favourites)) {

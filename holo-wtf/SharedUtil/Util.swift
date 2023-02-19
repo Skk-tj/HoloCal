@@ -7,6 +7,7 @@
 
 import Foundation
 import EventKit
+import SwiftUI
 
 func getTimeIntervalFormatter() -> DateComponentsFormatter {
     let formatter = DateComponentsFormatter()
@@ -182,4 +183,26 @@ func getUpcomingUrl(for agency: AgencyEnum) -> String {
 
 func getWidgetUpcomingUrl(for agency: AgencyEnum) -> String {
     return "https://holodex.net/api/v2/live?org=\(agency.rawValue)&status=upcoming&type=stream"
+}
+
+func getGenerationOrderList(@AppStorage("generationListOrderNew") from data: Data, agency: AgencyEnum) -> [Generation] {
+    guard let deserialized = try? JSONDecoder().decode([AgencyEnum: [Generation]].self, from: data) else {
+        return agencyEnumToGenerations[agency]!
+    }
+    
+    return deserialized[agency]!
+}
+
+func appendNewGenerationOrderList(@AppStorage("generationListOrderNew") to data: Data, order: Set<Generation>, agency: AgencyEnum) {
+    guard var deserialized = try? JSONDecoder().decode([AgencyEnum: [Generation]].self, from: data) else { return }
+    deserialized[agency]!.append(contentsOf: order)
+    
+    data = try! JSONEncoder().encode(deserialized)
+}
+
+func overwriteNewGenerationOrderList(@AppStorage("generationListOrderNew") to data: Data, order: [Generation], agency: AgencyEnum) {
+    guard var deserialized = try? JSONDecoder().decode([AgencyEnum: [Generation]].self, from: data) else { return }
+    deserialized[agency] = order
+    
+    data = try! JSONEncoder().encode(deserialized)
 }

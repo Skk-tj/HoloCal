@@ -16,10 +16,12 @@ struct holo_wtfApp: App {
     @AppStorage("generationListSelection") var generationSelected = Set(Generation.allCases)
     @AppStorage("excludedGenerations") var excludedGenerations = Set<Generation>()
     
-    @AppStorage("hololiveGenerationListOrder") var hololiveGenerationListOrder = agencyEnumToGenerations[AgencyEnum.hololive]!
-    @AppStorage("nijisanjiGenerationListOrder") var nijisanjiGenerationListOrder = agencyEnumToGenerations[AgencyEnum.nijisanji]!
-    @AppStorage("reactGenerationListOrder") var reactGenerationListOrder = agencyEnumToGenerations[AgencyEnum.react]!
-    @AppStorage("nanashiIncGenerationListOrder") var nanashiIncGenerationListOrder = agencyEnumToGenerations[AgencyEnum.nanashiInc]!
+    // @AppStorage("hololiveGenerationListOrder") var hololiveGenerationListOrder = agencyEnumToGenerations[AgencyEnum.hololive]!
+    // @AppStorage("nijisanjiGenerationListOrder") var nijisanjiGenerationListOrder = agencyEnumToGenerations[AgencyEnum.nijisanji]!
+    // @AppStorage("reactGenerationListOrder") var reactGenerationListOrder = agencyEnumToGenerations[AgencyEnum.react]!
+    // @AppStorage("nanashiIncGenerationListOrder") var nanashiIncGenerationListOrder = agencyEnumToGenerations[AgencyEnum.nanashiInc]!
+    
+    @AppStorage("generationListOrderNew") var generateListOrder: Data = try! JSONEncoder().encode(agencyEnumToGenerations)
     
     init() {
         // MARK: - Setup DST Warning
@@ -37,28 +39,20 @@ struct holo_wtfApp: App {
             isShowingDSTReminder = false
         }
         
+        // MARK: - Migrate displayed generation
         // When we add generations, we need to handle previous user preferences
         generationSelected = Set(Generation.allCases).subtracting(excludedGenerations)
         
+        // MARK: - Migrate generation order
         // Also add the new generation to the order list
-        if hololiveGenerationListOrder.count != agencyEnumToGenerations[AgencyEnum.hololive]!.count {
-            let difference = Set(agencyEnumToGenerations[AgencyEnum.hololive]!).symmetricDifference(hololiveGenerationListOrder)
-            hololiveGenerationListOrder.append(contentsOf: difference)
-        }
-        
-        if nijisanjiGenerationListOrder.count != agencyEnumToGenerations[AgencyEnum.nijisanji]!.count {
-            let difference = Set(agencyEnumToGenerations[AgencyEnum.nijisanji]!).symmetricDifference(nijisanjiGenerationListOrder)
-            nijisanjiGenerationListOrder.append(contentsOf: difference)
-        }
-        
-        if reactGenerationListOrder.count != agencyEnumToGenerations[AgencyEnum.react]!.count {
-            let difference = Set(agencyEnumToGenerations[AgencyEnum.react]!).symmetricDifference(reactGenerationListOrder)
-            reactGenerationListOrder.append(contentsOf: difference)
-        }
-        
-        if nanashiIncGenerationListOrder.count != agencyEnumToGenerations[AgencyEnum.nanashiInc]!.count {
-            let difference = Set(agencyEnumToGenerations[AgencyEnum.nanashiInc]!).symmetricDifference(nanashiIncGenerationListOrder)
-            nanashiIncGenerationListOrder.append(contentsOf: difference)
+        for agency in AgencyEnum.allCases {
+            let defaultGenerationOrder = agencyEnumToGenerations[agency]!
+            let userSavedGenerationOrder = getGenerationOrderList(from: generateListOrder, agency: agency)
+            
+            if userSavedGenerationOrder.count != defaultGenerationOrder.count {
+                let difference = Set(defaultGenerationOrder).symmetricDifference(userSavedGenerationOrder)
+                appendNewGenerationOrderList(to: generateListOrder, order: difference, agency: agency)
+            }
         }
         
         // Get user favourites from iCloud

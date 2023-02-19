@@ -17,7 +17,7 @@ enum VideoFetchServiceError: Error {
 func getVideos(from url: String) async throws -> [LiveVideo] {
     let logger = Logger()
     
-    guard let apiURL = URL(string: url) else {
+    guard let apiURL = URL(string: url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) else {
         logger.critical("API URL is not valid")
         throw VideoFetchServiceError.apiUrlError
     }

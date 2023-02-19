@@ -14,11 +14,7 @@ import OrderedCollections
 /// This view accepts another `View` for what the video will be fit into.
 struct SectionedForEachView<Content: View>: View {
     @AppStorage("generationListSelection") var generationListSelection = Set(Generation.allCases)
-    
-    @AppStorage("hololiveGenerationListOrder") var hololiveGenerationListOrder = agencyEnumToGenerations[AgencyEnum.hololive]!
-    @AppStorage("nijisanjiGenerationListOrder") var nijisanjiGenerationListOrder = agencyEnumToGenerations[AgencyEnum.nijisanji]!
-    @AppStorage("reactGenerationListOrder") var reactGenerationListOrder = agencyEnumToGenerations[AgencyEnum.react]!
-    @AppStorage("nanashiIncGenerationListOrder") var nanashiIncGenerationListOrder = agencyEnumToGenerations[AgencyEnum.nanashiInc]!
+    @AppStorage("generationListOrderNew") var generateListOrder: Data = try! JSONEncoder().encode(agencyEnumToGenerations)
     
     @EnvironmentObject var viewModel: VideoViewModel
     @ViewBuilder let cellView: (_ video: LiveVideo) -> Content
@@ -31,9 +27,14 @@ struct SectionedForEachView<Content: View>: View {
             generationListSelection.contains(element.key)
         }
         
-        let sortedFilteredGroupedDictionary = filteredGroupedDictionary.sorted {
-            let orderOfFirst = hololiveGenerationListOrder.firstIndex(of: $0.key) ?? nijisanjiGenerationListOrder.firstIndex(of: $0.key) ?? reactGenerationListOrder.firstIndex(of: $0.key) ?? nanashiIncGenerationListOrder.firstIndex(of: $0.key) ?? 0
-            let orderOfSecond = hololiveGenerationListOrder.firstIndex(of: $1.key) ?? nijisanjiGenerationListOrder.firstIndex(of: $1.key) ?? reactGenerationListOrder.firstIndex(of: $1.key) ?? nanashiIncGenerationListOrder.firstIndex(of: $1.key) ??  0
+        let sortedFilteredGroupedDictionary = filteredGroupedDictionary.sorted { kv1, kv2 in
+            let orderOfFirst: Int = AgencyEnum.allCases.map {
+                getGenerationOrderList(from: generateListOrder, agency: $0).firstIndex(of: kv1.key) ?? -1
+            }.first { $0 != -1 } ?? 0
+            
+            let orderOfSecond: Int = AgencyEnum.allCases.map {
+                getGenerationOrderList(from: generateListOrder, agency: $0).firstIndex(of: kv2.key) ?? -1
+            }.first { $0 != -1 } ?? 0
             
             return orderOfFirst < orderOfSecond
         }
@@ -47,9 +48,3 @@ struct SectionedForEachView<Content: View>: View {
         }
     }
 }
-
-//struct SectionedNotFavouritedForEachView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SectionedNotFavouritedForEachView()
-//    }
-//}

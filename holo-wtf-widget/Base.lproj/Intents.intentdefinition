@@ -71,9 +71,19 @@
 					<key>INEnumValueDisplayNameID</key>
 					<string>1geEew</string>
 					<key>INEnumValueIndex</key>
-					<integer>5</integer>
+					<integer>6</integer>
 					<key>INEnumValueName</key>
 					<string>favourites</string>
+				</dict>
+				<dict>
+					<key>INEnumValueDisplayName</key>
+					<string>Nori Pro</string>
+					<key>INEnumValueDisplayNameID</key>
+					<string>JzXCet</string>
+					<key>INEnumValueIndex</key>
+					<integer>5</integer>
+					<key>INEnumValueName</key>
+					<string>noriPro</string>
 				</dict>
 			</array>
 		</dict>

@@ -13,14 +13,16 @@ let intentAgencyToString: [IntentAgency: [NameLanguage: String]] = [
     .hololive: intentAgencyToAgency[IntentAgency.hololive]!.getAgency().names,
     .nijisanji: intentAgencyToAgency[IntentAgency.nijisanji]!.getAgency().names,
     .react: intentAgencyToAgency[IntentAgency.react]!.getAgency().names,
-    .nanashiInc: intentAgencyToAgency[IntentAgency.nanashiInc]!.getAgency().names
+    .nanashiInc: intentAgencyToAgency[IntentAgency.nanashiInc]!.getAgency().names,
+    .noriPro: intentAgencyToAgency[IntentAgency.noriPro]!.getAgency().names,
 ]
 
 let intentAgencyToAgency: [IntentAgency: AgencyEnum] = [
     .hololive: .hololive,
     .nijisanji: .nijisanji,
     .react: .react,
-    .nanashiInc: .nanashiInc
+    .nanashiInc: .nanashiInc,
+    .noriPro: .noriPro
 ]
 
 let intentSortByToString: [IntentSortBy: [NameLanguage: String]] = [
