@@ -16,11 +16,6 @@ struct holo_wtfApp: App {
     @AppStorage("generationListSelection") var generationSelected = Set(Generation.allCases)
     @AppStorage("excludedGenerations") var excludedGenerations = Set<Generation>()
     
-    // @AppStorage("hololiveGenerationListOrder") var hololiveGenerationListOrder = agencyEnumToGenerations[AgencyEnum.hololive]!
-    // @AppStorage("nijisanjiGenerationListOrder") var nijisanjiGenerationListOrder = agencyEnumToGenerations[AgencyEnum.nijisanji]!
-    // @AppStorage("reactGenerationListOrder") var reactGenerationListOrder = agencyEnumToGenerations[AgencyEnum.react]!
-    // @AppStorage("nanashiIncGenerationListOrder") var nanashiIncGenerationListOrder = agencyEnumToGenerations[AgencyEnum.nanashiInc]!
-    
     @AppStorage("generationListOrderNew") var generateListOrder: Data = try! JSONEncoder().encode(agencyEnumToGenerations)
     
     init() {
