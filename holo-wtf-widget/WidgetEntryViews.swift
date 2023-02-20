@@ -20,9 +20,7 @@ struct MultipleLiveWidgetEntryView: View {
                 if let videoLeft = entry.videoLeft {
                     LiveWidgetMediumView(video: videoLeft, videoThumbnail: entry.thumbnailDataLeft)
                 } else {
-                    Spacer()
-                    Text("NO_ONE_IS_STREAMING")
-                    Spacer()
+                    NoStreamView()
                 }
             }
         }, titleView: {
@@ -44,9 +42,7 @@ struct MultipleUpcomingWidgetEntryView: View {
                 if let videoLeft = entry.videoLeft {
                     UpcomingWidgetMediumView(video: videoLeft, videoThumbnail: entry.thumbnailDataLeft)
                 } else {
-                    Spacer()
-                    Text("NO_ONE_IS_STREAMING")
-                    Spacer()
+                    NoStreamView()
                 }
             }
         }, titleView: {
@@ -65,9 +61,7 @@ struct LiveChannelsEntryView: View {
                 LiveChannelsView(channels: entry.channels, thumbnails: entry.thumbnails)
                 Spacer()
             } else {
-                Spacer()
-                Text("NO_ONE_IS_STREAMING")
-                Spacer()
+                NoStreamView()
             }
         }, titleView: {
             LiveTitleView()
@@ -85,9 +79,7 @@ struct UpcomingChannelsEntryView: View {
                 LiveChannelsView(channels: entry.channels, thumbnails: entry.thumbnails)
                 Spacer()
             } else {
-                Spacer()
-                Text("NO_ONE_IS_STREAMING")
-                Spacer()
+                NoStreamView()
             }
         }, titleView: {
             UpcomingTitleView()

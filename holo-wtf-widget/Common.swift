@@ -142,7 +142,7 @@ func getVideosForWidget(agency: IntentAgency, videoType: VideoType) async throws
                 
                 for agency in AgencyEnum.allCases {
                     group.addTask {
-                        return try await getVideos(from: getUpcomingUrl(for: agency))
+                        return try await getVideos(from: getWidgetUpcomingUrl(for: agency))
                     }
                 }
                 

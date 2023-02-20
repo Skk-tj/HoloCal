@@ -25,9 +25,7 @@ struct BaseVideoEntryView<MainContent: View, TitleContent: View, Entry: VideoTim
             case .noVideo:
                 NoStreamView()
             case .network:
-                Spacer()
-                Text("NETWORK_ERROR")
-                Spacer()
+                NetworkErrorView()
             }
         }
         .padding()

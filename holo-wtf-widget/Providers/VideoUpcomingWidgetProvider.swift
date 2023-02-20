@@ -42,7 +42,7 @@ struct VideoUpcomingWidgetProvider: IntentTimelineProvider {
     }
     
     func recommendations() -> [IntentRecommendation<Intent>] {
-        let availableAgency: [IntentAgency] = [.unknown, .hololive, .nijisanji, .react, .nanashiInc]
+        let availableAgency: [IntentAgency] = [.unknown, .hololive, .nijisanji, .react, .nanashiInc, .noriPro]
         
         let result: [IntentRecommendation<Intent>] = availableAgency.map { item in
             let intent = UpcomingWidgetIntent()
