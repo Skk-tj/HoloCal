@@ -23,9 +23,7 @@ struct BaseVideoEntryView<MainContent: View, TitleContent: View, Entry: VideoTim
             case .ok:
                 mainView()
             case .noVideo:
-                Spacer()
-                Text("NO_ONE_IS_STREAMING")
-                Spacer()
+                NoStreamView()
             case .network:
                 Spacer()
                 Text("NETWORK_ERROR")

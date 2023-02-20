@@ -32,6 +32,30 @@ struct UpcomingTitleView: View {
     }
 }
 
+struct NoStreamView: View {
+    var body: some View {
+        Spacer()
+        Image(systemName: "questionmark.circle")
+            .foregroundColor(.secondary)
+            .font(.largeTitle)
+        Text("NO_ONE_IS_STREAMING")
+            .foregroundColor(.secondary)
+        Spacer()
+    }
+}
+
+struct NetworkErrorView: View {
+    var body: some View {
+        Spacer()
+        Image(systemName: "xmark.circle")
+            .foregroundColor(.secondary)
+            .font(.largeTitle)
+        Text("NETWORK_ERROR")
+            .foregroundColor(.secondary)
+        Spacer()
+    }
+}
+
 struct VideoLiveWidgetEntryView: View {
     var entry: VideoLiveWidgetProvider.Entry
     
@@ -65,9 +89,7 @@ struct SmallLiveWidgetEntryView: View {
                 Spacer()
                 SmallLiveWidgetView(live: video, avatarData: entry.avatarData)
             } else {
-                Spacer()
-                Text("NO_ONE_IS_STREAMING")
-                Spacer()
+                NoStreamView()
             }
         }, titleView: {
             LiveTitleView()
@@ -83,9 +105,7 @@ struct LivePaneWidgetEntryView: View {
             if let video = entry.video {
                 LiveWidgetView(live: video, thumbnailData: entry.thumbnailData, avatarData: entry.avatarData)
             } else {
-                Spacer()
-                Text("NO_ONE_IS_STREAMING")
-                Spacer()
+                NoStreamView()
             }
         }, titleView: {
             LiveTitleView()
@@ -126,9 +146,7 @@ struct SmallUpcomingWidgetEntryView: View {
             if let video = entry.video {
                 SmallUpcomingWidgetView(upcoming: video, avatarData: entry.avatarData)
             } else {
-                Spacer()
-                Text("NO_ONE_IS_STREAMING")
-                Spacer()
+                NoStreamView()
             }
         }, titleView: {
             UpcomingTitleView()
@@ -144,9 +162,7 @@ struct UpcomingPaneWidgetEntryView: View {
             if let video = entry.video {
                 UpcomingWidgetView(upcoming: video, thumbnailData: entry.thumbnailData, avatarData: entry.avatarData)
             } else {
-                Spacer()
-                Text("NO_ONE_IS_STREAMING")
-                Spacer()
+                NoStreamView()
             }
         }, titleView: {
             UpcomingTitleView()
