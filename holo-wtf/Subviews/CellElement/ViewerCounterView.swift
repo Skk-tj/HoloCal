@@ -12,18 +12,11 @@ struct ViewerCounterView: View {
     let memberOnly: Bool
     
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                Image(systemName: "person.fill")
-                Text(memberOnly ? "VIEWER_COUNTER_VIEW_MEMBER_NA" : "\(viewer)")
-                    .font(.title3)
-                    .fontWeight(.bold)
-            }
-            
+        BlockVideoInfoView(iconName: "person.fill", primaryText: {
+            Text(memberOnly ? "VIEWER_COUNTER_VIEW_MEMBER_NA" : "\(viewer)")
+        }, secondaryText: {
             Text(memberOnly ? "VIEWER_COUNTER_VIEW_MEMBER_ONLY" : "VIEWER_COUNTER_VIEW_WATCHING")
-                .font(.callout)
-                .foregroundColor(.secondary)
-        }
+        })
     }
 }
 

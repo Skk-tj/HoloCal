@@ -46,6 +46,9 @@ struct UpcomingPaneView: View {
                         else {
                             BlockUpcomingTimeView(liveSchedule: upcoming.startScheduled)
                         }
+                        if upcoming.isPremiere {
+                            BlockVideoTypeView()
+                        }
                     }
                     .padding(.top, 5)
                     

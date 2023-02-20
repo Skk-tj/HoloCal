@@ -95,6 +95,11 @@
 
 "BLOCK_MEMBER_ONLY_MEMBER" = "Member";
 
+// Block Video Type View
+
+"BLOCK_VIDEO_TYPE_PREMIERE" = "Premiere";
+"BLOCK_VIDEO_TYPE_VIDEO" = "Video";
+
 // Upcoming Cell View
 
 "UPCOMING_CELL_VIEW_STARTING_IN %@" = "Starting in %@";

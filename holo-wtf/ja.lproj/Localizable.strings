@@ -97,6 +97,11 @@
 
 "BLOCK_MEMBER_ONLY_MEMBER" = "メンバー";
 
+// Block Video Type View
+
+"BLOCK_VIDEO_TYPE_PREMIERE" = "プレミア公開";
+"BLOCK_VIDEO_TYPE_VIDEO" = "ビデオ";
+
 // Upcoming Cell View
 
 "UPCOMING_CELL_VIEW_STARTING_IN %@" = "%@後に配信";
