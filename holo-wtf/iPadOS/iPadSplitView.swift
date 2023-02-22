@@ -59,7 +59,7 @@ struct iPadSplitView: View {
                 
                 Section(content: {
                     ForEach(ipadAgenciesToAgency.keys) { agency in
-                        NavigationLink(value: Views.live(agency)) {
+                        NavigationLink(value: Views.upcoming(agency)) {
                             SingleAgencyItemView(agency: ipadAgenciesToAgency[agency]!)
                         }
                     }
@@ -84,20 +84,37 @@ struct iPadSplitView: View {
             .navigationSplitViewColumnWidth(ideal: 230)
         } detail: {
             if let viewSelection {
+                // Data driven switch case does not work here for some reason
                 switch viewSelection {
                 case .live(let agencySelection):
                     switch agencySelection {
+                    case .hololive:
+                        LiveiPadView(for: .hololive)
+                    case .nijisanji:
+                        LiveiPadView(for: .nijisanji)
+                    case .react:
+                        LiveiPadView(for: .react)
+                    case .nanashiInc:
+                        LiveiPadView(for: .nanashiInc)
+                    case .noriPro:
+                        LiveiPadView(for: .react)
                     case .favourites:
                         LiveFavouritesiPadView()
-                    default:
-                        LiveiPadView(for: ipadAgenciesToAgency[agencySelection]!)
                     }
                 case .upcoming(let agencySelection):
                     switch agencySelection {
+                    case .hololive:
+                        UpcomingiPadView(for: .hololive)
+                    case .nijisanji:
+                        UpcomingiPadView(for: .nijisanji)
+                    case .react:
+                        UpcomingiPadView(for: .react)
+                    case .nanashiInc:
+                        UpcomingiPadView(for: .nanashiInc)
+                    case .noriPro:
+                        UpcomingiPadView(for: .react)
                     case .favourites:
-                        UpcomingFavouritesiPadView()
-                    default:
-                        UpcomingiPadView(for: ipadAgenciesToAgency[agencySelection]!)
+                        UpcomingFavouritesView()
                     }
                 case .concerts:
                     NavigationStack {

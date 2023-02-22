@@ -24,7 +24,7 @@ struct BlockLiveTimeView: View {
                 BlockVideoInfoView(iconName: "clock", primaryText: {
                     Text("\(elapsedTimeString)")
                 }, secondaryText: {
-                    Text("BLOCK_LIVE_TIME_VIEW_STARTED_AT")
+                    Text("BLOCK_LIVE_TIME_VIEW_AGO")
                 })
             }
         } else {
