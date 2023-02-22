@@ -97,7 +97,7 @@ struct iPadSplitView: View {
                     case .nanashiInc:
                         LiveiPadView(for: .nanashiInc)
                     case .noriPro:
-                        LiveiPadView(for: .react)
+                        LiveiPadView(for: .noriPro)
                     case .favourites:
                         LiveFavouritesiPadView()
                     }
@@ -112,7 +112,7 @@ struct iPadSplitView: View {
                     case .nanashiInc:
                         UpcomingiPadView(for: .nanashiInc)
                     case .noriPro:
-                        UpcomingiPadView(for: .react)
+                        UpcomingiPadView(for: .noriPro)
                     case .favourites:
                         UpcomingFavouritesView()
                     }

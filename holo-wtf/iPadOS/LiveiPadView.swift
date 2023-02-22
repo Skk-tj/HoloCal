@@ -33,6 +33,7 @@ struct LiveiPadView: View {
         }, isFavourite: false)
         .environmentObject(live as VideoViewModel)
         .task {
+            live.sortingStrategy = .timeDesc
             await live.getVideoForUI()
             currentPresentationMode = .normal
         }

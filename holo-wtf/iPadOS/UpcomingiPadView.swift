@@ -33,6 +33,7 @@ struct UpcomingiPadView: View {
         }, isFavourite: false)
         .environmentObject(upcoming as VideoViewModel)
         .task {
+            upcoming.sortingStrategy = .timeAsc
             await upcoming.getVideoForUI()
             currentPresentationMode = .normal
         }

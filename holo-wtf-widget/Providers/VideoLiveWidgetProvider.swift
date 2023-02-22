@@ -43,7 +43,7 @@ struct VideoLiveWidgetProvider: IntentTimelineProvider {
     
     func recommendations() -> [IntentRecommendation<Intent>] {
         let availableSortBy: [IntentSortBy] = [.mostViewer, .mostRecent]
-        let availableAgency: [IntentAgency] = [.unknown, .hololive, .nijisanji, .react, .nanashiInc]
+        let availableAgency: [IntentAgency] = [.unknown, .hololive, .nijisanji, .react, .nanashiInc, .noriPro]
 
         let result: [IntentRecommendation<Intent>] = product(availableSortBy, availableAgency).map { pair in
             let intent = LiveWidgetIntent()

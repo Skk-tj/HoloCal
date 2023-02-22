@@ -14,7 +14,6 @@ class UpcomingFavoritesViewModel: VideoViewModel, VideoGettable {
     init(groupName: String? = nil) {
         self.groupName = groupName
         super.init(for: .hololive)
-        self.sortingStrategy = .timeDesc
         
         let upcomingLookAhead = getUpcomingStreamLookAheadHoursFromUserDefaults()
         self.urls = urls.map({ url in String(format: url, upcomingLookAhead) })
