@@ -211,6 +211,9 @@
 		F09664E529A34DCF005F37C0 /* BlockVideoInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09664DF29A34BEC005F37C0 /* BlockVideoInfoView.swift */; };
 		F09664E629A34DE7005F37C0 /* UpcomingWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0D28C2940200635CAD /* UpcomingWidgetView.swift */; };
 		F09664E729A34DE7005F37C0 /* UpcomingWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0D28C2940200635CAD /* UpcomingWidgetView.swift */; };
+		F09664E829A602D1005F37C0 /* BlockVideoTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01F2EF929A349D900DA8367 /* BlockVideoTypeView.swift */; };
+		F09664E929A602E9005F37C0 /* BlockVideoTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01F2EF929A349D900DA8367 /* BlockVideoTypeView.swift */; };
+		F09664EA29A602F6005F37C0 /* BlockVideoTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01F2EF929A349D900DA8367 /* BlockVideoTypeView.swift */; };
 		F09D25BE27FC2552001A7D71 /* SettingsTalentStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25BD27FC2552001A7D71 /* SettingsTalentStarView.swift */; };
 		F09D25C327FEC12D001A7D71 /* SettingsFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */; };
 		F09D25C928020B12001A7D71 /* UpcomingViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25C828020B12001A7D71 /* UpcomingViewToolbar.swift */; };
@@ -1291,6 +1294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F09664E929A602E9005F37C0 /* BlockVideoTypeView.swift in Sources */,
 				F0E45D1B28F39AF90091474A /* Agency.swift in Sources */,
 				F025204228EE95FB00976972 /* Constants.swift in Sources */,
 				F09664E729A34DE7005F37C0 /* UpcomingWidgetView.swift in Sources */,
@@ -1382,6 +1386,7 @@
 				F093D1E82830359900E2A6FF /* Util.swift in Sources */,
 				F004E8C7285D013300ABDFED /* SongInStream.swift in Sources */,
 				F0E06D0729322BEC00BF6812 /* BlockLiveTimeView.swift in Sources */,
+				F09664E829A602D1005F37C0 /* BlockVideoTypeView.swift in Sources */,
 				F093D1E0282FAA0500E2A6FF /* TopicTagView.swift in Sources */,
 				F03A139228F1FE0700BB8E51 /* ChannelsLiveWidgetProvider.swift in Sources */,
 				F06D28DD28D838C7007D06FB /* SharedWidgets.swift in Sources */,
@@ -1514,6 +1519,7 @@
 			files = (
 				F04D148628DD53D700750B71 /* SharedUtil.swift in Sources */,
 				F04D148F28DD673A00750B71 /* UpcomingAccessoryCornerEntryView.swift in Sources */,
+				F09664EA29A602F6005F37C0 /* BlockVideoTypeView.swift in Sources */,
 				F012419B2935E27B007C8FE9 /* SmallUpcomingWidgetView.swift in Sources */,
 				F01241A32935E2C7007C8FE9 /* BlockLiveTimeView.swift in Sources */,
 				F0F0EAAF292B40220091DBD7 /* UpcomingFavouritesViewModel.swift in Sources */,
@@ -1691,7 +1697,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 177;
+				CURRENT_PROJECT_VERSION = 178;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = complications/Info.plist;
@@ -1722,7 +1728,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 177;
+				CURRENT_PROJECT_VERSION = 178;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = complications/Info.plist;
@@ -1753,7 +1759,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf-widgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 177;
+				CURRENT_PROJECT_VERSION = 178;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "holo-wtf-widget/Info.plist";
@@ -1782,7 +1788,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf-widgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 177;
+				CURRENT_PROJECT_VERSION = 178;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "holo-wtf-widget/Info.plist";
@@ -1932,7 +1938,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf/holo-wtf.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 177;
+				CURRENT_PROJECT_VERSION = 178;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -1973,7 +1979,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf/holo-wtf.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 177;
+				CURRENT_PROJECT_VERSION = 178;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -2016,7 +2022,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf-watch Watch App/holo-wtf-watch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 177;
+				CURRENT_PROJECT_VERSION = 178;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf-watch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -2052,7 +2058,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf-watch Watch App/holo-wtf-watch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 177;
+				CURRENT_PROJECT_VERSION = 178;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf-watch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;

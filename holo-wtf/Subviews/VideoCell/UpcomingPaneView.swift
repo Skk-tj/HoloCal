@@ -38,13 +38,11 @@ struct UpcomingPaneView: View {
                     
                     // MARK: - Time and other information
                     HStack {
+                        BlockUpcomingTimeView(liveSchedule: upcoming.startScheduled)
+                            .padding(.trailing)
                         if upcoming.isMengen {
-                            BlockUpcomingTimeView(liveSchedule: upcoming.startScheduled)
-                                .padding(.trailing)
                             BlockMemberOnlyView()
-                        }
-                        else {
-                            BlockUpcomingTimeView(liveSchedule: upcoming.startScheduled)
+                                .padding(.trailing)
                         }
                         if upcoming.isPremiere {
                             BlockVideoTypeView()

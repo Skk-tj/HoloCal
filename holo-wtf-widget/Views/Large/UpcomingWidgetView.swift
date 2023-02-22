@@ -50,13 +50,14 @@ struct UpcomingWidgetView: View {
                 }
                 
                 HStack {
+                    BlockUpcomingTimeView(liveSchedule: upcoming.startScheduled)
+                        .padding(.trailing)
                     if upcoming.isMengen {
-                        BlockUpcomingTimeView(liveSchedule: upcoming.startScheduled)
-                            .padding(.trailing)
                         BlockMemberOnlyView()
+                            .padding(.trailing)
                     }
-                    else {
-                        BlockUpcomingTimeView(liveSchedule: upcoming.startScheduled)
+                    if upcoming.isPremiere {
+                        BlockVideoTypeView()
                     }
                 }
             }
