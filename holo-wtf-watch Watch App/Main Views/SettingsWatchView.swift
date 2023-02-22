@@ -13,7 +13,7 @@ struct SettingsWatchView: View {
     var body: some View {
         Form {
             Section(header: Text("SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER")) {
-                Picker("SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT \(hoursLookAhead)", selection: $hoursLookAhead) {
+                Picker("SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT", selection: $hoursLookAhead) {
                     ForEach([12, 24, 48, 72, 96, 120], id: \.self) {
                         Text("WATCH_SETTINGS_UPCOMING_SCHEDULE_PICKER_TEXT \($0)")
                     }
