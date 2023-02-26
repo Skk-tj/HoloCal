@@ -38,6 +38,7 @@ struct UpcomingiPadView: View {
             currentPresentationMode = .normal
         }
         .refreshable {
+            upcoming.sortingStrategy = .timeAsc
             await upcoming.getVideoForUI()
             currentPresentationMode = .normal
         }

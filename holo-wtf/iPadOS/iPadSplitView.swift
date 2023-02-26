@@ -11,6 +11,7 @@ import Collections
 enum Views: Hashable {
     case live(iPadAgencies)
     case upcoming(iPadAgencies)
+    case past(iPadAgencies)
     case concerts
     case settings
 }
@@ -71,6 +72,20 @@ struct iPadSplitView: View {
                     Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
                 })
                 
+                Section(content: {
+                    ForEach(ipadAgenciesToAgency.keys) { agency in
+                        NavigationLink(value: Views.past(agency)) {
+                            SingleAgencyItemView(agency: ipadAgenciesToAgency[agency]!)
+                        }
+                    }
+                    
+                    NavigationLink(value: Views.past(.favourites)) {
+                        Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
+                    }
+                }, header: {
+                    Label("ROOT_VIEW_PAST", systemImage: "clock.arrow.circlepath")
+                })
+                
                 NavigationLink(value: Views.concerts) {
                     Label("ROOT_VIEW_CONCERTS", systemImage: "music.mic")
                 }
@@ -114,7 +129,22 @@ struct iPadSplitView: View {
                     case .noriPro:
                         UpcomingiPadView(for: .noriPro)
                     case .favourites:
-                        UpcomingFavouritesView()
+                        UpcomingFavouritesiPadView()
+                    }
+                case .past(let agencySelection):
+                    switch agencySelection {
+                    case .hololive:
+                        PastiPadView(for: .hololive)
+                    case .nijisanji:
+                        PastiPadView(for: .nijisanji)
+                    case .react:
+                        PastiPadView(for: .react)
+                    case .nanashiInc:
+                        PastiPadView(for: .nanashiInc)
+                    case .noriPro:
+                        PastiPadView(for: .noriPro)
+                    case .favourites:
+                        PastFavouritesiPadView()
                     }
                 case .concerts:
                     NavigationStack {

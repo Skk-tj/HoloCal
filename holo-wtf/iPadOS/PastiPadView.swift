@@ -1,5 +1,5 @@
 //
-//  LiveiPadView.swift
+//  PastiPadView.swift
 //  holo-wtf
 //
 //
@@ -7,54 +7,54 @@
 
 import SwiftUI
 
-struct LiveiPadView: View {
-    @StateObject var live: LiveViewModel
+struct PastiPadView: View {
+    @StateObject var past: PastViewModel
     let agency: AgencyEnum
     
     @State var currentPresentationMode: PresentationMode = .normal
     
     init(for agency: AgencyEnum) {
         self.agency = agency
-        _live = StateObject(wrappedValue: LiveViewModel(for: agency))
+        _past = StateObject(wrappedValue: PastViewModel(for: agency))
     }
     
     var body: some View {
         iPadLazyGridView(singleVideoView: { live in
             LinkedVideoView(url: live.url) {
-                LivePaneView(live: live)
+                PastPaneView(past: live)
             }
             .contextMenu {
                 VideoContextMenu(video: live)
             }
         }, dataStatusView: {
-            DataStatusIndicatorView(dataStatus: live.dataStatus) {
-                LiveCountView()
+            DataStatusIndicatorView(dataStatus: past.dataStatus) {
+                PastCountView()
             }
         }, isFavourite: false)
-        .environmentObject(live as VideoViewModel)
+        .environmentObject(past as VideoViewModel)
         .task {
-            live.sortingStrategy = .timeDesc
-            await live.getVideoForUI()
+            past.sortingStrategy = .endedFirst
+            await past.getVideoForUI()
             currentPresentationMode = .normal
         }
         .refreshable {
-            live.sortingStrategy = .timeDesc
-            await live.getVideoForUI()
+            past.sortingStrategy = .endedFirst
+            await past.getVideoForUI()
             currentPresentationMode = .normal
         }
         .navigationTitle(agencyEnumToAgency[agency]!.localizedName)
         .toolbar {
             ToolbarItemGroup(placement: .secondaryAction) {
-                LiveViewToolbar(currentPresentationMode: $currentPresentationMode)
-                    .environmentObject(live as VideoViewModel)
+                PastViewToolbar(currentPresentationMode: $currentPresentationMode)
+                    .environmentObject(past as VideoViewModel)
             }
         }
-        .animation(.easeInOut, value: live.dataStatus)
+        .animation(.easeInOut, value: past.dataStatus)
     }
 }
 
-struct LiveiPadView_Previews: PreviewProvider {
+struct PastiPadView_Previews: PreviewProvider {
     static var previews: some View {
-        LiveiPadView(for: .hololive)
+        PastiPadView(for: .hololive)
     }
 }
