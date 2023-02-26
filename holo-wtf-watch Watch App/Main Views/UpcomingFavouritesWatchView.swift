@@ -23,9 +23,11 @@ struct UpcomingFavouritesWatchView: View {
         .navigationTitle("UPCOMING_VIEW_TITLE")
         .environmentObject(upcoming as VideoViewModel)
         .task {
+            upcoming.sortingStrategy = .timeAsc
             await upcoming.getVideoForUI()
         }
         .refreshable {
+            upcoming.sortingStrategy = .timeAsc
             await upcoming.getVideoForUI()
         }
     }

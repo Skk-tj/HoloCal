@@ -36,6 +36,18 @@ struct WatchRootView: View {
                 })
                 
                 NavigationLink(destination: {
+                    AgencySelectionView(viewTitle: "ROOT_VIEW_PAST", targetView: { agency in
+                        PastWatchView(for: agency)
+                    }, extraLinks: {
+                        NavigationLink(destination: PastFavouritesWatchView(), label: {
+                            Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
+                        })
+                    })
+                }, label: {
+                    Label("ROOT_VIEW_PAST", systemImage: "clock.arrow.circlepath")
+                })
+                
+                NavigationLink(destination: {
                     ConcertsWatchView()
                 }, label: {
                     Label("ROOT_VIEW_CONCERTS", systemImage: "music.mic")

@@ -22,9 +22,11 @@ struct LiveFavouritesWatchView: View {
         .navigationTitle("LIVE_VIEW_TITLE")
         .environmentObject(live as VideoViewModel)
         .task {
+            live.sortingStrategy = .timeDesc
             await live.getVideoForUI()
         }
         .refreshable {
+            live.sortingStrategy = .timeDesc
             await live.getVideoForUI()
         }
     }
