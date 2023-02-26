@@ -10,6 +10,7 @@
 	<array>
 		<string>ConfigurationIntent</string>
 		<string>LiveWidgetIntent</string>
+		<string>PastWidgetIntent</string>
 		<string>SelectAgencyIntent</string>
 		<string>UpcomingWidgetIntent</string>
 	</array>

@@ -32,7 +32,8 @@ let intentSortByToString: [IntentSortBy: [NameLanguage: String]] = [
 
 let intentVideoTypeToString: [VideoType: [NameLanguage: String]] = [
     .live: [.en: "Live", .ja: "配信中"],
-    .upcoming: [.en: "Upcoming", .ja: "今後の配信"]
+    .upcoming: [.en: "Upcoming", .ja: "今後の配信"],
+    .past: [.en: "Past", .ja: "アーカイブ"]
 ]
 
 extension IntentAgency {
