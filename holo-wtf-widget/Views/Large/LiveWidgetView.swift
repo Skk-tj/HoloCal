@@ -50,7 +50,7 @@ struct LiveWidgetView: View {
                 }
                 
                 HStack {
-                    ViewerCounterView(viewer: live.liveViewers, memberOnly: live.isMengen)
+                    ViewerCounterView(viewer: live.liveViewers ?? 0, memberOnly: live.isMengen)
                         .padding(.trailing)
                     
                     BlockLiveTimeView(liveTime: live.startActual)

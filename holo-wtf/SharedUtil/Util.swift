@@ -110,11 +110,14 @@ enum UserDefaultKeys {
     static let favouritedChannel = "favouritedChannel"
     static let isShowingAbsoluteTimeInLiveView = "isShowingAbsoluteTimeInLiveView"
     static let isShowingAbsoluteTimeInUpcomingView = "isShowingAbsoluteTimeInUpcomingView"
+    static let isShowingAbsoluteTimeInPastView = "isShowingAbsoluteTimeInPastView"
     static let isShowingCompactInLiveView = "isShowingCompactInLiveView"
     static let isShowingCompactInUpcomingView = "isShowingCompactInUpcomingView"
+    static let isShowingCompactInPastView = "isShowingCompactInPastView"
     static let isShowingDSTReminder = "isShowingDSTReminder"
     static let isShowingCompactInLiveFavouritesView = "isShowingCompactInLiveFavouritesView"
     static let isShowingCompactInUpcomingFavouritesView = "isShowingCompactInUpcomingFavouritesView"
+    static let isShowingCompactInPastFavouritesView = "isShowingCompactInPastFavouritesView"
     static let dstDays = "dstDays"
 }
 
@@ -183,6 +186,10 @@ func getUpcomingUrl(for agency: AgencyEnum) -> String {
 
 func getWidgetUpcomingUrl(for agency: AgencyEnum) -> String {
     return "https://holodex.net/api/v2/live?org=\(agency.rawValue)&status=upcoming&type=stream"
+}
+
+func getPastUrl(for agency: AgencyEnum) -> String {
+    return "https://holodex.net/api/v2/videos?status=past&type=stream&include=songs,mentions&org=\(agency.rawValue)"
 }
 
 func getGenerationOrderList(@AppStorage("generationListOrderNew") from data: Data, agency: AgencyEnum) -> [Generation] {

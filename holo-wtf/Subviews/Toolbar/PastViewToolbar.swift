@@ -1,5 +1,5 @@
 //
-//  UpcomingViewToolbar.swift
+//  PastViewToolbar.swift
 //  holo-wtf
 //
 //
@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct UpcomingViewToolbar: View {
-    @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInUpcomingView) var isShowingAbsoluteTime: Bool = false
-    @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingView) var isShowingCompact: Bool = false
+struct PastViewToolbar: View {
+    @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInPastView) var isShowingAbsoluteTime: Bool = false
+    @AppStorage(UserDefaultKeys.isShowingCompactInPastView) var isShowingCompact: Bool = false
     
     @Binding var currentPresentationMode: PresentationMode
     
-    @EnvironmentObject var upcomingViewModel: VideoViewModel
+    @EnvironmentObject var pastViewModel: VideoViewModel
     
     var body: some View {
         Section {
@@ -33,30 +33,30 @@ struct UpcomingViewToolbar: View {
         
         Menu {
             if UIDevice.current.userInterfaceIdiom == .phone {
-                Picker("Order", selection: $upcomingViewModel.sortingStrategy) {
+                Picker("Order", selection: $pastViewModel.sortingStrategy) {
                     Label("LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION", systemImage: "person.3.fill").tag(SortingStrategy.notSorting)
                 }
             }
             
             Menu {
-                Picker("Order", selection: $upcomingViewModel.sortingStrategy) {
-                    Label("UPCOMING_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST", systemImage: "hourglass.tophalf.filled").tag(SortingStrategy.timeAsc)
-                    Label("UPCOMING_VIEW_TOOLBAR_SORT_BY_START_TIME_FURTHEST_TO_NEAREST", systemImage: "hourglass.bottomhalf.filled").tag(SortingStrategy.timeDesc)
+                Picker("Order", selection: $pastViewModel.sortingStrategy) {
+                    Label("PAST_VIEW_TOOLBAR_SORT_BY_ENDED_TIME_NEAREST_TO_FURTHEST", systemImage: "hourglass.tophalf.filled").tag(SortingStrategy.endedFirst)
+                    Label("PAST_VIEW_TOOLBAR_SORT_BY_ENDED_TIME_FURTHEST_TO_NEAREST", systemImage: "hourglass.bottomhalf.filled").tag(SortingStrategy.endedLast)
                 }
             } label: {
-                Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME", systemImage: "clock")
+                Label("PAST_VIEW_TOOLBAR_SORT_BY_END_TIME", systemImage: "clock")
             }
         } label: {
             Label("LIVE_VIEW_TOOLBAR_SORT", systemImage: "arrow.up.arrow.down")
         }
-        .onChange(of: upcomingViewModel.sortingStrategy, perform: { sortingSelection in
+        .onChange(of: pastViewModel.sortingStrategy, perform: { sortingSelection in
             if sortingSelection == .notSorting {
                 currentPresentationMode = .normal
             } else {
                 currentPresentationMode = .sorting
             }
             
-            self.upcomingViewModel.sortVideos()
+            self.pastViewModel.sortVideos()
         })
     }
 }

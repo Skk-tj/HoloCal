@@ -96,9 +96,9 @@ enum JpyPrice: Decodable, Equatable, Hashable, HoloCalLocalizable {
         case .free:
             return NSLocalizedString("JPY_PRICE_FREE", comment: "")
         case .fixed(let price):
-            return "\(price.formatted(.currency(code: "JPY")))+"
-        case .multiTier(let price):
             return "\(price.formatted(.currency(code: "JPY")))"
+        case .multiTier(let price):
+            return "\(price.formatted(.currency(code: "JPY")))+"
         }
     }
 }

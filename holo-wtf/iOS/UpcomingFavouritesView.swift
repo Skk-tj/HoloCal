@@ -24,9 +24,11 @@ struct UpcomingFavouritesView: View {
             }
             .task {
                 await upcoming.getVideoForUI()
+                self.upcoming.sortingStrategy = .notSorting
             }
             .refreshable {
                 await upcoming.getVideoForUI()
+                self.upcoming.sortingStrategy = .notSorting
             }
             .animation(.easeInOut, value: upcoming.dataStatus)
     }

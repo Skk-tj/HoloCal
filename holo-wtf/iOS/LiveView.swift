@@ -33,10 +33,12 @@ struct LiveView: View {
             .task {
                 await live.getVideoForUI()
                 currentPresentationMode = .normal
+                self.live.sortingStrategy = .notSorting
             }
             .refreshable {
                 await live.getVideoForUI()
                 currentPresentationMode = .normal
+                self.live.sortingStrategy = .notSorting
             }
             .animation(.easeInOut, value: live.dataStatus)
     }

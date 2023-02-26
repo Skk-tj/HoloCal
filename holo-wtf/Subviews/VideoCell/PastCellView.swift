@@ -1,5 +1,5 @@
 //
-//  LiveCellView.swift
+//  PastCellView.swift
 //  holo-wtf
 //
 //
@@ -7,56 +7,51 @@
 
 import SwiftUI
 
-struct LiveCellView: View {
-    let live: LiveVideo
+struct PastCellView: View {
+    let past: LiveVideo
     @AppStorage(UserDefaultKeys.favouritedChannel, store: UserDefaults(suiteName: "group.io.skk-tj.holo-wtf.ios")) var favourited = Favourited()
     
     var body: some View {
         HStack {
-            LiveAvatarView(url: live.channel.photo)
+            LiveAvatarView(url: past.channel.photo)
+            
             VStack(alignment: .leading) {
-                Text(live.title)
+                Text(past.title)
                     .font(.headline)
                     .lineLimit(1)
                     .padding(.bottom, 5)
                 
-                TopicTagView(topicId: live.topicId)
+                TopicTagView(topicId: past.topicId)
                 
-                HStack {                    
-                    Text(live.channel.name)
+                HStack {
+                    Text(past.channel.name)
                         .font(.subheadline)
                         .lineLimit(1)
                         .foregroundColor(.secondary)
                     
-                    if favourited.contains(where: {$0 == live.channel.id}) {
+                    if favourited.contains(where: {$0 == past.channel.id}) {
                         Image(systemName: "star.fill")
                             .tint(.yellow)
                     }
                 }
                 Divider()
                 HStack {
-                    if live.isMengen {
+                    PastTimeView(endedAt: past.endedAt)
+                    if past.isMengen {
+                        Spacer()
                         Text("LIVE_CELL_VIEW_MEMBER_ONLY_STREAM")
                             .font(.footnote)
                             .foregroundColor(.secondary)
-                    } else {
-                        Text("LIVE_CELL_VIEW_PEOPLE_WATCHING \(live.liveViewers ?? 0)")
-                            .font(.footnote)
-                            .foregroundColor(.secondary)
                     }
-                    Spacer()
-                    
-                    LiveTimeView(liveTime: live.startActual)
-                        .multilineTextAlignment(.trailing)
                 }
             }
         }
     }
 }
 
-struct LiveCellView_Previews: PreviewProvider {
+struct PastCellView_Previews: PreviewProvider {
     static var previews: some View {
-        LiveCellView(live: LiveVideo.previewLive)
-        LiveCellView(live: LiveVideo.previewLiveMemberOnly)
+        PastCellView(past: LiveVideo.previewLive)
+        PastCellView(past: LiveVideo.previewLiveMemberOnly)
     }
 }

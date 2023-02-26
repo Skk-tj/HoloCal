@@ -35,7 +35,7 @@ struct LiveWidgetMediumView: View {
                     .foregroundColor(.secondary)
                     .font(.caption2)
                 
-                Text("\(Image(systemName: "eye")) \(video.liveViewers)")
+                Text("\(Image(systemName: "eye")) \(video.liveViewers ?? 0)")
                     .foregroundColor(.secondary)
                     .font(.caption2)
                 

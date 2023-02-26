@@ -16,6 +16,7 @@ enum PresentationMode {
 enum VideoType {
     case live
     case upcoming
+    case past
 }
 
 enum UIMode {

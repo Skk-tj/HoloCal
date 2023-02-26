@@ -1,5 +1,5 @@
 //
-//  UpcomingPaneView.swift
+//  PastPaneView.swift
 //  holo-wtf
 //
 //
@@ -7,38 +7,35 @@
 
 import SwiftUI
 
-struct UpcomingPaneView: View {
-    var upcoming: LiveVideo
+struct PastPaneView: View {
+    let past: LiveVideo
     
     @State var isShowingCollabSheet: Bool = false
     
     var body: some View {
         ZStack(alignment: .topLeading) {
             VStack {
-                VideoThumbnailView(ytVideoKey: upcoming.id)
+                VideoThumbnailView(ytVideoKey: past.id)
                 
                 VStack(alignment: .leading) {
-                    VideoTitleView(title: upcoming.title)
+                    VideoTitleView(title: past.title)
                     
-                    PaneViewChannelInfoView(video: upcoming)
+                    PaneViewChannelInfoView(video: past)
                     
                     // MARK: - Time and other information
                     HStack {
-                        BlockUpcomingTimeView(liveSchedule: upcoming.startScheduled)
+                        BlockPastTimeView(endedAt: past.endedAt)
                             .padding(.trailing)
-                        if upcoming.isMengen {
+                        if past.isMengen {
                             BlockMemberOnlyView()
                                 .padding(.trailing)
-                        }
-                        if upcoming.isPremiere {
-                            BlockVideoTypeView()
                         }
                     }
                     .padding(.top, 5)
                     
                     Divider()
                     
-                    PaneViewButtonRowView(video: upcoming)
+                    PaneViewButtonRowView(video: past)
                         .padding(.top)
                 }
                 .padding(.horizontal)
@@ -46,7 +43,7 @@ struct UpcomingPaneView: View {
             .padding(.bottom)
             
             HStack {
-                TopicTagView(topicId: upcoming.topicId)
+                TopicTagView(topicId: past.topicId)
                     .padding()
                 
                 Spacer()
@@ -57,13 +54,8 @@ struct UpcomingPaneView: View {
     }
 }
 
-struct UpcomingPaneView_Previews: PreviewProvider {
+struct PastPaneView_Previews: PreviewProvider {
     static var previews: some View {
-        UpcomingPaneView(upcoming: LiveVideo.previewLive)
-        UpcomingPaneView(upcoming: LiveVideo.previewLiveMemberOnly)
-        UpcomingPaneView(upcoming: LiveVideo.previewLive)
-            .environment(\.locale, .init(identifier: "ja"))
-        UpcomingPaneView(upcoming: LiveVideo.previewLiveMemberOnly)
-            .environment(\.locale, .init(identifier: "ja"))
+        PastPaneView(past: LiveVideo.previewLive)
     }
 }

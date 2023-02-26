@@ -30,7 +30,13 @@ struct VideoUIFavouriteListView: View {
                 case .card:
                     UpcomingPaneView(upcoming: video)
                 }
-                
+            case .past:
+                switch uiMode {
+                case .compact:
+                    PastCellView(past: video)
+                case .card:
+                    PastPaneView(past: video)
+                }
             }
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: video.dataStatus) {
@@ -39,6 +45,8 @@ struct VideoUIFavouriteListView: View {
                     LiveFavouriteCountView()
                 case .upcoming:
                     UpcomingFavouriteCountView()
+                case .past:
+                    PastFavouriteCountView()
                 }
             }
         }, uiMode: uiMode)

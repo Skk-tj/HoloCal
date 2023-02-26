@@ -33,10 +33,12 @@ struct UpcomingView: View {
             .task {
                 await upcoming.getVideoForUI()
                 currentPresentationMode = .normal
+                self.upcoming.sortingStrategy = .notSorting
             }
             .refreshable {
                 await upcoming.getVideoForUI()
                 currentPresentationMode = .normal
+                self.upcoming.sortingStrategy = .notSorting
             }
             .animation(.easeInOut, value: upcoming.dataStatus)
     }

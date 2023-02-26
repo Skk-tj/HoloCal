@@ -25,7 +25,7 @@ struct WatchLiveCellView: View {
                     .foregroundColor(.secondary)
                 
                 HStack {
-                    Text("\(Image(systemName: "eye")) \(live.liveViewers)")
+                    Text("\(Image(systemName: "eye")) \(live.liveViewers ?? 0)")
                     
                     Spacer()
                     

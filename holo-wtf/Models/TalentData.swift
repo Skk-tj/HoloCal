@@ -743,10 +743,10 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .josuiji: Talent(id: TalentEnum.josuiji.rawValue, names: [.en: "Josuiji Shinri", .ja: "定水寺シンリ"], inGeneration: Generation.tempus),
     
     // MARK: - Official Channels
-    .hololive: Talent(id: TalentEnum.hololive.rawValue, names: [.en: "hololive", .ja: "ホロライブ"], inGeneration: Generation.hololiveOfficial),
-    .hololiveEN: Talent(id: TalentEnum.hololiveEN.rawValue, names: [.en: "hololive English", .ja: "hololive English"], inGeneration: Generation.hololiveOfficial),
-    .hololiveID: Talent(id: TalentEnum.hololiveID.rawValue, names: [.en: "hololive Indonesia", .ja: "hololive Indonesia"], inGeneration: Generation.hololiveOfficial),
-    .holostars: Talent(id: TalentEnum.holostars.rawValue, names: [.en: "holostars", .ja: "ホロスターズ"], inGeneration: Generation.hololiveOfficial),
+    .hololive: Talent(id: TalentEnum.hololive.rawValue, names: [.en: "hololive Official Channel", .ja: "ホロライブ公式チャンネル"], inGeneration: Generation.hololiveOfficial),
+    .hololiveEN: Talent(id: TalentEnum.hololiveEN.rawValue, names: [.en: "hololive English Official Channel", .ja: "hololive English 公式チャンネル"], inGeneration: Generation.hololiveOfficial),
+    .hololiveID: Talent(id: TalentEnum.hololiveID.rawValue, names: [.en: "hololive Indonesia Official Channel", .ja: "hololive Indonesia 公式チャンネル"], inGeneration: Generation.hololiveOfficial),
+    .holostars: Talent(id: TalentEnum.holostars.rawValue, names: [.en: "holostars Official Channel", .ja: "ホロスターズ公式チャンネル"], inGeneration: Generation.hololiveOfficial),
     .midnight: Talent(id: TalentEnum.midnight.rawValue, names: [.en: "Midnight Grand Orchestra", .ja: "Midnight Grand Orchestra"], inGeneration: Generation.hololiveOfficial),
     
     // MARK: - NIJISANJI First Generation

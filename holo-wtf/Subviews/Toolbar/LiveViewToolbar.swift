@@ -32,8 +32,8 @@ struct LiveViewToolbar: View {
         }
         
         Menu {
-            Picker("Order", selection: $liveViewModel.sortingStrategy) {
-                if UIDevice.current.userInterfaceIdiom == .phone {
+            if UIDevice.current.userInterfaceIdiom == .phone {
+                Picker("Order", selection: $liveViewModel.sortingStrategy) {
                     Label("LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION", systemImage: "person.3.fill").tag(SortingStrategy.notSorting)
                 }
             }

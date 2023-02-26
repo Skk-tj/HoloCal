@@ -44,7 +44,7 @@ struct SmallLiveWidgetView: View {
                 .font(.caption)
                 .foregroundColor(.secondary)
             
-            Text("\(Image(systemName: "eye")) \(live.liveViewers)")
+            Text("\(Image(systemName: "eye")) \(live.liveViewers ?? 0)")
                 .foregroundColor(.secondary)
                 .font(.caption2)
         }

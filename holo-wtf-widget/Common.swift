@@ -101,6 +101,8 @@ func getVideoURLForWidget(agency: IntentAgency, videoType: VideoType) -> String 
             return allLiveURL
         case .upcoming:
             return allWidgetUpcomingURL
+        case .past:
+            return allPastURL
         }
     default:
         switch videoType {
@@ -108,16 +110,19 @@ func getVideoURLForWidget(agency: IntentAgency, videoType: VideoType) -> String 
             return getLiveUrl(for: intentAgencyToAgency[agency]!)
         case .upcoming:
             return getWidgetUpcomingUrl(for: intentAgencyToAgency[agency]!)
+        case .past:
+            return getPastUrl(for: intentAgencyToAgency[agency]!)
         }
     }
 }
 
 func getVideosForWidget(agency: IntentAgency, videoType: VideoType) async throws -> [LiveVideo] {
+    let favourites = getFavouritesFromUserDefaults(groupName: "group.io.skk-tj.holo-wtf.ios")
+    
     switch agency {
     case .favourites:
         switch videoType {
         case .live:
-            let favourites = getFavouritesFromUserDefaults(groupName: "group.io.skk-tj.holo-wtf.ios")
             let getResult: [LiveVideo] = try await withThrowingTaskGroup(of: [LiveVideo].self) { group in
                 var result: [LiveVideo] = []
                 
@@ -136,13 +141,30 @@ func getVideosForWidget(agency: IntentAgency, videoType: VideoType) async throws
             
             return getResult
         case .upcoming:
-            let favourites = getFavouritesFromUserDefaults(groupName: "group.io.skk-tj.holo-wtf.ios")
             let getResult: [LiveVideo] = try await withThrowingTaskGroup(of: [LiveVideo].self) { group in
                 var result: [LiveVideo] = []
                 
                 for agency in AgencyEnum.allCases {
                     group.addTask {
                         return try await getVideos(from: getWidgetUpcomingUrl(for: agency))
+                    }
+                }
+                
+                for try await videos in group {
+                    result.append(contentsOf: videos)
+                }
+                
+                return result
+            }.filter { favourites.contains($0.channel.id) }
+            
+            return getResult
+        case .past:
+            let getResult: [LiveVideo] = try await withThrowingTaskGroup(of: [LiveVideo].self) { group in
+                var result: [LiveVideo] = []
+                
+                for agency in AgencyEnum.allCases {
+                    group.addTask {
+                        return try await getVideos(from: getPastUrl(for: agency))
                     }
                 }
                 
@@ -172,9 +194,11 @@ func getAndFilterAndSortVideosCommon(for agency: IntentAgency, videoType: VideoT
             lives.sort(by: liveSortStrategy)
         case .upcoming:
             lives.sort(by: upcomingSortStrategy)
+        case .past:
+            lives.sort(by: pastSortStrategy)
         }
     case .mostViewer:
-        lives.sort(by: {$0.liveViewers > $1.liveViewers})
+        lives.sort(by: { $0.liveViewers ?? 0 > $1.liveViewers ?? 0 })
     }
     
     return lives

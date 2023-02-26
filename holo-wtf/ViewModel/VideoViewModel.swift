@@ -21,6 +21,8 @@ enum SortingStrategy: Hashable {
     case viewersDesc
     case timeAsc
     case timeDesc
+    case endedFirst
+    case endedLast
 }
 
 enum SearchSuggestionCategory {
@@ -101,7 +103,7 @@ class VideoViewModel: ObservableObject {
     }
     
     func updatedWithTwitter(video: LiveVideo) async -> LiveVideo {
-        return LiveVideo(id: video.id, title: video.title, topicId: video.topicId, startScheduled: video.startScheduled, startActual: video.startActual, liveViewers: video.liveViewers, mentions: video.mentions, duration: video.duration, songs: video.songs, channel: await self.updatedWithTwitter(channel: video.channel))
+        return LiveVideo(id: video.id, title: video.title, topicId: video.topicId, startScheduled: video.startScheduled, startActual: video.startActual, availableAt: video.availableAt, publishedAt: video.publishedAt, liveViewers: video.liveViewers, mentions: video.mentions, duration: video.duration, songs: video.songs, channel: await self.updatedWithTwitter(channel: video.channel))
     }
     
     @MainActor
@@ -154,13 +156,18 @@ class VideoViewModel: ObservableObject {
     func sortVideos() {
         switch self.sortingStrategy {
         case .viewersAsc:
-            self.videoList.sort(by: {$0.liveViewers < $1.liveViewers})
+            self.videoList.sort(by: { $0.liveViewers ?? 0 < $1.liveViewers ?? 0 })
         case .viewersDesc:
-            self.videoList.sort(by: {$0.liveViewers > $1.liveViewers})
+            self.videoList.sort(by: { $0.liveViewers ?? 0 > $1.liveViewers ?? 0 })
         case .timeAsc:
             self.videoList.sort(by: upcomingSortStrategy)
         case .timeDesc:
             self.videoList.sort(by: liveSortStrategy)
+        case .endedFirst:
+            self.videoList.sort(by: pastSortStrategy)
+        case .endedLast:
+            self.videoList.sort(by: pastSortStrategy)
+            self.videoList = self.videoList.reversed()
         default:
             return
         }

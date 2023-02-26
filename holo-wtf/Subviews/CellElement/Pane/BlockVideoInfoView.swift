@@ -27,9 +27,3 @@ struct BlockVideoInfoView<PrimaryContent: View, SecondaryContent: View>: View {
         }
     }
 }
-
-//struct BlockViewInfoView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BlockViewInfoView(iconName: "clock")
-//    }
-//}

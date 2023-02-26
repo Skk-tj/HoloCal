@@ -45,7 +45,7 @@ struct MultipleLiveWidgetView: View {
                         .lineLimit(1)
                         .font(.caption2)
                     
-                    Text("\(Image(systemName: "eye")) \(leftVideo.liveViewers)")
+                    Text("\(Image(systemName: "eye")) \(leftVideo.liveViewers ?? 0)")
                         .foregroundColor(.secondary)
                         .font(.caption2)
                 }
@@ -79,7 +79,7 @@ struct MultipleLiveWidgetView: View {
                         .foregroundColor(.secondary)
                         .font(.caption2)
                     
-                    Text("\(Image(systemName: "eye")) \(rightVideo.liveViewers)")
+                    Text("\(Image(systemName: "eye")) \(rightVideo.liveViewers ?? 0)")
                         .foregroundColor(.secondary)
                         .font(.caption2)
                 }

@@ -13,16 +13,20 @@ struct LiveVideo: Codable, Identifiable, Hashable {
     let topicId: String?
     let startScheduled: Date?
     let startActual: Date?
-    let liveViewers: Int
+    /// Probably the actual start time of a stream?
+    let availableAt: Date
+    /// When the waiting room is published
+    let publishedAt: Date?
+    let liveViewers: Int?
     let mentions: [Channel]?
     let duration: Int
     
     var songs: [SongInStream]?
     var channel: Channel
     
-    static let previewLive = LiveVideo(id: "abcd", title: "my debut live", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, mentions: [Channel.testChannel, Channel.testChannel2], duration: 0, songs: nil, channel: Channel.testChannel)
+    static let previewLive = LiveVideo(id: "abcd", title: "my debut live", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, availableAt: Date(), publishedAt: Date(), liveViewers: 12345, mentions: [Channel.testChannel, Channel.testChannel2], duration: 0, songs: nil, channel: Channel.testChannel)
     
-    static let previewLiveMemberOnly = LiveVideo(id: "abcd", title: "my debut live member only", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, liveViewers: 12345, mentions: [Channel.testChannel, Channel.testChannel2], duration: 500, songs: nil, channel: Channel.testChannel)
+    static let previewLiveMemberOnly = LiveVideo(id: "abcd", title: "my debut live member only", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, availableAt: Date(), publishedAt: Date(), liveViewers: 12345, mentions: [Channel.testChannel, Channel.testChannel2], duration: 500, songs: nil, channel: Channel.testChannel)
     
     var url: URL? {
         URL(string: "https://www.youtube.com/watch?v=\(id)")
@@ -60,5 +64,9 @@ struct LiveVideo: Codable, Identifiable, Hashable {
     
     var isPremiere: Bool {
         duration > 0
+    }
+    
+    var endedAt: Date {
+        return availableAt + Double(duration)
     }
 }

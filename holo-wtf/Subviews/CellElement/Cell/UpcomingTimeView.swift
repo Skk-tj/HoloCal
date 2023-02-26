@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct UpcomingTimeView: View {
-    var liveSchedule: Date?
+    let liveSchedule: Date?
     var fontSize: Font = .footnote
     var shortMode = false
     
     @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInUpcomingView) var isShowingAbsoluteTime: Bool = false
     
     var body: some View {
-        if let liveSchedule = liveSchedule {
+        if let liveSchedule {
             if isShowingAbsoluteTime {
                 Text("UPCOMING_CELL_VIEW_STARTING_AT \(liveSchedule.formatted(date: .abbreviated, time: .shortened))")
                     .font(fontSize)

@@ -32,6 +32,14 @@ struct VideoUIListView: View {
                 case .card:
                     UpcomingPaneView(upcoming: video)
                 }
+            
+            case .past:
+                switch uiMode {
+                case .compact:
+                    PastCellView(past: video)
+                case .card:
+                    PastPaneView(past: video)
+                }
             }
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: video.dataStatus) {
@@ -40,6 +48,8 @@ struct VideoUIListView: View {
                     LiveCountView()
                 case .upcoming:
                     UpcomingCountView()
+                case .past:
+                    PastCountView()
                 }
             }
         }, uiMode: uiMode)

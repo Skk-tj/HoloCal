@@ -9,6 +9,7 @@
 
 "ROOT_VIEW_LIVE" = "Live";
 "ROOT_VIEW_UPCOMING" = "Upcoming";
+"ROOT_VIEW_PAST" = "Past";
 "ROOT_VIEW_SETTINGS" = "Settings";
 "ROOT_VIEW_FAVOURITES" = "My Favourites";
 "ROOT_VIEW_CONCERTS" = "Concerts";
@@ -72,6 +73,19 @@
 "LIVE_CELL_VIEW_WAITING" = "Waiting...";
 "LIVE_CELL_VIEW_STARTED_AT %@" = "%@";
 
+// Upcoming Cell View
+
+"UPCOMING_CELL_VIEW_STARTING_IN %@" = "Starting in %@";
+"UPCOMING_CELL_VIEW_STARTING_IN_SHORT %@" = "In %@";
+"UPCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN" = "No starting time";
+"UPCOMING_CELL_VIEW_STARTING_AT %@" = "Starting at %@";
+
+// Past Cell View
+
+"PAST_CELL_VIEW_ENDED_AT %@" = "Ended at %@";
+"PAST_CELL_VIEW_ENDED_SHORT %@" = "%@ ago";
+"PAST_CELL_VIEW_ENDED %@" = "Ended %@ ago";
+
 // Block Live Time View
 
 "BLOCK_LIVE_TIME_VIEW_AGO" = "ago";
@@ -100,12 +114,10 @@
 "BLOCK_VIDEO_TYPE_PREMIERE" = "Premiere";
 "BLOCK_VIDEO_TYPE_VIDEO" = "Video";
 
-// Upcoming Cell View
+// Block Past Time View
 
-"UPCOMING_CELL_VIEW_STARTING_IN %@" = "Starting in %@";
-"UPCOMING_CELL_VIEW_STARTING_IN_SHORT %@" = "In %@";
-"UPCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN" = "No starting time";
-"UPCOMING_CELL_VIEW_STARTING_AT %@" = "Starting at %@";
+"BLOCK_PAST_TIME_VIEW_AGO" = "ago";
+"BLOCK_PAST_TIME_VIEW_ENDED_AT" = "ended at";
 
 // Common between LiveView and UpcomingView
 
@@ -123,6 +135,12 @@
 "UPCOMING_VIEW_TITLE" = "Upcoming";
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld" = "%lld Upcoming Streams in %lld hours";
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld %lld" = "%lld Upcoming Streams in %lld hours (%lld excluded)";
+
+// PastView
+
+"PAST_VIEW_TITLE" = "Past";
+"PAST_VIEW_CURRENT_COUNT %lld" = "%lld Archived";
+"PAST_VIEW_CURRENT_COUNT %lld %lld" = "%lld Archived (%lld excluded)";
 
 // ConcertsView
 "UPCOMING_CONCERTS_COUNT %lld" = "%lld Upcoming Concerts";
@@ -159,7 +177,7 @@
 "LIVE_FORMAT_IRL" = "On-site";
 "LIVE_FORMAT_BOTH" = "On-site + Online";
 
-// LiveViewToolbar & UpcomingViewToolbar
+// LiveViewToolbar & UpcomingViewToolbar & PastViewToolbar
 
 "LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE" = "Show absolute time";
 "LIVE_VIEW_TOOLBAR_SHOW_COMPACT" = "Show Express Mode";
@@ -175,6 +193,9 @@
 "LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_FURTHEST_TO_NEAREST" = "Oldest stream first";
 "UPCOMING_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST" = "Nearest upcoming first";
 "UPCOMING_VIEW_TOOLBAR_SORT_BY_START_TIME_FURTHEST_TO_NEAREST" = "Furthest upcoming first";
+"PAST_VIEW_TOOLBAR_SORT_BY_ENDED_TIME_NEAREST_TO_FURTHEST" = "Ended most recent first";
+"PAST_VIEW_TOOLBAR_SORT_BY_ENDED_TIME_FURTHEST_TO_NEAREST" = "Ended most recent last";
+"PAST_VIEW_TOOLBAR_SORT_BY_END_TIME" = "Sort by end time...";
 
 // VideoContextMenu
 "VIDEO_CONTEXT_MENU_TWITTER_PROFILE" = "Open Twitter profile";

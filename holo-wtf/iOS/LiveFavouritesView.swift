@@ -24,6 +24,7 @@ struct LiveFavouritesView: View {
             }
             .task {
                 await live.getVideoForUI()
+                self.live.sortingStrategy = .notSorting
             }
             .refreshable {
                 await live.getVideoForUI()

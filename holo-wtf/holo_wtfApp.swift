@@ -91,8 +91,21 @@ struct holo_wtfApp: App {
                             })
                         })
                     }
-                    .tabItem() {
+                    .tabItem {
                         Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
+                    }
+                    
+                    NavigationStack {
+                        AgencySelectionView(viewTitle: "ROOT_VIEW_PAST", targetView: { agency in
+                            PastView(for: agency)
+                        }, extraLinks: {
+                            NavigationLink(destination: PastFavouritesView(), label: {
+                                Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
+                            })
+                        })
+                    }
+                    .tabItem {
+                        Label("ROOT_VIEW_PAST", systemImage: "clock.arrow.circlepath")
                     }
                     
                     NavigationStack {
