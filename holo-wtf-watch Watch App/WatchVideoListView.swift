@@ -39,8 +39,3 @@ struct WatchVideoListView<VideoContent: View, DataStatusContent: View>: View {
         }
     }
 }
-//struct WatchVideoListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        WatchVideoListView()
-//    }
-//}

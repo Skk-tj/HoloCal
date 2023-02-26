@@ -9,8 +9,10 @@ import SwiftUI
 
 struct PastWatchView: View {
     @StateObject var past: PastViewModel
+    let agency: AgencyEnum
     
     init(for agency: AgencyEnum) {
+        self.agency = agency
         _past = StateObject(wrappedValue: PastViewModel(for: agency))
     }
     
@@ -23,7 +25,7 @@ struct PastWatchView: View {
                     .environmentObject(past as VideoViewModel)
             }
         })
-        .navigationTitle("PAST_VIEW_TITLE")
+        .navigationTitle(agency.getAgency().localizedName)
         .environmentObject(past as VideoViewModel)
         .task {
             past.sortingStrategy = .endedFirst

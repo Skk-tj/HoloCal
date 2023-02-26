@@ -9,6 +9,7 @@
 
 "ROOT_VIEW_LIVE" = "配信中";
 "ROOT_VIEW_UPCOMING" = "今後の配信";
+"ROOT_VIEW_PAST" = "アーカイブ";
 "ROOT_VIEW_SETTINGS" = "設定";
 "ROOT_VIEW_FAVOURITES" = "お気に入り";
 "ROOT_VIEW_CONCERTS" = "ライブコンサート";
@@ -74,6 +75,19 @@
 
 "LIVE_CELL_VIEW_STARTED_AT %@" = "%@";
 
+// Upcoming Cell View
+
+"UPCOMING_CELL_VIEW_STARTING_IN %@" = "%@後に配信";
+"UPCOMING_CELL_VIEW_STARTING_IN_SHORT %@" = "%@後";
+"UPCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN" = "開始時間不明";
+"UPCOMING_CELL_VIEW_STARTING_AT %@" = "%@に予定";
+
+// Past Cell View
+
+"PAST_CELL_VIEW_ENDED_AT %@" = "%@にライブ配信";
+"PAST_CELL_VIEW_ENDED_SHORT %@" = "%@前";
+"PAST_CELL_VIEW_ENDED %@" = "%@前に配信済み";
+
 // Block Live Time View
 
 "BLOCK_LIVE_TIME_VIEW_AGO" = "前にライブ開始";
@@ -102,12 +116,10 @@
 "BLOCK_VIDEO_TYPE_PREMIERE" = "プレミア公開";
 "BLOCK_VIDEO_TYPE_VIDEO" = "ビデオ";
 
-// Upcoming Cell View
+// Block Past Time View
 
-"UPCOMING_CELL_VIEW_STARTING_IN %@" = "%@後に配信";
-"UPCOMING_CELL_VIEW_STARTING_IN_SHORT %@" = "%@後";
-"UPCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN" = "開始時間不明";
-"UPCOMING_CELL_VIEW_STARTING_AT %@" = "%@に予定";
+"BLOCK_PAST_TIME_VIEW_AGO" = "前に配信済み";
+"BLOCK_PAST_TIME_VIEW_ENDED_AT" = "にライブ配信";
 
 // Common between LiveView and UpcomingView
 
@@ -124,10 +136,16 @@
 
 "UPCOMING_VIEW_TITLE" = "今後の配信";
 "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld" = "%2$lld時間内に%1$lld人が配信予定";
-"UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld %lld" = "%2$lld時間内に%1$lld人が配信予定（%3$lld人表示されていない）";
+"UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld %lld" = "%2$lld時間内に%1$lld人が配信予定（%3$lld表示されていない）";
+
+// PastView
+
+"PAST_VIEW_TITLE" = "アーカイブ";
+"PAST_VIEW_CURRENT_COUNT %lld" = "%lldアーカイブ";
+"PAST_VIEW_CURRENT_COUNT %lld %lld" = "%lldアーカイブ (%lld表示されていない)";
 
 // ConcertsView
-"UPCOMING_CONCERTS_COUNT %lld" = "%lld ライブコンサート";
+"UPCOMING_CONCERTS_COUNT %lld" = "%lldライブコンサート";
 
 // ConcertView
 "CONCERT_VIEW_TITLE" = "ライブコンサート";
@@ -161,7 +179,7 @@
 "LIVE_FORMAT_IRL" = "現地";
 "LIVE_FORMAT_BOTH" = "現地＋オンライン";
 
-// LiveViewToolbar & UpcomingViewToolbar
+// LiveViewToolbar & UpcomingViewToolbar & PastViewToolbar
 "LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE" = "絶対時間を表示";
 "LIVE_VIEW_TOOLBAR_SHOW_RELATIVE" = "相対時間を表示";
 "LIVE_VIEW_TOOLBAR_SHOW_COMPACT" = "エクスプレスモードを表示";
@@ -178,13 +196,16 @@
 "LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_FURTHEST_TO_NEAREST" = "遅い順";
 "UPCOMING_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST" = "早い順";
 "UPCOMING_VIEW_TOOLBAR_SORT_BY_START_TIME_FURTHEST_TO_NEAREST" = "遅い順";
+"PAST_VIEW_TOOLBAR_SORT_BY_ENDED_TIME_NEAREST_TO_FURTHEST" = "早い順";
+"PAST_VIEW_TOOLBAR_SORT_BY_ENDED_TIME_FURTHEST_TO_NEAREST" = "遅い順";
+"PAST_VIEW_TOOLBAR_SORT_BY_END_TIME" = "配信済み時間順...";
 
 // VideoContextMenu
 "VIDEO_CONTEXT_MENU_TWITTER_PROFILE" = "Twitter プロフィール";
 "VIDEO_CONTEXT_MENU_YOUTUBE_CHANNEL" = "YouTube チャンネル";
 "VIDEO_CONTEXT_MENU_FAVOURITE_CHANNEL" = "お気に入りに追加";
 "VIDEO_CONTEXT_MENU_REMOVE_FAVOURITE" = "お気に入りを削除";
-"VIDEO_CONTEXT_MENU_SHARE" = "シェアする";
+"VIDEO_CONTEXT_MENU_SHARE" = "シェア";
 "VIDEO_CONTEXT_MENU_ADD_TO_CALENDAR" = "カレンダーに追加";
 
 // Swipe actions for LinkedVideo

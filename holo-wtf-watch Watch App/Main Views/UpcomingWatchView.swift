@@ -9,8 +9,10 @@ import SwiftUI
 
 struct UpcomingWatchView: View {
     @StateObject var upcoming: UpcomingViewModel
+    let agency: AgencyEnum
     
     init(for agency: AgencyEnum) {
+        self.agency = agency
         _upcoming = StateObject(wrappedValue: UpcomingViewModel(for: agency))
     }
     
@@ -24,7 +26,7 @@ struct UpcomingWatchView: View {
                     .environmentObject(upcoming as VideoViewModel)
             }
         })
-        .navigationTitle("UPCOMING_VIEW_TITLE")
+        .navigationTitle(agency.getAgency().localizedName)
         .environmentObject(upcoming as VideoViewModel)
         .task {
             upcoming.sortingStrategy = .timeAsc

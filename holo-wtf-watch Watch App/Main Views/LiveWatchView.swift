@@ -9,8 +9,10 @@ import SwiftUI
 
 struct LiveWatchView: View {
     @StateObject var live: LiveViewModel
+    let agency: AgencyEnum
     
     init(for agency: AgencyEnum) {
+        self.agency = agency
         _live = StateObject(wrappedValue: LiveViewModel(for: agency))
     }
     
@@ -23,7 +25,7 @@ struct LiveWatchView: View {
                     .environmentObject(live as VideoViewModel)
             }
         })
-        .navigationTitle("LIVE_VIEW_TITLE")
+        .navigationTitle(agency.getAgency().localizedName)
         .environmentObject(live as VideoViewModel)
         .task {
             live.sortingStrategy = .timeDesc
