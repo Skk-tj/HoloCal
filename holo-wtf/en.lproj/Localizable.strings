@@ -229,6 +229,10 @@
 "UPCOMING_WIDGET_TITLE" = "**UPCOMING**";
 "UPCOMING_WIDGET_TITLE_NON_BOLD" = "UPCOMING";
 
+// Past Widget
+"PAST_WIDGET_TITLE" = "**PAST**";
+"PAST_WIDGET_TITLE_NON_BOLD" = "PAST";
+
 // Widget system text
 "CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "Live";
 "CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "Show a current stream.";
@@ -247,6 +251,9 @@
 
 "UPCOMING_CHANNELS_WIDGET_DISPLAY_NAME" = "Upcoming Channels";
 "UPCOMING_CHANNELS_WIDGET_DESCRIPTION" = "Show a list of channels that are about to go live.";
+
+"PAST_WIDGET_DISPLAY_NAME" = "Past";
+"PAST_WIDGET_DESCRIPTION" = "Show an archived stream.";
 
 // Song List View
 "SONG_LIST_VIEW_NAVIGATION_TITLE" = "Songs";

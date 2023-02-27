@@ -8,10 +8,10 @@
 import SwiftUI
 import WidgetKit
 
-struct BaseVideoEntryView<MainContent: View, TitleContent: View, Entry: VideoTimelineEntry>: View {
-    var entry: Entry
+struct BaseVideoEntryView<MainContent: View, TitleContent: View>: View {
+    var entry: SingleVideoWidgetEntry
     
-    @ViewBuilder let mainView: () -> MainContent
+    @ViewBuilder let mainView: (_ video: LiveVideo) -> MainContent
     @ViewBuilder let titleView: () -> TitleContent
     
     @ViewBuilder
@@ -21,7 +21,11 @@ struct BaseVideoEntryView<MainContent: View, TitleContent: View, Entry: VideoTim
             
             switch entry.status {
             case .ok:
-                mainView()
+                if let video = entry.video {
+                    mainView(video)
+                } else {
+                    NoStreamView()
+                }
             case .noVideo:
                 NoStreamView()
             case .network:

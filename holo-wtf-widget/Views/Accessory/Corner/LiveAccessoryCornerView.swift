@@ -25,8 +25,8 @@ struct LiveAccessoryCornerView: View {
 struct LiveAccessoryCornerView_Previews: PreviewProvider {
     static var previews: some View {
         LiveAccessoryCornerView(live: LiveVideo.previewLive)
-        #if os(watchOS)
+#if os(watchOS)
             .previewContext(WidgetPreviewContext(family: .accessoryCorner))
-        #endif
+#endif
     }
 }

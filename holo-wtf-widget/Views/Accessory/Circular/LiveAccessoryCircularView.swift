@@ -18,6 +18,8 @@ struct LiveAccessoryCircularView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .widgetLabel(live.channel.getTalentName())
+        } else {
+            Text("N/A")
         }
     }
 }

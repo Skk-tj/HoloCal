@@ -41,3 +41,20 @@ struct SingleUpcomingWidget: Widget {
 #endif
     }
 }
+
+struct SinglePastWidget: Widget {
+    let kind: String = "io.skk-tj.holo-wtf-widget.past-single"
+    
+    var body: some WidgetConfiguration {
+        IntentConfiguration(kind: kind, intent: PastWidgetIntent.self, provider: VideoPastWidgetProvider()) { entry in
+            VideoPastWidgetEntryView(entry: entry)
+        }
+        .configurationDisplayName("PAST_WIDGET_DISPLAY_NAME")
+        .description("PAST_WIDGET_DESCRIPTION")
+#if os(watchOS)
+        .supportedFamilies([.accessoryRectangular, .accessoryCorner])
+#else
+        .supportedFamilies([.systemSmall, .systemLarge, .accessoryRectangular, .accessoryCircular])
+#endif
+    }
+}

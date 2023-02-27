@@ -43,7 +43,6 @@
 		F01869D029AB6BC400339178 /* PastiPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01869CF29AB6BC400339178 /* PastiPadView.swift */; };
 		F01869D429AB6C7000339178 /* PastFavouritesiPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01869D329AB6C7000339178 /* PastFavouritesiPadView.swift */; };
 		F01869D629AB76E600339178 /* WatchPastCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01869D529AB76E600339178 /* WatchPastCellView.swift */; };
-		F01869D729AB772E00339178 /* PastTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0789B8F29AB543300346239 /* PastTimeView.swift */; };
 		F01869D829AB773100339178 /* PastTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0789B8F29AB543300346239 /* PastTimeView.swift */; };
 		F01869DB29AB784900339178 /* PastWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01869DA29AB784900339178 /* PastWatchView.swift */; };
 		F01869DC29AB786100339178 /* PastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0789B7D29AB2C3B00346239 /* PastViewModel.swift */; };
@@ -55,8 +54,44 @@
 		F01869E429AB859100339178 /* VideoPastWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01869E229AB859100339178 /* VideoPastWidgetProvider.swift */; };
 		F01869E629AB86C300339178 /* MultipleVideoPastWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01869E529AB86C300339178 /* MultipleVideoPastWidgetProvider.swift */; };
 		F01869EB29AC1DD500339178 /* ChannelPastWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01869EA29AC1DD500339178 /* ChannelPastWidgetProvider.swift */; };
-		F01869EC29AC275000339178 /* LiveAccessoryCornerEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D147E28DD523C00750B71 /* LiveAccessoryCornerEntryView.swift */; };
-		F01869ED29AC275200339178 /* UpcomingAccessoryCornerEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D148D28DD673A00750B71 /* UpcomingAccessoryCornerEntryView.swift */; };
+		F01869F129AC37B100339178 /* SmallPastWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01869F029AC37B100339178 /* SmallPastWidgetView.swift */; };
+		F01869F229AC37B400339178 /* SmallPastWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01869F029AC37B100339178 /* SmallPastWidgetView.swift */; };
+		F01869F329AC46F400339178 /* PastTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0789B8F29AB543300346239 /* PastTimeView.swift */; };
+		F01869F429AC470100339178 /* PastTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0789B8F29AB543300346239 /* PastTimeView.swift */; };
+		F01869FA29AC59BB00339178 /* LiveTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01869F929AC59BB00339178 /* LiveTitleView.swift */; };
+		F01869FB29AC59BB00339178 /* LiveTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01869F929AC59BB00339178 /* LiveTitleView.swift */; };
+		F01869FD29AC59E300339178 /* UpcomingTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01869FC29AC59E300339178 /* UpcomingTitleView.swift */; };
+		F01869FE29AC59E300339178 /* UpcomingTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01869FC29AC59E300339178 /* UpcomingTitleView.swift */; };
+		F0186A0029AC59FA00339178 /* PastTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01869FF29AC59FA00339178 /* PastTitleView.swift */; };
+		F0186A0129AC59FA00339178 /* PastTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01869FF29AC59FA00339178 /* PastTitleView.swift */; };
+		F0186A0329AC5A1300339178 /* NoStreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A0229AC5A1300339178 /* NoStreamView.swift */; };
+		F0186A0429AC5A1300339178 /* NoStreamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A0229AC5A1300339178 /* NoStreamView.swift */; };
+		F0186A0629AC5A8400339178 /* NetworkErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A0529AC5A8400339178 /* NetworkErrorView.swift */; };
+		F0186A0729AC5A8400339178 /* NetworkErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A0529AC5A8400339178 /* NetworkErrorView.swift */; };
+		F0186A0929AC5FF200339178 /* PastWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A0829AC5FF200339178 /* PastWidgetView.swift */; };
+		F0186A0A29AC5FF200339178 /* PastWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A0829AC5FF200339178 /* PastWidgetView.swift */; };
+		F0186A0B29AC606700339178 /* BlockPastTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0789B8729AB3CB400346239 /* BlockPastTimeView.swift */; };
+		F0186A0C29AC606800339178 /* BlockPastTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0789B8729AB3CB400346239 /* BlockPastTimeView.swift */; };
+		F0186A0E29AC6E4800339178 /* PastAccessoryRectangularWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A0D29AC6E4800339178 /* PastAccessoryRectangularWidgetView.swift */; };
+		F0186A0F29AC6E4800339178 /* PastAccessoryRectangularWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A0D29AC6E4800339178 /* PastAccessoryRectangularWidgetView.swift */; };
+		F0186A1129AC6F7800339178 /* PastAccessoryCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A1029AC6F7800339178 /* PastAccessoryCornerView.swift */; };
+		F0186A1229AC6F7800339178 /* PastAccessoryCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A1029AC6F7800339178 /* PastAccessoryCornerView.swift */; };
+		F0186A1729AC710C00339178 /* SmallWidgetAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A1629AC710C00339178 /* SmallWidgetAvatarView.swift */; };
+		F0186A1829AC710C00339178 /* SmallWidgetAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A1629AC710C00339178 /* SmallWidgetAvatarView.swift */; };
+		F0186A1E29AC773400339178 /* SmallEntryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A1D29AC773400339178 /* SmallEntryViews.swift */; };
+		F0186A1F29AC773400339178 /* SmallEntryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A1D29AC773400339178 /* SmallEntryViews.swift */; };
+		F0186A2129AC776300339178 /* PaneEntryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A2029AC776300339178 /* PaneEntryViews.swift */; };
+		F0186A2229AC776300339178 /* PaneEntryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A2029AC776300339178 /* PaneEntryViews.swift */; };
+		F0186A2429AC779D00339178 /* AccessoryRectangularEntryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A2329AC779D00339178 /* AccessoryRectangularEntryViews.swift */; };
+		F0186A2529AC779D00339178 /* AccessoryRectangularEntryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A2329AC779D00339178 /* AccessoryRectangularEntryViews.swift */; };
+		F0186A2729AC77DC00339178 /* AccessoryCircularEntryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A2629AC77DC00339178 /* AccessoryCircularEntryViews.swift */; };
+		F0186A2829AC77DC00339178 /* AccessoryCircularEntryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A2629AC77DC00339178 /* AccessoryCircularEntryViews.swift */; };
+		F0186A2A29AC793100339178 /* MultipleEntryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A2929AC793100339178 /* MultipleEntryViews.swift */; };
+		F0186A2D29AC795400339178 /* ChannelsEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A2C29AC795400339178 /* ChannelsEntryView.swift */; };
+		F0186A2F29AC7CA900339178 /* AccessoryCornerEntryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A2E29AC7CA900339178 /* AccessoryCornerEntryViews.swift */; };
+		F0186A3029AC7CA900339178 /* AccessoryCornerEntryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A2E29AC7CA900339178 /* AccessoryCornerEntryViews.swift */; };
+		F0186A3529AC80D100339178 /* AccessoryRectangularWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A3429AC80D100339178 /* AccessoryRectangularWidgetView.swift */; };
+		F0186A3629AC80D100339178 /* AccessoryRectangularWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A3429AC80D100339178 /* AccessoryRectangularWidgetView.swift */; };
 		F01DAA4F298FACE000052514 /* LiveConcert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA4E298FACE000052514 /* LiveConcert.swift */; };
 		F01DAA51298FB58700052514 /* ConcertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA50298FB58700052514 /* ConcertsView.swift */; };
 		F01DAA55298FB6AB00052514 /* ConcertsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA54298FB6AB00052514 /* ConcertsViewModel.swift */; };
@@ -102,7 +137,6 @@
 		F025204528EEA5FC00976972 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025204328EEA5FC00976972 /* Common.swift */; };
 		F025204728EEA5FC00976972 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025204328EEA5FC00976972 /* Common.swift */; };
 		F02830802853DB0E00CBFCE7 /* Widgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028307F2853DB0E00CBFCE7 /* Widgets.swift */; };
-		F02830822853DB5E00CBFCE7 /* WidgetEntryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02830812853DB5E00CBFCE7 /* WidgetEntryViews.swift */; };
 		F028308828545B1200CBFCE7 /* SingleVideoWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028308728545B1200CBFCE7 /* SingleVideoWidgetEntry.swift */; };
 		F0328555293201EF0079F46A /* LiveFavouritesiPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0328554293201EF0079F46A /* LiveFavouritesiPadView.swift */; };
 		F0328557293202B30079F46A /* UpcomingFavouritesiPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0328556293202B30079F46A /* UpcomingFavouritesiPadView.swift */; };
@@ -117,10 +151,8 @@
 		F047F0862851C74500B2E2B9 /* SmallLiveWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F047F0852851C74500B2E2B9 /* SmallLiveWidgetView.swift */; };
 		F04D147B28DD4ED300750B71 /* LiveAccessoryCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D147928DD4ED300750B71 /* LiveAccessoryCornerView.swift */; };
 		F04D147D28DD4ED300750B71 /* LiveAccessoryCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D147928DD4ED300750B71 /* LiveAccessoryCornerView.swift */; };
-		F04D148228DD523C00750B71 /* LiveAccessoryCornerEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D147E28DD523C00750B71 /* LiveAccessoryCornerEntryView.swift */; };
 		F04D148A28DD66AD00750B71 /* UpcomingAccessoryCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D148928DD66AD00750B71 /* UpcomingAccessoryCornerView.swift */; };
 		F04D148C28DD66AD00750B71 /* UpcomingAccessoryCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D148928DD66AD00750B71 /* UpcomingAccessoryCornerView.swift */; };
-		F04D149028DD673A00750B71 /* UpcomingAccessoryCornerEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D148D28DD673A00750B71 /* UpcomingAccessoryCornerEntryView.swift */; };
 		F04D149628DD82DA00750B71 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = F04D149528DD82DA00750B71 /* Algorithms */; };
 		F04D149928DD82E500750B71 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = F04D149828DD82E500750B71 /* Collections */; };
 		F04D149B28DD82E500750B71 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = F04D149A28DD82E500750B71 /* OrderedCollections */; };
@@ -423,6 +455,24 @@
 		F01869E229AB859100339178 /* VideoPastWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPastWidgetProvider.swift; sourceTree = "<group>"; };
 		F01869E529AB86C300339178 /* MultipleVideoPastWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleVideoPastWidgetProvider.swift; sourceTree = "<group>"; };
 		F01869EA29AC1DD500339178 /* ChannelPastWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelPastWidgetProvider.swift; sourceTree = "<group>"; };
+		F01869F029AC37B100339178 /* SmallPastWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallPastWidgetView.swift; sourceTree = "<group>"; };
+		F01869F929AC59BB00339178 /* LiveTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTitleView.swift; sourceTree = "<group>"; };
+		F01869FC29AC59E300339178 /* UpcomingTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingTitleView.swift; sourceTree = "<group>"; };
+		F01869FF29AC59FA00339178 /* PastTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastTitleView.swift; sourceTree = "<group>"; };
+		F0186A0229AC5A1300339178 /* NoStreamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoStreamView.swift; sourceTree = "<group>"; };
+		F0186A0529AC5A8400339178 /* NetworkErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorView.swift; sourceTree = "<group>"; };
+		F0186A0829AC5FF200339178 /* PastWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastWidgetView.swift; sourceTree = "<group>"; };
+		F0186A0D29AC6E4800339178 /* PastAccessoryRectangularWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastAccessoryRectangularWidgetView.swift; sourceTree = "<group>"; };
+		F0186A1029AC6F7800339178 /* PastAccessoryCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastAccessoryCornerView.swift; sourceTree = "<group>"; };
+		F0186A1629AC710C00339178 /* SmallWidgetAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetAvatarView.swift; sourceTree = "<group>"; };
+		F0186A1D29AC773400339178 /* SmallEntryViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallEntryViews.swift; sourceTree = "<group>"; };
+		F0186A2029AC776300339178 /* PaneEntryViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaneEntryViews.swift; sourceTree = "<group>"; };
+		F0186A2329AC779D00339178 /* AccessoryRectangularEntryViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryRectangularEntryViews.swift; sourceTree = "<group>"; };
+		F0186A2629AC77DC00339178 /* AccessoryCircularEntryViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryCircularEntryViews.swift; sourceTree = "<group>"; };
+		F0186A2929AC793100339178 /* MultipleEntryViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleEntryViews.swift; sourceTree = "<group>"; };
+		F0186A2C29AC795400339178 /* ChannelsEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsEntryView.swift; sourceTree = "<group>"; };
+		F0186A2E29AC7CA900339178 /* AccessoryCornerEntryViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryCornerEntryViews.swift; sourceTree = "<group>"; };
+		F0186A3429AC80D100339178 /* AccessoryRectangularWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryRectangularWidgetView.swift; sourceTree = "<group>"; };
 		F01DAA4E298FACE000052514 /* LiveConcert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveConcert.swift; sourceTree = "<group>"; };
 		F01DAA50298FB58700052514 /* ConcertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcertsView.swift; sourceTree = "<group>"; };
 		F01DAA54298FB6AB00052514 /* ConcertsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcertsViewModel.swift; sourceTree = "<group>"; };
@@ -453,7 +503,6 @@
 		F025203E28EE94B700976972 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F025204328EEA5FC00976972 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		F028307F2853DB0E00CBFCE7 /* Widgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widgets.swift; sourceTree = "<group>"; };
-		F02830812853DB5E00CBFCE7 /* WidgetEntryViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetEntryViews.swift; sourceTree = "<group>"; };
 		F028308728545B1200CBFCE7 /* SingleVideoWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleVideoWidgetEntry.swift; sourceTree = "<group>"; };
 		F0328554293201EF0079F46A /* LiveFavouritesiPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveFavouritesiPadView.swift; sourceTree = "<group>"; };
 		F0328556293202B30079F46A /* UpcomingFavouritesiPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingFavouritesiPadView.swift; sourceTree = "<group>"; };
@@ -466,9 +515,7 @@
 		F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceView.swift; sourceTree = "<group>"; };
 		F047F0852851C74500B2E2B9 /* SmallLiveWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallLiveWidgetView.swift; sourceTree = "<group>"; };
 		F04D147928DD4ED300750B71 /* LiveAccessoryCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAccessoryCornerView.swift; sourceTree = "<group>"; };
-		F04D147E28DD523C00750B71 /* LiveAccessoryCornerEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveAccessoryCornerEntryView.swift; sourceTree = "<group>"; };
 		F04D148928DD66AD00750B71 /* UpcomingAccessoryCornerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingAccessoryCornerView.swift; sourceTree = "<group>"; };
-		F04D148D28DD673A00750B71 /* UpcomingAccessoryCornerEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingAccessoryCornerEntryView.swift; sourceTree = "<group>"; };
 		F04D1B3C283A300E0026340D /* VideoLiveWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLiveWidgetProvider.swift; sourceTree = "<group>"; };
 		F04D1B40283A3AE70026340D /* MultipleLiveWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleLiveWidgetView.swift; sourceTree = "<group>"; };
 		F04D754F28D7CB770096B8AB /* holo-wtf-watch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "holo-wtf-watch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -654,6 +701,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F01869F829AC59A200339178 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				F0186A1629AC710C00339178 /* SmallWidgetAvatarView.swift */,
+				F01869F929AC59BB00339178 /* LiveTitleView.swift */,
+				F01869FC29AC59E300339178 /* UpcomingTitleView.swift */,
+				F01869FF29AC59FA00339178 /* PastTitleView.swift */,
+				F0186A0229AC5A1300339178 /* NoStreamView.swift */,
+				F0186A0529AC5A8400339178 /* NetworkErrorView.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		F0186A1C29AC771C00339178 /* EntryViews */ = {
+			isa = PBXGroup;
+			children = (
+				F0186A1D29AC773400339178 /* SmallEntryViews.swift */,
+				F0186A2029AC776300339178 /* PaneEntryViews.swift */,
+				F0186A2329AC779D00339178 /* AccessoryRectangularEntryViews.swift */,
+				F0186A2629AC77DC00339178 /* AccessoryCircularEntryViews.swift */,
+				F0186A2E29AC7CA900339178 /* AccessoryCornerEntryViews.swift */,
+				F0186A2929AC793100339178 /* MultipleEntryViews.swift */,
+				F0186A2C29AC795400339178 /* ChannelsEntryView.swift */,
+			);
+			path = EntryViews;
+			sourceTree = "<group>";
+		};
+		F0186A3129AC808200339178 /* Rectangular */ = {
+			isa = PBXGroup;
+			children = (
+				F0186A3429AC80D100339178 /* AccessoryRectangularWidgetView.swift */,
+				F0396E7728CFD60600A3EDCB /* LiveAccessoryRectangularWidgetView.swift */,
+				F0050DA928CFEDE1004532CB /* UpcomingAccessoryRectangularWidgetView.swift */,
+				F0186A0D29AC6E4800339178 /* PastAccessoryRectangularWidgetView.swift */,
+			);
+			path = Rectangular;
+			sourceTree = "<group>";
+		};
+		F0186A3229AC808F00339178 /* Corner */ = {
+			isa = PBXGroup;
+			children = (
+				F0186A1029AC6F7800339178 /* PastAccessoryCornerView.swift */,
+				F04D147928DD4ED300750B71 /* LiveAccessoryCornerView.swift */,
+				F04D148928DD66AD00750B71 /* UpcomingAccessoryCornerView.swift */,
+			);
+			path = Corner;
+			sourceTree = "<group>";
+		};
+		F0186A3329AC809700339178 /* Circular */ = {
+			isa = PBXGroup;
+			children = (
+				F01241AE2935EA51007C8FE9 /* LiveAccessoryCircularView.swift */,
+			);
+			path = Circular;
+			sourceTree = "<group>";
+		};
 		F01DAA58299084D400052514 /* DataStatus */ = {
 			isa = PBXGroup;
 			children = (
@@ -695,6 +798,7 @@
 		F02830832853DB8500CBFCE7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F01869F829AC59A200339178 /* Elements */,
 				F0396E7628CFD56000A3EDCB /* Accessory */,
 				F0B2AF1328C2E48C00635CAD /* Small */,
 				F0B2AF1428C2E49700635CAD /* Medium */,
@@ -722,11 +826,9 @@
 		F0396E7628CFD56000A3EDCB /* Accessory */ = {
 			isa = PBXGroup;
 			children = (
-				F0396E7728CFD60600A3EDCB /* LiveAccessoryRectangularWidgetView.swift */,
-				F0050DA928CFEDE1004532CB /* UpcomingAccessoryRectangularWidgetView.swift */,
-				F04D147928DD4ED300750B71 /* LiveAccessoryCornerView.swift */,
-				F04D148928DD66AD00750B71 /* UpcomingAccessoryCornerView.swift */,
-				F01241AE2935EA51007C8FE9 /* LiveAccessoryCircularView.swift */,
+				F0186A3329AC809700339178 /* Circular */,
+				F0186A3229AC808F00339178 /* Corner */,
+				F0186A3129AC808200339178 /* Rectangular */,
 			);
 			path = Accessory;
 			sourceTree = "<group>";
@@ -830,8 +932,6 @@
 				F06D28D028D83826007D06FB /* complications.swift */,
 				F06D28D228D83827007D06FB /* Assets.xcassets */,
 				F06D28D428D83827007D06FB /* Info.plist */,
-				F04D147E28DD523C00750B71 /* LiveAccessoryCornerEntryView.swift */,
-				F04D148D28DD673A00750B71 /* UpcomingAccessoryCornerEntryView.swift */,
 			);
 			path = complications;
 			sourceTree = "<group>";
@@ -883,13 +983,13 @@
 			children = (
 				F0E06D152932348C00BF6812 /* Entry */,
 				F02830842853DB9200CBFCE7 /* Providers */,
+				F0186A1C29AC771C00339178 /* EntryViews */,
 				F02830832853DB8500CBFCE7 /* Views */,
 				F093D1C3282C32D000E2A6FF /* holo_wtf_widget.swift */,
 				F025204328EEA5FC00976972 /* Common.swift */,
 				F093D1C6282C32D100E2A6FF /* Assets.xcassets */,
 				F093D1C8282C32D100E2A6FF /* Info.plist */,
 				F028307F2853DB0E00CBFCE7 /* Widgets.swift */,
-				F02830812853DB5E00CBFCE7 /* WidgetEntryViews.swift */,
 				F05DFA352853CA7800D62D19 /* BaseVideoEntryView.swift */,
 				F06D28DC28D838C7007D06FB /* SharedWidgets.swift */,
 				F06D28DF28D8390F007D06FB /* SharedEntryView.swift */,
@@ -961,6 +1061,7 @@
 			children = (
 				F047F0852851C74500B2E2B9 /* SmallLiveWidgetView.swift */,
 				F0B2AF0828C13C7600635CAD /* SmallUpcomingWidgetView.swift */,
+				F01869F029AC37B100339178 /* SmallPastWidgetView.swift */,
 			);
 			path = Small;
 			sourceTree = "<group>";
@@ -982,6 +1083,7 @@
 			children = (
 				F093D1E3283034AF00E2A6FF /* LiveWidgetView.swift */,
 				F0B2AF0D28C2940200635CAD /* UpcomingWidgetView.swift */,
+				F0186A0829AC5FF200339178 /* PastWidgetView.swift */,
 			);
 			path = Large;
 			sourceTree = "<group>";
@@ -1360,27 +1462,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0186A0F29AC6E4800339178 /* PastAccessoryRectangularWidgetView.swift in Sources */,
 				F09664E929A602E9005F37C0 /* BlockVideoTypeView.swift in Sources */,
 				F0E45D1B28F39AF90091474A /* Agency.swift in Sources */,
+				F0186A1829AC710C00339178 /* SmallWidgetAvatarView.swift in Sources */,
 				F025204228EE95FB00976972 /* Constants.swift in Sources */,
+				F0186A1229AC6F7800339178 /* PastAccessoryCornerView.swift in Sources */,
 				F09664E729A34DE7005F37C0 /* UpcomingWidgetView.swift in Sources */,
 				F00BD6D329052AC400D7932E /* VideoViewModel.swift in Sources */,
 				F06D28F428D83A9D007D06FB /* LiveAccessoryRectangularWidgetView.swift in Sources */,
+				F01869FB29AC59BB00339178 /* LiveTitleView.swift in Sources */,
 				F06D28E828D839F5007D06FB /* LiveVideo.swift in Sources */,
 				F06D28F928D83AC9007D06FB /* Util.swift in Sources */,
 				F06D28E628D839F5007D06FB /* Channel.swift in Sources */,
+				F0186A0729AC5A8400339178 /* NetworkErrorView.swift in Sources */,
 				F06D28E328D839E4007D06FB /* SingleVideoWidgetEntry.swift in Sources */,
 				F01869E429AB859100339178 /* VideoPastWidgetProvider.swift in Sources */,
 				F09D53A729336944003C4F80 /* VideoUpcomingWidgetProvider.swift in Sources */,
-				F04D148228DD523C00750B71 /* LiveAccessoryCornerEntryView.swift in Sources */,
+				F0186A1F29AC773400339178 /* SmallEntryViews.swift in Sources */,
+				F01869F229AC37B400339178 /* SmallPastWidgetView.swift in Sources */,
+				F0186A2229AC776300339178 /* PaneEntryViews.swift in Sources */,
 				F09664E529A34DCF005F37C0 /* BlockVideoInfoView.swift in Sources */,
 				F06D28E128D8390F007D06FB /* SharedEntryView.swift in Sources */,
+				F0186A0A29AC5FF200339178 /* PastWidgetView.swift in Sources */,
 				F04D148C28DD66AD00750B71 /* UpcomingAccessoryCornerView.swift in Sources */,
 				F09664E329A34DCD005F37C0 /* BlockMemberOnlyView.swift in Sources */,
 				F0E06D182932A4FA00BF6812 /* Modes.swift in Sources */,
 				F06D28F828D83ABB007D06FB /* VideoFetchService.swift in Sources */,
+				F0186A0429AC5A1300339178 /* NoStreamView.swift in Sources */,
 				F0F40976293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */,
 				F01241A42935E2C7007C8FE9 /* BlockLiveTimeView.swift in Sources */,
+				F0186A2529AC779D00339178 /* AccessoryRectangularEntryViews.swift in Sources */,
 				F09D53C029337378003C4F80 /* Intents.intentdefinition in Sources */,
 				F01DAA762990F30400052514 /* ChannelNameView.swift in Sources */,
 				F06D28FA28D83AD3007D06FB /* UpcomingTimeView.swift in Sources */,
@@ -1391,19 +1503,25 @@
 				F01241A82935E33E007C8FE9 /* BlockUpcomingTimeView.swift in Sources */,
 				F06D28DE28D838C7007D06FB /* SharedWidgets.swift in Sources */,
 				F0E05C722932E27C00B3C774 /* VideoLiveWidgetProvider.swift in Sources */,
+				F01869FE29AC59E300339178 /* UpcomingTitleView.swift in Sources */,
 				F01241A62935E335007C8FE9 /* BaseVideoEntryView.swift in Sources */,
+				F0186A3029AC7CA900339178 /* AccessoryCornerEntryViews.swift in Sources */,
+				F01869F329AC46F400339178 /* PastTimeView.swift in Sources */,
+				F0186A2829AC77DC00339178 /* AccessoryCircularEntryViews.swift in Sources */,
 				F06D28E228D839E4007D06FB /* MultipleVideoWidgetEntry.swift in Sources */,
 				F06D28EC28D83A2D007D06FB /* SharedUtil.swift in Sources */,
 				F025204728EEA5FC00976972 /* Common.swift in Sources */,
+				F0186A0C29AC606800339178 /* BlockPastTimeView.swift in Sources */,
 				F04D147D28DD4ED300750B71 /* LiveAccessoryCornerView.swift in Sources */,
+				F0186A0129AC59FA00339178 /* PastTitleView.swift in Sources */,
 				F03A138528F0004C00BB8E51 /* ChannelsEntry.swift in Sources */,
 				F01241B12935EA51007C8FE9 /* LiveAccessoryCircularView.swift in Sources */,
+				F0186A3629AC80D100339178 /* AccessoryRectangularWidgetView.swift in Sources */,
 				F012419A2935E27A007C8FE9 /* SmallLiveWidgetView.swift in Sources */,
 				F06D28D128D83826007D06FB /* complications.swift in Sources */,
 				F01241B5293725FD007C8FE9 /* LiveWidgetView.swift in Sources */,
 				F06D28E728D839F5007D06FB /* TalentData.swift in Sources */,
 				F06D28F328D83A92007D06FB /* SongInStream.swift in Sources */,
-				F04D149028DD673A00750B71 /* UpcomingAccessoryCornerEntryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1412,24 +1530,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				F093D1DC282FA0CF00E2A6FF /* LiveTimeView.swift in Sources */,
+				F0186A1E29AC773400339178 /* SmallEntryViews.swift in Sources */,
 				F04D1B3E283A304E0026340D /* VideoLiveWidgetProvider.swift in Sources */,
+				F0186A2429AC779D00339178 /* AccessoryRectangularEntryViews.swift in Sources */,
 				F093D1DA282FA0C000E2A6FF /* UpcomingViewModel.swift in Sources */,
 				F03A139428F2018000BB8E51 /* LiveChannelsView.swift in Sources */,
 				F0E06D0B29322C7800BF6812 /* BlockMemberOnlyView.swift in Sources */,
-				F01869ED29AC275200339178 /* UpcomingAccessoryCornerEntryView.swift in Sources */,
+				F0186A2129AC776300339178 /* PaneEntryViews.swift in Sources */,
+				F0186A0629AC5A8400339178 /* NetworkErrorView.swift in Sources */,
 				F025204528EEA5FC00976972 /* Common.swift in Sources */,
 				F06D28E028D8390F007D06FB /* SharedEntryView.swift in Sources */,
 				F093D1D9282FA0C000E2A6FF /* LiveViewModel.swift in Sources */,
 				F093D1D7282FA0B000E2A6FF /* LiveAvatarView.swift in Sources */,
 				F03A138328F0004C00BB8E51 /* ChannelsEntry.swift in Sources */,
+				F0186A0029AC59FA00339178 /* PastTitleView.swift in Sources */,
 				F01DAA742990F30200052514 /* ChannelNameView.swift in Sources */,
 				F093D1D4282FA08900E2A6FF /* Channel.swift in Sources */,
+				F01869FD29AC59E300339178 /* UpcomingTitleView.swift in Sources */,
+				F0186A2D29AC795400339178 /* ChannelsEntryView.swift in Sources */,
 				F025204028EE95F900976972 /* Constants.swift in Sources */,
+				F0186A2A29AC793100339178 /* MultipleEntryViews.swift in Sources */,
 				F09D53BE29337378003C4F80 /* Intents.intentdefinition in Sources */,
-				F02830822853DB5E00CBFCE7 /* WidgetEntryViews.swift in Sources */,
 				F01241AF2935EA51007C8FE9 /* LiveAccessoryCircularView.swift in Sources */,
 				F0050DAA28CFEDE1004532CB /* UpcomingAccessoryRectangularWidgetView.swift in Sources */,
 				F0B71FCE283CAD0700DC4260 /* MultipleVideoLiveWidgetProvider.swift in Sources */,
+				F0186A0329AC5A1300339178 /* NoStreamView.swift in Sources */,
 				F093D1D3282FA08700E2A6FF /* LiveVideo.swift in Sources */,
 				F093D1E5283034DA00E2A6FF /* TalentData.swift in Sources */,
 				F093D1C4282C32D000E2A6FF /* holo_wtf_widget.swift in Sources */,
@@ -1438,16 +1563,21 @@
 				F0E219C3287AB47D0080697F /* LiveWidgetMediumView.swift in Sources */,
 				F047F0862851C74500B2E2B9 /* SmallLiveWidgetView.swift in Sources */,
 				F0F40974293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */,
+				F0186A3529AC80D100339178 /* AccessoryRectangularWidgetView.swift in Sources */,
 				F0CA6ECD28D7C2C30028CB11 /* SongsViewModel.swift in Sources */,
 				F0396E7928CFD60900A3EDCB /* LiveAccessoryRectangularWidgetView.swift in Sources */,
+				F0186A0E29AC6E4800339178 /* PastAccessoryRectangularWidgetView.swift in Sources */,
 				F01869E629AB86C300339178 /* MultipleVideoPastWidgetProvider.swift in Sources */,
 				F0B2AF1228C2E28700635CAD /* MultipleUpcomingWidgetView.swift in Sources */,
 				F00BD6D129052AC400D7932E /* VideoViewModel.swift in Sources */,
 				F04D147B28DD4ED300750B71 /* LiveAccessoryCornerView.swift in Sources */,
 				F093D1D6282FA0A600E2A6FF /* VideoThumbnailView.swift in Sources */,
-				F01869EC29AC275000339178 /* LiveAccessoryCornerEntryView.swift in Sources */,
+				F0186A0B29AC606700339178 /* BlockPastTimeView.swift in Sources */,
+				F0186A1729AC710C00339178 /* SmallWidgetAvatarView.swift in Sources */,
+				F01869FA29AC59BB00339178 /* LiveTitleView.swift in Sources */,
 				F0B2AF0928C13C7600635CAD /* SmallUpcomingWidgetView.swift in Sources */,
 				F0B71FCF283E08C300DC4260 /* MultipleLiveWidgetView.swift in Sources */,
+				F01869F129AC37B100339178 /* SmallPastWidgetView.swift in Sources */,
 				F05DFA362853CA7800D62D19 /* BaseVideoEntryView.swift in Sources */,
 				F0E06D0A29322C2100BF6812 /* ViewerCounterView.swift in Sources */,
 				F0E45D1928F39AF90091474A /* Agency.swift in Sources */,
@@ -1465,6 +1595,8 @@
 				F0B2AF0E28C2940200635CAD /* UpcomingWidgetView.swift in Sources */,
 				F0E06D162932376300BF6812 /* Modes.swift in Sources */,
 				F06D28EB28D83A2D007D06FB /* SharedUtil.swift in Sources */,
+				F0186A1129AC6F7800339178 /* PastAccessoryCornerView.swift in Sources */,
+				F0186A2729AC77DC00339178 /* AccessoryCircularEntryViews.swift in Sources */,
 				F09D53A329336782003C4F80 /* MultipleVideoUpcomingWidgetProvider.swift in Sources */,
 				F093D1ED2830372900E2A6FF /* LiveWidgetView.swift in Sources */,
 				F02830802853DB0E00CBFCE7 /* Widgets.swift in Sources */,
@@ -1472,6 +1604,8 @@
 				F093D1DF282FA5FE00E2A6FF /* VideoFetchService.swift in Sources */,
 				F01869EB29AC1DD500339178 /* ChannelPastWidgetProvider.swift in Sources */,
 				F09D53A529336918003C4F80 /* ChannelsUpcomingWidgetProvider.swift in Sources */,
+				F0186A2F29AC7CA900339178 /* AccessoryCornerEntryViews.swift in Sources */,
+				F0186A0929AC5FF200339178 /* PastWidgetView.swift in Sources */,
 				F09D53A129336590003C4F80 /* VideoUpcomingWidgetProvider.swift in Sources */,
 				F04D148A28DD66AD00750B71 /* UpcomingAccessoryCornerView.swift in Sources */,
 				F0E06D0829322BF200BF6812 /* BlockUpcomingTimeView.swift in Sources */,
@@ -1614,6 +1748,7 @@
 				F01869DB29AB784900339178 /* PastWatchView.swift in Sources */,
 				F01869DC29AB786100339178 /* PastViewModel.swift in Sources */,
 				F032855B293218300079F46A /* UpcomingFavouritesWatchView.swift in Sources */,
+				F01869F429AC470100339178 /* PastTimeView.swift in Sources */,
 				F01DAA7D299640D100052514 /* BlockJPYPriceView.swift in Sources */,
 				F09664E229A34DCC005F37C0 /* BlockMemberOnlyView.swift in Sources */,
 				F0328559293218220079F46A /* LiveFavouritesWatchView.swift in Sources */,
@@ -1652,7 +1787,6 @@
 				F01869D629AB76E600339178 /* WatchPastCellView.swift in Sources */,
 				F0F0EA9D292B062A0091DBD7 /* AgencyForEachView.swift in Sources */,
 				F0CA6ED028D7C31D0028CB11 /* WatchVideoListView.swift in Sources */,
-				F01869D729AB772E00339178 /* PastTimeView.swift in Sources */,
 				F025204128EE95FA00976972 /* Constants.swift in Sources */,
 				F0CA6EC828D7C2880028CB11 /* SongsViewModel.swift in Sources */,
 				F0CA6EC728D7C2880028CB11 /* VideoFetchService.swift in Sources */,

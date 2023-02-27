@@ -14,6 +14,7 @@ struct HoloCalWidgetBundle: WidgetBundle {
     var body: some Widget {
         SingleLiveWidget()
         SingleUpcomingWidget()
+        SinglePastWidget()
         MultipleLiveWidget()
         MultipleUpcomingWidget()
         LiveChannelsWidget()
@@ -23,12 +24,6 @@ struct HoloCalWidgetBundle: WidgetBundle {
 
 struct holo_wtf_widget_Previews: PreviewProvider {
     static var previews: some View {
-        SmallLiveWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), status: .ok, video: LiveVideo.previewLive, avatarData: Data(), thumbnailData: Data()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
-        
-        SmallLiveWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), status: .network, video: LiveVideo.previewLive, avatarData: Data(), thumbnailData: Data()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
-        
         LivePaneWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), status: .ok, video: LiveVideo.previewLive, avatarData: Data(), thumbnailData: Data()))
             .previewContext(WidgetPreviewContext(family: .systemLarge))
         

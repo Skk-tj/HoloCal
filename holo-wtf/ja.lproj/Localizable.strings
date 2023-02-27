@@ -232,6 +232,10 @@
 "UPCOMING_WIDGET_TITLE" = "**今後の配信**";
 "UPCOMING_WIDGET_TITLE_NON_BOLD" = "今後の配信";
 
+// Past Widget
+"PAST_WIDGET_TITLE" = "**アーカイブ**";
+"PAST_WIDGET_TITLE_NON_BOLD" = "アーカイブ";
+
 // Widget system text
 "CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "ライブ配信";
 "CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "ライブ配信を表示する";
@@ -250,6 +254,9 @@
 
 "UPCOMING_CHANNELS_WIDGET_DISPLAY_NAME" = "配信予定チャンネル";
 "UPCOMING_CHANNELS_WIDGET_DESCRIPTION" = "配信予定をしたチャンネルを表示する";
+
+"PAST_WIDGET_DISPLAY_NAME" = "アーカイブ";
+"PAST_WIDGET_DESCRIPTION" = "アーカイブ配信を表示する";
 
 // Song List View
 "SONG_LIST_VIEW_NAVIGATION_TITLE" = "曲";

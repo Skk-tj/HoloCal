@@ -14,26 +14,7 @@ struct SmallLiveWidgetView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            if let avatarImage = UIImage(data: avatarData) {
-                Image(uiImage: avatarImage)
-                    .resizable()
-                    .aspectRatio(1, contentMode: .fill)
-                    .frame(width: 40, height: 40)
-                    .clipShape(Circle())
-                    .overlay {
-                        Circle().stroke(.white, lineWidth: 1)
-                    }
-                    .shadow(radius: 1)
-            } else {
-                Image(systemName: "person")
-                    .aspectRatio(1, contentMode: .fill)
-                    .frame(width: 40, height: 40)
-                    .clipShape(Circle())
-                    .overlay {
-                        Circle().stroke(.white, lineWidth: 1)
-                    }
-                    .shadow(radius: 1)
-            }
+            SmallWidgetAvatarView(avatarData: avatarData)
             
             Text(live.title)
                 .font(.caption)

@@ -398,7 +398,7 @@
 			<key>INIntentCategory</key>
 			<string>information</string>
 			<key>INIntentDescription</key>
-			<string>Intent for Upcoming Widget</string>
+			<string>Intent for Past Widget</string>
 			<key>INIntentDescriptionID</key>
 			<string>uoR9hh</string>
 			<key>INIntentEligibleForWidgets</key>

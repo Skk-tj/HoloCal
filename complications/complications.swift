@@ -14,6 +14,7 @@ struct ComplicationsWidgetBundle: WidgetBundle {
     var body: some Widget {
         SingleLiveWidget()
         SingleUpcomingWidget()
+        SinglePastWidget()
     }
 }
 
