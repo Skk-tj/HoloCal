@@ -42,30 +42,24 @@ struct BaseMultipleViewEntryView<MainContent: View, SubContent: View, TitleConte
     }
 }
 
-struct MultipleLiveWidgetEntryView: View {
-    var entry: MultipleVideoLiveWidgetProvider.Entry
+struct MultipleWidgetEntryView: View {
+    var entry: MultipleVideoWidgetEntry
+    var videoType: VideoType
     
     var body: some View {
         BaseMultipleViewEntryView(entry: entry, twoVideosView: { v1, v2 in
-            MultipleLiveWidgetView(leftVideo: v1, leftVideoThumbnail: entry.thumbnailDataLeft, rightVideo: v2, rightVideoThumbnail: entry.thumbnailDataRight)
+            MultipleWidgetView(leftVideo: v1, leftVideoThumbnail: entry.thumbnailDataLeft, rightVideo: v2, rightVideoThumbnail: entry.thumbnailDataRight, videoType: videoType)
         }, singleVideoView: { video in
-            LiveWidgetMediumView(video: video, videoThumbnail: entry.thumbnailDataLeft)
+            WidgetMediumView(video: video, videoThumbnail: entry.thumbnailDataLeft, videoType: videoType)
         }, titleView: {
-            LiveTitleView()
-        })
-    }
-}
-
-struct MultipleUpcomingWidgetEntryView: View {
-    var entry: MultipleVideoUpcomingWidgetProvider.Entry
-    
-    var body: some View {
-        BaseMultipleViewEntryView(entry: entry, twoVideosView: { v1, v2 in
-            MultipleUpcomingWidgetView(leftVideo: v1, leftVideoThumbnail: entry.thumbnailDataLeft, rightVideo: v2, rightVideoThumbnail: entry.thumbnailDataRight)
-        }, singleVideoView: { video in
-            UpcomingWidgetMediumView(video: video, videoThumbnail: entry.thumbnailDataLeft)
-        }, titleView: {
-            UpcomingTitleView()
+            switch videoType {
+            case .live:
+                LiveTitleView()
+            case .upcoming:
+                UpcomingTitleView()
+            case .past:
+                PastTitleView()
+            }
         })
     }
 }

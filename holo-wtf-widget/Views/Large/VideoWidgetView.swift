@@ -1,5 +1,5 @@
 //
-//  LiveWidgetView.swift
+//  VideoWidgetView.swift
 //  holo-wtf
 //
 //
@@ -8,10 +8,11 @@
 import SwiftUI
 import WidgetKit
 
-struct LiveWidgetView: View {
-    let live: LiveVideo
+struct VideoWidgetView: View {
+    let video: LiveVideo
     let thumbnailData: Data
     let avatarData: Data
+    let videoType: VideoType
     
     var body: some View {
         VStack {
@@ -28,7 +29,7 @@ struct LiveWidgetView: View {
             }
             
             VStack(alignment: .leading) {
-                Text(live.title)
+                Text(video.title)
                     .font(.headline)
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
@@ -46,26 +47,50 @@ struct LiveWidgetView: View {
                             .shadow(radius: 1)
                     }
                     
-                    ChannelNameView(channel: live.channel)
+                    ChannelNameView(channel: video.channel)
                 }
                 
-                HStack {
-                    ViewerCounterView(viewer: live.liveViewers ?? 0, memberOnly: live.isMengen)
-                        .padding(.trailing)
-                    
-                    BlockLiveTimeView(liveTime: live.startActual)
+                switch videoType {
+                case .live:
+                    HStack {
+                        ViewerCounterView(viewer: video.liveViewers ?? 0, memberOnly: video.isMengen)
+                            .padding(.trailing)
+                        
+                        BlockLiveTimeView(liveTime: video.startActual)
+                    }
+                case .upcoming:
+                    HStack {
+                        BlockUpcomingTimeView(liveSchedule: video.startScheduled)
+                            .padding(.trailing)
+                        if video.isMengen {
+                            BlockMemberOnlyView()
+                                .padding(.trailing)
+                        }
+                        if video.isPremiere {
+                            BlockVideoTypeView()
+                        }
+                    }
+                case .past:
+                    HStack {
+                        BlockPastTimeView(endedAt: video.endedAt)
+                            .padding(.trailing)
+                        if video.isMengen {
+                            BlockMemberOnlyView()
+                                .padding(.trailing)
+                        }
+                    }
                 }
             }
         }
     }
 }
 
-struct LiveWidgetView_Previews: PreviewProvider {
+struct VideoWidgetView_Previews: PreviewProvider {
     static var previews: some View {
-        LiveWidgetView(live: LiveVideo.previewLive, thumbnailData: Data(), avatarData: Data())
+        VideoWidgetView(video: LiveVideo.previewLive, thumbnailData: Data(), avatarData: Data(), videoType: .live)
             .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro Max"))
-        #if os(iOS)
+#if os(iOS)
             .previewContext(WidgetPreviewContext(family: .systemLarge))
-        #endif
+#endif
     }
 }

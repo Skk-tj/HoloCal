@@ -30,44 +30,28 @@ struct VideoAccessoryRectangularWidgetEntryView<MainContent: View, ErrorContent:
     }
 }
 
-struct LiveAccessoryRectangularWidgetEntryView: View {
-    var entry: VideoLiveWidgetProvider.Entry
+struct AccessoryRectangularEntryView: View {
+    var entry: SingleVideoWidgetEntry
+    let videoType: VideoType
     
     var body: some View {
         VideoAccessoryRectangularWidgetEntryView(entry: entry, mainView: { video in
-            LiveAccessoryRectangularWidgetView(live: video)
+            AccessoryRectangularWidgetView(video: video, videoType: videoType)
         }, errorTitle: {
-            Label("LIVE_WIDGET_TITLE_NON_BOLD", systemImage: "person.wave.2.fill")
-                .font(.headline)
-                .widgetAccentable()
-        })
-    }
-}
-
-struct UpcomingAccessoryRectangularWidgetEntryView: View {
-    var entry: VideoUpcomingWidgetProvider.Entry
-    
-    var body: some View {
-        VideoAccessoryRectangularWidgetEntryView(entry: entry, mainView: { video in
-            UpcomingAccessoryRectangularWidgetView(upcoming: video)
-        }, errorTitle: {
-            Label("UPCOMING_WIDGET_TITLE_NON_BOLD", systemImage: "clock")
-                .font(.headline)
-                .widgetAccentable()
-        })
-    }
-}
-
-struct PastAccessoryRectangularWidgetEntryView: View {
-    var entry: VideoPastWidgetProvider.Entry
-    
-    var body: some View {
-        VideoAccessoryRectangularWidgetEntryView(entry: entry, mainView: { video in
-            PastAccessoryRectangularWidgetView(past: video)
-        }, errorTitle: {
-            Label("PAST_WIDGET_TITLE_NON_BOLD", systemImage: "clock.arrow.circlepath")
-                .font(.headline)
-                .widgetAccentable()
+            switch videoType {
+            case .live:
+                Label("LIVE_WIDGET_TITLE_NON_BOLD", systemImage: "person.wave.2.fill")
+                    .font(.headline)
+                    .widgetAccentable()
+            case .upcoming:
+                Label("UPCOMING_WIDGET_TITLE_NON_BOLD", systemImage: "clock")
+                    .font(.headline)
+                    .widgetAccentable()
+            case .past:
+                Label("PAST_WIDGET_TITLE_NON_BOLD", systemImage: "clock.arrow.circlepath")
+                    .font(.headline)
+                    .widgetAccentable()
+            }
         })
     }
 }

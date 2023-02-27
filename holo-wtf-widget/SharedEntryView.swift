@@ -19,13 +19,13 @@ struct VideoLiveWidgetEntryView: View {
         case .systemSmall:
             SmallWidgetEntryView(entry: entry, videoType: .live)
         case .systemLarge:
-            LivePaneWidgetEntryView(entry: entry)
+            PaneWidgetEntryView(entry: entry, videoType: .live)
         case .accessoryRectangular:
-            LiveAccessoryRectangularWidgetEntryView(entry: entry)
+            AccessoryRectangularEntryView(entry: entry, videoType: .live)
         case .accessoryCorner:
-            LiveAccessoryCornerEntryView(entry: entry)
+            AccessoryCornerEntryView(entry: entry, videoType: .live)
         case .accessoryCircular:
-            LiveAccessoryCircularWidgetEntryView(entry: entry)
+            AccessoryCircularEntryView(entry: entry)
         default:
             EmptyView()
         }
@@ -43,13 +43,13 @@ struct VideoUpcomingWidgetEntryView: View {
         case .systemSmall:
             SmallWidgetEntryView(entry: entry, videoType: .upcoming)
         case .systemLarge:
-            UpcomingPaneWidgetEntryView(entry: entry)
+            PaneWidgetEntryView(entry: entry, videoType: .upcoming)
         case .accessoryRectangular:
-            UpcomingAccessoryRectangularWidgetEntryView(entry: entry)
+            AccessoryRectangularEntryView(entry: entry, videoType: .upcoming)
         case .accessoryCorner:
-            UpcomingAccessoryCornerEntryView(entry: entry)
+            AccessoryCornerEntryView(entry: entry, videoType: .upcoming)
         case .accessoryCircular:
-            UpcomingAccessoryCircularWidgetEntryView(entry: entry)
+            AccessoryCircularEntryView(entry: entry)
         default:
             EmptyView()
         }
@@ -67,13 +67,13 @@ struct VideoPastWidgetEntryView: View {
         case .systemSmall:
             SmallWidgetEntryView(entry: entry, videoType: .past)
         case .systemLarge:
-            PastPaneWidgetEntryView(entry: entry)
+            PaneWidgetEntryView(entry: entry, videoType: .past)
         case .accessoryRectangular:
-            PastAccessoryRectangularWidgetEntryView(entry: entry)
+            AccessoryRectangularEntryView(entry: entry, videoType: .past)
         case .accessoryCorner:
-            PastAccessoryCornerEntryView(entry: entry)
+            AccessoryCornerEntryView(entry: entry, videoType: .past)
         case .accessoryCircular:
-            PastAccessoryCircularWidgetEntryView(entry: entry)
+            AccessoryCircularEntryView(entry: entry)
         default:
             EmptyView()
         }

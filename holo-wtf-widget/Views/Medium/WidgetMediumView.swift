@@ -1,6 +1,6 @@
 //
-//  UpcomingWidgetMediumView.swift
-//  holo-wtf-widgetExtension
+//  WidgetMediumView.swift
+//  holo-wtf
 //
 //
 //
@@ -8,9 +8,10 @@
 import SwiftUI
 import WidgetKit
 
-struct UpcomingWidgetMediumView: View {
+struct WidgetMediumView: View {
     let video: LiveVideo
     let videoThumbnail: Data
+    let videoType: VideoType
     
     var body: some View {
         HStack {
@@ -35,25 +36,24 @@ struct UpcomingWidgetMediumView: View {
                     .foregroundColor(.secondary)
                     .font(.caption2)
                 
-                if let schedule = video.startScheduled {
-                    if let futureTimeString = getTimeIntervalStringFromReferenceDate(reference: schedule) {
-                        Text(futureTimeString)
-                            .foregroundColor(.secondary)
-                            .font(.caption2)
-                    }
-                } else {
-                    Text("UPCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN")
+                switch videoType {
+                case .live:
+                    Text("\(Image(systemName: "eye")) \(video.liveViewers ?? 0)")
                         .foregroundColor(.secondary)
                         .font(.caption2)
+                case .upcoming:
+                    UpcomingTimeView(liveSchedule: video.startScheduled, fontSize: .caption2, shortMode: true)
+                case .past:
+                    PastTimeView(endedAt: video.endedAt, fontSize: .caption2, shortMode: true)
                 }
             }
         }
     }
 }
 
-struct UpcomingWidgetMediumView_Previews: PreviewProvider {
+struct WidgetMediumView_Previews: PreviewProvider {
     static var previews: some View {
-        UpcomingWidgetMediumView(video: LiveVideo.previewLive, videoThumbnail: Data())
+        WidgetMediumView(video: LiveVideo.previewLive, videoThumbnail: Data(), videoType: .live)
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

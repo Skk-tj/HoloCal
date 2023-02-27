@@ -7,7 +7,7 @@
 
 import WidgetKit
 
-struct ChannelsLiveWidgetProvider: ChannelIntentTimelineProvider {
+struct ChannelsLiveWidgetProvider: ChannelsIntentTimelineProvider {
     typealias Entry = ChannelsEntry
     typealias Intent = LiveWidgetIntent
     

@@ -1,5 +1,5 @@
 //
-//  LiveAccessoryCircularView.swift
+//  AccessoryCircularView.swift
 //  holo-wtf
 //
 //
@@ -8,8 +8,8 @@
 import SwiftUI
 import WidgetKit
 
-struct LiveAccessoryCircularView: View {
-    let live: LiveVideo
+struct AccessoryCircularView: View {
+    let video: LiveVideo
     let avatarData: Data
     
     var body: some View {
@@ -17,7 +17,7 @@ struct LiveAccessoryCircularView: View {
             Image(uiImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .widgetLabel(live.channel.getTalentName())
+                .widgetLabel(video.channel.getTalentName())
         } else {
             Text("N/A")
         }
@@ -26,7 +26,7 @@ struct LiveAccessoryCircularView: View {
 
 struct LiveAccessoryCircularView_Previews: PreviewProvider {
     static var previews: some View {
-        LiveAccessoryCircularView(live: LiveVideo.previewLive, avatarData: try! Data(contentsOf: LiveVideo.previewLive.channel.photo!))
+        AccessoryCircularView(video: LiveVideo.previewLive, avatarData: try! Data(contentsOf: LiveVideo.previewLive.channel.photo!))
             .previewContext(WidgetPreviewContext(family: .accessoryCircular))
     }
 }

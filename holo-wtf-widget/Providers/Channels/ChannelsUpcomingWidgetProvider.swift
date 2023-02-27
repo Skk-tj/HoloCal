@@ -7,7 +7,7 @@
 
 import WidgetKit
 
-struct ChannelsUpcomingWidgetProvider: ChannelIntentTimelineProvider {
+struct ChannelsUpcomingWidgetProvider: ChannelsIntentTimelineProvider {
     typealias Entry = ChannelsEntry
     typealias Intent = UpcomingWidgetIntent
     

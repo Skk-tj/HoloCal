@@ -1,5 +1,5 @@
 //
-//  ChannelPastWidgetProvider.swift
+//  ChannelsPastWidgetProvider.swift
 //  holo-wtf-widgetExtension
 //
 //
@@ -7,7 +7,7 @@
 
 import WidgetKit
 
-struct ChannelPastWidgetProvider: ChannelIntentTimelineProvider {
+struct ChannelsPastWidgetProvider: ChannelsIntentTimelineProvider {
     typealias Entry = ChannelsEntry
     typealias Intent = PastWidgetIntent
     

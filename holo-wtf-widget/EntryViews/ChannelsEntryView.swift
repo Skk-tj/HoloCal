@@ -38,26 +38,22 @@ struct BaseChannelsEntryView<MainContent: View, TitleContent: View>: View {
     }
 }
 
-struct LiveChannelsEntryView: View {
-    var entry: ChannelsLiveWidgetProvider.Entry
+struct ChannelsEntryView: View {
+    var entry: ChannelsEntry
+    let videoType: VideoType
     
     var body: some View {
         BaseChannelsEntryView(entry: entry, channelsView: {
-            LiveChannelsView(channels: entry.channels, thumbnails: entry.thumbnails)
+            ChannelsView(channels: entry.channels, thumbnails: entry.thumbnails)
         }, titleView: {
-            LiveTitleView()
-        })
-    }
-}
-
-struct UpcomingChannelsEntryView: View {
-    var entry: ChannelsUpcomingWidgetProvider.Entry
-    
-    var body: some View {
-        BaseChannelsEntryView(entry: entry, channelsView: {
-            LiveChannelsView(channels: entry.channels, thumbnails: entry.thumbnails)
-        }, titleView: {
-            UpcomingTitleView()
+            switch videoType {
+            case .live:
+                LiveTitleView()
+            case .upcoming:
+                UpcomingTitleView()
+            case .past:
+                PastTitleView()
+            }
         })
     }
 }

@@ -252,6 +252,9 @@
 "UPCOMING_CHANNELS_WIDGET_DISPLAY_NAME" = "Upcoming Channels";
 "UPCOMING_CHANNELS_WIDGET_DESCRIPTION" = "Show a list of channels that are about to go live.";
 
+"PAST_CHANNELS_WIDGET_DISPLAY_NAME" = "Past Channels";
+"PAST_CHANNELS_WIDGET_DESCRIPTION" = "Show a list of channels that just streamed.";
+
 "PAST_WIDGET_DISPLAY_NAME" = "Past";
 "PAST_WIDGET_DESCRIPTION" = "Show an archived stream.";
 

@@ -20,7 +20,7 @@ struct ComplicationsWidgetBundle: WidgetBundle {
 
 struct complications_Previews: PreviewProvider {
     static var previews: some View {
-        LiveAccessoryRectangularWidgetEntryView(entry: SingleVideoWidgetEntry(date: Date(), status: .ok, video: LiveVideo.previewLive, avatarData: Data(), thumbnailData: Data()))
+        AccessoryRectangularEntryView(entry: SingleVideoWidgetEntry(date: Date(), status: .ok, video: LiveVideo.previewLive, avatarData: Data(), thumbnailData: Data()), videoType: .live)
             .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
     }
 }

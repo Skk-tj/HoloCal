@@ -46,12 +46,12 @@ extension MultipleVideoIntentTimelineProvider {
     }
 }
 
-protocol ChannelIntentTimelineProvider: IntentTimelineProvider where Entry == ChannelsEntry, Intent: AgencyIntent {
+protocol ChannelsIntentTimelineProvider: IntentTimelineProvider where Entry == ChannelsEntry, Intent: AgencyIntent {
     var videoType: VideoType { get }
     var sortBy: IntentSortBy { get }
 }
 
-extension ChannelIntentTimelineProvider {
+extension ChannelsIntentTimelineProvider {
     func placeholder(in context: Context) -> Entry {
         return Entry(date: .now, status: .ok, channels: [widgetSampleChannel], thumbnails: [Data()])
     }
