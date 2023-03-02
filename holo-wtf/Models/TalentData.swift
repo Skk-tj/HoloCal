@@ -543,7 +543,6 @@ enum TalentEnum: String, Codable {
     case suu = "UCeqIMtLuGc3YgwkhEaG8oDg"
     
     // MARK: - sinkirow
-    case matoi = "UCFrH3bfn7gDeV29wrHHM80g"
     case ribon = "UC6HjtF2rHZO8gAsX5FXF-Kg"
     case tsukimi = "UCTEZGNJDqv-isWSPRsEhnRA"
     case yukino = "UCoFEbNyIRUS26-hf2AucwFw"
@@ -1063,7 +1062,6 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .suu: Talent(id: TalentEnum.suu.rawValue, names: [.en: "Usuwa Suu", .ja: "稀羽すう"], inGeneration: Generation.kaleidscope),
     
     // MARK: - sinkirow
-    .matoi: Talent(id: TalentEnum.matoi.rawValue, names: [.en: "Inuki Matoi", .ja: "射貫まとい"], inGeneration: Generation.sinkirow),
     .ribon: Talent(id: TalentEnum.ribon.rawValue, names: [.en: "Himekuma Ribon", .ja: "姫熊りぼん"], inGeneration: Generation.sinkirow),
     .tsukimi: Talent(id: TalentEnum.tsukimi.rawValue, names: [.en: "Marumochi Tsukimi", .ja: "丸餅つきみ"], inGeneration: Generation.sinkirow),
     .yukino: Talent(id: TalentEnum.yukino.rawValue, names: [.en: "Nekono Yukino", .ja: "猫乃ユキノ"], inGeneration: Generation.sinkirow),
@@ -1225,7 +1223,7 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     // MARK: - Re:AcT
     .reAliz: GenerationGroup(id: .reAliz, names: [.en: "ReAliz", .ja: "ReAliz"], members: [.leona, .mia, .rose, .lisa]),
     .kaleidscope: GenerationGroup(id: .kaleidscope, names: [.en: "kaleidscope", .ja: "kaleidscope"], members: [.yuno, .hanabasami, .mari, .nono, .suu]),
-    .sinkirow: GenerationGroup(id: .sinkirow, names: [.en: "sinkirow", .ja: "sinkirow"], members: [.matoi, .ribon, .tsukimi, .yukino, .lie]),
+    .sinkirow: GenerationGroup(id: .sinkirow, names: [.en: "sinkirow", .ja: "sinkirow"], members: [.ribon, .tsukimi, .yukino, .lie]),
     .parfait: GenerationGroup(id: .parfait, names: [.en: "Parfait", .ja: "Parfait"], members: [.kanau, .hano, .aria]),
     .reMixx: GenerationGroup(id: .reMixx, names: [.en: "Re:Mixx", .ja: "Re:Mixx"], members: [.isana, .syuka, .creil, .nemu, .taran]),
     .reactOfficial: GenerationGroup(id: .reactOfficial, names: [.en: "Re:AcT Official Channels", .ja: "Re:AcT公式チャンネル"], members: [.reactOfficial]),
