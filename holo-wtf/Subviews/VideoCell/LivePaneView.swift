@@ -35,7 +35,7 @@ struct LivePaneView: View {
                     
                     Divider()
                     
-                    PaneViewButtonRowView(video: live)
+                    PaneViewButtonRowView(video: live, showCalendar: false)
                         .padding(.top)
                 }
                 .padding(.horizontal)

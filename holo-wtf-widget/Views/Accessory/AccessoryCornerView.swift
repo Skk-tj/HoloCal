@@ -2,7 +2,7 @@
 //  AccessoryCornerView.swift
 //  holo-wtf
 //
-// 
+//
 //
 
 import SwiftUI

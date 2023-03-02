@@ -26,6 +26,5 @@ struct PaneWidgetEntryView: View {
             }
             
         })
-        .frame(width: .infinity)
     }
 }

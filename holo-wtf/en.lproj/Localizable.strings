@@ -237,14 +237,20 @@
 "CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "Live";
 "CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "Show a current stream.";
 
-"MULTIPLE_CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "Multiple Live";
-"MULTIPLE_CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "Show two streams together.";
-
 "UPCOMING_WIDGET_DISPLAY_NAME" = "Upcoming";
 "UPCOMING_WIDGET_DESCRIPTION" = "Show an upcoming stream.";
 
+"PAST_WIDGET_DISPLAY_NAME" = "Past";
+"PAST_WIDGET_DESCRIPTION" = "Show an archived stream.";
+
+"MULTIPLE_CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" = "Multiple Live";
+"MULTIPLE_CURRENTLY_LIVE_WIDGET_DESCRIPTION" = "Show two streams together.";
+
 "MULTIPLE_UPCOMING_WIDGET_DISPLAY_NAME" = "Multiple Upcoming";
-"MULTIPLE_UPCOMING_WIDGET_DESCRIPTION" = "Show two streams together.";
+"MULTIPLE_UPCOMING_WIDGET_DESCRIPTION" = "Show two upcoming streams together.";
+
+"MULTIPLE_PAST_WIDGET_DISPLAY_NAME" = "Multiple Past";
+"MULTIPLE_PAST_WIDGET_DESCRIPTION" = "Show two past streams together.";
 
 "LIVE_CHANNELS_WIDGET_DISPLAY_NAME" = "Live Channels";
 "LIVE_CHANNELS_WIDGET_DESCRIPTION" = "Show a list of channels that are live.";
@@ -254,9 +260,6 @@
 
 "PAST_CHANNELS_WIDGET_DISPLAY_NAME" = "Past Channels";
 "PAST_CHANNELS_WIDGET_DESCRIPTION" = "Show a list of channels that just streamed.";
-
-"PAST_WIDGET_DISPLAY_NAME" = "Past";
-"PAST_WIDGET_DESCRIPTION" = "Show an archived stream.";
 
 // Song List View
 "SONG_LIST_VIEW_NAVIGATION_TITLE" = "Songs";

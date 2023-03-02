@@ -35,7 +35,7 @@ struct PastPaneView: View {
                     
                     Divider()
                     
-                    PaneViewButtonRowView(video: past)
+                    PaneViewButtonRowView(video: past, showCalendar: false)
                         .padding(.top)
                 }
                 .padding(.horizontal)

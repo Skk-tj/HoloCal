@@ -2,7 +2,7 @@
 //  SmallWidgetView.swift
 //  holo-wtf
 //
-// 
+//
 //
 
 import SwiftUI
@@ -20,7 +20,6 @@ struct SmallWidgetView: View {
             Text(video.title)
                 .font(.caption)
                 .lineLimit(2, reservesSpace: true)
-                .fixedSize(horizontal: false, vertical: true)
             Text(video.channel.getTalentName())
                 .lineLimit(1)
                 .font(.caption)

@@ -38,7 +38,7 @@ struct UpcomingPaneView: View {
                     
                     Divider()
                     
-                    PaneViewButtonRowView(video: upcoming)
+                    PaneViewButtonRowView(video: upcoming, showCalendar: true)
                         .padding(.top)
                 }
                 .padding(.horizontal)
