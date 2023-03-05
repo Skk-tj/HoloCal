@@ -17,12 +17,12 @@ struct ConcertView: View {
                     AsyncImage(url: imageURL, content: { image in
                         image
                             .resizable()
-                            .aspectRatio(1.78, contentMode: .fit)
+                            .aspectRatio(contentMode: .fit)
                     }, placeholder: {
                         ProgressView()
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .aspectRatio(1.78, contentMode: .fit)
-                            .background(Color.secondary)
+                            .frame(maxWidth: .infinity)
+                            .aspectRatio(contentMode: .fit)
+                            // .background(Color.secondary)
                     })
                 }
                 else {
@@ -93,6 +93,10 @@ struct ConcertView: View {
                             }
                             .padding(.bottom, 1)
                         }
+                        
+                        Text("CONCERT_VIEW_DISCLAIMER")
+                            .foregroundColor(.secondary)
+                            .font(.caption2)
                     }
                 }
                 .padding()

@@ -151,6 +151,7 @@
 "CONCERT_VIEW_YOUTUBE_LINK" = "YouTube Link";
 "CONCERT_VIEW_PURCHASE_TICKETS" = "Purchase Tickets";
 "CONCERT_VIEW_OFFICIAL_LINK" = "Official Site";
+"CONCERT_VIEW_DISCLAIMER" = "We regret that concert data may be incorrect or incomplete. We are continuing to improve our data.";
 
 // BlockJPYPriceView
 "BLOCK_JPY_PRICE_TICKET_PRICE" = "Ticket Price";
