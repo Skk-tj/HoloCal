@@ -24,10 +24,6 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     @ViewBuilder let dataStatusView: () -> DataStatusContent
     
     var body: some View {
-        if !searchText.isEmpty {
-            currentPresentationMode = .searching
-        }
-        
         return List {
             if let nextDSTTransition = TimeZone.current.nextDaylightSavingTimeTransition {
                 if let days = Calendar.current.dateComponents([.day], from: Date(), to: nextDSTTransition).day {
@@ -39,17 +35,19 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
                 }
             }
             
-            switch currentPresentationMode {
-            case .normal:                
-                SectionedForEachView(cellView: { live in
-                    singleVideoView(live)
-                })
-            case .searching:
+            if searchText.isEmpty {
+                switch currentPresentationMode {
+                case .normal:
+                    SectionedForEachView(cellView: { live in
+                        singleVideoView(live)
+                    })
+                case .sorting:
+                    GenerationFilteredForEachVideoView(cellView: { live in
+                        singleVideoView(live)
+                    })
+                }
+            } else {
                 SearchSectionView(searchText: searchText, cellView: { live in
-                    singleVideoView(live)
-                })
-            case .sorting:
-                GenerationFilteredForEachVideoView(cellView: { live in
                     singleVideoView(live)
                 })
             }
