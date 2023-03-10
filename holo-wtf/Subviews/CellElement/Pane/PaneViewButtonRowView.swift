@@ -58,9 +58,9 @@ struct PaneViewButtonRowView: View {
                     Text("CALENDAR_ACCESS_MESSAGE")
                 })
                 .hoverEffect()
+                
+                Spacer()
             }
-            
-            Spacer()
             
             let isFavourited = favourited.contains(where: {$0 == video.channel.id})
             FavouriteButton(video: video) {

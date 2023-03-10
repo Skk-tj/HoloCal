@@ -13,7 +13,6 @@ enum SongDataStatus {
 }
 
 
-@MainActor
 class SongsViewModel: ObservableObject {
     let songsRaw: [SongInStream]
     
@@ -26,6 +25,7 @@ class SongsViewModel: ObservableObject {
         self.songDataStatus = .working
     }
     
+    @MainActor
     func updateAllSongsWithMusicKit() async {
         await withTaskGroup(of: SongInStream.self) { group in
             for song in self.songsRaw {
