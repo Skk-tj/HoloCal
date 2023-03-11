@@ -12,7 +12,7 @@ struct VideoThumbnailView: View {
     
     var body: some View {
         if let ytVideoKey = ytVideoKey {
-            AsyncImage(url: URL(string: "https://i.ytimg.com/vi/\(ytVideoKey)/maxresdefault.jpg"), content: { image in
+            AsyncImage(url: URL(string: "https://i.ytimg.com/vi/\(ytVideoKey)/hq720.jpg"), content: { image in
                 image
                     .resizable()
                     .aspectRatio(1.78, contentMode: .fit)
