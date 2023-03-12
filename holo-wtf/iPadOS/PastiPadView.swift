@@ -42,7 +42,7 @@ struct PastiPadView: View {
             await past.getVideoForUI()
             currentPresentationMode = .normal
         }
-        .navigationTitle(agencyEnumToAgency[agency]!.localizedName)
+        .navigationTitle(agency.getAgency().localizedName)
         .toolbar {
             ToolbarItemGroup(placement: .secondaryAction) {
                 PastViewToolbar(currentPresentationMode: $currentPresentationMode)

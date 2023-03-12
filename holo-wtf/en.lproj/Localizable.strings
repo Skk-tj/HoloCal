@@ -1,8 +1,6 @@
 /* 
   Localizable.strings
   holo-wtf
-
- 
   
 */
 // Root View
@@ -11,7 +9,7 @@
 "ROOT_VIEW_UPCOMING" = "Upcoming";
 "ROOT_VIEW_PAST" = "Past";
 "ROOT_VIEW_SETTINGS" = "Settings";
-"ROOT_VIEW_FAVOURITES" = "My Favourites";
+"ROOT_VIEW_FAVOURITES" = "My Favorites";
 "ROOT_VIEW_CONCERTS" = "Concerts";
 
 // Settings
@@ -29,6 +27,7 @@
 
 "SETTINGS_CHANNEL_MANAGEMENT_HEADER" = "Channels";
 "SETTINGS_MANAGE_FAVOURITE" = "Manage Channel Favorites";
+"SETTINGS_MANAGE_FAVOURITE_FAVOURITE_SECTION" = "Favorites";
 "SETTINGS_MANAGE_FAVOURITE_VIEW_TITLE" = "Manage Favorites";
 "SETTINGS_MANAGE_FAVOURITE_RESET" = "Reset Favorites";
 

@@ -1,8 +1,6 @@
 /* 
   Localizable.strings
   holo-wtf
-
- 
   
 */
 // Root View
@@ -29,7 +27,8 @@
 
 "SETTINGS_CHANNEL_MANAGEMENT_HEADER" = "チャンネル";
 "SETTINGS_MANAGE_FAVOURITE" = "お気に入りのチャンネル";
-"SETTINGS_MANAGE_FAVOURITE_VIEW_TITLE" = "お気に入りのチャンネル";
+"SETTINGS_MANAGE_FAVOURITE_FAVOURITE_SECTION" = "お気に入り";
+"SETTINGS_MANAGE_FAVOURITE_VIEW_TITLE" = "お気に入り";
 "SETTINGS_MANAGE_FAVOURITE_RESET" = "お気に入りをリセット";
 
 "SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_TEXT" = "お気に入りをリセットします、よろしいですか？";

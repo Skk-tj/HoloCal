@@ -59,7 +59,7 @@ struct ManageFavoriteView: View {
             keyStore.synchronize()
         }
         .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
-        .navigationTitle("SETTINGS_MANAGE_FAVOURITE_VIEW_TITLE")
+        .navigationTitle(agency.getAgency().localizedName)
     }
     
     func getSearchResult(_ searchText: String) -> [Talent] {
