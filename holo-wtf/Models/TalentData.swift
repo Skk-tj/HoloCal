@@ -509,7 +509,6 @@ enum TalentEnum: String, Codable {
     case scarle = "UCFgXWZOUZA2oYHNr6qDmsTQ" // Scarle Yonaguni
     
     // MARK: - EN Seventh Wave: XSOLEIL
-    case zaion = "UCIairB9UMDvqSKfMdv1jmjg"
     case doppio = "UCy91xBlY_Brh3bnHxKtjrrg"
     case meloco = "UChKXd7oqD18qiIYBoRIHTlw"
     case hex = "UCz_ZRw6ak4Foy8zZy0kEprQ"
@@ -797,7 +796,7 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
 
     // MARK: - NIJISANJI SEEDs Second Generation First Wave
     .kanda: Talent(id: TalentEnum.kanda.rawValue, names: [.en: "Kanda Shoichi", .ja: "神田笑一"], inGeneration: Generation.seeds2ndGen1stWave),
-    .asuka: Talent(id: TalentEnum.asuka.rawValue, names: [.en: " Asuka Hina", .ja: "飛鳥ひな"], inGeneration: Generation.seeds2ndGen1stWave),
+    .asuka: Talent(id: TalentEnum.asuka.rawValue, names: [.en: "Asuka Hina", .ja: "飛鳥ひな"], inGeneration: Generation.seeds2ndGen1stWave),
     .harusaki: Talent(id: TalentEnum.harusaki.rawValue, names: [.en: "Harusaki Air", .ja: "春崎エアル"], inGeneration: Generation.seeds2ndGen1stWave),
     .amemori: Talent(id: TalentEnum.amemori.rawValue, names: [.en: "Amemori Sayo", .ja: "雨森小夜"], inGeneration: Generation.seeds2ndGen1stWave),
     .takamiya: Talent(id: TalentEnum.takamiya.rawValue, names: [.en: "Takamiya Rion", .ja: "鷹宮リオン"], inGeneration: Generation.seeds2ndGen1stWave),
@@ -1028,7 +1027,6 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .scarle: Talent(id: TalentEnum.scarle.rawValue, names: [.en: "Scarle Yonaguni", .ja: "スカーレ ヨナグニ"], inGeneration: Generation.en6thWave),
     
     // MARK: - EN Seventh Wave: XSOLEIL
-    .zaion: Talent(id: TalentEnum.zaion.rawValue, names: [.en: "Zaion Lanza", .ja: "ランザー 罪恩"], inGeneration: Generation.en7thWave),
     .doppio: Talent(id: TalentEnum.doppio.rawValue, names: [.en: "Doppio Dropscythe", .ja: "ドッピオ ドロップサイト"], inGeneration: Generation.en7thWave),
     .meloco: Talent(id: TalentEnum.meloco.rawValue, names: [.en: "Meloco Kyoran", .ja: "狂蘭 メロコ"], inGeneration: Generation.en7thWave),
     .hex: Talent(id: TalentEnum.hex.rawValue, names: [.en: "Hex Haywire", .ja: "ヘックス ヘイワイヤー"], inGeneration: Generation.en7thWave),
@@ -1217,7 +1215,7 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .en4thWave: GenerationGroup(id: .en4thWave, names: [.en: "EN 4th Wave: Luxiem", .ja: "EN 第4弾「Luxiem」"], members: [.luca, .shu, .ike, .mysta, .vox]),
     .en5thWave: GenerationGroup(id: .en5thWave, names: [.en: "EN 5th Wave: Noctyx", .ja: "EN 第5弾「Noctyx」"], members: [.sonny, .uki, .alban, .fulgur, .yugo]),
     .en6thWave: GenerationGroup(id: .en6thWave, names: [.en: "EN 6th Wave: ILUNA", .ja: "EN 第6弾「ILUNA」"], members: [.kyo, .maria, .aster, .aia, .ren, .scarle]),
-    .en7thWave: GenerationGroup(id: .en7thWave, names: [.en: "EN 7th Wave: XSOLEIL", .ja: "EN 第7弾「XSOLEIL」"], members: [.zaion, .doppio, .meloco ,.hex, .kotoka, .ver]),
+    .en7thWave: GenerationGroup(id: .en7thWave, names: [.en: "EN 7th Wave: XSOLEIL", .ja: "EN 第7弾「XSOLEIL」"], members: [.doppio, .meloco ,.hex, .kotoka, .ver]),
     .nijisanjiOfficial: GenerationGroup(id: .nijisanjiOfficial, names: [.en: "Nijisanji Official Channels", .ja: "にじさんじ公式チャンネル"], members: [.nijisanji, .nijisanjiID, .nijisanjiEN, .virtual, .voltacation, .luxiem, .rofmao, .nornis, .chronoir]),
     
     // MARK: - Re:AcT
