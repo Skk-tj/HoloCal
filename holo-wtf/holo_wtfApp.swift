@@ -70,39 +70,27 @@ struct holo_wtfApp: App {
                 // iOS
                 TabView {
                     NavigationStack {
-                        AgencySelectionView(viewTitle: "ROOT_VIEW_LIVE", targetView: { agency in
+                        AgencyNavigationView(viewTitle: "ROOT_VIEW_LIVE") { agency in
                             LiveView(for: agency)
-                        }, extraLinks: {
-                            NavigationLink(destination: LiveFavouritesView(), label: {
-                                Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
-                            })
-                        })
+                        }
                     }
                     .tabItem {
                         Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
                     }
                     
                     NavigationStack {
-                        AgencySelectionView(viewTitle: "ROOT_VIEW_UPCOMING", targetView: { agency in
+                        AgencyNavigationView(viewTitle: "ROOT_VIEW_UPCOMING") { agency in
                             UpcomingView(for: agency)
-                        }, extraLinks: {
-                            NavigationLink(destination: UpcomingFavouritesView(), label: {
-                                Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
-                            })
-                        })
+                        }
                     }
                     .tabItem {
                         Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
                     }
                     
                     NavigationStack {
-                        AgencySelectionView(viewTitle: "ROOT_VIEW_PAST", targetView: { agency in
+                        AgencyNavigationView(viewTitle: "ROOT_VIEW_PAST") { agency in
                             PastView(for: agency)
-                        }, extraLinks: {
-                            NavigationLink(destination: PastFavouritesView(), label: {
-                                Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
-                            })
-                        })
+                        }
                     }
                     .tabItem {
                         Label("ROOT_VIEW_PAST", systemImage: "clock.arrow.circlepath")
@@ -115,10 +103,12 @@ struct holo_wtfApp: App {
                         Label("ROOT_VIEW_CONCERTS", systemImage: "music.mic")
                     }
                     
-                    SettingsStackView()
-                        .tabItem {
-                            Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
-                        }
+                    NavigationStack {
+                        SettingsFormView()
+                    }
+                    .tabItem {
+                        Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
+                    }
                 }
             }
         }

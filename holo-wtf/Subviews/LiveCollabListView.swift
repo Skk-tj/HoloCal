@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LiveCollabListStackView: View {
+struct LiveCollabListView: View {
     @Environment(\.dismiss) var dismiss
     let mentions: [Channel]
     
@@ -21,7 +21,7 @@ struct LiveCollabListStackView: View {
                         VStack(alignment: .leading) {
                             Text(channel.getTalentName())
                             
-                            Text(channel.name)
+                            Text(channel.getAltTalentName())
                                 .foregroundColor(.secondary)
                                 .font(.caption)
                             
@@ -48,6 +48,6 @@ struct LiveCollabListStackView: View {
 
 struct LiveCollabListStackView_Previews: PreviewProvider {
     static var previews: some View {
-        LiveCollabListStackView(mentions: [Channel.testChannel, Channel.testChannel2])
+        LiveCollabListView(mentions: [Channel.testChannel, Channel.testChannel2])
     }
 }

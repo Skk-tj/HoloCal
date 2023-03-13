@@ -9,14 +9,14 @@ import SwiftUI
 import Collections
 
 enum Views: Hashable {
-    case live(iPadAgencies)
-    case upcoming(iPadAgencies)
-    case past(iPadAgencies)
+    case live(ViewAgency)
+    case upcoming(ViewAgency)
+    case past(ViewAgency)
     case concerts
     case settings
 }
 
-enum iPadAgencies: CaseIterable, Identifiable {
+enum ViewAgency: CaseIterable, Identifiable {
     var id: Self {
         return self
     }
@@ -29,7 +29,7 @@ enum iPadAgencies: CaseIterable, Identifiable {
     case favourites
 }
 
-let ipadAgenciesToAgency: OrderedDictionary<iPadAgencies, AgencyEnum> = [
+let viewAgencyToAgency: OrderedDictionary<ViewAgency, AgencyEnum> = [
     .hololive: .hololive,
     .nijisanji: .nijisanji,
     .react: .react,
@@ -39,52 +39,51 @@ let ipadAgenciesToAgency: OrderedDictionary<iPadAgencies, AgencyEnum> = [
 
 struct iPadSplitView: View {
     @State var viewSelection: Views? = Views.live(.hololive)
-    @State var columnVis: NavigationSplitViewVisibility = .all
     
     var body: some View {
-        NavigationSplitView(columnVisibility: $columnVis) {
+        NavigationSplitView {
             List(selection: $viewSelection) {
-                Section(content: {
-                    ForEach(ipadAgenciesToAgency.keys) { agency in
+                Section {
+                    ForEach(viewAgencyToAgency.keys) { agency in
                         NavigationLink(value: Views.live(agency)) {
-                            SingleAgencyItemView(agency: ipadAgenciesToAgency[agency]!)
+                            SingleAgencyItemView(agency: viewAgencyToAgency[agency]!)
                         }
                     }
-                    
+
                     NavigationLink(value: Views.live(.favourites)) {
                         Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
                     }
-                }, header: {
+                } header: {
                     Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
-                })
-                
-                Section(content: {
-                    ForEach(ipadAgenciesToAgency.keys) { agency in
+                }
+
+                Section {
+                    ForEach(viewAgencyToAgency.keys) { agency in
                         NavigationLink(value: Views.upcoming(agency)) {
-                            SingleAgencyItemView(agency: ipadAgenciesToAgency[agency]!)
+                            SingleAgencyItemView(agency: viewAgencyToAgency[agency]!)
                         }
                     }
-                    
+
                     NavigationLink(value: Views.upcoming(.favourites)) {
                         Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
                     }
-                }, header: {
+                } header: {
                     Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
-                })
-                
-                Section(content: {
-                    ForEach(ipadAgenciesToAgency.keys) { agency in
+                }
+
+                Section {
+                    ForEach(viewAgencyToAgency.keys) { agency in
                         NavigationLink(value: Views.past(agency)) {
-                            SingleAgencyItemView(agency: ipadAgenciesToAgency[agency]!)
+                            SingleAgencyItemView(agency: viewAgencyToAgency[agency]!)
                         }
                     }
-                    
+
                     NavigationLink(value: Views.past(.favourites)) {
                         Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
                     }
-                }, header: {
+                } header: {
                     Label("ROOT_VIEW_PAST", systemImage: "clock.arrow.circlepath")
-                })
+                }
                 
                 NavigationLink(value: Views.concerts) {
                     Label("ROOT_VIEW_CONCERTS", systemImage: "music.mic")
@@ -152,7 +151,7 @@ struct iPadSplitView: View {
                     }
                 case .settings:
                     NavigationStack {
-                        SettingsiPadView()
+                        SettingsFormView()
                     }
                 }
             }

@@ -20,7 +20,7 @@ struct AgencySelectionView<Content: View, ExtraContent: View, TopContent: View>:
         self.topContent = { EmptyView() }
     }
     
-    init(viewTitle: String? = nil, targetView: @escaping (_ agency: AgencyEnum) -> Content, topContent: @escaping () -> TopContent) where ExtraContent == EmptyView {
+    init(viewTitle: String? = nil, targetView: @escaping (_ agency: AgencyEnum) -> Content, @ViewBuilder topContent: @escaping () -> TopContent) where ExtraContent == EmptyView {
         self.viewTitle = viewTitle
         self.targetView = targetView
         self.topContent = topContent

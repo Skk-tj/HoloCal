@@ -14,12 +14,16 @@ struct ManageFavoriteAgencySelectionView: View {
         AgencySelectionView(viewTitle: "SETTINGS_MANAGE_FAVOURITE_VIEW_TITLE", targetView: { agency in
             ManageFavoriteView(agency: agency)
         }, topContent: {
-            Section("SETTINGS_MANAGE_FAVOURITE_FAVOURITE_SECTION") {
-                ForEach(favourited, id: \.self) { talent in
-                    if let talentEnum = TalentEnum(rawValue: talent) {
-                        SettingsTalentStarView(talent: talentEnumToTalent[talentEnum]!, favourited: $favourited)
+            if !favourited.isEmpty {
+                Section("SETTINGS_MANAGE_FAVOURITE_FAVOURITE_SECTION") {
+                    ForEach(favourited, id: \.self) { talent in
+                        if let talentEnum = TalentEnum(rawValue: talent) {
+                            SettingsTalentStarView(talent: talentEnumToTalent[talentEnum]!, favourited: $favourited)
+                        }
                     }
                 }
+            } else {
+                EmptyView()
             }
         })
     }

@@ -24,7 +24,7 @@ struct PaneViewChannelInfoView: View {
                         isShowingCollabSheet.toggle()
                     }
                     .sheet(isPresented: $isShowingCollabSheet, content: {
-                        LiveCollabListStackView(mentions: mentions)
+                        LiveCollabListView(mentions: mentions)
                             .presentationDetents([.medium, .large])
                     })
             } else {
