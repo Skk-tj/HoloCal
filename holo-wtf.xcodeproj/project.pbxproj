@@ -114,6 +114,10 @@
 		F01DAA86299641E300052514 /* ConcertWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA85299641E300052514 /* ConcertWatchView.swift */; };
 		F01E95B3286FB4B900CDF0F9 /* iPadLazyGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01E95B2286FB4B900CDF0F9 /* iPadLazyGridView.swift */; };
 		F01F2EFA29A349D900DA8367 /* BlockVideoTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01F2EF929A349D900DA8367 /* BlockVideoTypeView.swift */; };
+		F020E8CB29C5B28300C2345D /* AccessoryInlineWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020E8CA29C5B28300C2345D /* AccessoryInlineWidgetView.swift */; };
+		F020E8CC29C5B28300C2345D /* AccessoryInlineWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020E8CA29C5B28300C2345D /* AccessoryInlineWidgetView.swift */; };
+		F020E8CE29C5B53100C2345D /* AccessoryInlineEntryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020E8CD29C5B53100C2345D /* AccessoryInlineEntryViews.swift */; };
+		F020E8CF29C5B53100C2345D /* AccessoryInlineEntryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F020E8CD29C5B53100C2345D /* AccessoryInlineEntryViews.swift */; };
 		F022119C292B6CF5009EC2CC /* SingleAgencyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022119B292B6CF5009EC2CC /* SingleAgencyItemView.swift */; };
 		F022119D292B6CF5009EC2CC /* SingleAgencyItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022119B292B6CF5009EC2CC /* SingleAgencyItemView.swift */; };
 		F02211A1292C9CF7009EC2CC /* ForEachVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A0292C9CF7009EC2CC /* ForEachVideoView.swift */; };
@@ -470,6 +474,8 @@
 		F01F2EF929A349D900DA8367 /* BlockVideoTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockVideoTypeView.swift; sourceTree = "<group>"; };
 		F0204DB827E91A920083750F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F0204DB927E925220083750F /* PRIVACY-POLICY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "PRIVACY-POLICY.md"; sourceTree = "<group>"; };
+		F020E8CA29C5B28300C2345D /* AccessoryInlineWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryInlineWidgetView.swift; sourceTree = "<group>"; };
+		F020E8CD29C5B53100C2345D /* AccessoryInlineEntryViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryInlineEntryViews.swift; sourceTree = "<group>"; };
 		F022119B292B6CF5009EC2CC /* SingleAgencyItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAgencyItemView.swift; sourceTree = "<group>"; };
 		F02211A0292C9CF7009EC2CC /* ForEachVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForEachVideoView.swift; sourceTree = "<group>"; };
 		F02211A2292C9FF8009EC2CC /* ViewerCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewerCounterView.swift; sourceTree = "<group>"; };
@@ -691,6 +697,7 @@
 				F0186A2329AC779D00339178 /* AccessoryRectangularEntryViews.swift */,
 				F0186A2629AC77DC00339178 /* AccessoryCircularEntryViews.swift */,
 				F0186A2E29AC7CA900339178 /* AccessoryCornerEntryViews.swift */,
+				F020E8CD29C5B53100C2345D /* AccessoryInlineEntryViews.swift */,
 				F0186A2929AC793100339178 /* MultipleEntryViews.swift */,
 				F0186A2C29AC795400339178 /* ChannelsEntryView.swift */,
 			);
@@ -793,6 +800,7 @@
 				F01241AE2935EA51007C8FE9 /* AccessoryCircularView.swift */,
 				F0186A3A29AC84BA00339178 /* AccessoryCornerView.swift */,
 				F0186A3429AC80D100339178 /* AccessoryRectangularWidgetView.swift */,
+				F020E8CA29C5B28300C2345D /* AccessoryInlineWidgetView.swift */,
 			);
 			path = Accessory;
 			sourceTree = "<group>";
@@ -1455,6 +1463,7 @@
 				F09D53C029337378003C4F80 /* Intents.intentdefinition in Sources */,
 				F01DAA762990F30400052514 /* ChannelNameView.swift in Sources */,
 				F06D28FA28D83AD3007D06FB /* UpcomingTimeView.swift in Sources */,
+				F020E8CC29C5B28300C2345D /* AccessoryInlineWidgetView.swift in Sources */,
 				F01241A12935E2BA007C8FE9 /* ViewerCounterView.swift in Sources */,
 				F01DAA66299088C800052514 /* LiveAvatarView.swift in Sources */,
 				F01241A82935E33E007C8FE9 /* BlockUpcomingTimeView.swift in Sources */,
@@ -1466,6 +1475,7 @@
 				F0186A3029AC7CA900339178 /* AccessoryCornerEntryViews.swift in Sources */,
 				F01869F329AC46F400339178 /* PastTimeView.swift in Sources */,
 				F0186A2829AC77DC00339178 /* AccessoryCircularEntryViews.swift in Sources */,
+				F020E8CF29C5B53100C2345D /* AccessoryInlineEntryViews.swift in Sources */,
 				F06D28E228D839E4007D06FB /* MultipleVideoWidgetEntry.swift in Sources */,
 				F06D28EC28D83A2D007D06FB /* SharedUtil.swift in Sources */,
 				F025204728EEA5FC00976972 /* Common.swift in Sources */,
@@ -1527,6 +1537,7 @@
 				F0186A1729AC710C00339178 /* SmallWidgetAvatarView.swift in Sources */,
 				F01869FA29AC59BB00339178 /* LiveTitleView.swift in Sources */,
 				F05DFA362853CA7800D62D19 /* BaseVideoEntryView.swift in Sources */,
+				F020E8CB29C5B28300C2345D /* AccessoryInlineWidgetView.swift in Sources */,
 				F0E06D0A29322C2100BF6812 /* ViewerCounterView.swift in Sources */,
 				F0E45D1928F39AF90091474A /* Agency.swift in Sources */,
 				F09664E129A34D7C005F37C0 /* BlockVideoInfoView.swift in Sources */,
@@ -1541,6 +1552,7 @@
 				F06D28DD28D838C7007D06FB /* SharedWidgets.swift in Sources */,
 				F028308828545B1200CBFCE7 /* SingleVideoWidgetEntry.swift in Sources */,
 				F0E06D162932376300BF6812 /* Modes.swift in Sources */,
+				F020E8CE29C5B53100C2345D /* AccessoryInlineEntryViews.swift in Sources */,
 				F06D28EB28D83A2D007D06FB /* SharedUtil.swift in Sources */,
 				F0186A2729AC77DC00339178 /* AccessoryCircularEntryViews.swift in Sources */,
 				F09D53A329336782003C4F80 /* MultipleVideoUpcomingWidgetProvider.swift in Sources */,
@@ -1849,7 +1861,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 192;
+				CURRENT_PROJECT_VERSION = 193;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = complications/Info.plist;
@@ -1861,7 +1873,7 @@
 					"@executable_path/../../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 2.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.watchkitapp.complications";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1880,7 +1892,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 192;
+				CURRENT_PROJECT_VERSION = 193;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = complications/Info.plist;
@@ -1892,7 +1904,7 @@
 					"@executable_path/../../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 2.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.watchkitapp.complications";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -1911,7 +1923,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf-widgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 192;
+				CURRENT_PROJECT_VERSION = 193;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "holo-wtf-widget/Info.plist";
@@ -1923,7 +1935,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 2.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1940,7 +1952,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf-widgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 192;
+				CURRENT_PROJECT_VERSION = 193;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "holo-wtf-widget/Info.plist";
@@ -1952,7 +1964,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 2.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -2090,7 +2102,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf/holo-wtf.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 192;
+				CURRENT_PROJECT_VERSION = 193;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -2111,7 +2123,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 2.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf";
 				PRODUCT_NAME = HoloCal;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -2131,7 +2143,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf/holo-wtf.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 192;
+				CURRENT_PROJECT_VERSION = 193;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -2152,7 +2164,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 2.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf";
 				PRODUCT_NAME = HoloCal;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -2174,7 +2186,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf-watch Watch App/holo-wtf-watch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 192;
+				CURRENT_PROJECT_VERSION = 193;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf-watch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -2188,7 +2200,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 2.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -2210,7 +2222,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf-watch Watch App/holo-wtf-watch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 192;
+				CURRENT_PROJECT_VERSION = 193;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf-watch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -2224,7 +2236,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 2.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.holo-wtf.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;

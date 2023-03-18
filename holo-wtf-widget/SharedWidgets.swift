@@ -13,14 +13,14 @@ struct SingleLiveWidget: Widget {
     
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: LiveWidgetIntent.self, provider: VideoLiveWidgetProvider()) { entry in
-            VideoLiveWidgetEntryView(entry: entry)
+            VideoWidgetEntryView(entry: entry, videoType: .live)
         }
         .configurationDisplayName("CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
         .description("CURRENTLY_LIVE_WIDGET_DESCRIPTION")
 #if os(watchOS)
-        .supportedFamilies([.accessoryRectangular, .accessoryCorner])
+        .supportedFamilies([.accessoryRectangular, .accessoryCorner, .accessoryInline])
 #else
-        .supportedFamilies([.systemSmall, .systemLarge, .accessoryRectangular, .accessoryCircular])
+        .supportedFamilies([.systemSmall, .systemLarge, .accessoryRectangular, .accessoryCircular, .accessoryInline])
 #endif
     }
 }
@@ -30,14 +30,14 @@ struct SingleUpcomingWidget: Widget {
     
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: UpcomingWidgetIntent.self, provider: VideoUpcomingWidgetProvider()) { entry in
-            VideoUpcomingWidgetEntryView(entry: entry)
+            VideoWidgetEntryView(entry: entry, videoType: .upcoming)
         }
         .configurationDisplayName("UPCOMING_WIDGET_DISPLAY_NAME")
         .description("UPCOMING_WIDGET_DESCRIPTION")
 #if os(watchOS)
-        .supportedFamilies([.accessoryRectangular, .accessoryCorner])
+        .supportedFamilies([.accessoryRectangular, .accessoryCorner, .accessoryInline])
 #else
-        .supportedFamilies([.systemSmall, .systemLarge, .accessoryRectangular, .accessoryCircular])
+        .supportedFamilies([.systemSmall, .systemLarge, .accessoryRectangular, .accessoryCircular, .accessoryInline])
 #endif
     }
 }
@@ -47,14 +47,14 @@ struct SinglePastWidget: Widget {
     
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: PastWidgetIntent.self, provider: VideoPastWidgetProvider()) { entry in
-            VideoPastWidgetEntryView(entry: entry)
+            VideoWidgetEntryView(entry: entry, videoType: .past)
         }
         .configurationDisplayName("PAST_WIDGET_DISPLAY_NAME")
         .description("PAST_WIDGET_DESCRIPTION")
 #if os(watchOS)
-        .supportedFamilies([.accessoryRectangular, .accessoryCorner])
+        .supportedFamilies([.accessoryRectangular, .accessoryCorner, .accessoryInline])
 #else
-        .supportedFamilies([.systemSmall, .systemLarge, .accessoryRectangular, .accessoryCircular])
+        .supportedFamilies([.systemSmall, .systemLarge, .accessoryRectangular, .accessoryCircular, .accessoryInline])
 #endif
     }
 }

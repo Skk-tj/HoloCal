@@ -8,8 +8,9 @@
 import SwiftUI
 import WidgetKit
 
-struct VideoLiveWidgetEntryView: View {
+struct VideoWidgetEntryView: View {
     var entry: VideoLiveWidgetProvider.Entry
+    var videoType: VideoType
     
     @Environment(\.widgetFamily) var family
     
@@ -17,63 +18,17 @@ struct VideoLiveWidgetEntryView: View {
     var body: some View {
         switch family {
         case .systemSmall:
-            SmallWidgetEntryView(entry: entry, videoType: .live)
+            SmallWidgetEntryView(entry: entry, videoType: videoType)
         case .systemLarge:
-            PaneWidgetEntryView(entry: entry, videoType: .live)
+            PaneWidgetEntryView(entry: entry, videoType: videoType)
         case .accessoryRectangular:
-            AccessoryRectangularEntryView(entry: entry, videoType: .live)
+            AccessoryRectangularEntryView(entry: entry, videoType: videoType)
         case .accessoryCorner:
-            AccessoryCornerEntryView(entry: entry, videoType: .live)
+            AccessoryCornerEntryView(entry: entry, videoType: videoType)
         case .accessoryCircular:
             AccessoryCircularEntryView(entry: entry)
-        default:
-            EmptyView()
-        }
-    }
-}
-
-struct VideoUpcomingWidgetEntryView: View {
-    var entry: VideoUpcomingWidgetProvider.Entry
-    
-    @Environment(\.widgetFamily) var family
-    
-    @ViewBuilder
-    var body: some View {
-        switch family {
-        case .systemSmall:
-            SmallWidgetEntryView(entry: entry, videoType: .upcoming)
-        case .systemLarge:
-            PaneWidgetEntryView(entry: entry, videoType: .upcoming)
-        case .accessoryRectangular:
-            AccessoryRectangularEntryView(entry: entry, videoType: .upcoming)
-        case .accessoryCorner:
-            AccessoryCornerEntryView(entry: entry, videoType: .upcoming)
-        case .accessoryCircular:
-            AccessoryCircularEntryView(entry: entry)
-        default:
-            EmptyView()
-        }
-    }
-}
-
-struct VideoPastWidgetEntryView: View {
-    var entry: VideoPastWidgetProvider.Entry
-    
-    @Environment(\.widgetFamily) var family
-    
-    @ViewBuilder
-    var body: some View {
-        switch family {
-        case .systemSmall:
-            SmallWidgetEntryView(entry: entry, videoType: .past)
-        case .systemLarge:
-            PaneWidgetEntryView(entry: entry, videoType: .past)
-        case .accessoryRectangular:
-            AccessoryRectangularEntryView(entry: entry, videoType: .past)
-        case .accessoryCorner:
-            AccessoryCornerEntryView(entry: entry, videoType: .past)
-        case .accessoryCircular:
-            AccessoryCircularEntryView(entry: entry)
+        case .accessoryInline:
+            AccessoryInlineEntryView(entry: entry, videoType: videoType)
         default:
             EmptyView()
         }
