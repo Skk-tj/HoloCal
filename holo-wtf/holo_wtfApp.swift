@@ -50,7 +50,7 @@ struct holo_wtfApp: App {
             }
         }
         
-        // Get user favourites from iCloud
+        // MARK: - Get user favourites from iCloud
         let keyStore = NSUbiquitousKeyValueStore()
         if let cloudFavouriteChannel = keyStore.array(forKey: UserDefaultKeys.favouritedChannel) {
             if let converted = cloudFavouriteChannel as? [String] {
@@ -59,57 +59,26 @@ struct holo_wtfApp: App {
                 favourited = Array(merged)
             }
         }
+        
+        // MARK: - Clean up orphaned favourites
+        var toRemove: [String] = []
+        for favourite in favourited {
+            if TalentEnum(rawValue: favourite) == nil {
+                toRemove.append(favourite)
+            }
+        }
+        
+        favourited.removeAll { favourite in
+            toRemove.contains(where: { $0 == favourite })
+        }
     }
     
     var body: some Scene {
         WindowGroup {
             if UIDevice.current.userInterfaceIdiom == .pad {
-                // iPadOS
                 iPadSplitView()
             } else {
-                // iOS
-                TabView {
-                    NavigationStack {
-                        AgencyNavigationView(viewTitle: "ROOT_VIEW_LIVE") { agency in
-                            LiveView(for: agency)
-                        }
-                    }
-                    .tabItem {
-                        Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
-                    }
-                    
-                    NavigationStack {
-                        AgencyNavigationView(viewTitle: "ROOT_VIEW_UPCOMING") { agency in
-                            UpcomingView(for: agency)
-                        }
-                    }
-                    .tabItem {
-                        Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
-                    }
-                    
-                    NavigationStack {
-                        AgencyNavigationView(viewTitle: "ROOT_VIEW_PAST") { agency in
-                            PastView(for: agency)
-                        }
-                    }
-                    .tabItem {
-                        Label("ROOT_VIEW_PAST", systemImage: "clock.arrow.circlepath")
-                    }
-                    
-                    NavigationStack {
-                        ConcertsView()
-                    }
-                    .tabItem() {
-                        Label("ROOT_VIEW_CONCERTS", systemImage: "music.mic")
-                    }
-                    
-                    NavigationStack {
-                        SettingsFormView()
-                    }
-                    .tabItem {
-                        Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
-                    }
-                }
+                iOSTabView()
             }
         }
     }

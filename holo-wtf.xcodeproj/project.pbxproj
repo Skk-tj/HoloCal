@@ -127,6 +127,7 @@
 		F02211A9292E1E4B009EC2CC /* PaneViewChannelInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A8292E1E4B009EC2CC /* PaneViewChannelInfoView.swift */; };
 		F02211AB292F68DF009EC2CC /* BlockMemberOnlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211AA292F68DF009EC2CC /* BlockMemberOnlyView.swift */; };
 		F02211AD292F73DA009EC2CC /* iPadSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211AC292F73DA009EC2CC /* iPadSplitView.swift */; };
+		F022905129C66429002ACB0A /* iOSTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022905029C66429002ACB0A /* iOSTabView.swift */; };
 		F025203728E10AB600976972 /* SpecialThanksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025203628E10AB600976972 /* SpecialThanksView.swift */; };
 		F025203F28EE94B700976972 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025203E28EE94B700976972 /* Constants.swift */; };
 		F025204028EE95F900976972 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025203E28EE94B700976972 /* Constants.swift */; };
@@ -344,6 +345,7 @@
 		F0F40974293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F40972293D6F46001C4F48 /* MultiLanguageNameView.swift */; };
 		F0F40975293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F40972293D6F46001C4F48 /* MultiLanguageNameView.swift */; };
 		F0F40976293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F40972293D6F46001C4F48 /* MultiLanguageNameView.swift */; };
+		F0FB8E0229C68764005E3FFD /* AgencyNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CEE36329BE006600AFB565 /* AgencyNavigationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -484,6 +486,7 @@
 		F02211A8292E1E4B009EC2CC /* PaneViewChannelInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaneViewChannelInfoView.swift; sourceTree = "<group>"; };
 		F02211AA292F68DF009EC2CC /* BlockMemberOnlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockMemberOnlyView.swift; sourceTree = "<group>"; };
 		F02211AC292F73DA009EC2CC /* iPadSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadSplitView.swift; sourceTree = "<group>"; };
+		F022905029C66429002ACB0A /* iOSTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTabView.swift; sourceTree = "<group>"; };
 		F025203628E10AB600976972 /* SpecialThanksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialThanksView.swift; sourceTree = "<group>"; };
 		F025203E28EE94B700976972 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F025204328EEA5FC00976972 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -852,6 +855,7 @@
 				F0789B7F29AB315100346239 /* PastView.swift */,
 				F0789B9129AB57BB00346239 /* PastFavouritesView.swift */,
 				F01DAA50298FB58700052514 /* ConcertsView.swift */,
+				F022905029C66429002ACB0A /* iOSTabView.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -1608,6 +1612,7 @@
 				F01E95B3286FB4B900CDF0F9 /* iPadLazyGridView.swift in Sources */,
 				F01DAA712990E19900052514 /* BlockPlatformView.swift in Sources */,
 				F009024027EE57BA00E343B0 /* LinkedVideoView.swift in Sources */,
+				F022905129C66429002ACB0A /* iOSTabView.swift in Sources */,
 				F009024627EE6A9F00E343B0 /* VideoContextMenu.swift in Sources */,
 				F080A04F27F95D9E00DBC08D /* TalentData.swift in Sources */,
 				F008BBA72928DD5100034AF4 /* ManageFavoriteAgencySelectionView.swift in Sources */,
@@ -1733,6 +1738,7 @@
 				F04D755828D7D8430096B8AB /* SettingsWatchView.swift in Sources */,
 				F01241A72935E33E007C8FE9 /* BlockUpcomingTimeView.swift in Sources */,
 				F01241A22935E2BB007C8FE9 /* ViewerCounterView.swift in Sources */,
+				F0FB8E0229C68764005E3FFD /* AgencyNavigationView.swift in Sources */,
 				F01DAA7729963FFD00052514 /* ConcertsViewModel.swift in Sources */,
 				F0CA6ED528D7C4A70028CB11 /* LiveAvatarView.swift in Sources */,
 				F01DAA86299641E300052514 /* ConcertWatchView.swift in Sources */,

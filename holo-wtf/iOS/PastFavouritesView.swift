@@ -17,10 +17,10 @@ struct PastFavouritesView: View {
             .environmentObject(past as VideoViewModel)
             .navigationTitle("ROOT_VIEW_FAVOURITES")
             .toolbar {
-                 ToolbarItemGroup(placement: .secondaryAction) {
-                     PastFavouritesViewToolbar()
-                         .environmentObject(past as VideoViewModel)
-                 }
+                ToolbarItemGroup(placement: .secondaryAction) {
+                    PastFavouritesViewToolbar()
+                        .environmentObject(past as VideoViewModel)
+                }
             }
             .task {
                 await past.getVideoForUI()

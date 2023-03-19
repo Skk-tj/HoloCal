@@ -16,9 +16,31 @@ let agencyToViewAgency: OrderedDictionary<AgencyEnum, ViewAgency> = [
     .noriPro: .noriPro
 ]
 
-struct AgencyNavigationView<DestinationContent: View>: View {
+enum ViewAgency: CaseIterable, Identifiable {
+    var id: Self {
+        return self
+    }
+    
+    case hololive
+    case nijisanji
+    case react
+    case nanashiInc
+    case noriPro
+    case favourites
+}
+
+let viewAgencyToAgency: OrderedDictionary<ViewAgency, AgencyEnum> = [
+    .hololive: .hololive,
+    .nijisanji: .nijisanji,
+    .react: .react,
+    .nanashiInc: .nanashiInc,
+    .noriPro: .noriPro
+]
+
+struct AgencyNavigationView<DestinationContent: View, FavouritesContent: View>: View {
     let viewTitle: String?
     @ViewBuilder let targetView: (_ agency: AgencyEnum) -> DestinationContent
+    @ViewBuilder let favouritesView: () -> FavouritesContent
     
     var body: some View {
         List {
@@ -32,9 +54,13 @@ struct AgencyNavigationView<DestinationContent: View>: View {
                 Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
             }
         }
-        .navigationTitle(LocalizedStringKey(viewTitle ?? "SETTINGS_SELECT_AGENCY_NAVIGATION_TITLE"))
         .navigationDestination(for: ViewAgency.self) { agency in
-            targetView(viewAgencyToAgency[agency]!)
+            if agency == .favourites {
+                favouritesView()
+            } else {
+                targetView(viewAgencyToAgency[agency]!)
+            }
         }
+        .navigationTitle(LocalizedStringKey(viewTitle ?? "SETTINGS_SELECT_AGENCY_NAVIGATION_TITLE"))
     }
 }

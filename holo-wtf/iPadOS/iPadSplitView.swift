@@ -16,27 +16,6 @@ enum Views: Hashable {
     case settings
 }
 
-enum ViewAgency: CaseIterable, Identifiable {
-    var id: Self {
-        return self
-    }
-    
-    case hololive
-    case nijisanji
-    case react
-    case nanashiInc
-    case noriPro
-    case favourites
-}
-
-let viewAgencyToAgency: OrderedDictionary<ViewAgency, AgencyEnum> = [
-    .hololive: .hololive,
-    .nijisanji: .nijisanji,
-    .react: .react,
-    .nanashiInc: .nanashiInc,
-    .noriPro: .noriPro
-]
-
 struct iPadSplitView: View {
     @State var viewSelection: Views? = Views.live(.hololive)
     
@@ -154,6 +133,63 @@ struct iPadSplitView: View {
                         SettingsFormView()
                     }
                 }
+            }
+        }
+        .onOpenURL { url in
+            guard url.scheme == "holocal" else { return }
+            guard url.host == "widget-launch" else { return }
+            guard url.pathComponents.count == 3 else { return }
+            
+            let view = WidgetDeepLinkView(rawValue: url.pathComponents[1])
+            let agency = WidgetDeepLinkAgency(rawValue: url.pathComponents[2])
+            
+            guard let unwrappedView = view else { return }
+            guard let unwrappedAgency = agency else { return }
+            
+            switch unwrappedView {
+            case .live:
+                switch unwrappedAgency {
+                case .hololive:
+                    viewSelection = .live(.hololive)
+                case .nijisanji:
+                    viewSelection = .live(.nijisanji)
+                case .react:
+                    viewSelection = .live(.react)
+                case .nanashiInc:
+                    viewSelection = .live(.nanashiInc)
+                case .noriPro:
+                    viewSelection = .live(.noriPro)
+                }
+            case .upcoming:
+                switch unwrappedAgency {
+                case .hololive:
+                    viewSelection = .upcoming(.hololive)
+                case .nijisanji:
+                    viewSelection = .upcoming(.nijisanji)
+                case .react:
+                    viewSelection = .upcoming(.react)
+                case .nanashiInc:
+                    viewSelection = .upcoming(.nanashiInc)
+                case .noriPro:
+                    viewSelection = .upcoming(.noriPro)
+                }
+            case .past:
+                switch unwrappedAgency {
+                case .hololive:
+                    viewSelection = .past(.hololive)
+                case .nijisanji:
+                    viewSelection = .past(.nijisanji)
+                case .react:
+                    viewSelection = .past(.react)
+                case .nanashiInc:
+                    viewSelection = .past(.nanashiInc)
+                case .noriPro:
+                    viewSelection = .past(.noriPro)
+                }
+            case .concerts:
+                viewSelection = .concerts
+            case .settings:
+                viewSelection = .settings
             }
         }
     }

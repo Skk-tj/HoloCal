@@ -53,5 +53,6 @@ struct AccessoryRectangularEntryView: View {
                     .widgetAccentable()
             }
         })
+        .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue, WidgetDeepLinkAgency.hololive.rawValue)))
     }
 }

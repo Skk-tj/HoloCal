@@ -35,3 +35,35 @@ func upcomingSortStrategy(l1: LiveVideo, l2: LiveVideo) -> Bool {
 func pastSortStrategy(l1: LiveVideo, l2: LiveVideo) -> Bool {
     l1.endedAt > l2.endedAt
 }
+
+let widgetDeepLink = "holocal://widget-launch/%@/%@"
+
+enum WidgetDeepLinkView: String {
+    case live
+    case upcoming
+    case past
+    case concerts
+    case settings
+}
+
+enum WidgetDeepLinkAgency: String {
+    case hololive
+    case nijisanji
+    case react
+    case nanashiInc
+    case noriPro
+}
+
+enum Tabs: Hashable {
+    case live
+    case upcoming
+    case past
+    case concerts
+    case settings
+}
+
+let videoTypeToWidgetDeepLink: [VideoType: WidgetDeepLinkView] = [
+    .live: .live,
+    .upcoming: .upcoming,
+    .past: .past
+]
