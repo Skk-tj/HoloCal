@@ -214,14 +214,22 @@ func overwriteNewGenerationOrderList(@AppStorage("generationListOrderNew") to da
     data = try! JSONEncoder().encode(deserialized)
 }
 
-func widgetDeepLinkUrlParse(url: URL) -> WidgetDeepLinkView? {
+func widgetDeepLinkUrlParseView(url: URL) -> Tabs? {
     guard url.scheme == "holocal" else { return nil }
     guard url.host == "widget-launch" else { return nil }
-    guard url.pathComponents.count == 2 else { return nil }
+    guard url.pathComponents.count == 3 else { return nil }
     
-    let view = WidgetDeepLinkView(rawValue: url.pathComponents[1])
+    let view = Tabs(rawValue: url.pathComponents[1])
     
-    guard let unwrappedView = view else { return nil }
+    return view
+}
+
+func widgetDeepLinkUrlParseAgency(url: URL) -> WidgetDeepLinkAgency? {
+    guard url.scheme == "holocal" else { return nil }
+    guard url.host == "widget-launch" else { return nil }
+    guard url.pathComponents.count == 3 else { return nil }
     
-    return unwrappedView
+    let agency = WidgetDeepLinkAgency(rawValue: url.pathComponents[2])
+    
+    return agency
 }

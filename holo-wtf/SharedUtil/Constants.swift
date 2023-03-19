@@ -6,10 +6,40 @@
 //
 
 import Foundation
+import OrderedCollections
 
-let widgetSampleChannel: Channel = .init(id: "UCp6993wxpyDPHUpavwDFqgg", name: "Tokino Sora", photo: URL(string: "https://yt3.ggpht.com/ytc/AKedOLRo4fRoifdnGRyvGIOVxiumNdD5MXweEPHLO_SBrA=s800-c-k-c0x00ffffff-no-rj-mo"), org: "Hololive")
+let agencyToViewAgency: OrderedDictionary<AgencyEnum, ViewAgency> = [
+    .hololive: .hololive,
+    .nijisanji: .nijisanji,
+    .react: .react,
+    .nanashiInc: .nanashiInc,
+    .noriPro: .noriPro
+]
 
-let widgetSampleVideo: LiveVideo = .init(id: "NT6Pf28eCgQ", title: "My Debut Stream!", topicId: "debut", startScheduled: Date(), startActual: Date(), availableAt: Date(), publishedAt: Date(), liveViewers: 1000, mentions: nil, duration: 0, songs: nil, channel: widgetSampleChannel)
+enum ViewAgency: CaseIterable, Identifiable {
+    var id: Self {
+        return self
+    }
+    
+    case hololive
+    case nijisanji
+    case react
+    case nanashiInc
+    case noriPro
+    case favourites
+}
+
+let viewAgencyToAgency: OrderedDictionary<ViewAgency, AgencyEnum> = [
+    .hololive: .hololive,
+    .nijisanji: .nijisanji,
+    .react: .react,
+    .nanashiInc: .nanashiInc,
+    .noriPro: .noriPro
+]
+
+let widgetSampleChannel = Channel(id: "UCp6993wxpyDPHUpavwDFqgg", name: "Tokino Sora", photo: URL(string: "https://yt3.ggpht.com/ytc/AKedOLRo4fRoifdnGRyvGIOVxiumNdD5MXweEPHLO_SBrA=s800-c-k-c0x00ffffff-no-rj-mo"), org: "Hololive")
+
+let widgetSampleVideo = LiveVideo(id: "NT6Pf28eCgQ", title: "My Debut Stream!", topicId: "debut", startScheduled: Date(), startActual: Date(), availableAt: Date(), publishedAt: Date(), liveViewers: 1000, mentions: nil, duration: 0, songs: nil, channel: widgetSampleChannel)
 
 let allLiveURL = "https://holodex.net/api/v2/live?&status=live&type=stream"
 
@@ -36,9 +66,9 @@ func pastSortStrategy(l1: LiveVideo, l2: LiveVideo) -> Bool {
     l1.endedAt > l2.endedAt
 }
 
-let widgetDeepLink = "holocal://widget-launch/%@"
+let widgetDeepLink = "holocal://widget-launch/%@/%@"
 
-enum WidgetDeepLinkView: String {
+enum Tabs: String, Hashable {
     case live
     case upcoming
     case past
@@ -46,15 +76,36 @@ enum WidgetDeepLinkView: String {
     case settings
 }
 
-enum Tabs: Hashable {
-    case live
-    case upcoming
-    case past
-    case concerts
-    case settings
+/// Ugh, one-to-one copy of `IntentAgency`
+enum WidgetDeepLinkAgency: String {
+    case unknown
+    case hololive
+    case nijisanji
+    case react
+    case nanashiInc
+    case noriPro
+    case favourites
 }
 
-let videoTypeToWidgetDeepLink: [VideoType: WidgetDeepLinkView] = [
+let intentAgencyToDeepLinkAgency: [IntentAgency: WidgetDeepLinkAgency] = [
+    .unknown: .unknown,
+    .hololive: .hololive,
+    .nijisanji: .nijisanji,
+    .react: .react,
+    .nanashiInc: .nanashiInc,
+    .noriPro: .noriPro,
+    .favourites: .favourites
+]
+
+let widgetDeepLinkToViewAgency: [WidgetDeepLinkAgency: ViewAgency] = [
+    .hololive: .hololive,
+    .nijisanji: .nijisanji,
+    .react: .react,
+    .nanashiInc: .nanashiInc,
+    .noriPro: .noriPro
+]
+
+let videoTypeToWidgetDeepLink: [VideoType: Tabs] = [
     .live: .live,
     .upcoming: .upcoming,
     .past: .past

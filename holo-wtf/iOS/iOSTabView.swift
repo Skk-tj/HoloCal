@@ -65,20 +65,9 @@ struct iOSTabView: View {
             .tag(Tabs.settings)
         }
         .onOpenURL { url in
-            guard let unwrappedView = widgetDeepLinkUrlParse(url: url) else { return }
-            
-            switch unwrappedView {
-            case .live:
-                tabSelection = .live
-            case .upcoming:
-                tabSelection = .upcoming
-            case .past:
-                tabSelection = .past
-            case .concerts:
-                tabSelection = .concerts
-            case .settings:
-                tabSelection = .settings
-            }
+            guard let unwrappedView = widgetDeepLinkUrlParseView(url: url) else { return }
+            guard let unwrappedAgency = widgetDeepLinkUrlParseAgency(url: url) else { return }
+            tabSelection = unwrappedView
         }
     }
 }

@@ -9,13 +9,13 @@ import SwiftUI
 import WidgetKit
 
 struct AccessoryInlineEntryView: View {
-    var entry: SingleVideoWidgetEntry
+    let entry: SingleVideoWidgetEntry
     let videoType: VideoType
     
     var body: some View {
         if let video = entry.video {
             AccessoryInlineWidgetView(video: video, videoType: videoType)
-                .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue)))
+                .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue, entry.agency.rawValue)))
         } else {
             switch videoType {
             case .live:

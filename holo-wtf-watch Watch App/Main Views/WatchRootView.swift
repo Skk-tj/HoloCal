@@ -61,20 +61,13 @@ struct WatchRootView: View {
                 }
             }
             .onOpenURL { url in
-                guard let unwrappedView = widgetDeepLinkUrlParse(url: url) else { return }
+                guard let unwrappedView = widgetDeepLinkUrlParseView(url: url) else { return }
                 path = NavigationPath()
+                path.append(unwrappedView)
                 
-                switch unwrappedView {
-                case .live:
-                    path.append(Tabs.live)
-                case .upcoming:
-                    path.append(Tabs.upcoming)
-                case .past:
-                    path.append(Tabs.past)
-                case .concerts:
-                    path.append(Tabs.concerts)
-                case .settings:
-                    path.append(Tabs.settings)
+                guard let unwrappedAgency = widgetDeepLinkUrlParseAgency(url: url) else { return }
+                if let viewAgency = widgetDeepLinkToViewAgency[unwrappedAgency] {
+                    path.append(viewAgency)
                 }
             }
         }

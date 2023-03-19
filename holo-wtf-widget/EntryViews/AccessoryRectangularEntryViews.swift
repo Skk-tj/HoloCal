@@ -9,7 +9,7 @@ import SwiftUI
 import WidgetKit
 
 struct VideoAccessoryRectangularWidgetEntryView<MainContent: View, ErrorContent: View>: View {
-    var entry: SingleVideoWidgetEntry
+    let entry: SingleVideoWidgetEntry
     
     @ViewBuilder let mainView: (_ video: LiveVideo) -> MainContent
     @ViewBuilder let errorTitle: () -> ErrorContent
@@ -31,7 +31,7 @@ struct VideoAccessoryRectangularWidgetEntryView<MainContent: View, ErrorContent:
 }
 
 struct AccessoryRectangularEntryView: View {
-    var entry: SingleVideoWidgetEntry
+    let entry: SingleVideoWidgetEntry
     let videoType: VideoType
     
     var body: some View {
@@ -53,6 +53,6 @@ struct AccessoryRectangularEntryView: View {
                     .widgetAccentable()
             }
         })
-        .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue)))
+        .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue, entry.agency.rawValue)))
     }
 }

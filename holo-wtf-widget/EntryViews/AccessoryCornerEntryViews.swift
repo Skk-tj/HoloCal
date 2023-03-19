@@ -9,13 +9,13 @@ import SwiftUI
 import WidgetKit
 
 struct AccessoryCornerEntryView: View {
-    var entry: SingleVideoWidgetEntry
+    let entry: SingleVideoWidgetEntry
     let videoType: VideoType
     
     var body: some View {
         if let video = entry.video {
             AccessoryCornerView(video: video, videoType: videoType)
-                .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue)))
+                .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue, entry.agency.rawValue)))
         } else {
             ZStack {
                 AccessoryWidgetBackground()
@@ -35,6 +35,7 @@ struct AccessoryCornerEntryView: View {
             .widgetLabel {
                 Text("NO_ONE_IS_STREAMING")
             }
+            .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue, entry.agency.rawValue)))
         }
     }
 }

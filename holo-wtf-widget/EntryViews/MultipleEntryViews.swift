@@ -9,7 +9,7 @@ import SwiftUI
 import WidgetKit
 
 struct BaseMultipleViewEntryView<MainContent: View, SubContent: View, TitleContent: View>: View {
-    var entry: MultipleVideoWidgetEntry
+    let entry: MultipleVideoWidgetEntry
     
     @ViewBuilder let twoVideosView: (_ videoLeft: LiveVideo, _ videoRight: LiveVideo) -> MainContent
     @ViewBuilder let singleVideoView: (_ video: LiveVideo) -> SubContent
@@ -43,8 +43,8 @@ struct BaseMultipleViewEntryView<MainContent: View, SubContent: View, TitleConte
 }
 
 struct MultipleWidgetEntryView: View {
-    var entry: MultipleVideoWidgetEntry
-    var videoType: VideoType
+    let entry: MultipleVideoWidgetEntry
+    let videoType: VideoType
     
     var body: some View {
         BaseMultipleViewEntryView(entry: entry, twoVideosView: { v1, v2 in
@@ -61,6 +61,6 @@ struct MultipleWidgetEntryView: View {
                 PastTitleView()
             }
         })
-        .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue)))
+        .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue, entry.agency.rawValue)))
     }
 }

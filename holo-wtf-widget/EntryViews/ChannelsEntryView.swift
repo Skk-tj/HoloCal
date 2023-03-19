@@ -9,7 +9,7 @@ import SwiftUI
 import WidgetKit
 
 struct BaseChannelsEntryView<MainContent: View, TitleContent: View>: View {
-    var entry: ChannelsEntry
+    let entry: ChannelsEntry
     
     @ViewBuilder let channelsView: () -> MainContent
     @ViewBuilder let titleView: () -> TitleContent
@@ -39,7 +39,7 @@ struct BaseChannelsEntryView<MainContent: View, TitleContent: View>: View {
 }
 
 struct ChannelsEntryView: View {
-    var entry: ChannelsEntry
+    let entry: ChannelsEntry
     let videoType: VideoType
     
     var body: some View {
@@ -55,6 +55,6 @@ struct ChannelsEntryView: View {
                 PastTitleView()
             }
         })
-        .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue)))
+        .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue, entry.agency.rawValue)))
     }
 }

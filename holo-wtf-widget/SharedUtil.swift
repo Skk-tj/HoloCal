@@ -11,6 +11,7 @@ import Intents
 
 protocol VideoTimelineEntry: TimelineEntry {
     var status: WidgetDataStatus { get }
+    var agency: WidgetDeepLinkAgency { get }
 }
 
 protocol AgencyIntent: INIntent {
@@ -28,7 +29,7 @@ protocol MultipleVideoIntentTimelineProvider: IntentTimelineProvider where Entry
 
 extension MultipleVideoIntentTimelineProvider {
     func placeholder(in context: Context) -> Entry {
-        return Entry(date: Date(), status: .ok, videoLeft: widgetSampleVideo, thumbnailDataLeft: Data(), videoRight: widgetSampleVideo, thumbnailDataRight: Data())
+        return Entry(date: Date(), status: .ok, videoLeft: widgetSampleVideo, thumbnailDataLeft: Data(), videoRight: widgetSampleVideo, thumbnailDataRight: Data(), agency: .unknown)
     }
     
     func getSnapshot(for configuration: Intent, in context: Context, completion: @escaping (Entry) -> Void) {
@@ -53,7 +54,7 @@ protocol ChannelsIntentTimelineProvider: IntentTimelineProvider where Entry == C
 
 extension ChannelsIntentTimelineProvider {
     func placeholder(in context: Context) -> Entry {
-        return Entry(date: .now, status: .ok, channels: [widgetSampleChannel], thumbnails: [Data()])
+        return Entry(date: .now, status: .ok, channels: [widgetSampleChannel], thumbnails: [Data()], agency: .unknown)
     }
     
     func getSnapshot(for configuration: Intent, in context: Context, completion: @escaping (Entry) -> Void) {
@@ -78,17 +79,17 @@ protocol VideoIntentTimelineProvider: IntentTimelineProvider where Entry == Sing
 
 extension VideoIntentTimelineProvider {
     func placeholder(in context: Context) -> Entry {
-        return Entry(date: Date(), status: .ok, video: widgetSampleVideo, avatarData: Data(), thumbnailData: Data())
+        return Entry(date: Date(), status: .ok, video: widgetSampleVideo, avatarData: Data(), thumbnailData: Data(), agency: .unknown)
     }
     
     func getSnapshot(for configuration: Intent, in context: Context, completion: @escaping (Entry) -> ()) {
         if context.isPreview && context.family == .accessoryRectangular {
-            completion(Entry(date: Date(), status: .ok, video: widgetSampleVideo, avatarData: Data(), thumbnailData: Data()))
+            completion(Entry(date: Date(), status: .ok, video: widgetSampleVideo, avatarData: Data(), thumbnailData: Data(), agency: .unknown))
             return
         }
 #if os(watchOS)
         if context.isPreview && context.family == .accessoryCorner {
-            completion(Entry(date: Date(), status: .ok, video: widgetSampleVideo, avatarData: Data(), thumbnailData: Data()))
+            completion(Entry(date: Date(), status: .ok, video: widgetSampleVideo, avatarData: Data(), thumbnailData: Data(), agency: .unknown))
             return
         }
 #endif

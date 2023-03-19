@@ -17,12 +17,12 @@ struct VideoLiveWidgetProvider: VideoIntentTimelineProvider {
     
     func getSnapshot(for configuration: Intent, in context: Context, completion: @escaping (Entry) -> ()) {
         if context.isPreview && context.family == .accessoryRectangular {
-            completion(Entry(date: Date(), status: .ok, video: widgetSampleVideo, avatarData: Data(), thumbnailData: Data()))
+            completion(Entry(date: Date(), status: .ok, video: widgetSampleVideo, avatarData: Data(), thumbnailData: Data(), agency: .hololive))
             return
         }
 #if os(watchOS)
         if context.isPreview && context.family == .accessoryCorner {
-            completion(Entry(date: Date(), status: .ok, video: widgetSampleVideo, avatarData: Data(), thumbnailData: Data()))
+            completion(Entry(date: Date(), status: .ok, video: widgetSampleVideo, avatarData: Data(), thumbnailData: Data(), agency: .hololive))
             return
         }
 #endif

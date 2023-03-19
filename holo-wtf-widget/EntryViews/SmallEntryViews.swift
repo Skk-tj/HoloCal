@@ -9,7 +9,7 @@ import SwiftUI
 import WidgetKit
 
 struct SmallWidgetEntryView: View {
-    var entry: SingleVideoWidgetEntry
+    let entry: SingleVideoWidgetEntry
     let videoType: VideoType
     
     var body: some View {
@@ -25,6 +25,6 @@ struct SmallWidgetEntryView: View {
                 PastTitleView()
             }
         })
-        .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue)))
+        .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue, entry.agency.rawValue)))
     }
 }

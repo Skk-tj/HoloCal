@@ -6,36 +6,6 @@
 //
 
 import SwiftUI
-import OrderedCollections
-
-let agencyToViewAgency: OrderedDictionary<AgencyEnum, ViewAgency> = [
-    .hololive: .hololive,
-    .nijisanji: .nijisanji,
-    .react: .react,
-    .nanashiInc: .nanashiInc,
-    .noriPro: .noriPro
-]
-
-enum ViewAgency: CaseIterable, Identifiable {
-    var id: Self {
-        return self
-    }
-    
-    case hololive
-    case nijisanji
-    case react
-    case nanashiInc
-    case noriPro
-    case favourites
-}
-
-let viewAgencyToAgency: OrderedDictionary<ViewAgency, AgencyEnum> = [
-    .hololive: .hololive,
-    .nijisanji: .nijisanji,
-    .react: .react,
-    .nanashiInc: .nanashiInc,
-    .noriPro: .noriPro
-]
 
 struct AgencyNavigationView<DestinationContent: View, FavouritesContent: View>: View {
     let viewTitle: String?

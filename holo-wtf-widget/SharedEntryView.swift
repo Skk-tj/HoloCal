@@ -26,7 +26,7 @@ struct VideoWidgetEntryView: View {
         case .accessoryCorner:
             AccessoryCornerEntryView(entry: entry, videoType: videoType)
         case .accessoryCircular:
-            AccessoryCircularEntryView(entry: entry)
+            AccessoryCircularEntryView(entry: entry, videoType: videoType)
         case .accessoryInline:
             AccessoryInlineEntryView(entry: entry, videoType: videoType)
         default:

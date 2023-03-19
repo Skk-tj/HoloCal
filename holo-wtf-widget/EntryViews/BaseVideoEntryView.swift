@@ -9,7 +9,7 @@ import SwiftUI
 import WidgetKit
 
 struct BaseVideoEntryView<MainContent: View, TitleContent: View>: View {
-    var entry: SingleVideoWidgetEntry
+    let entry: SingleVideoWidgetEntry
     
     @ViewBuilder let mainView: (_ video: LiveVideo) -> MainContent
     @ViewBuilder let titleView: () -> TitleContent

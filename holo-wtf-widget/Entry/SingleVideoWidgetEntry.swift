@@ -15,4 +15,6 @@ struct SingleVideoWidgetEntry: VideoTimelineEntry {
     
     let avatarData: Data
     let thumbnailData: Data
+    
+    let agency: WidgetDeepLinkAgency
 }

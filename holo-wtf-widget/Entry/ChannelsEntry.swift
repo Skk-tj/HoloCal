@@ -13,4 +13,6 @@ struct ChannelsEntry: VideoTimelineEntry {
     
     let channels: [Channel]
     let thumbnails: [Data]
+    
+    let agency: WidgetDeepLinkAgency
 }

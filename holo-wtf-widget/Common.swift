@@ -210,7 +210,7 @@ func getEntryWithIntent(for agency: IntentAgency, videoType: VideoType, sortBy: 
         let lives = try await getAndFilterAndSortVideosCommon(for: agency, videoType: videoType, sortBy: sortBy, filterBy: filterAlgorithm)
         
         if lives.isEmpty {
-            let entry = SingleVideoWidgetEntry(date: .now, status: .noVideo, video: nil, avatarData: Data(), thumbnailData: Data())
+            let entry = SingleVideoWidgetEntry(date: .now, status: .noVideo, video: nil, avatarData: Data(), thumbnailData: Data(), agency: intentAgencyToDeepLinkAgency[agency]!)
             return entry
         }
         
@@ -219,16 +219,16 @@ func getEntryWithIntent(for agency: IntentAgency, videoType: VideoType, sortBy: 
         let (avatarData, avatarResponse) = try await URLSession.shared.data(from: firstVideo.channel.photo!)
         
         guard let response = avatarResponse as? HTTPURLResponse, response.statusCode == 200 else {
-            return SingleVideoWidgetEntry(date: .now, status: .network, video: nil, avatarData: Data(), thumbnailData: Data())
+            return SingleVideoWidgetEntry(date: .now, status: .network, video: nil, avatarData: Data(), thumbnailData: Data(), agency: intentAgencyToDeepLinkAgency[agency]!)
         }
         
-        let (thumbnailData, _) = try await URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(firstVideo.id)/maxresdefault.jpg")!)
+        let (thumbnailData, _) = try await URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(firstVideo.id)/hq720.jpg")!)
         
-        let entry = SingleVideoWidgetEntry(date: .now, status: .ok, video: lives[0], avatarData: avatarData, thumbnailData: thumbnailData)
+        let entry = SingleVideoWidgetEntry(date: .now, status: .ok, video: lives[0], avatarData: avatarData, thumbnailData: thumbnailData, agency: intentAgencyToDeepLinkAgency[agency]!)
         
         return entry
     } catch {
-        return SingleVideoWidgetEntry(date: .now, status: .network, video: nil, avatarData: Data(), thumbnailData: Data())
+        return SingleVideoWidgetEntry(date: .now, status: .network, video: nil, avatarData: Data(), thumbnailData: Data(), agency: intentAgencyToDeepLinkAgency[agency]!)
     }
 }
 
@@ -237,26 +237,26 @@ func getMultipleEntry(for agency: IntentAgency, videoType: VideoType, sortBy: In
         let lives = try await getAndFilterAndSortVideosCommon(for: agency, videoType: videoType, sortBy: sortBy, filterBy: filterAlgorithm)
         
         if lives.isEmpty {
-            let entry = MultipleVideoWidgetEntry(date: .now, status: .noVideo, videoLeft: nil, thumbnailDataLeft: Data(), videoRight: nil, thumbnailDataRight: Data())
+            let entry = MultipleVideoWidgetEntry(date: .now, status: .noVideo, videoLeft: nil, thumbnailDataLeft: Data(), videoRight: nil, thumbnailDataRight: Data(), agency: intentAgencyToDeepLinkAgency[agency]!)
             
             return entry
         } else if lives.count == 1 {
-            let (thumbnailData, _) = try await URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(lives[0].id)/maxresdefault.jpg")!)
+            let (thumbnailData, _) = try await URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(lives[0].id)/hq720.jpg")!)
             
-            let entry = MultipleVideoWidgetEntry(date: .now, status: .ok, videoLeft: lives[0], thumbnailDataLeft: thumbnailData, videoRight: nil, thumbnailDataRight: Data())
+            let entry = MultipleVideoWidgetEntry(date: .now, status: .ok, videoLeft: lives[0], thumbnailDataLeft: thumbnailData, videoRight: nil, thumbnailDataRight: Data(), agency: intentAgencyToDeepLinkAgency[agency]!)
             
             return entry
         } else {
-            let (thumbnailDataLeft, _) = try await URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(lives[0].id)/maxresdefault.jpg")!)
+            let (thumbnailDataLeft, _) = try await URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(lives[0].id)/hq720.jpg")!)
             
-            let (thumbnailDataRight, _) = try await URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(lives[1].id)/maxresdefault.jpg")!)
+            let (thumbnailDataRight, _) = try await URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(lives[1].id)/hq720.jpg")!)
             
-            let entry = MultipleVideoWidgetEntry(date: .now, status: .ok, videoLeft: lives[0], thumbnailDataLeft: thumbnailDataLeft, videoRight: lives[1], thumbnailDataRight: thumbnailDataRight)
+            let entry = MultipleVideoWidgetEntry(date: .now, status: .ok, videoLeft: lives[0], thumbnailDataLeft: thumbnailDataLeft, videoRight: lives[1], thumbnailDataRight: thumbnailDataRight, agency: intentAgencyToDeepLinkAgency[agency]!)
             
             return entry
         }
     } catch {
-        let entry = MultipleVideoWidgetEntry(date: .now, status: .network, videoLeft: nil, thumbnailDataLeft: Data(), videoRight: nil, thumbnailDataRight: Data())
+        let entry = MultipleVideoWidgetEntry(date: .now, status: .network, videoLeft: nil, thumbnailDataLeft: Data(), videoRight: nil, thumbnailDataRight: Data(), agency: intentAgencyToDeepLinkAgency[agency]!)
         
         return entry
     }
@@ -267,15 +267,15 @@ func getChannelsEntry(for agency: IntentAgency, videoType: VideoType, sortBy: In
         let lives = try await getAndFilterAndSortVideosCommon(for: agency, videoType: videoType, sortBy: sortBy, filterBy: filterAlgorithm)
         
         if lives.isEmpty {
-            let entry = ChannelsEntry(date: .now, status: .noVideo, channels: [], thumbnails: [])
+            let entry = ChannelsEntry(date: .now, status: .noVideo, channels: [], thumbnails: [], agency: intentAgencyToDeepLinkAgency[agency]!)
             return entry
         }
         
         let channels = lives.map { $0.channel }
         
-        return ChannelsEntry(date: .now, status: .ok, channels: channels, thumbnails: try await getThumbnailsForChannels(channels))
+        return ChannelsEntry(date: .now, status: .ok, channels: channels, thumbnails: try await getThumbnailsForChannels(channels), agency: intentAgencyToDeepLinkAgency[agency]!)
     } catch {
-        return ChannelsEntry(date: .now, status: .network, channels: [], thumbnails: [])
+        return ChannelsEntry(date: .now, status: .network, channels: [], thumbnails: [], agency: intentAgencyToDeepLinkAgency[agency]!)
     }
 }
 

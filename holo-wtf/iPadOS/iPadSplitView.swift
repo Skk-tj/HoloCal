@@ -136,15 +136,30 @@ struct iPadSplitView: View {
             }
         }
         .onOpenURL { url in
-            guard let unwrappedView = widgetDeepLinkUrlParse(url: url) else { return }
+            guard let unwrappedView = widgetDeepLinkUrlParseView(url: url) else { return }
             
             switch unwrappedView {
             case .live:
-                viewSelection = .live(.hololive)
+                guard let unwrappedAgency = widgetDeepLinkUrlParseAgency(url: url) else { return }
+                if let viewAgency = widgetDeepLinkToViewAgency[unwrappedAgency] {
+                    viewSelection = .live(viewAgency)
+                } else {
+                    viewSelection = .live(.hololive)
+                }
             case .upcoming:
-                viewSelection = .upcoming(.hololive)
+                guard let unwrappedAgency = widgetDeepLinkUrlParseAgency(url: url) else { return }
+                if let viewAgency = widgetDeepLinkToViewAgency[unwrappedAgency] {
+                    viewSelection = .upcoming(viewAgency)
+                } else {
+                    viewSelection = .upcoming(.hololive)
+                }
             case .past:
-                viewSelection = .past(.hololive)
+                guard let unwrappedAgency = widgetDeepLinkUrlParseAgency(url: url) else { return }
+                if let viewAgency = widgetDeepLinkToViewAgency[unwrappedAgency] {
+                    viewSelection = .past(viewAgency)
+                } else {
+                    viewSelection = .past(.hololive)
+                }
             case .concerts:
                 viewSelection = .concerts
             case .settings:
