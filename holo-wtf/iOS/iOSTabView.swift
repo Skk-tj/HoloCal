@@ -2,7 +2,7 @@
 //  iOSTabView.swift
 //  holo-wtf
 //
-// 
+//
 //
 
 import SwiftUI
@@ -65,13 +65,7 @@ struct iOSTabView: View {
             .tag(Tabs.settings)
         }
         .onOpenURL { url in
-            guard url.scheme == "holocal" else { return }
-            guard url.host == "widget-launch" else { return }
-            guard url.pathComponents.count == 3 else { return }
-            
-            let view = WidgetDeepLinkView(rawValue: url.pathComponents[1])
-            
-            guard let unwrappedView = view else { return }
+            guard let unwrappedView = widgetDeepLinkUrlParse(url: url) else { return }
             
             switch unwrappedView {
             case .live:

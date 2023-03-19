@@ -61,13 +61,7 @@ struct WatchRootView: View {
                 }
             }
             .onOpenURL { url in
-                guard url.scheme == "holocal" else { return }
-                guard url.host == "widget-launch" else { return }
-                guard url.pathComponents.count == 3 else { return }
-                
-                let view = WidgetDeepLinkView(rawValue: url.pathComponents[1])
-                
-                guard let unwrappedView = view else { return }
+                guard let unwrappedView = widgetDeepLinkUrlParse(url: url) else { return }
                 path = NavigationPath()
                 
                 switch unwrappedView {

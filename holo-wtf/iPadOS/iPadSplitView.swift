@@ -136,56 +136,15 @@ struct iPadSplitView: View {
             }
         }
         .onOpenURL { url in
-            guard url.scheme == "holocal" else { return }
-            guard url.host == "widget-launch" else { return }
-            guard url.pathComponents.count == 3 else { return }
-            
-            let view = WidgetDeepLinkView(rawValue: url.pathComponents[1])
-            let agency = WidgetDeepLinkAgency(rawValue: url.pathComponents[2])
-            
-            guard let unwrappedView = view else { return }
-            guard let unwrappedAgency = agency else { return }
+            guard let unwrappedView = widgetDeepLinkUrlParse(url: url) else { return }
             
             switch unwrappedView {
             case .live:
-                switch unwrappedAgency {
-                case .hololive:
-                    viewSelection = .live(.hololive)
-                case .nijisanji:
-                    viewSelection = .live(.nijisanji)
-                case .react:
-                    viewSelection = .live(.react)
-                case .nanashiInc:
-                    viewSelection = .live(.nanashiInc)
-                case .noriPro:
-                    viewSelection = .live(.noriPro)
-                }
+                viewSelection = .live(.hololive)
             case .upcoming:
-                switch unwrappedAgency {
-                case .hololive:
-                    viewSelection = .upcoming(.hololive)
-                case .nijisanji:
-                    viewSelection = .upcoming(.nijisanji)
-                case .react:
-                    viewSelection = .upcoming(.react)
-                case .nanashiInc:
-                    viewSelection = .upcoming(.nanashiInc)
-                case .noriPro:
-                    viewSelection = .upcoming(.noriPro)
-                }
+                viewSelection = .upcoming(.hololive)
             case .past:
-                switch unwrappedAgency {
-                case .hololive:
-                    viewSelection = .past(.hololive)
-                case .nijisanji:
-                    viewSelection = .past(.nijisanji)
-                case .react:
-                    viewSelection = .past(.react)
-                case .nanashiInc:
-                    viewSelection = .past(.nanashiInc)
-                case .noriPro:
-                    viewSelection = .past(.noriPro)
-                }
+                viewSelection = .past(.hololive)
             case .concerts:
                 viewSelection = .concerts
             case .settings:

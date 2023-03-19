@@ -25,6 +25,6 @@ struct SmallWidgetEntryView: View {
                 PastTitleView()
             }
         })
-        .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue, WidgetDeepLinkAgency.hololive.rawValue)))
+        .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue)))
     }
 }

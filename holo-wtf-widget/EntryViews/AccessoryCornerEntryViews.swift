@@ -15,7 +15,7 @@ struct AccessoryCornerEntryView: View {
     var body: some View {
         if let video = entry.video {
             AccessoryCornerView(video: video, videoType: videoType)
-                .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue, WidgetDeepLinkAgency.hololive.rawValue)))
+                .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue)))
         } else {
             ZStack {
                 AccessoryWidgetBackground()

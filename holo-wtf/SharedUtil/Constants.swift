@@ -36,7 +36,7 @@ func pastSortStrategy(l1: LiveVideo, l2: LiveVideo) -> Bool {
     l1.endedAt > l2.endedAt
 }
 
-let widgetDeepLink = "holocal://widget-launch/%@/%@"
+let widgetDeepLink = "holocal://widget-launch/%@"
 
 enum WidgetDeepLinkView: String {
     case live
@@ -44,14 +44,6 @@ enum WidgetDeepLinkView: String {
     case past
     case concerts
     case settings
-}
-
-enum WidgetDeepLinkAgency: String {
-    case hololive
-    case nijisanji
-    case react
-    case nanashiInc
-    case noriPro
 }
 
 enum Tabs: Hashable {

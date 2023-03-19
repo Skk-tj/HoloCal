@@ -15,7 +15,7 @@ struct AccessoryInlineEntryView: View {
     var body: some View {
         if let video = entry.video {
             AccessoryInlineWidgetView(video: video, videoType: videoType)
-                .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue, WidgetDeepLinkAgency.hololive.rawValue)))
+                .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue)))
         } else {
             switch videoType {
             case .live:
