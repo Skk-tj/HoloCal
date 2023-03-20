@@ -66,9 +66,7 @@ struct WatchRootView: View {
                 path.append(unwrappedView)
                 
                 guard let unwrappedAgency = widgetDeepLinkUrlParseAgency(url: url) else { return }
-                if let viewAgency = widgetDeepLinkToViewAgency[unwrappedAgency] {
-                    path.append(viewAgency)
-                }
+                path.append(unwrappedAgency)
             }
         }
     }

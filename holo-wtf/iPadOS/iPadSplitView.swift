@@ -140,22 +140,19 @@ struct iPadSplitView: View {
             
             switch unwrappedView {
             case .live:
-                guard let unwrappedAgency = widgetDeepLinkUrlParseAgency(url: url) else { return }
-                if let viewAgency = widgetDeepLinkToViewAgency[unwrappedAgency] {
+                if let viewAgency = widgetDeepLinkUrlParseAgency(url: url) {
                     viewSelection = .live(viewAgency)
                 } else {
                     viewSelection = .live(.hololive)
                 }
             case .upcoming:
-                guard let unwrappedAgency = widgetDeepLinkUrlParseAgency(url: url) else { return }
-                if let viewAgency = widgetDeepLinkToViewAgency[unwrappedAgency] {
+                if let viewAgency = widgetDeepLinkUrlParseAgency(url: url) {
                     viewSelection = .upcoming(viewAgency)
                 } else {
                     viewSelection = .upcoming(.hololive)
                 }
             case .past:
-                guard let unwrappedAgency = widgetDeepLinkUrlParseAgency(url: url) else { return }
-                if let viewAgency = widgetDeepLinkToViewAgency[unwrappedAgency] {
+                if let viewAgency = widgetDeepLinkUrlParseAgency(url: url) {
                     viewSelection = .past(viewAgency)
                 } else {
                     viewSelection = .past(.hololive)

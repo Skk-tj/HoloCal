@@ -7,46 +7,61 @@
 
 import SwiftUI
 
+struct VideoStackView: View {
+    @State var path = NavigationPath()
+    let videoType: VideoType
+    
+    var body: some View {
+        NavigationStack(path: $path) {
+            AgencyNavigationView(viewTitle: videoTypeToViewTitleAndIcon[videoType]!.0) { agency in
+                switch videoType {
+                case .live:
+                    LiveView(for: agency)
+                case .upcoming:
+                    UpcomingView(for: agency)
+                case .past:
+                    PastView(for: agency)
+                }
+            } favouritesView: {
+                switch videoType {
+                case .live:
+                    LiveFavouritesView()
+                case .upcoming:
+                    UpcomingFavouritesView()
+                case .past:
+                    PastFavouritesView()
+                }
+            }
+            .onOpenURL { url in
+                guard let unwrappedAgency = widgetDeepLinkUrlParseAgency(url: url) else { return }
+                path.append(unwrappedAgency)
+            }
+        }
+    }
+}
+
 struct iOSTabView: View {
     @State var tabSelection: Tabs = .live
     
     var body: some View {
         TabView(selection: $tabSelection) {
-            NavigationStack {
-                AgencyNavigationView(viewTitle: "ROOT_VIEW_LIVE") { agency in
-                    LiveView(for: agency)
-                } favouritesView: {
-                    LiveFavouritesView()
+            VideoStackView(videoType: .live)
+                .tabItem {
+                    Label(NSLocalizedString(videoTypeToViewTitleAndIcon[.live]!.0, comment: ""), systemImage: videoTypeToViewTitleAndIcon[.live]!.1)
                 }
-            }
-            .tabItem {
-                Label("ROOT_VIEW_LIVE", systemImage: "person.wave.2.fill")
-            }
-            .tag(Tabs.live)
+                .tag(Tabs.live)
             
-            NavigationStack {
-                AgencyNavigationView(viewTitle: "ROOT_VIEW_UPCOMING") { agency in
-                    UpcomingView(for: agency)
-                } favouritesView: {
-                    UpcomingFavouritesView()
+            VideoStackView(videoType: .upcoming)
+                .tabItem {
+                    Label(NSLocalizedString(videoTypeToViewTitleAndIcon[.upcoming]!.0, comment: ""), systemImage: videoTypeToViewTitleAndIcon[.upcoming]!.1)
                 }
-            }
-            .tabItem {
-                Label("ROOT_VIEW_UPCOMING", systemImage: "clock")
-            }
-            .tag(Tabs.upcoming)
+                .tag(Tabs.upcoming)
             
-            NavigationStack {
-                AgencyNavigationView(viewTitle: "ROOT_VIEW_PAST") { agency in
-                    PastView(for: agency)
-                } favouritesView: {
-                    PastFavouritesView()
+            VideoStackView(videoType: .past)
+                .tabItem {
+                    Label(NSLocalizedString(videoTypeToViewTitleAndIcon[.past]!.0, comment: ""), systemImage: videoTypeToViewTitleAndIcon[.past]!.1)
                 }
-            }
-            .tabItem {
-                Label("ROOT_VIEW_PAST", systemImage: "clock.arrow.circlepath")
-            }
-            .tag(Tabs.past)
+                .tag(Tabs.past)
             
             NavigationStack {
                 ConcertsView()
@@ -66,7 +81,6 @@ struct iOSTabView: View {
         }
         .onOpenURL { url in
             guard let unwrappedView = widgetDeepLinkUrlParseView(url: url) else { return }
-            guard let unwrappedAgency = widgetDeepLinkUrlParseAgency(url: url) else { return }
             tabSelection = unwrappedView
         }
     }

@@ -224,12 +224,13 @@ func widgetDeepLinkUrlParseView(url: URL) -> Tabs? {
     return view
 }
 
-func widgetDeepLinkUrlParseAgency(url: URL) -> WidgetDeepLinkAgency? {
+func widgetDeepLinkUrlParseAgency(url: URL) -> ViewAgency? {
     guard url.scheme == "holocal" else { return nil }
     guard url.host == "widget-launch" else { return nil }
     guard url.pathComponents.count == 3 else { return nil }
     
     let agency = WidgetDeepLinkAgency(rawValue: url.pathComponents[2])
+    guard let unwrappedAgency = agency else { return nil }
     
-    return agency
+    return widgetDeepLinkToViewAgency[unwrappedAgency]
 }

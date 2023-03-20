@@ -16,6 +16,12 @@ let agencyToViewAgency: OrderedDictionary<AgencyEnum, ViewAgency> = [
     .noriPro: .noriPro
 ]
 
+let videoTypeToViewTitleAndIcon: [VideoType: (String, String)] = [
+    .live: ("ROOT_VIEW_LIVE", "person.wave.2.fill"),
+    .upcoming: ("ROOT_VIEW_UPCOMING", "clock"),
+    .past: ("ROOT_VIEW_PAST", "clock.arrow.circlepath")
+]
+
 enum ViewAgency: CaseIterable, Identifiable {
     var id: Self {
         return self
