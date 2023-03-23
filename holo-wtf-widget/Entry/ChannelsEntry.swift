@@ -11,7 +11,7 @@ struct ChannelsEntry: VideoTimelineEntry {
     let date: Date
     let status: WidgetDataStatus
     
-    let channels: [Channel]
+    let channels: ArraySlice<Channel>
     let thumbnails: [Data]
     
     let agency: WidgetDeepLinkAgency

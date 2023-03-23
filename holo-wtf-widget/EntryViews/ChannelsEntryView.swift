@@ -44,7 +44,7 @@ struct ChannelsEntryView: View {
     
     var body: some View {
         BaseChannelsEntryView(entry: entry, channelsView: {
-            ChannelsView(channels: entry.channels, thumbnails: entry.thumbnails)
+            ChannelsView(channels: Array(entry.channels), thumbnails: entry.thumbnails)
         }, titleView: {
             switch videoType {
             case .live:

@@ -13,4 +13,5 @@ struct MultipleVideoUpcomingWidgetProvider: MultipleVideoIntentTimelineProvider 
     
     let videoType: VideoType = .upcoming
     let sortBy: IntentSortBy = .mostRecent
+    let videoCutOff: Int = 2
 }

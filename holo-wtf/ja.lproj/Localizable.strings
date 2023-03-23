@@ -56,9 +56,11 @@
 "SETTINGS_ABOUT_BUG_REPORT" = "フィードバック＆バグリポート";
 "SETTINGS_OPEN_SOURCE" = "オープンソース";
 "SETTINGS_BETA_TESTING" = "ベータテストに参加";
-"SETTINGS_SPECIAL_THANKS" = "Special Thanks";
+"SETTINGS_SPECIAL_THANKS" = "クレジット";
 "SETTINGS_TWITTER" = "開発者Twitter";
 "SETTINGS_HELP_TRANSLATE" = "翻訳に協力";
+"SETTINGS_EMAIL_SUPPORT" = "メールサポート";
+"SETTINGS_SUPPORT_PAGE" = "サポートページ";
 
 // OpenSourceView
 

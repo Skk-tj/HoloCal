@@ -21,16 +21,23 @@ struct BaseMultipleViewEntryView<MainContent: View, SubContent: View, TitleConte
             
             switch entry.status {
             case .ok:
-                if let videoLeft = entry.videoLeft, let videoRight = entry.videoRight {
-                    twoVideosView(videoLeft, videoRight)
-                }
-                
-                if entry.videoRight == nil {
-                    if let videoLeft = entry.videoLeft {
-                        singleVideoView(videoLeft)
+                switch entry.videos.count {
+                case 0:
+                    NoStreamView()
+                case 1:
+                    if let first = entry.videos.first {
+                        singleVideoView(first)
                     } else {
-                        NoStreamView()
+                        NetworkErrorView()
                     }
+                case 2:
+                    if let first = entry.videos.first, let second = entry.videos.last {
+                        twoVideosView(first, second)
+                    } else {
+                        NetworkErrorView()
+                    }
+                default:
+                    NetworkErrorView()
                 }
             case .noVideo:
                 NoStreamView()
@@ -48,9 +55,9 @@ struct MultipleWidgetEntryView: View {
     
     var body: some View {
         BaseMultipleViewEntryView(entry: entry, twoVideosView: { v1, v2 in
-            MultipleWidgetView(leftVideo: v1, leftVideoThumbnail: entry.thumbnailDataLeft, rightVideo: v2, rightVideoThumbnail: entry.thumbnailDataRight, videoType: videoType)
+            MultipleWidgetView(leftVideo: v1, leftVideoThumbnail: entry.thumbnails.first ?? Data(), rightVideo: v2, rightVideoThumbnail: entry.thumbnails.last ?? Data(), videoType: videoType)
         }, singleVideoView: { video in
-            WidgetMediumView(video: video, videoThumbnail: entry.thumbnailDataLeft, videoType: videoType)
+            WidgetMediumView(video: video, videoThumbnail: entry.thumbnails.first ?? Data(), videoType: videoType)
         }, titleView: {
             switch videoType {
             case .live:

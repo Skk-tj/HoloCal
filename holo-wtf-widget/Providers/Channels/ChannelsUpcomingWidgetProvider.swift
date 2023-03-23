@@ -13,4 +13,5 @@ struct ChannelsUpcomingWidgetProvider: ChannelsIntentTimelineProvider {
     
     let videoType: VideoType = .upcoming
     let sortBy: IntentSortBy = .mostRecent
+    let channelsCutOff = 4
 }

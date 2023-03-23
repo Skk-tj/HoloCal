@@ -25,22 +25,23 @@ extension UpcomingWidgetIntent: AgencyIntent { }
 protocol MultipleVideoIntentTimelineProvider: IntentTimelineProvider where Entry == MultipleVideoWidgetEntry, Intent: AgencyIntent {
     var videoType: VideoType { get }
     var sortBy: IntentSortBy { get }
+    var videoCutOff: Int { get }
 }
 
 extension MultipleVideoIntentTimelineProvider {
     func placeholder(in context: Context) -> Entry {
-        return Entry(date: Date(), status: .ok, videoLeft: widgetSampleVideo, thumbnailDataLeft: Data(), videoRight: widgetSampleVideo, thumbnailDataRight: Data(), agency: .unknown)
+        return Entry(date: Date(), status: .ok, videos: [LiveVideo.previewLive, LiveVideo.previewLiveMemberOnly], thumbnails: [Data(), Data()], agency: .unknown)
     }
     
     func getSnapshot(for configuration: Intent, in context: Context, completion: @escaping (Entry) -> Void) {
         Task {
-            completion(await getMultipleEntry(for: configuration.agency, videoType: videoType, sortBy: sortBy, filterBy: { $0.isSupportedAgency }))
+            completion(await getMultipleEntry(for: configuration.agency, videoType: videoType, sortBy: sortBy, videoCutOff: videoCutOff, filterBy: { $0.isSupportedAgency }))
         }
     }
     
     func getTimeline(for configuration: Intent, in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
         Task {
-            let entries: [MultipleVideoWidgetEntry] = [await getMultipleEntry(for: configuration.agency, videoType: videoType, sortBy: sortBy, filterBy: { $0.isSupportedAgency })]
+            let entries: [MultipleVideoWidgetEntry] = [await getMultipleEntry(for: configuration.agency, videoType: videoType, sortBy: sortBy, videoCutOff: videoCutOff, filterBy: { $0.isSupportedAgency })]
             let timeline = Timeline(entries: entries, policy: .atEnd)
             completion(timeline)
         }
@@ -50,6 +51,7 @@ extension MultipleVideoIntentTimelineProvider {
 protocol ChannelsIntentTimelineProvider: IntentTimelineProvider where Entry == ChannelsEntry, Intent: AgencyIntent {
     var videoType: VideoType { get }
     var sortBy: IntentSortBy { get }
+    var channelsCutOff: Int { get }
 }
 
 extension ChannelsIntentTimelineProvider {
@@ -59,13 +61,13 @@ extension ChannelsIntentTimelineProvider {
     
     func getSnapshot(for configuration: Intent, in context: Context, completion: @escaping (Entry) -> Void) {
         Task {
-            completion(await getChannelsEntry(for: configuration.agency, videoType: videoType, sortBy: sortBy, filterBy: { $0.isSupportedAgency }))
+            completion(await getChannelsEntry(for: configuration.agency, videoType: videoType, sortBy: sortBy, channelsCutOff: channelsCutOff, filterBy: { $0.isSupportedAgency }))
         }
     }
     
     func getTimeline(for configuration: Intent, in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
         Task {
-            let entries = [await getChannelsEntry(for: configuration.agency, videoType: videoType, sortBy: sortBy, filterBy: { $0.isSupportedAgency })]
+            let entries = [await getChannelsEntry(for: configuration.agency, videoType: videoType, sortBy: sortBy, channelsCutOff: channelsCutOff, filterBy: { $0.isSupportedAgency })]
             let timeline = Timeline(entries: entries, policy: .atEnd)
             completion(timeline)
         }
