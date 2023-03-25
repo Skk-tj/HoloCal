@@ -121,66 +121,36 @@ func getVideosForWidget(agency: IntentAgency, videoType: VideoType) async throws
     let favourites = getFavouritesFromUserDefaults(groupName: "group.io.skk-tj.holo-wtf.ios")
     
     switch agency {
+    case .unknown:
+        return try await getVideosFromAllAgencies(videoType: videoType)
     case .favourites:
-        switch videoType {
-        case .live:
-            let getResult: [LiveVideo] = try await withThrowingTaskGroup(of: [LiveVideo].self) { group in
-                var result: [LiveVideo] = []
-                
-                for agency in AgencyEnum.allCases {
-                    group.addTask {
-                        return try await getVideos(from: getLiveUrl(for: agency))
-                    }
-                }
-                
-                for try await videos in group {
-                    result.append(contentsOf: videos)
-                }
-                
-                return result
-            }.filter { favourites.contains($0.channel.id) }
-            
-            return getResult
-        case .upcoming:
-            let getResult: [LiveVideo] = try await withThrowingTaskGroup(of: [LiveVideo].self) { group in
-                var result: [LiveVideo] = []
-                
-                for agency in AgencyEnum.allCases {
-                    group.addTask {
-                        return try await getVideos(from: getWidgetUpcomingUrl(for: agency))
-                    }
-                }
-                
-                for try await videos in group {
-                    result.append(contentsOf: videos)
-                }
-                
-                return result
-            }.filter { favourites.contains($0.channel.id) }
-            
-            return getResult
-        case .past:
-            let getResult: [LiveVideo] = try await withThrowingTaskGroup(of: [LiveVideo].self) { group in
-                var result: [LiveVideo] = []
-                
-                for agency in AgencyEnum.allCases {
-                    group.addTask {
-                        return try await getVideos(from: getPastUrl(for: agency))
-                    }
-                }
-                
-                for try await videos in group {
-                    result.append(contentsOf: videos)
-                }
-                
-                return result
-            }.filter { favourites.contains($0.channel.id) }
-            
-            return getResult
-        }
+        return try await getVideosFromAllAgencies(videoType: videoType).filter { favourites.contains($0.channel.id) }
     default:
         return try await getVideos(from: getVideoURLForWidget(agency: agency, videoType: videoType))
     }
+}
+
+func getVideosFromAllAgencies(videoType: VideoType) async throws -> [LiveVideo] {
+    let getResult: [LiveVideo] = try await withThrowingTaskGroup(of: [LiveVideo].self) { group in
+        for agency in AgencyEnum.allCases {
+            group.addTask {
+                switch videoType {
+                case .live:
+                    return try await getVideos(from: getLiveUrl(for: agency))
+                case .upcoming:
+                    return try await getVideos(from: getUpcomingUrl(for: agency))
+                case .past:
+                    return try await getVideos(from: getPastUrl(for: agency))
+                }
+            }
+        }
+        
+        return try await group.reduce(into: [LiveVideo]()) { partialResult, videos in
+            partialResult.append(contentsOf: videos)
+        }
+    }
+    
+    return getResult
 }
 
 func getAndFilterAndSortVideosCommon(for agency: IntentAgency, videoType: VideoType, sortBy: IntentSortBy, filterBy filterAlgorithm: (LiveVideo) -> Bool) async throws -> [LiveVideo] {
@@ -281,19 +251,13 @@ func getAvatarsForChannels(_ channels: [Channel]) async throws -> [Data] {
         channels.forEach { channel in
             group.addTask {
                 let (avatar, _) = try await URLSession.shared.data(from: channel.photo!)
-                
                 return avatar
             }
         }
         
-        var avatars: [Data] = []
-        avatars.reserveCapacity(channels.count)
-        
-        for try await thumbnail in group {
-            avatars.append(thumbnail)
+        return try await group.reduce(into: [Data]()) { partialResult, data in
+            partialResult.append(data)
         }
-        
-        return avatars
     }
 }
 
@@ -302,19 +266,13 @@ func getAvatarsForVideos(_ videos: [LiveVideo]) async throws -> [Data] {
         videos.forEach { video in
             group.addTask {
                 let (avatar, _) = try await URLSession.shared.data(from: video.channel.photo!)
-                
                 return avatar
             }
         }
         
-        var avatars: [Data] = []
-        avatars.reserveCapacity(videos.count)
-        
-        for try await avatar in group {
-            avatars.append(avatar)
+        return try await group.reduce(into: [Data]()) { partialResult, data in
+            partialResult.append(data)
         }
-        
-        return avatars
     }
 }
 
@@ -328,13 +286,8 @@ func getThumbnailsForVideos(_ videos: [LiveVideo]) async throws -> [Data] {
             }
         }
         
-        var thumbnails: [Data] = []
-        thumbnails.reserveCapacity(videos.count)
-        
-        for try await thumbnail in group {
-            thumbnails.append(thumbnail)
+        return try await group.reduce(into: [Data]()) { partialResult, data in
+            partialResult.append(data)
         }
-        
-        return thumbnails
     }
 }

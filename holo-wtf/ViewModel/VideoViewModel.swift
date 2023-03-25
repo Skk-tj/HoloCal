@@ -115,14 +115,9 @@ class VideoViewModel: ObservableObject {
                 }
             }
             
-            var newVideos: [LiveVideo] = []
-            newVideos.reserveCapacity(videoList.count)
-            
-            for try await video in group {
-                newVideos.append(video)
+            return try await group.reduce(into: [LiveVideo]()) { partialResult, video in
+                partialResult.append(video)
             }
-            
-            return newVideos
         }
     }
     

@@ -7,7 +7,7 @@
 
 import XCTest
 
-class HoloCalUITests: XCTestCase {
+class RootViewTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -21,15 +21,6 @@ class HoloCalUITests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        XCTAssertTrue(app.navigationBars.staticTexts["Live"].exists)
-    }
     
     func testTabBar() throws {
         let app = XCUIApplication()
@@ -37,6 +28,8 @@ class HoloCalUITests: XCTestCase {
         
         XCTAssertTrue(app.tabBars.buttons["Live"].exists)
         XCTAssertTrue(app.tabBars.buttons["Upcoming"].exists)
+        XCTAssertTrue(app.tabBars.buttons["Past"].exists)
+        XCTAssertTrue(app.tabBars.buttons["Concerts"].exists)
         XCTAssertTrue(app.tabBars.buttons["Settings"].exists)
     }
     
@@ -49,6 +42,12 @@ class HoloCalUITests: XCTestCase {
         
         app.tabBars.buttons["Upcoming"].tap()
         XCTAssertTrue(app.navigationBars.staticTexts["Upcoming"].exists)
+        
+        app.tabBars.buttons["Past"].tap()
+        XCTAssertTrue(app.navigationBars.staticTexts["Past"].exists)
+        
+        app.tabBars.buttons["Concerts"].tap()
+        XCTAssertTrue(app.navigationBars.staticTexts["Concerts"].exists)
         
         app.tabBars.buttons["Settings"].tap()
         XCTAssertTrue(app.navigationBars.staticTexts["Settings"].exists)
@@ -76,14 +75,5 @@ class HoloCalUITests: XCTestCase {
         
         app.tabBars.buttons["Settings"].tap()
         XCTAssertTrue(app.staticTexts["UPCOMING SCHEDULE"].exists)
-    }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
     }
 }

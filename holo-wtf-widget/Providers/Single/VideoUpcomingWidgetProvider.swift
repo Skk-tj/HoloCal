@@ -13,4 +13,4 @@ struct VideoUpcomingWidgetProvider: VideoIntentTimelineProvider {
     
     let videoType: VideoType = .upcoming
     let sortBy: IntentSortBy = .mostRecent
-}
+} 

@@ -72,8 +72,6 @@ func pastSortStrategy(l1: LiveVideo, l2: LiveVideo) -> Bool {
     l1.endedAt > l2.endedAt
 }
 
-let widgetDeepLink = "holocal://widget-launch/%@/%@"
-
 enum Tabs: String, Hashable {
     case live
     case upcoming
@@ -81,38 +79,3 @@ enum Tabs: String, Hashable {
     case concerts
     case settings
 }
-
-/// Ugh, one-to-one copy of `IntentAgency`
-enum WidgetDeepLinkAgency: String {
-    case unknown
-    case hololive
-    case nijisanji
-    case react
-    case nanashiInc
-    case noriPro
-    case favourites
-}
-
-let intentAgencyToDeepLinkAgency: [IntentAgency: WidgetDeepLinkAgency] = [
-    .unknown: .unknown,
-    .hololive: .hololive,
-    .nijisanji: .nijisanji,
-    .react: .react,
-    .nanashiInc: .nanashiInc,
-    .noriPro: .noriPro,
-    .favourites: .favourites
-]
-
-let widgetDeepLinkToViewAgency: [WidgetDeepLinkAgency: ViewAgency] = [
-    .hololive: .hololive,
-    .nijisanji: .nijisanji,
-    .react: .react,
-    .nanashiInc: .nanashiInc,
-    .noriPro: .noriPro
-]
-
-let videoTypeToWidgetDeepLink: [VideoType: Tabs] = [
-    .live: .live,
-    .upcoming: .upcoming,
-    .past: .past
-]

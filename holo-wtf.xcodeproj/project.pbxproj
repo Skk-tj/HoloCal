@@ -167,8 +167,7 @@
 		F04D755B28D7D8DD0096B8AB /* OpenSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */; };
 		F04EB66728D2A0A000F168CB /* ManageGenerationOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04EB66628D2A0A000F168CB /* ManageGenerationOrderView.swift */; };
 		F058189A281BFFDA0064EF94 /* SectionedForEachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0581899281BFFDA0064EF94 /* SectionedForEachView.swift */; };
-		F05818A2281CAAF50064EF94 /* HoloCalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05818A1281CAAF50064EF94 /* HoloCalUITests.swift */; };
-		F05818A4281CAAF50064EF94 /* HoloCalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05818A3281CAAF50064EF94 /* HoloCalUITestsLaunchTests.swift */; };
+		F05818A2281CAAF50064EF94 /* RootViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05818A1281CAAF50064EF94 /* RootViewTests.swift */; };
 		F05DFA362853CA7800D62D19 /* BaseVideoEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05DFA352853CA7800D62D19 /* BaseVideoEntryView.swift */; };
 		F05E9EB327EB27F800EF48DD /* LiveiPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E9EB227EB27F800EF48DD /* LiveiPadView.swift */; };
 		F05E9EB527EB290000EF48DD /* UpcomingiPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E9EB427EB290000EF48DD /* UpcomingiPadView.swift */; };
@@ -244,6 +243,26 @@
 		F09664E829A602D1005F37C0 /* BlockVideoTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01F2EF929A349D900DA8367 /* BlockVideoTypeView.swift */; };
 		F09664E929A602E9005F37C0 /* BlockVideoTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01F2EF929A349D900DA8367 /* BlockVideoTypeView.swift */; };
 		F09664EA29A602F6005F37C0 /* BlockVideoTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01F2EF929A349D900DA8367 /* BlockVideoTypeView.swift */; };
+		F099C67329CFA11300596C7F /* AgencyNavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C67229CFA11300596C7F /* AgencyNavigationTests.swift */; };
+		F099C67429CFA20600596C7F /* Agency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E45D1728F39AD90091474A /* Agency.swift */; };
+		F099C67A29CFA3A500596C7F /* Modes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA6EA228D791BE0028CB11 /* Modes.swift */; };
+		F099C67D29CFA3E600596C7F /* WidgetConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C67C29CFA3E600596C7F /* WidgetConstants.swift */; };
+		F099C67E29CFA3E600596C7F /* WidgetConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C67C29CFA3E600596C7F /* WidgetConstants.swift */; };
+		F099C67F29CFA3E600596C7F /* WidgetConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C67C29CFA3E600596C7F /* WidgetConstants.swift */; };
+		F099C68029CFA3E600596C7F /* WidgetConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C67C29CFA3E600596C7F /* WidgetConstants.swift */; };
+		F099C68229CFA43B00596C7F /* WidgetUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C68129CFA43B00596C7F /* WidgetUtils.swift */; };
+		F099C68329CFA43B00596C7F /* WidgetUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C68129CFA43B00596C7F /* WidgetUtils.swift */; };
+		F099C68429CFA43B00596C7F /* WidgetUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C68129CFA43B00596C7F /* WidgetUtils.swift */; };
+		F099C68529CFA43B00596C7F /* WidgetUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C68129CFA43B00596C7F /* WidgetUtils.swift */; };
+		F099C68729CFA4A000596C7F /* GenerationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C68629CFA4A000596C7F /* GenerationGroup.swift */; };
+		F099C68829CFA4A000596C7F /* GenerationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C68629CFA4A000596C7F /* GenerationGroup.swift */; };
+		F099C68929CFA4A000596C7F /* GenerationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C68629CFA4A000596C7F /* GenerationGroup.swift */; };
+		F099C68A29CFA4A000596C7F /* GenerationGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C68629CFA4A000596C7F /* GenerationGroup.swift */; };
+		F099C68C29CFA4CA00596C7F /* Vtuberable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C68B29CFA4CA00596C7F /* Vtuberable.swift */; };
+		F099C68D29CFA4CA00596C7F /* Vtuberable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C68B29CFA4CA00596C7F /* Vtuberable.swift */; };
+		F099C68E29CFA4CA00596C7F /* Vtuberable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C68B29CFA4CA00596C7F /* Vtuberable.swift */; };
+		F099C68F29CFA4CA00596C7F /* Vtuberable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C68B29CFA4CA00596C7F /* Vtuberable.swift */; };
+		F099C69029CFA54700596C7F /* Vtuberable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C68B29CFA4CA00596C7F /* Vtuberable.swift */; };
 		F09D25BE27FC2552001A7D71 /* SettingsTalentStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25BD27FC2552001A7D71 /* SettingsTalentStarView.swift */; };
 		F09D25C327FEC12D001A7D71 /* SettingsFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */; };
 		F09D25C928020B12001A7D71 /* UpcomingViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25C828020B12001A7D71 /* UpcomingViewToolbar.swift */; };
@@ -511,8 +530,7 @@
 		F04EB66628D2A0A000F168CB /* ManageGenerationOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageGenerationOrderView.swift; sourceTree = "<group>"; };
 		F0581899281BFFDA0064EF94 /* SectionedForEachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedForEachView.swift; sourceTree = "<group>"; };
 		F058189F281CAAF50064EF94 /* HoloCalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoloCalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F05818A1281CAAF50064EF94 /* HoloCalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoloCalUITests.swift; sourceTree = "<group>"; };
-		F05818A3281CAAF50064EF94 /* HoloCalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoloCalUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F05818A1281CAAF50064EF94 /* RootViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewTests.swift; sourceTree = "<group>"; };
 		F05B943B294FE2CD0034A295 /* holo-wtf-watch Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "holo-wtf-watch Watch App.entitlements"; sourceTree = "<group>"; };
 		F05DFA352853CA7800D62D19 /* BaseVideoEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVideoEntryView.swift; sourceTree = "<group>"; };
 		F05E9EB227EB27F800EF48DD /* LiveiPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveiPadView.swift; sourceTree = "<group>"; };
@@ -557,6 +575,11 @@
 		F0954BE52817C8BF00369EC4 /* GenerationFilteredForEachVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationFilteredForEachVideoView.swift; sourceTree = "<group>"; };
 		F0954BEB2817D63100369EC4 /* VideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListView.swift; sourceTree = "<group>"; };
 		F09664DF29A34BEC005F37C0 /* BlockVideoInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockVideoInfoView.swift; sourceTree = "<group>"; };
+		F099C67229CFA11300596C7F /* AgencyNavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgencyNavigationTests.swift; sourceTree = "<group>"; };
+		F099C67C29CFA3E600596C7F /* WidgetConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetConstants.swift; sourceTree = "<group>"; };
+		F099C68129CFA43B00596C7F /* WidgetUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetUtils.swift; sourceTree = "<group>"; };
+		F099C68629CFA4A000596C7F /* GenerationGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationGroup.swift; sourceTree = "<group>"; };
+		F099C68B29CFA4CA00596C7F /* Vtuberable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vtuberable.swift; sourceTree = "<group>"; };
 		F09D25BD27FC2552001A7D71 /* SettingsTalentStarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTalentStarView.swift; sourceTree = "<group>"; };
 		F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFormView.swift; sourceTree = "<group>"; };
 		F09D25C828020B12001A7D71 /* UpcomingViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewToolbar.swift; sourceTree = "<group>"; };
@@ -779,6 +802,8 @@
 				F0C657D527732690004AF802 /* Util.swift */,
 				F0CA6EA228D791BE0028CB11 /* Modes.swift */,
 				F025203E28EE94B700976972 /* Constants.swift */,
+				F099C67C29CFA3E600596C7F /* WidgetConstants.swift */,
+				F099C68129CFA43B00596C7F /* WidgetUtils.swift */,
 			);
 			path = SharedUtil;
 			sourceTree = "<group>";
@@ -847,8 +872,8 @@
 		F05818A0281CAAF50064EF94 /* HoloCalUITests */ = {
 			isa = PBXGroup;
 			children = (
-				F05818A1281CAAF50064EF94 /* HoloCalUITests.swift */,
-				F05818A3281CAAF50064EF94 /* HoloCalUITestsLaunchTests.swift */,
+				F05818A1281CAAF50064EF94 /* RootViewTests.swift */,
+				F099C67229CFA11300596C7F /* AgencyNavigationTests.swift */,
 			);
 			path = HoloCalUITests;
 			sourceTree = "<group>";
@@ -1140,6 +1165,8 @@
 				F004E8C5285D004A00ABDFED /* SongInStream.swift */,
 				F0E45D1728F39AD90091474A /* Agency.swift */,
 				F01DAA4E298FACE000052514 /* LiveConcert.swift */,
+				F099C68629CFA4A000596C7F /* GenerationGroup.swift */,
+				F099C68B29CFA4CA00596C7F /* Vtuberable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1439,8 +1466,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F05818A2281CAAF50064EF94 /* HoloCalUITests.swift in Sources */,
-				F05818A4281CAAF50064EF94 /* HoloCalUITestsLaunchTests.swift in Sources */,
+				F099C67329CFA11300596C7F /* AgencyNavigationTests.swift in Sources */,
+				F099C67A29CFA3A500596C7F /* Modes.swift in Sources */,
+				F099C67429CFA20600596C7F /* Agency.swift in Sources */,
+				F05818A2281CAAF50064EF94 /* RootViewTests.swift in Sources */,
+				F099C69029CFA54700596C7F /* Vtuberable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1450,6 +1480,7 @@
 			files = (
 				F0B4D6B429B09663000A28BC /* VideoWidgetView.swift in Sources */,
 				F09664E929A602E9005F37C0 /* BlockVideoTypeView.swift in Sources */,
+				F099C68529CFA43B00596C7F /* WidgetUtils.swift in Sources */,
 				F0E45D1B28F39AF90091474A /* Agency.swift in Sources */,
 				F0186A1829AC710C00339178 /* SmallWidgetAvatarView.swift in Sources */,
 				F025204228EE95FB00976972 /* Constants.swift in Sources */,
@@ -1458,6 +1489,7 @@
 				F06D28E828D839F5007D06FB /* LiveVideo.swift in Sources */,
 				F06D28F928D83AC9007D06FB /* Util.swift in Sources */,
 				F06D28E628D839F5007D06FB /* Channel.swift in Sources */,
+				F099C68F29CFA4CA00596C7F /* Vtuberable.swift in Sources */,
 				F0186A0729AC5A8400339178 /* NetworkErrorView.swift in Sources */,
 				F06D28E328D839E4007D06FB /* SingleVideoWidgetEntry.swift in Sources */,
 				F01869E429AB859100339178 /* VideoPastWidgetProvider.swift in Sources */,
@@ -1469,6 +1501,7 @@
 				F09664E329A34DCD005F37C0 /* BlockMemberOnlyView.swift in Sources */,
 				F0E06D182932A4FA00BF6812 /* Modes.swift in Sources */,
 				F06D28F828D83ABB007D06FB /* VideoFetchService.swift in Sources */,
+				F099C68029CFA3E600596C7F /* WidgetConstants.swift in Sources */,
 				F0186A0429AC5A1300339178 /* NoStreamView.swift in Sources */,
 				F0F40976293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */,
 				F01241A42935E2C7007C8FE9 /* BlockLiveTimeView.swift in Sources */,
@@ -1493,6 +1526,7 @@
 				F06D28EC28D83A2D007D06FB /* SharedUtil.swift in Sources */,
 				F025204728EEA5FC00976972 /* Common.swift in Sources */,
 				F0186A0C29AC606800339178 /* BlockPastTimeView.swift in Sources */,
+				F099C68A29CFA4A000596C7F /* GenerationGroup.swift in Sources */,
 				F0186A0129AC59FA00339178 /* PastTitleView.swift in Sources */,
 				F03A138528F0004C00BB8E51 /* ChannelsEntry.swift in Sources */,
 				F0186A4029AC867100339178 /* SmallWidgetView.swift in Sources */,
@@ -1509,6 +1543,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F093D1DC282FA0CF00E2A6FF /* LiveTimeView.swift in Sources */,
+				F099C68829CFA4A000596C7F /* GenerationGroup.swift in Sources */,
 				F0186A1E29AC773400339178 /* SmallEntryViews.swift in Sources */,
 				F04D1B3E283A304E0026340D /* VideoLiveWidgetProvider.swift in Sources */,
 				F0FB8E0A29CE97CF005E3FFD /* AllMultipleVideoEntryView.swift in Sources */,
@@ -1517,6 +1552,7 @@
 				F03A139428F2018000BB8E51 /* ChannelsView.swift in Sources */,
 				F0E06D0B29322C7800BF6812 /* BlockMemberOnlyView.swift in Sources */,
 				F0186A2129AC776300339178 /* PaneEntryViews.swift in Sources */,
+				F099C67E29CFA3E600596C7F /* WidgetConstants.swift in Sources */,
 				F0186A0629AC5A8400339178 /* NetworkErrorView.swift in Sources */,
 				F025204528EEA5FC00976972 /* Common.swift in Sources */,
 				F06D28E028D8390F007D06FB /* SharedEntryView.swift in Sources */,
@@ -1575,9 +1611,11 @@
 				F0186A3F29AC867100339178 /* SmallWidgetView.swift in Sources */,
 				F093D1DF282FA5FE00E2A6FF /* VideoFetchService.swift in Sources */,
 				F0186A4629AC8E7800339178 /* WidgetMediumView.swift in Sources */,
+				F099C68329CFA43B00596C7F /* WidgetUtils.swift in Sources */,
 				F01869EB29AC1DD500339178 /* ChannelsPastWidgetProvider.swift in Sources */,
 				F0B4D6B929B09930000A28BC /* TestVideoWidgetView.swift in Sources */,
 				F0186A4229AC892900339178 /* VideoWidgetView.swift in Sources */,
+				F099C68D29CFA4CA00596C7F /* Vtuberable.swift in Sources */,
 				F09D53A529336918003C4F80 /* ChannelsUpcomingWidgetProvider.swift in Sources */,
 				F0186A2F29AC7CA900339178 /* AccessoryCornerEntryViews.swift in Sources */,
 				F09D53A129336590003C4F80 /* VideoUpcomingWidgetProvider.swift in Sources */,
@@ -1591,6 +1629,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0F0EAA2292B306E0091DBD7 /* LiveFavouritesViewToolbar.swift in Sources */,
+				F099C68229CFA43B00596C7F /* WidgetUtils.swift in Sources */,
 				F0C50A1F2827C6FA00A93225 /* UpcomingCountView.swift in Sources */,
 				F09D25E52802EA09001A7D71 /* SwipableLinkedCellView.swift in Sources */,
 				F0E4873D2876586F00118BBB /* LiveCollabAvatarView.swift in Sources */,
@@ -1640,6 +1679,7 @@
 				F0F40973293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */,
 				F02211AB292F68DF009EC2CC /* BlockMemberOnlyView.swift in Sources */,
 				F008BBA42928DA4600034AF4 /* AgencySelectionView.swift in Sources */,
+				F099C68C29CFA4CA00596C7F /* Vtuberable.swift in Sources */,
 				F0673C1227732CE7009C65C6 /* UpcomingCellView.swift in Sources */,
 				F0789B8C29AB504900346239 /* PastCellView.swift in Sources */,
 				F009023A27EDB85100E343B0 /* LiveViewToolbar.swift in Sources */,
@@ -1668,6 +1708,7 @@
 				F01DAA5A2990850200052514 /* ConcertCountView.swift in Sources */,
 				F04EB66728D2A0A000F168CB /* ManageGenerationOrderView.swift in Sources */,
 				F02211AD292F73DA009EC2CC /* iPadSplitView.swift in Sources */,
+				F099C68729CFA4A000596C7F /* GenerationGroup.swift in Sources */,
 				F0F0EA99292B01510091DBD7 /* LiveFavoritesViewModel.swift in Sources */,
 				F004E8CB285D058000ABDFED /* SingleSongView.swift in Sources */,
 				F05E9EB327EB27F800EF48DD /* LiveiPadView.swift in Sources */,
@@ -1702,6 +1743,7 @@
 				F0789B9029AB543300346239 /* PastTimeView.swift in Sources */,
 				F008BBA229235DBA00034AF4 /* ManageGenerationOrderAgencySelectionView.swift in Sources */,
 				F0F0EABF292B55E60091DBD7 /* LiveFavouriteCountView.swift in Sources */,
+				F099C67D29CFA3E600596C7F /* WidgetConstants.swift in Sources */,
 				F0673C0E27732BA3009C65C6 /* UpcomingView.swift in Sources */,
 				F0E45D1828F39AD90091474A /* Agency.swift in Sources */,
 			);
@@ -1727,6 +1769,7 @@
 				F0328559293218220079F46A /* LiveFavouritesWatchView.swift in Sources */,
 				F04D755428D7CF3F0096B8AB /* UpcomingWatchView.swift in Sources */,
 				F04D755B28D7D8DD0096B8AB /* OpenSourceView.swift in Sources */,
+				F099C68929CFA4A000596C7F /* GenerationGroup.swift in Sources */,
 				F022119D292B6CF5009EC2CC /* SingleAgencyItemView.swift in Sources */,
 				F01869E129AB794700339178 /* PastFavouriteCountView.swift in Sources */,
 				F01DAA7B299640C300052514 /* LiveConcert.swift in Sources */,
@@ -1758,6 +1801,7 @@
 				F0CA6ECC28D7C2BE0028CB11 /* LiveVideo.swift in Sources */,
 				F0F0EAC3292B56D20091DBD7 /* UpcomingFavouriteCountView.swift in Sources */,
 				F0CA6EC328D7C2620028CB11 /* LiveWatchView.swift in Sources */,
+				F099C68429CFA43B00596C7F /* WidgetUtils.swift in Sources */,
 				F01869D629AB76E600339178 /* WatchPastCellView.swift in Sources */,
 				F0F0EA9D292B062A0091DBD7 /* AgencyForEachView.swift in Sources */,
 				F0CA6ED028D7C31D0028CB11 /* WatchVideoListView.swift in Sources */,
@@ -1777,8 +1821,10 @@
 				F00BD6D229052AC400D7932E /* VideoViewModel.swift in Sources */,
 				F09D53BF29337378003C4F80 /* Intents.intentdefinition in Sources */,
 				F01DAA842996419900052514 /* ConcertWatchCell.swift in Sources */,
+				F099C67F29CFA3E600596C7F /* WidgetConstants.swift in Sources */,
 				F01DAA7C299640CE00052514 /* ConcertListView.swift in Sources */,
 				F0CA6EC928D7C2BE0028CB11 /* TalentData.swift in Sources */,
+				F099C68E29CFA4CA00596C7F /* Vtuberable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1837,7 +1883,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.HoloCalUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1858,7 +1904,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.skk-tj.HoloCalUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1879,7 +1925,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 198;
+				CURRENT_PROJECT_VERSION = 199;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = complications/Info.plist;
@@ -1910,7 +1956,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 198;
+				CURRENT_PROJECT_VERSION = 199;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = complications/Info.plist;
@@ -1941,7 +1987,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf-widgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 198;
+				CURRENT_PROJECT_VERSION = 199;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "holo-wtf-widget/Info.plist";
@@ -1970,7 +2016,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf-widgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 198;
+				CURRENT_PROJECT_VERSION = 199;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "holo-wtf-widget/Info.plist";
@@ -2120,7 +2166,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf/holo-wtf.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 198;
+				CURRENT_PROJECT_VERSION = 199;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -2161,7 +2207,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf/holo-wtf.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 198;
+				CURRENT_PROJECT_VERSION = 199;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -2204,7 +2250,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf-watch Watch App/holo-wtf-watch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 198;
+				CURRENT_PROJECT_VERSION = 199;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf-watch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -2240,7 +2286,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf-watch Watch App/holo-wtf-watch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 198;
+				CURRENT_PROJECT_VERSION = 199;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf-watch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
