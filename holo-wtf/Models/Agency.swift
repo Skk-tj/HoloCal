@@ -150,14 +150,11 @@ let agencyEnumToGenerations: [AgencyEnum: [Generation]] = [
         .sinkirow,
         .parfait,
         .reMixx,
+        // Re:AcT Gaming are not added for now due to them streaming on twitch
         .reactOfficial
     ],
     .nanashiInc: [
-        .animare,
-        .honeyStrap,
-        .sugarLyric,
-        .hiyocyo,
-        .soloTalent,
+        .nanashiInc,
         .nanashiOfficial
     ],
     .noriPro: [

@@ -10,7 +10,6 @@ import SwiftUI
 struct SettingsFormView: View {
     @AppStorage(UserDefaultKeys.upcomingLookAhead) var hoursLookAhead: Int = 48
     @AppStorage(UserDefaultKeys.dstDays) var dstDays: Int = 5
-    @Environment(\.openURL) var openURL
     
     var body: some View {
         Form {
@@ -51,16 +50,11 @@ struct SettingsFormView: View {
             }
             
             Section(header: Text("SETTINGS_ABOUT_SECTION_HEADER"), footer: Text("HoloCal \(Bundle.main.appVersionLong) (\(Bundle.main.appBuild)) \nCodename: \(Bundle.main.codeName)")) {
-                
                 Link("SETTINGS_ABOUT_BUG_REPORT", destination: URL(string: "https://github.com/Skk-tj/HoloCal/issues")!)
                 
                 Link("SETTINGS_BETA_TESTING", destination: URL(string: "https://testflight.apple.com/join/uxxMYkU3")!)
                 
                 Link("SETTINGS_HELP_TRANSLATE", destination: URL(string: "https://crowdin.com/project/holocal/invite?d=p6a556u4l6f5339323b363c5b3o4a3p4a323")!)
-                
-                Button("SETTINGS_EMAIL_SUPPORT") {
-                    openURL(URL(string: "mailto:holocal@skk-tj.live")!)
-                }
                 
                 Link(destination: URL(string: "https://me.skk-tj.live/holocal-support")!, label: {
                     Text("SETTINGS_SUPPORT_PAGE")
