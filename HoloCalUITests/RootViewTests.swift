@@ -66,6 +66,8 @@ class RootViewTests: XCTestCase {
         
         XCTAssertTrue(app.tabBars.buttons["配信中"].exists)
         XCTAssertTrue(app.tabBars.buttons["今後の配信"].exists)
+        XCTAssertTrue(app.tabBars.buttons["アーカイブ"].exists)
+        XCTAssertTrue(app.tabBars.buttons["ライブコンサート"].exists)
         XCTAssertTrue(app.tabBars.buttons["設定"].exists)
     }
     
