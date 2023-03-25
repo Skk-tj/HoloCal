@@ -13,5 +13,4 @@ struct ChannelsPastWidgetProvider: ChannelsIntentTimelineProvider {
     
     let videoType: VideoType = .past
     let sortBy: IntentSortBy = .mostRecent
-    let channelsCutOff = 4
 }

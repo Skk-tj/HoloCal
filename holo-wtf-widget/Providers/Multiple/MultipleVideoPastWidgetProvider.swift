@@ -13,5 +13,4 @@ struct MultipleVideoPastWidgetProvider: MultipleVideoIntentTimelineProvider {
     
     let videoType: VideoType = .past
     let sortBy: IntentSortBy = .mostRecent
-    let videoCutOff: Int = 2
 }

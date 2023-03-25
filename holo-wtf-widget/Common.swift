@@ -216,15 +216,18 @@ func getEntryWithIntent(for agency: IntentAgency, videoType: VideoType, sortBy: 
         
         let firstVideo = lives[0]
         
-        let (avatarData, avatarResponse) = try await URLSession.shared.data(from: firstVideo.channel.photo!)
+        async let (avatarData, _) = URLSession.shared.data(from: firstVideo.channel.photo!)
+        async let (thumbnailData, _) = URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(firstVideo.id)/hq720.jpg")!)
         
-        guard let response = avatarResponse as? HTTPURLResponse, response.statusCode == 200 else {
-            return SingleVideoWidgetEntry(date: .now, status: .network, video: nil, avatarData: Data(), thumbnailData: Data(), agency: intentAgencyToDeepLinkAgency[agency]!)
-        }
+//        guard let response = try await avatarResponse as? HTTPURLResponse, response.statusCode == 200 else {
+//            return SingleVideoWidgetEntry(date: .now, status: .network, video: nil, avatarData: Data(), thumbnailData: Data(), agency: intentAgencyToDeepLinkAgency[agency]!)
+//        }
+//
+//        guard let response = try await thumbnailResponse as? HTTPURLResponse, response.statusCode == 200 else {
+//            return SingleVideoWidgetEntry(date: .now, status: .network, video: nil, avatarData: Data(), thumbnailData: Data(), agency: intentAgencyToDeepLinkAgency[agency]!)
+//        }
         
-        let (thumbnailData, _) = try await URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(firstVideo.id)/hq720.jpg")!)
-        
-        let entry = SingleVideoWidgetEntry(date: .now, status: .ok, video: lives[0], avatarData: avatarData, thumbnailData: thumbnailData, agency: intentAgencyToDeepLinkAgency[agency]!)
+        let entry = try await SingleVideoWidgetEntry(date: .now, status: .ok, video: lives[0], avatarData: avatarData, thumbnailData:  thumbnailData, agency: intentAgencyToDeepLinkAgency[agency]!)
         
         return entry
     } catch {
@@ -232,9 +235,9 @@ func getEntryWithIntent(for agency: IntentAgency, videoType: VideoType, sortBy: 
     }
 }
 
-func getMultipleEntry(for agency: IntentAgency, videoType: VideoType, sortBy: IntentSortBy, videoCutOff: Int, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> MultipleVideoWidgetEntry {
+func getMultipleEntry(for agency: IntentAgency, videoType: VideoType, sortBy: IntentSortBy, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> MultipleVideoWidgetEntry {
     do {
-        let lives = try await getAndFilterAndSortVideosCommon(for: agency, videoType: videoType, sortBy: sortBy, filterBy: filterAlgorithm)
+        var lives = try await getAndFilterAndSortVideosCommon(for: agency, videoType: videoType, sortBy: sortBy, filterBy: filterAlgorithm)
         
         if lives.isEmpty {
             let entry = MultipleVideoWidgetEntry(date: .now, status: .noVideo, videos: [], thumbnails: [], agency: intentAgencyToDeepLinkAgency[agency]!)
@@ -242,9 +245,11 @@ func getMultipleEntry(for agency: IntentAgency, videoType: VideoType, sortBy: In
             return entry
         }
         
-        let thumbnails = try await getThumbnailsForVideos(Array(lives.prefix(videoCutOff)))
+        lives = Array(lives.prefix(2))
         
-        let entry = MultipleVideoWidgetEntry(date: .now, status: .ok, videos: lives.prefix(videoCutOff), thumbnails: thumbnails, agency: intentAgencyToDeepLinkAgency[agency]!)
+        let thumbnails = try await getThumbnailsForVideos(lives)
+        
+        let entry = MultipleVideoWidgetEntry(date: .now, status: .ok, videos: lives, thumbnails: thumbnails, agency: intentAgencyToDeepLinkAgency[agency]!)
         
         return entry
     } catch {
@@ -254,7 +259,7 @@ func getMultipleEntry(for agency: IntentAgency, videoType: VideoType, sortBy: In
     }
 }
 
-func getChannelsEntry(for agency: IntentAgency, videoType: VideoType, sortBy: IntentSortBy, channelsCutOff: Int, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> ChannelsEntry {
+func getChannelsEntry(for agency: IntentAgency, videoType: VideoType, sortBy: IntentSortBy, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> ChannelsEntry {
     do {
         let lives = try await getAndFilterAndSortVideosCommon(for: agency, videoType: videoType, sortBy: sortBy, filterBy: filterAlgorithm)
         
@@ -263,32 +268,53 @@ func getChannelsEntry(for agency: IntentAgency, videoType: VideoType, sortBy: In
             return entry
         }
         
-        let channels = lives.map { $0.channel }
+        let channels = Array(lives.map { $0.channel }.prefix(4))
         
-        return ChannelsEntry(date: .now, status: .ok, channels: channels.prefix(4), thumbnails: try await getThumbnailsForChannels(channels), agency: intentAgencyToDeepLinkAgency[agency]!)
+        return ChannelsEntry(date: .now, status: .ok, channels: channels, thumbnails: try await getAvatarsForChannels(channels), agency: intentAgencyToDeepLinkAgency[agency]!)
     } catch {
         return ChannelsEntry(date: .now, status: .network, channels: [], thumbnails: [], agency: intentAgencyToDeepLinkAgency[agency]!)
     }
 }
 
-func getThumbnailsForChannels(_ channels: [Channel]) async throws -> [Data] {
+func getAvatarsForChannels(_ channels: [Channel]) async throws -> [Data] {
     try await withThrowingTaskGroup(of: Data.self) { group in
         channels.forEach { channel in
             group.addTask {
-                let (thumbnail, _) = try await URLSession.shared.data(from: channel.photo!)
+                let (avatar, _) = try await URLSession.shared.data(from: channel.photo!)
                 
-                return thumbnail
+                return avatar
             }
         }
         
-        var thumbnails: [Data] = []
-        thumbnails.reserveCapacity(channels.count)
+        var avatars: [Data] = []
+        avatars.reserveCapacity(channels.count)
         
         for try await thumbnail in group {
-            thumbnails.append(thumbnail)
+            avatars.append(thumbnail)
         }
         
-        return thumbnails
+        return avatars
+    }
+}
+
+func getAvatarsForVideos(_ videos: [LiveVideo]) async throws -> [Data] {
+    try await withThrowingTaskGroup(of: Data.self) { group in
+        videos.forEach { video in
+            group.addTask {
+                let (avatar, _) = try await URLSession.shared.data(from: video.channel.photo!)
+                
+                return avatar
+            }
+        }
+        
+        var avatars: [Data] = []
+        avatars.reserveCapacity(videos.count)
+        
+        for try await avatar in group {
+            avatars.append(avatar)
+        }
+        
+        return avatars
     }
 }
 

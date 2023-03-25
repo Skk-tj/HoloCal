@@ -13,7 +13,7 @@ struct MultipleLiveWidget: Widget {
     
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: LiveWidgetIntent.self, provider: MultipleVideoLiveWidgetProvider()) { entry in
-            MultipleWidgetEntryView(entry: entry, videoType: .live)
+            AllMultipleVideoEntryView(entry: entry, videoType: .live)
         }
         .configurationDisplayName("MULTIPLE_CURRENTLY_LIVE_WIDGET_DISPLAY_NAME")
         .description("MULTIPLE_CURRENTLY_LIVE_WIDGET_DESCRIPTION")
@@ -26,7 +26,7 @@ struct MultipleUpcomingWidget: Widget {
     
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: UpcomingWidgetIntent.self, provider: MultipleVideoUpcomingWidgetProvider()) { entry in
-            MultipleWidgetEntryView(entry: entry, videoType: .upcoming)
+            AllMultipleVideoEntryView(entry: entry, videoType: .upcoming)
         }
         .configurationDisplayName("MULTIPLE_UPCOMING_WIDGET_DISPLAY_NAME")
         .description("MULTIPLE_UPCOMING_WIDGET_DESCRIPTION")
@@ -39,7 +39,7 @@ struct MultiplePastWidget: Widget {
     
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: PastWidgetIntent.self, provider: MultipleVideoPastWidgetProvider()) { entry in
-            MultipleWidgetEntryView(entry: entry, videoType: .past)
+            AllMultipleVideoEntryView(entry: entry, videoType: .past)
         }
         .configurationDisplayName("MULTIPLE_PAST_WIDGET_DISPLAY_NAME")
         .description("MULTIPLE_PAST_WIDGET_DESCRIPTION")

@@ -346,6 +346,9 @@
 		F0F40975293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F40972293D6F46001C4F48 /* MultiLanguageNameView.swift */; };
 		F0F40976293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F40972293D6F46001C4F48 /* MultiLanguageNameView.swift */; };
 		F0FB8E0229C68764005E3FFD /* AgencyNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CEE36329BE006600AFB565 /* AgencyNavigationView.swift */; };
+		F0FB8E0629CC19DE005E3FFD /* MultipleVideoLargeWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB8E0529CC19DE005E3FFD /* MultipleVideoLargeWidgetView.swift */; };
+		F0FB8E0829CC3B4E005E3FFD /* MultipleVideoLargeEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB8E0729CC3B4E005E3FFD /* MultipleVideoLargeEntryView.swift */; };
+		F0FB8E0A29CE97CF005E3FFD /* AllMultipleVideoEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB8E0929CE97CF005E3FFD /* AllMultipleVideoEntryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -621,6 +624,9 @@
 		F0F40970293C90CA001C4F48 /* holo-wtf.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "holo-wtf.entitlements"; sourceTree = "<group>"; };
 		F0F40971293C91AC001C4F48 /* holo-wtf-widgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "holo-wtf-widgetExtension.entitlements"; sourceTree = "<group>"; };
 		F0F40972293D6F46001C4F48 /* MultiLanguageNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLanguageNameView.swift; sourceTree = "<group>"; };
+		F0FB8E0529CC19DE005E3FFD /* MultipleVideoLargeWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleVideoLargeWidgetView.swift; sourceTree = "<group>"; };
+		F0FB8E0729CC3B4E005E3FFD /* MultipleVideoLargeEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleVideoLargeEntryView.swift; sourceTree = "<group>"; };
+		F0FB8E0929CE97CF005E3FFD /* AllMultipleVideoEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMultipleVideoEntryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -703,6 +709,8 @@
 				F020E8CD29C5B53100C2345D /* AccessoryInlineEntryViews.swift */,
 				F0186A2929AC793100339178 /* MultipleEntryViews.swift */,
 				F0186A2C29AC795400339178 /* ChannelsEntryView.swift */,
+				F0FB8E0729CC3B4E005E3FFD /* MultipleVideoLargeEntryView.swift */,
+				F0FB8E0929CE97CF005E3FFD /* AllMultipleVideoEntryView.swift */,
 			);
 			path = EntryViews;
 			sourceTree = "<group>";
@@ -1053,6 +1061,7 @@
 			isa = PBXGroup;
 			children = (
 				F0186A4129AC892900339178 /* VideoWidgetView.swift */,
+				F0FB8E0529CC19DE005E3FFD /* MultipleVideoLargeWidgetView.swift */,
 			);
 			path = Large;
 			sourceTree = "<group>";
@@ -1502,6 +1511,7 @@
 				F093D1DC282FA0CF00E2A6FF /* LiveTimeView.swift in Sources */,
 				F0186A1E29AC773400339178 /* SmallEntryViews.swift in Sources */,
 				F04D1B3E283A304E0026340D /* VideoLiveWidgetProvider.swift in Sources */,
+				F0FB8E0A29CE97CF005E3FFD /* AllMultipleVideoEntryView.swift in Sources */,
 				F0186A2429AC779D00339178 /* AccessoryRectangularEntryViews.swift in Sources */,
 				F093D1DA282FA0C000E2A6FF /* UpcomingViewModel.swift in Sources */,
 				F03A139428F2018000BB8E51 /* ChannelsView.swift in Sources */,
@@ -1512,6 +1522,7 @@
 				F06D28E028D8390F007D06FB /* SharedEntryView.swift in Sources */,
 				F093D1D9282FA0C000E2A6FF /* LiveViewModel.swift in Sources */,
 				F093D1D7282FA0B000E2A6FF /* LiveAvatarView.swift in Sources */,
+				F0FB8E0629CC19DE005E3FFD /* MultipleVideoLargeWidgetView.swift in Sources */,
 				F03A138328F0004C00BB8E51 /* ChannelsEntry.swift in Sources */,
 				F0186A0029AC59FA00339178 /* PastTitleView.swift in Sources */,
 				F0186A4929AC8F1900339178 /* MultipleWidgetView.swift in Sources */,
@@ -1571,6 +1582,7 @@
 				F0186A2F29AC7CA900339178 /* AccessoryCornerEntryViews.swift in Sources */,
 				F09D53A129336590003C4F80 /* VideoUpcomingWidgetProvider.swift in Sources */,
 				F0E06D0829322BF200BF6812 /* BlockUpcomingTimeView.swift in Sources */,
+				F0FB8E0829CC3B4E005E3FFD /* MultipleVideoLargeEntryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,17 +14,15 @@ struct MultipleVideoLiveWidgetProvider: MultipleVideoIntentTimelineProvider {
     let videoType: VideoType = .live
     let sortBy: IntentSortBy = .mostRecent
     
-    let videoCutOff = 2
-    
     func getSnapshot(for configuration: Intent, in context: Context, completion: @escaping (Entry) -> Void) {
         Task {
-            completion(await getMultipleEntry(for: configuration.agency, videoType: videoType, sortBy: configuration.sortBy, videoCutOff: videoCutOff, filterBy: { $0.isSupportedAgency }))
+            completion(await getMultipleEntry(for: configuration.agency, videoType: videoType, sortBy: configuration.sortBy, filterBy: { $0.isSupportedAgency }))
         }
     }
     
     func getTimeline(for configuration: Intent, in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
         Task {
-            let entries: [MultipleVideoWidgetEntry] = [await getMultipleEntry(for: configuration.agency, videoType: videoType, sortBy: configuration.sortBy, videoCutOff: videoCutOff, filterBy: { $0.isSupportedAgency })]
+            let entries: [MultipleVideoWidgetEntry] = [await getMultipleEntry(for: configuration.agency, videoType: videoType, sortBy: configuration.sortBy, filterBy: { $0.isSupportedAgency })]
             let timeline = Timeline(entries: entries, policy: .atEnd)
             completion(timeline)
         }
