@@ -6,7 +6,6 @@
 //
 
 import WidgetKit
-import Algorithms
 
 struct VideoPastWidgetProvider: VideoIntentTimelineProvider {
     typealias Entry = SingleVideoWidgetEntry
