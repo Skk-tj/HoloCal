@@ -77,5 +77,8 @@ class RootViewTests: XCTestCase {
         
         app.tabBars.buttons["Settings"].tap()
         XCTAssertTrue(app.staticTexts["UPCOMING SCHEDULE"].exists)
+        XCTAssertTrue(app.staticTexts["STREAM TIME"].exists)
+        XCTAssertTrue(app.staticTexts["CHANNELS"].exists)
+        XCTAssertTrue(app.staticTexts["ABOUT"].exists)
     }
 }

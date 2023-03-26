@@ -263,6 +263,7 @@
 		F099C68E29CFA4CA00596C7F /* Vtuberable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C68B29CFA4CA00596C7F /* Vtuberable.swift */; };
 		F099C68F29CFA4CA00596C7F /* Vtuberable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C68B29CFA4CA00596C7F /* Vtuberable.swift */; };
 		F099C69029CFA54700596C7F /* Vtuberable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099C68B29CFA4CA00596C7F /* Vtuberable.swift */; };
+		F099C69129CFD6CB00596C7F /* Assets (Main).xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C657BE2771F47C004AF802 /* Assets (Main).xcassets */; };
 		F09D25BE27FC2552001A7D71 /* SettingsTalentStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25BD27FC2552001A7D71 /* SettingsTalentStarView.swift */; };
 		F09D25C327FEC12D001A7D71 /* SettingsFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25C227FEC12D001A7D71 /* SettingsFormView.swift */; };
 		F09D25C928020B12001A7D71 /* UpcomingViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09D25C828020B12001A7D71 /* UpcomingViewToolbar.swift */; };
@@ -295,7 +296,6 @@
 		F0CA6EAA28D7B5DD0028CB11 /* SongListStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA6EA928D7B5DD0028CB11 /* SongListStackView.swift */; };
 		F0CA6EB228D7C0410028CB11 /* holo_wtf_watchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA6EB128D7C0410028CB11 /* holo_wtf_watchApp.swift */; };
 		F0CA6EB428D7C0410028CB11 /* WatchRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA6EB328D7C0410028CB11 /* WatchRootView.swift */; };
-		F0CA6EB628D7C0420028CB11 /* Assets (Watch).xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0CA6EB528D7C0420028CB11 /* Assets (Watch).xcassets */; };
 		F0CA6EB928D7C0420028CB11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0CA6EB828D7C0420028CB11 /* Preview Assets.xcassets */; };
 		F0CA6EBC28D7C0420028CB11 /* holo-wtf-watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F0CA6EAF28D7C0410028CB11 /* holo-wtf-watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F0CA6EC128D7C20E0028CB11 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F009023D27EE255B00E343B0 /* Localizable.strings */; };
@@ -612,7 +612,6 @@
 		F0CA6EAF28D7C0410028CB11 /* holo-wtf-watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "holo-wtf-watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0CA6EB128D7C0410028CB11 /* holo_wtf_watchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = holo_wtf_watchApp.swift; sourceTree = "<group>"; };
 		F0CA6EB328D7C0410028CB11 /* WatchRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchRootView.swift; sourceTree = "<group>"; };
-		F0CA6EB528D7C0420028CB11 /* Assets (Watch).xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets (Watch).xcassets"; sourceTree = "<group>"; };
 		F0CA6EB828D7C0420028CB11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F0CA6EC228D7C2620028CB11 /* LiveWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveWatchView.swift; sourceTree = "<group>"; };
 		F0CA6ECF28D7C31D0028CB11 /* WatchVideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchVideoListView.swift; sourceTree = "<group>"; };
@@ -1197,7 +1196,6 @@
 				F04D754F28D7CB770096B8AB /* holo-wtf-watch-Watch-App-Info.plist */,
 				F0CA6EB128D7C0410028CB11 /* holo_wtf_watchApp.swift */,
 				F0CA6ECF28D7C31D0028CB11 /* WatchVideoListView.swift */,
-				F0CA6EB528D7C0420028CB11 /* Assets (Watch).xcassets */,
 				F0CA6EB728D7C0420028CB11 /* Preview Content */,
 			);
 			path = "holo-wtf-watch Watch App";
@@ -1455,7 +1453,7 @@
 			files = (
 				F0CA6EB928D7C0420028CB11 /* Preview Assets.xcassets in Resources */,
 				F0CA6EC128D7C20E0028CB11 /* Localizable.strings in Resources */,
-				F0CA6EB628D7C0420028CB11 /* Assets (Watch).xcassets in Resources */,
+				F099C69129CFD6CB00596C7F /* Assets (Main).xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2164,6 +2162,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf/holo-wtf.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 199;
@@ -2205,6 +2204,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf/holo-wtf.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 199;

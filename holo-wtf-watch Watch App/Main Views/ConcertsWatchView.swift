@@ -20,6 +20,7 @@ struct ConcertsWatchView: View {
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: concert.dataStatus) {
                 ConcertCountView()
+                    .font(.footnote)
             }
         })
         .environmentObject(concert)

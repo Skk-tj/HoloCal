@@ -1,9 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "Untitled copy.png",
+      "filename" : "Group 2.png",
       "idiom" : "universal",
       "platform" : "ios",
+      "size" : "1024x1024"
+    },
+    {
+      "filename" : "Group 1.png",
+      "idiom" : "universal",
+      "platform" : "watchos",
       "size" : "1024x1024"
     }
   ],
