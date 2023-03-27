@@ -104,6 +104,13 @@ enum Generation: Int, CaseIterable, Codable, Hashable {
     case noriProGamers
     case noriProMusic
     
+    // MARK: - Vspo
+    case lupinus
+    case iris
+    case cattleya
+    case vspo
+    case vspoOfficial
+    
     // For all the channels that we may not recognize
     case other
     
@@ -616,6 +623,34 @@ enum TalentEnum: String, Codable {
     
     // MARK: - Nori Pro Music
     case momo = "UCxrmkJf_X1Yhte_a4devFzA"
+    
+    // MARK: - Vspo Lupinus Virtual Games
+    case uruha = "UC5LyYg6cCA4yHEYvtUsir3g"
+    case toto = "UCgTzsBI0DIRopMylJEDqnog"
+    case sumire = "UCyLGcqYs7RsBb3L0SJfzGYA"
+    case nazuna = "UCiMG6VdScBabPhJ1ZtaVmbw"
+    
+    // MARK: - Vspo Iris Black Games
+    case noa = "UCIcAj6WkJ8vZ7DeJVgmeqKw"
+    case hinano = "UCvUc0m317LWTTPZoBQV479A"
+    case renKisaragi = "UCGWa1dMU_sDCaRQjdabsVgg"
+    
+    // MARK: - Cattleya Regina Games
+    case mimi = "UCnvVG9RbOW3J6Ifqo-zKLiw"
+    case sena = "UCF_U2GCKHvDz52jWdizppIA"
+    case risa = "UCurEA8YoqFwimJcAuSHU0MQ"
+    
+    // MARK: - Vspo
+    case qpi = "UCMp55EbT_ZlqiMS3lCj01BQ"
+    case beni = "UCjXBuHmWkieBApgBhDuJMMQ"
+    case ema = "UCPkKpOHxEDcwmUAnRpIu-Ng"
+    case runa = "UCD5W21JqNMv_tV9nfjvF9sw"
+    case tsuna = "UCIjdfjcSaEgdjwbgjxC3ZWg"
+    case ramune = "UC61OwuYOVuKkpKnid-43Twg"
+    case met = "UCzUNASdzI4PV5SlqtYwAkKQ"
+    
+    // MARK: - Vspo Official Channel
+    case vspoOfficial = "UCuI5XaO-6VkOEhHao6ij7JA"
 }
 
 extension TalentEnum: Identifiable {
@@ -887,9 +922,9 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .ibrahim: Talent(id: TalentEnum.ibrahim.rawValue, names: [.en: "Ibrahim", .ja: "イブラヒム"], inGeneration: Generation.wave2020Meifu),
 
     // MARK: - 2020 Wave: VΔLZ
-    .nagao: Talent(id: TalentEnum.nagao.rawValue, names: [.en: "Nagao Kei", .ja: "イブラヒム"], inGeneration: Generation.wave2020Valz),
-    .genzuki: Talent(id: TalentEnum.genzuki.rawValue, names: [.en: "Genzuki Tojiro", .ja: "イブラヒム"], inGeneration: Generation.wave2020Valz),
-    .kaida: Talent(id: TalentEnum.kaida.rawValue, names: [.en: "Kaida Haru", .ja: "イブラヒム"], inGeneration: Generation.wave2020Valz),
+    .nagao: Talent(id: TalentEnum.nagao.rawValue, names: [.en: "Nagao Kei", .ja: "長尾景"], inGeneration: Generation.wave2020Valz),
+    .genzuki: Talent(id: TalentEnum.genzuki.rawValue, names: [.en: "Genzuki Tojiro", .ja: "弦月藤士郎"], inGeneration: Generation.wave2020Valz),
+    .kaida: Talent(id: TalentEnum.kaida.rawValue, names: [.en: "Kaida Haru", .ja: "甲斐田晴"], inGeneration: Generation.wave2020Valz),
 
     // MARK: - 2020 Wave: June 30
     .sorahoshi: Talent(id: TalentEnum.sorahoshi.rawValue, names: [.en: "Sorahoshi Kirame", .ja: "空星きらめ"], inGeneration: Generation.wave2020Jun30),
@@ -1134,6 +1169,34 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     
     // MARK: - Nori Pro Music
     .momo: Talent(id: TalentEnum.momo.rawValue, names: [.en: "Kurumizawa Momo", .ja: "胡桃澤もも"], inGeneration: Generation.noriProMusic),
+    
+    // MARK: - Vspo Lupinus Virtual Games
+    .uruha: Talent(id: TalentEnum.uruha.rawValue, names: [.en: "Ichinose Uruha", .ja: "一ノ瀬うるは"], inGeneration: .lupinus),
+    .toto: Talent(id: TalentEnum.toto.rawValue, names: [.en: "Kogara Toto", .ja: "小雀とと"], inGeneration: .lupinus),
+    .sumire: Talent(id: TalentEnum.sumire.rawValue, names: [.en: "Kaga Sumire", .ja: "花芽すみれ"], inGeneration: .lupinus),
+    .nazuna: Talent(id: TalentEnum.nazuna.rawValue, names: [.en: "Kaga Nazuna", .ja: "花芽なずな"], inGeneration: .lupinus),
+    
+    // MARK: - Vspo Iris Black Games
+    .noa: Talent(id: TalentEnum.noa.rawValue, names: [.en: "Kurumi Noah", .ja: "胡桃のあ"], inGeneration: .iris),
+    .hinano: Talent(id: TalentEnum.hinano.rawValue, names: [.en: "Tachibana Hinano", .ja: "橘ひなの"], inGeneration: .iris),
+    .renKisaragi: Talent(id: TalentEnum.renKisaragi.rawValue, names: [.en: "Kisaragi Ren", .ja: "如月れん"], inGeneration: .iris),
+    
+    // MARK: - Cattleya Regina Games
+    .mimi: Talent(id: TalentEnum.mimi.rawValue, names: [.en: "Tosaki Mimi", .ja: "兎咲ミミ"], inGeneration: .cattleya),
+    .sena: Talent(id: TalentEnum.sena.rawValue, names: [.en: "Asumi Sena", .ja: "空澄セナ"], inGeneration: .cattleya),
+    .risa: Talent(id: TalentEnum.risa.rawValue, names: [.en: "Hanabusa Lisa", .ja: "英リサ"], inGeneration: .cattleya),
+    
+    // MARK: - Vspo
+    .qpi: Talent(id: TalentEnum.qpi.rawValue, names: [.en: "Kaminari Qpi", .ja: "神成きゅぴ"], inGeneration: .vspo),
+    .beni : Talent(id: TalentEnum.beni.rawValue, names: [.en: "Yakumo Beni", .ja: "八雲べに"], inGeneration: .vspo),
+    .ema: Talent(id: TalentEnum.ema.rawValue, names: [.en: "Aizawa Ema", .ja: "藍沢エマ"], inGeneration: .vspo),
+    .runa: Talent(id: TalentEnum.runa.rawValue, names: [.en: "Shinomiya Runa", .ja: "紫宮るな"], inGeneration: .vspo),
+    .tsuna: Talent(id: TalentEnum.tsuna.rawValue, names: [.en: "Nekota Tsuna", .ja: "猫汰つな"], inGeneration: .vspo),
+    .ramune: Talent(id: TalentEnum.ramune.rawValue, names: [.en: "Shiranami Ramune", .ja: "白波らむね"], inGeneration: .vspo),
+    .met: Talent(id: TalentEnum.met.rawValue, names: [.en: "Komori Met", .ja: "小森めと"], inGeneration: .vspo),
+    
+    // MARK: - Vspo Official Channel
+    .vspoOfficial: Talent(id: TalentEnum.vspoOfficial.rawValue, names: [.en: "VSpo Official Channel", .ja: "ぶいすぽっ! 公式チャンネル"], inGeneration: .vspoOfficial),
 ]
 
 let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
@@ -1231,6 +1294,13 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .noriPro1stGen: GenerationGroup(id: .noriPro1stGen, names: [.en: "1st Gen", .ja: "一期生"], members: [.mishiro, .miruku, .takuma, .yuzuru]),
     .noriProGamers: GenerationGroup(id: .noriProGamers, names: [.en: "Gamers", .ja: "ゲーマーズ"], members: [.inariIroha, .lionheart, .shin]),
     .noriProMusic: GenerationGroup(id: .noriProMusic, names: [.en: "Music", .ja: "ミュージック"], members: [.momo]),
+    
+    // MARK: - VSpo
+    .lupinus: GenerationGroup(id: .lupinus, names: [.en: "Lupinus Virtual Games", .ja: "Lupinus Virtual Games"], members: [.uruha, .toto, .sumire, .nazuna]),
+    .iris: GenerationGroup(id: .iris, names: [.en: "Iris Black Games", .ja: "Iris Black Games"], members: [.noa, .hinano, .renKisaragi]),
+    .cattleya: GenerationGroup(id: .cattleya, names: [.en: "Cattleya Regina Games", .ja: "Cattleya Regina Games"], members: [.mimi, .sena, .risa]),
+    .vspo: GenerationGroup(id: .vspo, names: [.en: "VSpo", .ja: "ぶいすぽ"], members: [.qpi, .beni, .ema, .runa, .tsuna, .ramune, .met]),
+    .vspoOfficial: GenerationGroup(id: .vspoOfficial, names: [.en: "VSpo Official Channel", .ja: "ぶいすぽっ! 公式チャンネル"], members: [.vspoOfficial]),
     
     .other: GenerationGroup(id: .other, names: [.en: "Other", .ja: "他"], members: []),
 ]

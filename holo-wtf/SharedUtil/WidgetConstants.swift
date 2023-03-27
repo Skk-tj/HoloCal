@@ -17,6 +17,7 @@ enum WidgetDeepLinkAgency: String {
     case react
     case nanashiInc
     case noriPro
+    case vspo
     case favourites
 }
 
@@ -27,6 +28,7 @@ let intentAgencyToDeepLinkAgency: [IntentAgency: WidgetDeepLinkAgency] = [
     .react: .react,
     .nanashiInc: .nanashiInc,
     .noriPro: .noriPro,
+    .vspo: .vspo,
     .favourites: .favourites
 ]
 
@@ -35,6 +37,7 @@ let widgetDeepLinkToViewAgency: [WidgetDeepLinkAgency: ViewAgency] = [
     .nijisanji: .nijisanji,
     .react: .react,
     .nanashiInc: .nanashiInc,
+    .vspo: .vspo,
     .noriPro: .noriPro
 ]
 

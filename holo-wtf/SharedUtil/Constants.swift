@@ -13,7 +13,8 @@ let agencyToViewAgency: OrderedDictionary<AgencyEnum, ViewAgency> = [
     .nijisanji: .nijisanji,
     .react: .react,
     .nanashiInc: .nanashiInc,
-    .noriPro: .noriPro
+    .noriPro: .noriPro,
+    .vspo: .vspo
 ]
 
 let videoTypeToViewTitleAndIcon: [VideoType: (String, String)] = [
@@ -32,6 +33,7 @@ enum ViewAgency: CaseIterable, Identifiable {
     case react
     case nanashiInc
     case noriPro
+    case vspo
     case favourites
 }
 
@@ -40,7 +42,8 @@ let viewAgencyToAgency: OrderedDictionary<ViewAgency, AgencyEnum> = [
     .nijisanji: .nijisanji,
     .react: .react,
     .nanashiInc: .nanashiInc,
-    .noriPro: .noriPro
+    .noriPro: .noriPro,
+    .vspo: .vspo
 ]
 
 let widgetSampleChannel = Channel(id: "UCp6993wxpyDPHUpavwDFqgg", name: "Tokino Sora", photo: URL(string: "https://yt3.ggpht.com/ytc/AKedOLRo4fRoifdnGRyvGIOVxiumNdD5MXweEPHLO_SBrA=s800-c-k-c0x00ffffff-no-rj-mo"), org: "Hololive")

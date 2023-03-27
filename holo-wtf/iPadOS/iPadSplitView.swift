@@ -91,6 +91,8 @@ struct iPadSplitView: View {
                         LiveiPadView(for: .nanashiInc)
                     case .noriPro:
                         LiveiPadView(for: .noriPro)
+                    case .vspo:
+                        LiveiPadView(for: .vspo)
                     case .favourites:
                         LiveFavouritesiPadView()
                     }
@@ -106,6 +108,8 @@ struct iPadSplitView: View {
                         UpcomingiPadView(for: .nanashiInc)
                     case .noriPro:
                         UpcomingiPadView(for: .noriPro)
+                    case .vspo:
+                        UpcomingiPadView(for: .vspo)
                     case .favourites:
                         UpcomingFavouritesiPadView()
                     }
@@ -121,6 +125,8 @@ struct iPadSplitView: View {
                         PastiPadView(for: .nanashiInc)
                     case .noriPro:
                         PastiPadView(for: .noriPro)
+                    case .vspo:
+                        PastiPadView(for: .vspo)
                     case .favourites:
                         PastFavouritesiPadView()
                     }

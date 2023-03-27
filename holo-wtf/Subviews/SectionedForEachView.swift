@@ -40,11 +40,13 @@ struct SectionedForEachView<Content: View>: View {
         }
         
         ForEach(sortedFilteredGroupedDictionary, id: \.key) { key, value in
-            Section(header: Text(key.getLocalizedName())) {
+            Section(content: {
                 ForEach(value, id: \.self) { live in
                     cellView(live)
                 }
-            }
+            }, header: {
+                Text(key.getLocalizedName())
+            })
         }
     }
 }

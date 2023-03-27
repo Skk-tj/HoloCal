@@ -26,6 +26,11 @@ struct ManageFavoriteAgencySelectionView: View {
                 EmptyView()
             }
         })
+        .onChange(of: favourited) { favourited in
+            let keyStore = NSUbiquitousKeyValueStore()
+            keyStore.set(favourited, forKey: UserDefaultKeys.favouritedChannel)
+            keyStore.synchronize()
+        }
     }
 }
 

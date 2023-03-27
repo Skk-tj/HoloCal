@@ -1,13 +1,13 @@
 {
   "images" : [
     {
-      "filename" : "Group 2.png",
+      "filename" : "icon-without-alpha.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
     },
     {
-      "filename" : "Group 1.png",
+      "filename" : "icon-without-alpha 1.png",
       "idiom" : "universal",
       "platform" : "watchos",
       "size" : "1024x1024"

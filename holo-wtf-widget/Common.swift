@@ -15,6 +15,7 @@ let intentAgencyToString: [IntentAgency: [NameLanguage: String]] = [
     .react: intentAgencyToAgency[IntentAgency.react]!.getAgency().names,
     .nanashiInc: intentAgencyToAgency[IntentAgency.nanashiInc]!.getAgency().names,
     .noriPro: intentAgencyToAgency[IntentAgency.noriPro]!.getAgency().names,
+    .vspo: intentAgencyToAgency[IntentAgency.vspo]!.getAgency().names,
 ]
 
 let intentAgencyToAgency: [IntentAgency: AgencyEnum] = [
@@ -22,7 +23,8 @@ let intentAgencyToAgency: [IntentAgency: AgencyEnum] = [
     .nijisanji: .nijisanji,
     .react: .react,
     .nanashiInc: .nanashiInc,
-    .noriPro: .noriPro
+    .noriPro: .noriPro,
+    .vspo: .vspo
 ]
 
 let intentSortByToString: [IntentSortBy: [NameLanguage: String]] = [
