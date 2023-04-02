@@ -23,14 +23,7 @@ struct VideoTabletView: View {
     var body: some View {
         LazyGridView(singleVideoView: { video in
             LinkedVideoView(url: video.url) {
-                switch videoType {
-                case .live:
-                    LivePaneView(live: video)
-                case .upcoming:
-                    UpcomingPaneView(upcoming: video)
-                case .past:
-                    PastPaneView(past: video)
-                }
+                VideoPaneView(video: video, videoType: videoType)
             }
             .contextMenu {
                 VideoContextMenu(video: video)

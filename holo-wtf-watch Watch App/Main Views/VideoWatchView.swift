@@ -20,15 +20,7 @@ struct VideoWatchView: View {
     
     var body: some View {
         WatchVideoListView(singleVideoView: { video in
-            switch videoType {
-            case .live:
-                WatchLiveCellView(live: video)
-            case .upcoming:
-                WatchUpcomingCellView(upcoming: video)
-            case .past:
-                WatchPastCellView(past: video)
-            }
-            
+            WatchVideoCellView(video: video, videoType: videoType)
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: video.dataStatus) {
                 VideoCountView(videoType: videoType)

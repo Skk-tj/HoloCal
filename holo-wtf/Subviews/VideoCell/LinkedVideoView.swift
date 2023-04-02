@@ -26,11 +26,7 @@ struct LinkedVideoView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             LinkedVideoView(url: LiveVideo.previewLive.url) {
-                LiveCellView(live: LiveVideo.previewLive)
-            }
-            
-            LinkedVideoView(url: LiveVideo.previewLive.url) {
-                LivePaneView(live: LiveVideo.previewLive)
+                VideoCellView(video: LiveVideo.previewLive, videoType: .live)
             }
         }
     }

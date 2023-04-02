@@ -32,7 +32,7 @@ struct SwipableLinkedCellView<Content: View>: View {
 struct SwipableLinkedCellView_Previews: PreviewProvider {
     static var previews: some View {
         SwipableLinkedCellView(video: LiveVideo.previewLive) {
-            LiveCellView(live: LiveVideo.previewLive)
+            VideoCellView(video: LiveVideo.previewLive, videoType: .live)
         }
     }
 }

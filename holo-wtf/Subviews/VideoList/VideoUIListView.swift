@@ -17,30 +17,11 @@ struct VideoUIListView: View {
     
     var body: some View {
         UIListView(currentPresentationMode: $currentPresentationMode, isFavourite: isFavourite, elementView: { video in
-            switch videoType {
-            case .live:
-                switch uiMode {
-                case .compact:
-                    LiveCellView(live: video)
-                case .card:
-                    LivePaneView(live: video)
-                }
-                
-            case .upcoming:
-                switch uiMode {
-                case .compact:
-                    UpcomingCellView(upcoming: video)
-                case .card:
-                    UpcomingPaneView(upcoming: video)
-                }
-            
-            case .past:
-                switch uiMode {
-                case .compact:
-                    PastCellView(past: video)
-                case .card:
-                    PastPaneView(past: video)
-                }
+            switch uiMode {
+            case .compact:
+                VideoCellView(video: video, videoType: videoType)
+            case .card:
+                VideoPaneView(video: video, videoType: videoType)
             }
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: video.dataStatus) {
