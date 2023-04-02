@@ -70,18 +70,8 @@ struct VideoTabletView: View {
         .navigationTitle(agency.getAgency().localizedName)
         .toolbar {
             ToolbarItemGroup(placement: .secondaryAction) {
-                switch videoType {
-                case .live:
-                    LiveViewToolbar(currentPresentationMode: $currentPresentationMode)
-                        .environmentObject(video)
-                case .upcoming:
-                    UpcomingViewToolbar(currentPresentationMode: $currentPresentationMode)
-                        .environmentObject(video)
-                case .past:
-                    PastViewToolbar(currentPresentationMode: $currentPresentationMode)
-                        .environmentObject(video)
-                }
-                
+                VideoViewToolbar(currentPresentationMode: $currentPresentationMode, videoType: videoType)
+                    .environmentObject(video)
             }
         }
         .animation(.easeInOut, value: video.dataStatus)

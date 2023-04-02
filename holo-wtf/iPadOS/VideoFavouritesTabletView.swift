@@ -46,17 +46,8 @@ struct VideoFavouritesTabletView: View {
         .navigationTitle(getNavigationTitle())
         .toolbar {
             ToolbarItemGroup(placement: .secondaryAction) {
-                switch videoType {
-                case .live:
-                    LiveFavouritesViewToolbar()
-                        .environmentObject(video as VideoViewModel)
-                case .upcoming:
-                    UpcomingFavouritesViewToolbar()
-                        .environmentObject(video as VideoViewModel)
-                case .past:
-                    PastFavouritesViewToolbar()
-                        .environmentObject(video as VideoViewModel)
-                }
+                VideoFavouritesViewToolbar(videoType: videoType)
+                    .environmentObject(video as VideoViewModel)
             }
         }
         .animation(.easeInOut, value: video.dataStatus)
