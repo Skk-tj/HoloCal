@@ -14,14 +14,7 @@ struct VideoStackView: View {
     var body: some View {
         NavigationStack(path: $path) {
             AgencyNavigationView(viewTitle: videoTypeToViewTitleAndIcon[videoType]!.0) { agency in
-                switch videoType {
-                case .live:
-                    LiveView(for: agency)
-                case .upcoming:
-                    UpcomingView(for: agency)
-                case .past:
-                    PastView(for: agency)
-                }
+                VideoView(for: agency, videoType: videoType)
             } favouritesView: {
                 switch videoType {
                 case .live:
