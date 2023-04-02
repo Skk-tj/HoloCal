@@ -94,7 +94,7 @@ struct TabletSplitView: View {
                     case .vspo:
                         VideoTabletView(for: .vspo, videoType: .live)
                     case .favourites:
-                        LiveFavouritesTabletView()
+                        VideoFavouritesTabletView(videoType: .live)
                     }
                 case .upcoming(let agencySelection):
                     switch agencySelection {
@@ -111,7 +111,7 @@ struct TabletSplitView: View {
                     case .vspo:
                         VideoTabletView(for: .vspo, videoType: .upcoming)
                     case .favourites:
-                        UpcomingFavouritesTabletView()
+                        VideoFavouritesTabletView(videoType: .upcoming)
                     }
                 case .past(let agencySelection):
                     switch agencySelection {
@@ -128,7 +128,7 @@ struct TabletSplitView: View {
                     case .vspo:
                         VideoTabletView(for: .vspo, videoType: .past)
                     case .favourites:
-                        PastFavouritesTabletView()
+                        VideoFavouritesTabletView(videoType: .past)
                     }
                 case .concerts:
                     NavigationStack {
