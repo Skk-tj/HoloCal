@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct PastWatchView: View {
-    @StateObject var past: PastViewModel
+    @StateObject var past: VideoViewModel
     let agency: AgencyEnum
     
     init(for agency: AgencyEnum) {
         self.agency = agency
-        _past = StateObject(wrappedValue: PastViewModel(for: agency))
+        _past = StateObject(wrappedValue: VideoViewModel(for: agency, videoType: .past))
     }
     
     var body: some View {
@@ -22,11 +22,11 @@ struct PastWatchView: View {
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: past.dataStatus) {
                 VideoCountView(videoType: .past)
-                    .environmentObject(past as VideoViewModel)
+                    .environmentObject(past)
             }
         })
         .navigationTitle(agency.getAgency().localizedName)
-        .environmentObject(past as VideoViewModel)
+        .environmentObject(past)
         .task {
             past.sortingStrategy = .endedFirst
             await past.getVideoForUI()

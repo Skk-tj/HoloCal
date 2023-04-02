@@ -11,8 +11,6 @@ import EventKit
 struct PaneViewButtonRowView: View {
     @Environment(\.dismiss) var dismiss
     
-    @AppStorage(UserDefaultKeys.favouritedChannel, store: UserDefaults(suiteName: "group.io.skk-tj.holo-wtf.ios")) var favourited = Favourited()
-    
     @State var isAddToCalendarSheetPresented: Bool = false
     @State var isCalendarAccessAlertPresented: Bool = false
     @State var isShowingSheet: Bool = false
@@ -62,8 +60,7 @@ struct PaneViewButtonRowView: View {
                 Spacer()
             }
             
-            let isFavourited = favourited.contains(where: {$0 == video.channel.id})
-            FavouriteButton(video: video) {
+            FavouriteButton(video: video) { isFavourited in
                 Label(isFavourited ? "LINKED_VIDEO_SWIPE_ACTIONS_UNFAVOURITE" : "LINKED_VIDEO_SWIPE_ACTIONS_FAVOURITE", systemImage: isFavourited ? "star.fill" : "star")
                     .labelStyle(.iconOnly)
             }

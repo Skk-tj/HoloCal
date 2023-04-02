@@ -10,8 +10,6 @@ import SwiftUI
 struct VideoContextMenu: View {
     let video: LiveVideo
     
-    @AppStorage(UserDefaultKeys.favouritedChannel, store: UserDefaults(suiteName: "group.io.skk-tj.holo-wtf.ios")) var favourited = Favourited()
-    
     var body: some View {
         // MARK: - Twitter Button
         if let twitterLink = video.channel.twitter {
@@ -32,8 +30,7 @@ struct VideoContextMenu: View {
         }
         
         // MARK: - Favourite Button
-        let isFavourited = favourited.contains(where: {$0 == video.channel.id})
-        FavouriteButton(video: video) {
+        FavouriteButton(video: video) { isFavourited in
             Label(isFavourited ? "VIDEO_CONTEXT_MENU_REMOVE_FAVOURITE" : "VIDEO_CONTEXT_MENU_FAVOURITE_CHANNEL", systemImage: isFavourited ? "star.slash" : "star")
         }
         

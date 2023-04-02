@@ -35,26 +35,42 @@ struct SearchSuggestion: Hashable {
     let category: SearchSuggestionCategory
 }
 
-protocol VideoGettable {
-    @MainActor
-    func getVideoForUI() async
-}
-
 class VideoViewModel: ObservableObject {
     @Published var videoList: [LiveVideo]
     @Published var dataStatus: DataStatus
     @Published var sortingStrategy: SortingStrategy
     
     let agency: AgencyEnum
+    let videoUrl: String
     
-    init(for agency: AgencyEnum) {
+    init(for agency: AgencyEnum, videoType: VideoType) {
         self.videoList = []
         self.dataStatus = .working
         self.agency = agency
         self.sortingStrategy = .notSorting
+        
+        switch videoType {
+        case .live:
+            self.videoUrl = getLiveUrl(for: agency)
+        case .upcoming:
+            self.videoUrl = getUpcomingUrl(for: agency)
+        case .past:
+            self.videoUrl = getPastUrl(for: agency)
+        }
     }
     
     let logger = Logger()
+    
+    @MainActor
+    func getVideoForUI() async {
+        await getVideo(url: videoUrl) { responseResult in
+            self.videoList = responseResult
+            self.sortVideos()
+            self.videoList = self.videoList.filter {
+                $0.isAgency(agency: self.agency)
+            }
+        }
+    }
     
     @MainActor
     func getVideo(url: String, completion: @escaping ([LiveVideo]) -> Void) async {

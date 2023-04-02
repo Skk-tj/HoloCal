@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct UpcomingTabletView: View {
-    @StateObject var upcoming: UpcomingViewModel
+    @StateObject var upcoming: VideoViewModel
     let agency: AgencyEnum
     
     @State var currentPresentationMode: PresentationMode = .normal
     
     init(for agency: AgencyEnum) {
         self.agency = agency
-        _upcoming = StateObject(wrappedValue: UpcomingViewModel(for: agency))
+        _upcoming = StateObject(wrappedValue: VideoViewModel(for: agency, videoType: .upcoming))
     }
     
     var body: some View {
@@ -31,7 +31,7 @@ struct UpcomingTabletView: View {
                 VideoCountView(videoType: .upcoming)
             }
         }, isFavourite: false)
-        .environmentObject(upcoming as VideoViewModel)
+        .environmentObject(upcoming)
         .task {
             upcoming.sortingStrategy = .timeAsc
             await upcoming.getVideoForUI()
@@ -45,7 +45,7 @@ struct UpcomingTabletView: View {
         .toolbar {
             ToolbarItemGroup(placement: .secondaryAction) {
                 UpcomingViewToolbar(currentPresentationMode: $currentPresentationMode)
-                    .environmentObject(upcoming as VideoViewModel)
+                    .environmentObject(upcoming)
             }
         }
         .navigationTitle(agency.getAgency().localizedName)

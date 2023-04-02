@@ -13,7 +13,7 @@ struct PastFavouritesView: View {
     @AppStorage(UserDefaultKeys.isShowingCompactInPastFavouritesView) var isShowingCompact: Bool = false
     
     var body: some View {
-        VideoUIFavouriteListView(videoType: .past, uiMode: isShowingCompact ? .compact : .card)
+        VideoUIListView(currentPresentationMode: Binding.constant(.normal), videoType: .past, uiMode: isShowingCompact ? .compact : .card, isFavourite: false)
             .environmentObject(past as VideoViewModel)
             .navigationTitle("ROOT_VIEW_FAVOURITES")
             .toolbar {

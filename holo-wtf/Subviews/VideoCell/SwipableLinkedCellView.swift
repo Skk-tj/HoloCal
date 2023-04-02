@@ -11,15 +11,12 @@ struct SwipableLinkedCellView<Content: View>: View {
     let video: LiveVideo
     @ViewBuilder let content: () -> Content
     
-    @AppStorage(UserDefaultKeys.favouritedChannel, store: UserDefaults(suiteName: "group.io.skk-tj.holo-wtf.ios")) var favourited = Favourited()
-    
     var body: some View {
         LinkedVideoView(url: video.url) {
             content()
         }
         .swipeActions {
-            let isFavourited = favourited.contains(where: {$0 == video.channel.id})
-            FavouriteButton(video: video) {
+            FavouriteButton(video: video) { isFavourited in
                 Label(isFavourited ? "LINKED_VIDEO_SWIPE_ACTIONS_UNFAVOURITE" : "LINKED_VIDEO_SWIPE_ACTIONS_FAVOURITE", systemImage: isFavourited ? "star.slash" : "star")
             }
             .tint(.yellow)

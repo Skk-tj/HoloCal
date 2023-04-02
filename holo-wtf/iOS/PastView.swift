@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PastView: View {
-    @StateObject var past: PastViewModel
+    @StateObject var past: VideoViewModel
     let agency: AgencyEnum
     
     @AppStorage(UserDefaultKeys.isShowingCompactInPastView) var isShowingCompact: Bool = false
@@ -17,17 +17,17 @@ struct PastView: View {
     
     init(for agency: AgencyEnum) {
         self.agency = agency
-        _past = StateObject(wrappedValue: PastViewModel(for: agency))
+        _past = StateObject(wrappedValue: VideoViewModel(for: agency, videoType: .past))
     }
     
     var body: some View {
-        VideoUIListView(currentPresentationMode: $currentPresentationMode, videoType: .past, uiMode: isShowingCompact ? .compact : .card)
-            .environmentObject(past as VideoViewModel)
+        VideoUIListView(currentPresentationMode: $currentPresentationMode, videoType: .past, uiMode: isShowingCompact ? .compact : .card, isFavourite: false)
+            .environmentObject(past)
             .navigationTitle(agency.getAgency().localizedName)
             .toolbar {
                 ToolbarItemGroup(placement: .secondaryAction) {
                     PastViewToolbar(currentPresentationMode: $currentPresentationMode)
-                        .environmentObject(past as VideoViewModel)
+                        .environmentObject(past)
                 }
             }
             .task {

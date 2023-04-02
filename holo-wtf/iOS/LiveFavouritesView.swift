@@ -13,7 +13,7 @@ struct LiveFavouritesView: View {
     @AppStorage(UserDefaultKeys.isShowingCompactInLiveFavouritesView) var isShowingCompact: Bool = false
     
     var body: some View {
-        VideoUIFavouriteListView(videoType: .live, uiMode: isShowingCompact ? .compact : .card)
+        VideoUIListView(currentPresentationMode: Binding.constant(.normal), videoType: .live, uiMode: isShowingCompact ? .compact : .card, isFavourite: false)
             .environmentObject(live as VideoViewModel)
             .navigationTitle("ROOT_VIEW_FAVOURITES")
             .toolbar {

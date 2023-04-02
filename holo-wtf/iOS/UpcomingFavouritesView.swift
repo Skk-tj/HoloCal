@@ -13,7 +13,7 @@ struct UpcomingFavouritesView: View {
     @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingFavouritesView) var isShowingCompact: Bool = false
     
     var body: some View {
-        VideoUIFavouriteListView(videoType: .upcoming, uiMode: isShowingCompact ? .compact : .card)
+        VideoUIListView(currentPresentationMode: Binding.constant(.normal), videoType: .upcoming, uiMode: isShowingCompact ? .compact : .card, isFavourite: false)
             .environmentObject(upcoming as VideoViewModel)
             .navigationTitle("ROOT_VIEW_FAVOURITES")
             .toolbar {

@@ -61,10 +61,7 @@ struct MainApp: App {
         }
         
         // MARK: - Clean up orphaned favourites
-        var toRemove: [String] = []
-        for favourite in favourited where TalentEnum(rawValue: favourite) == nil {
-            toRemove.append(favourite)
-        }
+        let toRemove: [String] = favourited.filter { TalentEnum(rawValue: $0) == nil }
         
         favourited.removeAll { favourite in
             toRemove.contains(where: { $0 == favourite })

@@ -13,9 +13,10 @@ struct VideoUIListView: View {
     
     let videoType: VideoType
     let uiMode: UIMode
+    let isFavourite: Bool
     
     var body: some View {
-        UIListView(currentPresentationMode: $currentPresentationMode, elementView: { video in
+        UIListView(currentPresentationMode: $currentPresentationMode, isFavourite: isFavourite, elementView: { video in
             switch videoType {
             case .live:
                 switch uiMode {
@@ -43,7 +44,11 @@ struct VideoUIListView: View {
             }
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: video.dataStatus) {
-                VideoCountView(videoType: videoType)
+                if isFavourite {
+                    VideoFavouriteCountView(videoType: videoType)
+                } else {
+                    VideoCountView(videoType: videoType)
+                }
             }
         }, uiMode: uiMode)
     }

@@ -15,6 +15,7 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     
     @State var searchText: String = ""
     @Binding var currentPresentationMode: PresentationMode
+    let isFavourite: Bool
     
     /// The view of a single video.
     @ViewBuilder let singleVideoView: (_ live: LiveVideo) -> VideoContent
@@ -35,15 +36,21 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
             }
             
             if searchText.isEmpty {
-                switch currentPresentationMode {
-                case .normal:
-                    SectionedForEachView(cellView: { live in
-                        singleVideoView(live)
+                if isFavourite {
+                    ForEachVideoView(cellView: { video in
+                        singleVideoView(video)
                     })
-                case .sorting:
-                    GenerationFilteredForEachVideoView(cellView: { live in
-                        singleVideoView(live)
-                    })
+                } else {
+                    switch currentPresentationMode {
+                    case .normal:
+                        SectionedForEachView(cellView: { live in
+                            singleVideoView(live)
+                        })
+                    case .sorting:
+                        GenerationFilteredForEachVideoView(cellView: { live in
+                            singleVideoView(live)
+                        })
+                    }
                 }
             } else {
                 SearchSectionView(searchText: searchText, cellView: { live in

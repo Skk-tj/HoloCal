@@ -181,7 +181,7 @@ func getLiveUrl(for agency: AgencyEnum) -> String {
 }
 
 func getUpcomingUrl(for agency: AgencyEnum) -> String {
-    return "https://holodex.net/api/v2/live?status=upcoming&type=stream&org=\(agency.rawValue)&include=songs,mentions&max_upcoming_hours=%d"
+    return "https://holodex.net/api/v2/live?status=upcoming&type=stream&org=\(agency.rawValue)&include=songs,mentions&max_upcoming_hours=\(getUpcomingStreamLookAheadHoursFromUserDefaults())"
 }
 
 func getWidgetUpcomingUrl(for agency: AgencyEnum) -> String {

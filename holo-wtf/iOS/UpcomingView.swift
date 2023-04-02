@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UpcomingView: View {
-    @StateObject var upcoming: UpcomingViewModel
+    @StateObject var upcoming: VideoViewModel
     let agency: AgencyEnum
     
     @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingView) var isShowingCompact: Bool = false
@@ -17,17 +17,17 @@ struct UpcomingView: View {
     
     init(for agency: AgencyEnum) {
         self.agency = agency
-        _upcoming = StateObject(wrappedValue: UpcomingViewModel(for: agency))
+        _upcoming = StateObject(wrappedValue: VideoViewModel(for: agency, videoType: .upcoming))
     }
     
     var body: some View {
-        VideoUIListView(currentPresentationMode: $currentPresentationMode, videoType: .upcoming, uiMode: isShowingCompact ? .compact : .card)
-            .environmentObject(upcoming as VideoViewModel)
+        VideoUIListView(currentPresentationMode: $currentPresentationMode, videoType: .upcoming, uiMode: isShowingCompact ? .compact : .card, isFavourite: false)
+            .environmentObject(upcoming)
             .navigationTitle(agency.getAgency().localizedName)
             .toolbar {
                 ToolbarItemGroup(placement: .secondaryAction) {
                     UpcomingViewToolbar(currentPresentationMode: $currentPresentationMode)
-                        .environmentObject(upcoming as VideoViewModel)
+                        .environmentObject(upcoming)
                 }
             }
             .task {

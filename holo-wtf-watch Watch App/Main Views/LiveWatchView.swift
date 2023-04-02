@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct LiveWatchView: View {
-    @StateObject var live: LiveViewModel
+    @StateObject var live: VideoViewModel
     let agency: AgencyEnum
     
     init(for agency: AgencyEnum) {
         self.agency = agency
-        _live = StateObject(wrappedValue: LiveViewModel(for: agency))
+        _live = StateObject(wrappedValue: VideoViewModel(for: agency, videoType: .live))
     }
     
     var body: some View {
@@ -22,11 +22,11 @@ struct LiveWatchView: View {
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: live.dataStatus) {
                 VideoCountView(videoType: .live)
-                    .environmentObject(live as VideoViewModel)
+                    .environmentObject(live)
             }
         })
         .navigationTitle(agency.getAgency().localizedName)
-        .environmentObject(live as VideoViewModel)
+        .environmentObject(live)
         .task {
             live.sortingStrategy = .timeDesc
             await live.getVideoForUI()

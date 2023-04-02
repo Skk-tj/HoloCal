@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LiveView: View {
-    @StateObject var live: LiveViewModel
+    @StateObject var live: VideoViewModel
     let agency: AgencyEnum
     
     @AppStorage(UserDefaultKeys.isShowingCompactInLiveView) var isShowingCompact: Bool = false
@@ -17,17 +17,17 @@ struct LiveView: View {
     
     init(for agency: AgencyEnum) {
         self.agency = agency
-        _live = StateObject(wrappedValue: LiveViewModel(for: agency))
+        _live = StateObject(wrappedValue: VideoViewModel(for: agency, videoType: .live))
     }
     
     var body: some View {
-        VideoUIListView(currentPresentationMode: $currentPresentationMode, videoType: .live, uiMode: isShowingCompact ? .compact : .card)
-            .environmentObject(live as VideoViewModel)
+        VideoUIListView(currentPresentationMode: $currentPresentationMode, videoType: .live, uiMode: isShowingCompact ? .compact : .card, isFavourite: false)
+            .environmentObject(live)
             .navigationTitle(agency.getAgency().localizedName)
             .toolbar {
                 ToolbarItemGroup(placement: .secondaryAction) {
                     LiveViewToolbar(currentPresentationMode: $currentPresentationMode)
-                        .environmentObject(live as VideoViewModel)
+                        .environmentObject(live)
                 }
             }
             .task {

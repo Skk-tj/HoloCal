@@ -11,6 +11,7 @@ struct UIListView<ElementContent: View, StatusContent: View>: View {
     @EnvironmentObject var viewModel: VideoViewModel
     
     @Binding var currentPresentationMode: PresentationMode
+    let isFavourite: Bool
     
     /// The view of a single element in the list.
     @ViewBuilder let elementView: (_ live: LiveVideo) -> ElementContent
@@ -23,7 +24,7 @@ struct UIListView<ElementContent: View, StatusContent: View>: View {
     var body: some View {
         switch uiMode {
         case .compact:
-            VideoListView(currentPresentationMode: $currentPresentationMode, singleVideoView: { live in
+            VideoListView(currentPresentationMode: $currentPresentationMode, isFavourite: isFavourite, singleVideoView: { live in
                 SwipableLinkedCellView(video: live) {
                     elementView(live)
                 }
@@ -34,7 +35,7 @@ struct UIListView<ElementContent: View, StatusContent: View>: View {
                 dataStatusView()
             })
         case .card:
-            VideoListView(currentPresentationMode: $currentPresentationMode, singleVideoView: { live in
+            VideoListView(currentPresentationMode: $currentPresentationMode, isFavourite: isFavourite, singleVideoView: { live in
                 SwipableLinkedCellView(video: live) {
                     elementView(live)
                 }

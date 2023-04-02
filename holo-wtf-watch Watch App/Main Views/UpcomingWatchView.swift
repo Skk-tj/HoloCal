@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct UpcomingWatchView: View {
-    @StateObject var upcoming: UpcomingViewModel
+    @StateObject var upcoming: VideoViewModel
     let agency: AgencyEnum
     
     init(for agency: AgencyEnum) {
         self.agency = agency
-        _upcoming = StateObject(wrappedValue: UpcomingViewModel(for: agency))
+        _upcoming = StateObject(wrappedValue: VideoViewModel(for: agency, videoType: .upcoming))
     }
     
     var body: some View {
@@ -23,11 +23,11 @@ struct UpcomingWatchView: View {
             DataStatusIndicatorView(dataStatus: upcoming.dataStatus) {
                 VideoCountView(videoType: .upcoming)
                     .font(.footnote)
-                    .environmentObject(upcoming as VideoViewModel)
+                    .environmentObject(upcoming)
             }
         })
         .navigationTitle(agency.getAgency().localizedName)
-        .environmentObject(upcoming as VideoViewModel)
+        .environmentObject(upcoming)
         .task {
             upcoming.sortingStrategy = .timeAsc
             await upcoming.getVideoForUI()

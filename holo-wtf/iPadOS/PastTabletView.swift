@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct PastTabletView: View {
-    @StateObject var past: PastViewModel
+    @StateObject var past: VideoViewModel
     let agency: AgencyEnum
     
     @State var currentPresentationMode: PresentationMode = .normal
     
     init(for agency: AgencyEnum) {
         self.agency = agency
-        _past = StateObject(wrappedValue: PastViewModel(for: agency))
+        _past = StateObject(wrappedValue: VideoViewModel(for: agency, videoType: .past))
     }
     
     var body: some View {
@@ -31,7 +31,7 @@ struct PastTabletView: View {
                 VideoCountView(videoType: .past)
             }
         }, isFavourite: false)
-        .environmentObject(past as VideoViewModel)
+        .environmentObject(past)
         .task {
             past.sortingStrategy = .endedFirst
             await past.getVideoForUI()
@@ -46,7 +46,7 @@ struct PastTabletView: View {
         .toolbar {
             ToolbarItemGroup(placement: .secondaryAction) {
                 PastViewToolbar(currentPresentationMode: $currentPresentationMode)
-                    .environmentObject(past as VideoViewModel)
+                    .environmentObject(past)
             }
         }
         .animation(.easeInOut, value: past.dataStatus)

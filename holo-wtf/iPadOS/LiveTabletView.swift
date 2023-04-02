@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct LiveTabletView: View {
-    @StateObject var live: LiveViewModel
+    @StateObject var live: VideoViewModel
     let agency: AgencyEnum
     
     @State var currentPresentationMode: PresentationMode = .normal
     
     init(for agency: AgencyEnum) {
         self.agency = agency
-        _live = StateObject(wrappedValue: LiveViewModel(for: agency))
+        _live = StateObject(wrappedValue: VideoViewModel(for: agency, videoType: .live))
     }
     
     var body: some View {
@@ -31,7 +31,7 @@ struct LiveTabletView: View {
                 VideoCountView(videoType: .live)
             }
         }, isFavourite: false)
-        .environmentObject(live as VideoViewModel)
+        .environmentObject(live)
         .task {
             live.sortingStrategy = .timeDesc
             await live.getVideoForUI()
@@ -46,7 +46,7 @@ struct LiveTabletView: View {
         .toolbar {
             ToolbarItemGroup(placement: .secondaryAction) {
                 LiveViewToolbar(currentPresentationMode: $currentPresentationMode)
-                    .environmentObject(live as VideoViewModel)
+                    .environmentObject(live)
             }
         }
         .animation(.easeInOut, value: live.dataStatus)
