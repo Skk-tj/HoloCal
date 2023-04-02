@@ -73,21 +73,10 @@ class VideoViewModel: ObservableObject {
     
     @MainActor
     func getVideosForFavourites(urls: [String], groupName: String?, completion: @escaping ([LiveVideo]) -> Void) async {
-        let favourites = getFavouritesFromUserDefaults(groupName: groupName)
         self.dataStatus = .working
         
         do {
-            var getResult: [LiveVideo] = []
-            
-            for url in urls {
-                async let videos = getVideos(from: url)
-                getResult.append(contentsOf: (try? await videos) ?? [])
-            }
-            
-            getResult = getResult.filter {
-                favourites.contains($0.channel.id)
-            }
-            
+            let getResult = try await getVideosForFavourites(urls: urls, groupName: groupName)
             let getResultWithTwitter: [LiveVideo] = try await getTwitterForAll(videoList: getResult)
             
             completion(getResultWithTwitter)
@@ -98,11 +87,31 @@ class VideoViewModel: ObservableObject {
         }
     }
     
-    func updatedWithTwitter(channel: Channel) async -> Channel {
+    private func getVideosForFavourites(urls: [String], groupName: String?) async throws -> [LiveVideo] {
+        let favourites = getFavouritesFromUserDefaults(groupName: groupName)
+        
+        let result = try await withThrowingTaskGroup(of: [LiveVideo].self) { group in
+            urls.forEach { url in
+                group.addTask {
+                    return try await getVideos(from: url)
+                }
+            }
+            
+            return try await group.reduce(into: [LiveVideo]()) { partialResult, videos in
+                partialResult.append(contentsOf: videos)
+            }
+        }
+        
+        let filteredResult = result.filter { favourites.contains($0.channel.id) }.uniqued { $0.id }
+        
+        return filteredResult
+    }
+    
+    private func updatedWithTwitter(channel: Channel) async -> Channel {
         return Channel(id: channel.id, name: channel.name, photo: channel.photo, org: channel.org, twitter: try? await channel.getTwitterId())
     }
     
-    func updatedWithTwitter(video: LiveVideo) async -> LiveVideo {
+    private func updatedWithTwitter(video: LiveVideo) async -> LiveVideo {
         return LiveVideo(id: video.id, title: video.title, topicId: video.topicId, startScheduled: video.startScheduled, startActual: video.startActual, availableAt: video.availableAt, publishedAt: video.publishedAt, liveViewers: video.liveViewers, mentions: video.mentions, duration: video.duration, songs: video.songs, channel: await self.updatedWithTwitter(channel: video.channel))
     }
     

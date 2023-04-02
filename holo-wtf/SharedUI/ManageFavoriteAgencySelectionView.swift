@@ -9,8 +9,8 @@ import SwiftUI
 import CloudStorage
 
 struct ManageFavoriteAgencySelectionView: View {
-    // @AppStorage(UserDefaultKeys.favouritedChannel, store: UserDefaults(suiteName: "group.io.skk-tj.holo-wtf.ios")) var favourited = Favourited()
-    @CloudStorage(UserDefaultKeys.favouritedChannel) var favourited = Favourited()
+    @AppStorage(UserDefaultKeys.favouritedChannel, store: UserDefaults(suiteName: "group.io.skk-tj.holo-wtf.ios")) var favourited = Favourited()
+    // @CloudStorage(UserDefaultKeys.favouritedChannel) var favourited = Favourited()
     
     var body: some View {
         AgencySelectionView(viewTitle: "SETTINGS_MANAGE_FAVOURITE_VIEW_TITLE", targetView: { agency in
@@ -28,11 +28,6 @@ struct ManageFavoriteAgencySelectionView: View {
                 EmptyView()
             }
         })
-        // .onChange(of: favourited) { favourited in
-        //     let keyStore = NSUbiquitousKeyValueStore()
-        //     keyStore.set(favourited, forKey: UserDefaultKeys.favouritedChannel)
-        //     keyStore.synchronize()
-        // }
     }
 }
 

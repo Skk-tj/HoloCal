@@ -38,7 +38,8 @@ let widgetDeepLinkToViewAgency: [WidgetDeepLinkAgency: ViewAgency] = [
     .react: .react,
     .nanashiInc: .nanashiInc,
     .vspo: .vspo,
-    .noriPro: .noriPro
+    .noriPro: .noriPro,
+    .favourites: .favourites
 ]
 
 let videoTypeToWidgetDeepLink: [VideoType: Tabs] = [

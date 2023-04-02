@@ -12,8 +12,8 @@ struct ManageFavoriteView: View {
     let agency: AgencyEnum
     
     @State var showResetAlert: Bool = false
-    // @AppStorage(UserDefaultKeys.favouritedChannel, store: UserDefaults(suiteName: "group.io.skk-tj.holo-wtf.ios")) var favourited = Favourited()
-    @CloudStorage(UserDefaultKeys.favouritedChannel) var favourited = Favourited()
+    @AppStorage(UserDefaultKeys.favouritedChannel, store: UserDefaults(suiteName: "group.io.skk-tj.holo-wtf.ios")) var favourited = Favourited()
+    // @CloudStorage(UserDefaultKeys.favouritedChannel) var favourited = Favourited()
     @State var searchText: String = ""
     
     var body: some View {
@@ -55,11 +55,6 @@ struct ManageFavoriteView: View {
                 }
             }
         }
-        // .onChange(of: favourited) { favourited in
-        //     let keyStore = NSUbiquitousKeyValueStore()
-        //     keyStore.set(favourited, forKey: UserDefaultKeys.favouritedChannel)
-        //     keyStore.synchronize()
-        // }
         .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
         .navigationTitle(agency.getAgency().localizedName)
     }
