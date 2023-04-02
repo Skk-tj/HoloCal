@@ -8,11 +8,9 @@
 import Foundation
 
 class UpcomingFavoritesViewModel: VideoViewModel, VideoGettable {
-    let groupName: String?
     var urls: [String] = AgencyEnum.allCases.map { getUpcomingUrl(for: $0) }
     
-    init(groupName: String? = nil) {
-        self.groupName = groupName
+    init() {
         super.init(for: .hololive)
         
         let upcomingLookAhead = getUpcomingStreamLookAheadHoursFromUserDefaults()
@@ -22,7 +20,7 @@ class UpcomingFavoritesViewModel: VideoViewModel, VideoGettable {
     
     @MainActor
     func getVideoForUI() async {
-        await getVideosForFavourites(urls: self.urls, groupName: self.groupName) { responseResult in
+        await getVideosForFavourites(urls: self.urls, groupName: "group.io.skk-tj.holo-wtf.ios") { responseResult in
             self.videoList = responseResult
             
             self.sortVideos()

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UpcomingFavouritesView: View {
-    @StateObject var upcoming: UpcomingFavoritesViewModel = UpcomingFavoritesViewModel(groupName: "group.io.skk-tj.holo-wtf.ios")
+    @StateObject var upcoming = UpcomingFavoritesViewModel()
     
     @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingFavouritesView) var isShowingCompact: Bool = false
     

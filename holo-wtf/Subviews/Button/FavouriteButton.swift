@@ -8,21 +8,10 @@
 import SwiftUI
 
 struct FavouriteButton<Content: View>: View {
+    @AppStorage(UserDefaultKeys.favouritedChannel, store: UserDefaults(suiteName: "group.io.skk-tj.holo-wtf.ios")) var favourited = Favourited()
+    
     let video: LiveVideo
-    let content: () -> Content
-    
-    @AppStorage var favourited: Favourited
-    
-    init(video: LiveVideo, content: @escaping () -> Content, userDefaultSuite: String? = "group.io.skk-tj.holo-wtf.ios") {
-        self.video = video
-        self.content = content
-        
-        if let userDefaultSuite {
-            self._favourited = AppStorage(wrappedValue: Favourited(), UserDefaultKeys.favouritedChannel, store: UserDefaults(suiteName: userDefaultSuite))
-        } else {
-            self._favourited = AppStorage(wrappedValue: Favourited(), UserDefaultKeys.favouritedChannel)
-        }
-    }
+    @ViewBuilder let content: () -> Content
     
     var body: some View {
         let isFavourited = favourited.contains(where: {$0 == video.channel.id})
@@ -34,9 +23,9 @@ struct FavouriteButton<Content: View>: View {
                     favourited.removeAll(where: {$0 == video.channel.id})
                 }
             }
-        }) {
+        }, label: {
             content()
-        }
+        })
         .onChange(of: favourited) { favourited in
             let keyStore = NSUbiquitousKeyValueStore()
             keyStore.set(favourited, forKey: UserDefaultKeys.favouritedChannel)

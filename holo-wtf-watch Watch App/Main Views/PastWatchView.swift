@@ -21,7 +21,7 @@ struct PastWatchView: View {
             WatchPastCellView(past: video)
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: past.dataStatus) {
-                PastCountView()
+                VideoCountView(videoType: .past)
                     .environmentObject(past as VideoViewModel)
             }
         })

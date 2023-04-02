@@ -14,7 +14,7 @@ import OrderedCollections
 /// This view accepts another `View` for what the video will be fit into.
 struct SectionedForEachView<Content: View>: View {
     @AppStorage("generationListSelection") var generationListSelection = Set(Generation.allCases)
-    @AppStorage("generationListOrderNew") var generateListOrder: Data = try! JSONEncoder().encode(agencyEnumToGenerations)
+    @AppStorage("generationListOrderNew") var generateListOrder: Data = (try? JSONEncoder().encode(agencyEnumToGenerations)) ?? Data()
     
     @EnvironmentObject var viewModel: VideoViewModel
     @ViewBuilder let cellView: (_ video: LiveVideo) -> Content

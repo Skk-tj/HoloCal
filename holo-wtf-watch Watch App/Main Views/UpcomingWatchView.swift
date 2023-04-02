@@ -21,7 +21,7 @@ struct UpcomingWatchView: View {
             WatchUpcomingCellView(upcoming: video)
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: upcoming.dataStatus) {
-                UpcomingCountView()
+                VideoCountView(videoType: .upcoming)
                     .font(.footnote)
                     .environmentObject(upcoming as VideoViewModel)
             }

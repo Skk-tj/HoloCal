@@ -15,7 +15,7 @@ let intentAgencyToString: [IntentAgency: [NameLanguage: String]] = [
     .react: intentAgencyToAgency[IntentAgency.react]!.getAgency().names,
     .nanashiInc: intentAgencyToAgency[IntentAgency.nanashiInc]!.getAgency().names,
     .noriPro: intentAgencyToAgency[IntentAgency.noriPro]!.getAgency().names,
-    .vspo: intentAgencyToAgency[IntentAgency.vspo]!.getAgency().names,
+    .vspo: intentAgencyToAgency[IntentAgency.vspo]!.getAgency().names
 ]
 
 let intentAgencyToAgency: [IntentAgency: AgencyEnum] = [
@@ -199,7 +199,7 @@ func getEntryWithIntent(for agency: IntentAgency, videoType: VideoType, sortBy: 
 //            return SingleVideoWidgetEntry(date: .now, status: .network, video: nil, avatarData: Data(), thumbnailData: Data(), agency: intentAgencyToDeepLinkAgency[agency]!)
 //        }
         
-        let entry = try await SingleVideoWidgetEntry(date: .now, status: .ok, video: lives[0], avatarData: avatarData, thumbnailData:  thumbnailData, agency: intentAgencyToDeepLinkAgency[agency]!)
+        let entry = try await SingleVideoWidgetEntry(date: .now, status: .ok, video: lives[0], avatarData: avatarData, thumbnailData: thumbnailData, agency: intentAgencyToDeepLinkAgency[agency]!)
         
         return entry
     } catch {

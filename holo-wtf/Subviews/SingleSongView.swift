@@ -21,7 +21,7 @@ struct SingleSongView: View {
         return HStack {
             Text("\(count)")
                 .foregroundColor(.secondary)
-                .alignmentGuide(.leading) { d in d[.trailing]}
+                .alignmentGuide(.leading) { dimension in dimension[.trailing]}
             
             VStack(alignment: .leading) {
                 Text("\(song.mkSong?.title ?? song.name)")

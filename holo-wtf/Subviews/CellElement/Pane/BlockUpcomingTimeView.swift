@@ -29,8 +29,7 @@ struct BlockUpcomingTimeView: View {
                 })
             }
             
-        }
-        else {
+        } else {
             BlockVideoInfoView(iconName: "clock", primaryText: {
                 Text(getTimeIntervalStringFromReferenceDate(reference: Date())!)
             }, secondaryText: {

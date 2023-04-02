@@ -21,7 +21,7 @@ struct LiveWatchView: View {
             WatchLiveCellView(live: video)
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: live.dataStatus) {
-                LiveCountView()
+                VideoCountView(videoType: .live)
                     .environmentObject(live as VideoViewModel)
             }
         })

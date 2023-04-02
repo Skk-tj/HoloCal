@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct LiveFavouritesWatchView: View {
-    @StateObject var live: LiveFavoritesViewModel = LiveFavoritesViewModel()
+    @StateObject var live = LiveFavoritesViewModel()
     
     var body: some View {
         WatchVideoListView(singleVideoView: { video in
             WatchLiveCellView(live: video)
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: live.dataStatus) {
-                LiveFavouriteCountView(userDefaultSuite: nil)
+                VideoFavouriteCountView(videoType: .live)
                     .environmentObject(live as VideoViewModel)
             }
         })

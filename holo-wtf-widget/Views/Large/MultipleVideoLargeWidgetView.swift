@@ -17,7 +17,7 @@ struct MultipleVideoLargeWidgetView: View {
         VStack {
             ForEach(Array(zip(videos, avatars)), id: \.0.id) { item in
                 Divider()
-                HStack() {
+                HStack {
                     SmallWidgetAvatarView(avatarData: item.1)
                     
                     VStack(alignment: .leading) {

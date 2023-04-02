@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct holo_wtf_watch_Watch_AppApp: App {
+struct WatchApp: App {
     @AppStorage(UserDefaultKeys.favouritedChannel) var favourited = Favourited()
     
     init() {
@@ -24,10 +24,8 @@ struct holo_wtf_watch_Watch_AppApp: App {
         
         // MARK: - Clean up orphaned favourites
         var toRemove: [String] = []
-        for favourite in favourited {
-            if TalentEnum(rawValue: favourite) == nil {
-                toRemove.append(favourite)
-            }
+        for favourite in favourited where TalentEnum(rawValue: favourite) == nil {
+            toRemove.append(favourite)
         }
         
         favourited.removeAll { favourite in

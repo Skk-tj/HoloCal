@@ -23,10 +23,10 @@ struct SettingsTalentStarView: View {
                 } else {
                     favourited.removeAll(where: {$0 == talent.id})
                 }
-            }) {
+            }, label: {
                 Label("Favorite", systemImage: isFavourited ? "star.fill" : "star")
                     .labelStyle(.iconOnly)
-            }
+            })
         }
     }
 }

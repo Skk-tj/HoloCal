@@ -28,7 +28,7 @@ struct UpcomingiPadView: View {
             }
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: upcoming.dataStatus) {
-                UpcomingCountView()
+                VideoCountView(videoType: .upcoming)
             }
         }, isFavourite: false)
         .environmentObject(upcoming as VideoViewModel)

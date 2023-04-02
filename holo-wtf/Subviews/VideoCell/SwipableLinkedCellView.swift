@@ -19,9 +19,9 @@ struct SwipableLinkedCellView<Content: View>: View {
         }
         .swipeActions {
             let isFavourited = favourited.contains(where: {$0 == video.channel.id})
-            FavouriteButton(video: video, content: {
+            FavouriteButton(video: video) {
                 Label(isFavourited ? "LINKED_VIDEO_SWIPE_ACTIONS_UNFAVOURITE" : "LINKED_VIDEO_SWIPE_ACTIONS_FAVOURITE", systemImage: isFavourited ? "star.slash" : "star")
-            })
+            }
             .tint(.yellow)
             
             ShareLink(item: URL(string: "https://www.youtube.com/watch?v=\(video.id)")!, label: {

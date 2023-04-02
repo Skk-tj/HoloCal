@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct holo_wtfApp: App {
+struct MainApp: App {
     @AppStorage(UserDefaultKeys.dstDays) var dstDays: Int = 5
     @AppStorage(UserDefaultKeys.isShowingDSTReminder) var isShowingDSTReminder = false
     @AppStorage(UserDefaultKeys.favouritedChannel, store: UserDefaults(suiteName: "group.io.skk-tj.holo-wtf.ios")) var favourited = Favourited()
@@ -16,7 +16,7 @@ struct holo_wtfApp: App {
     @AppStorage("generationListSelection") var generationSelected = Set(Generation.allCases)
     @AppStorage("excludedGenerations") var excludedGenerations = Set<Generation>()
     
-    @AppStorage("generationListOrderNew") var generateListOrder: Data = try! JSONEncoder().encode(agencyEnumToGenerations)
+    @AppStorage("generationListOrderNew") var generateListOrder: Data = (try? JSONEncoder().encode(agencyEnumToGenerations)) ?? Data()
     
     init() {
         // MARK: - Setup DST Warning
@@ -62,10 +62,8 @@ struct holo_wtfApp: App {
         
         // MARK: - Clean up orphaned favourites
         var toRemove: [String] = []
-        for favourite in favourited {
-            if TalentEnum(rawValue: favourite) == nil {
-                toRemove.append(favourite)
-            }
+        for favourite in favourited where TalentEnum(rawValue: favourite) == nil {
+            toRemove.append(favourite)
         }
         
         favourited.removeAll { favourite in

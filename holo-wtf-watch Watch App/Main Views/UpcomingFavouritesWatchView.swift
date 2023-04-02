@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct UpcomingFavouritesWatchView: View {
-    @StateObject var upcoming: UpcomingFavoritesViewModel = UpcomingFavoritesViewModel()
+    @StateObject var upcoming = UpcomingFavoritesViewModel()
     
     var body: some View {
         WatchVideoListView(singleVideoView: { video in
             WatchUpcomingCellView(upcoming: video)
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: upcoming.dataStatus) {
-                UpcomingFavouriteCountView(userDefaultSuite: nil)
+                VideoFavouriteCountView(videoType: .upcoming)
                     .font(.footnote)
                     .environmentObject(upcoming as VideoViewModel)
             }

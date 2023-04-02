@@ -65,9 +65,3 @@ struct FavouritesVideoListView<VideoContent: View, DataStatusContent: View>: Vie
         }
     }
 }
-
-//struct FavouritesVideoListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FavouritesVideoListView()
-//    }
-//}

@@ -10,7 +10,7 @@ import SwiftUI
 struct ManageGenerationOrderView: View {
     let agency: AgencyEnum
     
-    @AppStorage("generationListOrderNew") var generateListOrder: Data = try! JSONEncoder().encode(agencyEnumToGenerations)
+    @AppStorage("generationListOrderNew") var generateListOrder: Data = (try? JSONEncoder().encode(agencyEnumToGenerations)) ?? Data()
     
     @State var showResetAlert = false
     

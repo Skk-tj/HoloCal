@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PastFavouritesView: View {
-    @StateObject var past: PastFavoritesViewModel = PastFavoritesViewModel(groupName: "group.io.skk-tj.holo-wtf.ios")
+    @StateObject var past = PastFavoritesViewModel()
     
     @AppStorage(UserDefaultKeys.isShowingCompactInPastFavouritesView) var isShowingCompact: Bool = false
     

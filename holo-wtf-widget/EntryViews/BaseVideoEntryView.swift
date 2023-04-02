@@ -35,9 +35,3 @@ struct BaseVideoEntryView<MainContent: View, TitleContent: View>: View {
         .padding()
     }
 }
-
-//struct BaseVideoEntryView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BaseVideoEntryView()
-//    }
-//}

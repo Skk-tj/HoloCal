@@ -26,7 +26,7 @@ struct AccessoryCircularView: View {
 
 struct LiveAccessoryCircularView_Previews: PreviewProvider {
     static var previews: some View {
-        AccessoryCircularView(video: LiveVideo.previewLive, avatarData: try! Data(contentsOf: LiveVideo.previewLive.channel.photo!))
+        AccessoryCircularView(video: LiveVideo.previewLive, avatarData: (try? Data(contentsOf: LiveVideo.previewLive.channel.photo!)) ?? Data())
             .previewContext(WidgetPreviewContext(family: .accessoryCircular))
     }
 }

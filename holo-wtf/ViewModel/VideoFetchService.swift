@@ -22,7 +22,7 @@ func getVideos(from url: String) async throws -> [LiveVideo] {
         throw VideoFetchServiceError.apiUrlError
     }
     
-    let headers = ["Content-Type": "application/json", "X-APIKEY": Bundle.main.object(forInfoDictionaryKey: "HOLODEX_API_KEY") as! String]
+    let headers = ["Content-Type": "application/json", "X-APIKEY": Bundle.main.object(forInfoDictionaryKey: "HOLODEX_API_KEY") as? String ?? ""]
     
     var request = URLRequest(url: apiURL)
     request.httpMethod = "GET"

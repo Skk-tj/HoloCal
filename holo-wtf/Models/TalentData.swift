@@ -5,6 +5,8 @@
 //
 //
 
+// swiftlint:disable type_body_length file_length
+
 import Foundation
 import OrderedCollections
 
@@ -1188,7 +1190,7 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     
     // MARK: - Vspo
     .qpi: Talent(id: TalentEnum.qpi.rawValue, names: [.en: "Kaminari Qpi", .ja: "神成きゅぴ"], inGeneration: .vspo),
-    .beni : Talent(id: TalentEnum.beni.rawValue, names: [.en: "Yakumo Beni", .ja: "八雲べに"], inGeneration: .vspo),
+    .beni: Talent(id: TalentEnum.beni.rawValue, names: [.en: "Yakumo Beni", .ja: "八雲べに"], inGeneration: .vspo),
     .ema: Talent(id: TalentEnum.ema.rawValue, names: [.en: "Aizawa Ema", .ja: "藍沢エマ"], inGeneration: .vspo),
     .runa: Talent(id: TalentEnum.runa.rawValue, names: [.en: "Shinomiya Runa", .ja: "紫宮るな"], inGeneration: .vspo),
     .tsuna: Talent(id: TalentEnum.tsuna.rawValue, names: [.en: "Nekota Tsuna", .ja: "猫汰つな"], inGeneration: .vspo),
@@ -1196,7 +1198,7 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .met: Talent(id: TalentEnum.met.rawValue, names: [.en: "Komori Met", .ja: "小森めと"], inGeneration: .vspo),
     
     // MARK: - Vspo Official Channel
-    .vspoOfficial: Talent(id: TalentEnum.vspoOfficial.rawValue, names: [.en: "VSpo Official Channel", .ja: "ぶいすぽっ! 公式チャンネル"], inGeneration: .vspoOfficial),
+    .vspoOfficial: Talent(id: TalentEnum.vspoOfficial.rawValue, names: [.en: "VSpo Official Channel", .ja: "ぶいすぽっ! 公式チャンネル"], inGeneration: .vspoOfficial)
 ]
 
 let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
@@ -1274,7 +1276,7 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .en4thWave: GenerationGroup(id: .en4thWave, names: [.en: "EN 4th Wave: Luxiem", .ja: "EN 第4弾「Luxiem」"], members: [.luca, .shu, .ike, .mysta, .vox]),
     .en5thWave: GenerationGroup(id: .en5thWave, names: [.en: "EN 5th Wave: Noctyx", .ja: "EN 第5弾「Noctyx」"], members: [.sonny, .uki, .alban, .fulgur, .yugo]),
     .en6thWave: GenerationGroup(id: .en6thWave, names: [.en: "EN 6th Wave: ILUNA", .ja: "EN 第6弾「ILUNA」"], members: [.kyo, .maria, .aster, .aia, .ren, .scarle]),
-    .en7thWave: GenerationGroup(id: .en7thWave, names: [.en: "EN 7th Wave: XSOLEIL", .ja: "EN 第7弾「XSOLEIL」"], members: [.doppio, .meloco ,.hex, .kotoka, .ver]),
+    .en7thWave: GenerationGroup(id: .en7thWave, names: [.en: "EN 7th Wave: XSOLEIL", .ja: "EN 第7弾「XSOLEIL」"], members: [.doppio, .meloco, .hex, .kotoka, .ver]),
     .nijisanjiOfficial: GenerationGroup(id: .nijisanjiOfficial, names: [.en: "Nijisanji Official Channels", .ja: "にじさんじ公式チャンネル"], members: [.nijisanji, .nijisanjiID, .nijisanjiEN, .virtual, .voltacation, .luxiem, .rofmao, .nornis, .chronoir]),
     
     // MARK: - Re:AcT
@@ -1302,5 +1304,5 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .vspo: GenerationGroup(id: .vspo, names: [.en: "VSpo", .ja: "ぶいすぽ"], members: [.qpi, .beni, .ema, .runa, .tsuna, .ramune, .met]),
     .vspoOfficial: GenerationGroup(id: .vspoOfficial, names: [.en: "VSpo Official Channel", .ja: "ぶいすぽっ! 公式チャンネル"], members: [.vspoOfficial]),
     
-    .other: GenerationGroup(id: .other, names: [.en: "Other", .ja: "他"], members: []),
+    .other: GenerationGroup(id: .other, names: [.en: "Other", .ja: "他"], members: [])
 ]

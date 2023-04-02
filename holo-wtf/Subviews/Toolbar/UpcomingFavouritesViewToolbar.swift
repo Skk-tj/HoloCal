@@ -40,8 +40,8 @@ struct UpcomingFavouritesViewToolbar: View {
         } label: {
             Label("LIVE_VIEW_TOOLBAR_SORT", systemImage: "arrow.up.arrow.down")
         }
-        .onChange(of: upcomingViewModel.sortingStrategy, perform: { sortingSelection in
+        .onChange(of: upcomingViewModel.sortingStrategy) { _ in
             self.upcomingViewModel.sortVideos()
-        })
+        }
     }
 }

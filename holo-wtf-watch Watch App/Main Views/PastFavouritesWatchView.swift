@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct PastFavouritesWatchView: View {
-    @StateObject var past: PastFavoritesViewModel = PastFavoritesViewModel()
+    @StateObject var past = PastFavoritesViewModel()
     
     var body: some View {
         WatchVideoListView(singleVideoView: { video in
             WatchPastCellView(past: video)
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: past.dataStatus) {
-                PastFavouriteCountView(userDefaultSuite: nil)
+                VideoFavouriteCountView(videoType: .past)
                     .environmentObject(past as VideoViewModel)
             }
         })

@@ -15,13 +15,13 @@ struct VideoWidgetProvider: IntentTimelineProvider {
         return SingleVideoWidgetEntry(date: Date(), status: .ok, video: widgetSampleVideo, avatarData: Data(), thumbnailData: Data())
     }
     
-    func getSnapshot(for configuration: SelectAgencyIntent, in context: Context, completion: @escaping (SingleVideoWidgetEntry) -> ()) {
+    func getSnapshot(for configuration: SelectAgencyIntent, in context: Context, completion: @escaping (SingleVideoWidgetEntry) -> Void) {
         Task {
             completion(await getEntryWithIntent(for: configuration.agency, videoType: videoType, sortBy: configuration.sortBy, filterBy: { $0.isHololive || $0.isNijisanji }))
         }
     }
     
-    func getTimeline(for configuration: SelectAgencyIntent, in context: Context, completion: @escaping (Timeline<SingleVideoWidgetEntry>) -> ()) {
+    func getTimeline(for configuration: SelectAgencyIntent, in context: Context, completion: @escaping (Timeline<SingleVideoWidgetEntry>) -> Void) {
         Task {
             let entries: [SingleVideoWidgetEntry] = [await getEntryWithIntent(for: configuration.agency, videoType: videoType, sortBy: configuration.sortBy, filterBy: { $0.isHololive || $0.isNijisanji })]
             let timeline = Timeline(entries: entries, policy: .atEnd)
@@ -73,7 +73,5 @@ struct VideoWidgetProvider: IntentTimelineProvider {
             
             return result
         }
-        
-        
     }
 }

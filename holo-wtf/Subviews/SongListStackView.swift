@@ -36,8 +36,8 @@ struct SongListStackView: View {
                         }
                     }
             case .finished:
-                List(songsViewModel.songsProcessed.indexed(), id: \.element) { i, song in
-                    SingleSongView(count: i + 1, videoURL: videoURL, song: song)
+                List(songsViewModel.songsProcessed.indexed(), id: \.element) { index, song in
+                    SingleSongView(count: index + 1, videoURL: videoURL, song: song)
                 }
                 .navigationTitle("SONG_LIST_VIEW_NAVIGATION_TITLE")
                 .toolbar {

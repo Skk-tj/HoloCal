@@ -21,11 +21,7 @@ struct BaseMultipleVideoLargeEntryView<MainContent: View, TitleContent: View>: V
             
             switch entry.status {
             case .ok:
-                if let videos = entry.videos {
-                    mainView(videos)
-                } else {
-                    NoStreamView()
-                }
+                mainView(entry.videos)
             case .noVideo:
                 NoStreamView()
             case .network:

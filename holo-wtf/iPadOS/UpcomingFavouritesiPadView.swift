@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UpcomingFavouritesiPadView: View {
-    @StateObject var upcoming: UpcomingFavoritesViewModel = UpcomingFavoritesViewModel(groupName: "group.io.skk-tj.holo-wtf.ios")
+    @StateObject var upcoming = UpcomingFavoritesViewModel()
     
     var body: some View {
         iPadLazyGridView(singleVideoView: { live in
@@ -20,7 +20,7 @@ struct UpcomingFavouritesiPadView: View {
             }
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: upcoming.dataStatus) {
-                UpcomingFavouriteCountView()
+                VideoFavouriteCountView(videoType: .upcoming)
             }
         }, isFavourite: true)
         .environmentObject(upcoming as VideoViewModel)

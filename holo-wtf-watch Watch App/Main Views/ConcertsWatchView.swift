@@ -14,9 +14,9 @@ struct ConcertsWatchView: View {
         ConcertListView(singleConcertView: { concert in
             NavigationLink(destination: {
                 ConcertWatchView(concert: concert)
-            }) {
+            }, label: {
                 ConcertWatchCell(concert: concert)
-            }
+            })
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: concert.dataStatus) {
                 ConcertCountView()

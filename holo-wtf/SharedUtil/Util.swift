@@ -204,12 +204,12 @@ func appendNewGenerationOrderList(@AppStorage("generationListOrderNew") to data:
     guard var deserialized = try? JSONDecoder().decode([AgencyEnum: [Generation]].self, from: data) else { return }
     deserialized[agency]!.append(contentsOf: order)
     
-    data = try! JSONEncoder().encode(deserialized)
+    data = (try? JSONEncoder().encode(deserialized)) ?? Data()
 }
 
 func overwriteNewGenerationOrderList(@AppStorage("generationListOrderNew") to data: Data, order: [Generation], agency: AgencyEnum) {
     guard var deserialized = try? JSONDecoder().decode([AgencyEnum: [Generation]].self, from: data) else { return }
     deserialized[agency] = order
     
-    data = try! JSONEncoder().encode(deserialized)
+    data = (try? JSONEncoder().encode(deserialized)) ?? Data()
 }

@@ -28,7 +28,7 @@ struct LiveiPadView: View {
             }
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: live.dataStatus) {
-                LiveCountView()
+                VideoCountView(videoType: .live)
             }
         }, isFavourite: false)
         .environmentObject(live as VideoViewModel)

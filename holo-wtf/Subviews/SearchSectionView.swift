@@ -25,9 +25,3 @@ struct SearchSectionView<Content: View>: View {
         }
     }
 }
-
-//struct SearchSectionView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchSectionView()
-//    }
-//}

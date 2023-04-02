@@ -1,0 +1,11 @@
+# By default, SwiftLint uses a set of sensible default rules you can adjust:
+disabled_rules: # rule identifiers turned on by default to exclude from running
+  - trailing_whitespace
+  - line_length
+  - blanket_disable_command
+identifier_name:
+  min_length: 2
+type_name:
+  min_length: 2
+  excluded: ["iOSTabView", "iPadSplitView", "iOSTabView_Previews", "iPadLazyGridView", "iPadSplitView_Previews"]
+  allowed_symbols: ["_"] # these are allowed in type names

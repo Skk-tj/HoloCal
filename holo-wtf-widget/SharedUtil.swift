@@ -82,7 +82,7 @@ extension VideoIntentTimelineProvider {
         return Entry(date: Date(), status: .ok, video: widgetSampleVideo, avatarData: Data(), thumbnailData: Data(), agency: .unknown)
     }
     
-    func getSnapshot(for configuration: Intent, in context: Context, completion: @escaping (Entry) -> ()) {
+    func getSnapshot(for configuration: Intent, in context: Context, completion: @escaping (Entry) -> Void) {
         if context.isPreview && context.family == .accessoryRectangular {
             completion(Entry(date: Date(), status: .ok, video: widgetSampleVideo, avatarData: Data(), thumbnailData: Data(), agency: .unknown))
             return
@@ -99,7 +99,7 @@ extension VideoIntentTimelineProvider {
         }
     }
     
-    func getTimeline(for configuration: Intent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(for configuration: Intent, in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
         Task {
             let entries: [Entry] = [await getEntryWithIntent(for: configuration.agency, videoType: videoType, sortBy: sortBy, filterBy: { $0.isSupportedAgency })]
             let timeline = Timeline(entries: entries, policy: .atEnd)

@@ -42,7 +42,6 @@ struct LivePaneView: View {
             }
             .padding(.bottom)
             
-            
             // MARK: - Live icon and tags
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {

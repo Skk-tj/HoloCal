@@ -31,8 +31,6 @@ struct SettingsWatchView: View {
                 NavigationLink(destination: OpenSourceView()) {
                     Text("SETTINGS_OPEN_SOURCE")
                 }
-                
-                
             }
         }
         .navigationTitle("SETTINGS_TITLE")

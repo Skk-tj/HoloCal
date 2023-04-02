@@ -58,8 +58,8 @@ struct LiveFavouritesViewToolbar: View {
         } label: {
             Label("LIVE_VIEW_TOOLBAR_SORT", systemImage: "arrow.up.arrow.down")
         }
-        .onChange(of: liveViewModel.sortingStrategy, perform: { sortingSelection in
+        .onChange(of: liveViewModel.sortingStrategy) { _ in
             self.liveViewModel.sortVideos()
-        })
+        }
     }
 }

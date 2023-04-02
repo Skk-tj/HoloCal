@@ -13,9 +13,9 @@ struct Channel: Codable, Identifiable, Hashable {
     let name: String
     let photo: URL?
     let org: String?
-    
+
     var twitter: String?
-    
+
     var talent: Talent? {
         if let talentEnum = TalentEnum(rawValue: id) {
             return talentEnumToTalent[talentEnum]!
@@ -24,11 +24,11 @@ struct Channel: Codable, Identifiable, Hashable {
             return nil
         }
     }
-    
+
     static let testChannel = Channel(id: "UCp6993wxpyDPHUpavwDFqgg", name: "test vtuber", photo: URL(string: "https://yt3.ggpht.com/ytc/AKedOLQH3CqU4dL9EWjrYl6aKn26_DAAHbCXEBVyMTaWZA=s800-c-k-c0x00ffffff-no-rj"), org: "Hololive", twitter: "aaaa")
-    
+
     static let testChannel2 = Channel(id: "UCDqI2jOz0weumE8s7paEk6g", name: "test vtuber 2", photo: URL(string: "https://yt3.ggpht.com/wIqM7MWDN94PoibzPmeog7WOt8jFKTKZBOBFEbLBaiUAdKLwoqdLC_CN7B7Gby-FWH-076rN=s800-c-k-c0x00ffffff-no-rj"), org: "Hololive", twitter: "aaaa")
-    
+
     func getTalentGenerationName() -> String {
         if let talent = talent {
             if let generationGroup = talentsByGeneration[talent.inGeneration] {
@@ -41,7 +41,7 @@ struct Channel: Codable, Identifiable, Hashable {
         }
     }
     
-    static func ==(c1: Self, c2: Self) -> Bool {
+    static func == (c1: Self, c2: Self) -> Bool {
         c1.id == c2.id
     }
     
@@ -73,7 +73,7 @@ struct Channel: Codable, Identifiable, Hashable {
             return nil
         }
         
-        let headers = ["Content-Type": "application/json", "X-APIKEY": Bundle.main.object(forInfoDictionaryKey: "HOLODEX_API_KEY") as! String]
+        let headers = ["Content-Type": "application/json", "X-APIKEY": Bundle.main.object(forInfoDictionaryKey: "HOLODEX_API_KEY") as? String ?? ""]
         
         var request = URLRequest(url: apiURL)
         request.httpMethod = "GET"

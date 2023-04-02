@@ -45,7 +45,7 @@ struct SpecialThanksView: View {
     }
 }
 
-struct SpecialThanksView___Previews: PreviewProvider {
+struct SpecialThanksView_Previews: PreviewProvider {
     static var previews: some View {
         SpecialThanksView()
     }

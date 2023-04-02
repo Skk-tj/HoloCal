@@ -15,7 +15,7 @@ struct VideoLiveWidgetProvider: VideoIntentTimelineProvider {
     let videoType: VideoType = .live
     let sortBy: IntentSortBy = .unknown
     
-    func getSnapshot(for configuration: Intent, in context: Context, completion: @escaping (Entry) -> ()) {
+    func getSnapshot(for configuration: Intent, in context: Context, completion: @escaping (Entry) -> Void) {
         if context.isPreview && context.family == .accessoryRectangular {
             completion(Entry(date: Date(), status: .ok, video: widgetSampleVideo, avatarData: Data(), thumbnailData: Data(), agency: .hololive))
             return
@@ -32,7 +32,7 @@ struct VideoLiveWidgetProvider: VideoIntentTimelineProvider {
         }
     }
     
-    func getTimeline(for configuration: Intent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(for configuration: Intent, in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
         Task {
             let entries: [Entry] = [await getEntryWithIntent(for: configuration.agency, videoType: videoType, sortBy: configuration.sortBy, filterBy: { $0.isSupportedAgency })]
             let timeline = Timeline(entries: entries, policy: .atEnd)

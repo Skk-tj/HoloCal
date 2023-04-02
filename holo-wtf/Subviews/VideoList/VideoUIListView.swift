@@ -43,14 +43,7 @@ struct VideoUIListView: View {
             }
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: video.dataStatus) {
-                switch videoType {
-                case .live:
-                    LiveCountView()
-                case .upcoming:
-                    UpcomingCountView()
-                case .past:
-                    PastCountView()
-                }
+                VideoCountView(videoType: videoType)
             }
         }, uiMode: uiMode)
     }

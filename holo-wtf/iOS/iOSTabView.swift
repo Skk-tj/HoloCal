@@ -66,7 +66,7 @@ struct iOSTabView: View {
             NavigationStack {
                 ConcertsView()
             }
-            .tabItem() {
+            .tabItem {
                 Label("ROOT_VIEW_CONCERTS", systemImage: "music.mic")
             }
             .tag(Tabs.concerts)

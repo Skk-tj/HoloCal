@@ -49,9 +49,3 @@ struct AgencySelectionView<Content: View, ExtraContent: View, TopContent: View>:
         .navigationTitle(LocalizedStringKey(viewTitle ?? "SETTINGS_SELECT_AGENCY_NAVIGATION_TITLE"))
     }
 }
-
-//struct AgencySelectionView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AgencySelectionView()
-//    }
-//}

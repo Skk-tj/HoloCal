@@ -43,10 +43,10 @@ struct PaneViewButtonRowView: View {
                             self.isCalendarAccessAlertPresented = true
                         }
                     }
-                }) {
+                }, label: {
                     Label("VIDEO_CONTEXT_MENU_ADD_TO_CALENDAR", systemImage: "calendar.badge.plus")
                         .labelStyle(.iconOnly)
-                }
+                })
                 .buttonStyle(.borderless)
                 .sheet(isPresented: $isAddToCalendarSheetPresented) {
                     let eventStore: EKEventStore = EKEventStore()

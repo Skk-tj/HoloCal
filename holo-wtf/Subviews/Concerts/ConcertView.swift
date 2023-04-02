@@ -24,8 +24,7 @@ struct ConcertView: View {
                             .aspectRatio(contentMode: .fit)
                             // .background(Color.secondary)
                     })
-                }
-                else {
+                } else {
                     Image(systemName: "exclamationmark.circle")
                         .font(.system(size: 50))
                         .frame(maxWidth: .infinity, maxHeight: .infinity)

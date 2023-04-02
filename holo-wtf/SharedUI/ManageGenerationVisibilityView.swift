@@ -31,10 +31,10 @@ struct ManageGenerationVisibilityView: View {
                                     } else {
                                         generationSelected.remove(generation)
                                     }
-                                }) {
+                                }, label: {
                                     Label("Show", systemImage: generationSelected.contains(generation) ? "star.fill" : "star")
                                         .labelStyle(.iconOnly)
-                                }
+                                })
                             }
                         })
                     }

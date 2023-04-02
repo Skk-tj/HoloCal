@@ -12,7 +12,6 @@ enum SongDataStatus {
     case finished
 }
 
-
 class SongsViewModel: ObservableObject {
     let songsRaw: [SongInStream]
     

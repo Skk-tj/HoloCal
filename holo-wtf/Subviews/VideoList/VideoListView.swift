@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 /// The view that represents a general list of videos.
 struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     @AppStorage(UserDefaultKeys.isShowingDSTReminder) var isShowingDSTReminder = false

@@ -28,7 +28,7 @@ struct PastiPadView: View {
             }
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: past.dataStatus) {
-                PastCountView()
+                VideoCountView(videoType: .past)
             }
         }, isFavourite: false)
         .environmentObject(past as VideoViewModel)
