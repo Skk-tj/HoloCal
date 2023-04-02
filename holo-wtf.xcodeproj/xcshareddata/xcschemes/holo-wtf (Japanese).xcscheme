@@ -38,6 +38,17 @@
                ReferencedContainer = "container:holo-wtf.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F01EB30329D17043001A17AF"
+               BuildableName = "HoloCalTests.xctest"
+               BlueprintName = "HoloCalTests"
+               ReferencedContainer = "container:holo-wtf.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
