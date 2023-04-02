@@ -38,19 +38,19 @@ struct WatchRootView: View {
                 switch tab {
                 case .live:
                     AgencyNavigationView(viewTitle: "ROOT_VIEW_LIVE") { agency in
-                        LiveWatchView(for: agency)
+                        VideoWatchView(for: agency, videoType: .live)
                     } favouritesView: {
                         LiveFavouritesWatchView()
                     }
                 case .upcoming:
                     AgencyNavigationView(viewTitle: "ROOT_VIEW_UPCOMING") { agency in
-                        UpcomingWatchView(for: agency)
+                        VideoWatchView(for: agency, videoType: .upcoming)
                     } favouritesView: {
                         UpcomingFavouritesWatchView()
                     }
                 case .past:
                     AgencyNavigationView(viewTitle: "ROOT_VIEW_PAST") { agency in
-                        PastWatchView(for: agency)
+                        VideoWatchView(for: agency, videoType: .past)
                     } favouritesView: {
                         PastFavouritesWatchView()
                     }
