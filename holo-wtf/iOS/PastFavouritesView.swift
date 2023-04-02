@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PastFavouritesView: View {
-    @StateObject var past = PastFavoritesViewModel()
+    @StateObject var past = VideoFavoritesViewModel(videoType: .past)
     
     @AppStorage(UserDefaultKeys.isShowingCompactInPastFavouritesView) var isShowingCompact: Bool = false
     

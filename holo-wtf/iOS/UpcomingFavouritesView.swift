@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UpcomingFavouritesView: View {
-    @StateObject var upcoming = UpcomingFavoritesViewModel()
+    @StateObject var upcoming = VideoFavoritesViewModel(videoType: .upcoming)
     
     @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingFavouritesView) var isShowingCompact: Bool = false
     

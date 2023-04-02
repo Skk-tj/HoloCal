@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LiveFavouritesTabletView: View {
-    @StateObject var live = LiveFavoritesViewModel()
+    @StateObject var live = VideoFavoritesViewModel(videoType: .live)
     
     var body: some View {
         LazyGridView(singleVideoView: { live in

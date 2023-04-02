@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LiveFavouritesView: View {
-    @StateObject var live = LiveFavoritesViewModel()
+    @StateObject var live = VideoFavoritesViewModel(videoType: .live)
     
     @AppStorage(UserDefaultKeys.isShowingCompactInLiveFavouritesView) var isShowingCompact: Bool = false
     
@@ -28,6 +28,7 @@ struct LiveFavouritesView: View {
             }
             .refreshable {
                 await live.getVideoForUI()
+                self.live.sortingStrategy = .notSorting
             }
             .animation(.easeInOut, value: live.dataStatus)
     }

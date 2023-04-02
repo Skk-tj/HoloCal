@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PastFavouritesTabletView: View {
-    @StateObject var past = PastFavoritesViewModel()
+    @StateObject var past = VideoFavoritesViewModel(videoType: .past)
     
     var body: some View {
         LazyGridView(singleVideoView: { live in
@@ -23,7 +23,7 @@ struct PastFavouritesTabletView: View {
                 VideoFavouriteCountView(videoType: .past)
             }
         }, isFavourite: true)
-        .environmentObject(past as VideoViewModel)
+        .environmentObject(past)
         .task {
             await past.getVideoForUI()
         }
@@ -33,7 +33,7 @@ struct PastFavouritesTabletView: View {
         .toolbar {
             ToolbarItemGroup(placement: .secondaryAction) {
                 PastFavouritesViewToolbar()
-                    .environmentObject(past as VideoViewModel)
+                    .environmentObject(past)
             }
         }
         .navigationTitle("PAST_VIEW_TITLE")

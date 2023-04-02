@@ -40,19 +40,19 @@ struct WatchRootView: View {
                     AgencyNavigationView(viewTitle: "ROOT_VIEW_LIVE") { agency in
                         VideoWatchView(for: agency, videoType: .live)
                     } favouritesView: {
-                        LiveFavouritesWatchView()
+                        VideoFavouritesWatchView(videoType: .live)
                     }
                 case .upcoming:
                     AgencyNavigationView(viewTitle: "ROOT_VIEW_UPCOMING") { agency in
                         VideoWatchView(for: agency, videoType: .upcoming)
                     } favouritesView: {
-                        UpcomingFavouritesWatchView()
+                        VideoFavouritesWatchView(videoType: .upcoming)
                     }
                 case .past:
                     AgencyNavigationView(viewTitle: "ROOT_VIEW_PAST") { agency in
                         VideoWatchView(for: agency, videoType: .past)
                     } favouritesView: {
-                        PastFavouritesWatchView()
+                        VideoFavouritesWatchView(videoType: .past)
                     }
                 case .concerts:
                     ConcertsWatchView()
