@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LiveFavouritesViewToolbar: View {
     @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInLiveView) var isShowingAbsoluteTime: Bool = false
-    @AppStorage(UserDefaultKeys.isShowingCompactInLiveFavouritesView) var isShowingCompact: Bool = false
+    @AppStorage(UserDefaultKeys.isShowingCompactInLiveView) var isShowingCompact: Bool = false
     
     @EnvironmentObject var liveViewModel: VideoViewModel
     

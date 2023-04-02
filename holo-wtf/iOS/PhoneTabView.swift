@@ -16,14 +16,7 @@ struct VideoStackView: View {
             AgencyNavigationView(viewTitle: videoTypeToViewTitleAndIcon[videoType]!.0) { agency in
                 VideoView(for: agency, videoType: videoType)
             } favouritesView: {
-                switch videoType {
-                case .live:
-                    LiveFavouritesView()
-                case .upcoming:
-                    UpcomingFavouritesView()
-                case .past:
-                    PastFavouritesView()
-                }
+                VideoFavouritesView(videoType: videoType)
             }
             .onOpenURL { url in
                 guard let unwrappedAgency = widgetDeepLinkUrlParseAgency(url: url) else { return }

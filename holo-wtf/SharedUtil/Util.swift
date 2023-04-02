@@ -115,9 +115,6 @@ enum UserDefaultKeys {
     static let isShowingCompactInUpcomingView = "isShowingCompactInUpcomingView"
     static let isShowingCompactInPastView = "isShowingCompactInPastView"
     static let isShowingDSTReminder = "isShowingDSTReminder"
-    static let isShowingCompactInLiveFavouritesView = "isShowingCompactInLiveFavouritesView"
-    static let isShowingCompactInUpcomingFavouritesView = "isShowingCompactInUpcomingFavouritesView"
-    static let isShowingCompactInPastFavouritesView = "isShowingCompactInPastFavouritesView"
     static let dstDays = "dstDays"
 }
 

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UpcomingFavouritesViewToolbar: View {
     @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInUpcomingView) var isShowingAbsoluteTime: Bool = false
-    @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingFavouritesView) var isShowingCompact: Bool = false
+    @AppStorage(UserDefaultKeys.isShowingCompactInUpcomingView) var isShowingCompact: Bool = false
     
     @EnvironmentObject var upcomingViewModel: VideoViewModel
     

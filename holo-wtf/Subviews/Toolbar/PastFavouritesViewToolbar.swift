@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PastFavouritesViewToolbar: View {
     @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInPastView) var isShowingAbsoluteTime: Bool = false
-    @AppStorage(UserDefaultKeys.isShowingCompactInPastFavouritesView) var isShowingCompact: Bool = false
+    @AppStorage(UserDefaultKeys.isShowingCompactInPastView) var isShowingCompact: Bool = false
     
     @EnvironmentObject var pastViewModel: VideoViewModel
     
