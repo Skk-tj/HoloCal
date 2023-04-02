@@ -7,5 +7,4 @@ identifier_name:
   min_length: 2
 type_name:
   min_length: 2
-  excluded: ["iOSTabView", "iPadSplitView", "iOSTabView_Previews", "iPadLazyGridView", "iPadSplitView_Previews"]
   allowed_symbols: ["_"] # these are allowed in type names

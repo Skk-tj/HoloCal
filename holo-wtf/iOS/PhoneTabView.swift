@@ -1,5 +1,5 @@
 //
-//  iOSTabView.swift
+//  PhoneTabView.swift
 //  holo-wtf
 //
 //
@@ -40,7 +40,7 @@ struct VideoStackView: View {
     }
 }
 
-struct iOSTabView: View {
+struct PhoneTabView: View {
     @State var tabSelection: Tabs = .live
     
     var body: some View {
@@ -86,8 +86,8 @@ struct iOSTabView: View {
     }
 }
 
-struct iOSTabView_Previews: PreviewProvider {
+struct PhoneTabView_Previews: PreviewProvider {
     static var previews: some View {
-        iOSTabView()
+        PhoneTabView()
     }
 }

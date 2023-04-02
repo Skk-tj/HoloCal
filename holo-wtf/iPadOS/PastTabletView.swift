@@ -1,5 +1,5 @@
 //
-//  PastiPadView.swift
+//  PastTabletView.swift
 //  holo-wtf
 //
 //
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PastiPadView: View {
+struct PastTabletView: View {
     @StateObject var past: PastViewModel
     let agency: AgencyEnum
     
@@ -19,7 +19,7 @@ struct PastiPadView: View {
     }
     
     var body: some View {
-        iPadLazyGridView(singleVideoView: { live in
+        LazyGridView(singleVideoView: { live in
             LinkedVideoView(url: live.url) {
                 PastPaneView(past: live)
             }
@@ -53,8 +53,8 @@ struct PastiPadView: View {
     }
 }
 
-struct PastiPadView_Previews: PreviewProvider {
+struct PastTabletView_Previews: PreviewProvider {
     static var previews: some View {
-        PastiPadView(for: .hololive)
+        PastTabletView(for: .hololive)
     }
 }

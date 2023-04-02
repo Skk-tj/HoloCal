@@ -74,9 +74,9 @@ struct MainApp: App {
     var body: some Scene {
         WindowGroup {
             if UIDevice.current.userInterfaceIdiom == .pad {
-                iPadSplitView()
+                TabletSplitView()
             } else {
-                iOSTabView()
+                PhoneTabView()
             }
         }
     }

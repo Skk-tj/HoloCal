@@ -1,5 +1,5 @@
 //
-//  UpcomingiPadView.swift
+//  UpcomingTabletView.swift
 //  holo-wtf
 //
 //
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UpcomingiPadView: View {
+struct UpcomingTabletView: View {
     @StateObject var upcoming: UpcomingViewModel
     let agency: AgencyEnum
     
@@ -19,7 +19,7 @@ struct UpcomingiPadView: View {
     }
     
     var body: some View {
-        iPadLazyGridView(singleVideoView: { live in
+        LazyGridView(singleVideoView: { live in
             LinkedVideoView(url: live.url) {
                 UpcomingPaneView(upcoming: live)
             }
@@ -53,8 +53,8 @@ struct UpcomingiPadView: View {
     }
 }
 
-struct UpcomingiPadView_Previews: PreviewProvider {
+struct UpcomingTabletView_Previews: PreviewProvider {
     static var previews: some View {
-        UpcomingiPadView(for: .hololive)
+        UpcomingTabletView(for: .hololive)
     }
 }

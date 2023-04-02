@@ -1,5 +1,5 @@
 //
-//  iPadLazyGridView.swift
+//  LazyGridView.swift
 //  holo-wtf
 //
 //
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct iPadLazyGridView<VideoContent: View, DataStatusView: View>: View {
+struct LazyGridView<VideoContent: View, DataStatusView: View>: View {
     @EnvironmentObject var videoViewModel: VideoViewModel
     
     @AppStorage(UserDefaultKeys.isShowingDSTReminder) var isShowingDSTReminder = false

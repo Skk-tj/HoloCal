@@ -1,5 +1,5 @@
 //
-//  PastFavouritesiPadView.swift
+//  PastFavouritesTabletView.swift
 //  holo-wtf
 //
 //
@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct PastFavouritesiPadView: View {
+struct PastFavouritesTabletView: View {
     @StateObject var past = PastFavoritesViewModel()
     
     var body: some View {
-        iPadLazyGridView(singleVideoView: { live in
+        LazyGridView(singleVideoView: { live in
             LinkedVideoView(url: live.url) {
                 PastPaneView(past: live)
             }
@@ -41,8 +41,8 @@ struct PastFavouritesiPadView: View {
     }
 }
 
-struct PastFavouritesiPadView_Previews: PreviewProvider {
+struct PastFavouritesTabletView_Previews: PreviewProvider {
     static var previews: some View {
-        PastFavouritesiPadView()
+        PastFavouritesTabletView()
     }
 }

@@ -35,8 +35,8 @@
 		F01241A82935E33E007C8FE9 /* BlockUpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A6292E1893009EC2CC /* BlockUpcomingTimeView.swift */; };
 		F01241AF2935EA51007C8FE9 /* AccessoryCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01241AE2935EA51007C8FE9 /* AccessoryCircularView.swift */; };
 		F01241B12935EA51007C8FE9 /* AccessoryCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01241AE2935EA51007C8FE9 /* AccessoryCircularView.swift */; };
-		F01869D029AB6BC400339178 /* PastiPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01869CF29AB6BC400339178 /* PastiPadView.swift */; };
-		F01869D429AB6C7000339178 /* PastFavouritesiPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01869D329AB6C7000339178 /* PastFavouritesiPadView.swift */; };
+		F01869D029AB6BC400339178 /* PastTabletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01869CF29AB6BC400339178 /* PastTabletView.swift */; };
+		F01869D429AB6C7000339178 /* PastFavouritesTabletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01869D329AB6C7000339178 /* PastFavouritesTabletView.swift */; };
 		F01869D629AB76E600339178 /* WatchPastCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01869D529AB76E600339178 /* WatchPastCellView.swift */; };
 		F01869D829AB773100339178 /* PastTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0789B8F29AB543300346239 /* PastTimeView.swift */; };
 		F01869DB29AB784900339178 /* PastWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01869DA29AB784900339178 /* PastWatchView.swift */; };
@@ -110,7 +110,7 @@
 		F01DAA822996413A00052514 /* ConcertsWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA812996413A00052514 /* ConcertsWatchView.swift */; };
 		F01DAA842996419900052514 /* ConcertWatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA832996419900052514 /* ConcertWatchCell.swift */; };
 		F01DAA86299641E300052514 /* ConcertWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01DAA85299641E300052514 /* ConcertWatchView.swift */; };
-		F01E95B3286FB4B900CDF0F9 /* iPadLazyGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01E95B2286FB4B900CDF0F9 /* iPadLazyGridView.swift */; };
+		F01E95B3286FB4B900CDF0F9 /* LazyGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01E95B2286FB4B900CDF0F9 /* LazyGridView.swift */; };
 		F01EB30729D17043001A17AF /* VideoSortingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01EB30629D17043001A17AF /* VideoSortingTests.swift */; };
 		F01EB30E29D170E8001A17AF /* VideoSorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01EB30D29D170E8001A17AF /* VideoSorting.swift */; };
 		F01EB30F29D170E8001A17AF /* VideoSorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01EB30D29D170E8001A17AF /* VideoSorting.swift */; };
@@ -138,8 +138,8 @@
 		F02211A7292E1893009EC2CC /* BlockUpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A6292E1893009EC2CC /* BlockUpcomingTimeView.swift */; };
 		F02211A9292E1E4B009EC2CC /* PaneViewChannelInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A8292E1E4B009EC2CC /* PaneViewChannelInfoView.swift */; };
 		F02211AB292F68DF009EC2CC /* BlockMemberOnlyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211AA292F68DF009EC2CC /* BlockMemberOnlyView.swift */; };
-		F02211AD292F73DA009EC2CC /* iPadSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211AC292F73DA009EC2CC /* iPadSplitView.swift */; };
-		F022905129C66429002ACB0A /* iOSTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022905029C66429002ACB0A /* iOSTabView.swift */; };
+		F02211AD292F73DA009EC2CC /* TabletSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211AC292F73DA009EC2CC /* TabletSplitView.swift */; };
+		F022905129C66429002ACB0A /* PhoneTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F022905029C66429002ACB0A /* PhoneTabView.swift */; };
 		F025203728E10AB600976972 /* SpecialThanksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025203628E10AB600976972 /* SpecialThanksView.swift */; };
 		F025203F28EE94B700976972 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025203E28EE94B700976972 /* Constants.swift */; };
 		F025204028EE95F900976972 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025203E28EE94B700976972 /* Constants.swift */; };
@@ -149,8 +149,8 @@
 		F025204728EEA5FC00976972 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025204328EEA5FC00976972 /* Common.swift */; };
 		F02830802853DB0E00CBFCE7 /* Widgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028307F2853DB0E00CBFCE7 /* Widgets.swift */; };
 		F028308828545B1200CBFCE7 /* SingleVideoWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028308728545B1200CBFCE7 /* SingleVideoWidgetEntry.swift */; };
-		F0328555293201EF0079F46A /* LiveFavouritesiPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0328554293201EF0079F46A /* LiveFavouritesiPadView.swift */; };
-		F0328557293202B30079F46A /* UpcomingFavouritesiPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0328556293202B30079F46A /* UpcomingFavouritesiPadView.swift */; };
+		F0328555293201EF0079F46A /* LiveFavouritesTabletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0328554293201EF0079F46A /* LiveFavouritesTabletView.swift */; };
+		F0328557293202B30079F46A /* UpcomingFavouritesTabletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0328556293202B30079F46A /* UpcomingFavouritesTabletView.swift */; };
 		F0328559293218220079F46A /* LiveFavouritesWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0328558293218220079F46A /* LiveFavouritesWatchView.swift */; };
 		F032855B293218300079F46A /* UpcomingFavouritesWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F032855A293218300079F46A /* UpcomingFavouritesWatchView.swift */; };
 		F03A138328F0004C00BB8E51 /* ChannelsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A138228F0004C00BB8E51 /* ChannelsEntry.swift */; };
@@ -181,8 +181,8 @@
 		F058189A281BFFDA0064EF94 /* SectionedForEachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0581899281BFFDA0064EF94 /* SectionedForEachView.swift */; };
 		F05818A2281CAAF50064EF94 /* RootViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05818A1281CAAF50064EF94 /* RootViewTests.swift */; };
 		F05DFA362853CA7800D62D19 /* BaseVideoEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05DFA352853CA7800D62D19 /* BaseVideoEntryView.swift */; };
-		F05E9EB327EB27F800EF48DD /* LiveiPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E9EB227EB27F800EF48DD /* LiveiPadView.swift */; };
-		F05E9EB527EB290000EF48DD /* UpcomingiPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E9EB427EB290000EF48DD /* UpcomingiPadView.swift */; };
+		F05E9EB327EB27F800EF48DD /* LiveTabletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E9EB227EB27F800EF48DD /* LiveTabletView.swift */; };
+		F05E9EB527EB290000EF48DD /* UpcomingTabletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E9EB427EB290000EF48DD /* UpcomingTabletView.swift */; };
 		F05E9EB927EB3C6100EF48DD /* LivePaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05E9EB827EB3C6100EF48DD /* LivePaneView.swift */; };
 		F064A5B628BB3765008C51C2 /* SongsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064A5B528BB3765008C51C2 /* SongsViewModel.swift */; };
 		F064AE9C295A6B61007FEF73 /* FavouriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EB53B52812BD6F0024E089 /* FavouriteButton.swift */; };
@@ -467,8 +467,8 @@
 		F00BD6CF29052AC400D7932E /* VideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
 		F0114D4E2815F81600B99D4D /* DataStatusIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStatusIndicatorView.swift; sourceTree = "<group>"; };
 		F01241AE2935EA51007C8FE9 /* AccessoryCircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryCircularView.swift; sourceTree = "<group>"; };
-		F01869CF29AB6BC400339178 /* PastiPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastiPadView.swift; sourceTree = "<group>"; };
-		F01869D329AB6C7000339178 /* PastFavouritesiPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastFavouritesiPadView.swift; sourceTree = "<group>"; };
+		F01869CF29AB6BC400339178 /* PastTabletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastTabletView.swift; sourceTree = "<group>"; };
+		F01869D329AB6C7000339178 /* PastFavouritesTabletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastFavouritesTabletView.swift; sourceTree = "<group>"; };
 		F01869D529AB76E600339178 /* WatchPastCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchPastCellView.swift; sourceTree = "<group>"; };
 		F01869DA29AB784900339178 /* PastWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastWatchView.swift; sourceTree = "<group>"; };
 		F01869DF29AB78AF00339178 /* PastFavouritesWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastFavouritesWatchView.swift; sourceTree = "<group>"; };
@@ -508,7 +508,7 @@
 		F01DAA812996413A00052514 /* ConcertsWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcertsWatchView.swift; sourceTree = "<group>"; };
 		F01DAA832996419900052514 /* ConcertWatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcertWatchCell.swift; sourceTree = "<group>"; };
 		F01DAA85299641E300052514 /* ConcertWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcertWatchView.swift; sourceTree = "<group>"; };
-		F01E95B2286FB4B900CDF0F9 /* iPadLazyGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadLazyGridView.swift; sourceTree = "<group>"; };
+		F01E95B2286FB4B900CDF0F9 /* LazyGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyGridView.swift; sourceTree = "<group>"; };
 		F01EB30429D17043001A17AF /* HoloCalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoloCalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F01EB30629D17043001A17AF /* VideoSortingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSortingTests.swift; sourceTree = "<group>"; };
 		F01EB30D29D170E8001A17AF /* VideoSorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSorting.swift; sourceTree = "<group>"; };
@@ -524,15 +524,15 @@
 		F02211A6292E1893009EC2CC /* BlockUpcomingTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUpcomingTimeView.swift; sourceTree = "<group>"; };
 		F02211A8292E1E4B009EC2CC /* PaneViewChannelInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaneViewChannelInfoView.swift; sourceTree = "<group>"; };
 		F02211AA292F68DF009EC2CC /* BlockMemberOnlyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockMemberOnlyView.swift; sourceTree = "<group>"; };
-		F02211AC292F73DA009EC2CC /* iPadSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadSplitView.swift; sourceTree = "<group>"; };
-		F022905029C66429002ACB0A /* iOSTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSTabView.swift; sourceTree = "<group>"; };
+		F02211AC292F73DA009EC2CC /* TabletSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabletSplitView.swift; sourceTree = "<group>"; };
+		F022905029C66429002ACB0A /* PhoneTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTabView.swift; sourceTree = "<group>"; };
 		F025203628E10AB600976972 /* SpecialThanksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialThanksView.swift; sourceTree = "<group>"; };
 		F025203E28EE94B700976972 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F025204328EEA5FC00976972 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		F028307F2853DB0E00CBFCE7 /* Widgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widgets.swift; sourceTree = "<group>"; };
 		F028308728545B1200CBFCE7 /* SingleVideoWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleVideoWidgetEntry.swift; sourceTree = "<group>"; };
-		F0328554293201EF0079F46A /* LiveFavouritesiPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveFavouritesiPadView.swift; sourceTree = "<group>"; };
-		F0328556293202B30079F46A /* UpcomingFavouritesiPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingFavouritesiPadView.swift; sourceTree = "<group>"; };
+		F0328554293201EF0079F46A /* LiveFavouritesTabletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveFavouritesTabletView.swift; sourceTree = "<group>"; };
+		F0328556293202B30079F46A /* UpcomingFavouritesTabletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingFavouritesTabletView.swift; sourceTree = "<group>"; };
 		F0328558293218220079F46A /* LiveFavouritesWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveFavouritesWatchView.swift; sourceTree = "<group>"; };
 		F032855A293218300079F46A /* UpcomingFavouritesWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingFavouritesWatchView.swift; sourceTree = "<group>"; };
 		F03A138228F0004C00BB8E51 /* ChannelsEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsEntry.swift; sourceTree = "<group>"; };
@@ -550,8 +550,8 @@
 		F05818A1281CAAF50064EF94 /* RootViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewTests.swift; sourceTree = "<group>"; };
 		F05B943B294FE2CD0034A295 /* holo-wtf-watch Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "holo-wtf-watch Watch App.entitlements"; sourceTree = "<group>"; };
 		F05DFA352853CA7800D62D19 /* BaseVideoEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVideoEntryView.swift; sourceTree = "<group>"; };
-		F05E9EB227EB27F800EF48DD /* LiveiPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveiPadView.swift; sourceTree = "<group>"; };
-		F05E9EB427EB290000EF48DD /* UpcomingiPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingiPadView.swift; sourceTree = "<group>"; };
+		F05E9EB227EB27F800EF48DD /* LiveTabletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTabletView.swift; sourceTree = "<group>"; };
+		F05E9EB427EB290000EF48DD /* UpcomingTabletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingTabletView.swift; sourceTree = "<group>"; };
 		F05E9EB827EB3C6100EF48DD /* LivePaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePaneView.swift; sourceTree = "<group>"; };
 		F064A5B528BB3765008C51C2 /* SongsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsViewModel.swift; sourceTree = "<group>"; };
 		F065857C28CFF4C6001672E1 /* ManageGenerationVisibilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageGenerationVisibilityView.swift; sourceTree = "<group>"; };
@@ -914,7 +914,7 @@
 				F0789B7F29AB315100346239 /* PastView.swift */,
 				F0789B9129AB57BB00346239 /* PastFavouritesView.swift */,
 				F01DAA50298FB58700052514 /* ConcertsView.swift */,
-				F022905029C66429002ACB0A /* iOSTabView.swift */,
+				F022905029C66429002ACB0A /* PhoneTabView.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -922,14 +922,14 @@
 		F05E9EB127EB27E800EF48DD /* iPadOS */ = {
 			isa = PBXGroup;
 			children = (
-				F05E9EB227EB27F800EF48DD /* LiveiPadView.swift */,
-				F0328554293201EF0079F46A /* LiveFavouritesiPadView.swift */,
-				F05E9EB427EB290000EF48DD /* UpcomingiPadView.swift */,
-				F0328556293202B30079F46A /* UpcomingFavouritesiPadView.swift */,
-				F01869CF29AB6BC400339178 /* PastiPadView.swift */,
-				F01869D329AB6C7000339178 /* PastFavouritesiPadView.swift */,
-				F02211AC292F73DA009EC2CC /* iPadSplitView.swift */,
-				F01E95B2286FB4B900CDF0F9 /* iPadLazyGridView.swift */,
+				F05E9EB227EB27F800EF48DD /* LiveTabletView.swift */,
+				F0328554293201EF0079F46A /* LiveFavouritesTabletView.swift */,
+				F05E9EB427EB290000EF48DD /* UpcomingTabletView.swift */,
+				F0328556293202B30079F46A /* UpcomingFavouritesTabletView.swift */,
+				F01869CF29AB6BC400339178 /* PastTabletView.swift */,
+				F01869D329AB6C7000339178 /* PastFavouritesTabletView.swift */,
+				F02211AC292F73DA009EC2CC /* TabletSplitView.swift */,
+				F01E95B2286FB4B900CDF0F9 /* LazyGridView.swift */,
 			);
 			path = iPadOS;
 			sourceTree = "<group>";
@@ -1763,7 +1763,7 @@
 				F0F0EAA4292B36780091DBD7 /* FavouritesVideoListView.swift in Sources */,
 				F01DAA51298FB58700052514 /* ConcertsView.swift in Sources */,
 				F0CA6EA828D794320028CB11 /* LiveCollabListView.swift in Sources */,
-				F0328555293201EF0079F46A /* LiveFavouritesiPadView.swift in Sources */,
+				F0328555293201EF0079F46A /* LiveFavouritesTabletView.swift in Sources */,
 				F0CA6EA328D791BE0028CB11 /* Modes.swift in Sources */,
 				F0673C172775F7FB009C65C6 /* LiveAvatarView.swift in Sources */,
 				F0BD611B27EC594300A2FBED /* UpcomingPaneView.swift in Sources */,
@@ -1779,10 +1779,10 @@
 				F093D1DE282FA5E600E2A6FF /* VideoFetchService.swift in Sources */,
 				F09D25C928020B12001A7D71 /* UpcomingViewToolbar.swift in Sources */,
 				F0F0EABB292B49BD0091DBD7 /* VideoUIListView.swift in Sources */,
-				F01E95B3286FB4B900CDF0F9 /* iPadLazyGridView.swift in Sources */,
+				F01E95B3286FB4B900CDF0F9 /* LazyGridView.swift in Sources */,
 				F01DAA712990E19900052514 /* BlockPlatformView.swift in Sources */,
 				F009024027EE57BA00E343B0 /* LinkedVideoView.swift in Sources */,
-				F022905129C66429002ACB0A /* iOSTabView.swift in Sources */,
+				F022905129C66429002ACB0A /* PhoneTabView.swift in Sources */,
 				F009024627EE6A9F00E343B0 /* VideoContextMenu.swift in Sources */,
 				F080A04F27F95D9E00DBC08D /* TalentData.swift in Sources */,
 				F008BBA72928DD5100034AF4 /* ManageFavoriteAgencySelectionView.swift in Sources */,
@@ -1806,9 +1806,9 @@
 				F0789B8629AB382000346239 /* VideoTitleView.swift in Sources */,
 				F0ED2AE22806858300683E6C /* Channel.swift in Sources */,
 				F0789B7E29AB2C3B00346239 /* PastViewModel.swift in Sources */,
-				F0328557293202B30079F46A /* UpcomingFavouritesiPadView.swift in Sources */,
+				F0328557293202B30079F46A /* UpcomingFavouritesTabletView.swift in Sources */,
 				F0F0EABD292B4EE80091DBD7 /* UpcomingFavouritesViewToolbar.swift in Sources */,
-				F01869D429AB6C7000339178 /* PastFavouritesiPadView.swift in Sources */,
+				F01869D429AB6C7000339178 /* PastFavouritesTabletView.swift in Sources */,
 				F0789B9629AB5EE000346239 /* PastViewToolbar.swift in Sources */,
 				F0F0EAB1292B41250091DBD7 /* VideoUIFavouriteListView.swift in Sources */,
 				F0954BDE2817B73E00369EC4 /* SearchSectionView.swift in Sources */,
@@ -1825,15 +1825,15 @@
 				F0789B9829AB613500346239 /* PastFavouritesViewToolbar.swift in Sources */,
 				F01DAA5A2990850200052514 /* ConcertCountView.swift in Sources */,
 				F04EB66728D2A0A000F168CB /* ManageGenerationOrderView.swift in Sources */,
-				F02211AD292F73DA009EC2CC /* iPadSplitView.swift in Sources */,
+				F02211AD292F73DA009EC2CC /* TabletSplitView.swift in Sources */,
 				F099C68729CFA4A000596C7F /* GenerationGroup.swift in Sources */,
 				F0F0EA99292B01510091DBD7 /* LiveFavoritesViewModel.swift in Sources */,
 				F004E8CB285D058000ABDFED /* SingleSongView.swift in Sources */,
-				F05E9EB327EB27F800EF48DD /* LiveiPadView.swift in Sources */,
+				F05E9EB327EB27F800EF48DD /* LiveTabletView.swift in Sources */,
 				F0C657D627732690004AF802 /* Util.swift in Sources */,
 				F09D25C327FEC12D001A7D71 /* SettingsFormView.swift in Sources */,
 				F01F2EFA29A349D900DA8367 /* BlockVideoTypeView.swift in Sources */,
-				F05E9EB527EB290000EF48DD /* UpcomingiPadView.swift in Sources */,
+				F05E9EB527EB290000EF48DD /* UpcomingTabletView.swift in Sources */,
 				F0789B9229AB57BB00346239 /* PastFavouritesView.swift in Sources */,
 				F0ED2AF0280AC27400683E6C /* LiveViewModel.swift in Sources */,
 				F01DAA732990F2E700052514 /* ChannelNameView.swift in Sources */,
@@ -1844,7 +1844,7 @@
 				F0CA6EAA28D7B5DD0028CB11 /* SongListStackView.swift in Sources */,
 				F00BD6D029052AC400D7932E /* VideoViewModel.swift in Sources */,
 				F0433C5227EAEDDB000FEADD /* OpenSourceView.swift in Sources */,
-				F01869D029AB6BC400339178 /* PastiPadView.swift in Sources */,
+				F01869D029AB6BC400339178 /* PastTabletView.swift in Sources */,
 				F02211A1292C9CF7009EC2CC /* ForEachVideoView.swift in Sources */,
 				F058189A281BFFDA0064EF94 /* SectionedForEachView.swift in Sources */,
 				F02211A7292E1893009EC2CC /* BlockUpcomingTimeView.swift in Sources */,

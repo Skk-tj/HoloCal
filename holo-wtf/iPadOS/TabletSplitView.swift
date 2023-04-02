@@ -1,5 +1,5 @@
 //
-//  iPadSplitView.swift
+//  TabletSplitView.swift
 //  holo-wtf
 //
 //
@@ -16,7 +16,7 @@ enum Views: Hashable {
     case settings
 }
 
-struct iPadSplitView: View {
+struct TabletSplitView: View {
     @State var viewSelection: Views? = Views.live(.hololive)
     
     var body: some View {
@@ -82,53 +82,53 @@ struct iPadSplitView: View {
                 case .live(let agencySelection):
                     switch agencySelection {
                     case .hololive:
-                        LiveiPadView(for: .hololive)
+                        LiveTabletView(for: .hololive)
                     case .nijisanji:
-                        LiveiPadView(for: .nijisanji)
+                        LiveTabletView(for: .nijisanji)
                     case .react:
-                        LiveiPadView(for: .react)
+                        LiveTabletView(for: .react)
                     case .nanashiInc:
-                        LiveiPadView(for: .nanashiInc)
+                        LiveTabletView(for: .nanashiInc)
                     case .noriPro:
-                        LiveiPadView(for: .noriPro)
+                        LiveTabletView(for: .noriPro)
                     case .vspo:
-                        LiveiPadView(for: .vspo)
+                        LiveTabletView(for: .vspo)
                     case .favourites:
-                        LiveFavouritesiPadView()
+                        LiveFavouritesTabletView()
                     }
                 case .upcoming(let agencySelection):
                     switch agencySelection {
                     case .hololive:
-                        UpcomingiPadView(for: .hololive)
+                        UpcomingTabletView(for: .hololive)
                     case .nijisanji:
-                        UpcomingiPadView(for: .nijisanji)
+                        UpcomingTabletView(for: .nijisanji)
                     case .react:
-                        UpcomingiPadView(for: .react)
+                        UpcomingTabletView(for: .react)
                     case .nanashiInc:
-                        UpcomingiPadView(for: .nanashiInc)
+                        UpcomingTabletView(for: .nanashiInc)
                     case .noriPro:
-                        UpcomingiPadView(for: .noriPro)
+                        UpcomingTabletView(for: .noriPro)
                     case .vspo:
-                        UpcomingiPadView(for: .vspo)
+                        UpcomingTabletView(for: .vspo)
                     case .favourites:
-                        UpcomingFavouritesiPadView()
+                        UpcomingFavouritesTabletView()
                     }
                 case .past(let agencySelection):
                     switch agencySelection {
                     case .hololive:
-                        PastiPadView(for: .hololive)
+                        PastTabletView(for: .hololive)
                     case .nijisanji:
-                        PastiPadView(for: .nijisanji)
+                        PastTabletView(for: .nijisanji)
                     case .react:
-                        PastiPadView(for: .react)
+                        PastTabletView(for: .react)
                     case .nanashiInc:
-                        PastiPadView(for: .nanashiInc)
+                        PastTabletView(for: .nanashiInc)
                     case .noriPro:
-                        PastiPadView(for: .noriPro)
+                        PastTabletView(for: .noriPro)
                     case .vspo:
-                        PastiPadView(for: .vspo)
+                        PastTabletView(for: .vspo)
                     case .favourites:
-                        PastFavouritesiPadView()
+                        PastFavouritesTabletView()
                     }
                 case .concerts:
                     NavigationStack {
@@ -172,8 +172,8 @@ struct iPadSplitView: View {
     }
 }
 
-struct iPadSplitView_Previews: PreviewProvider {
+struct TabletSplitView_Previews: PreviewProvider {
     static var previews: some View {
-        iPadSplitView()
+        TabletSplitView()
     }
 }
