@@ -82,51 +82,51 @@ struct TabletSplitView: View {
                 case .live(let agencySelection):
                     switch agencySelection {
                     case .hololive:
-                        LiveTabletView(for: .hololive)
+                        VideoTabletView(for: .hololive, videoType: .live)
                     case .nijisanji:
-                        LiveTabletView(for: .nijisanji)
+                        VideoTabletView(for: .nijisanji, videoType: .live)
                     case .react:
-                        LiveTabletView(for: .react)
+                        VideoTabletView(for: .react, videoType: .live)
                     case .nanashiInc:
-                        LiveTabletView(for: .nanashiInc)
+                        VideoTabletView(for: .nanashiInc, videoType: .live)
                     case .noriPro:
-                        LiveTabletView(for: .noriPro)
+                        VideoTabletView(for: .noriPro, videoType: .live)
                     case .vspo:
-                        LiveTabletView(for: .vspo)
+                        VideoTabletView(for: .vspo, videoType: .live)
                     case .favourites:
                         LiveFavouritesTabletView()
                     }
                 case .upcoming(let agencySelection):
                     switch agencySelection {
                     case .hololive:
-                        UpcomingTabletView(for: .hololive)
+                        VideoTabletView(for: .hololive, videoType: .upcoming)
                     case .nijisanji:
-                        UpcomingTabletView(for: .nijisanji)
+                        VideoTabletView(for: .nijisanji, videoType: .upcoming)
                     case .react:
-                        UpcomingTabletView(for: .react)
+                        VideoTabletView(for: .react, videoType: .upcoming)
                     case .nanashiInc:
-                        UpcomingTabletView(for: .nanashiInc)
+                        VideoTabletView(for: .nanashiInc, videoType: .upcoming)
                     case .noriPro:
-                        UpcomingTabletView(for: .noriPro)
+                        VideoTabletView(for: .noriPro, videoType: .upcoming)
                     case .vspo:
-                        UpcomingTabletView(for: .vspo)
+                        VideoTabletView(for: .vspo, videoType: .upcoming)
                     case .favourites:
                         UpcomingFavouritesTabletView()
                     }
                 case .past(let agencySelection):
                     switch agencySelection {
                     case .hololive:
-                        PastTabletView(for: .hololive)
+                        VideoTabletView(for: .hololive, videoType: .past)
                     case .nijisanji:
-                        PastTabletView(for: .nijisanji)
+                        VideoTabletView(for: .nijisanji, videoType: .past)
                     case .react:
-                        PastTabletView(for: .react)
+                        VideoTabletView(for: .react, videoType: .past)
                     case .nanashiInc:
-                        PastTabletView(for: .nanashiInc)
+                        VideoTabletView(for: .nanashiInc, videoType: .past)
                     case .noriPro:
-                        PastTabletView(for: .noriPro)
+                        VideoTabletView(for: .noriPro, videoType: .past)
                     case .vspo:
-                        PastTabletView(for: .vspo)
+                        VideoTabletView(for: .vspo, videoType: .past)
                     case .favourites:
                         PastFavouritesTabletView()
                     }
