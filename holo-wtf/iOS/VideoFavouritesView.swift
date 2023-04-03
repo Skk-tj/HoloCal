@@ -12,6 +12,7 @@ struct VideoFavouritesView: View {
     let videoType: VideoType
     
     @AppStorage var isShowingCompact: Bool
+    @AppStorage(UserDefaultKeys.favouritedChannel, store: UserDefaults(suiteName: "group.io.skk-tj.holo-wtf.ios")) var favourited = Favourited()
     
     init(videoType: VideoType) {
         self.videoType = videoType
@@ -46,5 +47,13 @@ struct VideoFavouritesView: View {
                 self.video.sortingStrategy = .notSorting
             }
             .animation(.easeInOut, value: video.dataStatus)
+            .onReceive(NotificationCenter.default.publisher(for: NSUbiquitousKeyValueStore.didChangeExternallyNotification), perform: { @MainActor _ in
+                if let favourited = NSUbiquitousKeyValueStore.default.array(forKey: UserDefaultKeys.favouritedChannel) {
+                    self.favourited = favourited as? [String] ?? []
+                    Task {
+                        await video.getVideoForUI()
+                    }
+                }
+            })
     }
 }

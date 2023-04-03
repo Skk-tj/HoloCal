@@ -11,6 +11,8 @@ struct VideoFavouritesWatchView: View {
     @StateObject var video: VideoFavoritesViewModel
     let videoType: VideoType
     
+    @AppStorage(UserDefaultKeys.favouritedChannel, store: UserDefaults(suiteName: "group.io.skk-tj.holo-wtf.ios")) var favourited = Favourited()
+    
     init(videoType: VideoType) {
         self.videoType = videoType
         _video = StateObject(wrappedValue: VideoFavoritesViewModel(videoType: videoType))
@@ -52,6 +54,14 @@ struct VideoFavouritesWatchView: View {
             
             await video.getVideoForUI()
         }
+        .onReceive(NotificationCenter.default.publisher(for: NSUbiquitousKeyValueStore.didChangeExternallyNotification), perform: { @MainActor _ in
+            if let favourited = NSUbiquitousKeyValueStore.default.array(forKey: UserDefaultKeys.favouritedChannel) {
+                self.favourited = favourited as? [String] ?? []
+                Task {
+                    await video.getVideoForUI()
+                }
+            }
+        })
     }
     
     func getNavigationTitle() -> LocalizedStringKey {

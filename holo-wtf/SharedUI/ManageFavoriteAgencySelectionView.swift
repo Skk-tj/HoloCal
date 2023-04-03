@@ -6,11 +6,9 @@
 //
 
 import SwiftUI
-import CloudStorage
 
 struct ManageFavoriteAgencySelectionView: View {
     @AppStorage(UserDefaultKeys.favouritedChannel, store: UserDefaults(suiteName: "group.io.skk-tj.holo-wtf.ios")) var favourited = Favourited()
-    // @CloudStorage(UserDefaultKeys.favouritedChannel) var favourited = Favourited()
     
     var body: some View {
         AgencySelectionView(viewTitle: "SETTINGS_MANAGE_FAVOURITE_VIEW_TITLE", targetView: { agency in
@@ -20,12 +18,18 @@ struct ManageFavoriteAgencySelectionView: View {
                 Section("SETTINGS_MANAGE_FAVOURITE_FAVOURITE_SECTION") {
                     ForEach(favourited, id: \.self) { talent in
                         if let talentEnum = TalentEnum(rawValue: talent) {
-                            SettingsTalentStarView(talent: talentEnumToTalent[talentEnum]!, favourited: $favourited)
+                            SettingsTalentStarView(talent: talentEnumToTalent[talentEnum]!)
                         }
                     }
                 }
             } else {
                 EmptyView()
+            }
+        })
+        .animation(.easeInOut, value: favourited)
+        .onReceive(NotificationCenter.default.publisher(for: NSUbiquitousKeyValueStore.didChangeExternallyNotification), perform: { @MainActor _ in
+            if let favourited = NSUbiquitousKeyValueStore.default.array(forKey: UserDefaultKeys.favouritedChannel) {
+                self.favourited = favourited as? [String] ?? []
             }
         })
     }

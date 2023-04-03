@@ -1,15 +1,6 @@
 {
   "pins" : [
     {
-      "identity" : "cloudstorage",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/tomlokhorst/CloudStorage",
-      "state" : {
-        "revision" : "5c8f4edf5906b89e0cddd9fc74b950c1e31e5183",
-        "version" : "0.2.0"
-      }
-    },
-    {
       "identity" : "swift-algorithms",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-algorithms.git",

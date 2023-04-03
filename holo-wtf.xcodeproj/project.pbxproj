@@ -286,7 +286,6 @@
 		F0CA6ED428D7C4A40028CB11 /* UpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */; };
 		F0CA6ED528D7C4A70028CB11 /* LiveAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0673C162775F7FB009C65C6 /* LiveAvatarView.swift */; };
 		F0CEE36429BE006600AFB565 /* AgencyNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CEE36329BE006600AFB565 /* AgencyNavigationView.swift */; };
-		F0DC615029D94150009D1051 /* CloudStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F0DC614F29D94150009D1051 /* CloudStorage */; };
 		F0DC615229D94D42009D1051 /* VideoCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DC615129D94D42009D1051 /* VideoCountView.swift */; };
 		F0DC615329D94D4E009D1051 /* VideoCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DC615129D94D42009D1051 /* VideoCountView.swift */; };
 		F0DC615529D952C7009D1051 /* VideoFavouriteCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DC615429D952C7009D1051 /* VideoFavouriteCountView.swift */; };
@@ -643,7 +642,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0DC615029D94150009D1051 /* CloudStorage in Frameworks */,
 				F04D149928DD82E500750B71 /* Collections in Frameworks */,
 				F04D149628DD82DA00750B71 /* Algorithms in Frameworks */,
 				F04D149B28DD82E500750B71 /* OrderedCollections in Frameworks */,
@@ -1281,7 +1279,6 @@
 				F04D149528DD82DA00750B71 /* Algorithms */,
 				F04D149828DD82E500750B71 /* Collections */,
 				F04D149A28DD82E500750B71 /* OrderedCollections */,
-				F0DC614F29D94150009D1051 /* CloudStorage */,
 			);
 			productName = "holo-wtf";
 			productReference = F0C657B72771F47C004AF802 /* HoloCal.app */;
@@ -1356,7 +1353,6 @@
 			packageReferences = (
 				F04D149428DD82DA00750B71 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 				F04D149728DD82E500750B71 /* XCRemoteSwiftPackageReference "swift-collections" */,
-				F0DC614E29D94150009D1051 /* XCRemoteSwiftPackageReference "CloudStorage" */,
 			);
 			productRefGroup = F0C657B82771F47C004AF802 /* Products */;
 			projectDirPath = "";
@@ -1944,7 +1940,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202;
+				CURRENT_PROJECT_VERSION = 203;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = complications/Info.plist;
@@ -1975,7 +1971,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202;
+				CURRENT_PROJECT_VERSION = 203;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = complications/Info.plist;
@@ -2006,7 +2002,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf-widgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202;
+				CURRENT_PROJECT_VERSION = 203;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "holo-wtf-widget/Info.plist";
@@ -2035,7 +2031,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf-widgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202;
+				CURRENT_PROJECT_VERSION = 203;
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "holo-wtf-widget/Info.plist";
@@ -2186,7 +2182,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf/holo-wtf.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202;
+				CURRENT_PROJECT_VERSION = 203;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -2228,7 +2224,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf/holo-wtf.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202;
+				CURRENT_PROJECT_VERSION = 203;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -2271,7 +2267,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf-watch Watch App/holo-wtf-watch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202;
+				CURRENT_PROJECT_VERSION = 203;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf-watch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -2307,7 +2303,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_ENTITLEMENTS = "holo-wtf-watch Watch App/holo-wtf-watch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202;
+				CURRENT_PROJECT_VERSION = 203;
 				DEVELOPMENT_ASSET_PATHS = "\"holo-wtf-watch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = NTH2V9C699;
 				ENABLE_PREVIEWS = YES;
@@ -2418,14 +2414,6 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		F0DC614E29D94150009D1051 /* XCRemoteSwiftPackageReference "CloudStorage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/tomlokhorst/CloudStorage";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.2.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2488,11 +2476,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F04D149428DD82DA00750B71 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
 			productName = Algorithms;
-		};
-		F0DC614F29D94150009D1051 /* CloudStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F0DC614E29D94150009D1051 /* XCRemoteSwiftPackageReference "CloudStorage" */;
-			productName = CloudStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

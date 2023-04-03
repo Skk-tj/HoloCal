@@ -6,14 +6,12 @@
 //
 
 import SwiftUI
-import CloudStorage
 
 struct ManageFavoriteView: View {
     let agency: AgencyEnum
     
     @State var showResetAlert: Bool = false
     @AppStorage(UserDefaultKeys.favouritedChannel, store: UserDefaults(suiteName: "group.io.skk-tj.holo-wtf.ios")) var favourited = Favourited()
-    // @CloudStorage(UserDefaultKeys.favouritedChannel) var favourited = Favourited()
     @State var searchText: String = ""
     
     var body: some View {
@@ -22,7 +20,7 @@ struct ManageFavoriteView: View {
                 ForEach(agencyEnumToGenerations[agency]!, id: \.self) { generation in
                     Section(talentsByGeneration[generation]!.localizedName) {
                         ForEach(talentsByGeneration[generation]!.members) { talent in
-                            SettingsTalentStarView(talent: talentEnumToTalent[talent]!, favourited: $favourited)
+                            SettingsTalentStarView(talent: talentEnumToTalent[talent]!)
                         }
                     }
                 }
@@ -43,6 +41,7 @@ struct ManageFavoriteView: View {
                                     return true
                                 }
                             })
+                            NSUbiquitousKeyValueStore.default.set(favourited, forKey: UserDefaultKeys.favouritedChannel)
                         }
                     }, message: {
                         Text("SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_TEXT")
@@ -51,7 +50,7 @@ struct ManageFavoriteView: View {
                 
             } else {
                 ForEach(getSearchResult(searchText)) { result in
-                    SettingsTalentStarView(talent: result, favourited: $favourited)
+                    SettingsTalentStarView(talent: result)
                 }
             }
         }

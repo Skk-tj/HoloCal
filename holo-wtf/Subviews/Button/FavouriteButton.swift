@@ -16,21 +16,17 @@ struct FavouriteButton<Content: View>: View {
     var body: some View {
         let isFavourited = favourited.contains(where: {$0 == video.channel.id})
         Button(action: {
-            withAnimation {
-                if !isFavourited {
-                    favourited.append(video.channel.id)
-                } else {
-                    favourited.removeAll(where: {$0 == video.channel.id})
-                }
+            if !isFavourited {
+                favourited.append(video.channel.id)
+            } else {
+                favourited.removeAll(where: {$0 == video.channel.id})
             }
         }, label: {
             content(isFavourited)
         })
-        .onChange(of: favourited) { favourited in
-            let keyStore = NSUbiquitousKeyValueStore()
-            keyStore.set(favourited, forKey: UserDefaultKeys.favouritedChannel)
-            keyStore.synchronize()
-        }
+        .onChange(of: favourited, perform: { favourited in
+            NSUbiquitousKeyValueStore.default.set(favourited, forKey: UserDefaultKeys.favouritedChannel)
+        })
     }
 }
 
