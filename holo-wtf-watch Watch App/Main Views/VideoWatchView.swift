@@ -20,7 +20,11 @@ struct VideoWatchView: View {
     
     var body: some View {
         WatchVideoListView(singleVideoView: { video in
-            WatchVideoCellView(video: video, videoType: videoType)
+            NavigationLink(destination: {
+                SingleVideoWatchView(video: video, videoType: videoType)
+            }, label: {
+                WatchVideoCellView(video: video, videoType: videoType)
+            })
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: video.dataStatus) {
                 VideoCountView(videoType: videoType)

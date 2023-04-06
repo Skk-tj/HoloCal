@@ -17,7 +17,7 @@ struct ConcertWatchView: View {
                     AsyncImage(url: imageURL, content: { image in
                         image
                             .resizable()
-                            .aspectRatio(1.78, contentMode: .fit)
+                            .aspectRatio(contentMode: .fit)
                     }, placeholder: {
                         ProgressView()
                             .frame(maxWidth: .infinity, maxHeight: .infinity)

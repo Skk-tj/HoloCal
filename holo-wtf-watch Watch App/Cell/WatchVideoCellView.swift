@@ -17,11 +17,11 @@ struct WatchVideoCellView: View {
             
             VStack(alignment: .leading) {
                 Text(video.title)
-                    .font(.caption)
+                    .font(.headline)
                     .lineLimit(2)
                 
                 Text(video.channel.getTalentName())
-                    .font(.footnote)
+                    .font(.caption)
                     .lineLimit(1)
                     .foregroundColor(.secondary)
                 
@@ -29,16 +29,16 @@ struct WatchVideoCellView: View {
                     switch videoType {
                     case .live:
                         Text("\(Image(systemName: "eye")) \(video.liveViewers ?? 0)")
+                            .font(.footnote)
                         Spacer()
                         LiveTimeView(liveTime: video.startActual, fontSize: .footnote, shortMode: true)
                     case .upcoming:
-                        UpcomingTimeView(liveSchedule: video.startScheduled, fontSize: .caption2, shortMode: true)
+                        UpcomingTimeView(liveSchedule: video.startScheduled, fontSize: .footnote)
                     case .past:
-                        PastTimeView(endedAt: video.endedAt, fontSize: .caption2)
+                        PastTimeView(endedAt: video.endedAt, fontSize: .footnote)
                     }
                 }
                 .foregroundColor(.secondary)
-                .font(.footnote)
             }
         }
     }
@@ -46,6 +46,10 @@ struct WatchVideoCellView: View {
 
 struct WatchVideoCellView_Previews: PreviewProvider {
     static var previews: some View {
-        WatchVideoCellView(video: .previewLive, videoType: .live)
+        List {
+            WatchVideoCellView(video: .previewLive, videoType: .live)
+            WatchVideoCellView(video: .previewLive, videoType: .upcoming)
+            WatchVideoCellView(video: .previewLive, videoType: .past)
+        }
     }
 }

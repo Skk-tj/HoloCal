@@ -189,7 +189,7 @@ func getEntryWithIntent(for agency: IntentAgency, videoType: VideoType, sortBy: 
         let firstVideo = lives[0]
         
         async let (avatarData, _) = URLSession.shared.data(from: firstVideo.channel.photo!)
-        async let (thumbnailData, _) = URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(firstVideo.id)/hq720.jpg")!)
+        async let (thumbnailData, _) = URLSession.shared.data(from: firstVideo.thumbnailURL!)
         
 //        guard let response = try await avatarResponse as? HTTPURLResponse, response.statusCode == 200 else {
 //            return SingleVideoWidgetEntry(date: .now, status: .network, video: nil, avatarData: Data(), thumbnailData: Data(), agency: intentAgencyToDeepLinkAgency[agency]!)
@@ -282,7 +282,7 @@ func getThumbnailsForVideos(_ videos: [LiveVideo]) async throws -> [Data] {
     try await withThrowingTaskGroup(of: Data.self) { group in
         videos.forEach { video in
             group.addTask {
-                let (thumbnail, _) = try await URLSession.shared.data(from: URL(string: "https://i.ytimg.com/vi/\(video.id)/hq720.jpg")!)
+                let (thumbnail, _) = try await URLSession.shared.data(from: video.thumbnailURL!)
                 
                 return thumbnail
             }

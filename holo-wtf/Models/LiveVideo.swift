@@ -34,6 +34,10 @@ struct LiveVideo: Codable, Identifiable, Hashable {
         URL(string: "https://www.youtube.com/watch?v=\(id)")
     }
     
+    var thumbnailURL: URL? {
+        URL(string: "https://i.ytimg.com/vi/\(id)/hq720.jpg")
+    }
+    
     var isMengen: Bool {
         // Japanese
         if title.contains("メン限") || title.contains("メンバー限定") {

@@ -16,7 +16,7 @@ struct VideoPaneView: View {
     var body: some View {
         ZStack(alignment: .topLeading) {
             VStack {
-                VideoThumbnailView(ytVideoKey: video.id)
+                VideoThumbnailView(video: video)
                 
                 VStack(alignment: .leading) {
                     VideoTitleView(title: video.title)
