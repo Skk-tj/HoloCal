@@ -722,7 +722,7 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .reine: Talent(id: TalentEnum.reine.rawValue, names: [.en: "Pavolia Reine", .ja: "パヴォリア・レイネ"], inGeneration: Generation.id3rdGen),
     
     // MARK: - ID 3rd gen
-    .zeta: Talent(id: TalentEnum.zeta.rawValue, names: [.en: "KVestia Zeta", .ja: "ベスティア・ゼータ"], inGeneration: Generation.id3rdGen),
+    .zeta: Talent(id: TalentEnum.zeta.rawValue, names: [.en: "Vestia Zeta", .ja: "ベスティア・ゼータ"], inGeneration: Generation.id3rdGen),
     .kaela: Talent(id: TalentEnum.kaela.rawValue, names: [.en: "Kaela Kovalskia", .ja: "カエラ・コヴァルスキア"], inGeneration: Generation.id3rdGen),
     .kobo: Talent(id: TalentEnum.kobo.rawValue, names: [.en: "Kobo Kanaeru", .ja: "こぼ・かなえる"], inGeneration: Generation.id3rdGen),
     
