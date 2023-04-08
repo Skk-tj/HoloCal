@@ -16,14 +16,31 @@ struct AgencyNavigationView<DestinationContent: View, FavouritesContent: View>: 
         List {
             AgencyForEachView(singleAgency: { agency in
                 NavigationLink(value: agencyToViewAgency[agency]!) {
+#if os(iOS)
+                    SingleAgencySelectionView(agency: agency)
+#else
                     SingleAgencyItemView(agency: agency)
+#endif
                 }
+#if os(iOS)
+                .listRowSeparator(.hidden)
+#endif
             })
             
             NavigationLink(value: ViewAgency.favourites) {
+#if os(iOS)
+                FavouritesSelectionView()
+#else
                 Label("ROOT_VIEW_FAVOURITES", systemImage: "star.fill")
+#endif
             }
+#if os(iOS)
+            .listRowSeparator(.hidden)
+#endif
         }
+#if os(iOS)
+        .listStyle(.plain)
+#endif
         .navigationDestination(for: ViewAgency.self) { agency in
             if agency == .favourites {
                 favouritesView()

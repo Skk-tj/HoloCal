@@ -17,6 +17,7 @@ struct PaneViewChannelInfoView: View {
             LiveAvatarView(url: video.channel.photo, avatarRadius: 40.0)
             
             ChannelNameView(channel: video.channel)
+            
             if let mentions = video.mentions {
                 LiveCollabAvatarView(mentions: mentions, avatarRadius: 40.0)
                     .onTapGesture {

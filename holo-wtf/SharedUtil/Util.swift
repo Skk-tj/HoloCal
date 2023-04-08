@@ -92,6 +92,10 @@ enum UserDefaultKeys {
     static let dstDays = "dstDays"
 }
 
+enum UserActivityKeys {
+    static let handOffOpenStreamUrl = "io.skk-tj.holo-wtf.handoff-open-url"
+}
+
 extension Bundle {
     public var appName: String { getInfo("CFBundleName")  }
     public var displayName: String { getInfo("CFBundleDisplayName") }

@@ -67,6 +67,7 @@ enum Generation: Int, CaseIterable, Codable, Hashable {
     case wave2022May21
     case wave2022Voltaction
     case wave2023Jan16
+    case wave2023Mar30
     case id1stWave
     case id2ndWave
     case id3rdWave
@@ -420,6 +421,12 @@ enum TalentEnum: String, Codable {
     case ishigami = "UCtLfA_qUqCJtjXJM2ZR_keg"
     case sophia = "UCivwPlOp0ojnMPZj5pNOPPA"
     case kuramochi = "UCiA-trSZfB0i92V_-dyDqBw"
+    
+    // MARK: - 2023 Wave: Mar 30
+    case ittetsu = "UCy8P3o5XlMpJGQY4WugzdNA"
+    case wen = "UC1vawzfbCnRpHT9SJ5pHlHw"
+    case rito = "UCambvP8yxNDot4FzQc9cgiw"
+    case mana = "UCqXxS-9x9Ha_UiH6hG4kh5Q"
     
     // MARK: - ID First Wave: 3setBBQ
     case taka = "UCZ5dNZsqBjBzbBl0l_IdmXg" // Taka Radjiman
@@ -966,6 +973,12 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .ishigami: Talent(id: TalentEnum.ishigami.rawValue, names: [.en: "Ishigami Nozomi", .ja: "石神のぞみ"], inGeneration: Generation.wave2023Jan16),
     .sophia: Talent(id: TalentEnum.sophia.rawValue, names: [.en: "Sophia Valentine", .ja: "ソフィア・ヴァレンタイン"], inGeneration: Generation.wave2023Jan16),
     .kuramochi: Talent(id: TalentEnum.kuramochi.rawValue, names: [.en: "Kuramochi Meruto", .ja: "倉持めると"], inGeneration: Generation.wave2023Jan16),
+    
+    // MARK: - 2023 Wave: Mar 30
+    .ittetsu: Talent(id: TalentEnum.ittetsu.rawValue, names: [.en: "Saiki Ittetsu", .ja: "佐伯イッテツ"], inGeneration: Generation.wave2023Mar30),
+    .wen: Talent(id: TalentEnum.wen.rawValue, names: [.en: "Akagi Wen", .ja: "赤城ウェン"], inGeneration: Generation.wave2023Mar30),
+    .rito: Talent(id: TalentEnum.rito.rawValue, names: [.en: "Usami Rito", .ja: "宇佐美リト"], inGeneration: Generation.wave2023Mar30),
+    .mana: Talent(id: TalentEnum.mana.rawValue, names: [.en: "Hibachi Mana", .ja: "緋八マナ"], inGeneration: Generation.wave2023Mar30),
 
     // MARK: - ID First Wave: 3setBBQ
     .taka: Talent(id: TalentEnum.taka.rawValue, names: [.en: "Taka Radjiman", .ja: "タカ ラジマン"], inGeneration: Generation.id1stWave),
@@ -1258,6 +1271,7 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .wave2022May21: GenerationGroup(id: .wave2022May21, names: [.en: "2022 Wave: May 21", .ja: "2022年05月21日デビュー"], members: [.hyakumantenbara]),
     .wave2022Voltaction: GenerationGroup(id: .wave2022Voltaction, names: [.en: "VOLTACTION", .ja: "VOLTACTION"], members: [.fura, .watarai, .shikinagi, .seraph]),
     .wave2023Jan16: GenerationGroup(id: .wave2023Jan16, names: [.en: "2023 Wave: Jan 16", .ja: "2023年01月16日デビュー"], members: [.koshimizu, .shishido, .kaburaiki, .igarashi, .ishigami, .sophia, .kuramochi]),
+    .wave2023Mar30: GenerationGroup(id: .wave2023Mar30, names: [.en: "2023 Wave: Mar 30", .ja: "2023年03月30日デビュー"], members: [.ittetsu, .wen, .rito, .mana]),
     .id1stWave: GenerationGroup(id: .id1stWave, names: [.en: "ID 1st Wave", .ja: "ID 1期生"], members: [.taka, .zea, .hana]),
     .id2ndWave: GenerationGroup(id: .id2ndWave, names: [.en: "ID 2nd Wave", .ja: "ID 2期生"], members: [.rai, .amicia, .riksa]),
     .id3rdWave: GenerationGroup(id: .id3rdWave, names: [.en: "ID 3rd Wave", .ja: "ID 3期生"], members: [.azura, .layla, .nara]),

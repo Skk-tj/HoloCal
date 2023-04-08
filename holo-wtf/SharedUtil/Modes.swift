@@ -22,3 +22,11 @@ enum UIMode {
     case compact
     case card
 }
+
+enum Tabs: String, Hashable {
+    case live
+    case upcoming
+    case past
+    case concerts
+    case settings
+}

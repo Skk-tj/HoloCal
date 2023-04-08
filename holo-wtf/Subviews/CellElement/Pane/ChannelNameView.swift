@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ChannelNameView: View {
     let channel: Channel
-    var nameLineLimit: Bool = false
+    var nameLineLimit: Bool = true
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -27,6 +27,6 @@ struct ChannelNameView: View {
 
 struct ChannelNameView_Previews: PreviewProvider {
     static var previews: some View {
-        ChannelNameView(channel: Channel.testChannel, nameLineLimit: false)
+        ChannelNameView(channel: Channel.testChannel)
     }
 }

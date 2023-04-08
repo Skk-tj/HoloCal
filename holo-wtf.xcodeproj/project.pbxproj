@@ -259,7 +259,6 @@
 		F09D53BE29337378003C4F80 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F09D53C229337378003C4F80 /* Intents.intentdefinition */; };
 		F09D53BF29337378003C4F80 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F09D53C229337378003C4F80 /* Intents.intentdefinition */; };
 		F09D53C029337378003C4F80 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F09D53C229337378003C4F80 /* Intents.intentdefinition */; };
-		F0A886642938A01B009AD4CB /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A886632938A01B009AD4CB /* SwiftUI.framework */; };
 		F0B2AF0A28C13D0F00635CAD /* UpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */; };
 		F0B2AF0C28C1A82400635CAD /* MultipleVideoWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0B28C1A82400635CAD /* MultipleVideoWidgetEntry.swift */; };
 		F0B4D6B429B09663000A28BC /* VideoWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A4129AC892900339178 /* VideoWidgetView.swift */; };
@@ -304,9 +303,11 @@
 		F0DC616E29DA16E8009D1051 /* VideoFavouritesViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DC616D29DA16E8009D1051 /* VideoFavouritesViewToolbar.swift */; };
 		F0DC617029DA1B9C009D1051 /* VideoViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DC616F29DA1B9C009D1051 /* VideoViewToolbar.swift */; };
 		F0DC617229DA2077009D1051 /* VideoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DC617129DA2077009D1051 /* VideoCellView.swift */; };
-		F0DC617429DA22B8009D1051 /* LiveTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DC617329DA22B8009D1051 /* LiveTagView.swift */; };
 		F0DC617629DA28B9009D1051 /* VideoPaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DC617529DA28B9009D1051 /* VideoPaneView.swift */; };
 		F0DC617829DA2CD3009D1051 /* WatchVideoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DC617729DA2CD3009D1051 /* WatchVideoCellView.swift */; };
+		F0DE326C29E1162D00DA0939 /* LiveTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DC617329DA22B8009D1051 /* LiveTagView.swift */; };
+		F0DE326D29E1164D00DA0939 /* LiveTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DC617329DA22B8009D1051 /* LiveTagView.swift */; };
+		F0DE326E29E12EC800DA0939 /* AgencyNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CEE36329BE006600AFB565 /* AgencyNavigationView.swift */; };
 		F0E05C722932E27C00B3C774 /* VideoLiveWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D1B3C283A300E0026340D /* VideoLiveWidgetProvider.swift */; };
 		F0E06D0729322BEC00BF6812 /* BlockLiveTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A4292CA914009EC2CC /* BlockLiveTimeView.swift */; };
 		F0E06D0829322BF200BF6812 /* BlockUpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A6292E1893009EC2CC /* BlockUpcomingTimeView.swift */; };
@@ -337,7 +338,6 @@
 		F0F40974293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F40972293D6F46001C4F48 /* MultiLanguageNameView.swift */; };
 		F0F40975293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F40972293D6F46001C4F48 /* MultiLanguageNameView.swift */; };
 		F0F40976293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F40972293D6F46001C4F48 /* MultiLanguageNameView.swift */; };
-		F0FB8E0229C68764005E3FFD /* AgencyNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CEE36329BE006600AFB565 /* AgencyNavigationView.swift */; };
 		F0FB8E0629CC19DE005E3FFD /* MultipleVideoLargeWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB8E0529CC19DE005E3FFD /* MultipleVideoLargeWidgetView.swift */; };
 		F0FB8E0829CC3B4E005E3FFD /* MultipleVideoLargeEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB8E0729CC3B4E005E3FFD /* MultipleVideoLargeEntryView.swift */; };
 		F0FB8E0A29CE97CF005E3FFD /* AllMultipleVideoEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB8E0929CE97CF005E3FFD /* AllMultipleVideoEntryView.swift */; };
@@ -547,8 +547,6 @@
 		F09D53C129337378003C4F80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; name = Base; path = Base.lproj/Intents.intentdefinition; sourceTree = "<group>"; };
 		F09D53C42933737E003C4F80 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Intents.strings; sourceTree = "<group>"; };
 		F09D53C629337380003C4F80 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Intents.strings; sourceTree = "<group>"; };
-		F0A886612938A00B009AD4CB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS9.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		F0A886632938A01B009AD4CB /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS9.1.sdk/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
 		F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SecretConfig.xcconfig; sourceTree = "<group>"; };
 		F0B2AF0B28C1A82400635CAD /* MultipleVideoWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleVideoWidgetEntry.swift; sourceTree = "<group>"; };
 		F0B4D6B829B09930000A28BC /* TestVideoWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVideoWidgetView.swift; sourceTree = "<group>"; };
@@ -627,7 +625,6 @@
 				F04D14A728DD832000750B71 /* Algorithms in Frameworks */,
 				F04D14A928DD832200750B71 /* Collections in Frameworks */,
 				F06D28CD28D83826007D06FB /* WidgetKit.framework in Frameworks */,
-				F0A886642938A01B009AD4CB /* SwiftUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -824,6 +821,7 @@
 				F01DAA812996413A00052514 /* ConcertsWatchView.swift */,
 				F01DAA85299641E300052514 /* ConcertWatchView.swift */,
 				F017D86929DBFE6D0033EBB7 /* SingleVideoWatchView.swift */,
+				F017D86729DBFD280033EBB7 /* MainPhotoView.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -928,8 +926,6 @@
 		F093D1BD282C32D000E2A6FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F0A886632938A01B009AD4CB /* SwiftUI.framework */,
-				F0A886612938A00B009AD4CB /* UIKit.framework */,
 				F093D1BE282C32D000E2A6FF /* WidgetKit.framework */,
 				F093D1C0282C32D000E2A6FF /* SwiftUI.framework */,
 			);
@@ -965,7 +961,6 @@
 				F009024527EE6A9F00E343B0 /* VideoContextMenu.swift */,
 				F0DC617129DA2077009D1051 /* VideoCellView.swift */,
 				F0DC617529DA28B9009D1051 /* VideoPaneView.swift */,
-				F0DC617329DA22B8009D1051 /* LiveTagView.swift */,
 			);
 			path = VideoCell;
 			sourceTree = "<group>";
@@ -986,6 +981,7 @@
 				F0789B8E29AB53FF00346239 /* Pane */,
 				F0789B8D29AB53FB00346239 /* Cell */,
 				F0ED2B12280CB73D00683E6C /* TopicTagView.swift */,
+				F0DC617329DA22B8009D1051 /* LiveTagView.swift */,
 			);
 			path = CellElement;
 			sourceTree = "<group>";
@@ -1140,7 +1136,6 @@
 				F04D754F28D7CB770096B8AB /* holo-wtf-watch-Watch-App-Info.plist */,
 				F0CA6EB128D7C0410028CB11 /* WatchApp.swift */,
 				F0CA6ECF28D7C31D0028CB11 /* WatchVideoListView.swift */,
-				F017D86729DBFD280033EBB7 /* MainPhotoView.swift */,
 				F0CA6EB728D7C0420028CB11 /* Preview Content */,
 			);
 			path = "holo-wtf-watch Watch App";
@@ -1554,6 +1549,7 @@
 			files = (
 				F093D1DC282FA0CF00E2A6FF /* LiveTimeView.swift in Sources */,
 				F099C68829CFA4A000596C7F /* GenerationGroup.swift in Sources */,
+				F0DE326C29E1162D00DA0939 /* LiveTagView.swift in Sources */,
 				F0186A1E29AC773400339178 /* SmallEntryViews.swift in Sources */,
 				F04D1B3E283A304E0026340D /* VideoLiveWidgetProvider.swift in Sources */,
 				F0FB8E0A29CE97CF005E3FFD /* AllMultipleVideoEntryView.swift in Sources */,
@@ -1686,13 +1682,13 @@
 				F0954BEC2817D63100369EC4 /* VideoListView.swift in Sources */,
 				F0789B8629AB382000346239 /* VideoTitleView.swift in Sources */,
 				F0ED2AE22806858300683E6C /* Channel.swift in Sources */,
-				F0DC617429DA22B8009D1051 /* LiveTagView.swift in Sources */,
 				F0DC616829D9A119009D1051 /* VideoFavouritesTabletView.swift in Sources */,
 				F0954BDE2817B73E00369EC4 /* SearchSectionView.swift in Sources */,
 				F064A5B628BB3765008C51C2 /* SongsViewModel.swift in Sources */,
 				F0ED2AE4280685FD00683E6C /* LiveVideo.swift in Sources */,
 				F025203F28EE94B700976972 /* Constants.swift in Sources */,
 				F065857D28CFF4C6001672E1 /* ManageGenerationVisibilityView.swift in Sources */,
+				F0DE326D29E1164D00DA0939 /* LiveTagView.swift in Sources */,
 				F0DC615529D952C7009D1051 /* VideoFavouriteCountView.swift in Sources */,
 				F0DC615E29D99737009D1051 /* VideoTabletView.swift in Sources */,
 				F02211A3292C9FF8009EC2CC /* ViewerCounterView.swift in Sources */,
@@ -1766,10 +1762,10 @@
 				F04D755828D7D8430096B8AB /* SettingsWatchView.swift in Sources */,
 				F01241A72935E33E007C8FE9 /* BlockUpcomingTimeView.swift in Sources */,
 				F01241A22935E2BB007C8FE9 /* ViewerCounterView.swift in Sources */,
-				F0FB8E0229C68764005E3FFD /* AgencyNavigationView.swift in Sources */,
 				F01DAA7729963FFD00052514 /* ConcertsViewModel.swift in Sources */,
 				F0CA6ED528D7C4A70028CB11 /* LiveAvatarView.swift in Sources */,
 				F01DAA86299641E300052514 /* ConcertWatchView.swift in Sources */,
+				F0DE326E29E12EC800DA0939 /* AgencyNavigationView.swift in Sources */,
 				F09664E429A34DCF005F37C0 /* BlockVideoInfoView.swift in Sources */,
 				F0CA6ECC28D7C2BE0028CB11 /* LiveVideo.swift in Sources */,
 				F099C68429CFA43B00596C7F /* WidgetUtils.swift in Sources */,
@@ -2098,7 +2094,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 206;
+				CURRENT_PROJECT_VERSION = 207;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -2164,7 +2160,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 206;
+				CURRENT_PROJECT_VERSION = 207;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

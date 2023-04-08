@@ -59,11 +59,3 @@ let allWidgetUpcomingURL = "https://holodex.net/api/v2/live?status=upcoming&type
 let allPastURL = "https://holodex.net/api/v2/videos?status=past&type=stream"
 
 let concertAPIURL = "https://holo-wtf-api-trbge5wfpq-uc.a.run.app"
-
-enum Tabs: String, Hashable {
-    case live
-    case upcoming
-    case past
-    case concerts
-    case settings
-}

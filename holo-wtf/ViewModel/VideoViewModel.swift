@@ -66,9 +66,7 @@ class VideoViewModel: ObservableObject {
         await getVideo(url: videoUrl) { responseResult in
             self.videoList = responseResult
             self.sortVideos()
-            self.videoList = self.videoList.filter {
-                $0.isAgency(agency: self.agency)
-            }
+            self.videoList = self.videoList.filter { $0.isSupportedAgency }
         }
     }
     
@@ -96,7 +94,6 @@ class VideoViewModel: ObservableObject {
             let getResultWithTwitter: [LiveVideo] = try await getTwitterForAll(videoList: getResult)
             
             completion(getResultWithTwitter)
-            
             self.dataStatus = .success
         } catch {
             self.dataStatus = .fail

@@ -66,8 +66,9 @@ struct VideoPaneView: View {
                     VStack(alignment: .leading) {
                         LiveTagView()
                         TopicTagView(topicId: video.topicId)
-                            .padding(.leading)
                     }
+                    .padding(.top)
+                    .padding(.leading)
                 case .upcoming, .past:
                     TopicTagView(topicId: video.topicId)
                         .padding()

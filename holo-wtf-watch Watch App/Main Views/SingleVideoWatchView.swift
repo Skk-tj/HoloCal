@@ -61,6 +61,13 @@ struct SingleVideoWatchView: View {
             .frame(width: .infinity)
             .padding()
         }
+        .userActivity(UserActivityKeys.handOffOpenStreamUrl, element: video.id) { _, activity in
+            activity.isEligibleForHandoff = true
+            activity.isEligibleForSearch = false
+            activity.isEligibleForPrediction = false
+            activity.isEligibleForPublicIndexing = false
+            activity.webpageURL = video.url
+        }
     }
 }
 
