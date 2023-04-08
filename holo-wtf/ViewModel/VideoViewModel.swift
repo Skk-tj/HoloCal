@@ -66,7 +66,7 @@ class VideoViewModel: ObservableObject {
         await getVideo(url: videoUrl) { responseResult in
             self.videoList = responseResult
             self.sortVideos()
-            self.videoList = self.videoList.filter { $0.isSupportedAgency }
+            self.videoList = self.videoList.filter { $0.isAgency(agency: self.agency) }
         }
     }
     
