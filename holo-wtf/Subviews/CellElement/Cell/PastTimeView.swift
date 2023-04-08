@@ -20,16 +20,14 @@ struct PastTimeView: View {
                 .font(fontSize)
                 .foregroundColor(.secondary)
         } else {
-            if let elapsedTimeString = getTimeIntervalStringFromReferenceDate(reference: endedAt) {
-                if shortMode {
-                    Text("PAST_CELL_VIEW_ENDED_SHORT \(elapsedTimeString)")
-                        .font(fontSize)
-                        .foregroundColor(.secondary)
-                } else {
-                    Text("PAST_CELL_VIEW_ENDED \(elapsedTimeString)")
-                        .font(fontSize)
-                        .foregroundColor(.secondary)
-                }
+            if shortMode {
+                Text(getRelativeTimeString(for: endedAt))
+                    .font(fontSize)
+                    .foregroundColor(.secondary)
+            } else {
+                Text("PAST_CELL_VIEW_ENDED \(getRelativeTimeString(for: endedAt))")
+                    .font(fontSize)
+                    .foregroundColor(.secondary)
             }
         }
     }
@@ -38,5 +36,6 @@ struct PastTimeView: View {
 struct PastTimeView_Previews: PreviewProvider {
     static var previews: some View {
         PastTimeView(endedAt: Date() - 3800)
+        PastTimeView(endedAt: Date() - 3800, shortMode: true)
     }
 }

@@ -9,39 +9,13 @@ import Foundation
 import EventKit
 import SwiftUI
 
-func getTimeIntervalFormatter() -> DateComponentsFormatter {
-    let formatter = DateComponentsFormatter()
-    formatter.maximumUnitCount = 1
+func getRelativeTimeString(for: Date) -> String {
+    let formatter = RelativeDateTimeFormatter()
     formatter.unitsStyle = .abbreviated
-    formatter.allowedUnits = [.day, .hour, .minute]
+    formatter.dateTimeStyle = .numeric
+    formatter.formattingContext = .beginningOfSentence
     
-    return formatter
-}
-
-func getDSTReminderTimeIntervalFormatter() -> DateComponentsFormatter {
-    let formatter = DateComponentsFormatter()
-    formatter.maximumUnitCount = 1
-    formatter.unitsStyle = .full
-    formatter.allowedUnits = [.day]
-    
-    return formatter
-}
-
-func getDateFormatter() -> DateFormatter {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateStyle = .short
-    dateFormatter.timeStyle = .short
-    dateFormatter.locale = .autoupdatingCurrent
-    
-    return dateFormatter
-}
-
-func getTimeIntervalStringFromReferenceDate(reference date: Date) -> String? {
-    let dateDifference = date.timeIntervalSinceNow
-    
-    let formatter = getTimeIntervalFormatter()
-    
-    return formatter.string(from: abs(dateDifference))
+    return formatter.localizedString(for: `for`, relativeTo: Date())
 }
 
 func getUpcomingStreamLookAheadHoursFromUserDefaults() -> Int {

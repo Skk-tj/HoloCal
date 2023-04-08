@@ -21,16 +21,14 @@ struct LiveTimeView: View {
                     .font(fontSize)
                     .foregroundColor(.secondary)
             } else {
-                if let elapsedTimeString = getTimeIntervalStringFromReferenceDate(reference: liveStart) {
-                    if shortMode {
-                        Text("LIVE_CELL_VIEW_STARTED_AGO_SHORT \(elapsedTimeString)")
-                            .font(fontSize)
-                            .foregroundColor(.secondary)
-                    } else {
-                        Text("LIVE_CELL_VIEW_STARTED_AGO \(elapsedTimeString)")
-                            .font(fontSize)
-                            .foregroundColor(.secondary)
-                    }
+                if shortMode {
+                    Text(getRelativeTimeString(for: liveStart))
+                        .font(fontSize)
+                        .foregroundColor(.secondary)
+                } else {
+                    Text("LIVE_CELL_VIEW_STARTED_AGO \(getRelativeTimeString(for: liveStart))")
+                        .font(fontSize)
+                        .foregroundColor(.secondary)
                 }
             }
         } else {
@@ -44,5 +42,6 @@ struct LiveTimeView: View {
 struct LiveTimeView_Previews: PreviewProvider {
     static var previews: some View {
         LiveTimeView(liveTime: Date() - 30000)
+        LiveTimeView(liveTime: Date() - 30000, shortMode: true)
     }
 }

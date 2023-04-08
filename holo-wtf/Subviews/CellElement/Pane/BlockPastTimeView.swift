@@ -13,25 +13,17 @@ struct BlockPastTimeView: View {
     let endedAt: Date
     
     var body: some View {
-        if let elapsedTimeString = getTimeIntervalStringFromReferenceDate(reference: endedAt) {
-            if isShowingAbsoluteTime {
-                BlockVideoInfoView(iconName: "clock.arrow.circlepath", primaryText: {
-                    Text(endedAt.formatted(date: .numeric, time: .shortened))
-                }, secondaryText: {
-                    Text("BLOCK_PAST_TIME_VIEW_ENDED_AT")
-                })
-            } else {
-                BlockVideoInfoView(iconName: "clock.arrow.circlepath", primaryText: {
-                    Text(elapsedTimeString)
-                }, secondaryText: {
-                    Text("BLOCK_PAST_TIME_VIEW_AGO")
-                })
-            }
+        if isShowingAbsoluteTime {
+            BlockVideoInfoView(iconName: "clock.arrow.circlepath", primaryText: {
+                Text(endedAt.formatted(date: .numeric, time: .shortened))
+            }, secondaryText: {
+                Text("BLOCK_PAST_TIME_VIEW_TIME_ENDED")
+            })
         } else {
             BlockVideoInfoView(iconName: "clock.arrow.circlepath", primaryText: {
-                Text("N/A")
+                Text(getRelativeTimeString(for: endedAt))
             }, secondaryText: {
-                Text("BLOCK_PAST_TIME_VIEW_AGO")
+                Text("BLOCK_PAST_TIME_VIEW_TIME_ENDED")
             })
         }
     }

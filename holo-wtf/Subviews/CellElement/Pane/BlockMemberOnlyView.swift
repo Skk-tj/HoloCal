@@ -9,10 +9,10 @@ import SwiftUI
 
 struct BlockMemberOnlyView: View {
     var body: some View {
-        BlockVideoInfoView(iconName: "person.fill", primaryText: {
+        BlockVideoInfoView(iconName: "person.fill.checkmark", primaryText: {
             Text("BLOCK_MEMBER_ONLY_MEMBER")
         }, secondaryText: {
-            Text("LIVE_CELL_VIEW_MEMBER_ONLY_STREAM")
+            Text("BLOCK_MEMBER_ONLY_MEMBERSHIP")
         })
     }
 }

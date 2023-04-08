@@ -13,27 +13,26 @@ struct BlockUpcomingTimeView: View {
     @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInUpcomingView) var isShowingAbsoluteTime: Bool = false
     
     var body: some View {
-        if let liveSchedule, let elapsedTimeString = getTimeIntervalStringFromReferenceDate(reference: liveSchedule) {
-            
+        if let liveSchedule {
             if isShowingAbsoluteTime {
                 BlockVideoInfoView(iconName: "clock", primaryText: {
                     Text("\(liveSchedule.formatted(date: .numeric, time: .shortened))")
                 }, secondaryText: {
-                    Text("BLOCK_UPCOMING_TIME_VIEW_STARTING_AT")
+                    Text("BLOCK_UPCOMING_TIME_VIEW_STARTING_TIME")
                 })
             } else {
                 BlockVideoInfoView(iconName: "clock", primaryText: {
-                    Text("\(elapsedTimeString)")
+                    Text("\(getRelativeTimeString(for: liveSchedule))")
                 }, secondaryText: {
-                    Text("BLOCK_UPCOMING_TIME_VIEW_STARTING_IN")
+                    Text("BLOCK_UPCOMING_TIME_VIEW_STARTING_TIME")
                 })
             }
             
         } else {
             BlockVideoInfoView(iconName: "clock", primaryText: {
-                Text(getTimeIntervalStringFromReferenceDate(reference: Date())!)
-            }, secondaryText: {
                 Text("BLOCK_UPCOMING_TIME_VIEW_STARTING_TIME_UNKNOWN")
+            }, secondaryText: {
+                Text("BLOCK_UPCOMING_TIME_VIEW_STARTING_TIME")
             })
         }
     }
@@ -41,8 +40,8 @@ struct BlockUpcomingTimeView: View {
 
 struct BlockUpcomingTimeView_Previews: PreviewProvider {
     static var previews: some View {
-        BlockUpcomingTimeView(liveSchedule: Date() - 30000, isShowingAbsoluteTime: true)
-        BlockUpcomingTimeView(liveSchedule: Date() - 30000, isShowingAbsoluteTime: false)
+        BlockUpcomingTimeView(liveSchedule: Date() + 30000, isShowingAbsoluteTime: true)
+        BlockUpcomingTimeView(liveSchedule: Date() + 30000, isShowingAbsoluteTime: false)
         BlockUpcomingTimeView()
     }
 }

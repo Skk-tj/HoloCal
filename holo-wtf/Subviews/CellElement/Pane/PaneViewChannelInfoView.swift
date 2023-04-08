@@ -16,9 +16,8 @@ struct PaneViewChannelInfoView: View {
         HStack {
             LiveAvatarView(url: video.channel.photo, avatarRadius: 40.0)
             
+            ChannelNameView(channel: video.channel)
             if let mentions = video.mentions {
-                ChannelNameView(channel: video.channel)
-                
                 LiveCollabAvatarView(mentions: mentions, avatarRadius: 40.0)
                     .onTapGesture {
                         isShowingCollabSheet.toggle()
@@ -27,8 +26,6 @@ struct PaneViewChannelInfoView: View {
                         LiveCollabListView(mentions: mentions)
                             .presentationDetents([.medium, .large])
                     })
-            } else {
-                ChannelNameView(channel: video.channel)
             }
         }
     }

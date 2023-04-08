@@ -13,25 +13,25 @@ struct BlockLiveTimeView: View {
     @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInLiveView) var isShowingAbsoluteTime: Bool = false
     
     var body: some View {
-        if let liveTime, let elapsedTimeString = getTimeIntervalStringFromReferenceDate(reference: liveTime) {
+        if let liveTime {
             if isShowingAbsoluteTime {
                 BlockVideoInfoView(iconName: "clock", primaryText: {
                     Text("\(liveTime.formatted(date: .numeric, time: .shortened))")
                 }, secondaryText: {
-                    Text("BLOCK_LIVE_TIME_VIEW_STARTED_AT")
+                    Text("BLOCK_LIVE_TIME_VIEW_TIME_STARTED")
                 })
             } else {
                 BlockVideoInfoView(iconName: "clock", primaryText: {
-                    Text("\(elapsedTimeString)")
+                    Text("\(getRelativeTimeString(for: liveTime))")
                 }, secondaryText: {
-                    Text("BLOCK_LIVE_TIME_VIEW_AGO")
+                    Text("BLOCK_LIVE_TIME_VIEW_TIME_STARTED")
                 })
             }
         } else {
             BlockVideoInfoView(iconName: "clock", primaryText: {
-                Text(getTimeIntervalStringFromReferenceDate(reference: Date())!)
-            }, secondaryText: {
                 Text("BLOCK_LIVE_TIME_VIEW_WAITING")
+            }, secondaryText: {
+                Text("BLOCK_LIVE_TIME_VIEW_TIME_STARTED")
             })
         }
     }

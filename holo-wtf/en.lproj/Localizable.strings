@@ -69,14 +69,13 @@
 
 "LIVE_CELL_VIEW_MEMBER_ONLY_STREAM" = "Member-only stream";
 "LIVE_CELL_VIEW_PEOPLE_WATCHING %lld" = "%lld watching";
-"LIVE_CELL_VIEW_STARTED_AGO %@" = "Started %@ ago";
-"LIVE_CELL_VIEW_STARTED_AGO_SHORT %@" = "%@ ago";
+"LIVE_CELL_VIEW_STARTED_AGO %@" = "Started %@";
 "LIVE_CELL_VIEW_WAITING" = "Waiting...";
 "LIVE_CELL_VIEW_STARTED_AT %@" = "%@";
 
 // Upcoming Cell View
 
-"UPCOMING_CELL_VIEW_STARTING_IN %@" = "Starting in %@";
+"UPCOMING_CELL_VIEW_STARTING_IN %@" = "Starting %@";
 "UPCOMING_CELL_VIEW_STARTING_IN_SHORT %@" = "In %@";
 "UPCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN" = "No starting time";
 "UPCOMING_CELL_VIEW_STARTING_AT %@" = "Starting at %@";
@@ -84,21 +83,17 @@
 // Past Cell View
 
 "PAST_CELL_VIEW_ENDED_AT %@" = "Ended at %@";
-"PAST_CELL_VIEW_ENDED_SHORT %@" = "%@ ago";
-"PAST_CELL_VIEW_ENDED %@" = "Ended %@ ago";
+"PAST_CELL_VIEW_ENDED %@" = "Ended %@";
 
 // Block Live Time View
 
-"BLOCK_LIVE_TIME_VIEW_AGO" = "ago";
-"BLOCK_LIVE_TIME_VIEW_STARTED_AT" = "Started at";
-"BLOCK_LIVE_TIME_VIEW_WAITING" = "waiting...";
-"BLOCK_LIVE_TIME_VIEW_NA" = "N/A";
+"BLOCK_LIVE_TIME_VIEW_TIME_STARTED" = "Time Started";
+"BLOCK_LIVE_TIME_VIEW_WAITING" = "Waiting...";
 
 // Block Upcoming Time View
 
-"BLOCK_UPCOMING_TIME_VIEW_STARTING_IN" = "Starting in";
+"BLOCK_UPCOMING_TIME_VIEW_STARTING_TIME" = "Starting Time";
 "BLOCK_UPCOMING_TIME_VIEW_STARTING_TIME_UNKNOWN" = "N/A";
-"BLOCK_UPCOMING_TIME_VIEW_STARTING_AT" = "Starting at";
 
 // Viewer Counter View
 
@@ -108,7 +103,8 @@
 
 // Block Member Only View
 
-"BLOCK_MEMBER_ONLY_MEMBER" = "Member";
+"BLOCK_MEMBER_ONLY_MEMBER" = "Member-only";
+"BLOCK_MEMBER_ONLY_MEMBERSHIP" = "Membership";
 
 // Block Video Type View
 
@@ -117,8 +113,7 @@
 
 // Block Past Time View
 
-"BLOCK_PAST_TIME_VIEW_AGO" = "ago";
-"BLOCK_PAST_TIME_VIEW_ENDED_AT" = "ended at";
+"BLOCK_PAST_TIME_VIEW_TIME_ENDED" = "Time Ended";
 
 // Common between LiveView and UpcomingView
 

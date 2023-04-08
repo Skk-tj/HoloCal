@@ -15,7 +15,7 @@ struct ViewerCounterView: View {
         BlockVideoInfoView(iconName: "person.fill", primaryText: {
             Text(memberOnly ? "VIEWER_COUNTER_VIEW_MEMBER_NA" : "\(viewer)")
         }, secondaryText: {
-            Text(memberOnly ? "VIEWER_COUNTER_VIEW_MEMBER_ONLY" : "VIEWER_COUNTER_VIEW_WATCHING")
+            Text("VIEWER_COUNTER_VIEW_WATCHING")
         })
     }
 }
