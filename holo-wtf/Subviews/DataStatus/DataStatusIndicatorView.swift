@@ -14,6 +14,7 @@ import SwiftUI
 struct DataStatusIndicatorView<Content: View>: View {
     /// The data status property from VideoViewModel and its subclasses.
     let dataStatus: DataStatus
+    var error: VideoFetchServiceError?
     
     /// The view to be shown after the data finishes loading.
     @ViewBuilder let content: () -> Content
@@ -25,8 +26,20 @@ struct DataStatusIndicatorView<Content: View>: View {
         case .success:
             content()
         case .fail:
-            Label("FAILED_TO_RETRIEVE_NEW_DATA", systemImage: "exclamationmark.circle.fill")
-                .foregroundColor(.secondary)
+            VStack {
+                Label("FAILED_TO_RETRIEVE_NEW_DATA", systemImage: "exclamationmark.circle.fill")
+                if let error {
+                    switch error {
+                    case .apiUrlError:
+                        Text("API URL/Key Error")
+                    case .serialization:
+                        Text("Serialization failed")
+                    case .network(let int):
+                        Text("Network failed \(int)")
+                    }
+                }
+            }
+            .foregroundColor(.secondary)
         }
     }
 }
@@ -34,6 +47,10 @@ struct DataStatusIndicatorView<Content: View>: View {
 struct DataStatusIndicator_Previews: PreviewProvider {
     static var previews: some View {
         DataStatusIndicatorView(dataStatus: .working) {
+            Text("LIVE_VIEW_CURRENT_COUNT")
+        }
+        
+        DataStatusIndicatorView(dataStatus: .fail, error: .apiUrlError) {
             Text("LIVE_VIEW_CURRENT_COUNT")
         }
     }

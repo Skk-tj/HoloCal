@@ -24,7 +24,7 @@ struct VideoUIListView: View {
                 VideoPaneView(video: video, videoType: videoType)
             }
         }, dataStatusView: {
-            DataStatusIndicatorView(dataStatus: video.dataStatus) {
+            DataStatusIndicatorView(dataStatus: video.dataStatus, error: video.error) {
                 if isFavourite {
                     VideoFavouriteCountView(videoType: videoType)
                 } else {

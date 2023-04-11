@@ -29,7 +29,7 @@ struct VideoTabletView: View {
                 VideoContextMenu(video: video)
             }
         }, dataStatusView: {
-            DataStatusIndicatorView(dataStatus: video.dataStatus) {
+            DataStatusIndicatorView(dataStatus: video.dataStatus, error: video.error) {
                 VideoCountView(videoType: videoType)
             }
         }, isFavourite: false)

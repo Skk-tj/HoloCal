@@ -27,7 +27,7 @@ struct VideoFavouritesTabletView: View {
                 VideoContextMenu(video: video)
             }
         }, dataStatusView: {
-            DataStatusIndicatorView(dataStatus: video.dataStatus) {
+            DataStatusIndicatorView(dataStatus: video.dataStatus, error: video.error) {
                 VideoFavouriteCountView(videoType: videoType)
             }
         }, isFavourite: true)

@@ -43,6 +43,8 @@ class VideoViewModel: ObservableObject {
     let agency: AgencyEnum
     let videoUrl: String
     
+    var error: VideoFetchServiceError?
+    
     init(for agency: AgencyEnum, videoType: VideoType) {
         self.videoList = []
         self.dataStatus = .working
@@ -76,10 +78,19 @@ class VideoViewModel: ObservableObject {
         
         do {
             let getResult: [LiveVideo] = try await getVideos(from: url)
-            let getResultWithTwitter: [LiveVideo] = try await getTwitterForAll(videoList: getResult)
+            let getResultWithTwitter: [LiveVideo] = await getTwitterForAll(videoList: getResult)
             
             completion(getResultWithTwitter)
             self.dataStatus = .success
+        } catch VideoFetchServiceError.apiUrlError {
+            self.dataStatus = .fail
+            self.error = VideoFetchServiceError.apiUrlError
+        } catch VideoFetchServiceError.serialization {
+            self.dataStatus = .fail
+            self.error = VideoFetchServiceError.serialization
+        } catch VideoFetchServiceError.network(let networkCode) {
+            self.dataStatus = .fail
+            self.error = VideoFetchServiceError.network(networkCode)
         } catch {
             self.dataStatus = .fail
         }
@@ -91,10 +102,19 @@ class VideoViewModel: ObservableObject {
         
         do {
             let getResult = try await getVideosForFavourites(urls: urls, groupName: groupName)
-            let getResultWithTwitter: [LiveVideo] = try await getTwitterForAll(videoList: getResult)
+            let getResultWithTwitter: [LiveVideo] = await getTwitterForAll(videoList: getResult)
             
             completion(getResultWithTwitter)
             self.dataStatus = .success
+        } catch VideoFetchServiceError.apiUrlError {
+            self.dataStatus = .fail
+            self.error = VideoFetchServiceError.apiUrlError
+        } catch VideoFetchServiceError.serialization {
+            self.dataStatus = .fail
+            self.error = VideoFetchServiceError.serialization
+        } catch VideoFetchServiceError.network(let networkCode) {
+            self.dataStatus = .fail
+            self.error = VideoFetchServiceError.network(networkCode)
         } catch {
             self.dataStatus = .fail
         }
@@ -121,7 +141,7 @@ class VideoViewModel: ObservableObject {
     }
     
     private func updatedWithTwitter(channel: Channel) async -> Channel {
-        return Channel(id: channel.id, name: channel.name, photo: channel.photo, org: channel.org, twitter: try? await channel.getTwitterId())
+        return Channel(id: channel.id, name: channel.name, photo: channel.photo, org: channel.org, twitter: try? await getTwitterId(for: channel))
     }
     
     private func updatedWithTwitter(video: LiveVideo) async -> LiveVideo {
@@ -129,15 +149,15 @@ class VideoViewModel: ObservableObject {
     }
     
     @MainActor
-    func getTwitterForAll(videoList: [LiveVideo]) async throws -> [LiveVideo] {
-        try await withThrowingTaskGroup(of: LiveVideo.self) { group in
+    func getTwitterForAll(videoList: [LiveVideo]) async -> [LiveVideo] {
+        await withTaskGroup(of: LiveVideo.self) { group in
             videoList.forEach { video in
                 group.addTask {
                     return await self.updatedWithTwitter(video: video)
                 }
             }
             
-            return try await group.reduce(into: [LiveVideo]()) { partialResult, video in
+            return await group.reduce(into: [LiveVideo]()) { partialResult, video in
                 partialResult.append(video)
             }
         }
