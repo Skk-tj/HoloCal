@@ -23,8 +23,7 @@ struct MainApp: App {
         if let sentryDsn = Bundle.main.object(forInfoDictionaryKey: "SENTRY_DSN") as? String {
             SentrySDK.start { options in
                 options.dsn = sentryDsn
-                options.debug = true // Enabled debug when first installing is always helpful
-                
+                // options.debug = true // Enabled debug when first installing is always helpful
 #if DEBUG
                 options.environment = "Debug"
                 // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
