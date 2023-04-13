@@ -14,5 +14,7 @@
 		<string>SelectAgencyIntent</string>
 		<string>UpcomingWidgetIntent</string>
 	</array>
+	<key>SENTRY_DSN</key>
+	<string>$(SENTRY_DSN)</string>
 </dict>
 </plist>

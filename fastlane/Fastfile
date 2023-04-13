@@ -23,4 +23,8 @@ platform :ios do
     build_app(scheme: "holo-wtf")
     upload_to_testflight
   end
+
+  lane :tests do
+    run_tests(scheme: "holo-wtf")
+  end
 end

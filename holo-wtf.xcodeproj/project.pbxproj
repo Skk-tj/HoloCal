@@ -20,9 +20,7 @@
 		F009024427EE5F3100E343B0 /* UpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */; };
 		F009024627EE6A9F00E343B0 /* VideoContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024527EE6A9F00E343B0 /* VideoContextMenu.swift */; };
 		F00BD6D029052AC400D7932E /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00BD6CF29052AC400D7932E /* VideoViewModel.swift */; };
-		F00BD6D129052AC400D7932E /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00BD6CF29052AC400D7932E /* VideoViewModel.swift */; };
 		F00BD6D229052AC400D7932E /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00BD6CF29052AC400D7932E /* VideoViewModel.swift */; };
-		F00BD6D329052AC400D7932E /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00BD6CF29052AC400D7932E /* VideoViewModel.swift */; };
 		F0114D4F2815F81600B99D4D /* DataStatusIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0114D4E2815F81600B99D4D /* DataStatusIndicatorView.swift */; };
 		F011C42828303CA400FD1364 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F009023D27EE255B00E343B0 /* Localizable.strings */; };
 		F01241A12935E2BA007C8FE9 /* ViewerCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A2292C9FF8009EC2CC /* ViewerCounterView.swift */; };
@@ -190,7 +188,6 @@
 		F06D28EB28D83A2D007D06FB /* SharedUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06D28EA28D83A2D007D06FB /* SharedUtil.swift */; };
 		F06D28EC28D83A2D007D06FB /* SharedUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06D28EA28D83A2D007D06FB /* SharedUtil.swift */; };
 		F06D28F328D83A92007D06FB /* SongInStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004E8C5285D004A00ABDFED /* SongInStream.swift */; };
-		F06D28F828D83ABB007D06FB /* VideoFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */; };
 		F06D28F928D83AC9007D06FB /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657D527732690004AF802 /* Util.swift */; };
 		F06D28FA28D83AD3007D06FB /* UpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */; };
 		F06D28FB28D83B21007D06FB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F009023D27EE255B00E343B0 /* Localizable.strings */; };
@@ -200,6 +197,9 @@
 		F07D891928834FBB008D3057 /* DSTReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07D891828834FBB008D3057 /* DSTReminderView.swift */; };
 		F080A04F27F95D9E00DBC08D /* TalentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A04E27F95D9E00DBC08D /* TalentData.swift */; };
 		F080A05127F993DC00DBC08D /* ManageFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A05027F993DC00DBC08D /* ManageFavoriteView.swift */; };
+		F084632C29E67702004279B4 /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = F084632B29E67702004279B4 /* Sentry */; };
+		F084633929E6813E004279B4 /* VideoFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */; };
+		F084633A29E6813E004279B4 /* VideoFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */; };
 		F093D1BF282C32D000E2A6FF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F093D1BE282C32D000E2A6FF /* WidgetKit.framework */; };
 		F093D1C1282C32D000E2A6FF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F093D1C0282C32D000E2A6FF /* SwiftUI.framework */; };
 		F093D1C4282C32D000E2A6FF /* HoloCalWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1C3282C32D000E2A6FF /* HoloCalWidgetBundle.swift */; };
@@ -211,7 +211,6 @@
 		F093D1D7282FA0B000E2A6FF /* LiveAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0673C162775F7FB009C65C6 /* LiveAvatarView.swift */; };
 		F093D1DC282FA0CF00E2A6FF /* LiveTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009023727EDB6AE00E343B0 /* LiveTimeView.swift */; };
 		F093D1DE282FA5E600E2A6FF /* VideoFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */; };
-		F093D1DF282FA5FE00E2A6FF /* VideoFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */; };
 		F093D1E0282FAA0500E2A6FF /* TopicTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2B12280CB73D00683E6C /* TopicTagView.swift */; };
 		F093D1E5283034DA00E2A6FF /* TalentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A04E27F95D9E00DBC08D /* TalentData.swift */; };
 		F093D1E82830359900E2A6FF /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657D527732690004AF802 /* Util.swift */; };
@@ -391,6 +390,46 @@
 				F06D28D728D83827007D06FB /* complicationsExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F084633829E67D6B004279B4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F084634229E6833D004279B4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F084635129E68368004279B4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F084635D29E6886B004279B4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F093D1CE282C32D100E2A6FF /* Embed Foundation Extensions */ = {
@@ -647,6 +686,7 @@
 				F04D149928DD82E500750B71 /* Collections in Frameworks */,
 				F04D149628DD82DA00750B71 /* Algorithms in Frameworks */,
 				F04D149B28DD82E500750B71 /* OrderedCollections in Frameworks */,
+				F084632C29E67702004279B4 /* Sentry in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1222,6 +1262,7 @@
 				F06D28C828D83826007D06FB /* Sources */,
 				F06D28C928D83826007D06FB /* Frameworks */,
 				F06D28CA28D83826007D06FB /* Resources */,
+				F084635129E68368004279B4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1244,6 +1285,7 @@
 				F093D1B8282C32D000E2A6FF /* Sources */,
 				F093D1B9282C32D000E2A6FF /* Frameworks */,
 				F093D1BA282C32D000E2A6FF /* Resources */,
+				F084634229E6833D004279B4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1269,6 +1311,7 @@
 				F0C657B52771F47C004AF802 /* Resources */,
 				F093D1CE282C32D100E2A6FF /* Embed Foundation Extensions */,
 				F0CA6EC028D7C0420028CB11 /* Embed Watch Content */,
+				F084635D29E6886B004279B4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1281,6 +1324,7 @@
 				F04D149528DD82DA00750B71 /* Algorithms */,
 				F04D149828DD82E500750B71 /* Collections */,
 				F04D149A28DD82E500750B71 /* OrderedCollections */,
+				F084632B29E67702004279B4 /* Sentry */,
 			);
 			productName = "holo-wtf";
 			productReference = F0C657B72771F47C004AF802 /* HoloCal.app */;
@@ -1294,6 +1338,7 @@
 				F0CA6EAC28D7C0410028CB11 /* Frameworks */,
 				F0CA6EAD28D7C0410028CB11 /* Resources */,
 				F06D28D828D83827007D06FB /* Embed Foundation Extensions */,
+				F084633829E67D6B004279B4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1355,6 +1400,7 @@
 			packageReferences = (
 				F04D149428DD82DA00750B71 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 				F04D149728DD82E500750B71 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				F084632A29E67702004279B4 /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
 			);
 			productRefGroup = F0C657B82771F47C004AF802 /* Products */;
 			projectDirPath = "";
@@ -1488,7 +1534,6 @@
 				F0E45D1B28F39AF90091474A /* Agency.swift in Sources */,
 				F0186A1829AC710C00339178 /* SmallWidgetAvatarView.swift in Sources */,
 				F025204228EE95FB00976972 /* Constants.swift in Sources */,
-				F00BD6D329052AC400D7932E /* VideoViewModel.swift in Sources */,
 				F01869FB29AC59BB00339178 /* LiveTitleView.swift in Sources */,
 				F06D28E828D839F5007D06FB /* LiveVideo.swift in Sources */,
 				F06D28F928D83AC9007D06FB /* Util.swift in Sources */,
@@ -1504,7 +1549,6 @@
 				F06D28E128D8390F007D06FB /* SharedEntryView.swift in Sources */,
 				F09664E329A34DCD005F37C0 /* BlockMemberOnlyView.swift in Sources */,
 				F0E06D182932A4FA00BF6812 /* Modes.swift in Sources */,
-				F06D28F828D83ABB007D06FB /* VideoFetchService.swift in Sources */,
 				F099C68029CFA3E600596C7F /* WidgetConstants.swift in Sources */,
 				F0186A0429AC5A1300339178 /* NoStreamView.swift in Sources */,
 				F0F40976293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */,
@@ -1520,6 +1564,7 @@
 				F06D28DE28D838C7007D06FB /* SharedWidgets.swift in Sources */,
 				F0E05C722932E27C00B3C774 /* VideoLiveWidgetProvider.swift in Sources */,
 				F01869FE29AC59E300339178 /* UpcomingTitleView.swift in Sources */,
+				F084633A29E6813E004279B4 /* VideoFetchService.swift in Sources */,
 				F01EB31129D170E8001A17AF /* VideoSorting.swift in Sources */,
 				F0186A3C29AC84BA00339178 /* AccessoryCornerView.swift in Sources */,
 				F01241A62935E335007C8FE9 /* BaseVideoEntryView.swift in Sources */,
@@ -1586,7 +1631,6 @@
 				F0186A3529AC80D100339178 /* AccessoryRectangularWidgetView.swift in Sources */,
 				F0CA6ECD28D7C2C30028CB11 /* SongsViewModel.swift in Sources */,
 				F01869E629AB86C300339178 /* MultipleVideoPastWidgetProvider.swift in Sources */,
-				F00BD6D129052AC400D7932E /* VideoViewModel.swift in Sources */,
 				F093D1D6282FA0A600E2A6FF /* VideoThumbnailView.swift in Sources */,
 				F0186A0B29AC606700339178 /* BlockPastTimeView.swift in Sources */,
 				F0186A1729AC710C00339178 /* SmallWidgetAvatarView.swift in Sources */,
@@ -1613,8 +1657,8 @@
 				F09D53A329336782003C4F80 /* MultipleVideoUpcomingWidgetProvider.swift in Sources */,
 				F02830802853DB0E00CBFCE7 /* Widgets.swift in Sources */,
 				F0186A3F29AC867100339178 /* SmallWidgetView.swift in Sources */,
-				F093D1DF282FA5FE00E2A6FF /* VideoFetchService.swift in Sources */,
 				F0186A4629AC8E7800339178 /* WidgetMediumView.swift in Sources */,
+				F084633929E6813E004279B4 /* VideoFetchService.swift in Sources */,
 				F099C68329CFA43B00596C7F /* WidgetUtils.swift in Sources */,
 				F01869EB29AC1DD500339178 /* ChannelsPastWidgetProvider.swift in Sources */,
 				F0B4D6B929B09930000A28BC /* TestVideoWidgetView.swift in Sources */,
@@ -1851,6 +1895,7 @@
 /* Begin XCBuildConfiguration section */
 		F01EB30A29D17043001A17AF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1875,6 +1920,7 @@
 		};
 		F01EB30B29D17043001A17AF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1899,6 +1945,7 @@
 		};
 		F05818A8281CAAF50064EF94 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1920,6 +1967,7 @@
 		};
 		F05818A9281CAAF50064EF94 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1941,6 +1989,7 @@
 		};
 		F06D28D928D83827007D06FB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -1972,6 +2021,7 @@
 		};
 		F06D28DA28D83827007D06FB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -2003,6 +2053,7 @@
 		};
 		F093D1CF282C32D100E2A6FF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -2032,6 +2083,7 @@
 		};
 		F093D1D0282C32D100E2A6FF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -2061,6 +2113,7 @@
 		};
 		F0C657C32771F47C004AF802 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -2094,7 +2147,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 209;
+				CURRENT_PROJECT_VERSION = 210;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -2119,6 +2172,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				"SWIFT_ACTIVE_COMPILATION_CONDITIONS[arch=*]" = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "";
 				WATCHOS_DEPLOYMENT_TARGET = 9.0;
@@ -2127,6 +2181,7 @@
 		};
 		F0C657C42771F47C004AF802 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -2160,7 +2215,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 209;
+				CURRENT_PROJECT_VERSION = 210;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2177,6 +2232,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				"SWIFT_ACTIVE_COMPILATION_CONDITIONS[arch=*]" = RELEASE;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -2187,6 +2243,7 @@
 		};
 		F0C657C62771F47C004AF802 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2207,7 +2264,6 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -2229,6 +2285,7 @@
 		};
 		F0C657C72771F47C004AF802 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2249,7 +2306,6 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -2271,6 +2327,7 @@
 		};
 		F0CA6EBE28D7C0420028CB11 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2307,6 +2364,7 @@
 		};
 		F0CA6EBF28D7C0420028CB11 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2426,6 +2484,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		F084632A29E67702004279B4 /* XCRemoteSwiftPackageReference "sentry-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/getsentry/sentry-cocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2488,6 +2554,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F04D149428DD82DA00750B71 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
 			productName = Algorithms;
+		};
+		F084632B29E67702004279B4 /* Sentry */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F084632A29E67702004279B4 /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
+			productName = Sentry;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

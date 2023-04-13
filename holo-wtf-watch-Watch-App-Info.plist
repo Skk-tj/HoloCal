@@ -4,6 +4,8 @@
 <dict>
 	<key>HOLODEX_API_KEY</key>
 	<string>$(HOLODEX_API_KEY)</string>
+	<key>SENTRY_DSN</key>
+	<string>$(SENTRY_DSN)</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>LiveWidgetIntent</string>

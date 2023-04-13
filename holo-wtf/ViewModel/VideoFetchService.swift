@@ -7,6 +7,9 @@
 
 import Foundation
 import OSLog
+#if canImport(Sentry) && os(iOS)
+import Sentry
+#endif
 
 enum VideoFetchServiceError: Error {
     case apiUrlError
@@ -24,6 +27,11 @@ func getVideos(from url: String) async throws -> [LiveVideo] {
     
     guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "HOLODEX_API_KEY") as? String else {
         logger.critical("API Key is not valid")
+        throw VideoFetchServiceError.apiUrlError
+    }
+    
+    guard !apiKey.isEmpty else {
+        logger.critical("API Key is empty")
         throw VideoFetchServiceError.apiUrlError
     }
     
@@ -48,8 +56,10 @@ func getVideos(from url: String) async throws -> [LiveVideo] {
         return responseResult
     } catch {
         logger.error("Network request failed when trying to get live data from API. This is likely a serialization error.")
-        debugPrint(error)
         logger.error("Error is: \(error.localizedDescription)")
+#if canImport(Sentry) && os(iOS)
+        SentrySDK.capture(error: error)
+#endif
         
         throw VideoFetchServiceError.serialization
     }
