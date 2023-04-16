@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='HoloCalUITests.xctest' tests='7' failures='0'>
+  <testsuite name='HoloCalUITests.AgencyNavigationTests' tests='3' failures='0'>
+    <testcase classname='HoloCalUITests.AgencyNavigationTests' name='testLiveAgencies' time='12.726'/>
+    <testcase classname='HoloCalUITests.AgencyNavigationTests' name='testPastAgencies' time='13.688'/>
+    <testcase classname='HoloCalUITests.AgencyNavigationTests' name='testUpcomingAgencies' time='13.855'/>
+  </testsuite>
+  <testsuite name='HoloCalUITests.RootViewTests' tests='4' failures='0'>
+    <testcase classname='HoloCalUITests.RootViewTests' name='testJapaneseTabBar' time='2.886'/>
+    <testcase classname='HoloCalUITests.RootViewTests' name='testNavigationTitles' time='4.854'/>
+    <testcase classname='HoloCalUITests.RootViewTests' name='testSettingsSectionHeaderText' time='3.210'/>
+    <testcase classname='HoloCalUITests.RootViewTests' name='testTabBar' time='2.838'/>
+  </testsuite>
+</testsuites>

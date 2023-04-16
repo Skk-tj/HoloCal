@@ -27,4 +27,14 @@ platform :ios do
   lane :tests do
     run_tests(scheme: "holo-wtf")
   end
+
+  lane :sentry do
+    sentry_upload_dif(
+      auth_token: ENV['SENTRY_AUTH_TOKEN'],
+      org_slug: ENV['SENTRY_ORG'],
+      project_slug: 'holo-wtf',
+      include_sources: true,
+      path: '..'
+    )
+  end
 end

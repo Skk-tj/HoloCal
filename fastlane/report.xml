@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="0: opt_out_usage" time="0.000241">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: update_fastlane" time="1.670708">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="2: default_platform" time="0.000178">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="3: sentry_upload_dif" time="3.884372">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>
