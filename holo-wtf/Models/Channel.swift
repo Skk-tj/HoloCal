@@ -30,7 +30,7 @@ struct Channel: Codable, Identifiable, Hashable {
     static let testChannel2 = Channel(id: "UCDqI2jOz0weumE8s7paEk6g", name: "test vtuber 2", photo: URL(string: "https://yt3.ggpht.com/wIqM7MWDN94PoibzPmeog7WOt8jFKTKZBOBFEbLBaiUAdKLwoqdLC_CN7B7Gby-FWH-076rN=s800-c-k-c0x00ffffff-no-rj"), org: "Hololive", twitter: "aaaa")
 
     func getTalentGenerationName() -> String {
-        if let talent = talent {
+        if let talent {
             if let generationGroup = talentsByGeneration[talent.inGeneration] {
                 return generationGroup.localizedName
             } else {
@@ -45,8 +45,12 @@ struct Channel: Codable, Identifiable, Hashable {
         c1.id == c2.id
     }
     
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.id)
+    }
+    
     func getTalentName() -> String {
-        if let talent = talent {
+        if let talent {
             return talent.localizedName
         } else {
             return self.name
@@ -54,7 +58,7 @@ struct Channel: Codable, Identifiable, Hashable {
     }
     
     func getAltTalentName() -> String {
-        if let talent = talent {
+        if let talent {
             return talent.altLocalizedName
         } else {
             return self.name

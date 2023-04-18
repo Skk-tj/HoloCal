@@ -75,4 +75,12 @@ struct LiveVideo: Codable, Identifiable, Hashable {
     var endedAt: Date {
         return availableAt + Double(duration)
     }
+    
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.id == rhs.id
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.id)
+    }
 }
