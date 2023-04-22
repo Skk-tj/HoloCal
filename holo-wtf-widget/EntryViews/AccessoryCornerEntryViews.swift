@@ -39,3 +39,23 @@ struct AccessoryCornerEntryView: View {
         }
     }
 }
+
+struct AccessoryCornerEntryView_Preview: PreviewProvider {
+    static var previews: some View {
+        AccessoryCornerEntryView(entry: SingleVideoWidgetEntry(date: Date(), status: .ok, video: LiveVideo.previewLive, avatarData: Data(), thumbnailData: Data(), agency: .hololive), videoType: .live)
+#if os(watchOS)
+            .previewContext(WidgetPreviewContext(family: .accessoryCorner))
+#endif
+        
+        AccessoryCornerEntryView(entry: SingleVideoWidgetEntry(date: Date(), status: .ok, video: nil, avatarData: Data(), thumbnailData: Data(), agency: .hololive), videoType: .live)
+#if os(watchOS)
+            .previewContext(WidgetPreviewContext(family: .accessoryCorner))
+#endif
+        
+        AccessoryCornerEntryView(entry: SingleVideoWidgetEntry(date: Date(), status: .ok, video: nil, avatarData: Data(), thumbnailData: Data(), agency: .hololive), videoType: .live)
+            .environment(\.locale, .init(identifier: "ja"))
+#if os(watchOS)
+            .previewContext(WidgetPreviewContext(family: .accessoryCorner))
+#endif
+    }
+}

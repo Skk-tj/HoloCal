@@ -63,17 +63,7 @@ struct MainApp: App {
             
             if userSavedGenerationOrder.count != defaultGenerationOrder.count {
                 let difference = Set(defaultGenerationOrder).symmetricDifference(userSavedGenerationOrder)
-                appendNewGenerationOrderList(to: generateListOrder, order: difference, agency: agency)
-            }
-        }
-        
-        // MARK: - Get user favourites from iCloud
-        let keyStore = NSUbiquitousKeyValueStore()
-        if let cloudFavouriteChannel = keyStore.array(forKey: UserDefaultKeys.favouritedChannel) {
-            if let converted = cloudFavouriteChannel as? [String] {
-                let localSet: Set<String> = Set(favourited)
-                let merged = localSet.union(converted)
-                favourited = Array(merged)
+                appendNewGenerationOrderList(to: generateListOrder, order: Array(difference), agency: agency)
             }
         }
         

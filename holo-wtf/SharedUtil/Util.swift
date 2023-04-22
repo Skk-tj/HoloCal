@@ -173,10 +173,10 @@ func getGenerationOrderList(@AppStorage("generationListOrderNew") from data: Dat
         return agencyEnumToGenerations[agency]!
     }
     
-    return deserialized[agency]!
+    return deserialized[agency] ?? agencyEnumToGenerations[agency]!
 }
 
-func appendNewGenerationOrderList(@AppStorage("generationListOrderNew") to data: Data, order: Set<Generation>, agency: AgencyEnum) {
+func appendNewGenerationOrderList(@AppStorage("generationListOrderNew") to data: Data, order: [Generation], agency: AgencyEnum) {
     guard var deserialized = try? JSONDecoder().decode([AgencyEnum: [Generation]].self, from: data) else { return }
     deserialized[agency]!.append(contentsOf: order)
     
