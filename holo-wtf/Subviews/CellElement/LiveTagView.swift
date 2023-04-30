@@ -14,7 +14,7 @@ struct LiveTagView: View {
         HStack(alignment: .top, spacing: 8) {
             Image(systemName: "person.wave.2.fill", variableValue: liveIconOpcality)
                 .onAppear {
-                    withAnimation(.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
+                    withAnimation {
                         liveIconOpcality = 1
                     }
                 }
@@ -24,6 +24,7 @@ struct LiveTagView: View {
         .background(.thickMaterial, in: RoundedRectangle(cornerRadius: 5, style: .continuous))
         .font(.caption)
         .foregroundColor(.red)
+        .animation(.easeInOut(duration: 1).repeatForever(), value: liveIconOpcality)
     }
 }
 

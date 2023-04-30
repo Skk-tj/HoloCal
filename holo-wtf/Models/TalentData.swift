@@ -68,6 +68,7 @@ enum Generation: Int, CaseIterable, Codable, Hashable {
     case wave2022Voltaction
     case wave2023Jan16
     case wave2023Mar30
+    case wave2023Apr26
     case id1stWave
     case id2ndWave
     case id3rdWave
@@ -428,6 +429,12 @@ enum TalentEnum: String, Codable {
     case rito = "UCambvP8yxNDot4FzQc9cgiw"
     case mana = "UCqXxS-9x9Ha_UiH6hG4kh5Q"
     
+    // MARK: 2023 Wave: Apr 26
+    case sho = "UCgZ0pH7j6c9z-pkOG3PYw1Q"
+    case kagetsu = "UChdY64fJb14Nfnbs8EGdQig"
+    case rou = "UC6WFKwYptsxVue56Lx218vg"
+    case raiInami = "UCz89MGFBrAqwJ5xMr5weSuA"
+    
     // MARK: - ID First Wave: 3setBBQ
     case taka = "UCZ5dNZsqBjBzbBl0l_IdmXg" // Taka Radjiman
     case zea = "UCA3WE2WRSpoIvtnoVGq4VAw" // ZEA Cornelia
@@ -574,7 +581,7 @@ enum TalentEnum: String, Codable {
     // MARK: - Official
     case reactOfficial = "UC90vyzmRgWCE17-uWNsKW2Q"
     
-    // MARK: - Animare
+    // MARK: - 774
     case haneru = "UC0Owc36U9lOyi9Gx9Ic-4qg"
     case ran = "UCRvpMpzAXBRKJQuk-8-Sdvg"
     case kuku = "UCXp7sNC0F_qkjickvlYkg-Q"
@@ -584,34 +591,28 @@ enum TalentEnum: String, Codable {
     case rukako = "UC3xG1XWzAKt5dxSxktJvtxg"
     case chiroru = "UCqskJ0nmw-_eweWfsKvbrzQ"
     case konanMia = "UC4PrHgUcAtOoj_LKmUL-uLQ"
-    
-    // MARK: - HoneyStrap
     case sekishiroMiko = "UCDh2bWI5EDu7PavqwICkVpA"
     case patra = "UCeLzT-7b2PBcunJplmWtoDg"
     case charlotte = "UCYTz3uIgwVY3ZU-IQJS8r3A"
     case mary = "UCwePpiw1ocZRSNSkpKvVISw"
-    
-    // MARK: - SugarLyric
     case chris = "UC--A2dwZW7-M2kID0N6_lfA"
     case rin = "UC2hc-00y-MSR6eYA4eQ4tjQ"
     case mei = "UCRY0-zJ1pV4EiKUSLXCXTAg"
     case tier = "UCrt4cTM_sWH0iySLMkwwYLQ"
-    
-    // MARK: - Hiyocyo
     case nemo = "UCBJ6nejlzes6mm9UruaxQsA"
     case kanna = "UCkpqb53xiOvOgNYEbNpFSyw"
     case sei = "UCBxw5bdrbKO7E60E4s3KgQg"
     case kiki = "UC3MBUvkVTI9p-p0be7y7TQA"
     case popo = "UC_hjHmi-ODGhHlSzD16p5Pw"
     case yuri = "UCGyywYAJd2O5Y7yUyr7qBRQ"
-    
-    // MARK: - Solo talent
     case ichika = "UC2kyQhzGOB-JPgcQX9OMgEw"
     case anna = "UCvPPBoTOor5gm8zSlE2tg4w"
     case yuge = "UC3EhsuKdEkI99TWZwZgWutg"
     case kanon = "UCmqrvfLMws-GLGHQcB5dasg"
     case annko = "UChXm-xAYPfygrbyLo2yCASQ"
-    case watto = "UCV4EoK6BVNl7wxuxpUvvSWA"
+    case amaui = "UCW98GVLrx8lG_ddOts3cl4g"
+    case uruuIna = "UCxCdPRbi-s5J74A6KgkxnQg"
+    case mashu = "UCBhfuPYgo5ALbn6WmTXwHwg"
     
     // MARK: - 774inc official
     case nanashiOfficial = "UCJEpkwwDiTKS5lxwFttEbIQ"
@@ -979,6 +980,12 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .wen: Talent(id: TalentEnum.wen.rawValue, names: [.en: "Akagi Wen", .ja: "赤城ウェン"], inGeneration: Generation.wave2023Mar30),
     .rito: Talent(id: TalentEnum.rito.rawValue, names: [.en: "Usami Rito", .ja: "宇佐美リト"], inGeneration: Generation.wave2023Mar30),
     .mana: Talent(id: TalentEnum.mana.rawValue, names: [.en: "Hibachi Mana", .ja: "緋八マナ"], inGeneration: Generation.wave2023Mar30),
+    
+    // MARK: 2023 Wave: Apr 26
+    .sho: Talent(id: TalentEnum.sho.rawValue, names: [.en: "Hoshirube Sho", .ja: "星導ショウ"], inGeneration: Generation.wave2023Apr26),
+    .kagetsu: Talent(id: TalentEnum.kagetsu.rawValue, names: [.en: "Murakumo Kagetsu", .ja: "叢雲カゲツ"], inGeneration: Generation.wave2023Apr26),
+    .rou: Talent(id: TalentEnum.mana.rawValue, names: [.en: "Koyanagi Rou", .ja: "小柳ロウ"], inGeneration: Generation.wave2023Apr26),
+    .raiInami: Talent(id: TalentEnum.raiInami.rawValue, names: [.en: "Inami Rai", .ja: "伊波ライ"], inGeneration: Generation.wave2023Apr26),
 
     // MARK: - ID First Wave: 3setBBQ
     .taka: Talent(id: TalentEnum.taka.rawValue, names: [.en: "Taka Radjiman", .ja: "タカ ラジマン"], inGeneration: Generation.id1stWave),
@@ -1126,7 +1133,7 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     // MARK: - Re:AcT Official
     .reactOfficial: Talent(id: TalentEnum.reactOfficial.rawValue, names: [.en: "Re:AcT Official Channel", .ja: "Re:AcT公式チャンネル"], inGeneration: Generation.reactOfficial),
     
-    // MARK: - Animare
+    // MARK: - 774
     .haneru: Talent(id: TalentEnum.haneru.rawValue, names: [.en: "Inaba Haneru", .ja: "因幡はねる"], inGeneration: Generation.nanashiInc),
     .ran: Talent(id: TalentEnum.ran.rawValue, names: [.en: "Hinokuma Ran", .ja: "日ノ隈らん"], inGeneration: Generation.nanashiInc),
     .kuku: Talent(id: TalentEnum.kuku.rawValue, names: [.en: "Kazami Kuku", .ja: "風見くく"], inGeneration: Generation.nanashiInc),
@@ -1136,34 +1143,28 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .rukako: Talent(id: TalentEnum.rukako.rawValue, names: [.en: "Oura Rukako", .ja: "大浦るかこ"], inGeneration: Generation.nanashiInc),
     .chiroru: Talent(id: TalentEnum.chiroru.rawValue, names: [.en: "Tsukinoki Tirol", .ja: "月野木ちろる"], inGeneration: Generation.nanashiInc),
     .konanMia: Talent(id: TalentEnum.konanMia.rawValue, names: [.en: "Konan Mia", .ja: "湖南みあ"], inGeneration: Generation.nanashiInc),
-    
-    // MARK: - HoneyStrap
     .sekishiroMiko: Talent(id: TalentEnum.sekishiroMiko.rawValue, names: [.en: "Sekishiro Mico", .ja: "堰代ミコ"], inGeneration: Generation.nanashiInc),
     .patra: Talent(id: TalentEnum.patra.rawValue, names: [.en: "Suou Patra", .ja: "周防パトラ"], inGeneration: Generation.nanashiInc),
     .charlotte: Talent(id: TalentEnum.charlotte.rawValue, names: [.en: "Shimamura Charlotte", .ja: "島村シャルロット"], inGeneration: Generation.nanashiInc),
     .mary: Talent(id: TalentEnum.mary.rawValue, names: [.en: "Saionji Mary", .ja: "西園寺メアリ"], inGeneration: Generation.nanashiInc),
-    
-    // MARK: - SugarLyric
     .chris: Talent(id: TalentEnum.chris.rawValue, names: [.en: "Shishio Chris", .ja: "獅子王クリス"], inGeneration: Generation.nanashiInc),
     .rin: Talent(id: TalentEnum.rin.rawValue, names: [.en: "Ryugasaki Rene", .ja: "​龍ヶ崎リン"], inGeneration: Generation.nanashiInc),
     .mei: Talent(id: TalentEnum.mei.rawValue, names: [.en: "Oinomori May", .ja: "狼森メイ"], inGeneration: Generation.nanashiInc),
     .tier: Talent(id: TalentEnum.tier.rawValue, names: [.en: "Hebiyoi Tier", .ja: "蛇宵ティア"], inGeneration: Generation.nanashiInc),
-    
-    // MARK: - Hiyocyo
     .nemo: Talent(id: TalentEnum.nemo.rawValue, names: [.en: "Suzumi Nemo", .ja: "涼海ネモ"], inGeneration: Generation.nanashiInc),
     .kanna: Talent(id: TalentEnum.kanna.rawValue, names: [.en: "Akane Canna", .ja: "茜音カンナ"], inGeneration: Generation.nanashiInc),
     .sei: Talent(id: TalentEnum.sei.rawValue, names: [.en: "Touri Sei", .ja: "橙里セイ"], inGeneration: Generation.nanashiInc),
     .kiki: Talent(id: TalentEnum.kiki.rawValue, names: [.en: "Shisui Kiki", .ja: "紫水キキ"], inGeneration: Generation.nanashiInc),
     .popo: Talent(id: TalentEnum.popo.rawValue, names: [.en: "Ieiri Popo", .ja: "家入ポポ"], inGeneration: Generation.nanashiInc),
     .yuri: Talent(id: TalentEnum.yuri.rawValue, names: [.en: "Kohaku Yuri", .ja: "瑚白ユリ"], inGeneration: Generation.nanashiInc),
-    
-    // MARK: - Solo talent
     .ichika: Talent(id: TalentEnum.ichika.rawValue, names: [.en: "Souya Ichika", .ja: "宗谷いちか"], inGeneration: Generation.nanashiInc),
     .anna: Talent(id: TalentEnum.anna.rawValue, names: [.en: "Kojo Anna", .ja: "虎城アンナ"], inGeneration: Generation.nanashiInc),
     .yuge: Talent(id: TalentEnum.yuge.rawValue, names: [.en: "And Uge", .ja: "杏戸ゆげ"], inGeneration: Generation.nanashiInc),
     .kanon: Talent(id: TalentEnum.kanon.rawValue, names: [.en: "Kanade Kanon", .ja: "花奏かのん"], inGeneration: Generation.nanashiInc),
     .annko: Talent(id: TalentEnum.annko.rawValue, names: [.en: "Kisaki Anko", .ja: "季咲あんこ"], inGeneration: Generation.nanashiInc),
-    .watto: Talent(id: TalentEnum.watto.rawValue, names: [.en: "Huma Wat", .ja: "不磨わっと"], inGeneration: Generation.nanashiInc),
+    .amaui: Talent(id: TalentEnum.amaui.rawValue, names: [.en: "Amaui", .ja: "天羽衣"], inGeneration: Generation.nanashiInc),
+    .uruuIna: Talent(id: TalentEnum.uruuIna.rawValue, names: [.en: "Ina Uruu", .ja: "いなうるう"], inGeneration: Generation.nanashiInc),
+    .mashu: Talent(id: TalentEnum.mashu.rawValue, names: [.en: "Hinata Mashu", .ja: "日向ましゅ"], inGeneration: Generation.nanashiInc),
     
     // MARK: - 774inc official
     .nanashiOfficial: Talent(id: TalentEnum.nanashiOfficial.rawValue, names: [.en: "774 inc Official Channel", .ja: "ななし公式チャンネル"], inGeneration: Generation.nanashiOfficial),
@@ -1270,8 +1271,9 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .wave2022Ranunculus: GenerationGroup(id: .wave2022Ranunculus, names: [.en: "Ranunculus", .ja: "Ranunculus"], members: [.amagase, .ponto, .umise]),
     .wave2022May21: GenerationGroup(id: .wave2022May21, names: [.en: "2022 Wave: May 21", .ja: "2022年05月21日デビュー"], members: [.hyakumantenbara]),
     .wave2022Voltaction: GenerationGroup(id: .wave2022Voltaction, names: [.en: "VOLTACTION", .ja: "VOLTACTION"], members: [.fura, .watarai, .shikinagi, .seraph]),
-    .wave2023Jan16: GenerationGroup(id: .wave2023Jan16, names: [.en: "2023 Wave: Jan 16", .ja: "2023年01月16日デビュー"], members: [.koshimizu, .shishido, .kaburaiki, .igarashi, .ishigami, .sophia, .kuramochi]),
-    .wave2023Mar30: GenerationGroup(id: .wave2023Mar30, names: [.en: "2023 Wave: Mar 30", .ja: "2023年03月30日デビュー"], members: [.ittetsu, .wen, .rito, .mana]),
+    .wave2023Jan16: GenerationGroup(id: .wave2023Jan16, names: [.en: "2023 Wave: January 16", .ja: "2023年01月16日デビュー"], members: [.koshimizu, .shishido, .kaburaiki, .igarashi, .ishigami, .sophia, .kuramochi]),
+    .wave2023Mar30: GenerationGroup(id: .wave2023Mar30, names: [.en: "2023 Wave: March 30", .ja: "2023年03月30日デビュー"], members: [.ittetsu, .wen, .rito, .mana]),
+    .wave2023Apr26: GenerationGroup(id: .wave2023Apr26, names: [.en: "2023 Wave: April 26", .ja: "2023年04月26日デビュー"], members: [.sho, .kagetsu, .rou, .raiInami]),
     .id1stWave: GenerationGroup(id: .id1stWave, names: [.en: "ID 1st Wave", .ja: "ID 1期生"], members: [.taka, .zea, .hana]),
     .id2ndWave: GenerationGroup(id: .id2ndWave, names: [.en: "ID 2nd Wave", .ja: "ID 2期生"], members: [.rai, .amicia, .riksa]),
     .id3rdWave: GenerationGroup(id: .id3rdWave, names: [.en: "ID 3rd Wave", .ja: "ID 3期生"], members: [.azura, .layla, .nara]),
@@ -1302,7 +1304,7 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .reactOfficial: GenerationGroup(id: .reactOfficial, names: [.en: "Re:AcT Official Channels", .ja: "Re:AcT公式チャンネル"], members: [.reactOfficial]),
     
     // MARK: - 774 inc
-    .nanashiInc: GenerationGroup(id: .nanashiInc, names: [.en: "774 inc.", .ja: "ななしいんく"], members: [.haneru, .ran, .kuku, .izumi, .rui, .hikari, .rukako, .chiroru, .konanMia, .sekishiroMiko, .patra, .charlotte, .mary, .chris, .rin, .mei, .tier, .ichika, .anna, .yuge, .kanon, .annko, .watto]),
+    .nanashiInc: GenerationGroup(id: .nanashiInc, names: [.en: "774 inc.", .ja: "ななしいんく"], members: [.haneru, .ran, .kuku, .izumi, .rui, .hikari, .rukako, .chiroru, .konanMia, .sekishiroMiko, .patra, .charlotte, .mary, .chris, .rin, .mei, .tier, .ichika, .anna, .yuge, .kanon, .annko, .amaui, .uruuIna, .mashu]),
     .nanashiOfficial: GenerationGroup(id: .nanashiOfficial, names: [.en: "774 inc. Official Channels", .ja: "774 inc. 公式チャンネル"], members: [.nanashiOfficial]),
     
     // MARK: - Nori Pro
