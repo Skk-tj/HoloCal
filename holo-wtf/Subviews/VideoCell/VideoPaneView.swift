@@ -29,6 +29,11 @@ struct VideoPaneView: View {
                             ViewerCounterView(viewer: video.liveViewers ?? 0, memberOnly: video.isMengen)
                                 .padding(.trailing)
                             
+                            if video.isMengen {
+                                BlockMemberOnlyView()
+                                    .padding(.trailing)
+                            }
+                            
                             BlockLiveTimeView(liveTime: video.startActual)
                         case .upcoming:
                             BlockUpcomingTimeView(liveSchedule: video.startScheduled)
@@ -84,6 +89,7 @@ struct VideoPaneView: View {
 struct VideoPaneView_Previews: PreviewProvider {
     static var previews: some View {
         VideoPaneView(video: LiveVideo.previewLive, videoType: .live)
+        VideoPaneView(video: LiveVideo.previewLiveMemberOnly, videoType: .live)
         VideoPaneView(video: LiveVideo.previewLive, videoType: .live).preferredColorScheme(.dark)
     }
 }

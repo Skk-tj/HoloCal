@@ -103,7 +103,7 @@
 
 // Block Member Only View
 
-"BLOCK_MEMBER_ONLY_MEMBER" = "Member-only";
+"BLOCK_MEMBER_ONLY_MEMBER" = "Member";
 "BLOCK_MEMBER_ONLY_MEMBERSHIP" = "Membership";
 
 // Block Video Type View
