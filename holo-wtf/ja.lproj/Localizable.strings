@@ -70,24 +70,24 @@
 
 "LIVE_CELL_VIEW_MEMBER_ONLY_STREAM" = "メンバー限定";
 "LIVE_CELL_VIEW_PEOPLE_WATCHING %lld" = "%lld人が視聴中";
-"LIVE_CELL_VIEW_STARTED_AGO %@" = "%@前にライブ開始";
-"LIVE_CELL_VIEW_STARTED_AGO_SHORT %@" = "%@前";
+"LIVE_CELL_VIEW_STARTED_AGO %@" = "%@にライブ開始";
+"LIVE_CELL_VIEW_STARTED_AGO_SHORT %@" = "%@";
 "LIVE_CELL_VIEW_WAITING" = "待機中";
 
 "LIVE_CELL_VIEW_STARTED_AT %@" = "%@";
 
 // Upcoming Cell View
 
-"UPCOMING_CELL_VIEW_STARTING_IN %@" = "%@後に配信";
-"UPCOMING_CELL_VIEW_STARTING_IN_SHORT %@" = "%@後";
+"UPCOMING_CELL_VIEW_STARTING_IN %@" = "%@に配信";
+"UPCOMING_CELL_VIEW_STARTING_IN_SHORT %@" = "%@";
 "UPCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN" = "開始時間不明";
 "UPCOMING_CELL_VIEW_STARTING_AT %@" = "%@に予定";
 
 // Past Cell View
 
 "PAST_CELL_VIEW_ENDED_AT %@" = "%@にライブ配信";
-"PAST_CELL_VIEW_ENDED_SHORT %@" = "%@前";
-"PAST_CELL_VIEW_ENDED %@" = "%@前に配信済み";
+"PAST_CELL_VIEW_ENDED_SHORT %@" = "%@";
+"PAST_CELL_VIEW_ENDED %@" = "%@に配信済み";
 
 // Block Live Time View
 

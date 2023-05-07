@@ -2,7 +2,7 @@
 //  TextRollingView.swift
 //  holo-wtf
 //
-//  Created by Haoyi An on 2023-04-23.
+//
 //
 
 import SwiftUI

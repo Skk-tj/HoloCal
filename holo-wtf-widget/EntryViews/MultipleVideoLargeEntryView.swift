@@ -40,7 +40,7 @@ struct MultipleVideoLargeEntryView: View {
     
     var body: some View {
         BaseMultipleVideoLargeEntryView(entry: entry, mainView: { videos in
-            MultipleVideoLargeWidgetView(videos: Array(videos.prefix(4)), avatars: [Data()], videoType: videoType)
+            MultipleVideoLargeWidgetView(videos: videos, avatars: entry.images, videoType: videoType)
         }, titleView: {
             switch videoType {
             case .live:

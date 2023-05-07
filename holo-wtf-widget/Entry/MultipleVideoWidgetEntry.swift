@@ -12,7 +12,7 @@ struct MultipleVideoWidgetEntry: VideoTimelineEntry {
     let status: WidgetDataStatus
     
     let videos: [LiveVideo]
-    let thumbnails: [Data]
+    let images: [Data]
     
     let agency: WidgetDeepLinkAgency
 }

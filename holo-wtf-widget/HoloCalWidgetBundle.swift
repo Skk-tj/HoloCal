@@ -18,6 +18,16 @@ struct HoloCalWidgetBundle: WidgetBundle {
         MultipleLiveWidget()
         MultipleUpcomingWidget()
         MultiplePastWidget()
+        MultipleLiveLargeWidget()
+        MultipleUpcomingLargeWidget()
+        MultiplePastLargeWidget()
+        Bundle2().body
+    }
+}
+
+struct Bundle2: WidgetBundle {
+    @WidgetBundleBuilder
+    var body: some Widget {
         LiveChannelsWidget()
         UpcomingChannelsWidget()
         PastChannelsWidget()

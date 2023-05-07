@@ -340,7 +340,6 @@
 		F0F40976293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F40972293D6F46001C4F48 /* MultiLanguageNameView.swift */; };
 		F0FB8E0629CC19DE005E3FFD /* MultipleVideoLargeWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB8E0529CC19DE005E3FFD /* MultipleVideoLargeWidgetView.swift */; };
 		F0FB8E0829CC3B4E005E3FFD /* MultipleVideoLargeEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB8E0729CC3B4E005E3FFD /* MultipleVideoLargeEntryView.swift */; };
-		F0FB8E0A29CE97CF005E3FFD /* AllMultipleVideoEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB8E0929CE97CF005E3FFD /* AllMultipleVideoEntryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -640,7 +639,6 @@
 		F0F40972293D6F46001C4F48 /* MultiLanguageNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLanguageNameView.swift; sourceTree = "<group>"; };
 		F0FB8E0529CC19DE005E3FFD /* MultipleVideoLargeWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleVideoLargeWidgetView.swift; sourceTree = "<group>"; };
 		F0FB8E0729CC3B4E005E3FFD /* MultipleVideoLargeEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleVideoLargeEntryView.swift; sourceTree = "<group>"; };
-		F0FB8E0929CE97CF005E3FFD /* AllMultipleVideoEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMultipleVideoEntryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -731,7 +729,6 @@
 				F0186A2929AC793100339178 /* MultipleEntryViews.swift */,
 				F0186A2C29AC795400339178 /* ChannelsEntryView.swift */,
 				F0FB8E0729CC3B4E005E3FFD /* MultipleVideoLargeEntryView.swift */,
-				F0FB8E0929CE97CF005E3FFD /* AllMultipleVideoEntryView.swift */,
 			);
 			path = EntryViews;
 			sourceTree = "<group>";
@@ -1600,7 +1597,6 @@
 				F0DE326C29E1162D00DA0939 /* LiveTagView.swift in Sources */,
 				F0186A1E29AC773400339178 /* SmallEntryViews.swift in Sources */,
 				F04D1B3E283A304E0026340D /* VideoLiveWidgetProvider.swift in Sources */,
-				F0FB8E0A29CE97CF005E3FFD /* AllMultipleVideoEntryView.swift in Sources */,
 				F0186A2429AC779D00339178 /* AccessoryRectangularEntryViews.swift in Sources */,
 				F03A139428F2018000BB8E51 /* ChannelsView.swift in Sources */,
 				F0E06D0B29322C7800BF6812 /* BlockMemberOnlyView.swift in Sources */,
@@ -2151,7 +2147,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 216;
+				CURRENT_PROJECT_VERSION = 217;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -2170,7 +2166,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 2.5.6;
+				MARKETING_VERSION = 2.5.7;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2219,7 +2215,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 216;
+				CURRENT_PROJECT_VERSION = 217;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2232,7 +2228,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 2.5.6;
+				MARKETING_VERSION = 2.5.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

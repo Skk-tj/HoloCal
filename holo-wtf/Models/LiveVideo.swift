@@ -24,11 +24,11 @@ struct LiveVideo: Codable, Identifiable, Hashable {
     var songs: [SongInStream]?
     var channel: Channel
     
-    static let previewLive = LiveVideo(id: "abcd", title: "my debut live", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, availableAt: Date(), publishedAt: Date(), liveViewers: 12345, mentions: [Channel.testChannel, Channel.testChannel2], duration: 0, songs: nil, channel: Channel.testChannel)
+    static let previewLive = LiveVideo(id: "abcd1", title: "my debut live", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, availableAt: Date(), publishedAt: Date(), liveViewers: 12345, mentions: [Channel.testChannel, Channel.testChannel2], duration: 0, songs: nil, channel: Channel.testChannel)
     
-    static let previewLive2 = LiveVideo(id: "abcd", title: "my debut live super long title Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, availableAt: Date(), publishedAt: Date(), liveViewers: 12345, mentions: [Channel.testChannel, Channel.testChannel2], duration: 0, songs: nil, channel: Channel.testChannel)
+    static let previewLive2 = LiveVideo(id: "abcd2", title: "my debut live super long title Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, availableAt: Date(), publishedAt: Date(), liveViewers: 12345, mentions: [Channel.testChannel, Channel.testChannel2], duration: 0, songs: nil, channel: Channel.testChannel)
     
-    static let previewLiveMemberOnly = LiveVideo(id: "abcd", title: "my debut live member only", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, availableAt: Date(), publishedAt: Date(), liveViewers: 12345, mentions: [Channel.testChannel, Channel.testChannel2], duration: 500, songs: nil, channel: Channel.testChannel)
+    static let previewLiveMemberOnly = LiveVideo(id: "abcd3", title: "my debut live member only", topicId: "game", startScheduled: Date(), startActual: Date() + 4000, availableAt: Date(), publishedAt: Date(), liveViewers: 12345, mentions: [Channel.testChannel, Channel.testChannel2], duration: 500, songs: nil, channel: Channel.testChannel)
     
     var url: URL? {
         URL(string: "https://www.youtube.com/watch?v=\(id)")

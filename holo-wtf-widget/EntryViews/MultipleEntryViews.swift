@@ -55,9 +55,9 @@ struct MultipleWidgetEntryView: View {
     
     var body: some View {
         BaseMultipleViewEntryView(entry: entry, twoVideosView: { v1, v2 in
-            MultipleWidgetView(leftVideo: v1, leftVideoThumbnail: entry.thumbnails.first ?? Data(), rightVideo: v2, rightVideoThumbnail: entry.thumbnails.last ?? Data(), videoType: videoType)
+            MultipleWidgetView(leftVideo: v1, leftVideoThumbnail: entry.images.first ?? Data(), rightVideo: v2, rightVideoThumbnail: entry.images.last ?? Data(), videoType: videoType)
         }, singleVideoView: { video in
-            WidgetMediumView(video: video, videoThumbnail: entry.thumbnails.first ?? Data(), videoType: videoType)
+            WidgetMediumView(video: video, videoThumbnail: entry.images.first ?? Data(), videoType: videoType)
         }, titleView: {
             switch videoType {
             case .live:
