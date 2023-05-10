@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct LiveTitleView: View {
     var body: some View {
@@ -22,5 +23,18 @@ struct LiveTitleView: View {
 struct LiveTitleView_Previews: PreviewProvider {
     static var previews: some View {
         LiveTitleView()
+#if os(iOS)
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
+#else
+            .previewContext(WidgetPreviewContext(family: .accessoryCircular))
+#endif
+        
+        LiveTitleView()
+            .environment(\.locale, .init(identifier: "ja"))
+#if os(iOS)
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
+#else
+            .previewContext(WidgetPreviewContext(family: .accessoryCircular))
+#endif
     }
 }

@@ -20,7 +20,7 @@ struct MultipleVideoLargeWidgetView: View {
                 HStack {
                     SmallWidgetAvatarView(avatarData: item.1)
                     VStack(alignment: .leading) {
-                        Text(item.0.title + "test")
+                        Text(item.0.title)
                             .lineLimit(2)
                         HStack {
                             Text("\(item.0.channel.getTalentName())")

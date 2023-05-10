@@ -17,18 +17,19 @@ struct BaseMultipleVideoLargeEntryView<MainContent: View, TitleContent: View>: V
         VStack {
             titleView()
             
-            Spacer()
-            
             switch entry.status {
             case .ok:
                 mainView(entry.videos)
+                Spacer()
             case .noVideo:
+                Spacer()
                 NoStreamView()
+                Spacer()
             case .network:
+                Spacer()
                 NetworkErrorView()
+                Spacer()
             }
-            
-            Spacer()
         }
         .padding()
     }
