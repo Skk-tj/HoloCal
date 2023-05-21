@@ -211,6 +211,17 @@
 "CALENDAR_ACCESS_TITLE" = "Calendar Access";
 "CALENDAR_ACCESS_MESSAGE" = "Calendar access is disabled. Please check your privacy settings.";
 
+// Notification access
+"NOTIFICATION_ACCESS_TITLE" = "Notification Access";
+"NOTIFICATION_ACCESS_MESSAGE" = "Notification access is disabled. Please review your privacy settings.";
+
+"NOTIFICATION_ERROR_TITLE" = "Notification error";
+"NOTIFICATION_ERROR_MESSAGE" = "There was an error scheduling this notification.";
+
+// Notifications
+"NOTIFICATION_CANCEL_NOTIFICATION" = "Cancel notification";
+"NOTIFICATION_MINUTES_BEFORE %lld" = "%lld minutes before";
+
 // Search prompt
 "SEARCH_BY_NAME_OR_TAG" = "Search by name or tag";
 

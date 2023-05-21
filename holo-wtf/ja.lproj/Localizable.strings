@@ -216,6 +216,17 @@
 "CALENDAR_ACCESS_TITLE" = "カレンダーアクセス許可";
 "CALENDAR_ACCESS_MESSAGE" = "カレンダーにアクセスできません。プライバシー設定をご確認ください。";
 
+// Notification access
+"NOTIFICATION_ACCESS_TITLE" = "通知アクセス許可";
+"NOTIFICATION_ACCESS_MESSAGE" = "通知にアクセスできません。プライバシー設定をご確認ください。";
+
+"NOTIFICATION_ERROR_TITLE" = "エラー";
+"NOTIFICATION_ERROR_MESSAGE" = "エラーが発生しました。";
+
+// Notifications
+"NOTIFICATION_CANCEL_NOTIFICATION" = "通知をキャンセル";
+"NOTIFICATION_MINUTES_BEFORE %lld" = "%lld分前";
+
 // Search prompt
 "SEARCH_BY_NAME_OR_TAG" = "名前またはタグで検索";
 

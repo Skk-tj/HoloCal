@@ -61,7 +61,7 @@ struct PaneViewButtonRowView: View {
                 Menu(content: {
                     Picker(selection: selectedNotificationBinding, label: Text("Select notification")) {
                         ForEach(NotificationMinutesBefore.allCases, id: \.self) { minute in
-                            Text("\(minute.toActualNumber()) minutes before").tag(Optional(minute))
+                            Text("NOTIFICATION_MINUTES_BEFORE \(minute.toActualNumber())").tag(Optional(minute))
                         }
                     }
                     
@@ -69,7 +69,7 @@ struct PaneViewButtonRowView: View {
                         Button(role: .destructive, action: {
                             cancelNotification(video: video)
                         }, label: {
-                            Label("Cancel Notification", systemImage: "bell.slash")
+                            Label("NOTIFICATION_CANCEL_NOTIFICATION", systemImage: "bell.slash")
                         })
                     }
                     
