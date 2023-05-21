@@ -9,6 +9,7 @@ import Foundation
 import UserNotifications
 import SwiftUI
 import OSLog
+import Sentry
 
 struct LiveVideoNotification: Codable {
     let minutesBefore: NotificationMinutesBefore
@@ -36,7 +37,6 @@ typealias LiveVideoToNotification = [String: LiveVideoNotification]
 
 func scheduledNotification(@AppStorage(UserDefaultKeys.notifications) storage: Data, video: LiveVideo, minutesBefore: NotificationMinutesBefore) throws {
     let notifications = UserDefaults.standard.data(forKey: UserDefaultKeys.notifications) ?? Data()
-    let minutes = minutesBefore.toActualNumber()
     
     let isScheduled = isNotificationScheduledFor(storage: notifications, thisVideo: video)
     let notificationCenter = UNUserNotificationCenter.current()
@@ -69,10 +69,9 @@ func addNotificationToCenter(@AppStorage(UserDefaultKeys.notifications) storage:
     let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)
     
     let content = UNMutableNotificationContent()
-    content.title = "Stream from \(video.channel.getTalentName()) starting in 5 minutes"
+    content.title = String.localizedStringWithFormat(NSLocalizedString("NOTIFICATION_TITLE %@ %lld", comment: ""), video.channel.getTalentName(), minutesBefore.toActualNumber())
     content.subtitle = video.channel.name
-    // TODO: Localization
-    content.body = "\(video.channel.getTalentName())'s stream: \(video.title) is starting in 5 minutes."
+    content.body = String.localizedStringWithFormat(NSLocalizedString("NOTIFICATION_BODY %@ %@ %lld", comment: ""), video.channel.getTalentName(), video.title, minutesBefore.toActualNumber())
     
     // Create the request
     let uuid = UUID()
@@ -81,8 +80,9 @@ func addNotificationToCenter(@AppStorage(UserDefaultKeys.notifications) storage:
     // Schedule the request with the system.
     
     notificationCenter.add(request) { (error) in
-        if error != nil {
+        if let error {
             Logger().error("Cannot schedule notification for video: \(video.id), the scheduled date is \(dateComponent)")
+            SentrySDK.capture(error: error)
         }
     }
     
@@ -110,7 +110,6 @@ func addVideoToNotificationCenterTest(video: LiveVideo) throws {
         let content = UNMutableNotificationContent()
         content.title = "Stream from \(video.channel.getTalentName()) starting in 5 minutes"
         content.subtitle = video.channel.name
-        // TODO: Localization
         content.body = "\(video.channel.getTalentName())'s stream: \(video.title) is starting in 5 minutes."
         
         // Create the request

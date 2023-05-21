@@ -204,6 +204,7 @@ enum MultipleVideoImageGetMethod {
     case avatar
 }
 
+// swiftlint:disable function_parameter_count
 func getMultipleEntry(for agency: IntentAgency, videoType: VideoType, sortBy: IntentSortBy, filterBy filterAlgorithm: (LiveVideo) -> Bool, prefix: Int, imageGet: MultipleVideoImageGetMethod) async -> MultipleVideoWidgetEntry {
     do {
         var lives = try await getAndFilterAndSortVideosCommon(for: agency, videoType: videoType, sortBy: sortBy, filterBy: filterAlgorithm)
@@ -234,6 +235,7 @@ func getMultipleEntry(for agency: IntentAgency, videoType: VideoType, sortBy: In
         return entry
     }
 }
+// swiftlint:enable function_parameter_count
 
 func getChannelsEntry(for agency: IntentAgency, videoType: VideoType, sortBy: IntentSortBy, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> ChannelsEntry {
     do {

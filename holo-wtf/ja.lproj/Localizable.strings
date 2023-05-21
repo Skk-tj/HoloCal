@@ -227,6 +227,9 @@
 "NOTIFICATION_CANCEL_NOTIFICATION" = "通知をキャンセル";
 "NOTIFICATION_MINUTES_BEFORE %lld" = "%lld分前";
 
+"NOTIFICATION_TITLE %@ %lld" = "%@からの配信は%lld分後にスタートします。";
+"NOTIFICATION_BODY %@ %@ %lld" = "%@からの配信「%@」は%lld分後にスタートします。";
+
 // Search prompt
 "SEARCH_BY_NAME_OR_TAG" = "名前またはタグで検索";
 

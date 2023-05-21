@@ -222,6 +222,9 @@
 "NOTIFICATION_CANCEL_NOTIFICATION" = "Cancel notification";
 "NOTIFICATION_MINUTES_BEFORE %lld" = "%lld minutes before";
 
+"NOTIFICATION_TITLE %@ %lld" = "Stream from %@ starting in %lld minutes.";
+"NOTIFICATION_BODY %@ %@ %lld" = "%@'s stream \"%@\" is starting in %lld minutes.";
+
 // Search prompt
 "SEARCH_BY_NAME_OR_TAG" = "Search by name or tag";
 
