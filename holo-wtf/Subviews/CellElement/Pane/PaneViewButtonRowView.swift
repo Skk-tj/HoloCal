@@ -11,14 +11,42 @@ import EventKit
 struct PaneViewButtonRowView: View {
     @Environment(\.dismiss) var dismiss
     
-    @State var isAddToCalendarSheetPresented: Bool = false
-    @State var isCalendarAccessAlertPresented: Bool = false
-    @State var isShowingSheet: Bool = false
+    @State var isAddToCalendarSheetPresented = false
+    @State var isCalendarAccessAlertPresented = false
+    @State var isShowingSheet = false
+    @State var isNotificationAccessAlertPresented = false
+    @State var isNotificationScheduleErrorPresented = false
+    
+    @AppStorage(UserDefaultKeys.notifications) var scheduledNotifications: Data = (try? JSONEncoder().encode(LiveVideoToNotification())) ?? Data()
     
     let video: LiveVideo
     let showCalendar: Bool
     
     var body: some View {
+        let selectedNotificationBinding: Binding<NotificationMinutesBefore?> = Binding(get: {
+            let isScheduled = isNotificationScheduledFor(storage: scheduledNotifications, thisVideo: video)
+            switch isScheduled {
+            case .yes(let result):
+                return result.minutesBefore
+            case .no:
+                return nil
+            }
+        }, set: { value in
+            if let value {
+                let center = UNUserNotificationCenter.current()
+                center.requestAuthorization(options: [.alert, .sound]) { _, error in
+                    if error != nil {
+                        self.isNotificationAccessAlertPresented = true
+                    }
+                    do {
+                        try scheduledNotification(storage: scheduledNotifications, video: video, minutesBefore: value)
+                    } catch {
+                        self.isNotificationScheduleErrorPresented = true
+                    }
+                }
+            }
+        })
+        
         ControlGroup {
             ShareLink(item: URL(string: "https://www.youtube.com/watch?v=\(video.id)")!, label: {
                 Label("LINKED_VIDEO_SWIPE_ACTIONS_SHARE", systemImage: "square.and.arrow.up")
@@ -30,19 +58,56 @@ struct PaneViewButtonRowView: View {
             Spacer()
             
             if showCalendar {
-                Button(action: {
-                    let eventStore: EKEventStore = EKEventStore()
-                    eventStore.requestAccess(to: .event) { (granted, error) in
-                        if (granted) && (error == nil) {
-                            DispatchQueue.main.async {
-                                self.isAddToCalendarSheetPresented = true
-                            }
-                        } else {
-                            self.isCalendarAccessAlertPresented = true
+                Menu(content: {
+                    Picker(selection: selectedNotificationBinding, label: Text("Select notification")) {
+                        ForEach(NotificationMinutesBefore.allCases, id: \.self) { minute in
+                            Text("\(minute.toActualNumber()) minutes before").tag(Optional(minute))
                         }
                     }
+                    
+                    if selectedNotificationBinding.wrappedValue != nil {
+                        Button(role: .destructive, action: {
+                            cancelNotification(video: video)
+                        }, label: {
+                            Label("Cancel Notification", systemImage: "bell.slash")
+                        })
+                    }
+                    
+                    #if DEBUG
+                    Button("Test notification") {
+                        let center = UNUserNotificationCenter.current()
+                        center.requestAuthorization(options: [.alert, .sound]) { _, error in
+                            if error != nil {
+                                self.isNotificationAccessAlertPresented = true
+                            }
+                            do {
+                                try addVideoToNotificationCenterTest(video: video)
+                            } catch {
+                                self.isNotificationScheduleErrorPresented = true
+                            }
+                        }
+                    }
+                    #endif
+
+                    Section {
+                        Button(action: {
+                            let eventStore: EKEventStore = EKEventStore()
+                            eventStore.requestAccess(to: .event) { (granted, error) in
+                                if (granted) && (error == nil) {
+                                    DispatchQueue.main.async {
+                                        self.isAddToCalendarSheetPresented = true
+                                    }
+                                } else {
+                                    self.isCalendarAccessAlertPresented = true
+                                }
+                            }
+                        }, label: {
+                            Label("VIDEO_CONTEXT_MENU_ADD_TO_CALENDAR", systemImage: "calendar.badge.plus")
+                        })
+                    }
+                    
                 }, label: {
-                    Label("VIDEO_CONTEXT_MENU_ADD_TO_CALENDAR", systemImage: "calendar.badge.plus")
+                    Label("", systemImage: selectedNotificationBinding.wrappedValue != nil ? "bell.badge" : "bell")
                         .labelStyle(.iconOnly)
                 })
                 .buttonStyle(.borderless)
@@ -54,6 +119,16 @@ struct PaneViewButtonRowView: View {
                     Button("OK", role: .cancel) { }
                 }, message: {
                     Text("CALENDAR_ACCESS_MESSAGE")
+                })
+                .alert("NOTIFICATION_ACCESS_TITLE", isPresented: $isNotificationAccessAlertPresented, actions: {
+                    Button("OK", role: .cancel) { }
+                }, message: {
+                    Text("NOTIFICATION_ACCESS_MESSAGE")
+                })
+                .alert("NOTIFICATION_ERROR_TITLE", isPresented: $isNotificationScheduleErrorPresented, actions: {
+                    Button("OK", role: .cancel) { }
+                }, message: {
+                    Text("NOTIFICATION_ERROR_MESSAGE")
                 })
                 .hoverEffect()
                 

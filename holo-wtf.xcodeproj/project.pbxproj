@@ -215,6 +215,7 @@
 		F093D1E0282FAA0500E2A6FF /* TopicTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0ED2B12280CB73D00683E6C /* TopicTagView.swift */; };
 		F093D1E5283034DA00E2A6FF /* TalentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A04E27F95D9E00DBC08D /* TalentData.swift */; };
 		F093D1E82830359900E2A6FF /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657D527732690004AF802 /* Util.swift */; };
+		F09400E92A134D1100DAE43E /* NotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09400E82A134D1100DAE43E /* NotificationUtil.swift */; };
 		F0954BDE2817B73E00369EC4 /* SearchSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BDD2817B73E00369EC4 /* SearchSectionView.swift */; };
 		F0954BE62817C8BF00369EC4 /* GenerationFilteredForEachVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BE52817C8BF00369EC4 /* GenerationFilteredForEachVideoView.swift */; };
 		F0954BEC2817D63100369EC4 /* VideoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0954BEB2817D63100369EC4 /* VideoListView.swift */; };
@@ -569,6 +570,7 @@
 		F093D1C6282C32D100E2A6FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F093D1C8282C32D100E2A6FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFetchService.swift; sourceTree = "<group>"; };
+		F09400E82A134D1100DAE43E /* NotificationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUtil.swift; sourceTree = "<group>"; };
 		F0954BDD2817B73E00369EC4 /* SearchSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSectionView.swift; sourceTree = "<group>"; };
 		F0954BE52817C8BF00369EC4 /* GenerationFilteredForEachVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationFilteredForEachVideoView.swift; sourceTree = "<group>"; };
 		F0954BEB2817D63100369EC4 /* VideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListView.swift; sourceTree = "<group>"; };
@@ -804,6 +806,7 @@
 				F099C67C29CFA3E600596C7F /* WidgetConstants.swift */,
 				F099C68129CFA43B00596C7F /* WidgetUtils.swift */,
 				F01EB30D29D170E8001A17AF /* VideoSorting.swift */,
+				F09400E82A134D1100DAE43E /* NotificationUtil.swift */,
 			);
 			path = SharedUtil;
 			sourceTree = "<group>";
@@ -1696,6 +1699,7 @@
 				F0DC617629DA28B9009D1051 /* VideoPaneView.swift in Sources */,
 				F0DC616E29DA16E8009D1051 /* VideoFavouritesViewToolbar.swift in Sources */,
 				F0789B8829AB3CB400346239 /* BlockPastTimeView.swift in Sources */,
+				F09400E92A134D1100DAE43E /* NotificationUtil.swift in Sources */,
 				F02211A9292E1E4B009EC2CC /* PaneViewChannelInfoView.swift in Sources */,
 				F0CEE36429BE006600AFB565 /* AgencyNavigationView.swift in Sources */,
 				F09049B029F647490033B121 /* TextRollingView.swift in Sources */,
@@ -2147,7 +2151,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 219;
+				CURRENT_PROJECT_VERSION = 220;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -2166,7 +2170,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 2.5.8;
+				MARKETING_VERSION = 2.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2215,7 +2219,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 219;
+				CURRENT_PROJECT_VERSION = 220;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2228,7 +2232,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 2.5.8;
+				MARKETING_VERSION = 2.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

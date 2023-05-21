@@ -91,6 +91,7 @@ enum UserDefaultKeys {
     static let isShowingCompactInPastView = "isShowingCompactInPastView"
     static let isShowingDSTReminder = "isShowingDSTReminder"
     static let dstDays = "dstDays"
+    static let notifications = "notifications"
 }
 
 enum UserActivityKeys {
