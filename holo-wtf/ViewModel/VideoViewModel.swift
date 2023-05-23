@@ -42,6 +42,7 @@ class VideoViewModel: ObservableObject {
     
     let agency: AgencyEnum
     let videoUrl: String
+    let videoType: VideoType
     
     var error: VideoFetchServiceError?
     
@@ -50,6 +51,7 @@ class VideoViewModel: ObservableObject {
         self.dataStatus = .working
         self.agency = agency
         self.sortingStrategy = .notSorting
+        self.videoType = videoType
         
         switch videoType {
         case .live:
@@ -205,7 +207,7 @@ class VideoViewModel: ObservableObject {
         case .endedLast:
             self.videoList.sort(by: pastSortStrategy)
             self.videoList = self.videoList.reversed()
-        default:
+        case .notSorting:
             return
         }
     }

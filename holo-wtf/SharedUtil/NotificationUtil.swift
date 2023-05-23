@@ -11,8 +11,9 @@ import SwiftUI
 import OSLog
 import Sentry
 
-struct LiveVideoNotification: Codable {
+struct LiveVideoNotification: Codable, Hashable {
     let minutesBefore: NotificationMinutesBefore
+    let finalNotificationTime: Date
     let notificationIdentifier: UUID
 }
 
@@ -31,9 +32,14 @@ enum NotificationMinutesBefore: CaseIterable, Codable {
             return 20
         }
     }
+    
+    func getManagementDescription() -> String {
+        return String(format: NSLocalizedString("NOTIFICATION_MINUTES_BEFORE %lld", comment: ""), self.toActualNumber())
+        // return String.localizedStringWithFormat("NOTIFICATION_MINUTES_BEFORE %lld", self.toActualNumber())
+    }
 }
 
-typealias LiveVideoToNotification = [String: LiveVideoNotification]
+typealias LiveVideoToNotification = [LiveVideo: LiveVideoNotification]
 
 func scheduledNotification(@AppStorage(UserDefaultKeys.notifications) storage: Data, video: LiveVideo, minutesBefore: NotificationMinutesBefore) throws {
     let notifications = UserDefaults.standard.data(forKey: UserDefaultKeys.notifications) ?? Data()
@@ -69,16 +75,17 @@ func addNotificationToCenter(@AppStorage(UserDefaultKeys.notifications) storage:
     let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)
     
     let content = UNMutableNotificationContent()
-    content.title = String.localizedStringWithFormat(NSLocalizedString("NOTIFICATION_TITLE %@ %lld", comment: ""), video.channel.getTalentName(), minutesBefore.toActualNumber())
+    // content.title = String.localizedStringWithFormat(NSLocalizedString("NOTIFICATION_TITLE %@ %lld", comment: ""), video.channel.getTalentName(), minutesBefore.toActualNumber())
+    content.title = NSString.localizedUserNotificationString(forKey: "NOTIFICATION_TITLE %@ %lld", arguments: [video.channel.getTalentName(), minutesBefore.toActualNumber()])
     content.subtitle = video.channel.name
-    content.body = String.localizedStringWithFormat(NSLocalizedString("NOTIFICATION_BODY %@ %@ %lld", comment: ""), video.channel.getTalentName(), video.title, minutesBefore.toActualNumber())
+    content.body = NSString.localizedUserNotificationString(forKey: "NOTIFICATION_BODY %@ %@ %lld", arguments: [video.channel.getTalentName(), video.title, minutesBefore.toActualNumber()])
+    // content.body = String.localizedStringWithFormat(NSLocalizedString("NOTIFICATION_BODY %@ %@ %lld", comment: ""), video.channel.getTalentName(), video.title, minutesBefore.toActualNumber())
     
     // Create the request
     let uuid = UUID()
     let request = UNNotificationRequest(identifier: uuid.uuidString, content: content, trigger: trigger)
     
     // Schedule the request with the system.
-    
     notificationCenter.add(request) { (error) in
         if let error {
             Logger().error("Cannot schedule notification for video: \(video.id), the scheduled date is \(dateComponent)")
@@ -86,7 +93,7 @@ func addNotificationToCenter(@AppStorage(UserDefaultKeys.notifications) storage:
         }
     }
     
-    addToNotificationSchedule(storage: storage, thisVideo: video, notificationIdentifier: uuid, minutesBefore: minutesBefore)
+    addToNotificationSchedule(storage: storage, thisVideo: video, notificationIdentifier: uuid, minutesBefore: minutesBefore, finalNotificationTime: notificationTime)
 }
 
 func addVideoToNotificationCenterTest(video: LiveVideo) throws {
@@ -150,31 +157,53 @@ enum NotificationError: Error {
     case invalidDate
     case alreadyScheduled
     case notificationCenterError
+    case cannotDecode(String)
+    case cannotEncode(LiveVideoToNotification)
 }
 
 func isNotificationScheduledFor(@AppStorage(UserDefaultKeys.notifications) storage: Data, thisVideo: LiveVideo) -> IsNotificationScheduled {
-    guard let deserialized = try? JSONDecoder().decode(LiveVideoToNotification.self, from: storage) else { return .no }
+    guard let deserialized = try? JSONDecoder().decode(LiveVideoToNotification.self, from: storage) else {
+        SentrySDK.capture(error: NotificationError.cannotDecode(String(decoding: storage, as: UTF8.self)))
+        return .no
+    }
     
-    if let notification = deserialized[thisVideo.id] {
+    if let notification = deserialized[thisVideo] {
         return .yes(notification)
     }
     
     return .no
 }
 
-func addToNotificationSchedule(@AppStorage(UserDefaultKeys.notifications) storage: Data, thisVideo: LiveVideo, notificationIdentifier: UUID, minutesBefore: NotificationMinutesBefore) {
-    guard var deserialized = try? JSONDecoder().decode(LiveVideoToNotification.self, from: storage) else { return }
+func addToNotificationSchedule(@AppStorage(UserDefaultKeys.notifications) storage: Data, thisVideo: LiveVideo, notificationIdentifier: UUID, minutesBefore: NotificationMinutesBefore, finalNotificationTime: Date) {
+    guard var deserialized = try? JSONDecoder().decode(LiveVideoToNotification.self, from: storage) else {
+        SentrySDK.capture(error: NotificationError.cannotDecode(String(decoding: storage, as: UTF8.self)))
+        return
+    }
     let copy = storage
     
-    let notificationSchedule = LiveVideoNotification(minutesBefore: minutesBefore, notificationIdentifier: notificationIdentifier)
-    deserialized[thisVideo.id] = notificationSchedule
+    let notificationSchedule = LiveVideoNotification(minutesBefore: minutesBefore, finalNotificationTime: finalNotificationTime, notificationIdentifier: notificationIdentifier)
+    deserialized[thisVideo] = notificationSchedule
     
-    storage = (try? JSONEncoder().encode(deserialized)) ?? copy
+    if let serialized = try? JSONEncoder().encode(deserialized) {
+        storage = serialized
+    } else {
+        SentrySDK.capture(error: NotificationError.cannotEncode(deserialized))
+        storage = copy
+    }
 }
 
 func removeNotificationSchedule(@AppStorage(UserDefaultKeys.notifications) storage: Data, video: LiveVideo) {
-    guard var deserialized = try? JSONDecoder().decode(LiveVideoToNotification.self, from: storage) else { return }
+    guard var deserialized = try? JSONDecoder().decode(LiveVideoToNotification.self, from: storage) else {
+        SentrySDK.capture(error: NotificationError.cannotDecode(String(decoding: storage, as: UTF8.self)))
+        return
+    }
     let copy = storage
-    deserialized.removeValue(forKey: video.id)
-    storage = (try? JSONEncoder().encode(deserialized)) ?? copy
+    deserialized.removeValue(forKey: video)
+    
+    if let serialized = try? JSONEncoder().encode(deserialized) {
+        storage = serialized
+    } else {
+        SentrySDK.capture(error: NotificationError.cannotEncode(deserialized))
+        storage = copy
+    }
 }

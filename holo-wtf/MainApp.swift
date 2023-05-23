@@ -18,16 +18,14 @@ struct MainApp: App {
     @AppStorage("excludedGenerations") var excludedGenerations = Set<Generation>()
     
     @AppStorage("generationListOrderNew") var generateListOrder: Data = (try? JSONEncoder().encode(agencyEnumToGenerations)) ?? Data()
+    @AppStorage(UserDefaultKeys.notifications) var scheduledNotifications: Data = (try? JSONEncoder().encode(LiveVideoToNotification())) ?? Data()
     
     init() {
         if let sentryDsn = Bundle.main.object(forInfoDictionaryKey: "SENTRY_DSN") as? String {
             SentrySDK.start { options in
                 options.dsn = sentryDsn
-                // options.debug = true // Enabled debug when first installing is always helpful
 #if DEBUG
                 options.environment = "Debug"
-                // Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
-                // We recommend adjusting this value in production.
                 options.tracesSampleRate = 1.0
 #else
                 options.environment = "Release"
@@ -72,6 +70,12 @@ struct MainApp: App {
         
         favourited.removeAll { favourite in
             toRemove.contains(where: { $0 == favourite })
+        }
+        
+        // MARK: - If the shape of `LiveVideoToNotification` changes, then we need to delete the data
+        let deserialized = try? JSONDecoder().decode(LiveVideoToNotification.self, from: scheduledNotifications)
+        if deserialized == nil {
+            scheduledNotifications = (try? JSONEncoder().encode(LiveVideoToNotification())) ?? Data()
         }
     }
     

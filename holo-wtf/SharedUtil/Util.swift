@@ -9,6 +9,10 @@ import Foundation
 import EventKit
 import SwiftUI
 
+#if canImport(Sentry)
+import Sentry
+#endif
+
 func getRelativeTimeString(for: Date) -> String {
     let formatter = RelativeDateTimeFormatter()
     formatter.unitsStyle = .abbreviated
@@ -167,26 +171,4 @@ func getWidgetUpcomingUrl(for agency: AgencyEnum) -> String {
 
 func getPastUrl(for agency: AgencyEnum) -> String {
     return "https://holodex.net/api/v2/videos?status=past&type=stream&include=songs,mentions&org=\(agency.rawValue)"
-}
-
-func getGenerationOrderList(@AppStorage("generationListOrderNew") from data: Data, agency: AgencyEnum) -> [Generation] {
-    guard let deserialized = try? JSONDecoder().decode([AgencyEnum: [Generation]].self, from: data) else {
-        return agencyEnumToGenerations[agency]!
-    }
-    
-    return deserialized[agency] ?? agencyEnumToGenerations[agency]!
-}
-
-func appendNewGenerationOrderList(@AppStorage("generationListOrderNew") to data: Data, order: [Generation], agency: AgencyEnum) {
-    guard var deserialized = try? JSONDecoder().decode([AgencyEnum: [Generation]].self, from: data) else { return }
-    deserialized[agency]!.append(contentsOf: order)
-    
-    data = (try? JSONEncoder().encode(deserialized)) ?? Data()
-}
-
-func overwriteNewGenerationOrderList(@AppStorage("generationListOrderNew") to data: Data, order: [Generation], agency: AgencyEnum) {
-    guard var deserialized = try? JSONDecoder().decode([AgencyEnum: [Generation]].self, from: data) else { return }
-    deserialized[agency] = order
-    
-    data = (try? JSONEncoder().encode(deserialized)) ?? Data()
 }

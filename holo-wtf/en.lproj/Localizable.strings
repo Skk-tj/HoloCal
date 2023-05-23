@@ -61,6 +61,14 @@
 "SETTINGS_EMAIL_SUPPORT" = "Email Support";
 "SETTINGS_SUPPORT_PAGE" = "Support Page";
 
+"SETTINGS_NOTIFICATION" = "Notification";
+"SETTINGS_MANAGE_NOTIFICATION" = "Manage Notifications";
+
+"SETTINGS_NOTIFICATION_NO_NOTIFICATION_SCHEDULED" = "No notification scheduled";
+"SETTINGS_NOTIFICATION_CANCEL_NOTIFICATION" = "Cancel notification";
+"SETTINGS_NOTIFICATION_CANCEL_ALL_NOTIFICATIONS" = "Cancel all notifications";
+"SETTINGS_NOTIFICATION_WILL_BE_DELIVERED_AT %@" = "Will be delivered at %@";
+
 // OpenSourceView
 
 "OPEN_SOURCE_VIEW_TITLE" = "Open Source";

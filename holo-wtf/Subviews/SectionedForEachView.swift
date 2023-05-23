@@ -27,7 +27,20 @@ struct SectionedForEachView<Content: View>: View {
             generationListSelection.contains(element.key)
         }
         
-        let sortedFilteredGroupedDictionary = filteredGroupedDictionary.sorted { kv1, kv2 in
+        let orderedFiltered = filteredGroupedDictionary.compactMapValues { videos in
+            return videos.sorted { v1, v2 in
+                switch viewModel.videoType {
+                case .live:
+                    return liveSortStrategy(l1: v1, l2: v2)
+                case .upcoming:
+                    return upcomingSortStrategy(l1: v1, l2: v2)
+                case .past:
+                    return pastSortStrategy(l1: v1, l2: v2)
+                }
+            }
+        }
+        
+        let sortedFilteredGroupedDictionary = orderedFiltered.sorted { kv1, kv2 in
             let orderOfFirst: Int = AgencyEnum.allCases.map {
                 getGenerationOrderList(from: generateListOrder, agency: $0).firstIndex(of: kv1.key) ?? -1
             }.first { $0 != -1 } ?? 0
