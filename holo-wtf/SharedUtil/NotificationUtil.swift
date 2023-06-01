@@ -153,12 +153,27 @@ enum IsNotificationScheduled {
     case yes(LiveVideoNotification)
 }
 
-enum NotificationError: Error {
+enum NotificationError: LocalizedError {
     case invalidDate
     case alreadyScheduled
     case notificationCenterError
     case cannotDecode(String)
     case cannotEncode(LiveVideoToNotification)
+    
+    var errorDescription: String? {
+        switch self {
+        case .invalidDate:
+            return "The scheduled notification date was invalid"
+        case .alreadyScheduled:
+            return "A notification has already been scheduled for this stream."
+        case .notificationCenterError:
+            return "notification center error"
+        case .cannotDecode(let string):
+            return "Cannot decode the notification storage from UserDefault, the string is \(string)"
+        case .cannotEncode(let liveVideoToNotification):
+            return "Cannot encode the notification storage object, the struct is \(liveVideoToNotification)"
+        }
+    }
 }
 
 func isNotificationScheduledFor(@AppStorage(UserDefaultKeys.notifications) storage: Data, thisVideo: LiveVideo) -> IsNotificationScheduled {
