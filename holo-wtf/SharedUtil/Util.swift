@@ -112,7 +112,7 @@ extension Bundle {
     public var appBuild: String { getInfo("CFBundleVersion") }
     public var appVersionLong: String { getInfo("CFBundleShortVersionString") }
     
-    public var codeName: String { "Hitogata" }
+    public var codeName: String { "Moonlight Seeker" }
     
     fileprivate func getInfo(_ str: String) -> String { infoDictionary?[str] as? String ?? "⚠️" }
 }

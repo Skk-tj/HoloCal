@@ -103,8 +103,7 @@ let agencyEnumToGenerations: [AgencyEnum: [Generation]] = [
     .noriPro: [
         .noriProSolo,
         .noriPro1stGen,
-        .noriProGamers,
-        .noriProMusic
+        .noriProGamers
     ],
     .vspo: [
         .lupinus,

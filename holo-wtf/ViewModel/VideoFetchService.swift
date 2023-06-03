@@ -11,10 +11,21 @@ import OSLog
 import Sentry
 #endif
 
-enum VideoFetchServiceError: Error {
+enum VideoFetchServiceError: LocalizedError {
     case apiUrlError
     case serialization
     case network(Int)
+    
+    var errorDescription: String? {
+        switch self {
+        case .apiUrlError:
+            return "API URL error during the initialization stage"
+        case .serialization:
+            return "Serialization error"
+        case .network(let int):
+            return "Network error \(int)"
+        }
+    }
 }
 
 func getVideos(from url: String) async throws -> [LiveVideo] {
@@ -99,8 +110,10 @@ func getTwitterId(for channel: Channel) async throws -> String? {
         return responseResult.twitter
     } catch {
         logger.error("Network request failed when trying to get channel twitter data from API. This is likely a serialization error.")
-        debugPrint(error)
         logger.error("Error is: \(error.localizedDescription)")
+#if canImport(Sentry) && os(iOS)
+        SentrySDK.capture(error: error)
+#endif
         
         throw VideoFetchServiceError.serialization
     }
