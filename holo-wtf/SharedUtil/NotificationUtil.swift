@@ -81,6 +81,9 @@ func addNotificationToCenter(@AppStorage(UserDefaultKeys.notifications) storage:
     content.body = NSString.localizedUserNotificationString(forKey: "NOTIFICATION_BODY %@ %@ %lld", arguments: [video.channel.getTalentName(), video.title, minutesBefore.toActualNumber()])
     // content.body = String.localizedStringWithFormat(NSLocalizedString("NOTIFICATION_BODY %@ %@ %lld", comment: ""), video.channel.getTalentName(), video.title, minutesBefore.toActualNumber())
     
+    content.userInfo["agency"] = video.channel.talent?.inGeneration.getGeneration().agency.rawValue
+    content.userInfo["id"] = video.id
+    
     // Create the request
     let uuid = UUID()
     let request = UNNotificationRequest(identifier: uuid.uuidString, content: content, trigger: trigger)
@@ -118,6 +121,9 @@ func addVideoToNotificationCenterTest(video: LiveVideo) throws {
         content.title = "Stream from \(video.channel.getTalentName()) starting in 5 minutes"
         content.subtitle = video.channel.name
         content.body = "\(video.channel.getTalentName())'s stream: \(video.title) is starting in 5 minutes."
+        
+        content.userInfo["agency"] = video.channel.talent?.inGeneration.getGeneration().agency.rawValue
+        content.userInfo["id"] = video.id
         
         // Create the request
         let uuidString = UUID().uuidString

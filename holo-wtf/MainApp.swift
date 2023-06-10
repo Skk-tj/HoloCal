@@ -20,6 +20,8 @@ struct MainApp: App {
     @AppStorage("generationListOrderNew") var generateListOrder: Data = (try? JSONEncoder().encode(agencyEnumToGenerations)) ?? Data()
     @AppStorage(UserDefaultKeys.notifications) var scheduledNotifications: Data = (try? JSONEncoder().encode(LiveVideoToNotification())) ?? Data()
     
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     init() {
         if let sentryDsn = Bundle.main.object(forInfoDictionaryKey: "SENTRY_DSN") as? String {
             SentrySDK.start { options in
@@ -85,6 +87,7 @@ struct MainApp: App {
                 TabletSplitView()
             } else {
                 PhoneTabView()
+                    .environmentObject(appDelegate)
             }
         }
     }

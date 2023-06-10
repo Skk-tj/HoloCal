@@ -12,6 +12,7 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     @AppStorage(UserDefaultKeys.isShowingDSTReminder) var isShowingDSTReminder = false
     
     @EnvironmentObject var viewModel: VideoViewModel
+    @EnvironmentObject var appDelegate: AppDelegate
     
     @State var searchText: String = ""
     @Binding var currentPresentationMode: PresentationMode
@@ -24,58 +25,67 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     @ViewBuilder let dataStatusView: () -> DataStatusContent
     
     var body: some View {
-        return List {
-            if let nextDSTTransition = TimeZone.current.nextDaylightSavingTimeTransition {
-                if let days = Calendar.current.dateComponents([.day], from: Date(), to: nextDSTTransition).day {
-                    if isShowingDSTReminder {
-                        DSTReminderView(numberOfDaysToChange: days, changeType: TimeZone.current.isDaylightSavingTime() ? .ending : .starting, isShowingDSTReminder: $isShowingDSTReminder)
-                            .listRowSeparator(.hidden)
-                            .listRowBackground(EmptyView())
+        ScrollViewReader { proxy in
+            List {
+                if let nextDSTTransition = TimeZone.current.nextDaylightSavingTimeTransition {
+                    if let days = Calendar.current.dateComponents([.day], from: Date(), to: nextDSTTransition).day {
+                        if isShowingDSTReminder {
+                            DSTReminderView(numberOfDaysToChange: days, changeType: TimeZone.current.isDaylightSavingTime() ? .ending : .starting, isShowingDSTReminder: $isShowingDSTReminder)
+                                .listRowSeparator(.hidden)
+                                .listRowBackground(EmptyView())
+                        }
                     }
                 }
-            }
-            
-            if searchText.isEmpty {
-                if isFavourite {
-                    ForEachVideoView(cellView: { video in
-                        singleVideoView(video)
-                    })
+                
+                if searchText.isEmpty {
+                    if isFavourite {
+                        ForEachVideoView(cellView: { video in
+                            singleVideoView(video)
+                        })
+                    } else {
+                        switch currentPresentationMode {
+                        case .normal:
+                            SectionedForEachView(cellView: { live in
+                                singleVideoView(live)
+                                    .id(live.id)
+                            })
+                        case .sorting:
+                            GenerationFilteredForEachVideoView(cellView: { live in
+                                singleVideoView(live)
+                                    .id(live.id)
+                            })
+                        }
+                    }
                 } else {
-                    switch currentPresentationMode {
-                    case .normal:
-                        SectionedForEachView(cellView: { live in
-                            singleVideoView(live)
-                        })
-                    case .sorting:
-                        GenerationFilteredForEachVideoView(cellView: { live in
-                            singleVideoView(live)
-                        })
+                    SearchSectionView(searchText: searchText, cellView: { live in
+                        singleVideoView(live)
+                    })
+                }
+                
+                HStack {
+                    Spacer()
+                    dataStatusView()
+                    Spacer()
+                }
+                .listRowSeparator(.hidden)
+            }
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "SEARCH_BY_NAME_OR_TAG") {
+                if searchText.isEmpty {
+                    ForEach(viewModel.getSearchSuggestions(), id: \.self) { suggestion in
+                        switch suggestion.category {
+                        case .name:
+                            Label(suggestion.searchText, systemImage: "person")
+                                .searchCompletion(suggestion.searchText)
+                        case .tag:
+                            Label(suggestion.searchText, systemImage: "tag")
+                                .searchCompletion(suggestion.searchText)
+                        }
                     }
                 }
-            } else {
-                SearchSectionView(searchText: searchText, cellView: { live in
-                    singleVideoView(live)
-                })
             }
-            
-            HStack {
-                Spacer()
-                dataStatusView()
-                Spacer()
-            }
-            .listRowSeparator(.hidden)
-        }
-        .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "SEARCH_BY_NAME_OR_TAG") {
-            if searchText.isEmpty {
-                ForEach(viewModel.getSearchSuggestions(), id: \.self) { suggestion in
-                    switch suggestion.category {
-                    case .name:
-                        Label(suggestion.searchText, systemImage: "person")
-                            .searchCompletion(suggestion.searchText)
-                    case .tag:
-                        Label(suggestion.searchText, systemImage: "tag")
-                            .searchCompletion(suggestion.searchText)
-                    }
+            .onChange(of: appDelegate.id) { newId in
+                if let newId {
+                    proxy.scrollTo(newId, anchor: .top)
                 }
             }
         }

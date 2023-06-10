@@ -215,6 +215,7 @@ func getMultipleEntry(for agency: IntentAgency, videoType: VideoType, sortBy: In
             return entry
         }
         
+        lives = lives.uniqued(on: { $0.id })
         lives = Array(lives.prefix(prefix))
         
         let grouped: [(video: LiveVideo, image: Data)]

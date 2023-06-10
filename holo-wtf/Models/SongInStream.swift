@@ -71,7 +71,6 @@ struct SongInStream: Codable, Identifiable, Hashable {
                     throw SongRequestError.notFound
                 }
             } catch {
-                print("Unexpected error: \(error).")
                 throw SongRequestError.notFound
             }
             

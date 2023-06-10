@@ -138,4 +138,7 @@ struct GenerationGroup: Identifiable, Hashable, Vtuberable {
     
     /// Represents a list of members.
     let members: [TalentEnum]
+    
+    /// Represent the agency this group belongs to
+    let agency: AgencyEnum
 }

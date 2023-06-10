@@ -202,6 +202,8 @@
 		F084632C29E67702004279B4 /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = F084632B29E67702004279B4 /* Sentry */; };
 		F084633929E6813E004279B4 /* VideoFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */; };
 		F084633A29E6813E004279B4 /* VideoFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */; };
+		F0900E192A2C8C1F00C5505C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0900E182A2C8C1F00C5505C /* AppDelegate.swift */; };
+		F0900E1B2A30413B00C5505C /* VideoStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0900E1A2A30413B00C5505C /* VideoStackView.swift */; };
 		F09049B029F647490033B121 /* TextRollingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09049AF29F647490033B121 /* TextRollingView.swift */; };
 		F093D1BF282C32D000E2A6FF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F093D1BE282C32D000E2A6FF /* WidgetKit.framework */; };
 		F093D1C1282C32D000E2A6FF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F093D1C0282C32D000E2A6FF /* SwiftUI.framework */; };
@@ -566,6 +568,8 @@
 		F07D891828834FBB008D3057 /* DSTReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSTReminderView.swift; sourceTree = "<group>"; };
 		F080A04E27F95D9E00DBC08D /* TalentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentData.swift; sourceTree = "<group>"; };
 		F080A05027F993DC00DBC08D /* ManageFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageFavoriteView.swift; sourceTree = "<group>"; };
+		F0900E182A2C8C1F00C5505C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F0900E1A2A30413B00C5505C /* VideoStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoStackView.swift; sourceTree = "<group>"; };
 		F09049AF29F647490033B121 /* TextRollingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRollingView.swift; sourceTree = "<group>"; };
 		F093D1BC282C32D000E2A6FF /* holo-wtf-widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "holo-wtf-widgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F093D1BE282C32D000E2A6FF /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -889,6 +893,7 @@
 				F0DC616B29D9A5EF009D1051 /* VideoFavouritesView.swift */,
 				F01DAA50298FB58700052514 /* ConcertsView.swift */,
 				F022905029C66429002ACB0A /* PhoneTabView.swift */,
+				F0900E1A2A30413B00C5505C /* VideoStackView.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -1123,6 +1128,7 @@
 			children = (
 				F0F40970293C90CA001C4F48 /* holo-wtf.entitlements */,
 				F0C657BA2771F47C004AF802 /* MainApp.swift */,
+				F0900E182A2C8C1F00C5505C /* AppDelegate.swift */,
 				F05E9EB127EB27E800EF48DD /* iPadOS */,
 				F05E9EB027EB27D100EF48DD /* iOS */,
 				F025203D28EE949100976972 /* SharedUtil */,
@@ -1690,6 +1696,7 @@
 				F09D25E52802EA09001A7D71 /* SwipableLinkedCellView.swift in Sources */,
 				F0E4873D2876586F00118BBB /* LiveCollabAvatarView.swift in Sources */,
 				F009023827EDB6AE00E343B0 /* LiveTimeView.swift in Sources */,
+				F0900E192A2C8C1F00C5505C /* AppDelegate.swift in Sources */,
 				F004E8C6285D004A00ABDFED /* SongInStream.swift in Sources */,
 				F01EB30E29D170E8001A17AF /* VideoSorting.swift in Sources */,
 				F0F0EA9C292B062A0091DBD7 /* AgencyForEachView.swift in Sources */,
@@ -1779,6 +1786,7 @@
 				F0C657BB2771F47C004AF802 /* MainApp.swift in Sources */,
 				F0789B9029AB543300346239 /* PastTimeView.swift in Sources */,
 				F008BBA229235DBA00034AF4 /* ManageGenerationOrderAgencySelectionView.swift in Sources */,
+				F0900E1B2A30413B00C5505C /* VideoStackView.swift in Sources */,
 				F099C67D29CFA3E600596C7F /* WidgetConstants.swift in Sources */,
 				F0E45D1828F39AD90091474A /* Agency.swift in Sources */,
 			);
@@ -2159,7 +2167,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 224;
+				CURRENT_PROJECT_VERSION = 225;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -2227,7 +2235,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 224;
+				CURRENT_PROJECT_VERSION = 225;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

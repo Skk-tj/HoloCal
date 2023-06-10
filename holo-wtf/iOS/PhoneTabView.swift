@@ -7,27 +7,9 @@
 
 import SwiftUI
 
-struct VideoStackView: View {
-    @State var path = NavigationPath()
-    let videoType: VideoType
-    
-    var body: some View {
-        NavigationStack(path: $path) {
-            AgencyNavigationView(viewTitle: videoTypeToViewTitleAndIcon[videoType]!.0) { agency in
-                VideoView(for: agency, videoType: videoType)
-            } favouritesView: {
-                VideoFavouritesView(videoType: videoType)
-            }
-            .onOpenURL { url in
-                guard let unwrappedAgency = widgetDeepLinkUrlParseAgency(url: url) else { return }
-                path.append(unwrappedAgency)
-            }
-        }
-    }
-}
-
 struct PhoneTabView: View {
     @State var tabSelection: Tabs = .live
+    @EnvironmentObject var appDelegate: AppDelegate
     
     var body: some View {
         TabView(selection: $tabSelection) {
@@ -69,6 +51,9 @@ struct PhoneTabView: View {
             guard let unwrappedView = widgetDeepLinkUrlParseView(url: url) else { return }
             tabSelection = unwrappedView
         }
+        .onChange(of: appDelegate.id, perform: { _ in
+            tabSelection = .upcoming
+        })
     }
 }
 
