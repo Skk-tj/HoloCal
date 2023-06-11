@@ -16,11 +16,12 @@ struct VideoLiveWidgetProvider: VideoIntentTimelineProvider {
     let sortBy: IntentSortBy = .unknown
     
     func getSnapshot(for configuration: Intent, in context: Context, completion: @escaping (Entry) -> Void) {
+#if os(watchOS)
         if context.isPreview && context.family == .accessoryRectangular {
             completion(Entry(date: Date(), status: .ok, video: widgetSampleVideo, avatarData: Data(), thumbnailData: Data(), agency: .hololive))
             return
         }
-#if os(watchOS)
+
         if context.isPreview && context.family == .accessoryCorner {
             completion(Entry(date: Date(), status: .ok, video: widgetSampleVideo, avatarData: Data(), thumbnailData: Data(), agency: .hololive))
             return
@@ -42,7 +43,7 @@ struct VideoLiveWidgetProvider: VideoIntentTimelineProvider {
     
     func recommendations() -> [IntentRecommendation<Intent>] {
         let availableSortBy: [IntentSortBy] = [.mostViewer, .mostRecent]
-        let availableAgency: [IntentAgency] = [.unknown, .hololive, .nijisanji, .react, .nanashiInc, .noriPro]
+        let availableAgency: [IntentAgency] = [.unknown, .hololive, .nijisanji, .react, .nanashiInc, .noriPro, .vspo]
 
         let result: [IntentRecommendation<Intent>] = product(availableSortBy, availableAgency).map { pair in
             let intent = LiveWidgetIntent()
