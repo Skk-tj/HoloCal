@@ -18,7 +18,7 @@ struct BlockVideoInfoView<PrimaryContent: View, SecondaryContent: View>: View {
                 Image(systemName: iconName)
                 primaryText()
                     .font(.title3)
-                    .fontWeight(.bold)
+                    .fontWeight(.semibold)
             }
             
             secondaryText()

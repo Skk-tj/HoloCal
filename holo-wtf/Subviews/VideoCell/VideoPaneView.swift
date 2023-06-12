@@ -20,7 +20,6 @@ struct VideoPaneView: View {
                 
                 VideoTitleView(title: video.title)
                     .padding(.horizontal)
-                    .frame(maxWidth: .infinity, alignment: .leading)
                 
                 VStack(alignment: .leading) {
                     PaneViewChannelInfoView(video: video)
@@ -28,11 +27,11 @@ struct VideoPaneView: View {
                     HStack {
                         switch videoType {
                         case .live:
-                            ViewerCounterView(viewer: video.liveViewers ?? 0, memberOnly: video.isMengen)
-                                .padding(.trailing)
-                            
                             if video.isMengen {
                                 BlockMemberOnlyView()
+                                    .padding(.trailing)
+                            } else {
+                                ViewerCounterView(viewer: video.liveViewers ?? 0, memberOnly: video.isMengen)
                                     .padding(.trailing)
                             }
                             

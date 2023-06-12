@@ -20,7 +20,7 @@ struct LazyGridView<VideoContent: View, DataStatusView: View>: View {
     let isFavourite: Bool
     
     let layout = [
-        GridItem(.adaptive(minimum: 300))
+        GridItem(.adaptive(minimum: 330))
     ]
     
     var body: some View {

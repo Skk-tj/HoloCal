@@ -14,13 +14,14 @@ struct VideoTitleView: View {
         if UIDevice.current.userInterfaceIdiom == .pad {
             Text(title)
                 .font(.headline)
-                .frame(maxHeight: .infinity)
                 .lineLimit(2, reservesSpace: true)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .multilineTextAlignment(.leading)
         } else {
             Text(title)
                 .font(.headline)
                 .lineLimit(2)
+                .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }
