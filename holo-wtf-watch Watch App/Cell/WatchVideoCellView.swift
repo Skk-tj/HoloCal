@@ -25,20 +25,22 @@ struct WatchVideoCellView: View {
                     .lineLimit(1)
                     .foregroundColor(.secondary)
                 
-                HStack {
-                    switch videoType {
-                    case .live:
+                switch videoType {
+                case .live:
+                    VStack(alignment: .leading) {
                         Text("\(Image(systemName: "eye")) \(video.liveViewers ?? 0)")
                             .font(.footnote)
-                        Spacer()
+                            .foregroundColor(.secondary)
                         LiveTimeView(liveTime: video.startActual, fontSize: .footnote, shortMode: true)
-                    case .upcoming:
-                        UpcomingTimeView(liveSchedule: video.startScheduled, fontSize: .footnote)
-                    case .past:
-                        PastTimeView(endedAt: video.endedAt, fontSize: .footnote)
+                            .foregroundColor(.secondary)
                     }
+                case .upcoming:
+                    UpcomingTimeView(liveSchedule: video.startScheduled, fontSize: .footnote)
+                        .foregroundColor(.secondary)
+                case .past:
+                    PastTimeView(endedAt: video.endedAt, fontSize: .footnote)
+                        .foregroundColor(.secondary)
                 }
-                .foregroundColor(.secondary)
             }
         }
     }
