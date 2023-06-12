@@ -21,7 +21,6 @@ struct VideoTitleView: View {
             Text(title)
                 .font(.headline)
                 .lineLimit(2)
-                .multilineTextAlignment(.leading)
         }
     }
 }

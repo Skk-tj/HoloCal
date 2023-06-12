@@ -18,9 +18,11 @@ struct VideoPaneView: View {
             VStack {
                 VideoThumbnailView(video: video)
                 
+                VideoTitleView(title: video.title)
+                    .padding(.horizontal)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
                 VStack(alignment: .leading) {
-                    VideoTitleView(title: video.title)
-                    
                     PaneViewChannelInfoView(video: video)
                     
                     HStack {
@@ -55,13 +57,16 @@ struct VideoPaneView: View {
                         }
                     }
                     .padding(.top, 5)
-                    
-                    Divider()
-                    
-                    PaneViewButtonRowView(video: video, showCalendar: videoType == .upcoming)
-                        .padding(.top)
                 }
                 .padding(.horizontal)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
+                Divider()
+                    .padding(.horizontal)
+                
+                PaneViewButtonRowView(video: video, showCalendar: videoType == .upcoming)
+                    .padding(.top)
+                    .padding(.horizontal)
             }
             .padding(.bottom)
             
@@ -88,7 +93,7 @@ struct VideoPaneView: View {
 
 struct VideoPaneView_Previews: PreviewProvider {
     static var previews: some View {
-        VideoPaneView(video: LiveVideo.previewLive, videoType: .live)
+        VideoPaneView(video: LiveVideo.previewLive2, videoType: .live)
         VideoPaneView(video: LiveVideo.previewLiveMemberOnly, videoType: .live)
         VideoPaneView(video: LiveVideo.previewLive, videoType: .live).preferredColorScheme(.dark)
     }
