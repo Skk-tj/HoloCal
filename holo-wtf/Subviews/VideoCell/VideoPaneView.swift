@@ -63,7 +63,7 @@ struct VideoPaneView: View {
                 Divider()
                     .padding(.horizontal)
                 
-                PaneViewButtonRowView(video: video, showCalendar: videoType == .upcoming)
+                PaneViewButtonRowView(video: video, showNotification: videoType == .upcoming)
                     .padding(.top)
                     .padding(.horizontal)
             }

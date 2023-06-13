@@ -21,7 +21,7 @@ struct PaneViewButtonRowView: View {
     @AppStorage(UserDefaultKeys.notifications) var scheduledNotifications: Data = (try? JSONEncoder().encode(LiveVideoToNotification())) ?? Data()
     
     let video: LiveVideo
-    let showCalendar: Bool
+    let showNotification: Bool
     
     var body: some View {
         let selectedNotificationBinding: Binding<NotificationMinutesBefore?> = Binding(get: {
@@ -59,7 +59,7 @@ struct PaneViewButtonRowView: View {
             
             Spacer()
             
-            if showCalendar {
+            if showNotification {
                 Menu(content: {
                     Picker(selection: selectedNotificationBinding, label: Text("Select notification")) {
                         ForEach(NotificationMinutesBefore.allCases, id: \.self) { minute in
@@ -75,7 +75,7 @@ struct PaneViewButtonRowView: View {
                         })
                     }
                     
-                    #if DEBUG
+#if DEBUG
                     Button("Test notification") {
                         let center = UNUserNotificationCenter.current()
                         center.requestAuthorization(options: [.alert, .sound]) { _, error in
@@ -89,7 +89,7 @@ struct PaneViewButtonRowView: View {
                             }
                         }
                     }
-                    #endif
+#endif
 
                     Section {
                         Button(action: {
@@ -137,10 +137,32 @@ struct PaneViewButtonRowView: View {
                 Spacer()
             }
             
-            FavouriteButton(video: video) { isFavourited in
-                Label(isFavourited ? "LINKED_VIDEO_SWIPE_ACTIONS_UNFAVOURITE" : "LINKED_VIDEO_SWIPE_ACTIONS_FAVOURITE", systemImage: isFavourited ? "star.fill" : "star")
-                    .labelStyle(.iconOnly)
-            }
+            Menu(content: {
+                // MARK: - Twitter Button
+                if let twitterLink = video.channel.twitter {
+                    let url = "https://twitter.com/\(twitterLink)"
+                    
+                    if let finalURL = URL(string: url) {
+                        Link(destination: finalURL) {
+                            Label("VIDEO_CONTEXT_MENU_TWITTER_PROFILE", systemImage: "bubble.left")
+                        }
+                    }
+                }
+                
+                // MARK: - YouTube Button
+                if let finalURL = video.channel.channelURL {
+                    Link(destination: finalURL) {
+                        Label("VIDEO_CONTEXT_MENU_YOUTUBE_CHANNEL", systemImage: "play.rectangle")
+                    }
+                }
+                
+                // MARK: - Favourite Button
+                FavouriteButton(video: video) { isFavourited in
+                    Label(isFavourited ? "VIDEO_CONTEXT_MENU_REMOVE_FAVOURITE" : "VIDEO_CONTEXT_MENU_FAVOURITE_CHANNEL", systemImage: isFavourited ? "star.slash" : "star")
+                }
+            }, label: {
+                Label("More Actions", systemImage: "ellipsis").labelStyle(.iconOnly)
+            })
             .buttonStyle(.borderless)
             .hoverEffect()
             
@@ -164,7 +186,7 @@ struct PaneViewButtonRowView: View {
 
 struct PaneViewButtonRowView_Previews: PreviewProvider {
     static var previews: some View {
-        PaneViewButtonRowView(video: LiveVideo.previewLive, showCalendar: true)
-        PaneViewButtonRowView(video: LiveVideo.previewLive, showCalendar: false)
+        PaneViewButtonRowView(video: LiveVideo.previewLive, showNotification: true)
+        PaneViewButtonRowView(video: LiveVideo.previewLive, showNotification: false)
     }
 }
