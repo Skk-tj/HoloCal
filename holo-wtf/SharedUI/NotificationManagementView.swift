@@ -64,6 +64,7 @@ struct NotificationManagementView: View {
             List {
                 Text("Error")
                 Button("Reset notification") {
+                    UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
                     scheduledNotifications = (try? JSONEncoder().encode(LiveVideoToNotification())) ?? Data()
                 }
             }

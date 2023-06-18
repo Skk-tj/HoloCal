@@ -73,6 +73,10 @@ struct SettingsFormView: View {
                     Text("SETTINGS_SUPPORT_PAGE")
                 })
                 
+                Link(destination: URL(string: "https://discord.gg/WZ2aHZyer2")!) {
+                    Text("SETTINGS_DISCORD_SERVER")
+                }
+                
                 NavigationLink("SETTINGS_SPECIAL_THANKS") {
                     SpecialThanksView()
                 }

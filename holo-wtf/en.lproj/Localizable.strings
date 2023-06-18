@@ -63,6 +63,7 @@
 "SETTINGS_HELP_TRANSLATE" = "Help translate this app";
 "SETTINGS_EMAIL_SUPPORT" = "Email Support";
 "SETTINGS_SUPPORT_PAGE" = "Support Page";
+"SETTINGS_DISCORD_SERVER" = "Join Discord server";
 
 "SETTINGS_NOTIFICATION" = "Notification";
 "SETTINGS_MANAGE_NOTIFICATION" = "Manage Notifications";
@@ -227,7 +228,7 @@
 "NOTIFICATION_ACCESS_MESSAGE" = "Notification access is disabled. Please review your privacy settings.";
 
 "NOTIFICATION_ERROR_TITLE" = "Notification error";
-"NOTIFICATION_ERROR_MESSAGE" = "There was an error scheduling this notification.";
+"NOTIFICATION_ERROR_MESSAGE" = "There was an error scheduling this notification. If this continue to happen, please reset your notifications via Settings > Manage Notifications > Cancel all notifications.";
 
 // Notifications
 "NOTIFICATION_CANCEL_NOTIFICATION" = "Cancel notification";

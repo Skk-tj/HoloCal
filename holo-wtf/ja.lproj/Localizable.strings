@@ -64,6 +64,7 @@
 "SETTINGS_HELP_TRANSLATE" = "翻訳に協力";
 "SETTINGS_EMAIL_SUPPORT" = "メールサポート";
 "SETTINGS_SUPPORT_PAGE" = "サポートページ";
+"SETTINGS_DISCORD_SERVER" = "Discordサーバーに参加";
 
 "SETTINGS_NOTIFICATION" = "通知";
 "SETTINGS_MANAGE_NOTIFICATION" = "通知";
@@ -231,7 +232,7 @@
 "NOTIFICATION_ACCESS_MESSAGE" = "通知にアクセスできません。プライバシー設定をご確認ください。";
 
 "NOTIFICATION_ERROR_TITLE" = "エラー";
-"NOTIFICATION_ERROR_MESSAGE" = "エラーが発生しました。";
+"NOTIFICATION_ERROR_MESSAGE" = "エラーが発生しました。この現象が続く場合は、「設定」→「通知」→「すべての通知をキャンセル」で通知をリセットしてください。";
 
 // Notifications
 "NOTIFICATION_CANCEL_NOTIFICATION" = "通知をキャンセル";
