@@ -69,8 +69,6 @@ struct SettingsFormView: View {
                 
                 Link("SETTINGS_BETA_TESTING", destination: URL(string: "https://testflight.apple.com/join/uxxMYkU3")!)
                 
-                Link("SETTINGS_HELP_TRANSLATE", destination: URL(string: "https://crowdin.com/project/holocal/invite?d=p6a556u4l6f5339323b363c5b3o4a3p4a323")!)
-                
                 Link(destination: URL(string: "https://me.skk-tj.live/holocal-support")!, label: {
                     Text("SETTINGS_SUPPORT_PAGE")
                 })

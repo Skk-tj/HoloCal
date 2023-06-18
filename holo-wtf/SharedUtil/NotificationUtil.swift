@@ -42,9 +42,7 @@ enum NotificationMinutesBefore: CaseIterable, Codable {
 typealias LiveVideoToNotification = [LiveVideo: LiveVideoNotification]
 
 func scheduledNotification(@AppStorage(UserDefaultKeys.notifications) storage: Data, video: LiveVideo, minutesBefore: NotificationMinutesBefore) throws {
-    let notifications = UserDefaults.standard.data(forKey: UserDefaultKeys.notifications) ?? Data()
-    
-    let isScheduled = isNotificationScheduledFor(storage: notifications, thisVideo: video)
+    let isScheduled = isNotificationScheduledFor(storage: storage, thisVideo: video)
     let notificationCenter = UNUserNotificationCenter.current()
     
     switch isScheduled {
@@ -55,7 +53,6 @@ func scheduledNotification(@AppStorage(UserDefaultKeys.notifications) storage: D
             // 1. cancel the original one
             notificationCenter.removePendingNotificationRequests(withIdentifiers: [notification.notificationIdentifier.uuidString])
             // 2. schedule a new one
-            
             try addNotificationToCenter(storage: storage, video: video, minutesBefore: minutesBefore)
         }
     case .no:
@@ -75,11 +72,9 @@ func addNotificationToCenter(@AppStorage(UserDefaultKeys.notifications) storage:
     let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)
     
     let content = UNMutableNotificationContent()
-    // content.title = String.localizedStringWithFormat(NSLocalizedString("NOTIFICATION_TITLE %@ %lld", comment: ""), video.channel.getTalentName(), minutesBefore.toActualNumber())
     content.title = NSString.localizedUserNotificationString(forKey: "NOTIFICATION_TITLE %@ %lld", arguments: [video.channel.getTalentName(), minutesBefore.toActualNumber()])
     content.subtitle = video.channel.name
     content.body = NSString.localizedUserNotificationString(forKey: "NOTIFICATION_BODY %@ %@ %lld", arguments: [video.channel.getTalentName(), video.title, minutesBefore.toActualNumber()])
-    // content.body = String.localizedStringWithFormat(NSLocalizedString("NOTIFICATION_BODY %@ %@ %lld", comment: ""), video.channel.getTalentName(), video.title, minutesBefore.toActualNumber())
     
     content.userInfo["agency"] = video.channel.talent?.inGeneration.getGeneration().agency.rawValue
     content.userInfo["id"] = video.id
