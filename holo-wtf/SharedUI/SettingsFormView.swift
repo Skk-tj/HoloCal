@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingsFormView: View {
     @AppStorage(UserDefaultKeys.upcomingLookAhead) var hoursLookAhead: Int = 48
+    @AppStorage(UserDefaultKeys.pastLimit) var pastLimit: PastLimit = .limit25
     @AppStorage(UserDefaultKeys.dstDays) var dstDays: Int = 5
     
     var body: some View {
@@ -22,6 +23,14 @@ struct SettingsFormView: View {
                 .onChange(of: hoursLookAhead, perform: { newHours in
                     hoursLookAhead = newHours
                 })
+            }
+            
+            Section(header: Text("SETTINGS_PAST_VIDEOS_SECTION_HEADER")) {
+                Picker("SETTINGS_PAST_LIMIT", selection: $pastLimit) {
+                    ForEach(PastLimit.allCases, id: \.self) {
+                        Text("\($0.rawValue)")
+                    }
+                }
             }
             
             Section(header: Text("SETTINGS_STREAM_TIME_HEADER"), footer: Text("SETTINGS_STREAM_TIME_FOOTER")) {

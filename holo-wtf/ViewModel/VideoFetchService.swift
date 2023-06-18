@@ -13,17 +13,52 @@ import Sentry
 
 enum VideoFetchServiceError: LocalizedError {
     case apiUrlError
-    case serialization
+    case other(NSError)
     case network(Int)
     
     var errorDescription: String? {
         switch self {
         case .apiUrlError:
             return "API URL error during the initialization stage"
-        case .serialization:
-            return "Serialization error"
+        case .other(let theError):
+            return theError.localizedDescription
         case .network(let int):
             return "Network error \(int)"
+        }
+    }
+}
+
+func getVideos(for videoType: VideoType, agency: AgencyEnum) async throws -> [LiveVideo] {
+    switch videoType {
+    case .live:
+        let videoUrl = getLiveUrl(for: agency)
+        return try await getVideos(from: videoUrl)
+    case .upcoming:
+        let videoUrl = getUpcomingUrl(for: agency)
+        return try await getVideos(from: videoUrl)
+    case .past:
+        switch getPastLimitFromUserDefaults() {
+        case .limit25:
+            let videoUrl = getPastUrl(for: agency)
+            return try await getVideos(from: videoUrl)
+        case .limit50:
+            let videoUrl = getPastUrl(for: agency, limit: 50, offset: 0)
+            return try await getVideos(from: videoUrl)
+        case .limit100:
+            let url1 = getPastUrl(for: agency, limit: 50, offset: 0)
+            let url2 = getPastUrl(for: agency, limit: 50, offset: 50)
+            
+            return try await withThrowingTaskGroup(of: [LiveVideo].self) { group in
+                [url1, url2].forEach { url in
+                    group.addTask {
+                        return try await getVideos(from: url)
+                    }
+                }
+                
+                return try await group.reduce(into: [LiveVideo]()) { partialResult, video in
+                    partialResult.append(contentsOf: video)
+                }
+            }
         }
     }
 }
@@ -69,10 +104,10 @@ func getVideos(from url: String) async throws -> [LiveVideo] {
         logger.error("Network request failed when trying to get live data from API. This is likely a serialization error.")
         logger.error("Error is: \(error.localizedDescription)")
 #if canImport(Sentry) && os(iOS)
-        SentrySDK.capture(error: error)
+        SentrySDK.capture(error: error as NSError)
 #endif
         
-        throw VideoFetchServiceError.serialization
+        throw VideoFetchServiceError.other(error as NSError)
     }
 }
 
@@ -112,9 +147,9 @@ func getTwitterId(for channel: Channel) async throws -> String? {
         logger.error("Network request failed when trying to get channel twitter data from API. This is likely a serialization error.")
         logger.error("Error is: \(error.localizedDescription)")
 #if canImport(Sentry) && os(iOS)
-        SentrySDK.capture(error: error)
+        SentrySDK.capture(error: error as NSError)
 #endif
         
-        throw VideoFetchServiceError.serialization
+        throw VideoFetchServiceError.other(error as NSError)
     }
 }

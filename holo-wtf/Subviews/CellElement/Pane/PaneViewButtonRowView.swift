@@ -42,7 +42,7 @@ struct PaneViewButtonRowView: View {
                     do {
                         try scheduledNotification(storage: scheduledNotifications, video: video, minutesBefore: value)
                     } catch {
-                        SentrySDK.capture(error: error)
+                        SentrySDK.capture(error: error as NSError)
                         self.isNotificationScheduleErrorPresented = true
                     }
                 }

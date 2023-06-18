@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingsWatchView: View {
     @AppStorage(UserDefaultKeys.upcomingLookAhead) var hoursLookAhead: Int = 48
+    @AppStorage(UserDefaultKeys.pastLimit) var pastLimit: PastLimit = .limit25
     
     var body: some View {
         Form {
@@ -30,6 +31,14 @@ struct SettingsWatchView: View {
                 
                 NavigationLink(destination: OpenSourceView()) {
                     Text("SETTINGS_OPEN_SOURCE")
+                }
+            }
+            
+            Section(header: Text("SETTINGS_PAST_VIDEOS_SECTION_HEADER")) {
+                Picker("SETTINGS_PAST_LIMIT", selection: $pastLimit) {
+                    ForEach(PastLimit.allCases, id: \.self) {
+                        Text("\($0.rawValue)")
+                    }
                 }
             }
         }

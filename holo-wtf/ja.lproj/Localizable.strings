@@ -20,6 +20,9 @@
 "SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT" = "今後の配信表示制限";
 "WATCH_SETTINGS_UPCOMING_SCHEDULE_PICKER_TEXT %lld" = "%lld時間";
 
+"SETTINGS_PAST_VIDEOS_SECTION_HEADER" = "アーカイブ配信";
+"SETTINGS_PAST_LIMIT" = "表示する過去のアーカイブ数";
+
 "SETTINGS_STREAM_TIME_HEADER" = "配信時間";
 "SETTINGS_STREAM_TIME_FOOTER" = "HoloCalは夏時間が適用されるタイムゾーンに設定されている場合、夏時間への移行をお知らせします。";
 "SETTINGS_DST_CHANGE_TEXT" = "夏時間の移行のお知らせ";

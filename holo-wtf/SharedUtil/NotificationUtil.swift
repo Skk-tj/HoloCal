@@ -184,7 +184,7 @@ enum NotificationError: LocalizedError {
 
 func isNotificationScheduledFor(@AppStorage(UserDefaultKeys.notifications) storage: Data, thisVideo: LiveVideo) -> IsNotificationScheduled {
     guard let deserialized = try? JSONDecoder().decode(LiveVideoToNotification.self, from: storage) else {
-        SentrySDK.capture(error: NotificationError.cannotDecode(String(decoding: storage, as: UTF8.self)))
+        SentrySDK.capture(error: NotificationError.cannotDecode(String(decoding: storage, as: UTF8.self)) as NSError)
         return .no
     }
     
@@ -197,7 +197,7 @@ func isNotificationScheduledFor(@AppStorage(UserDefaultKeys.notifications) stora
 
 func addToNotificationSchedule(@AppStorage(UserDefaultKeys.notifications) storage: Data, thisVideo: LiveVideo, notificationIdentifier: UUID, minutesBefore: NotificationMinutesBefore, finalNotificationTime: Date) {
     guard var deserialized = try? JSONDecoder().decode(LiveVideoToNotification.self, from: storage) else {
-        SentrySDK.capture(error: NotificationError.cannotDecode(String(decoding: storage, as: UTF8.self)))
+        SentrySDK.capture(error: NotificationError.cannotDecode(String(decoding: storage, as: UTF8.self)) as NSError)
         return
     }
     let copy = storage
@@ -208,14 +208,14 @@ func addToNotificationSchedule(@AppStorage(UserDefaultKeys.notifications) storag
     if let serialized = try? JSONEncoder().encode(deserialized) {
         storage = serialized
     } else {
-        SentrySDK.capture(error: NotificationError.cannotEncode(deserialized))
+        SentrySDK.capture(error: NotificationError.cannotEncode(deserialized) as NSError)
         storage = copy
     }
 }
 
 func removeNotificationSchedule(@AppStorage(UserDefaultKeys.notifications) storage: Data, video: LiveVideo) {
     guard var deserialized = try? JSONDecoder().decode(LiveVideoToNotification.self, from: storage) else {
-        SentrySDK.capture(error: NotificationError.cannotDecode(String(decoding: storage, as: UTF8.self)))
+        SentrySDK.capture(error: NotificationError.cannotDecode(String(decoding: storage, as: UTF8.self)) as NSError)
         return
     }
     let copy = storage
@@ -224,7 +224,7 @@ func removeNotificationSchedule(@AppStorage(UserDefaultKeys.notifications) stora
     if let serialized = try? JSONEncoder().encode(deserialized) {
         storage = serialized
     } else {
-        SentrySDK.capture(error: NotificationError.cannotEncode(deserialized))
+        SentrySDK.capture(error: NotificationError.cannotEncode(deserialized) as NSError)
         storage = copy
     }
 }

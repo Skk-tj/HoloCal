@@ -20,6 +20,9 @@
 "SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT" = "Upcoming streams lookahead";
 "WATCH_SETTINGS_UPCOMING_SCHEDULE_PICKER_TEXT %lld" = "%lld hours";
 
+"SETTINGS_PAST_VIDEOS_SECTION_HEADER" = "Past Streams";
+"SETTINGS_PAST_LIMIT" = "Number of past streams to show";
+
 "SETTINGS_STREAM_TIME_HEADER" = "Stream Time";
 "SETTINGS_STREAM_TIME_FOOTER" = "If your device is set to a timezone that observes Daylight Saving Time, HoloCal will remind you about DST transitions.";
 "SETTINGS_DST_CHANGE_TEXT" = "DST change reminder";

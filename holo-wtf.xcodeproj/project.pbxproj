@@ -144,6 +144,10 @@
 		F025204728EEA5FC00976972 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = F025204328EEA5FC00976972 /* Common.swift */; };
 		F02830802853DB0E00CBFCE7 /* Widgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028307F2853DB0E00CBFCE7 /* Widgets.swift */; };
 		F028308828545B1200CBFCE7 /* SingleVideoWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F028308728545B1200CBFCE7 /* SingleVideoWidgetEntry.swift */; };
+		F0367D032A3EE3A100BB4DAB /* PastLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0367D022A3EE3A100BB4DAB /* PastLimit.swift */; };
+		F0367D042A3EE3B400BB4DAB /* PastLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0367D022A3EE3A100BB4DAB /* PastLimit.swift */; };
+		F0367D052A3EE3B600BB4DAB /* PastLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0367D022A3EE3A100BB4DAB /* PastLimit.swift */; };
+		F0367D062A3EE3B600BB4DAB /* PastLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0367D022A3EE3A100BB4DAB /* PastLimit.swift */; };
 		F03A138328F0004C00BB8E51 /* ChannelsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A138228F0004C00BB8E51 /* ChannelsEntry.swift */; };
 		F03A138528F0004C00BB8E51 /* ChannelsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A138228F0004C00BB8E51 /* ChannelsEntry.swift */; };
 		F03A139228F1FE0700BB8E51 /* ChannelsLiveWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03A139128F1FE0700BB8E51 /* ChannelsLiveWidgetProvider.swift */; };
@@ -539,6 +543,7 @@
 		F025204328EEA5FC00976972 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		F028307F2853DB0E00CBFCE7 /* Widgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widgets.swift; sourceTree = "<group>"; };
 		F028308728545B1200CBFCE7 /* SingleVideoWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleVideoWidgetEntry.swift; sourceTree = "<group>"; };
+		F0367D022A3EE3A100BB4DAB /* PastLimit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastLimit.swift; sourceTree = "<group>"; };
 		F03A138228F0004C00BB8E51 /* ChannelsEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsEntry.swift; sourceTree = "<group>"; };
 		F03A139128F1FE0700BB8E51 /* ChannelsLiveWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsLiveWidgetProvider.swift; sourceTree = "<group>"; };
 		F03A139328F2018000BB8E51 /* ChannelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsView.swift; sourceTree = "<group>"; };
@@ -816,6 +821,7 @@
 				F01EB30D29D170E8001A17AF /* VideoSorting.swift */,
 				F09400E82A134D1100DAE43E /* NotificationUtil.swift */,
 				F020C8B72A1AE5DD00471F2C /* GenerationOrderListUtil.swift */,
+				F0367D022A3EE3A100BB4DAB /* PastLimit.swift */,
 			);
 			path = SharedUtil;
 			sourceTree = "<group>";
@@ -1562,6 +1568,7 @@
 				F0186A2229AC776300339178 /* PaneEntryViews.swift in Sources */,
 				F09664E529A34DCF005F37C0 /* BlockVideoInfoView.swift in Sources */,
 				F06D28E128D8390F007D06FB /* SharedEntryView.swift in Sources */,
+				F0367D062A3EE3B600BB4DAB /* PastLimit.swift in Sources */,
 				F09664E329A34DCD005F37C0 /* BlockMemberOnlyView.swift in Sources */,
 				F0E06D182932A4FA00BF6812 /* Modes.swift in Sources */,
 				F099C68029CFA3E600596C7F /* WidgetConstants.swift in Sources */,
@@ -1666,6 +1673,7 @@
 				F028308828545B1200CBFCE7 /* SingleVideoWidgetEntry.swift in Sources */,
 				F0E06D162932376300BF6812 /* Modes.swift in Sources */,
 				F020E8CE29C5B53100C2345D /* AccessoryInlineEntryViews.swift in Sources */,
+				F0367D052A3EE3B600BB4DAB /* PastLimit.swift in Sources */,
 				F06D28EB28D83A2D007D06FB /* SharedUtil.swift in Sources */,
 				F0186A2729AC77DC00339178 /* AccessoryCircularEntryViews.swift in Sources */,
 				F09D53A329336782003C4F80 /* MultipleVideoUpcomingWidgetProvider.swift in Sources */,
@@ -1699,6 +1707,7 @@
 				F0900E192A2C8C1F00C5505C /* AppDelegate.swift in Sources */,
 				F004E8C6285D004A00ABDFED /* SongInStream.swift in Sources */,
 				F01EB30E29D170E8001A17AF /* VideoSorting.swift in Sources */,
+				F0367D032A3EE3A100BB4DAB /* PastLimit.swift in Sources */,
 				F0F0EA9C292B062A0091DBD7 /* AgencyForEachView.swift in Sources */,
 				F09664E029A34BEC005F37C0 /* BlockVideoInfoView.swift in Sources */,
 				F0DC616A29D9A399009D1051 /* VideoView.swift in Sources */,
@@ -1853,6 +1862,7 @@
 				F09D53BF29337378003C4F80 /* Intents.intentdefinition in Sources */,
 				F01DAA842996419900052514 /* ConcertWatchCell.swift in Sources */,
 				F099C67F29CFA3E600596C7F /* WidgetConstants.swift in Sources */,
+				F0367D042A3EE3B400BB4DAB /* PastLimit.swift in Sources */,
 				F01DAA7C299640CE00052514 /* ConcertListView.swift in Sources */,
 				F017D86C29DEA25D0033EBB7 /* BlockPastTimeView.swift in Sources */,
 				F0CA6EC928D7C2BE0028CB11 /* TalentData.swift in Sources */,
@@ -2167,7 +2177,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 230;
+				CURRENT_PROJECT_VERSION = 231;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -2235,7 +2245,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 230;
+				CURRENT_PROJECT_VERSION = 231;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

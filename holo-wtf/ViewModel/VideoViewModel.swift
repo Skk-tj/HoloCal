@@ -41,7 +41,6 @@ class VideoViewModel: ObservableObject {
     @Published var sortingStrategy: SortingStrategy
     
     let agency: AgencyEnum
-    let videoUrl: String
     let videoType: VideoType
     
     var error: VideoFetchServiceError?
@@ -52,22 +51,13 @@ class VideoViewModel: ObservableObject {
         self.agency = agency
         self.sortingStrategy = .notSorting
         self.videoType = videoType
-        
-        switch videoType {
-        case .live:
-            self.videoUrl = getLiveUrl(for: agency)
-        case .upcoming:
-            self.videoUrl = getUpcomingUrl(for: agency)
-        case .past:
-            self.videoUrl = getPastUrl(for: agency)
-        }
     }
     
     let logger = Logger()
     
     @MainActor
     func getVideoForUI() async {
-        await getVideo(url: videoUrl) { responseResult in
+        await getVideo { responseResult in
             self.videoList = responseResult
             self.sortVideos()
             self.videoList = self.videoList.filter { $0.isAgency(agency: self.agency) }
@@ -75,11 +65,11 @@ class VideoViewModel: ObservableObject {
     }
     
     @MainActor
-    func getVideo(url: String, completion: @escaping ([LiveVideo]) -> Void) async {
+    func getVideo(completion: @escaping ([LiveVideo]) -> Void) async {
         self.dataStatus = .working
         
         do {
-            let getResult: [LiveVideo] = try await getVideos(from: url)
+            let getResult: [LiveVideo] = try await getVideos(for: videoType, agency: agency)
             let getResultWithTwitter: [LiveVideo] = await getTwitterForAll(videoList: getResult)
             
             completion(getResultWithTwitter)
@@ -87,9 +77,9 @@ class VideoViewModel: ObservableObject {
         } catch VideoFetchServiceError.apiUrlError {
             self.dataStatus = .fail
             self.error = VideoFetchServiceError.apiUrlError
-        } catch VideoFetchServiceError.serialization {
+        } catch VideoFetchServiceError.other(let theError) {
             self.dataStatus = .fail
-            self.error = VideoFetchServiceError.serialization
+            self.error = VideoFetchServiceError.other(theError)
         } catch VideoFetchServiceError.network(let networkCode) {
             self.dataStatus = .fail
             self.error = VideoFetchServiceError.network(networkCode)
@@ -111,9 +101,9 @@ class VideoViewModel: ObservableObject {
         } catch VideoFetchServiceError.apiUrlError {
             self.dataStatus = .fail
             self.error = VideoFetchServiceError.apiUrlError
-        } catch VideoFetchServiceError.serialization {
+        } catch VideoFetchServiceError.other(let theError) {
             self.dataStatus = .fail
-            self.error = VideoFetchServiceError.serialization
+            self.error = VideoFetchServiceError.other(theError)
         } catch VideoFetchServiceError.network(let networkCode) {
             self.dataStatus = .fail
             self.error = VideoFetchServiceError.network(networkCode)

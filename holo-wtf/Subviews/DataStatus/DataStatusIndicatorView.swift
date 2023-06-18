@@ -29,14 +29,7 @@ struct DataStatusIndicatorView<Content: View>: View {
             VStack {
                 Label("FAILED_TO_RETRIEVE_NEW_DATA", systemImage: "exclamationmark.circle.fill")
                 if let error {
-                    switch error {
-                    case .apiUrlError:
-                        Text("API URL/Key Error")
-                    case .serialization:
-                        Text("Serialization failed")
-                    case .network(let int):
-                        Text("Network failed \(int)")
-                    }
+                    Text(error.errorDescription ?? "")
                 }
             }
             .foregroundColor(.secondary)

@@ -28,6 +28,14 @@ func getUpcomingStreamLookAheadHoursFromUserDefaults() -> Int {
     return defaults.integer(forKey: UserDefaultKeys.upcomingLookAhead) == 0 ? 48 : defaults.integer(forKey: UserDefaultKeys.upcomingLookAhead)
 }
 
+func getPastLimitFromUserDefaults() -> PastLimit {
+    let defaults = UserDefaults.standard
+    
+    let theInt = defaults.integer(forKey: UserDefaultKeys.pastLimit)
+    
+    return PastLimit(rawValue: theInt) ?? PastLimit.limit25
+}
+
 func getFavouritesFromUserDefaults(groupName: String? = nil) -> [String] {
     if let groupName {
         if let defaults = UserDefaults(suiteName: groupName) {
@@ -96,6 +104,7 @@ enum UserDefaultKeys {
     static let isShowingDSTReminder = "isShowingDSTReminder"
     static let dstDays = "dstDays"
     static let notifications = "notifications"
+    static let pastLimit = "pastLimit"
 }
 
 enum UserActivityKeys {
@@ -171,4 +180,8 @@ func getWidgetUpcomingUrl(for agency: AgencyEnum) -> String {
 
 func getPastUrl(for agency: AgencyEnum) -> String {
     return "https://holodex.net/api/v2/videos?status=past&type=stream&include=songs,mentions&org=\(agency.rawValue)"
+}
+
+func getPastUrl(for agency: AgencyEnum, limit: Int, offset: Int) -> String {
+    return "https://holodex.net/api/v2/videos?status=past&type=stream&include=songs,mentions&org=\(agency.rawValue)&limit=\(limit)&offset=\(offset)"
 }
