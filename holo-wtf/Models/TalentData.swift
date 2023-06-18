@@ -451,7 +451,6 @@ enum TalentEnum: String, Codable {
     // MARK: - ID Fourth Wave: 3FicLite
     case etna = "UCjFu-9GHnabzSFRAYm1B9Dw" // Etna Crimson
     case bonnivier = "UCHjeZylSgXDSnor8wUnwU_g" // Bonnivier Pranaja
-    case siska = "UC5qSx7KzdRwbsO1QmJc4d-w" // Siska Leontyne
     
     // MARK: - ID Fifth Wave: 53renade
     case nagisa = "UCijNnZ-6m8g85UGaRAWuw7g" // Nagisa Arcinia
@@ -1000,7 +999,6 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     // MARK: - ID Fourth Wave: 3FicLite
     .etna: Talent(id: TalentEnum.etna.rawValue, names: [.en: "Etna Crimson", .ja: "エトナ クリムソン"], inGeneration: Generation.id4thWave),
     .bonnivier: Talent(id: TalentEnum.bonnivier.rawValue, names: [.en: "Bonnivier Pranaja", .ja: "ボンニフィエール プラナジャ"], inGeneration: Generation.id4thWave),
-    .siska: Talent(id: TalentEnum.siska.rawValue, names: [.en: "Siska Leontyne", .ja: "シスカ レオンタイン"], inGeneration: Generation.id4thWave),
 
     // MARK: - ID Fifth Wave: 53renade
     .nagisa: Talent(id: TalentEnum.nagisa.rawValue, names: [.en: "Nagisa Arcinia", .ja: "ナギサ アルシニア"], inGeneration: Generation.id5thWave),
@@ -1270,7 +1268,7 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .id1stWave: GenerationGroup(id: .id1stWave, names: [.en: "ID 1st Wave", .ja: "ID 1期生"], members: [.hana], agency: .nijisanji),
     .id2ndWave: GenerationGroup(id: .id2ndWave, names: [.en: "ID 2nd Wave", .ja: "ID 2期生"], members: [.rai, .amicia, .riksa], agency: .nijisanji),
     .id3rdWave: GenerationGroup(id: .id3rdWave, names: [.en: "ID 3rd Wave", .ja: "ID 3期生"], members: [.azura, .layla, .nara], agency: .nijisanji),
-    .id4thWave: GenerationGroup(id: .id4thWave, names: [.en: "ID 4th Wave", .ja: "ID 4期生"], members: [.etna, .bonnivier, .siska], agency: .nijisanji),
+    .id4thWave: GenerationGroup(id: .id4thWave, names: [.en: "ID 4th Wave", .ja: "ID 4期生"], members: [.etna, .bonnivier], agency: .nijisanji),
     .id5thWave: GenerationGroup(id: .id5thWave, names: [.en: "ID 5th Wave", .ja: "ID 5期生"], members: [.nagisa, .derem, .reza], agency: .nijisanji),
     .id6thWave: GenerationGroup(id: .id6thWave, names: [.en: "ID 6th Wave", .ja: "ID 6期生"], members: [.hyona, .xia, .mika], agency: .nijisanji),
     .kr1stWave: GenerationGroup(id: .kr1stWave, names: [.en: "KR 1st Wave", .ja: "KR 1期生"], members: [.minSuha, .gaon], agency: .nijisanji),
