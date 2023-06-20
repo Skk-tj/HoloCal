@@ -72,9 +72,9 @@ func addNotificationToCenter(@AppStorage(UserDefaultKeys.notifications) storage:
     let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)
     
     let content = UNMutableNotificationContent()
-    content.title = NSString.localizedUserNotificationString(forKey: "NOTIFICATION_TITLE %@ %lld", arguments: [video.channel.getTalentName(), minutesBefore.toActualNumber()])
+    content.title = String(format: NSLocalizedString("NOTIFICATION_TITLE %@ %lld", comment: ""), video.channel.getTalentName(), minutesBefore.toActualNumber())
     content.subtitle = video.channel.name
-    content.body = NSString.localizedUserNotificationString(forKey: "NOTIFICATION_BODY %@ %@ %lld", arguments: [video.channel.getTalentName(), video.title, minutesBefore.toActualNumber()])
+    content.body = String(format: NSLocalizedString("NOTIFICATION_BODY %@ %@ %lld", comment: ""), video.channel.getTalentName(), video.title, minutesBefore.toActualNumber())
     
     content.userInfo["agency"] = video.channel.talent?.inGeneration.getGeneration().agency.rawValue
     content.userInfo["id"] = video.id
