@@ -53,6 +53,8 @@ struct PaneViewButtonRowView: View {
             ShareLink(item: URL(string: "https://www.youtube.com/watch?v=\(video.id)")!, label: {
                 Label("LINKED_VIDEO_SWIPE_ACTIONS_SHARE", systemImage: "square.and.arrow.up")
                     .labelStyle(.iconOnly)
+                    .frame(width: 30, height: 30)
+                    .contentShape(Rectangle())
                     .hoverEffect()
             })
             .buttonStyle(.borderless)
@@ -111,6 +113,8 @@ struct PaneViewButtonRowView: View {
                 }, label: {
                     Label("", systemImage: selectedNotificationBinding.wrappedValue != nil ? "bell.badge" : "bell")
                         .labelStyle(.iconOnly)
+                        .frame(width: 30, height: 30)
+                        .contentShape(Rectangle())
                 })
                 .buttonStyle(.borderless)
                 .sheet(isPresented: $isAddToCalendarSheetPresented) {
@@ -161,7 +165,10 @@ struct PaneViewButtonRowView: View {
                     Label(isFavourited ? "VIDEO_CONTEXT_MENU_REMOVE_FAVOURITE" : "VIDEO_CONTEXT_MENU_FAVOURITE_CHANNEL", systemImage: isFavourited ? "star.slash" : "star")
                 }
             }, label: {
-                Label("More Actions", systemImage: "ellipsis").labelStyle(.iconOnly)
+                Label("More Actions", systemImage: "ellipsis")
+                    .labelStyle(.iconOnly)
+                    .frame(width: 30, height: 30)
+                    .contentShape(Rectangle())
             })
             .buttonStyle(.borderless)
             .hoverEffect()
@@ -173,7 +180,11 @@ struct PaneViewButtonRowView: View {
                     isShowingSheet.toggle()
                 }, label: {
                     Image(systemName: "music.note.list")
+                        .frame(width: 30, height: 30)
+                        .contentShape(Rectangle())
                 })
+                .buttonStyle(.borderless)
+                .hoverEffect()
                 .sheet(isPresented: $isShowingSheet) {
                     SongListStackView(videoURL: video.url!, songsRaw: songs)
                         .presentationDetents([.medium, .large])

@@ -61,10 +61,10 @@ struct VideoPaneView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
                 Divider()
+                    .padding(.bottom, 5)
                     .padding(.horizontal)
                 
                 PaneViewButtonRowView(video: video, showNotification: videoType == .upcoming)
-                    .padding(.top)
                     .padding(.horizontal)
             }
             .padding(.bottom)
