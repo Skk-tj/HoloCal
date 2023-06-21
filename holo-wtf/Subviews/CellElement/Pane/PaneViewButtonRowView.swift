@@ -116,6 +116,7 @@ struct PaneViewButtonRowView: View {
                         .frame(width: 30, height: 30)
                         .contentShape(Rectangle())
                 })
+                .disabled(video.startScheduled ?? Date.distantPast < Date())
                 .buttonStyle(.borderless)
                 .sheet(isPresented: $isAddToCalendarSheetPresented) {
                     let eventStore: EKEventStore = EKEventStore()

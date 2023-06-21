@@ -13,28 +13,23 @@ struct BlockUpcomingTimeView: View {
     @AppStorage(UserDefaultKeys.isShowingAbsoluteTimeInUpcomingView) var isShowingAbsoluteTime: Bool = false
     
     var body: some View {
-        if let liveSchedule {
-            if isShowingAbsoluteTime {
-                BlockVideoInfoView(iconName: "clock", primaryText: {
-                    Text("\(liveSchedule.formatted(date: .numeric, time: .shortened))")
-                }, secondaryText: {
-                    Text("BLOCK_UPCOMING_TIME_VIEW_STARTING_TIME")
-                })
+        BlockVideoInfoView(iconName: "clock", primaryText: {
+            if let liveSchedule {
+                if liveSchedule < Date() {
+                    Text("BLOCK_LIVE_TIME_VIEW_WAITING")
+                } else {
+                    if isShowingAbsoluteTime {
+                        Text("\(liveSchedule.formatted(date: .numeric, time: .shortened))")
+                    } else {
+                        Text("\(getRelativeTimeString(for: liveSchedule))")
+                    }
+                }
             } else {
-                BlockVideoInfoView(iconName: "clock", primaryText: {
-                    Text("\(getRelativeTimeString(for: liveSchedule))")
-                }, secondaryText: {
-                    Text("BLOCK_UPCOMING_TIME_VIEW_STARTING_TIME")
-                })
-            }
-            
-        } else {
-            BlockVideoInfoView(iconName: "clock", primaryText: {
                 Text("BLOCK_UPCOMING_TIME_VIEW_STARTING_TIME_UNKNOWN")
-            }, secondaryText: {
-                Text("BLOCK_UPCOMING_TIME_VIEW_STARTING_TIME")
-            })
-        }
+            }
+        }, secondaryText: {
+            Text("BLOCK_UPCOMING_TIME_VIEW_STARTING_TIME")
+        })
     }
 }
 

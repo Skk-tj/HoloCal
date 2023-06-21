@@ -86,7 +86,7 @@ func getVideos(from url: String) async throws -> [LiveVideo] {
     var request = URLRequest(url: apiURL)
     request.httpMethod = "GET"
     request.allHTTPHeaderFields = headers
-    request.cachePolicy = .useProtocolCachePolicy
+    request.cachePolicy = .reloadIgnoringLocalCacheData
     
     do {
         let (data, response) = try await URLSession.shared.data(for: request)
