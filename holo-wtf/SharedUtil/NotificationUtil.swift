@@ -35,7 +35,6 @@ enum NotificationMinutesBefore: CaseIterable, Codable {
     
     func getManagementDescription() -> String {
         return String(format: NSLocalizedString("NOTIFICATION_MINUTES_BEFORE %lld", comment: ""), self.toActualNumber())
-        // return String.localizedStringWithFormat("NOTIFICATION_MINUTES_BEFORE %lld", self.toActualNumber())
     }
 }
 

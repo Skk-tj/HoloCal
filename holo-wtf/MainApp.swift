@@ -22,6 +22,7 @@ struct MainApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
+    // swiftlint:disable function_body_length
     init() {
         if let sentryDsn = Bundle.main.object(forInfoDictionaryKey: "SENTRY_DSN") as? String {
             SentrySDK.start { options in
@@ -74,12 +75,29 @@ struct MainApp: App {
             toRemove.contains(where: { $0 == favourite })
         }
         
-        // MARK: - If the shape of `LiveVideoToNotification` changes, then we need to delete the data
-        let deserialized = try? JSONDecoder().decode(LiveVideoToNotification.self, from: scheduledNotifications)
-        if deserialized == nil {
+        let notificationCenter = UNUserNotificationCenter.current()
+        
+        if var deserialized = try? JSONDecoder().decode(LiveVideoToNotification.self, from: scheduledNotifications) {
+            // Get delivered notifications and remove
+            notificationCenter.getDeliveredNotifications { notifications in
+                for notification in notifications {
+                    guard let videoId = notification.request.content.userInfo["id"] as? String else {
+                        continue
+                    }
+                    
+                    if let index = deserialized.firstIndex(where: {$0.key.id == videoId}) {
+                        deserialized.remove(at: index)
+                    }
+                }
+            }
+        } else {
+            // MARK: - If the shape of `LiveVideoToNotification` changes, then we need to delete the data
             scheduledNotifications = (try? JSONEncoder().encode(LiveVideoToNotification())) ?? Data()
         }
+        
+        notificationCenter.removeAllDeliveredNotifications()
     }
+    // swiftlint:enable function_body_length
     
     var body: some Scene {
         WindowGroup {
