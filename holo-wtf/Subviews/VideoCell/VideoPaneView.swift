@@ -37,8 +37,11 @@ struct VideoPaneView: View {
                             
                             BlockLiveTimeView(liveTime: video.startActual)
                         case .upcoming:
-                            BlockUpcomingTimeView(liveSchedule: video.startScheduled)
-                                .padding(.trailing)
+                            TimelineView(.everyMinute) { _ in
+                                BlockUpcomingTimeView(liveSchedule: video.startScheduled)
+                                    .padding(.trailing)
+                            }
+                            
                             if video.isMengen {
                                 BlockMemberOnlyView()
                                     .padding(.trailing)

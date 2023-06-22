@@ -24,6 +24,14 @@ struct SettingsWatchView: View {
                 })
             }
             
+            Section(header: Text("SETTINGS_PAST_VIDEOS_SECTION_HEADER")) {
+                Picker("SETTINGS_PAST_LIMIT", selection: $pastLimit) {
+                    ForEach(PastLimit.allCases, id: \.self) {
+                        Text("\($0.rawValue)")
+                    }
+                }
+            }
+            
             Section(header: Text("SETTINGS_ABOUT_SECTION_HEADER"), footer: Text("HoloCal \(Bundle.main.appVersionLong) (\(Bundle.main.appBuild)) \nCodename: \(Bundle.main.codeName)")) {
                 NavigationLink(destination: SpecialThanksView(), label: {
                     Text("SETTINGS_SPECIAL_THANKS")
@@ -31,14 +39,6 @@ struct SettingsWatchView: View {
                 
                 NavigationLink(destination: OpenSourceView()) {
                     Text("SETTINGS_OPEN_SOURCE")
-                }
-            }
-            
-            Section(header: Text("SETTINGS_PAST_VIDEOS_SECTION_HEADER")) {
-                Picker("SETTINGS_PAST_LIMIT", selection: $pastLimit) {
-                    ForEach(PastLimit.allCases, id: \.self) {
-                        Text("\($0.rawValue)")
-                    }
                 }
             }
         }
