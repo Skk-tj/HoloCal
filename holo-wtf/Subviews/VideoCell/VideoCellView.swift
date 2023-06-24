@@ -13,6 +13,16 @@ struct VideoCellView: View {
     @AppStorage(UserDefaultKeys.favouritedChannel, store: UserDefaults(suiteName: "group.io.skk-tj.holo-wtf.ios")) var favourited = Favourited()
     
     var body: some View {
+        if let link = video.url {
+            Link(destination: link) {
+                theView
+            }
+        } else {
+            theView
+        }
+    }
+    
+    var theView: some View {
         HStack {
             LiveAvatarView(url: video.channel.photo)
             VStack(alignment: .leading) {

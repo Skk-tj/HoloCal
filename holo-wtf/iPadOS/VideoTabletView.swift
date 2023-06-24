@@ -22,12 +22,10 @@ struct VideoTabletView: View {
     
     var body: some View {
         LazyGridView(singleVideoView: { video in
-            LinkedVideoView(url: video.url) {
-                VideoPaneView(video: video, videoType: videoType)
-            }
-            .contextMenu {
-                VideoContextMenu(video: video)
-            }
+            VideoPaneView(video: video, videoType: videoType)
+                .contextMenu {
+                    VideoContextMenu(video: video)
+                }
         }, dataStatusView: {
             DataStatusIndicatorView(dataStatus: video.dataStatus, error: video.error) {
                 VideoCountView(videoType: videoType)

@@ -653,6 +653,7 @@ enum TalentEnum: String, Codable {
     case tsuna = "UCIjdfjcSaEgdjwbgjxC3ZWg"
     case ramune = "UC61OwuYOVuKkpKnid-43Twg"
     case met = "UCzUNASdzI4PV5SlqtYwAkKQ"
+    case yumenoAkari = "UCS5l_Y0oMVTjEos2LuyeSZQ"
     
     // MARK: - Vspo Official Channel
     case vspoOfficial = "UCuI5XaO-6VkOEhHao6ij7JA"
@@ -1201,6 +1202,7 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .tsuna: Talent(id: TalentEnum.tsuna.rawValue, names: [.en: "Nekota Tsuna", .ja: "猫汰つな"], inGeneration: .vspo),
     .ramune: Talent(id: TalentEnum.ramune.rawValue, names: [.en: "Shiranami Ramune", .ja: "白波らむね"], inGeneration: .vspo),
     .met: Talent(id: TalentEnum.met.rawValue, names: [.en: "Komori Met", .ja: "小森めと"], inGeneration: .vspo),
+    .yumenoAkari: Talent(id: TalentEnum.yumenoAkari.rawValue, names: [.en: "Yumeno Akari", .ja: "夢野あかり"], inGeneration: .vspo),
     
     // MARK: - Vspo Official Channel
     .vspoOfficial: Talent(id: TalentEnum.vspoOfficial.rawValue, names: [.en: "VSpo Official Channel", .ja: "ぶいすぽっ! 公式チャンネル"], inGeneration: .vspoOfficial)
@@ -1307,7 +1309,7 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .lupinus: GenerationGroup(id: .lupinus, names: [.en: "Lupinus Virtual Games", .ja: "Lupinus Virtual Games"], members: [.uruha, .toto, .sumire, .nazuna], agency: .vspo),
     .iris: GenerationGroup(id: .iris, names: [.en: "Iris Black Games", .ja: "Iris Black Games"], members: [.noa, .hinano, .renKisaragi], agency: .vspo),
     .cattleya: GenerationGroup(id: .cattleya, names: [.en: "Cattleya Regina Games", .ja: "Cattleya Regina Games"], members: [.mimi, .sena, .risa], agency: .vspo),
-    .vspo: GenerationGroup(id: .vspo, names: [.en: "VSpo", .ja: "ぶいすぽ"], members: [.qpi, .beni, .ema, .runa, .tsuna, .ramune, .met], agency: .vspo),
+    .vspo: GenerationGroup(id: .vspo, names: [.en: "VSpo", .ja: "ぶいすぽ"], members: [.qpi, .beni, .ema, .runa, .tsuna, .ramune, .met, .yumenoAkari], agency: .vspo),
     .vspoOfficial: GenerationGroup(id: .vspoOfficial, names: [.en: "VSpo Official Channel", .ja: "ぶいすぽっ! 公式チャンネル"], members: [.vspoOfficial], agency: .vspo),
     
     // Need to change this once indies are implemented

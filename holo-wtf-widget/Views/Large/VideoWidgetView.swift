@@ -34,8 +34,9 @@ struct VideoWidgetView: View {
             
             VStack(alignment: .leading) {
                 Text(video.title)
+                    .frame(maxHeight: .infinity)
                     .font(.headline)
-                    .lineLimit(2)
+                    .lineLimit(2, reservesSpace: false)
                     .multilineTextAlignment(.leading)
                 
                 HStack {

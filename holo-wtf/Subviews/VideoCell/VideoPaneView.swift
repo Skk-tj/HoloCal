@@ -16,52 +16,13 @@ struct VideoPaneView: View {
     var body: some View {
         ZStack(alignment: .topLeading) {
             VStack {
-                VideoThumbnailView(video: video)
-                
-                VideoTitleView(title: video.title)
-                    .padding(.horizontal)
-                
-                VStack(alignment: .leading) {
-                    PaneViewChannelInfoView(video: video)
-                    
-                    HStack {
-                        switch videoType {
-                        case .live:
-                            if video.isMengen {
-                                BlockMemberOnlyView()
-                                    .padding(.trailing)
-                            } else {
-                                ViewerCounterView(viewer: video.liveViewers ?? 0, memberOnly: video.isMengen)
-                                    .padding(.trailing)
-                            }
-                            
-                            BlockLiveTimeView(liveTime: video.startActual)
-                        case .upcoming:
-                            TimelineView(.everyMinute) { _ in
-                                BlockUpcomingTimeView(liveSchedule: video.startScheduled)
-                                    .padding(.trailing)
-                            }
-                            
-                            if video.isMengen {
-                                BlockMemberOnlyView()
-                                    .padding(.trailing)
-                            }
-                            if video.isPremiere {
-                                BlockVideoTypeView()
-                            }
-                        case .past:
-                            BlockPastTimeView(endedAt: video.endedAt)
-                                .padding(.trailing)
-                            if video.isMengen {
-                                BlockMemberOnlyView()
-                                    .padding(.trailing)
-                            }
-                        }
+                if let url = video.url {
+                    Link(destination: url) {
+                        clickablePart
                     }
-                    .padding(.top, 5)
+                } else {
+                    clickablePart
                 }
-                .padding(.horizontal)
-                .frame(maxWidth: .infinity, alignment: .leading)
                 
                 Divider()
                     .padding(.bottom, 5)
@@ -90,6 +51,57 @@ struct VideoPaneView: View {
         }
         .background(.thickMaterial)
         .clipShape(RoundedRectangle(cornerRadius: 10))
+    }
+    
+    var clickablePart: some View {
+        VStack {
+            VideoThumbnailView(video: video)
+            
+            VideoTitleView(title: video.title)
+                .padding(.horizontal)
+            
+            VStack(alignment: .leading) {
+                PaneViewChannelInfoView(video: video)
+                
+                HStack {
+                    switch videoType {
+                    case .live:
+                        if video.isMengen {
+                            BlockMemberOnlyView()
+                                .padding(.trailing)
+                        } else {
+                            ViewerCounterView(viewer: video.liveViewers ?? 0, memberOnly: video.isMengen)
+                                .padding(.trailing)
+                        }
+                        
+                        BlockLiveTimeView(liveTime: video.startActual)
+                    case .upcoming:
+                        TimelineView(.everyMinute) { _ in
+                            BlockUpcomingTimeView(liveSchedule: video.startScheduled)
+                                .padding(.trailing)
+                        }
+                        
+                        if video.isMengen {
+                            BlockMemberOnlyView()
+                                .padding(.trailing)
+                        }
+                        if video.isPremiere {
+                            BlockVideoTypeView()
+                        }
+                    case .past:
+                        BlockPastTimeView(endedAt: video.endedAt)
+                            .padding(.trailing)
+                        if video.isMengen {
+                            BlockMemberOnlyView()
+                                .padding(.trailing)
+                        }
+                    }
+                }
+                .padding(.top, 5)
+            }
+            .padding(.horizontal)
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
     }
 }
 

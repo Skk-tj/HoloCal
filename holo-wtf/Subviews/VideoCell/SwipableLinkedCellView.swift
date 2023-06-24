@@ -12,20 +12,18 @@ struct SwipableLinkedCellView<Content: View>: View {
     @ViewBuilder let content: () -> Content
     
     var body: some View {
-        LinkedVideoView(url: video.url) {
-            content()
-        }
-        .swipeActions {
-            FavouriteButton(video: video) { isFavourited in
-                Label(isFavourited ? "LINKED_VIDEO_SWIPE_ACTIONS_UNFAVOURITE" : "LINKED_VIDEO_SWIPE_ACTIONS_FAVOURITE", systemImage: isFavourited ? "star.slash" : "star")
+        content()
+            .swipeActions {
+                FavouriteButton(video: video) { isFavourited in
+                    Label(isFavourited ? "LINKED_VIDEO_SWIPE_ACTIONS_UNFAVOURITE" : "LINKED_VIDEO_SWIPE_ACTIONS_FAVOURITE", systemImage: isFavourited ? "star.slash" : "star")
+                }
+                .tint(.yellow)
+                
+                ShareLink(item: URL(string: "https://www.youtube.com/watch?v=\(video.id)")!, label: {
+                    Label("VIDEO_CONTEXT_MENU_SHARE", systemImage: "square.and.arrow.up")
+                })
+                .tint(.blue)
             }
-            .tint(.yellow)
-            
-            ShareLink(item: URL(string: "https://www.youtube.com/watch?v=\(video.id)")!, label: {
-                Label("VIDEO_CONTEXT_MENU_SHARE", systemImage: "square.and.arrow.up")
-            })
-            .tint(.blue)
-        }
     }
 }
 

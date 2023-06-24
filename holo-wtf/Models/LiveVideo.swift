@@ -73,7 +73,7 @@ struct LiveVideo: Codable, Identifiable, Hashable {
     }
     
     var endedAt: Date {
-        return availableAt + Double(duration)
+        availableAt + Double(duration)
     }
     
     static func == (lhs: Self, rhs: Self) -> Bool {
