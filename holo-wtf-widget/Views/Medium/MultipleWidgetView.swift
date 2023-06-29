@@ -46,9 +46,13 @@ struct SingleVideoMultipleWidgetView: View {
                     .foregroundColor(.secondary)
                     .font(.caption2)
             case .upcoming:
-                UpcomingTimeView(liveSchedule: video.startScheduled, fontSize: .caption2, shortMode: true)
+                Text("\(Image(systemName: "clock")) \(video.getUpcomingRelativeTimeString(shortMode: true))")
+                    .foregroundColor(.secondary)
+                    .font(.caption2)
             case .past:
-                PastTimeView(endedAt: video.endedAt, fontSize: .caption2, shortMode: true)
+                Text("\(Image(systemName: "clock")) \(video.getPastRelativeTimeString(shortMode: true))")
+                    .foregroundColor(.secondary)
+                    .font(.caption2)
             }
         }
     }

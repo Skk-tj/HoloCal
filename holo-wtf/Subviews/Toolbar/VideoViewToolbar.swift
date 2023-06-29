@@ -58,36 +58,30 @@ struct VideoViewToolbar: View {
             
             switch videoType {
             case .live:
-                Menu {
+                Section("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME") {
                     Picker("Order", selection: $viewModel.sortingStrategy) {
                         Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST", systemImage: "hourglass.tophalf.filled").tag(SortingStrategy.timeDesc)
                         Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_FURTHEST_TO_NEAREST", systemImage: "hourglass.bottomhalf.filled").tag(SortingStrategy.timeAsc)
                     }
-                } label: {
-                    Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME", systemImage: "clock")
                 }
             case .upcoming:
-                Menu {
+                Section("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME") {
                     Picker("Order", selection: $viewModel.sortingStrategy) {
                         Label("UPCOMING_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST", systemImage: "hourglass.tophalf.filled").tag(SortingStrategy.timeAsc)
                         Label("UPCOMING_VIEW_TOOLBAR_SORT_BY_START_TIME_FURTHEST_TO_NEAREST", systemImage: "hourglass.bottomhalf.filled").tag(SortingStrategy.timeDesc)
                     }
-                } label: {
-                    Label("LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME", systemImage: "clock")
                 }
             case .past:
-                Menu {
+                Section("PAST_VIEW_TOOLBAR_SORT_BY_END_TIME") {
                     Picker("Order", selection: $viewModel.sortingStrategy) {
                         Label("PAST_VIEW_TOOLBAR_SORT_BY_ENDED_TIME_NEAREST_TO_FURTHEST", systemImage: "hourglass.tophalf.filled").tag(SortingStrategy.endedFirst)
                         Label("PAST_VIEW_TOOLBAR_SORT_BY_ENDED_TIME_FURTHEST_TO_NEAREST", systemImage: "hourglass.bottomhalf.filled").tag(SortingStrategy.endedLast)
                     }
-                } label: {
-                    Label("PAST_VIEW_TOOLBAR_SORT_BY_END_TIME", systemImage: "clock")
                 }
             }
             
             if videoType == .live {
-                Menu {
+                Section("LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS") {
                     Picker("Order", selection: $viewModel.sortingStrategy) {
                         Label(title: {
                             Text("LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS_DESCENDING")
@@ -101,8 +95,6 @@ struct VideoViewToolbar: View {
                             Image(systemName: "person.3.sequence.fill", variableValue: 0.1)
                         }).tag(SortingStrategy.viewersAsc)
                     }
-                } label: {
-                    Label("LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS", systemImage: "person.3.sequence.fill")
                 }
             }
         } label: {

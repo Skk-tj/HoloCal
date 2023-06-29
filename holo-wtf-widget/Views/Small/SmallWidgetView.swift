@@ -17,25 +17,32 @@ struct SmallWidgetView: View {
         VStack(alignment: .leading) {
             SmallWidgetAvatarView(avatarData: avatarData)
             
-            Text(video.title)
-                .font(.caption)
-                .lineLimit(2, reservesSpace: true)
-            Text(video.channel.getTalentName())
-                .lineLimit(1)
-                .font(.caption)
-                .foregroundColor(.secondary)
-            
-            switch videoType {
-            case .live:
-                Text("\(Image(systemName: "eye")) \(video.liveViewers ?? 0)")
+            VStack(alignment: .leading) {
+                Text(video.title)
+                    .font(.caption)
+                    .lineLimit(2, reservesSpace: true)
+                Text(video.channel.getTalentName())
+                    .lineLimit(1)
+                    .font(.caption)
                     .foregroundColor(.secondary)
-                    .font(.caption2)
-            case .upcoming:
-                UpcomingTimeView(liveSchedule: video.startScheduled, fontSize: .caption2)
-            case .past:
-                PastTimeView(endedAt: video.endedAt)
+                
+                switch videoType {
+                case .live:
+                    Text("\(Image(systemName: "eye")) \(video.liveViewers ?? 0)")
+                        .foregroundColor(.secondary)
+                        .font(.caption2)
+                case .upcoming:
+                    Text("\(Image(systemName: "clock")) \(video.getUpcomingRelativeTimeString(shortMode: true))")
+                        .foregroundColor(.secondary)
+                        .font(.caption2)
+                case .past:
+                    Text("\(Image(systemName: "clock")) \(video.getPastRelativeTimeString(shortMode: true))")
+                        .foregroundColor(.secondary)
+                        .font(.caption2)
+                }
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 

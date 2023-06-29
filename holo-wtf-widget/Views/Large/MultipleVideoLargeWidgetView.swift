@@ -40,14 +40,17 @@ struct MultipleVideoLargeWidgetView: View {
                                         .font(.footnote)
                                 }
                             case .upcoming:
-                                UpcomingTimeView(liveSchedule: item.0.startScheduled, fontSize: .footnote, shortMode: true)
+                                Text("\(Image(systemName: "clock")) \(item.0.getUpcomingRelativeTimeString(shortMode: true))")
+                                    .foregroundColor(.secondary)
+                                    .font(.footnote)
                             case .past:
-                                PastTimeView(endedAt: item.0.endedAt, fontSize: .footnote, shortMode: true)
+                                Text("\(Image(systemName: "clock")) \(item.0.getPastRelativeTimeString(shortMode: true))")
+                                    .foregroundColor(.secondary)
+                                    .font(.footnote)
                             }
                         }
                     }
                 }
-                // .frame(minWidth: .infinity)
             }
             Divider()
         }

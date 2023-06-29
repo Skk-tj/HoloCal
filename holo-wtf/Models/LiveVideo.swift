@@ -68,12 +68,46 @@ struct LiveVideo: Codable, Identifiable, Hashable {
         channel.org == agency.rawValue
     }
     
+    /// Only for upcoming videos
     var isPremiere: Bool {
         duration > 0
     }
     
+    /// Only for Past videos
     var endedAt: Date {
         availableAt + Double(duration)
+    }
+    
+    func getUpcomingRelativeTimeString(shortMode: Bool = false) -> String {
+        let isShowingAbsoluteTime = UserDefaults.standard.bool(forKey: UserDefaultKeys.isShowingAbsoluteTimeInUpcomingView)
+        
+        if let startScheduled {
+            if isShowingAbsoluteTime {
+                return NSLocalizedString("UPCOMING_CELL_VIEW_STARTING_AT", comment: "") + startScheduled.formatted(date: .abbreviated, time: .shortened)
+            } else {
+                if shortMode {
+                    return getRelativeTimeString(for: startScheduled)
+                } else {
+                    return NSLocalizedString("UPCOMING_CELL_VIEW_STARTING_IN", comment: "") + getRelativeTimeString(for: startScheduled)
+                }
+            }
+        } else {
+            return NSLocalizedString("UPCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN", comment: "")
+        }
+    }
+    
+    func getPastRelativeTimeString(shortMode: Bool = false) -> String {
+        let isShowingAbsoluteTime = UserDefaults.standard.bool(forKey: UserDefaultKeys.isShowingAbsoluteTimeInPastView)
+        
+        if isShowingAbsoluteTime {
+            return NSLocalizedString("PAST_CELL_VIEW_ENDED_AT", comment: "") + endedAt.formatted(date: .numeric, time: .shortened)
+        } else {
+            if shortMode {
+                return getRelativeTimeString(for: endedAt)
+            } else {
+                return NSLocalizedString("PAST_CELL_VIEW_ENDED", comment: "") + getRelativeTimeString(for: endedAt)
+            }
+        }
     }
     
     static func == (lhs: Self, rhs: Self) -> Bool {

@@ -88,6 +88,7 @@ enum Generation: Int, CaseIterable, Codable, Hashable {
     case en5thWave
     case en6thWave
     case en7thWave
+    case en8thWave
     case nijisanjiOfficial
     
     // MARK: - Re:AcT
@@ -529,6 +530,11 @@ enum TalentEnum: String, Codable {
     case hex = "UCz_ZRw6ak4Foy8zZy0kEprQ"
     case kotoka = "UCggO2c1unS-oLwTLT0ICywg"
     case ver = "UCO8WcDsF5znr-qsXlzZNpqg"
+    
+    // MARK: - EN Eighth Wave: Krisis
+    case wilson = "UCKpKC3M5fkcEvtOr06dmYlA"
+    case bringer = "UCpYf6C9QsP_BRf97vLuXlIA"
+    case bandage = "UCK9l6rTwU3hiSZijIMq51Gw"
     
     // MARK: - Official/Other Channels
     case nijisanji = "UCX7YkU9nEeaoZbkVLVajcMg" // Nijisanji
@@ -1078,6 +1084,11 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .hex: Talent(id: TalentEnum.hex.rawValue, names: [.en: "Hex Haywire", .ja: "ヘックス ヘイワイヤー"], inGeneration: Generation.en7thWave),
     .kotoka: Talent(id: TalentEnum.kotoka.rawValue, names: [.en: "Kotoka Korahime", .ja: "虎姫 コトカ"], inGeneration: Generation.en7thWave),
     .ver: Talent(id: TalentEnum.ver.rawValue, names: [.en: "Ver Vermillion", .ja: "ヴェール ヴァーミリオン"], inGeneration: Generation.en7thWave),
+    
+    // MARK: - EN Eighth Wave: Krisis
+    .wilson: Talent(id: TalentEnum.wilson.rawValue, names: [.en: "Yu Q. Wilson", .ja: "ユウ Q ウィルソン"], inGeneration: Generation.en8thWave),
+    .bringer: Talent(id: TalentEnum.bringer.rawValue, names: [.en: "Vantacrow Bringer", .ja: "ベンタクロウ ブリンガー"], inGeneration: Generation.en8thWave),
+    .bandage: Talent(id: TalentEnum.bandage.rawValue, names: [.en: "Vezalius Bandage", .ja: "ヴェザリウス バンデージ"], inGeneration: Generation.en8thWave),
 
     // MARK: - Official/Other Channels
     .nijisanji: Talent(id: TalentEnum.nijisanji.rawValue, names: [.en: "Nijisanji", .ja: "にじさんじ"], inGeneration: Generation.nijisanjiOfficial),
@@ -1286,6 +1297,7 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .en5thWave: GenerationGroup(id: .en5thWave, names: [.en: "EN 5th Wave: Noctyx", .ja: "EN 第5弾「Noctyx」"], members: [.sonny, .uki, .alban, .fulgur], agency: .nijisanji),
     .en6thWave: GenerationGroup(id: .en6thWave, names: [.en: "EN 6th Wave: ILUNA", .ja: "EN 第6弾「ILUNA」"], members: [.kyo, .maria, .aster, .aia, .ren, .scarle], agency: .nijisanji),
     .en7thWave: GenerationGroup(id: .en7thWave, names: [.en: "EN 7th Wave: XSOLEIL", .ja: "EN 第7弾「XSOLEIL」"], members: [.doppio, .meloco, .hex, .kotoka, .ver], agency: .nijisanji),
+    .en8thWave: GenerationGroup(id: .en8thWave, names: [.en: "EN 8th Wave: Krisis", .ja: "EN 第8弾「Krisis」"], members: [.wilson, .bringer, .bandage], agency: .nijisanji),
     .nijisanjiOfficial: GenerationGroup(id: .nijisanjiOfficial, names: [.en: "Nijisanji Official Channels", .ja: "にじさんじ公式チャンネル"], members: [.nijisanji, .nijisanjiID, .nijisanjiEN, .virtual, .voltacation, .luxiem, .rofmao, .nornis, .chronoir], agency: .nijisanji),
     
     // MARK: - Re:AcT

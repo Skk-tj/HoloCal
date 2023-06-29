@@ -43,11 +43,11 @@ struct SectionedForEachView<Content: View>: View {
         let sortedFilteredGroupedDictionary = orderedFiltered.sorted { kv1, kv2 in
             let orderOfFirst: Int = AgencyEnum.allCases.map {
                 getGenerationOrderList(from: generateListOrder, agency: $0).firstIndex(of: kv1.key) ?? -1
-            }.first { $0 != -1 } ?? 0
+            }.first { $0 != -1 } ?? Int.max
             
             let orderOfSecond: Int = AgencyEnum.allCases.map {
                 getGenerationOrderList(from: generateListOrder, agency: $0).firstIndex(of: kv2.key) ?? -1
-            }.first { $0 != -1 } ?? 0
+            }.first { $0 != -1 } ?? Int.max
             
             return orderOfFirst < orderOfSecond
         }
