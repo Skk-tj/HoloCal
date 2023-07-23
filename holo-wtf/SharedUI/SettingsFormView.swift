@@ -11,6 +11,7 @@ struct SettingsFormView: View {
     @AppStorage(UserDefaultKeys.upcomingLookAhead) var hoursLookAhead: Int = 48
     @AppStorage(UserDefaultKeys.pastLimit) var pastLimit: PastLimit = .limit25
     @AppStorage(UserDefaultKeys.dstDays) var dstDays: Int = 5
+    @AppStorage(UserDefaultKeys.searchSuggestionLanguage) var searchSuggestionLanguage: NameLanguage = Locale.current.language.languageCode?.identifier == "en" ? .en : .ja
     
     var body: some View {
         Form {
@@ -43,6 +44,15 @@ struct SettingsFormView: View {
                     dstDays = newDays
                 })
             }
+            
+            Section(content: {
+                Picker("SETTINGS_SEARCH_SUGGESTION_LANGUAGE", selection: $searchSuggestionLanguage) {
+                    Text(Locale.current.localizedString(forIdentifier: "en") ?? "").tag(NameLanguage.en)
+                    Text(Locale.current.localizedString(forIdentifier: "ja") ?? "").tag(NameLanguage.ja)
+                }
+            }, header: {
+                Text("SETTINGS_SEARCHING_HEADER")
+            })
             
             Section("SETTINGS_CHANNEL_MANAGEMENT_HEADER") {
                 NavigationLink(destination: ManageFavoriteAgencySelectionView()) {

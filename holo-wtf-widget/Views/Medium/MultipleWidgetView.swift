@@ -34,26 +34,22 @@ struct SingleVideoMultipleWidgetView: View {
             .lineLimit(1)
             .font(.caption)
         
-        HStack {
-            Text(video.channel.getTalentName())
+        switch videoType {
+        case .live:
+            Text("\(video.channel.getTalentName()) \(Image(systemName: "eye")) \(video.liveViewers ?? 0)")
                 .foregroundColor(.secondary)
-                .lineLimit(1)
                 .font(.caption2)
-            
-            switch videoType {
-            case .live:
-                Text("\(Image(systemName: "eye")) \(video.liveViewers ?? 0)")
-                    .foregroundColor(.secondary)
-                    .font(.caption2)
-            case .upcoming:
-                Text("\(Image(systemName: "clock")) \(video.getUpcomingRelativeTimeString(shortMode: true))")
-                    .foregroundColor(.secondary)
-                    .font(.caption2)
-            case .past:
-                Text("\(Image(systemName: "clock")) \(video.getPastRelativeTimeString(shortMode: true))")
-                    .foregroundColor(.secondary)
-                    .font(.caption2)
-            }
+                .lineLimit(1)
+        case .upcoming:
+            Text("\(video.channel.getTalentName()) \(Image(systemName: "clock")) \(video.getUpcomingRelativeTimeString(shortMode: true))")
+                .foregroundColor(.secondary)
+                .font(.caption2)
+                .lineLimit(1)
+        case .past:
+            Text("\(video.channel.getTalentName()) \(Image(systemName: "clock")) \(video.getPastRelativeTimeString(shortMode: true))")
+                .foregroundColor(.secondary)
+                .font(.caption2)
+                .lineLimit(1)
         }
     }
 }

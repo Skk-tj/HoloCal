@@ -105,6 +105,7 @@ enum UserDefaultKeys {
     static let dstDays = "dstDays"
     static let notifications = "notifications"
     static let pastLimit = "pastLimit"
+    static let searchSuggestionLanguage = "searchSuggestionLanguage"
 }
 
 enum UserActivityKeys {

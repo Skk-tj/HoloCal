@@ -38,7 +38,7 @@ let agencyEnumToAgency = [
 /// Available languages for the name of a struct, such as an agency, a generation, or a talent. 
 ///
 /// For most international standards (except Chinese), we only need the original Japanese name and its Romaji representation (Hepburn).
-enum NameLanguage: Codable {
+enum NameLanguage: Int, Codable {
     case en
     case ja
 }

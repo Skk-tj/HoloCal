@@ -73,6 +73,9 @@
 "SETTINGS_NOTIFICATION_CANCEL_ALL_NOTIFICATIONS" = "Cancel all notifications";
 "SETTINGS_NOTIFICATION_WILL_BE_DELIVERED_AT %@" = "Will be delivered at %@";
 
+"SETTINGS_SEARCH_SUGGESTION_LANGUAGE" = "Search Suggestion Language";
+"SETTINGS_SEARCHING_HEADER" = "Searching";
+
 // OpenSourceView
 
 "OPEN_SOURCE_VIEW_TITLE" = "Open Source";
