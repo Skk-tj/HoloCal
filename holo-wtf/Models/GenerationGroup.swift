@@ -23,6 +23,7 @@ let agencyEnumToGenerations: [AgencyEnum: [Generation]] = [
         .enMyth,
         .projectHope,
         .enCouncil,
+        .enAdvent,
         .stars1stGen,
         .stars2ndGen,
         .stars3rdGen,
@@ -85,6 +86,7 @@ let agencyEnumToGenerations: [AgencyEnum: [Generation]] = [
         .en5thWave,
         .en6thWave,
         .en7thWave,
+        .en8thWave,
         .nijisanjiOfficial
     ],
     .react: [

@@ -26,6 +26,7 @@ enum Generation: Int, CaseIterable, Codable, Hashable {
     case enMyth
     case projectHope
     case enCouncil
+    case enAdvent
     case stars1stGen
     case stars2ndGen
     case stars3rdGen
@@ -202,6 +203,11 @@ enum TalentEnum: String, Codable {
     case kronii = "UCmbs8T6MWqUHP1tIQvSgKrg"
     case mumei = "UC3n5uGu18FoCy23ggWWp8tA"
     case baelz = "UCgmPnx-EEeOrZSg5Tiw7ZRQ"
+    // MARK: - EN Advent
+    case shiori = "UCgnfPPb9JI3e9A4cXHnWbyg"
+    case koseki = "UC9p_lqQ0FEDz327Vgf5JwqA"
+    case nerissa = "UC_sFNM0z0MWm9A6WlKPuMMg"
+    case fuwamoco = "UCt9H_RpQzhxzlyBxFqrdHqA"
     // MARK: - holostars 1st gen
     case miyabi = "UC6t3-_N8A6ME1JShZHHqOMw"
     case izuru = "UCZgOv3YDEs-ZnZWDYVwJdmA"
@@ -747,6 +753,12 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .mumei: Talent(id: TalentEnum.mumei.rawValue, names: [.en: "Nanashi Mumei", .ja: "七詩ムメイ"], inGeneration: Generation.enCouncil),
     .baelz: Talent(id: TalentEnum.baelz.rawValue, names: [.en: "Hakos Baelz", .ja: "ハコス・ベールズ"], inGeneration: Generation.enCouncil),
     
+    // MARK: - EN Advent
+    .shiori: Talent(id: TalentEnum.shiori.rawValue, names: [.en: "Shiori Novella", .ja: "シオリ・ノヴェラ"], inGeneration: Generation.enAdvent),
+    .koseki: Talent(id: TalentEnum.koseki.rawValue, names: [.en: "Koseki Bijou", .ja: "古石ビジュー"], inGeneration: Generation.enAdvent),
+    .nerissa: Talent(id: TalentEnum.nerissa.rawValue, names: [.en: "Nerissa Ravencroft", .ja: "ネリッサ・レイヴンクロフト"], inGeneration: Generation.enAdvent),
+    .fuwamoco: Talent(id: TalentEnum.fuwamoco.rawValue, names: [.en: "Fuwawa & Mococo Abyssgard", .ja: "フワワ & モココ・アビスガード"], inGeneration: Generation.enAdvent),
+    
     // MARK: - holostars 1st gen
     .miyabi: Talent(id: TalentEnum.miyabi.rawValue, names: [.en: "Hanasaki Miyabi", .ja: "花咲みやび"], inGeneration: Generation.stars1stGen),
     .izuru: Talent(id: TalentEnum.izuru.rawValue, names: [.en: "Kanade Izuru", .ja: "奏手イヅル"], inGeneration: Generation.stars1stGen),
@@ -1224,7 +1236,8 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .id3rdGen: GenerationGroup(id: .id3rdGen, names: [.en: "ID 3rd Gen", .ja: "ID 3期生"], members: [.zeta, .kaela, .kobo], agency: .hololive),
     .enMyth: GenerationGroup(id: .enMyth, names: [.en: "hololive English -Myth-", .ja: "hololive English -Myth-"], members: [.mori, .kiara, .ina, .gura, .ame], agency: .hololive),
     .projectHope: GenerationGroup(id: .projectHope, names: [.en: "Project: HOPE", .ja: "Project: HOPE"], members: [.irys], agency: .hololive),
-    .enCouncil: GenerationGroup(id: .enCouncil, names: [.en: "hololive English -Council-", .ja: "hololive English -議会-"], members: [.ceres, .kronii, .mumei, .baelz], agency: .hololive),
+    .enCouncil: GenerationGroup(id: .enCouncil, names: [.en: "hololive English -Council-", .ja: "hololive English -Council-"], members: [.ceres, .kronii, .mumei, .baelz], agency: .hololive),
+    .enAdvent: GenerationGroup(id: .enAdvent, names: [.en: "hololive English -Advent-", .ja: "hololive English -Advent-"], members: [.shiori, .koseki, .nerissa, .fuwamoco], agency: .hololive),
     .stars1stGen: GenerationGroup(id: .stars1stGen, names: [.en: "holostars 1st Gen", .ja: "ホロスターズ 1期生"], members: [.miyabi, .izuru, .arurandeisu, .rikka], agency: .hololive),
     .stars2ndGen: GenerationGroup(id: .stars2ndGen, names: [.en: "holostars 2nd Gen", .ja: "ホロスターズ 2期生"], members: [.astel, .temma, .roberu], agency: .hololive),
     .stars3rdGen: GenerationGroup(id: .stars3rdGen, names: [.en: "holostars 3nd Gen", .ja: "ホロスターズ 3期生"], members: [.shien, .oga], agency: .hololive),
