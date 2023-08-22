@@ -15,5 +15,7 @@ struct ComplicationsWidgetBundle: WidgetBundle {
         SingleLiveWidget()
         SingleUpcomingWidget()
         SinglePastWidget()
+        
+        LiveCountWidget()
     }
 }

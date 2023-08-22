@@ -58,3 +58,16 @@ struct SinglePastWidget: Widget {
 #endif
     }
 }
+
+struct LiveCountWidget: Widget {
+    let kind: String = "io.skk-tj.holo-wtf-widget.live-count"
+    
+    var body: some WidgetConfiguration {
+        IntentConfiguration(kind: kind, intent: LiveWidgetIntent.self, provider: CountLiveWidgetProvider()) { entry in
+            AccessoryWatchCircularEntryViews(entry: entry, videoType: .live)
+        }
+        .configurationDisplayName("LIVE_COUNT_WIDGET_DISPLAY_NAME")
+        .description("LIVE_COUNT_WIDGET_DESCRIPTION")
+        .supportedFamilies([.accessoryCircular])
+    }
+}

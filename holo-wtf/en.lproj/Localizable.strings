@@ -231,7 +231,7 @@
 "NOTIFICATION_ACCESS_MESSAGE" = "Notification access is disabled. Please review your privacy settings.";
 
 "NOTIFICATION_ERROR_TITLE" = "Notification error";
-"NOTIFICATION_ERROR_MESSAGE" = "There was an error scheduling this notification. If this continue to happen, please reset your notifications via Settings > Manage Notifications > Cancel all notifications.";
+"NOTIFICATION_ERROR_MESSAGE" = "There was an error scheduling this notification. If this continues to happen, please reset your notifications via Settings > Manage Notifications > Cancel all notifications.";
 
 // Notifications
 "NOTIFICATION_CANCEL_NOTIFICATION" = "Cancel notification";
@@ -286,6 +286,9 @@
 
 "PAST_CHANNELS_WIDGET_DISPLAY_NAME" = "Past Channels";
 "PAST_CHANNELS_WIDGET_DESCRIPTION" = "Show a list of channels that just streamed.";
+
+"LIVE_COUNT_WIDGET_DISPLAY_NAME" = "Live Count";
+"LIVE_COUNT_WIDGET_DESCRIPTION" = "Show the number of current live streams.";
 
 // Song List View
 "SONG_LIST_VIEW_NAVIGATION_TITLE" = "Songs";

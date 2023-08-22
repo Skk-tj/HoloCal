@@ -449,7 +449,6 @@ enum TalentEnum: String, Codable {
     case riksa = "UCkL9OLKjIQbKk2CztbpOCFg" // Riksa Dhirendra
     
     // MARK: - ID Third Wave: LAN_NEE3S
-    case azura = "UCk5r533QVMgJUdWwqegH2TA" // Azura Cecillia
     case layla = "UCyRkQSuhJILuGOuXk10voPg" // Layla Alstroemeria
     case nara = "UCoWH3sDpeXG1aXmOxveX4KA" // Nara Haramaung
     
@@ -1004,7 +1003,6 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .riksa: Talent(id: TalentEnum.riksa.rawValue, names: [.en: "Riksa Dhirendra", .ja: "リクサ ディレンドラ"], inGeneration: Generation.id2ndWave),
 
     // MARK: - ID Third Wave: LAN_NEE3S
-    .azura: Talent(id: TalentEnum.azura.rawValue, names: [.en: "Azura Cecillia", .ja: "アズラ セシリア"], inGeneration: Generation.id3rdWave),
     .layla: Talent(id: TalentEnum.layla.rawValue, names: [.en: "Layla Alstroemeria", .ja: "ライラ アルストロエメリア"], inGeneration: Generation.id3rdWave),
     .nara: Talent(id: TalentEnum.nara.rawValue, names: [.en: "Nara Haramaung", .ja: "ライラ アルストロエメリア"], inGeneration: Generation.id3rdWave),
 
@@ -1283,7 +1281,7 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .wave2023Apr26: GenerationGroup(id: .wave2023Apr26, names: [.en: "2023 Wave: April 26", .ja: "2023年04月26日デビュー"], members: [.sho, .kagetsu, .rou, .raiInami], agency: .nijisanji),
     .id1stWave: GenerationGroup(id: .id1stWave, names: [.en: "ID 1st Wave", .ja: "ID 1期生"], members: [.hana], agency: .nijisanji),
     .id2ndWave: GenerationGroup(id: .id2ndWave, names: [.en: "ID 2nd Wave", .ja: "ID 2期生"], members: [.rai, .riksa], agency: .nijisanji),
-    .id3rdWave: GenerationGroup(id: .id3rdWave, names: [.en: "ID 3rd Wave", .ja: "ID 3期生"], members: [.azura, .layla, .nara], agency: .nijisanji),
+    .id3rdWave: GenerationGroup(id: .id3rdWave, names: [.en: "ID 3rd Wave", .ja: "ID 3期生"], members: [.layla, .nara], agency: .nijisanji),
     .id4thWave: GenerationGroup(id: .id4thWave, names: [.en: "ID 4th Wave", .ja: "ID 4期生"], members: [.etna, .bonnivier], agency: .nijisanji),
     .id5thWave: GenerationGroup(id: .id5thWave, names: [.en: "ID 5th Wave", .ja: "ID 5期生"], members: [.nagisa, .derem, .reza], agency: .nijisanji),
     .id6thWave: GenerationGroup(id: .id6thWave, names: [.en: "ID 6th Wave", .ja: "ID 6期生"], members: [.hyona, .xia, .mika], agency: .nijisanji),

@@ -31,5 +31,7 @@ struct Bundle2: WidgetBundle {
         LiveChannelsWidget()
         UpcomingChannelsWidget()
         PastChannelsWidget()
+        
+        LiveCountWidget()
     }
 }

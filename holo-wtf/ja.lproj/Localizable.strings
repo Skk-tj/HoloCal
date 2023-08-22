@@ -291,6 +291,9 @@
 "PAST_CHANNELS_WIDGET_DISPLAY_NAME" = "アーカイブチャンネル";
 "PAST_CHANNELS_WIDGET_DESCRIPTION" = "ただいま配信したチャンネルを表示する";
 
+"LIVE_COUNT_WIDGET_DISPLAY_NAME" = "ライブ配信カウント";
+"LIVE_COUNT_WIDGET_DESCRIPTION" = "現在のライブ配信の数を表示する。";
+
 // Song List View
 "SONG_LIST_VIEW_NAVIGATION_TITLE" = "曲";
 "SONG_SHEET_DISMISS_BUTTON" = "閉じる";

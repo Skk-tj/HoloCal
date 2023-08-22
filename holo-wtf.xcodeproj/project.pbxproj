@@ -171,6 +171,22 @@
 		F04D755828D7D8430096B8AB /* SettingsWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04D755728D7D8430096B8AB /* SettingsWatchView.swift */; };
 		F04D755B28D7D8DD0096B8AB /* OpenSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0433C5127EAEDDB000FEADD /* OpenSourceView.swift */; };
 		F04EB66728D2A0A000F168CB /* ManageGenerationOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04EB66628D2A0A000F168CB /* ManageGenerationOrderView.swift */; };
+		F0558FAF2A9318E500F69836 /* MultipleVideoIntentTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0558FAE2A9318E500F69836 /* MultipleVideoIntentTimelineProvider.swift */; };
+		F0558FB02A9318E500F69836 /* MultipleVideoIntentTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0558FAE2A9318E500F69836 /* MultipleVideoIntentTimelineProvider.swift */; };
+		F0558FB22A93192F00F69836 /* ChannelsIntentTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0558FB12A93192F00F69836 /* ChannelsIntentTimelineProvider.swift */; };
+		F0558FB32A93192F00F69836 /* ChannelsIntentTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0558FB12A93192F00F69836 /* ChannelsIntentTimelineProvider.swift */; };
+		F0558FB52A93196400F69836 /* VideoIntentTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0558FB42A93196400F69836 /* VideoIntentTimelineProvider.swift */; };
+		F0558FB72A93196800F69836 /* VideoIntentTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0558FB42A93196400F69836 /* VideoIntentTimelineProvider.swift */; };
+		F0558FB92A931CBB00F69836 /* WidgetLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0558FB82A931CBB00F69836 /* WidgetLocalization.swift */; };
+		F0558FBA2A931CBB00F69836 /* WidgetLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0558FB82A931CBB00F69836 /* WidgetLocalization.swift */; };
+		F0558FBC2A9320BB00F69836 /* VideoCountEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0558FBB2A9320BB00F69836 /* VideoCountEntry.swift */; };
+		F0558FBD2A9320BB00F69836 /* VideoCountEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0558FBB2A9320BB00F69836 /* VideoCountEntry.swift */; };
+		F0558FBF2A9322A800F69836 /* CountIntentTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0558FBE2A9322A800F69836 /* CountIntentTimelineProvider.swift */; };
+		F0558FC02A9322A800F69836 /* CountIntentTimelineProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0558FBE2A9322A800F69836 /* CountIntentTimelineProvider.swift */; };
+		F0558FC32A93468D00F69836 /* CountWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0558FC22A93468D00F69836 /* CountWidgetProvider.swift */; };
+		F0558FC42A93468D00F69836 /* CountWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0558FC22A93468D00F69836 /* CountWidgetProvider.swift */; };
+		F0558FC62A9349E200F69836 /* AccessoryWatchCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0558FC52A9349E200F69836 /* AccessoryWatchCircularView.swift */; };
+		F0558FC72A9349E200F69836 /* AccessoryWatchCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0558FC52A9349E200F69836 /* AccessoryWatchCircularView.swift */; };
 		F058189A281BFFDA0064EF94 /* SectionedForEachView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0581899281BFFDA0064EF94 /* SectionedForEachView.swift */; };
 		F05818A2281CAAF50064EF94 /* RootViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05818A1281CAAF50064EF94 /* RootViewTests.swift */; };
 		F05DFA362853CA7800D62D19 /* BaseVideoEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05DFA352853CA7800D62D19 /* BaseVideoEntryView.swift */; };
@@ -297,6 +313,8 @@
 		F0CA6ED428D7C4A40028CB11 /* UpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */; };
 		F0CA6ED528D7C4A70028CB11 /* LiveAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0673C162775F7FB009C65C6 /* LiveAvatarView.swift */; };
 		F0CEE36429BE006600AFB565 /* AgencyNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CEE36329BE006600AFB565 /* AgencyNavigationView.swift */; };
+		F0D9BEB92A934F2500494B2E /* AccessoryWatchCircularEntryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D9BEB82A934F2500494B2E /* AccessoryWatchCircularEntryViews.swift */; };
+		F0D9BEBA2A934F4400494B2E /* AccessoryWatchCircularEntryViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D9BEB82A934F2500494B2E /* AccessoryWatchCircularEntryViews.swift */; };
 		F0DC615229D94D42009D1051 /* VideoCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DC615129D94D42009D1051 /* VideoCountView.swift */; };
 		F0DC615329D94D4E009D1051 /* VideoCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DC615129D94D42009D1051 /* VideoCountView.swift */; };
 		F0DC615529D952C7009D1051 /* VideoFavouriteCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DC615429D952C7009D1051 /* VideoFavouriteCountView.swift */; };
@@ -552,6 +570,14 @@
 		F04D754F28D7CB770096B8AB /* holo-wtf-watch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "holo-wtf-watch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F04D755728D7D8430096B8AB /* SettingsWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsWatchView.swift; sourceTree = "<group>"; };
 		F04EB66628D2A0A000F168CB /* ManageGenerationOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageGenerationOrderView.swift; sourceTree = "<group>"; };
+		F0558FAE2A9318E500F69836 /* MultipleVideoIntentTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleVideoIntentTimelineProvider.swift; sourceTree = "<group>"; };
+		F0558FB12A93192F00F69836 /* ChannelsIntentTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsIntentTimelineProvider.swift; sourceTree = "<group>"; };
+		F0558FB42A93196400F69836 /* VideoIntentTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoIntentTimelineProvider.swift; sourceTree = "<group>"; };
+		F0558FB82A931CBB00F69836 /* WidgetLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetLocalization.swift; sourceTree = "<group>"; };
+		F0558FBB2A9320BB00F69836 /* VideoCountEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCountEntry.swift; sourceTree = "<group>"; };
+		F0558FBE2A9322A800F69836 /* CountIntentTimelineProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountIntentTimelineProvider.swift; sourceTree = "<group>"; };
+		F0558FC22A93468D00F69836 /* CountWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountWidgetProvider.swift; sourceTree = "<group>"; };
+		F0558FC52A9349E200F69836 /* AccessoryWatchCircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryWatchCircularView.swift; sourceTree = "<group>"; };
 		F0581899281BFFDA0064EF94 /* SectionedForEachView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionedForEachView.swift; sourceTree = "<group>"; };
 		F058189F281CAAF50064EF94 /* HoloCalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoloCalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F05818A1281CAAF50064EF94 /* RootViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewTests.swift; sourceTree = "<group>"; };
@@ -620,6 +646,7 @@
 		F0CA6EB828D7C0420028CB11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F0CA6ECF28D7C31D0028CB11 /* WatchVideoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchVideoListView.swift; sourceTree = "<group>"; };
 		F0CEE36329BE006600AFB565 /* AgencyNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgencyNavigationView.swift; sourceTree = "<group>"; };
+		F0D9BEB82A934F2500494B2E /* AccessoryWatchCircularEntryViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryWatchCircularEntryViews.swift; sourceTree = "<group>"; };
 		F0DC615129D94D42009D1051 /* VideoCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCountView.swift; sourceTree = "<group>"; };
 		F0DC615429D952C7009D1051 /* VideoFavouriteCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFavouriteCountView.swift; sourceTree = "<group>"; };
 		F0DC615A29D9651A009D1051 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -739,6 +766,7 @@
 				F0186A2029AC776300339178 /* PaneEntryViews.swift */,
 				F0186A2329AC779D00339178 /* AccessoryRectangularEntryViews.swift */,
 				F0186A2629AC77DC00339178 /* AccessoryCircularEntryViews.swift */,
+				F0D9BEB82A934F2500494B2E /* AccessoryWatchCircularEntryViews.swift */,
 				F0186A2E29AC7CA900339178 /* AccessoryCornerEntryViews.swift */,
 				F020E8CD29C5B53100C2345D /* AccessoryInlineEntryViews.swift */,
 				F0186A2929AC793100339178 /* MultipleEntryViews.swift */,
@@ -844,6 +872,11 @@
 				F0186A3729AC816500339178 /* Single */,
 				F0186A3829AC816B00339178 /* Multiple */,
 				F0186A3929AC817500339178 /* Channels */,
+				F0558FC12A93460E00F69836 /* Count */,
+				F0558FB42A93196400F69836 /* VideoIntentTimelineProvider.swift */,
+				F0558FAE2A9318E500F69836 /* MultipleVideoIntentTimelineProvider.swift */,
+				F0558FB12A93192F00F69836 /* ChannelsIntentTimelineProvider.swift */,
+				F0558FBE2A9322A800F69836 /* CountIntentTimelineProvider.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -852,6 +885,7 @@
 			isa = PBXGroup;
 			children = (
 				F01241AE2935EA51007C8FE9 /* AccessoryCircularView.swift */,
+				F0558FC52A9349E200F69836 /* AccessoryWatchCircularView.swift */,
 				F0186A3A29AC84BA00339178 /* AccessoryCornerView.swift */,
 				F0186A3429AC80D100339178 /* AccessoryRectangularWidgetView.swift */,
 				F020E8CA29C5B28300C2345D /* AccessoryInlineWidgetView.swift */,
@@ -881,6 +915,14 @@
 				F017D86729DBFD280033EBB7 /* MainPhotoView.swift */,
 			);
 			path = "Main Views";
+			sourceTree = "<group>";
+		};
+		F0558FC12A93460E00F69836 /* Count */ = {
+			isa = PBXGroup;
+			children = (
+				F0558FC22A93468D00F69836 /* CountWidgetProvider.swift */,
+			);
+			path = Count;
 			sourceTree = "<group>";
 		};
 		F05818A0281CAAF50064EF94 /* HoloCalUITests */ = {
@@ -1000,6 +1042,7 @@
 				F02830832853DB8500CBFCE7 /* Views */,
 				F093D1C3282C32D000E2A6FF /* HoloCalWidgetBundle.swift */,
 				F025204328EEA5FC00976972 /* Common.swift */,
+				F0558FB82A931CBB00F69836 /* WidgetLocalization.swift */,
 				F093D1C6282C32D100E2A6FF /* Assets.xcassets */,
 				F093D1C8282C32D100E2A6FF /* Info.plist */,
 				F028307F2853DB0E00CBFCE7 /* Widgets.swift */,
@@ -1216,6 +1259,7 @@
 				F028308728545B1200CBFCE7 /* SingleVideoWidgetEntry.swift */,
 				F0B2AF0B28C1A82400635CAD /* MultipleVideoWidgetEntry.swift */,
 				F03A138228F0004C00BB8E51 /* ChannelsEntry.swift */,
+				F0558FBB2A9320BB00F69836 /* VideoCountEntry.swift */,
 			);
 			path = Entry;
 			sourceTree = "<group>";
@@ -1549,6 +1593,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0558FB72A93196800F69836 /* VideoIntentTimelineProvider.swift in Sources */,
 				F0B4D6B429B09663000A28BC /* VideoWidgetView.swift in Sources */,
 				F09664E929A602E9005F37C0 /* BlockVideoTypeView.swift in Sources */,
 				F099C68529CFA43B00596C7F /* WidgetUtils.swift in Sources */,
@@ -1558,6 +1603,7 @@
 				F01869FB29AC59BB00339178 /* LiveTitleView.swift in Sources */,
 				F06D28E828D839F5007D06FB /* LiveVideo.swift in Sources */,
 				F06D28F928D83AC9007D06FB /* Util.swift in Sources */,
+				F0558FB02A9318E500F69836 /* MultipleVideoIntentTimelineProvider.swift in Sources */,
 				F06D28E628D839F5007D06FB /* Channel.swift in Sources */,
 				F099C68F29CFA4CA00596C7F /* Vtuberable.swift in Sources */,
 				F0186A0729AC5A8400339178 /* NetworkErrorView.swift in Sources */,
@@ -1572,7 +1618,10 @@
 				F09664E329A34DCD005F37C0 /* BlockMemberOnlyView.swift in Sources */,
 				F0E06D182932A4FA00BF6812 /* Modes.swift in Sources */,
 				F099C68029CFA3E600596C7F /* WidgetConstants.swift in Sources */,
+				F0558FBD2A9320BB00F69836 /* VideoCountEntry.swift in Sources */,
 				F0186A0429AC5A1300339178 /* NoStreamView.swift in Sources */,
+				F0558FBA2A931CBB00F69836 /* WidgetLocalization.swift in Sources */,
+				F0558FC72A9349E200F69836 /* AccessoryWatchCircularView.swift in Sources */,
 				F0F40976293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */,
 				F01241A42935E2C7007C8FE9 /* BlockLiveTimeView.swift in Sources */,
 				F0186A2529AC779D00339178 /* AccessoryRectangularEntryViews.swift in Sources */,
@@ -1588,12 +1637,15 @@
 				F01869FE29AC59E300339178 /* UpcomingTitleView.swift in Sources */,
 				F084633A29E6813E004279B4 /* VideoFetchService.swift in Sources */,
 				F01EB31129D170E8001A17AF /* VideoSorting.swift in Sources */,
+				F0558FC42A93468D00F69836 /* CountWidgetProvider.swift in Sources */,
+				F0558FC02A9322A800F69836 /* CountIntentTimelineProvider.swift in Sources */,
 				F0186A3C29AC84BA00339178 /* AccessoryCornerView.swift in Sources */,
 				F01241A62935E335007C8FE9 /* BaseVideoEntryView.swift in Sources */,
 				F0186A3029AC7CA900339178 /* AccessoryCornerEntryViews.swift in Sources */,
 				F01869F329AC46F400339178 /* PastTimeView.swift in Sources */,
 				F0186A2829AC77DC00339178 /* AccessoryCircularEntryViews.swift in Sources */,
 				F020E8CF29C5B53100C2345D /* AccessoryInlineEntryViews.swift in Sources */,
+				F0D9BEBA2A934F4400494B2E /* AccessoryWatchCircularEntryViews.swift in Sources */,
 				F06D28E228D839E4007D06FB /* MultipleVideoWidgetEntry.swift in Sources */,
 				F06D28EC28D83A2D007D06FB /* SharedUtil.swift in Sources */,
 				F025204728EEA5FC00976972 /* Common.swift in Sources */,
@@ -1607,6 +1659,7 @@
 				F06D28D128D83826007D06FB /* ComplicationsWidgetBundle.swift in Sources */,
 				F06D28E728D839F5007D06FB /* TalentData.swift in Sources */,
 				F06D28F328D83A92007D06FB /* SongInStream.swift in Sources */,
+				F0558FB32A93192F00F69836 /* ChannelsIntentTimelineProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1630,6 +1683,7 @@
 				F093D1D7282FA0B000E2A6FF /* LiveAvatarView.swift in Sources */,
 				F0FB8E0629CC19DE005E3FFD /* MultipleVideoLargeWidgetView.swift in Sources */,
 				F03A138328F0004C00BB8E51 /* ChannelsEntry.swift in Sources */,
+				F0558FC62A9349E200F69836 /* AccessoryWatchCircularView.swift in Sources */,
 				F0186A0029AC59FA00339178 /* PastTitleView.swift in Sources */,
 				F0186A4929AC8F1900339178 /* MultipleWidgetView.swift in Sources */,
 				F01DAA742990F30200052514 /* ChannelNameView.swift in Sources */,
@@ -1648,6 +1702,7 @@
 				F093D1C4282C32D000E2A6FF /* HoloCalWidgetBundle.swift in Sources */,
 				F0B2AF0A28C13D0F00635CAD /* UpcomingTimeView.swift in Sources */,
 				F01869E329AB859100339178 /* VideoPastWidgetProvider.swift in Sources */,
+				F0558FBC2A9320BB00F69836 /* VideoCountEntry.swift in Sources */,
 				F0F40974293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */,
 				F0186A3529AC80D100339178 /* AccessoryRectangularWidgetView.swift in Sources */,
 				F0CA6ECD28D7C2C30028CB11 /* SongsViewModel.swift in Sources */,
@@ -1656,20 +1711,25 @@
 				F0186A0B29AC606700339178 /* BlockPastTimeView.swift in Sources */,
 				F0186A1729AC710C00339178 /* SmallWidgetAvatarView.swift in Sources */,
 				F01869FA29AC59BB00339178 /* LiveTitleView.swift in Sources */,
+				F0558FC32A93468D00F69836 /* CountWidgetProvider.swift in Sources */,
 				F05DFA362853CA7800D62D19 /* BaseVideoEntryView.swift in Sources */,
 				F020E8CB29C5B28300C2345D /* AccessoryInlineWidgetView.swift in Sources */,
+				F0558FB52A93196400F69836 /* VideoIntentTimelineProvider.swift in Sources */,
 				F0E06D0A29322C2100BF6812 /* ViewerCounterView.swift in Sources */,
 				F0E45D1928F39AF90091474A /* Agency.swift in Sources */,
 				F09664E129A34D7C005F37C0 /* BlockVideoInfoView.swift in Sources */,
 				F0B2AF0C28C1A82400635CAD /* MultipleVideoWidgetEntry.swift in Sources */,
 				F093D1E82830359900E2A6FF /* Util.swift in Sources */,
+				F0558FBF2A9322A800F69836 /* CountIntentTimelineProvider.swift in Sources */,
 				F004E8C7285D013300ABDFED /* SongInStream.swift in Sources */,
 				F0E06D0729322BEC00BF6812 /* BlockLiveTimeView.swift in Sources */,
 				F09664E829A602D1005F37C0 /* BlockVideoTypeView.swift in Sources */,
 				F01869D829AB773100339178 /* PastTimeView.swift in Sources */,
 				F093D1E0282FAA0500E2A6FF /* TopicTagView.swift in Sources */,
 				F03A139228F1FE0700BB8E51 /* ChannelsLiveWidgetProvider.swift in Sources */,
+				F0558FAF2A9318E500F69836 /* MultipleVideoIntentTimelineProvider.swift in Sources */,
 				F06D28DD28D838C7007D06FB /* SharedWidgets.swift in Sources */,
+				F0D9BEB92A934F2500494B2E /* AccessoryWatchCircularEntryViews.swift in Sources */,
 				F028308828545B1200CBFCE7 /* SingleVideoWidgetEntry.swift in Sources */,
 				F0E06D162932376300BF6812 /* Modes.swift in Sources */,
 				F020E8CE29C5B53100C2345D /* AccessoryInlineEntryViews.swift in Sources */,
@@ -1692,6 +1752,8 @@
 				F09D53A129336590003C4F80 /* VideoUpcomingWidgetProvider.swift in Sources */,
 				F0E06D0829322BF200BF6812 /* BlockUpcomingTimeView.swift in Sources */,
 				F0FB8E0829CC3B4E005E3FFD /* MultipleVideoLargeEntryView.swift in Sources */,
+				F0558FB92A931CBB00F69836 /* WidgetLocalization.swift in Sources */,
+				F0558FB22A93192F00F69836 /* ChannelsIntentTimelineProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2177,7 +2239,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 245;
+				CURRENT_PROJECT_VERSION = 246;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -2196,7 +2258,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 2.6.6;
+				MARKETING_VERSION = 2.6.7;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2245,7 +2307,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 245;
+				CURRENT_PROJECT_VERSION = 246;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2258,7 +2320,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 2.6.6;
+				MARKETING_VERSION = 2.6.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
