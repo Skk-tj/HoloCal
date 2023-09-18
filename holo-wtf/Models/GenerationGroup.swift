@@ -24,6 +24,7 @@ let agencyEnumToGenerations: [AgencyEnum: [Generation]] = [
         .projectHope,
         .enCouncil,
         .enAdvent,
+        .devIsReGloss,
         .stars1stGen,
         .stars2ndGen,
         .stars3rdGen,

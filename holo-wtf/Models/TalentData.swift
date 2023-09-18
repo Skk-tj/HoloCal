@@ -27,6 +27,7 @@ enum Generation: Int, CaseIterable, Codable, Hashable {
     case projectHope
     case enCouncil
     case enAdvent
+    case devIsReGloss
     case stars1stGen
     case stars2ndGen
     case stars3rdGen
@@ -208,6 +209,12 @@ enum TalentEnum: String, Codable {
     case koseki = "UC9p_lqQ0FEDz327Vgf5JwqA"
     case nerissa = "UC_sFNM0z0MWm9A6WlKPuMMg"
     case fuwamoco = "UCt9H_RpQzhxzlyBxFqrdHqA"
+    // MARK: - DEV_IS ReGLOSS
+    case hiodoshi = "UCMGfV7TVTmHhEErVJg1oHBQ"
+    case otonose = "UCWQtYtq9EOB4-I5P-3fh8lA"
+    case ichijou = "UCtyWhCj3AqKh2dXctLkDtng"
+    case juufuutei = "UCdXAk5MpyLD8594lm_OvtGQ"
+    case hajime = "UC1iA6_NT4mtAcIII6ygrvCw"
     // MARK: - holostars 1st gen
     case miyabi = "UC6t3-_N8A6ME1JShZHHqOMw"
     case izuru = "UCZgOv3YDEs-ZnZWDYVwJdmA"
@@ -450,7 +457,6 @@ enum TalentEnum: String, Codable {
     
     // MARK: - ID Third Wave: LAN_NEE3S
     case layla = "UCyRkQSuhJILuGOuXk10voPg" // Layla Alstroemeria
-    case nara = "UCoWH3sDpeXG1aXmOxveX4KA" // Nara Haramaung
     
     // MARK: - ID Fourth Wave: 3FicLite
     case etna = "UCjFu-9GHnabzSFRAYm1B9Dw" // Etna Crimson
@@ -509,7 +515,6 @@ enum TalentEnum: String, Codable {
     case luca = "UC7Gb7Uawe20QyFibhLl1lzA" // Luca Kaneshiro
     case shu = "UCG0rzBZV_QMP4MtWg6IjhEA" // Shu Yamino
     case ike = "UC4yNIKGvy-YUrwYupVdLDXA" // Ike Eveland
-    case mysta = "UCIM92Ok_spNKLVB5TsgwseQ" // Mysta Rias
     case vox = "UCckdfYDGrjojJM28n5SHYrA" // Vox Akuma
     
     // MARK: - EN Fifth Wave: Noctyx
@@ -758,6 +763,13 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .nerissa: Talent(id: TalentEnum.nerissa.rawValue, names: [.en: "Nerissa Ravencroft", .ja: "ネリッサ・レイヴンクロフト"], inGeneration: Generation.enAdvent),
     .fuwamoco: Talent(id: TalentEnum.fuwamoco.rawValue, names: [.en: "Fuwawa & Mococo Abyssgard", .ja: "フワワ & モココ・アビスガード"], inGeneration: Generation.enAdvent),
     
+    // MARK: - DEV_IS ReGLOSS
+    .hiodoshi: Talent(id: TalentEnum.hiodoshi.rawValue, names: [.en: "Hiodoshi Ao", .ja: "火威青"], inGeneration: Generation.devIsReGloss),
+    .otonose: Talent(id: TalentEnum.otonose.rawValue, names: [.en: "Otonose Kanade", .ja: "音乃瀬奏"], inGeneration: Generation.devIsReGloss),
+    .ichijou: Talent(id: TalentEnum.ichijou.rawValue, names: [.en: "Ichijou Ririka", .ja: "一条莉々華"], inGeneration: Generation.devIsReGloss),
+    .juufuutei: Talent(id: TalentEnum.juufuutei.rawValue, names: [.en: "Juufuutei Raden", .ja: "儒烏風亭らでん"], inGeneration: Generation.devIsReGloss),
+    .hajime: Talent(id: TalentEnum.hajime.rawValue, names: [.en: "Todoroki Hajime", .ja: "轟はじめ"], inGeneration: Generation.devIsReGloss),
+    
     // MARK: - holostars 1st gen
     .miyabi: Talent(id: TalentEnum.miyabi.rawValue, names: [.en: "Hanasaki Miyabi", .ja: "花咲みやび"], inGeneration: Generation.stars1stGen),
     .izuru: Talent(id: TalentEnum.izuru.rawValue, names: [.en: "Kanade Izuru", .ja: "奏手イヅル"], inGeneration: Generation.stars1stGen),
@@ -1004,7 +1016,6 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
 
     // MARK: - ID Third Wave: LAN_NEE3S
     .layla: Talent(id: TalentEnum.layla.rawValue, names: [.en: "Layla Alstroemeria", .ja: "ライラ アルストロエメリア"], inGeneration: Generation.id3rdWave),
-    .nara: Talent(id: TalentEnum.nara.rawValue, names: [.en: "Nara Haramaung", .ja: "ライラ アルストロエメリア"], inGeneration: Generation.id3rdWave),
 
     // MARK: - ID Fourth Wave: 3FicLite
     .etna: Talent(id: TalentEnum.etna.rawValue, names: [.en: "Etna Crimson", .ja: "エトナ クリムソン"], inGeneration: Generation.id4thWave),
@@ -1063,7 +1074,6 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .luca: Talent(id: TalentEnum.luca.rawValue, names: [.en: "Luca Kaneshiro", .ja: "ルカ・カネシロ"], inGeneration: Generation.en4thWave),
     .shu: Talent(id: TalentEnum.shu.rawValue, names: [.en: "Shu Yamino", .ja: "闇ノシュウ"], inGeneration: Generation.en4thWave),
     .ike: Talent(id: TalentEnum.ike.rawValue, names: [.en: "Ike Eveland", .ja: "アイク・イーヴランド"], inGeneration: Generation.en4thWave),
-    .mysta: Talent(id: TalentEnum.mysta.rawValue, names: [.en: "Mysta Rias", .ja: "ミスタ・リアス"], inGeneration: Generation.en4thWave),
     .vox: Talent(id: TalentEnum.vox.rawValue, names: [.en: "Vox Akuma", .ja: "ヴォックス・アクマ"], inGeneration: Generation.en4thWave),
 
     // MARK: - EN Fifth Wave: Noctyx
@@ -1236,6 +1246,7 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .projectHope: GenerationGroup(id: .projectHope, names: [.en: "Project: HOPE", .ja: "Project: HOPE"], members: [.irys], agency: .hololive),
     .enCouncil: GenerationGroup(id: .enCouncil, names: [.en: "hololive English -Council-", .ja: "hololive English -Council-"], members: [.ceres, .kronii, .mumei, .baelz], agency: .hololive),
     .enAdvent: GenerationGroup(id: .enAdvent, names: [.en: "hololive English -Advent-", .ja: "hololive English -Advent-"], members: [.shiori, .koseki, .nerissa, .fuwamoco], agency: .hololive),
+    .devIsReGloss: GenerationGroup(id: .devIsReGloss, names: [.en: "hololive DEV_IS ReGLOSS", .ja: "hololive DEV_IS ReGLOSS"], members: [.hiodoshi, .otonose, .ichijou, .juufuutei, .hajime], agency: .hololive),
     .stars1stGen: GenerationGroup(id: .stars1stGen, names: [.en: "holostars 1st Gen", .ja: "ホロスターズ 1期生"], members: [.miyabi, .izuru, .arurandeisu, .rikka], agency: .hololive),
     .stars2ndGen: GenerationGroup(id: .stars2ndGen, names: [.en: "holostars 2nd Gen", .ja: "ホロスターズ 2期生"], members: [.astel, .temma, .roberu], agency: .hololive),
     .stars3rdGen: GenerationGroup(id: .stars3rdGen, names: [.en: "holostars 3nd Gen", .ja: "ホロスターズ 3期生"], members: [.shien, .oga], agency: .hololive),
@@ -1281,7 +1292,7 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .wave2023Apr26: GenerationGroup(id: .wave2023Apr26, names: [.en: "2023 Wave: April 26", .ja: "2023年04月26日デビュー"], members: [.sho, .kagetsu, .rou, .raiInami], agency: .nijisanji),
     .id1stWave: GenerationGroup(id: .id1stWave, names: [.en: "ID 1st Wave", .ja: "ID 1期生"], members: [.hana], agency: .nijisanji),
     .id2ndWave: GenerationGroup(id: .id2ndWave, names: [.en: "ID 2nd Wave", .ja: "ID 2期生"], members: [.rai, .riksa], agency: .nijisanji),
-    .id3rdWave: GenerationGroup(id: .id3rdWave, names: [.en: "ID 3rd Wave", .ja: "ID 3期生"], members: [.layla, .nara], agency: .nijisanji),
+    .id3rdWave: GenerationGroup(id: .id3rdWave, names: [.en: "ID 3rd Wave", .ja: "ID 3期生"], members: [.layla], agency: .nijisanji),
     .id4thWave: GenerationGroup(id: .id4thWave, names: [.en: "ID 4th Wave", .ja: "ID 4期生"], members: [.etna, .bonnivier], agency: .nijisanji),
     .id5thWave: GenerationGroup(id: .id5thWave, names: [.en: "ID 5th Wave", .ja: "ID 5期生"], members: [.nagisa, .derem, .reza], agency: .nijisanji),
     .id6thWave: GenerationGroup(id: .id6thWave, names: [.en: "ID 6th Wave", .ja: "ID 6期生"], members: [.hyona, .xia, .mika], agency: .nijisanji),
@@ -1294,7 +1305,7 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .en1stWave: GenerationGroup(id: .en1stWave, names: [.en: "EN 1st Wave: LazuLight", .ja: "EN 第1弾「LazuLight」"], members: [.pomu, .elira, .finana], agency: .nijisanji),
     .en2ndWave: GenerationGroup(id: .en2ndWave, names: [.en: "EN 2nd Wave: OBSYDIA", .ja: "EN 第2弾「OBSYDIA」"], members: [.rosemi, .petra, .selen], agency: .nijisanji),
     .en3rdWave: GenerationGroup(id: .en3rdWave, names: [.en: "EN 3rd Wave: Ethyria", .ja: "EN 第3弾「Ethyria」"], members: [.millie, .enna, .reimu], agency: .nijisanji),
-    .en4thWave: GenerationGroup(id: .en4thWave, names: [.en: "EN 4th Wave: Luxiem", .ja: "EN 第4弾「Luxiem」"], members: [.luca, .shu, .ike, .mysta, .vox], agency: .nijisanji),
+    .en4thWave: GenerationGroup(id: .en4thWave, names: [.en: "EN 4th Wave: Luxiem", .ja: "EN 第4弾「Luxiem」"], members: [.luca, .shu, .ike, .vox], agency: .nijisanji),
     .en5thWave: GenerationGroup(id: .en5thWave, names: [.en: "EN 5th Wave: Noctyx", .ja: "EN 第5弾「Noctyx」"], members: [.sonny, .uki, .alban, .fulgur], agency: .nijisanji),
     .en6thWave: GenerationGroup(id: .en6thWave, names: [.en: "EN 6th Wave: ILUNA", .ja: "EN 第6弾「ILUNA」"], members: [.kyo, .maria, .aster, .aia, .ren, .scarle], agency: .nijisanji),
     .en7thWave: GenerationGroup(id: .en7thWave, names: [.en: "EN 7th Wave: XSOLEIL", .ja: "EN 第7弾「XSOLEIL」"], members: [.doppio, .meloco, .hex, .kotoka, .ver], agency: .nijisanji),
