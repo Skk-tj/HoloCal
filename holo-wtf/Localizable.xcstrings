@@ -1,0 +1,3256 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "BLOCK_FORMAT_VIEW_FORMAT" : {
+      "comment" : "LiveFormat",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Format"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "形式"
+          }
+        }
+      }
+    },
+    "BLOCK_JPY_PRICE_TICKET_PRICE" : {
+      "comment" : "BlockJPYPriceView",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ticket Price"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "チケット価格"
+          }
+        }
+      }
+    },
+    "BLOCK_LIVE_TIME_VIEW_TIME_STARTED" : {
+      "comment" : "Block Live Time View",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Started"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開始時間"
+          }
+        }
+      }
+    },
+    "BLOCK_LIVE_TIME_VIEW_WAITING" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waiting..."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "待機中"
+          }
+        }
+      }
+    },
+    "BLOCK_MEMBER_ONLY_MEMBER" : {
+      "comment" : "Block Member Only View",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Member"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メンバー限定"
+          }
+        }
+      }
+    },
+    "BLOCK_MEMBER_ONLY_MEMBERSHIP" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Membership"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メンバーシップ"
+          }
+        }
+      }
+    },
+    "BLOCK_PAST_TIME_VIEW_TIME_ENDED" : {
+      "comment" : "Block Past Time View",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time Ended"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "終了時間"
+          }
+        }
+      }
+    },
+    "BLOCK_PLATFORM_VIEW_PLATFORM" : {
+      "comment" : "Platform",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Platform"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プラットフォーム"
+          }
+        }
+      }
+    },
+    "BLOCK_UPCOMING_TIME_VIEW_STARTING_TIME" : {
+      "comment" : "Block Upcoming Time View",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starting Time"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開始時間"
+          }
+        }
+      }
+    },
+    "BLOCK_UPCOMING_TIME_VIEW_STARTING_TIME_UNKNOWN" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N/A"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不明"
+          }
+        }
+      }
+    },
+    "BLOCK_VIDEO_TYPE_PREMIERE" : {
+      "comment" : "Block Video Type View",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Premiere"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "プレミア公開"
+          }
+        }
+      }
+    },
+    "BLOCK_VIDEO_TYPE_VIDEO" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Video"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ビデオ"
+          }
+        }
+      }
+    },
+    "CALENDAR_ACCESS_MESSAGE" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calendar access is disabled. Please check your privacy settings."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カレンダーにアクセスできません。プライバシー設定をご確認ください。"
+          }
+        }
+      }
+    },
+    "CALENDAR_ACCESS_TITLE" : {
+      "comment" : "Calendar access",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calendar Access"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カレンダーアクセス許可"
+          }
+        }
+      }
+    },
+    "COLLAB_SHEET_DISMISS_BUTTON" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dismiss"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "閉じる"
+          }
+        }
+      }
+    },
+    "COLLAB_SHEET_NAVIGATION_TITLE" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collaboration"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コラボレーション"
+          }
+        }
+      }
+    },
+    "CONCERT_VIEW_DISCLAIMER" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We regret that concert data may be incorrect or incomplete. We are continuing to improve our data."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "コンサートデータが不正確または不完全な場合があることをお詫びいたします。"
+          }
+        }
+      }
+    },
+    "CONCERT_VIEW_OFFICIAL_LINK" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Official Site"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オフィシャルサイト"
+          }
+        }
+      }
+    },
+    "CONCERT_VIEW_PURCHASE_TICKETS" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Purchase Tickets"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "チケット購入"
+          }
+        }
+      }
+    },
+    "CONCERT_VIEW_TITLE" : {
+      "comment" : "ConcertView",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Concert"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ライブコンサート"
+          }
+        }
+      }
+    },
+    "CONCERT_VIEW_TWITTER_LINK" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twitter Link"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twitterリンク"
+          }
+        }
+      }
+    },
+    "CONCERT_VIEW_YOUTUBE_LINK" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "YouTube Link"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "YouTubeリンク"
+          }
+        }
+      }
+    },
+    "CURRENTLY_LIVE_WIDGET_DESCRIPTION" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show a current stream."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ライブ配信を表示する"
+          }
+        }
+      }
+    },
+    "CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" : {
+      "comment" : "Widget system text",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Live"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ライブ配信"
+          }
+        }
+      }
+    },
+    "DST_REMINDER_VIEW_FOOTER" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your device is set to a timezone that observes Daylight Saving Time. No location data was used."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このデバイスは、夏時間タイムゾーンに設定されています。位置情報は使用されていません。"
+          }
+        }
+      }
+    },
+    "DST_REMINDER_VIEW_TEXT %@ %lld" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daylight Saving Time is %@ in **%lld day(s)**. As Japan does not observe Daylight Saving Time, please double-check the stream time."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daylight Saving Time is %@ in **%lld day(s)**. As Japan does not observe Daylight Saving Time, please double-check the stream time. "
+          }
+        }
+      }
+    },
+    "DST_REMINDER_VIEW_TITLE" : {
+      "comment" : "DST Reminder View",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**DAYLIGHT SAVING TIME REMINDER**"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "夏時間リマインダー"
+          }
+        }
+      }
+    },
+    "FAILED_TO_RETRIEVE_NEW_DATA" : {
+      "comment" : "Common between LiveView and UpcomingView",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Failed to retrieve new data"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "データの取得に失敗しました"
+          }
+        }
+      }
+    },
+    "JPY_PRICE_FREE" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Free"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無料"
+          }
+        }
+      }
+    },
+    "JPY_PRICE_TBD" : {
+      "comment" : "JpyPrice",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TBD"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未定"
+          }
+        }
+      }
+    },
+    "LINKED_VIDEO_SWIPE_ACTIONS_FAVOURITE" : {
+      "comment" : "Swipe actions for LinkedVideo",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favourite"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お気に入り"
+          }
+        }
+      }
+    },
+    "LINKED_VIDEO_SWIPE_ACTIONS_SHARE" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "シェア"
+          }
+        }
+      }
+    },
+    "LINKED_VIDEO_SWIPE_ACTIONS_UNFAVOURITE" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unfavourite"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お気に入りを削除"
+          }
+        }
+      }
+    },
+    "LIVE_CELL_VIEW_MEMBER_ONLY_STREAM" : {
+      "comment" : "Live Cell View",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Member-only stream"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メンバー限定"
+          }
+        }
+      }
+    },
+    "LIVE_CELL_VIEW_PEOPLE_WATCHING %lld" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld watching"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld人が視聴中"
+          }
+        }
+      }
+    },
+    "LIVE_CELL_VIEW_STARTED_AGO %@" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Started %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@にライブ開始"
+          }
+        }
+      }
+    },
+    "LIVE_CELL_VIEW_STARTED_AGO_SHORT %@" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
+    },
+    "LIVE_CELL_VIEW_STARTED_AT %@" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
+    },
+    "LIVE_CELL_VIEW_WAITING" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waiting..."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "待機中"
+          }
+        }
+      }
+    },
+    "LIVE_CHANNELS_WIDGET_DESCRIPTION" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show a list of channels that are live."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配信中チャンネルを表示する"
+          }
+        }
+      }
+    },
+    "LIVE_CHANNELS_WIDGET_DISPLAY_NAME" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Live Channels"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配信中チャンネル"
+          }
+        }
+      }
+    },
+    "LIVE_COUNT_WIDGET_DESCRIPTION" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show the number of current live streams."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "現在のライブ配信の数を表示する。"
+          }
+        }
+      }
+    },
+    "LIVE_COUNT_WIDGET_DISPLAY_NAME" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Live Count"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ライブ配信カウント"
+          }
+        }
+      }
+    },
+    "LIVE_FORMAT_BOTH" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "On-site + Online"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "現地＋オンライン"
+          }
+        }
+      }
+    },
+    "LIVE_FORMAT_IRL" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "On-site"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "現地"
+          }
+        }
+      }
+    },
+    "LIVE_FORMAT_ONLINE" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Online"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オンライン"
+          }
+        }
+      }
+    },
+    "LIVE_PANE_VIEW_WITH" : {
+      "comment" : "Common between LivePaneView and UpcomingPaneView",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "&"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "と"
+          }
+        }
+      }
+    },
+    "LIVE_VIEW_CURRENT_COUNT %lld" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Currently Live"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld人が配信中"
+          }
+        }
+      }
+    },
+    "LIVE_VIEW_CURRENT_COUNT %lld %lld" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Currently Live (%lld excluded)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld人が配信中（%lld人表示されていない）"
+          }
+        }
+      }
+    },
+    "LIVE_VIEW_FAVOURITE_SECTION_TITLE" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favourited"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お気に入り"
+          }
+        }
+      }
+    },
+    "LIVE_VIEW_TITLE" : {
+      "comment" : "LiveView",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Live"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配信中"
+          }
+        }
+      }
+    },
+    "LIVE_VIEW_TOOLBAR_FAVOURITES_ONLY" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お気に入りのみ"
+          }
+        }
+      }
+    },
+    "LIVE_VIEW_TOOLBAR_SHOW_ABSOLUTE" : {
+      "comment" : "LiveViewToolbar & UpcomingViewToolbar & PastViewToolbar",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show absolute time"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "絶対時間を表示"
+          }
+        }
+      }
+    },
+    "LIVE_VIEW_TOOLBAR_SHOW_CARD" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show card view"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カードビューを表示"
+          }
+        }
+      }
+    },
+    "LIVE_VIEW_TOOLBAR_SHOW_COMPACT" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show Express Mode"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "エクスプレスモードを表示"
+          }
+        }
+      }
+    },
+    "LIVE_VIEW_TOOLBAR_SHOW_RELATIVE" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "相対時間を表示"
+          }
+        }
+      }
+    },
+    "LIVE_VIEW_TOOLBAR_SORT" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sort..."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "並べ替え..."
+          }
+        }
+      }
+    },
+    "LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sort by generation"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "グループ順"
+          }
+        }
+      }
+    },
+    "LIVE_VIEW_TOOLBAR_SORT_BY_GENERATION_IPAD" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Default sort"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "デフォルト"
+          }
+        }
+      }
+    },
+    "LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sort by start time..."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開始時間順..."
+          }
+        }
+      }
+    },
+    "LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_FURTHEST_TO_NEAREST" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oldest stream first"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "遅い順"
+          }
+        }
+      }
+    },
+    "LIVE_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recently started first"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "早い順"
+          }
+        }
+      }
+    },
+    "LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sort by viewers..."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "視聴者数順..."
+          }
+        }
+      }
+    },
+    "LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS_ASCENDING" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Least watched first"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "昇順"
+          }
+        }
+      }
+    },
+    "LIVE_VIEW_TOOLBAR_SORT_BY_VIEWERS_DESCENDING" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Most watched first"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "降順"
+          }
+        }
+      }
+    },
+    "LIVE_WIDGET_TITLE" : {
+      "comment" : "LiveWidget",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**LIVE**"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**配信中**"
+          }
+        }
+      }
+    },
+    "LIVE_WIDGET_TITLE_NON_BOLD" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "LIVE"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配信中"
+          }
+        }
+      }
+    },
+    "MULTIPLE_CURRENTLY_LIVE_WIDGET_DESCRIPTION" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show two streams together."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "複数のライブ配信を表示する"
+          }
+        }
+      }
+    },
+    "MULTIPLE_CURRENTLY_LIVE_WIDGET_DISPLAY_NAME" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Multiple Live"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "複数のライブ配信"
+          }
+        }
+      }
+    },
+    "MULTIPLE_PAST_WIDGET_DESCRIPTION" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show two past streams together."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "複数の配信アーカイブを表示する"
+          }
+        }
+      }
+    },
+    "MULTIPLE_PAST_WIDGET_DISPLAY_NAME" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Multiple Past"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "複数の配信アーカイブ"
+          }
+        }
+      }
+    },
+    "MULTIPLE_UPCOMING_WIDGET_DESCRIPTION" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show two upcoming streams together."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "複数の今後の配信を表示する"
+          }
+        }
+      }
+    },
+    "MULTIPLE_UPCOMING_WIDGET_DISPLAY_NAME" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Multiple Upcoming"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "複数の今後の配信"
+          }
+        }
+      }
+    },
+    "NETWORK_ERROR" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Network error"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ネットワークエラーが発生しました。"
+          }
+        }
+      }
+    },
+    "NO_ONE_IS_STREAMING" : {
+      "comment" : "Widget view text",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No stream"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配信はありません。"
+          }
+        }
+      }
+    },
+    "NOTIFICATION_ACCESS_MESSAGE" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notification access is disabled. Please review your privacy settings."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通知にアクセスできません。プライバシー設定をご確認ください。"
+          }
+        }
+      }
+    },
+    "NOTIFICATION_ACCESS_TITLE" : {
+      "comment" : "Notification access",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notification Access"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通知アクセス許可"
+          }
+        }
+      }
+    },
+    "NOTIFICATION_BODY %@ %@ %lld" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@'s stream \"%@\" is starting in %lld minutes."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@からの配信「%@」は%lld分後にスタートします。"
+          }
+        }
+      }
+    },
+    "NOTIFICATION_CANCEL_NOTIFICATION" : {
+      "comment" : "Notifications",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel notification"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通知をキャンセル"
+          }
+        }
+      }
+    },
+    "NOTIFICATION_ERROR_MESSAGE" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There was an error scheduling this notification. If this continues to happen, please reset your notifications via Settings > Manage Notifications > Cancel all notifications."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "エラーが発生しました。この現象が続く場合は、「設定」→「通知」→「すべての通知をキャンセル」で通知をリセットしてください。"
+          }
+        }
+      }
+    },
+    "NOTIFICATION_ERROR_TITLE" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notification error"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "エラー"
+          }
+        }
+      }
+    },
+    "NOTIFICATION_MINUTES_BEFORE %lld" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld minutes before"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld分前"
+          }
+        }
+      }
+    },
+    "NOTIFICATION_TITLE %@ %lld" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stream from %@ starting in %lld minutes."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@からの配信は%lld分後にスタートします。"
+          }
+        }
+      }
+    },
+    "OPEN_SOURCE_VIEW_TITLE" : {
+      "comment" : "OpenSourceView",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Source"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オープンソース"
+          }
+        }
+      }
+    },
+    "PAST_CELL_VIEW_ENDED %@" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ended %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@に配信済み"
+          }
+        }
+      }
+    },
+    "PAST_CELL_VIEW_ENDED_AT %@" : {
+      "comment" : "Past Cell View",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ended at %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@にライブ配信"
+          }
+        }
+      }
+    },
+    "PAST_CELL_VIEW_ENDED_SHORT %@" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
+    },
+    "PAST_CHANNELS_WIDGET_DESCRIPTION" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show a list of channels that just streamed."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ただいま配信したチャンネルを表示する"
+          }
+        }
+      }
+    },
+    "PAST_CHANNELS_WIDGET_DISPLAY_NAME" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Past Channels"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アーカイブチャンネル"
+          }
+        }
+      }
+    },
+    "PAST_VIEW_CURRENT_COUNT %lld" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Archived"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lldアーカイブ"
+          }
+        }
+      }
+    },
+    "PAST_VIEW_CURRENT_COUNT %lld %lld" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Archived (%lld excluded)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lldアーカイブ (%lld表示されていない)"
+          }
+        }
+      }
+    },
+    "PAST_VIEW_TITLE" : {
+      "comment" : "PastView",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Past"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アーカイブ"
+          }
+        }
+      }
+    },
+    "PAST_VIEW_TOOLBAR_SORT_BY_END_TIME" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sort by end time..."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配信済み時間順..."
+          }
+        }
+      }
+    },
+    "PAST_VIEW_TOOLBAR_SORT_BY_ENDED_TIME_FURTHEST_TO_NEAREST" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ended most recent last"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "遅い順"
+          }
+        }
+      }
+    },
+    "PAST_VIEW_TOOLBAR_SORT_BY_ENDED_TIME_NEAREST_TO_FURTHEST" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ended most recent first"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "早い順"
+          }
+        }
+      }
+    },
+    "PAST_WIDGET_DESCRIPTION" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show an archived stream."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アーカイブ配信を表示する"
+          }
+        }
+      }
+    },
+    "PAST_WIDGET_DISPLAY_NAME" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Past"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アーカイブ"
+          }
+        }
+      }
+    },
+    "PAST_WIDGET_TITLE" : {
+      "comment" : "Past Widget",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**PAST**"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**アーカイブ**"
+          }
+        }
+      }
+    },
+    "PAST_WIDGET_TITLE_NON_BOLD" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PAST"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アーカイブ"
+          }
+        }
+      }
+    },
+    "PLATFORM_NICONICO" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niconico"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ニコニコ動画"
+          }
+        }
+      }
+    },
+    "PLATFORM_OTHER" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Other"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "他"
+          }
+        }
+      }
+    },
+    "PLATFORM_SPWN" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SPWN"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SPWN"
+          }
+        }
+      }
+    },
+    "PLATFORM_TBA" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TBA"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未定"
+          }
+        }
+      }
+    },
+    "PLATFORM_YOUTUBE" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "YouTube"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "YouTube"
+          }
+        }
+      }
+    },
+    "PLATFORM_ZAIKO" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaiko"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zaiko"
+          }
+        }
+      }
+    },
+    "PLATFORM_ZAN" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Za-N"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Za-N"
+          }
+        }
+      }
+    },
+    "ROOT_VIEW_CONCERTS" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Concerts"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ライブコンサート"
+          }
+        }
+      }
+    },
+    "ROOT_VIEW_FAVOURITES" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My Favorites"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お気に入り"
+          }
+        }
+      }
+    },
+    "ROOT_VIEW_LIVE" : {
+      "comment" : "Root View",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Live"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配信中"
+          }
+        }
+      }
+    },
+    "ROOT_VIEW_PAST" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Past"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アーカイブ"
+          }
+        }
+      }
+    },
+    "ROOT_VIEW_SETTINGS" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
+          }
+        }
+      }
+    },
+    "ROOT_VIEW_UPCOMING" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upcoming"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今後の配信"
+          }
+        }
+      }
+    },
+    "SEARCH_BY_NAME_OR_TAG" : {
+      "comment" : "Search prompt",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search by name or tag"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "名前またはタグで検索"
+          }
+        }
+      }
+    },
+    "SETTINGS_ABOUT_BUG_REPORT" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feedback & Bug report"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フィードバック＆バグリポート"
+          }
+        }
+      }
+    },
+    "SETTINGS_ABOUT_SECTION_HEADER" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "このアプリについて"
+          }
+        }
+      }
+    },
+    "SETTINGS_BETA_TESTING" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Participate in Beta testing"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ベータテストに参加"
+          }
+        }
+      }
+    },
+    "SETTINGS_CHANNEL_MANAGEMENT_HEADER" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Channels"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "チャンネル"
+          }
+        }
+      }
+    },
+    "SETTINGS_DISCORD_SERVER" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Join Discord server"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Discordサーバーに参加"
+          }
+        }
+      }
+    },
+    "SETTINGS_DST_CHANGE_PICKER_TEXT %lld" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld days before"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld日前"
+          }
+        }
+      }
+    },
+    "SETTINGS_DST_CHANGE_TEXT" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DST change reminder"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "夏時間の移行のお知らせ"
+          }
+        }
+      }
+    },
+    "SETTINGS_EMAIL_SUPPORT" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email Support"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メールサポート"
+          }
+        }
+      }
+    },
+    "SETTINGS_HELP_TRANSLATE" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Help translate this app"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "翻訳に協力"
+          }
+        }
+      }
+    },
+    "SETTINGS_MANAGE_FAVOURITE" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manage Channel Favorites"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お気に入りのチャンネル"
+          }
+        }
+      }
+    },
+    "SETTINGS_MANAGE_FAVOURITE_FAVOURITE_SECTION" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorites"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お気に入り"
+          }
+        }
+      }
+    },
+    "SETTINGS_MANAGE_FAVOURITE_RESET" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reset Favorites"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お気に入りをリセット"
+          }
+        }
+      }
+    },
+    "SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_CANCEL" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キャンセル"
+          }
+        }
+      }
+    },
+    "SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_RESET" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reset"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "リセット"
+          }
+        }
+      }
+    },
+    "SETTINGS_MANAGE_FAVOURITE_RESET_ALERT_TEXT" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorites will be reset, are you sure?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お気に入りをリセットします、よろしいですか？"
+          }
+        }
+      }
+    },
+    "SETTINGS_MANAGE_FAVOURITE_VIEW_TITLE" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manage Favorites"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お気に入り"
+          }
+        }
+      }
+    },
+    "SETTINGS_MANAGE_GENERATION_ORDER" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manage Generation Order"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "グループ序次"
+          }
+        }
+      }
+    },
+    "SETTINGS_MANAGE_GENERATION_ORDER_RESET" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reset order"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "序次をリセット"
+          }
+        }
+      }
+    },
+    "SETTINGS_MANAGE_GENERATION_ORDER_RESET_ALERT_TEXT" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generation order will be reset, are you sure?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "序次をリセットします、よろしいですか？"
+          }
+        }
+      }
+    },
+    "SETTINGS_MANAGE_GENERATION_ORDER_SECTION_FOOTER" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can reorder the generations to alter the order they would be shown in both Live and Upcoming. "
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "グループ序次を並び替えて、「配信中」と「今後の配信」で表示される順番を変更することも可能です。"
+          }
+        }
+      }
+    },
+    "SETTINGS_MANAGE_GENERATION_ORDER_VIEW_TITLE" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generation Order"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "グループ序次"
+          }
+        }
+      }
+    },
+    "SETTINGS_MANAGE_GENERATION_RESET_ALERT_CANCEL" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キャンセル"
+          }
+        }
+      }
+    },
+    "SETTINGS_MANAGE_GENERATION_RESET_ALERT_RESET" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reset"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "リセット"
+          }
+        }
+      }
+    },
+    "SETTINGS_MANAGE_GENERATION_VISIBILITY" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manage Generation Visibility"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "グループフィルター"
+          }
+        }
+      }
+    },
+    "SETTINGS_MANAGE_GENERATION_VISIBILITY_RESET" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reset visibility"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フィルターをリセット"
+          }
+        }
+      }
+    },
+    "SETTINGS_MANAGE_GENERATION_VISIBILITY_RESET_ALERT_TEXT" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generation visibility will be reset, are you sure?"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "フィルターをリセットします、よろしいですか？"
+          }
+        }
+      }
+    },
+    "SETTINGS_MANAGE_GENERATION_VISIBILITY_SECTION_FOOTER" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can deselect generations to exclude them from appearing in Live and Upcoming. \nIf you favourited a talent whose generation is excluded, they will still be shown. "
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "グループを選択解除するで、「配信中」と「今後の配信」に表示されないようにすることができます。\nお気に入りに登録したタレントが所属するグループが選択解除するても、タレントを表示されます。"
+          }
+        }
+      }
+    },
+    "SETTINGS_MANAGE_GENERATION_VISIBILITY_VIEW_TITLE" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Generation Visibility"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "グループフィルター"
+          }
+        }
+      }
+    },
+    "SETTINGS_MANAGE_NOTIFICATION" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manage Notifications"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通知"
+          }
+        }
+      }
+    },
+    "SETTINGS_NOTIFICATION" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notification"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通知"
+          }
+        }
+      }
+    },
+    "SETTINGS_NOTIFICATION_CANCEL_ALL_NOTIFICATIONS" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel all notifications"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "すべての通知をキャンセル"
+          }
+        }
+      }
+    },
+    "SETTINGS_NOTIFICATION_CANCEL_NOTIFICATION" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel notification"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通知をキャンセル"
+          }
+        }
+      }
+    },
+    "SETTINGS_NOTIFICATION_NO_NOTIFICATION_SCHEDULED" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No notification scheduled"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通知予定なし"
+          }
+        }
+      }
+    },
+    "SETTINGS_NOTIFICATION_WILL_BE_DELIVERED_AT %@" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Will be delivered at %@"
+          }
+        }
+      }
+    },
+    "SETTINGS_OPEN_SOURCE" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Source"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "オープンソース"
+          }
+        }
+      }
+    },
+    "SETTINGS_PAST_LIMIT" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Number of past streams to show"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "表示する過去のアーカイブ数"
+          }
+        }
+      }
+    },
+    "SETTINGS_PAST_VIDEOS_SECTION_HEADER" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Past Streams"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "アーカイブ配信"
+          }
+        }
+      }
+    },
+    "SETTINGS_SEARCH_SUGGESTION_LANGUAGE" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search Suggestion Language"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "検索提案言語"
+          }
+        }
+      }
+    },
+    "SETTINGS_SEARCHING_HEADER" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Searching"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "検索"
+          }
+        }
+      }
+    },
+    "SETTINGS_SELECT_AGENCY_NAVIGATION_TITLE" : {
+      "comment" : "Agency related",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agency"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "事務所"
+          }
+        }
+      }
+    },
+    "SETTINGS_SPECIAL_THANKS" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Special Thanks"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "クレジット"
+          }
+        }
+      }
+    },
+    "SETTINGS_STREAM_TIME_FOOTER" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If your device is set to a timezone that observes Daylight Saving Time, HoloCal will remind you about DST transitions."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HoloCalは夏時間が適用されるタイムゾーンに設定されている場合、夏時間への移行をお知らせします。"
+          }
+        }
+      }
+    },
+    "SETTINGS_STREAM_TIME_HEADER" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stream Time"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配信時間"
+          }
+        }
+      }
+    },
+    "SETTINGS_SUPPORT_PAGE" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Support Page"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "サポートページ"
+          }
+        }
+      }
+    },
+    "SETTINGS_TITLE" : {
+      "comment" : "Settings",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定"
+          }
+        }
+      }
+    },
+    "SETTINGS_TWITTER" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開発者Twitter"
+          }
+        }
+      }
+    },
+    "SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upcoming streams lookahead"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今後の配信表示制限"
+          }
+        }
+      }
+    },
+    "SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upcoming Schedule"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今後の配信"
+          }
+        }
+      }
+    },
+    "SINGLE_SONG_VIEW_CONTEXT_MENU_JUMP_TO_SONG_IN_VIDEO" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jump to Song in Stream"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配信に出る場所へ"
+          }
+        }
+      }
+    },
+    "SINGLE_SONG_VIEW_CONTEXT_MENU_OPEN_IN_APPLE_MUSIC" : {
+      "comment" : "Single Song View",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open in Apple Music"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple Musicで開く"
+          }
+        }
+      }
+    },
+    "SONG_LIST_VIEW_NAVIGATION_TITLE" : {
+      "comment" : "Song List View",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Songs"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "曲"
+          }
+        }
+      }
+    },
+    "SONG_SHEET_DISMISS_BUTTON" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dismiss"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "閉じる"
+          }
+        }
+      }
+    },
+    "UPCOMING_CELL_VIEW_STARTING_AT %@" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starting at %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@に予定"
+          }
+        }
+      }
+    },
+    "UPCOMING_CELL_VIEW_STARTING_IN %@" : {
+      "comment" : "Upcoming Cell View",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starting %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@に配信"
+          }
+        }
+      }
+    },
+    "UPCOMING_CELL_VIEW_STARTING_IN_SHORT %@" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In %@"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
+    },
+    "UPCOMING_CELL_VIEW_STARTING_TIME_UNKNOWN" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No starting time"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開始時間不明"
+          }
+        }
+      }
+    },
+    "UPCOMING_CHANNELS_WIDGET_DESCRIPTION" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show a list of channels that are about to go live."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配信予定をしたチャンネルを表示する"
+          }
+        }
+      }
+    },
+    "UPCOMING_CHANNELS_WIDGET_DISPLAY_NAME" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upcoming Channels"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "配信予定チャンネル"
+          }
+        }
+      }
+    },
+    "UPCOMING_CONCERTS_COUNT %lld" : {
+      "comment" : "ConcertsView",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Upcoming Concerts"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lldライブコンサート"
+          }
+        }
+      }
+    },
+    "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Upcoming Streams in %lld hours"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%2$lld時間内に%1$lld人が配信予定"
+          }
+        }
+      }
+    },
+    "UPCOMING_VIEW_STREAM_COUNT_IN_HOURS %lld %lld %lld" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Upcoming Streams in %lld hours (%lld excluded)"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%2$lld時間内に%1$lld人が配信予定（%3$lld表示されていない）"
+          }
+        }
+      }
+    },
+    "UPCOMING_VIEW_TITLE" : {
+      "comment" : "UpcomingView",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upcoming"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今後の配信"
+          }
+        }
+      }
+    },
+    "UPCOMING_VIEW_TOOLBAR_SORT_BY_START_TIME_FURTHEST_TO_NEAREST" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Furthest upcoming first"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "遅い順"
+          }
+        }
+      }
+    },
+    "UPCOMING_VIEW_TOOLBAR_SORT_BY_START_TIME_NEAREST_TO_FURTHEST" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nearest upcoming first"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "早い順"
+          }
+        }
+      }
+    },
+    "UPCOMING_WIDGET_DESCRIPTION" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show an upcoming stream."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今後の配信を表示する"
+          }
+        }
+      }
+    },
+    "UPCOMING_WIDGET_DISPLAY_NAME" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upcoming"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今後の配信"
+          }
+        }
+      }
+    },
+    "UPCOMING_WIDGET_TITLE" : {
+      "comment" : "Upcoming Widget",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**UPCOMING**"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**今後の配信**"
+          }
+        }
+      }
+    },
+    "UPCOMING_WIDGET_TITLE_NON_BOLD" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UPCOMING"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "今後の配信"
+          }
+        }
+      }
+    },
+    "VIDEO_CONTEXT_MENU_ADD_TO_CALENDAR" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add to calendar"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "カレンダーに追加"
+          }
+        }
+      }
+    },
+    "VIDEO_CONTEXT_MENU_FAVOURITE_CHANNEL" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add channel to favourite"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お気に入りに追加"
+          }
+        }
+      }
+    },
+    "VIDEO_CONTEXT_MENU_REMOVE_FAVOURITE" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove favourite"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "お気に入りを削除"
+          }
+        }
+      }
+    },
+    "VIDEO_CONTEXT_MENU_SHARE" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "シェア"
+          }
+        }
+      }
+    },
+    "VIDEO_CONTEXT_MENU_TWITTER_PROFILE" : {
+      "comment" : "VideoContextMenu",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Twitter profile"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twitter プロフィール"
+          }
+        }
+      }
+    },
+    "VIDEO_CONTEXT_MENU_YOUTUBE_CHANNEL" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open YouTube channel"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "YouTube チャンネル"
+          }
+        }
+      }
+    },
+    "VIEWER_COUNTER_VIEW_MEMBER_NA" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N/A"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不明"
+          }
+        }
+      }
+    },
+    "VIEWER_COUNTER_VIEW_MEMBER_ONLY" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "member-only"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "メンバー限定"
+          }
+        }
+      }
+    },
+    "VIEWER_COUNTER_VIEW_WATCHING" : {
+      "comment" : "Viewer Counter View",
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "watching"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "視聴中"
+          }
+        }
+      }
+    },
+    "WATCH_SETTINGS_UPCOMING_SCHEDULE_PICKER_TEXT %lld" : {
+      "extractionState" : "migrated",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld hours"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld時間"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
