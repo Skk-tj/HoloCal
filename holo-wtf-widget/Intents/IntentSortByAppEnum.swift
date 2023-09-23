@@ -2,7 +2,7 @@
 //  IntentSortByAppEnum.swift
 //  holo-wtf
 //
-//  Created by Haoyi An on 2023-09-18.
+//
 //
 
 import Foundation
@@ -13,10 +13,10 @@ enum IntentSortByAppEnum: String, AppEnum {
     case mostViewer
     case mostRecent
 
-    static var typeDisplayRepresentation = TypeDisplayRepresentation(name: "Sort By")
+    static var typeDisplayRepresentation = TypeDisplayRepresentation(name: "INTENT_SORT_BY")
     static var caseDisplayRepresentations: [Self: DisplayRepresentation] = [
-        .mostViewer: "Most Viewer",
-        .mostRecent: "Most Recent"
+        .mostViewer: "INTENT_SORT_BY_MOST_VIEWER",
+        .mostRecent: "INTENT_SORT_BY_MOST_RECENT"
     ]
 }
 

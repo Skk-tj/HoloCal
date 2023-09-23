@@ -26,6 +26,15 @@ let intentAgencyToAgency: [IntentAgency: AgencyEnum] = [
     .vspo: .vspo
 ]
 
+let appIntentAgencyToAgency: [IntentAgencyAppEnum: AgencyEnum] = [
+    .hololive: .hololive,
+    .nijisanji: .nijisanji,
+    .react: .react,
+    .nanashiInc: .nanashiInc,
+    .noriPro: .noriPro,
+    .vspo: .vspo
+]
+
 let intentSortByToString: [IntentSortBy: [NameLanguage: String]] = [
     .mostViewer: [.en: "Most Viewer", .ja: "視聴者数順"],
     .mostRecent: [.en: "Most Recent", .ja: "開始時間順"]

@@ -2,20 +2,20 @@
 //  UpcomingWidget.swift
 //  holo-wtf
 //
-//  Created by Haoyi An on 2023-09-18.
+//
 //
 
 import Foundation
 import AppIntents
 
 @available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
-struct UpcomingWidget: AppIntent, WidgetConfigurationIntent, CustomIntentMigratedAppIntent {
+struct UpcomingWidget: AgencyAppIntent, CustomIntentMigratedAppIntent {
     static let intentClassName = "UpcomingWidgetIntent"
 
-    static var title: LocalizedStringResource = "Upcoming Widget"
-    static var description = IntentDescription("Intent for Upcoming Widget")
+    static var title: LocalizedStringResource = "UPCOMING_WIDGET_DISPLAY_NAME"
+    static var description = IntentDescription("UPCOMING_WIDGET_DISPLAY_NAME")
 
-    @Parameter(title: "Agency")
+    @Parameter(title: "INTENT_AGENCY")
     var agency: IntentAgencyAppEnum?
 
     static var parameterSummary: some ParameterSummary {

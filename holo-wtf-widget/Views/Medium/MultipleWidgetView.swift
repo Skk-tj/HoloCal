@@ -36,10 +36,17 @@ struct SingleVideoMultipleWidgetView: View {
         
         switch videoType {
         case .live:
-            Text("\(video.channel.getTalentName()) \(Image(systemName: "eye")) \(video.liveViewers ?? 0)")
-                .foregroundColor(.secondary)
-                .font(.caption2)
-                .lineLimit(1)
+            if video.isMengen {
+                Text("\(video.channel.getTalentName()) \(Image(systemName: "person.fill.checkmark"))")
+                    .foregroundColor(.secondary)
+                    .font(.caption2)
+                    .lineLimit(1)
+            } else {
+                Text("\(video.channel.getTalentName()) \(Image(systemName: "eye")) \(video.liveViewers ?? 0)")
+                    .foregroundColor(.secondary)
+                    .font(.caption2)
+                    .lineLimit(1)
+            }
         case .upcoming:
             Text("\(video.channel.getTalentName()) \(Image(systemName: "clock")) \(video.getUpcomingRelativeTimeString(shortMode: true))")
                 .foregroundColor(.secondary)

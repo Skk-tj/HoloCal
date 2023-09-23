@@ -16,35 +16,31 @@ struct ChannelsView: View {
         let firstFour = thumbnails.prefix(4)
         
         HStack {
-            Spacer()
-            
-            HStack {
-                ForEach(firstFour, id: \.self) { avatarData in
-                    if let avatarImage = UIImage(data: avatarData) {
-                        Image(uiImage: avatarImage)
-                            .resizable()
-                            .aspectRatio(1, contentMode: .fill)
-                            .clipShape(Circle())
-                            .overlay {
-                                Circle().stroke(.white, lineWidth: 1)
-                            }
-                            .shadow(radius: 1)
-                    } else {
-                        Image(systemName: "person")
-                            .aspectRatio(1, contentMode: .fill)
-                            .background(.ultraThickMaterial)
-                            .clipShape(Circle())
-                            .overlay {
-                                Circle().stroke(.white, lineWidth: 1)
-                            }
-                            .shadow(radius: 1)
-                    }
+            ForEach(firstFour, id: \.self) { avatarData in
+                if let avatarImage = UIImage(data: avatarData) {
+                    Image(uiImage: avatarImage)
+                        .resizable()
+                        .aspectRatio(1, contentMode: .fill)
+                        .clipShape(Circle())
+                        .overlay {
+                            Circle().stroke(.white, lineWidth: 1)
+                        }
+                        .shadow(radius: 1)
+                        .scaledToFit()
+                } else {
+                    Image(systemName: "person")
+                        .aspectRatio(1, contentMode: .fill)
+                        .background(.ultraThickMaterial)
+                        .clipShape(Circle())
+                        .overlay {
+                            Circle().stroke(.white, lineWidth: 1)
+                        }
+                        .shadow(radius: 1)
+                        .scaledToFit()
                 }
             }
-            .scaledToFit()
-            
-            Spacer()
         }
+        
     }
 }
 

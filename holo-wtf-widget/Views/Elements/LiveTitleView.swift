@@ -12,7 +12,7 @@ struct LiveTitleView: View {
     var body: some View {
         HStack {
             Label("LIVE_WIDGET_TITLE", systemImage: "person.wave.2.fill")
-                .font(.footnote)
+                .font(.caption2)
                 .foregroundColor(.secondary)
             
             Spacer()

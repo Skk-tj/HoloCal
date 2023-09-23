@@ -34,3 +34,31 @@ struct VideoWidgetEntryView: View {
         }
     }
 }
+
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
+struct AppIntentVideoWidgetEntryView: View {
+    var entry: AppIntentVideoLiveWidgetProvider.Entry
+    var videoType: VideoType
+    
+    @Environment(\.widgetFamily) var family
+    
+    @ViewBuilder
+    var body: some View {
+        switch family {
+        case .systemSmall:
+            AppIntentSmallWidgetEntryView(entry: entry, videoType: videoType)
+        case .systemLarge:
+            AppIntentPaneWidgetEntryView(entry: entry, videoType: videoType)
+        case .accessoryRectangular:
+            AppIntentAccessoryRectangularEntryView(entry: entry, videoType: videoType)
+        case .accessoryCorner:
+            AppIntentAccessoryCornerEntryView(entry: entry, videoType: videoType)
+        case .accessoryCircular:
+            AppIntentAccessoryCircularEntryView(entry: entry, videoType: videoType)
+        case .accessoryInline:
+            AppIntentAccessoryInlineEntryView(entry: entry, videoType: videoType)
+        default:
+            EmptyView()
+        }
+    }
+}

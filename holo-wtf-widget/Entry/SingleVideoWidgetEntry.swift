@@ -18,3 +18,15 @@ struct SingleVideoWidgetEntry: VideoTimelineEntry {
     
     let agency: WidgetDeepLinkAgency
 }
+
+struct AppIntentSingleVideoWidgetEntry: AppIntentVideoTimelineEntry {
+    let date: Date
+    let status: WidgetDataStatus
+    
+    let video: LiveVideo?
+    
+    let avatarData: Data
+    let thumbnailData: Data
+    
+    let agency: IntentAgencyAppEnum?
+}

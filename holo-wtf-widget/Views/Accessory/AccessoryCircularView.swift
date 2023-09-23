@@ -18,6 +18,7 @@ struct AccessoryCircularView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .widgetLabel(video.channel.getTalentName())
+                .clipShape(Circle())
         } else {
             Text("N/A")
         }

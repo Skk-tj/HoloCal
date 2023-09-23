@@ -8,43 +8,16 @@
 import SwiftUI
 import WidgetKit
 
-struct TestVideoWidgetView: View {
-    let video: LiveVideo
-    let avatarData: Data
-    let videoType: VideoType
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            SmallWidgetAvatarView(avatarData: avatarData)
-            
-            VStack(alignment: .leading) {
-                Text(video.title)
-                    .font(.caption)
-                    .lineLimit(2, reservesSpace: true)
-                Text(video.channel.getTalentName())
-                    .lineLimit(1)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-                
-                switch videoType {
-                case .live:
-                    Text("\(Image(systemName: "eye")) \(video.liveViewers ?? 0)")
-                        .foregroundColor(.secondary)
-                        .font(.caption2)
-                case .upcoming:
-                    UpcomingTimeView(liveSchedule: video.startScheduled, fontSize: .caption2)
-                case .past:
-                    PastTimeView(endedAt: video.endedAt)
-                }
-            }
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-    }
-}
+//#Preview(as: .systemSmall, widget: {
+//    SingleLiveWidget()
+//}, timeline: {
+//    AppIntentSingleVideoWidgetEntry(date: .now, status: .ok, video: .previewLive, avatarData: Data(), thumbnailData: Data(), agency: .hololive)
+//})
 
-struct TestVideoWidgetView_Previews: PreviewProvider {
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
+struct AppIntentSmallWidget_Preview: PreviewProvider {
     static var previews: some View {
-        TestVideoWidgetView(video: LiveVideo.previewLive, avatarData: Data(), videoType: .live)
+        AppIntentSmallWidgetEntryView(entry: AppIntentSingleVideoWidgetEntry(date: .now, status: .ok, video: .previewLive, avatarData: Data(), thumbnailData: Data(), agency: .hololive), videoType: .live)
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

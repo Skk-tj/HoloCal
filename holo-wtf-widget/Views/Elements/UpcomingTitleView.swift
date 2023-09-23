@@ -11,7 +11,7 @@ struct UpcomingTitleView: View {
     var body: some View {
         HStack {
             Label("UPCOMING_WIDGET_TITLE", systemImage: "clock")
-                .font(.footnote)
+                .font(.caption2)
                 .foregroundColor(.secondary)
             
             Spacer()

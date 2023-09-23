@@ -2,23 +2,23 @@
 //  LiveWidget.swift
 //  holo-wtf
 //
-//  Created by Haoyi An on 2023-09-18.
+//
 //
 
 import Foundation
 import AppIntents
 
 @available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
-struct LiveWidget: AppIntent, WidgetConfigurationIntent, CustomIntentMigratedAppIntent {
+struct LiveWidget: AgencyAppIntent, CustomIntentMigratedAppIntent {
     static let intentClassName = "LiveWidgetIntent"
 
-    static var title: LocalizedStringResource = "Live Widget"
-    static var description = IntentDescription("Intent for Live Widget")
+    static var title: LocalizedStringResource = "CURRENTLY_LIVE_WIDGET_DISPLAY_NAME"
+    static var description = IntentDescription("CURRENTLY_LIVE_WIDGET_DESCRIPTION")
 
-    @Parameter(title: "Agency")
+    @Parameter(title: "INTENT_AGENCY")
     var agency: IntentAgencyAppEnum?
 
-    @Parameter(title: "Sort By")
+    @Parameter(title: "INTENT_SORT_BY")
     var sortBy: IntentSortByAppEnum?
 
     static var parameterSummary: some ParameterSummary {

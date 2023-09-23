@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SmallWidgetAvatarView: View {
     let avatarData: Data
+    let showsBackground: Bool
     
     var body: some View {
         if let avatarImage = UIImage(data: avatarData) {
@@ -18,7 +19,9 @@ struct SmallWidgetAvatarView: View {
                 .frame(width: 40, height: 40)
                 .clipShape(Circle())
                 .overlay {
-                    Circle().stroke(.white, lineWidth: 1)
+                    if showsBackground {
+                        Circle().stroke(.white, lineWidth: 1)
+                    }
                 }
                 .shadow(radius: 1)
         } else {
@@ -27,7 +30,9 @@ struct SmallWidgetAvatarView: View {
                 .frame(width: 40, height: 40)
                 .clipShape(Circle())
                 .overlay {
-                    Circle().stroke(.white, lineWidth: 1)
+                    if showsBackground {
+                        Circle().stroke(.white, lineWidth: 1)
+                    }
                 }
                 .shadow(radius: 1)
         }
@@ -36,6 +41,6 @@ struct SmallWidgetAvatarView: View {
 
 struct SmallWidgetAvatarView_Previews: PreviewProvider {
     static var previews: some View {
-        SmallWidgetAvatarView(avatarData: Data())
+        SmallWidgetAvatarView(avatarData: Data(), showsBackground: false)
     }
 }

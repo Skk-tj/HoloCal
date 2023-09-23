@@ -14,3 +14,11 @@ struct VideoCountEntry: VideoTimelineEntry {
     
     let agency: WidgetDeepLinkAgency
 }
+
+struct AppIntentVideoCountEntry: AppIntentVideoTimelineEntry {
+    let date: Date
+    let status: WidgetDataStatus
+    let count: Int
+    
+    let agency: IntentAgencyAppEnum?
+}

@@ -2,7 +2,7 @@
 //  IntentAgencyAppEnum.swift
 //  holo-wtf
 //
-//  Created by Haoyi An on 2023-09-18.
+//
 //
 
 import Foundation
@@ -18,15 +18,15 @@ enum IntentAgencyAppEnum: String, AppEnum {
     case vspo
     case favourites
 
-    static var typeDisplayRepresentation = TypeDisplayRepresentation(name: "Agency")
+    static var typeDisplayRepresentation = TypeDisplayRepresentation(name: "INTENT_AGENCY")
     static var caseDisplayRepresentations: [Self: DisplayRepresentation] = [
-        .hololive: "Hololive",
-        .nijisanji: "Nijisanji",
-        .react: "Re:AcT",
-        .nanashiInc: "774 inc.",
-        .noriPro: "Nori Pro",
-        .vspo: "Vspo",
-        .favourites: "Favourites"
+        .hololive: "AGENCY_HOLOLIVE",
+        .nijisanji: "AGENCY_NIJISANJI",
+        .react: "AGENCY_RE_ACT",
+        .nanashiInc: "AGENCY_774",
+        .noriPro: "AGENCY_NORI_PRO",
+        .vspo: "AGENCY_VSPO",
+        .favourites: "AGENCY_FAVOURITES"
     ]
 }
 

@@ -28,3 +28,21 @@ struct ChannelsLiveWidgetProvider: ChannelsIntentTimelineProvider {
         }
     }
 }
+
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
+struct AppIntentChannelsLiveWidgetProvider: ChannelsAppIntentTimelineProvider {
+    typealias Entry = AppIntentChannelsEntry
+    typealias Intent = LiveWidget
+    
+    let videoType: VideoType = .live
+    let sortBy: IntentSortByAppEnum = .mostRecent
+    
+    func snapshot(for configuration: Intent, in context: Context) async -> Entry {
+        return await getChannelsEntry(for: configuration.agency, videoType: videoType, sortBy: configuration.sortBy, filterBy: { $0.isSupportedAgency })
+    }
+    
+    func timeline(for configuration: Intent, in context: Context) async -> Timeline<Entry> {
+        let entries = [await getChannelsEntry(for: configuration.agency, videoType: videoType, sortBy: configuration.sortBy, filterBy: { $0.isSupportedAgency })]
+        return Timeline(entries: entries, policy: .atEnd)
+    }
+}

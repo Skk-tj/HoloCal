@@ -15,14 +15,12 @@
 		F008BBA52928DA4600034AF4 /* AgencySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F008BBA32928DA4600034AF4 /* AgencySelectionView.swift */; };
 		F008BBA72928DD5100034AF4 /* ManageFavoriteAgencySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F008BBA62928DD5100034AF4 /* ManageFavoriteAgencySelectionView.swift */; };
 		F009023827EDB6AE00E343B0 /* LiveTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009023727EDB6AE00E343B0 /* LiveTimeView.swift */; };
-		F009023B27EE255B00E343B0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F009023D27EE255B00E343B0 /* Localizable.strings */; };
 		F009024027EE57BA00E343B0 /* LinkedVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009023F27EE57BA00E343B0 /* LinkedVideoView.swift */; };
 		F009024427EE5F3100E343B0 /* UpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */; };
 		F009024627EE6A9F00E343B0 /* VideoContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024527EE6A9F00E343B0 /* VideoContextMenu.swift */; };
 		F00BD6D029052AC400D7932E /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00BD6CF29052AC400D7932E /* VideoViewModel.swift */; };
 		F00BD6D229052AC400D7932E /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00BD6CF29052AC400D7932E /* VideoViewModel.swift */; };
 		F0114D4F2815F81600B99D4D /* DataStatusIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0114D4E2815F81600B99D4D /* DataStatusIndicatorView.swift */; };
-		F011C42828303CA400FD1364 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F009023D27EE255B00E343B0 /* Localizable.strings */; };
 		F01241A12935E2BA007C8FE9 /* ViewerCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A2292C9FF8009EC2CC /* ViewerCounterView.swift */; };
 		F01241A22935E2BB007C8FE9 /* ViewerCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A2292C9FF8009EC2CC /* ViewerCounterView.swift */; };
 		F01241A32935E2C7007C8FE9 /* BlockLiveTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02211A4292CA914009EC2CC /* BlockLiveTimeView.swift */; };
@@ -212,7 +210,6 @@
 		F06D28F328D83A92007D06FB /* SongInStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004E8C5285D004A00ABDFED /* SongInStream.swift */; };
 		F06D28F928D83AC9007D06FB /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657D527732690004AF802 /* Util.swift */; };
 		F06D28FA28D83AD3007D06FB /* UpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */; };
-		F06D28FB28D83B21007D06FB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F009023D27EE255B00E343B0 /* Localizable.strings */; };
 		F0789B8629AB382000346239 /* VideoTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0789B8529AB382000346239 /* VideoTitleView.swift */; };
 		F0789B8829AB3CB400346239 /* BlockPastTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0789B8729AB3CB400346239 /* BlockPastTimeView.swift */; };
 		F0789B9029AB543300346239 /* PastTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0789B8F29AB543300346239 /* PastTimeView.swift */; };
@@ -284,10 +281,30 @@
 		F09D53BE29337378003C4F80 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F09D53C229337378003C4F80 /* Intents.intentdefinition */; };
 		F09D53BF29337378003C4F80 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F09D53C229337378003C4F80 /* Intents.intentdefinition */; };
 		F09D53C029337378003C4F80 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F09D53C229337378003C4F80 /* Intents.intentdefinition */; };
+		F0B2AE522AB945EE00887C32 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F0B2AE512AB945EE00887C32 /* Localizable.xcstrings */; };
+		F0B2AE532AB945EE00887C32 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F0B2AE512AB945EE00887C32 /* Localizable.xcstrings */; };
+		F0B2AE542AB945EE00887C32 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F0B2AE512AB945EE00887C32 /* Localizable.xcstrings */; };
+		F0B2AE552AB945EE00887C32 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F0B2AE512AB945EE00887C32 /* Localizable.xcstrings */; };
+		F0B2AE5C2AB9484800887C32 /* UpcomingWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AE562AB9484800887C32 /* UpcomingWidget.swift */; };
+		F0B2AE5E2AB9484800887C32 /* UpcomingWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AE562AB9484800887C32 /* UpcomingWidget.swift */; };
+		F0B2AE602AB9484800887C32 /* PastWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AE572AB9484800887C32 /* PastWidget.swift */; };
+		F0B2AE622AB9484800887C32 /* PastWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AE572AB9484800887C32 /* PastWidget.swift */; };
+		F0B2AE642AB9484800887C32 /* LiveWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AE582AB9484800887C32 /* LiveWidget.swift */; };
+		F0B2AE662AB9484800887C32 /* LiveWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AE582AB9484800887C32 /* LiveWidget.swift */; };
+		F0B2AE672AB9484800887C32 /* IntentSortByAppEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AE592AB9484800887C32 /* IntentSortByAppEnum.swift */; };
+		F0B2AE682AB9484800887C32 /* IntentSortByAppEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AE592AB9484800887C32 /* IntentSortByAppEnum.swift */; };
+		F0B2AE692AB9484800887C32 /* IntentSortByAppEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AE592AB9484800887C32 /* IntentSortByAppEnum.swift */; };
+		F0B2AE6A2AB9484800887C32 /* IntentSortByAppEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AE592AB9484800887C32 /* IntentSortByAppEnum.swift */; };
+		F0B2AE6B2AB9484800887C32 /* IntentAgencyAppEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AE5A2AB9484800887C32 /* IntentAgencyAppEnum.swift */; };
+		F0B2AE6C2AB9484800887C32 /* IntentAgencyAppEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AE5A2AB9484800887C32 /* IntentAgencyAppEnum.swift */; };
+		F0B2AE6D2AB9484800887C32 /* IntentAgencyAppEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AE5A2AB9484800887C32 /* IntentAgencyAppEnum.swift */; };
+		F0B2AE6E2AB9484800887C32 /* IntentAgencyAppEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AE5A2AB9484800887C32 /* IntentAgencyAppEnum.swift */; };
+		F0B2AE722ABABAB400887C32 /* CommonAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AE702ABABAB400887C32 /* CommonAppIntent.swift */; };
+		F0B2AE742ABABAB400887C32 /* CommonAppIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AE702ABABAB400887C32 /* CommonAppIntent.swift */; };
+		F0B2AE762ABC0A3200887C32 /* TestVideoWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B4D6B829B09930000A28BC /* TestVideoWidgetView.swift */; };
 		F0B2AF0A28C13D0F00635CAD /* UpcomingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */; };
 		F0B2AF0C28C1A82400635CAD /* MultipleVideoWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B2AF0B28C1A82400635CAD /* MultipleVideoWidgetEntry.swift */; };
 		F0B4D6B429B09663000A28BC /* VideoWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0186A4129AC892900339178 /* VideoWidgetView.swift */; };
-		F0B4D6B929B09930000A28BC /* TestVideoWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B4D6B829B09930000A28BC /* TestVideoWidgetView.swift */; };
 		F0B71FCE283CAD0700DC4260 /* MultipleVideoLiveWidgetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B71FCC283CACA000DC4260 /* MultipleVideoLiveWidgetProvider.swift */; };
 		F0C657BB2771F47C004AF802 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C657BA2771F47C004AF802 /* MainApp.swift */; };
 		F0C657BF2771F47C004AF802 /* Assets (Main).xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C657BE2771F47C004AF802 /* Assets (Main).xcassets */; };
@@ -300,7 +317,6 @@
 		F0CA6EB428D7C0410028CB11 /* WatchRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA6EB328D7C0410028CB11 /* WatchRootView.swift */; };
 		F0CA6EB928D7C0420028CB11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0CA6EB828D7C0420028CB11 /* Preview Assets.xcassets */; };
 		F0CA6EBC28D7C0420028CB11 /* holo-wtf-watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F0CA6EAF28D7C0410028CB11 /* holo-wtf-watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F0CA6EC128D7C20E0028CB11 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F009023D27EE255B00E343B0 /* Localizable.strings */; };
 		F0CA6EC728D7C2880028CB11 /* VideoFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */; };
 		F0CA6EC828D7C2880028CB11 /* SongsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F064A5B528BB3765008C51C2 /* SongsViewModel.swift */; };
 		F0CA6EC928D7C2BE0028CB11 /* TalentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A04E27F95D9E00DBC08D /* TalentData.swift */; };
@@ -490,8 +506,6 @@
 		F008BBA32928DA4600034AF4 /* AgencySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgencySelectionView.swift; sourceTree = "<group>"; };
 		F008BBA62928DD5100034AF4 /* ManageFavoriteAgencySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageFavoriteAgencySelectionView.swift; sourceTree = "<group>"; };
 		F009023727EDB6AE00E343B0 /* LiveTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTimeView.swift; sourceTree = "<group>"; };
-		F009023C27EE255B00E343B0 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F009023E27EE258500E343B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F009023F27EE57BA00E343B0 /* LinkedVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedVideoView.swift; sourceTree = "<group>"; };
 		F009024327EE5F3100E343B0 /* UpcomingTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingTimeView.swift; sourceTree = "<group>"; };
 		F009024527EE6A9F00E343B0 /* VideoContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoContextMenu.swift; sourceTree = "<group>"; };
@@ -629,6 +643,13 @@
 		F09D53C42933737E003C4F80 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Intents.strings; sourceTree = "<group>"; };
 		F09D53C629337380003C4F80 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Intents.strings; sourceTree = "<group>"; };
 		F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = SecretConfig.xcconfig; sourceTree = "<group>"; };
+		F0B2AE512AB945EE00887C32 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		F0B2AE562AB9484800887C32 /* UpcomingWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingWidget.swift; sourceTree = "<group>"; };
+		F0B2AE572AB9484800887C32 /* PastWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastWidget.swift; sourceTree = "<group>"; };
+		F0B2AE582AB9484800887C32 /* LiveWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveWidget.swift; sourceTree = "<group>"; };
+		F0B2AE592AB9484800887C32 /* IntentSortByAppEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentSortByAppEnum.swift; sourceTree = "<group>"; };
+		F0B2AE5A2AB9484800887C32 /* IntentAgencyAppEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentAgencyAppEnum.swift; sourceTree = "<group>"; };
+		F0B2AE702ABABAB400887C32 /* CommonAppIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonAppIntent.swift; sourceTree = "<group>"; };
 		F0B2AF0B28C1A82400635CAD /* MultipleVideoWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleVideoWidgetEntry.swift; sourceTree = "<group>"; };
 		F0B4D6B829B09930000A28BC /* TestVideoWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVideoWidgetView.swift; sourceTree = "<group>"; };
 		F0B71FCC283CACA000DC4260 /* MultipleVideoLiveWidgetProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleVideoLiveWidgetProvider.swift; sourceTree = "<group>"; };
@@ -1042,6 +1063,7 @@
 				F02830832853DB8500CBFCE7 /* Views */,
 				F093D1C3282C32D000E2A6FF /* HoloCalWidgetBundle.swift */,
 				F025204328EEA5FC00976972 /* Common.swift */,
+				F0B2AE702ABABAB400887C32 /* CommonAppIntent.swift */,
 				F0558FB82A931CBB00F69836 /* WidgetLocalization.swift */,
 				F093D1C6282C32D100E2A6FF /* Assets.xcassets */,
 				F093D1C8282C32D100E2A6FF /* Info.plist */,
@@ -1049,6 +1071,7 @@
 				F06D28DC28D838C7007D06FB /* SharedWidgets.swift */,
 				F06D28DF28D8390F007D06FB /* SharedEntryView.swift */,
 				F06D28EA28D83A2D007D06FB /* SharedUtil.swift */,
+				F0B2AE6F2AB9485C00887C32 /* Intents */,
 				F09D53C229337378003C4F80 /* Intents.intentdefinition */,
 			);
 			path = "holo-wtf-widget";
@@ -1105,6 +1128,18 @@
 				F020C8B52A1AB52F00471F2C /* NotificationManagementView.swift */,
 			);
 			path = SharedUI;
+			sourceTree = "<group>";
+		};
+		F0B2AE6F2AB9485C00887C32 /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				F0B2AE592AB9484800887C32 /* IntentSortByAppEnum.swift */,
+				F0B2AE5A2AB9484800887C32 /* IntentAgencyAppEnum.swift */,
+				F0B2AE582AB9484800887C32 /* LiveWidget.swift */,
+				F0B2AE562AB9484800887C32 /* UpcomingWidget.swift */,
+				F0B2AE572AB9484800887C32 /* PastWidget.swift */,
+			);
+			path = Intents;
 			sourceTree = "<group>";
 		};
 		F0B2AF1328C2E48C00635CAD /* Small */ = {
@@ -1188,7 +1223,7 @@
 				F0C657C02771F47C004AF802 /* Preview Content */,
 				F0C657BE2771F47C004AF802 /* Assets (Main).xcassets */,
 				F0204DB827E91A920083750F /* Info.plist */,
-				F009023D27EE255B00E343B0 /* Localizable.strings */,
+				F0B2AE512AB945EE00887C32 /* Localizable.xcstrings */,
 				F0204DB927E925220083750F /* PRIVACY-POLICY.md */,
 				F0ED2AF4280B606400683E6C /* .gitignore */,
 				F09049AF29F647490033B121 /* TextRollingView.swift */,
@@ -1428,7 +1463,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					F01EB30329D17043001A17AF = {
 						CreatedOnToolsVersion = 14.2;
@@ -1501,7 +1536,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F06D28D328D83827007D06FB /* Assets.xcassets in Resources */,
-				F06D28FB28D83B21007D06FB /* Localizable.strings in Resources */,
+				F0B2AE552AB945EE00887C32 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1510,7 +1545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F093D1C7282C32D100E2A6FF /* Assets.xcassets in Resources */,
-				F011C42828303CA400FD1364 /* Localizable.strings in Resources */,
+				F0B2AE532AB945EE00887C32 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1519,8 +1554,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0ED2AF5280B606400683E6C /* .gitignore in Resources */,
+				F0B2AE522AB945EE00887C32 /* Localizable.xcstrings in Resources */,
 				F0C657C22771F47C004AF802 /* Preview Assets.xcassets in Resources */,
-				F009023B27EE255B00E343B0 /* Localizable.strings in Resources */,
 				F0C657BF2771F47C004AF802 /* Assets (Main).xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1530,7 +1565,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0CA6EB928D7C0420028CB11 /* Preview Assets.xcassets in Resources */,
-				F0CA6EC128D7C20E0028CB11 /* Localizable.strings in Resources */,
+				F0B2AE542AB945EE00887C32 /* Localizable.xcstrings in Resources */,
 				F099C69129CFD6CB00596C7F /* Assets (Main).xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1555,7 +1590,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# export PATH=\"$PATH:/opt/homebrew/bin\"\n# if which swiftlint > /dev/null; then\n#   swiftlint\n# else\n#   echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n# fi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1602,6 +1637,7 @@
 				F025204228EE95FB00976972 /* Constants.swift in Sources */,
 				F01869FB29AC59BB00339178 /* LiveTitleView.swift in Sources */,
 				F06D28E828D839F5007D06FB /* LiveVideo.swift in Sources */,
+				F0B2AE662AB9484800887C32 /* LiveWidget.swift in Sources */,
 				F06D28F928D83AC9007D06FB /* Util.swift in Sources */,
 				F0558FB02A9318E500F69836 /* MultipleVideoIntentTimelineProvider.swift in Sources */,
 				F06D28E628D839F5007D06FB /* Channel.swift in Sources */,
@@ -1612,6 +1648,7 @@
 				F09D53A729336944003C4F80 /* VideoUpcomingWidgetProvider.swift in Sources */,
 				F0186A1F29AC773400339178 /* SmallEntryViews.swift in Sources */,
 				F0186A2229AC776300339178 /* PaneEntryViews.swift in Sources */,
+				F0B2AE742ABABAB400887C32 /* CommonAppIntent.swift in Sources */,
 				F09664E529A34DCF005F37C0 /* BlockVideoInfoView.swift in Sources */,
 				F06D28E128D8390F007D06FB /* SharedEntryView.swift in Sources */,
 				F0367D062A3EE3B600BB4DAB /* PastLimit.swift in Sources */,
@@ -1622,8 +1659,10 @@
 				F0186A0429AC5A1300339178 /* NoStreamView.swift in Sources */,
 				F0558FBA2A931CBB00F69836 /* WidgetLocalization.swift in Sources */,
 				F0558FC72A9349E200F69836 /* AccessoryWatchCircularView.swift in Sources */,
+				F0B2AE5E2AB9484800887C32 /* UpcomingWidget.swift in Sources */,
 				F0F40976293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */,
 				F01241A42935E2C7007C8FE9 /* BlockLiveTimeView.swift in Sources */,
+				F0B2AE6A2AB9484800887C32 /* IntentSortByAppEnum.swift in Sources */,
 				F0186A2529AC779D00339178 /* AccessoryRectangularEntryViews.swift in Sources */,
 				F09D53C029337378003C4F80 /* Intents.intentdefinition in Sources */,
 				F01DAA762990F30400052514 /* ChannelNameView.swift in Sources */,
@@ -1649,8 +1688,10 @@
 				F06D28E228D839E4007D06FB /* MultipleVideoWidgetEntry.swift in Sources */,
 				F06D28EC28D83A2D007D06FB /* SharedUtil.swift in Sources */,
 				F025204728EEA5FC00976972 /* Common.swift in Sources */,
+				F0B2AE6E2AB9484800887C32 /* IntentAgencyAppEnum.swift in Sources */,
 				F0186A0C29AC606800339178 /* BlockPastTimeView.swift in Sources */,
 				F099C68A29CFA4A000596C7F /* GenerationGroup.swift in Sources */,
+				F0B2AE622AB9484800887C32 /* PastWidget.swift in Sources */,
 				F0186A0129AC59FA00339178 /* PastTitleView.swift in Sources */,
 				F03A138528F0004C00BB8E51 /* ChannelsEntry.swift in Sources */,
 				F0186A4029AC867100339178 /* SmallWidgetView.swift in Sources */,
@@ -1674,6 +1715,7 @@
 				F04D1B3E283A304E0026340D /* VideoLiveWidgetProvider.swift in Sources */,
 				F0186A2429AC779D00339178 /* AccessoryRectangularEntryViews.swift in Sources */,
 				F03A139428F2018000BB8E51 /* ChannelsView.swift in Sources */,
+				F0B2AE6C2AB9484800887C32 /* IntentAgencyAppEnum.swift in Sources */,
 				F0E06D0B29322C7800BF6812 /* BlockMemberOnlyView.swift in Sources */,
 				F0186A2129AC776300339178 /* PaneEntryViews.swift in Sources */,
 				F099C67E29CFA3E600596C7F /* WidgetConstants.swift in Sources */,
@@ -1686,7 +1728,9 @@
 				F0558FC62A9349E200F69836 /* AccessoryWatchCircularView.swift in Sources */,
 				F0186A0029AC59FA00339178 /* PastTitleView.swift in Sources */,
 				F0186A4929AC8F1900339178 /* MultipleWidgetView.swift in Sources */,
+				F0B2AE642AB9484800887C32 /* LiveWidget.swift in Sources */,
 				F01DAA742990F30200052514 /* ChannelNameView.swift in Sources */,
+				F0B2AE722ABABAB400887C32 /* CommonAppIntent.swift in Sources */,
 				F093D1D4282FA08900E2A6FF /* Channel.swift in Sources */,
 				F01869FD29AC59E300339178 /* UpcomingTitleView.swift in Sources */,
 				F0186A2D29AC795400339178 /* ChannelsEntryView.swift in Sources */,
@@ -1712,6 +1756,7 @@
 				F0186A1729AC710C00339178 /* SmallWidgetAvatarView.swift in Sources */,
 				F01869FA29AC59BB00339178 /* LiveTitleView.swift in Sources */,
 				F0558FC32A93468D00F69836 /* CountWidgetProvider.swift in Sources */,
+				F0B2AE762ABC0A3200887C32 /* TestVideoWidgetView.swift in Sources */,
 				F05DFA362853CA7800D62D19 /* BaseVideoEntryView.swift in Sources */,
 				F020E8CB29C5B28300C2345D /* AccessoryInlineWidgetView.swift in Sources */,
 				F0558FB52A93196400F69836 /* VideoIntentTimelineProvider.swift in Sources */,
@@ -1720,6 +1765,7 @@
 				F09664E129A34D7C005F37C0 /* BlockVideoInfoView.swift in Sources */,
 				F0B2AF0C28C1A82400635CAD /* MultipleVideoWidgetEntry.swift in Sources */,
 				F093D1E82830359900E2A6FF /* Util.swift in Sources */,
+				F0B2AE5C2AB9484800887C32 /* UpcomingWidget.swift in Sources */,
 				F0558FBF2A9322A800F69836 /* CountIntentTimelineProvider.swift in Sources */,
 				F004E8C7285D013300ABDFED /* SongInStream.swift in Sources */,
 				F0E06D0729322BEC00BF6812 /* BlockLiveTimeView.swift in Sources */,
@@ -1729,6 +1775,7 @@
 				F03A139228F1FE0700BB8E51 /* ChannelsLiveWidgetProvider.swift in Sources */,
 				F0558FAF2A9318E500F69836 /* MultipleVideoIntentTimelineProvider.swift in Sources */,
 				F06D28DD28D838C7007D06FB /* SharedWidgets.swift in Sources */,
+				F0B2AE682AB9484800887C32 /* IntentSortByAppEnum.swift in Sources */,
 				F0D9BEB92A934F2500494B2E /* AccessoryWatchCircularEntryViews.swift in Sources */,
 				F028308828545B1200CBFCE7 /* SingleVideoWidgetEntry.swift in Sources */,
 				F0E06D162932376300BF6812 /* Modes.swift in Sources */,
@@ -1743,9 +1790,9 @@
 				F084633929E6813E004279B4 /* VideoFetchService.swift in Sources */,
 				F099C68329CFA43B00596C7F /* WidgetUtils.swift in Sources */,
 				F01869EB29AC1DD500339178 /* ChannelsPastWidgetProvider.swift in Sources */,
-				F0B4D6B929B09930000A28BC /* TestVideoWidgetView.swift in Sources */,
 				F0186A4229AC892900339178 /* VideoWidgetView.swift in Sources */,
 				F099C68D29CFA4CA00596C7F /* Vtuberable.swift in Sources */,
+				F0B2AE602AB9484800887C32 /* PastWidget.swift in Sources */,
 				F01EB30F29D170E8001A17AF /* VideoSorting.swift in Sources */,
 				F09D53A529336918003C4F80 /* ChannelsUpcomingWidgetProvider.swift in Sources */,
 				F0186A2F29AC7CA900339178 /* AccessoryCornerEntryViews.swift in Sources */,
@@ -1831,6 +1878,7 @@
 				F04EB66728D2A0A000F168CB /* ManageGenerationOrderView.swift in Sources */,
 				F02211AD292F73DA009EC2CC /* TabletSplitView.swift in Sources */,
 				F099C68729CFA4A000596C7F /* GenerationGroup.swift in Sources */,
+				F0B2AE672AB9484800887C32 /* IntentSortByAppEnum.swift in Sources */,
 				F004E8CB285D058000ABDFED /* SingleSongView.swift in Sources */,
 				F0C657D627732690004AF802 /* Util.swift in Sources */,
 				F0DC616329D99AFA009D1051 /* VideoFavouritesViewModel.swift in Sources */,
@@ -1841,6 +1889,7 @@
 				F01DAA6D2990C5CC00052514 /* BlockJPYPriceView.swift in Sources */,
 				F0ED2AE62808253700683E6C /* VideoThumbnailView.swift in Sources */,
 				F01DAA4F298FACE000052514 /* LiveConcert.swift in Sources */,
+				F0B2AE6B2AB9484800887C32 /* IntentAgencyAppEnum.swift in Sources */,
 				F07D891928834FBB008D3057 /* DSTReminderView.swift in Sources */,
 				F0CA6EAA28D7B5DD0028CB11 /* SongListStackView.swift in Sources */,
 				F00BD6D029052AC400D7932E /* VideoViewModel.swift in Sources */,
@@ -1887,8 +1936,10 @@
 				F04D754828D7C94F0096B8AB /* Util.swift in Sources */,
 				F01DAA822996413A00052514 /* ConcertsWatchView.swift in Sources */,
 				F0E45D1A28F39AF90091474A /* Agency.swift in Sources */,
+				F0B2AE6D2AB9484800887C32 /* IntentAgencyAppEnum.swift in Sources */,
 				F017D86A29DBFE6D0033EBB7 /* SingleVideoWatchView.swift in Sources */,
 				F0F40975293D6F46001C4F48 /* MultiLanguageNameView.swift in Sources */,
+				F0B2AE692AB9484800887C32 /* IntentSortByAppEnum.swift in Sources */,
 				F0CA6ECB28D7C2BE0028CB11 /* SongInStream.swift in Sources */,
 				F0CA6ECA28D7C2BE0028CB11 /* Channel.swift in Sources */,
 				F01DAA752990F30300052514 /* ChannelNameView.swift in Sources */,
@@ -1963,15 +2014,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F009023D27EE255B00E343B0 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F009023C27EE255B00E343B0 /* ja */,
-				F009023E27EE258500E343B0 /* en */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
 		F09D53C229337378003C4F80 /* Intents.intentdefinition */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2208,6 +2250,7 @@
 			baseConfigurationReference = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -2239,10 +2282,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 247;
+				CURRENT_PROJECT_VERSION = 248;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -2258,7 +2302,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 2.6.8;
+				MARKETING_VERSION = 2.7;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2276,6 +2320,7 @@
 			baseConfigurationReference = F0AA3F122957CAE10081A610 /* SecretConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -2307,10 +2352,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 247;
+				CURRENT_PROJECT_VERSION = 248;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -2320,7 +2366,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 2.6.8;
+				MARKETING_VERSION = 2.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

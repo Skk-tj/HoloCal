@@ -11,7 +11,7 @@ struct PastTitleView: View {
     var body: some View {
         HStack {
             Label("PAST_WIDGET_TITLE", systemImage: "clock.arrow.circlepath")
-                .font(.footnote)
+                .font(.caption2)
                 .foregroundColor(.secondary)
             
             Spacer()

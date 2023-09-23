@@ -40,7 +40,7 @@ struct VideoWidgetView: View {
                     .multilineTextAlignment(.leading)
                 
                 HStack {
-                    SmallWidgetAvatarView(avatarData: avatarData)
+                    SmallWidgetAvatarView(avatarData: avatarData, showsBackground: true)
                     
                     ChannelNameView(channel: video.channel)
                 }

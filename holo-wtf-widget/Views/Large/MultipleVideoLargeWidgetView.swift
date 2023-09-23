@@ -18,7 +18,7 @@ struct MultipleVideoLargeWidgetView: View {
             ForEach(Array(zip(videos, avatars)), id: \.0.id) { item in
                 Divider()
                 HStack {
-                    SmallWidgetAvatarView(avatarData: item.1)
+                    SmallWidgetAvatarView(avatarData: item.1, showsBackground: true)
                     VStack(alignment: .leading) {
                         Text(item.0.title)
                             .font(.footnote)
@@ -31,7 +31,7 @@ struct MultipleVideoLargeWidgetView: View {
                             switch videoType {
                             case .live:
                                 if item.0.isMengen {
-                                    Text("LIVE_CELL_VIEW_MEMBER_ONLY_STREAM")
+                                    Image(systemName: "person.fill.checkmark")
                                         .font(.footnote)
                                         .foregroundColor(.secondary)
                                 } else {

@@ -14,3 +14,11 @@ struct CountLiveWidgetProvider: CountIntentTimelineProvider {
     
     let videoType: VideoType = .live
 }
+
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
+struct AppIntentCountLiveWidgetProvider: CountAppIntentTimelineProvider {
+    typealias Entry = AppIntentVideoCountEntry
+    typealias Intent = LiveWidget
+    
+    let videoType: VideoType = .live
+}
