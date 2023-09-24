@@ -58,5 +58,30 @@ struct VideoWatchView: View {
             
             await video.getVideoForUI()
         }
+        .toolbar {
+            if #available(watchOS 10.0, *) {
+                if videoType == .live {
+                    ToolbarItemGroup(placement: .bottomBar) {
+                        Spacer()
+                        Button(action: {
+                            withAnimation {
+                                if video.sortingStrategy == .timeDesc {
+                                    video.sortingStrategy = .viewersDesc
+                                } else {
+                                    video.sortingStrategy = .timeDesc
+                                }
+                                
+                                self.video.sortVideos()
+                            }
+                        }, label: {
+                            Image(systemName: video.sortingStrategy == .timeDesc ? "hourglass.tophalf.filled" : "person.fill")
+                        })
+                        .contentTransition(.symbolEffect(.replace))
+                    }
+                }
+            } else {
+                ToolbarItem {}
+            }
+        }
     }
 }

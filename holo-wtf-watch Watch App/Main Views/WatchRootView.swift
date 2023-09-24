@@ -37,22 +37,49 @@ struct WatchRootView: View {
             .navigationDestination(for: Tabs.self) { tab in
                 switch tab {
                 case .live:
-                    AgencyNavigationView(viewTitle: "ROOT_VIEW_LIVE") { agency in
-                        VideoWatchView(for: agency, videoType: .live)
-                    } favouritesView: {
-                        VideoFavouritesWatchView(videoType: .live)
+                    if #available(watchOS 10.0, *) {
+                        AgencyNavigationView(viewTitle: "ROOT_VIEW_LIVE") { agency in
+                            VideoWatchView(for: agency, videoType: .live)
+                        } favouritesView: {
+                            VideoFavouritesWatchView(videoType: .live)
+                        }
+                        .containerBackground(Color.red.gradient, for: .navigation)
+                    } else {
+                        AgencyNavigationView(viewTitle: "ROOT_VIEW_LIVE") { agency in
+                            VideoWatchView(for: agency, videoType: .live)
+                        } favouritesView: {
+                            VideoFavouritesWatchView(videoType: .live)
+                        }
                     }
                 case .upcoming:
-                    AgencyNavigationView(viewTitle: "ROOT_VIEW_UPCOMING") { agency in
-                        VideoWatchView(for: agency, videoType: .upcoming)
-                    } favouritesView: {
-                        VideoFavouritesWatchView(videoType: .upcoming)
+                    if #available(watchOS 10.0, *) {
+                        AgencyNavigationView(viewTitle: "ROOT_VIEW_UPCOMING") { agency in
+                            VideoWatchView(for: agency, videoType: .upcoming)
+                        } favouritesView: {
+                            VideoFavouritesWatchView(videoType: .upcoming)
+                        }
+                        .containerBackground(Color.pink.gradient, for: .navigation)
+                    } else {
+                        AgencyNavigationView(viewTitle: "ROOT_VIEW_UPCOMING") { agency in
+                            VideoWatchView(for: agency, videoType: .upcoming)
+                        } favouritesView: {
+                            VideoFavouritesWatchView(videoType: .upcoming)
+                        }
                     }
                 case .past:
-                    AgencyNavigationView(viewTitle: "ROOT_VIEW_PAST") { agency in
-                        VideoWatchView(for: agency, videoType: .past)
-                    } favouritesView: {
-                        VideoFavouritesWatchView(videoType: .past)
+                    if #available(watchOS 10.0, *) {
+                        AgencyNavigationView(viewTitle: "ROOT_VIEW_PAST") { agency in
+                            VideoWatchView(for: agency, videoType: .past)
+                        } favouritesView: {
+                            VideoFavouritesWatchView(videoType: .past)
+                        }
+                        .containerBackground(Color.blue.gradient, for: .navigation)
+                    } else {
+                        AgencyNavigationView(viewTitle: "ROOT_VIEW_PAST") { agency in
+                            VideoWatchView(for: agency, videoType: .past)
+                        } favouritesView: {
+                            VideoFavouritesWatchView(videoType: .past)
+                        }
                     }
                 case .concerts:
                     ConcertsWatchView()

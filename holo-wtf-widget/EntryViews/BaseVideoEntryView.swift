@@ -63,7 +63,6 @@ struct AppIntentBaseVideoEntryView<MainContent: View, TitleContent: View>: View 
             }
         }
         .containerBackground(for: .widget) {
-            Color.white
         }
     }
 }
