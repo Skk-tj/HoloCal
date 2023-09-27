@@ -45,7 +45,7 @@ func getVideosForWidget(agency: IntentAgencyAppEnum?, videoType: VideoType) asyn
     let favourites = getFavouritesFromUserDefaults(groupName: "group.io.skk-tj.holo-wtf.ios")
     
     switch agency {
-    case nil:
+    case .all, nil:
         return try await getVideosFromAllAgencies(videoType: videoType)
     case .favourites:
         return try await getVideosFromAllAgencies(videoType: videoType).filter { favourites.contains($0.channel.id) }
@@ -98,7 +98,7 @@ func getEntryWithIntent(for agency: IntentAgencyAppEnum?, videoType: VideoType, 
     }
 }
 
-func getUpcomingEntriesWithIntent(for agency: IntentAgencyAppEnum?, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> [AppIntentSingleVideoWidgetEntry] {
+func getUpcomingEntriesWithIntent(for agency: IntentAgencyAppEnum, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> [AppIntentSingleVideoWidgetEntry] {
     do {
         let lives = try await getAndFilterAndSortVideosCommon(for: agency, videoType: .upcoming, sortBy: .mostRecent, filterBy: filterAlgorithm)
         

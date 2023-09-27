@@ -10,6 +10,7 @@ import AppIntents
 
 @available(iOS 16.0, macOS 13.0, watchOS 9.0, tvOS 16.0, *)
 enum IntentAgencyAppEnum: String, AppEnum {
+    case all
     case hololive
     case nijisanji
     case react
@@ -20,6 +21,7 @@ enum IntentAgencyAppEnum: String, AppEnum {
 
     static var typeDisplayRepresentation = TypeDisplayRepresentation(name: "INTENT_AGENCY")
     static var caseDisplayRepresentations: [Self: DisplayRepresentation] = [
+        .all: "AGENCY_ALL",
         .hololive: "AGENCY_HOLOLIVE",
         .nijisanji: "AGENCY_NIJISANJI",
         .react: "AGENCY_RE_ACT",

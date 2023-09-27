@@ -54,7 +54,7 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "acolyte#9321"
           }
         }
@@ -73,6 +73,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "774 inc."
+          }
+        }
+      }
+    },
+    "AGENCY_ALL" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "全部"
           }
         }
       }

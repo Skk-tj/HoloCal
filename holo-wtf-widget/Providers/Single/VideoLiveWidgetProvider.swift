@@ -89,7 +89,7 @@ struct AppIntentVideoLiveWidgetProvider: VideoAppIntentTimelineProvider {
     
     func recommendations() -> [AppIntentRecommendation<LiveWidget>] {
         let availableSortBy: [IntentSortByAppEnum] = [.mostViewer, .mostRecent]
-        let availableAgency: [IntentAgencyAppEnum] = [.hololive, .nijisanji, .react, .nanashiInc, .noriPro, .vspo]
+        let availableAgency: [IntentAgencyAppEnum] = [.all, .hololive, .nijisanji, .react, .nanashiInc, .noriPro, .vspo]
         
         let result: [AppIntentRecommendation<Intent>] = product(availableSortBy, availableAgency).map { pair in
             let intent = Intent()
@@ -100,7 +100,7 @@ struct AppIntentVideoLiveWidgetProvider: VideoAppIntentTimelineProvider {
             let localizedVideoType = getIntentVideoTypeLocalizedName(videoType)
             let localizedAgency = String(localized: pair.1.localizedStringResource)
             
-            let text = "\(localizedSortByIntent) (\(getIntentVideoTypeLocalizedName(videoType))) (\(localizedAgency))"
+            let text = "\(localizedSortByIntent) (\(localizedVideoType)) (\(localizedAgency))"
             
             return AppIntentRecommendation(intent: intent, description: text)
         }
