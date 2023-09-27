@@ -211,12 +211,27 @@ func getThumbnailsForVideos(_ videos: [LiveVideo]) async throws -> [(video: Live
         videos.forEach { video in
             group.addTask {
                 let (thumbnail, _) = try await URLSession.shared.data(from: video.thumbnailURL!)
-                
                 return (video, thumbnail)
             }
         }
         
         return try await group.reduce(into: [(video: LiveVideo, image: Data)]()) { partialResult, data in
+            partialResult.append(data)
+        }
+    }
+}
+
+func getAvatarsAndThumbnailsForVideos(_ videos: [LiveVideo]) async throws -> [(video: LiveVideo, avatar: Data, thumbnail: Data)] {
+    try await withThrowingTaskGroup(of: (video: LiveVideo, avatar: Data, thumbnail: Data).self) { group in
+        videos.forEach { video in
+            group.addTask {
+                async let (avatar, _) = URLSession.shared.data(from: video.channel.photo!)
+                async let (thumbnail, _) = URLSession.shared.data(from: video.thumbnailURL!)
+                return try await (video, avatar, thumbnail)
+            }
+        }
+        
+        return try await group.reduce(into: [(video: LiveVideo, avatar: Data, thumbnail: Data)]()) { partialResult, data in
             partialResult.append(data)
         }
     }

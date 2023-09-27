@@ -19,4 +19,3 @@ enum IntentSortByAppEnum: String, AppEnum {
         .mostRecent: "INTENT_SORT_BY_MOST_RECENT"
     ]
 }
-

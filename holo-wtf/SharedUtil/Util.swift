@@ -13,13 +13,13 @@ import SwiftUI
 import Sentry
 #endif
 
-func getRelativeTimeString(for: Date) -> String {
+func getRelativeTimeString(for date: Date) -> String {
     let formatter = RelativeDateTimeFormatter()
     formatter.unitsStyle = .abbreviated
     formatter.dateTimeStyle = .numeric
     formatter.formattingContext = .beginningOfSentence
     
-    return formatter.localizedString(for: `for`, relativeTo: Date())
+    return formatter.localizedString(for: date, relativeTo: Date())
 }
 
 func getUpcomingStreamLookAheadHoursFromUserDefaults() -> Int {

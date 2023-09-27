@@ -98,6 +98,39 @@ func getEntryWithIntent(for agency: IntentAgencyAppEnum?, videoType: VideoType, 
     }
 }
 
+func getUpcomingEntriesWithIntent(for agency: IntentAgencyAppEnum?, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> [AppIntentSingleVideoWidgetEntry] {
+    do {
+        let lives = try await getAndFilterAndSortVideosCommon(for: agency, videoType: .upcoming, sortBy: .mostRecent, filterBy: filterAlgorithm)
+        
+        if lives.isEmpty {
+            let entry = AppIntentSingleVideoWidgetEntry(date: .now, status: .noVideo, video: nil, avatarData: Data(), thumbnailData: Data(), agency: agency)
+            return [entry]
+        }
+        
+        // get 5
+        let firstFive = Array(lives.prefix(5))
+        
+        let videosWithImages = try await getAvatarsAndThumbnailsForVideos(firstFive)
+        
+        var entries: [AppIntentSingleVideoWidgetEntry] = []
+        entries.reserveCapacity(5)
+        
+        var time = Date.now
+        for videoWithImage in videosWithImages {
+            entries.append(AppIntentSingleVideoWidgetEntry(date: time, status: .ok, video: videoWithImage.video, avatarData: videoWithImage.avatar, thumbnailData: videoWithImage.thumbnail, agency: agency))
+            if let scheduled = videoWithImage.video.startScheduled {
+                time = scheduled + 1
+            } else {
+                break
+            }
+        }
+        
+        return entries
+    } catch {
+        return [AppIntentSingleVideoWidgetEntry(date: .now, status: .network, video: nil, avatarData: Data(), thumbnailData: Data(), agency: agency)]
+    }
+}
+
 func getMultipleEntry(for agency: IntentAgencyAppEnum?, videoType: VideoType, sortBy: IntentSortByAppEnum?, filterBy filterAlgorithm: (LiveVideo) -> Bool, prefix: Int, imageGet: MultipleVideoImageGetMethod) async -> AppIntentMultipleVideoWidgetEntry {
     do {
         var lives = try await getAndFilterAndSortVideosCommon(for: agency, videoType: videoType, sortBy: sortBy, filterBy: filterAlgorithm)

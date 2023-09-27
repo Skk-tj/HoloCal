@@ -26,7 +26,6 @@ struct LiveWidget: AgencyAppIntent, CustomIntentMigratedAppIntent {
     }
 
     func perform() async throws -> some IntentResult {
-        // TODO: Place your refactored intent handler code here.
         return .result()
     }
 }
@@ -46,4 +45,3 @@ fileprivate extension IntentDialog {
         "Just to confirm, you wanted ‘\(sortBy)’?"
     }
 }
-

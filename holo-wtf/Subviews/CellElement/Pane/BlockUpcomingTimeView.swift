@@ -19,9 +19,9 @@ struct BlockUpcomingTimeView: View {
                     Text("BLOCK_LIVE_TIME_VIEW_WAITING")
                 } else {
                     if isShowingAbsoluteTime {
-                        Text("\(liveSchedule.formatted(date: .numeric, time: .shortened))")
+                        Text(liveSchedule, style: .time)
                     } else {
-                        Text("\(getRelativeTimeString(for: liveSchedule))")
+                        Text(liveSchedule, style: .relative)
                     }
                 }
             } else {
@@ -35,8 +35,8 @@ struct BlockUpcomingTimeView: View {
 
 struct BlockUpcomingTimeView_Previews: PreviewProvider {
     static var previews: some View {
-        BlockUpcomingTimeView(liveSchedule: Date() + 30000, isShowingAbsoluteTime: true)
-        BlockUpcomingTimeView(liveSchedule: Date() + 30000, isShowingAbsoluteTime: false)
+        BlockUpcomingTimeView(liveSchedule: Date() + 120, isShowingAbsoluteTime: true)
+        BlockUpcomingTimeView(liveSchedule: Date() + 120, isShowingAbsoluteTime: false)
         BlockUpcomingTimeView()
     }
 }

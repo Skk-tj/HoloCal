@@ -96,7 +96,11 @@ struct AppIntentVideoLiveWidgetProvider: VideoAppIntentTimelineProvider {
             intent.sortBy = pair.0
             intent.agency = pair.1
             
-            let text = "\(pair.0.localizedStringResource) (\(getIntentVideoTypeLocalizedName(videoType))) (\(pair.1.localizedStringResource))"
+            let localizedSortByIntent = String(localized: pair.0.localizedStringResource)
+            let localizedVideoType = getIntentVideoTypeLocalizedName(videoType)
+            let localizedAgency = String(localized: pair.1.localizedStringResource)
+            
+            let text = "\(localizedSortByIntent) (\(getIntentVideoTypeLocalizedName(videoType))) (\(localizedAgency))"
             
             return AppIntentRecommendation(intent: intent, description: text)
         }

@@ -62,7 +62,5 @@ struct AppIntentBaseVideoEntryView<MainContent: View, TitleContent: View>: View 
                 NetworkErrorView()
             }
         }
-        .containerBackground(for: .widget) {
-        }
     }
 }

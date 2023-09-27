@@ -39,4 +39,3 @@ struct AppIntentMultipleVideoUpcomingWidgetProvider: MultipleVideoAppIntentTimel
         self.imageGet = imageGet
     }
 }
-

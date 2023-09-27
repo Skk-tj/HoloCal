@@ -29,4 +29,3 @@ enum IntentAgencyAppEnum: String, AppEnum {
         .favourites: "AGENCY_FAVOURITES"
     ]
 }
-
