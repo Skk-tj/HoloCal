@@ -38,6 +38,7 @@ struct BaseChannelsEntryView<MainContent: View, TitleContent: View>: View {
     }
 }
 
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
 struct AppIntentBaseChannelsEntryView<MainContent: View, TitleContent: View>: View {
     let entry: AppIntentChannelsEntry
     
@@ -64,6 +65,7 @@ struct AppIntentBaseChannelsEntryView<MainContent: View, TitleContent: View>: Vi
                 NetworkErrorView()
             }
         }
+        .containerBackground(for: .widget) {}
     }
 }
 
@@ -88,6 +90,7 @@ struct ChannelsEntryView: View {
     }
 }
 
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
 struct AppIntentChannelsEntryView: View {
     let entry: AppIntentChannelsEntry
     let videoType: VideoType

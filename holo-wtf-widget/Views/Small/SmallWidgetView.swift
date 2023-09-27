@@ -21,11 +21,11 @@ struct SmallWidgetView: View {
             
             VStack(alignment: .leading) {
                 Text(video.title)
-                    .font(showsBackground ? .caption : .subheadline)
-                    .lineLimit(2, reservesSpace: true)
+                    .font(showsBackground ? .caption : .caption2)
+                    .lineLimit(showsBackground ? 2 : 3, reservesSpace: true)
                 Text(video.channel.getTalentName())
                     .lineLimit(1)
-                    .font(showsBackground ? .caption : .subheadline)
+                    .font(showsBackground ? .caption : .caption2)
                     .foregroundColor(.secondary)
                 
                 switch videoType {
@@ -44,7 +44,7 @@ struct SmallWidgetView: View {
                         .foregroundColor(.secondary)
                         .font(.caption2)
                 case .past:
-                    Text("\(Image(systemName: "clock")) \(video.getPastRelativeTimeString(shortMode: true))")
+                    Text("\(Image(systemName: "clock.arrow.circlepath")) \(video.getPastRelativeTimeString(shortMode: true))")
                         .foregroundColor(.secondary)
                         .font(.caption2)
                 }

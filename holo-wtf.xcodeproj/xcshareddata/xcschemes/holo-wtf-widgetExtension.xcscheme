@@ -90,7 +90,7 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "_XCWidgetKind"
-            value = "io.skk-tj.holo-wtf-widget.multiple-live-large"
+            value = "io.skk-tj.holo-wtf-widget.upcoming-single"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
@@ -100,7 +100,7 @@
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "_XCWidgetFamily"
-            value = "medium"
+            value = "systemLarge"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>

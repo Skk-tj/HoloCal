@@ -23,9 +23,9 @@ struct AppIntentVideoUpcomingWidgetProvider: VideoAppIntentTimelineProvider {
     let videoType: VideoType = .upcoming
     let sortBy: IntentSortByAppEnum = .mostRecent
     
-//    func timeline(for configuration: UpcomingWidget, in context: Context) async -> Timeline<AppIntentSingleVideoWidgetEntry> {
-//        let entries: [Entry] = await getUpcomingEntriesWithIntent(for: configuration.agency, filterBy: { $0.isSupportedAgency })
-//        let timeline = Timeline(entries: entries, policy: .atEnd)
-//        return timeline
-//    }
+    func timeline(for configuration: UpcomingWidget, in context: Context) async -> Timeline<AppIntentSingleVideoWidgetEntry> {
+        let entries: [Entry] = await getUpcomingEntriesWithIntent(for: configuration.agency, filterBy: { $0.isSupportedAgency })
+        let timeline = Timeline(entries: entries, policy: .atEnd)
+        return timeline
+    }
 }

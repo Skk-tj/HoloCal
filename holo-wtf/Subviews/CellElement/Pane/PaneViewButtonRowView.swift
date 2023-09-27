@@ -96,13 +96,26 @@ struct PaneViewButtonRowView: View {
                     Section {
                         Button(action: {
                             let eventStore: EKEventStore = EKEventStore()
-                            eventStore.requestAccess(to: .event) { (granted, error) in
-                                if (granted) && (error == nil) {
-                                    DispatchQueue.main.async {
-                                        self.isAddToCalendarSheetPresented = true
+                            
+                            if #available(iOS 17.0, *) {
+                                eventStore.requestWriteOnlyAccessToEvents(completion: { granted, error in
+                                    if (granted) && (error == nil) {
+                                        DispatchQueue.main.async {
+                                            self.isAddToCalendarSheetPresented = true
+                                        }
+                                    } else {
+                                        self.isCalendarAccessAlertPresented = true
                                     }
-                                } else {
-                                    self.isCalendarAccessAlertPresented = true
+                                })
+                            } else {
+                                eventStore.requestAccess(to: .event) { (granted, error) in
+                                    if (granted) && (error == nil) {
+                                        DispatchQueue.main.async {
+                                            self.isAddToCalendarSheetPresented = true
+                                        }
+                                    } else {
+                                        self.isCalendarAccessAlertPresented = true
+                                    }
                                 }
                             }
                         }, label: {

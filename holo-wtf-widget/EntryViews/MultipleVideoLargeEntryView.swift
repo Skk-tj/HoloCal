@@ -35,6 +35,7 @@ struct BaseMultipleVideoLargeEntryView<MainContent: View, TitleContent: View>: V
     }
 }
 
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
 struct AppIntentBaseMultipleVideoLargeEntryView<MainContent: View, TitleContent: View>: View {
     let entry: AppIntentMultipleVideoWidgetEntry
     
@@ -59,6 +60,7 @@ struct AppIntentBaseMultipleVideoLargeEntryView<MainContent: View, TitleContent:
                 Spacer()
             }
         }
+        .containerBackground(for: .widget) {}
     }
 }
 
@@ -83,6 +85,7 @@ struct MultipleVideoLargeEntryView: View {
     }
 }
 
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
 struct AppIntentMultipleVideoLargeEntryView: View {
     let entry: AppIntentMultipleVideoWidgetEntry
     let videoType: VideoType

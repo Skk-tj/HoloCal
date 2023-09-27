@@ -6,6 +6,8 @@
 	<string>$(HOLODEX_API_KEY)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>NSCalendarsWriteOnlyAccessUsageDescription</key>
+	<string>HoloCal requires access to your Calendar in order to save stream events to your Calendar. Personal information will not accessed. </string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>ConfigurationIntent</string>

@@ -54,7 +54,11 @@ func getVideosForWidget(agency: IntentAgencyAppEnum?, videoType: VideoType) asyn
     }
 }
 
-func getAndFilterAndSortVideosCommon(for agency: IntentAgencyAppEnum?, videoType: VideoType, sortBy: IntentSortByAppEnum?, filterBy filterAlgorithm: (LiveVideo) -> Bool) async throws -> [LiveVideo] {
+func getAndFilterAndSortVideosCommon(
+    for agency: IntentAgencyAppEnum?,
+    videoType: VideoType,
+    sortBy: IntentSortByAppEnum?,
+    filterBy filterAlgorithm: (LiveVideo) -> Bool) async throws -> [LiveVideo] {
     var lives: [LiveVideo] = try await getVideosForWidget(agency: agency, videoType: videoType)
     
     lives = lives.filter(filterAlgorithm)
@@ -98,7 +102,7 @@ func getEntryWithIntent(for agency: IntentAgencyAppEnum?, videoType: VideoType, 
     }
 }
 
-func getUpcomingEntriesWithIntent(for agency: IntentAgencyAppEnum, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> [AppIntentSingleVideoWidgetEntry] {
+func getUpcomingEntriesWithIntent(for agency: IntentAgencyAppEnum?, filterBy filterAlgorithm: (LiveVideo) -> Bool) async -> [AppIntentSingleVideoWidgetEntry] {
     do {
         let lives = try await getAndFilterAndSortVideosCommon(for: agency, videoType: .upcoming, sortBy: .mostRecent, filterBy: filterAlgorithm)
         
@@ -119,7 +123,7 @@ func getUpcomingEntriesWithIntent(for agency: IntentAgencyAppEnum, filterBy filt
         for videoWithImage in videosWithImages {
             entries.append(AppIntentSingleVideoWidgetEntry(date: time, status: .ok, video: videoWithImage.video, avatarData: videoWithImage.avatar, thumbnailData: videoWithImage.thumbnail, agency: agency))
             if let scheduled = videoWithImage.video.startScheduled {
-                time = scheduled + 1
+                time = scheduled + 10
             } else {
                 break
             }
@@ -131,7 +135,13 @@ func getUpcomingEntriesWithIntent(for agency: IntentAgencyAppEnum, filterBy filt
     }
 }
 
-func getMultipleEntry(for agency: IntentAgencyAppEnum?, videoType: VideoType, sortBy: IntentSortByAppEnum?, filterBy filterAlgorithm: (LiveVideo) -> Bool, prefix: Int, imageGet: MultipleVideoImageGetMethod) async -> AppIntentMultipleVideoWidgetEntry {
+func getMultipleEntry(
+    for agency: IntentAgencyAppEnum?,
+    videoType: VideoType,
+    sortBy: IntentSortByAppEnum?,
+    filterBy filterAlgorithm: (LiveVideo) -> Bool,
+    prefix: Int,
+    imageGet: MultipleVideoImageGetMethod) async -> AppIntentMultipleVideoWidgetEntry {
     do {
         var lives = try await getAndFilterAndSortVideosCommon(for: agency, videoType: videoType, sortBy: sortBy, filterBy: filterAlgorithm)
         

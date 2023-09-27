@@ -49,6 +49,7 @@ struct BaseMultipleViewEntryView<MainContent: View, SubContent: View, TitleConte
     }
 }
 
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
 struct AppIntentBaseMultipleViewEntryView<MainContent: View, SubContent: View, TitleContent: View>: View {
     let entry: AppIntentMultipleVideoWidgetEntry
     
@@ -86,6 +87,7 @@ struct AppIntentBaseMultipleViewEntryView<MainContent: View, SubContent: View, T
                 NetworkErrorView()
             }
         }
+        .containerBackground(for: .widget) {}
     }
 }
 
@@ -112,6 +114,7 @@ struct MultipleWidgetEntryView: View {
     }
 }
 
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
 struct AppIntentMultipleWidgetEntryView: View {
     let entry: AppIntentMultipleVideoWidgetEntry
     let videoType: VideoType
@@ -131,6 +134,7 @@ struct AppIntentMultipleWidgetEntryView: View {
                 PastTitleView()
             }
         })
+        .containerBackground(for: .widget) {}
         .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue, entry.agency?.rawValue ?? "")))
     }
 }
