@@ -84,6 +84,17 @@ struct AppIntentAccessoryRectangularEntryView: View {
     let entry: AppIntentSingleVideoWidgetEntry
     let videoType: VideoType
     
+    var gradientType: AnyGradient {
+        switch videoType {
+        case .live:
+            return Color.red.gradient
+        case .upcoming:
+            return Color.pink.gradient
+        case .past:
+            return Color.blue.gradient
+        }
+    }
+    
     var body: some View {
         AppIntentVideoAccessoryRectangularWidgetEntryView(entry: entry, mainView: { video in
             AccessoryRectangularWidgetView(video: video, videoType: videoType)
@@ -103,6 +114,28 @@ struct AppIntentAccessoryRectangularEntryView: View {
                     .widgetAccentable()
             }
         })
+        .containerBackground(gradientType, for: .widget)
         .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue, entry.agency?.rawValue ?? "")))
     }
 }
+
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
+#Preview(as: .accessoryRectangular, using: LiveWidget(), widget: {
+    SingleLiveWidget()
+}, timelineProvider: {
+    AppIntentVideoLiveWidgetProvider()
+})
+
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
+#Preview(as: .accessoryRectangular, using: UpcomingWidget(), widget: {
+    SingleUpcomingWidget()
+}, timelineProvider: {
+    AppIntentVideoUpcomingWidgetProvider()
+})
+
+@available(iOS 17.0, macOS 14.0, watchOS 10.0, *)
+#Preview(as: .accessoryRectangular, using: PastWidget(), widget: {
+    SinglePastWidget()
+}, timelineProvider: {
+    AppIntentVideoPastWidgetProvider()
+})

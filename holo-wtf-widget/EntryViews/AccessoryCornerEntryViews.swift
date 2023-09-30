@@ -49,6 +49,7 @@ struct AppIntentAccessoryCornerEntryView: View {
         if let video = entry.video {
             AccessoryCornerView(video: video, videoType: videoType)
                 .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue, entry.agency?.rawValue ?? "")))
+                .containerBackground(.red.gradient, for: .widget)
         } else {
             ZStack {
                 AccessoryWidgetBackground()
@@ -69,6 +70,7 @@ struct AppIntentAccessoryCornerEntryView: View {
                 Text("NO_ONE_IS_STREAMING")
             }
             .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue, entry.agency?.rawValue ?? "")))
+            .containerBackground(.red.gradient, for: .widget)
         }
     }
 }

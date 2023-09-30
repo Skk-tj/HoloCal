@@ -36,6 +36,7 @@ struct AppIntentAccessoryWatchCircularEntryViews: View {
         switch entry.status {
         case .ok:
             AccessoryWatchCircularView(count: entry.count, videoType: videoType)
+                .containerBackground(for: .widget) {}
         default:
             ZStack {
                 AccessoryWidgetBackground()
@@ -43,6 +44,7 @@ struct AppIntentAccessoryWatchCircularEntryViews: View {
                     .font(.title)
                     .widgetAccentable()
             }
+            .containerBackground(for: .widget) {}
         }
     }
 }

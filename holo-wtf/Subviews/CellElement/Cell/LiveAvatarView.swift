@@ -10,6 +10,7 @@ import SwiftUI
 struct LiveAvatarView: View {
     let url: URL?
     var avatarRadius: Double = 64.0
+    var needOutline: Bool = true
     
     var body: some View {
         AsyncImage(url: url, content: { image in
@@ -19,14 +20,18 @@ struct LiveAvatarView: View {
                 .frame(width: avatarRadius, height: avatarRadius)
                 .clipShape(Circle())
                 .overlay {
-                    Circle().stroke(.white, lineWidth: 1)
+                    if needOutline {
+                        Circle().stroke(.white, lineWidth: 1)
+                    }
                 }
                 .shadow(radius: 1)
         }, placeholder: {
             ProgressView()
                 .frame(width: avatarRadius, height: avatarRadius)
                 .overlay {
-                    Circle().stroke(.white, lineWidth: 1)
+                    if needOutline {
+                        Circle().stroke(.white, lineWidth: 1)
+                    }
                 }
                 .shadow(radius: 1)
         })

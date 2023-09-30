@@ -32,9 +32,11 @@ struct AppIntentAccessoryCircularEntryView: View {
         if let video = entry.video {
             AccessoryCircularView(video: video, avatarData: entry.avatarData)
                 .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue, entry.agency?.rawValue ?? "")))
+                .containerBackground(for: .widget) {}
         } else {
             Text("N/A")
                 .widgetURL(URL(string: String(format: widgetDeepLink, videoTypeToWidgetDeepLink[videoType]!.rawValue, entry.agency?.rawValue ?? "")))
+                .containerBackground(for: .widget) {}
         }
     }
 }

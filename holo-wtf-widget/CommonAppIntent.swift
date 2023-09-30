@@ -141,7 +141,8 @@ func getMultipleEntry(
     sortBy: IntentSortByAppEnum?,
     filterBy filterAlgorithm: (LiveVideo) -> Bool,
     prefix: Int,
-    imageGet: MultipleVideoImageGetMethod) async -> AppIntentMultipleVideoWidgetEntry {
+    imageGet: MultipleVideoImageGetMethod
+) async -> AppIntentMultipleVideoWidgetEntry {
     do {
         var lives = try await getAndFilterAndSortVideosCommon(for: agency, videoType: videoType, sortBy: sortBy, filterBy: filterAlgorithm)
         
