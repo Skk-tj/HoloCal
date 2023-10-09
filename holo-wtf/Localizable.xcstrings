@@ -236,6 +236,23 @@
         }
       }
     },
+    "BLOCK_LIVE_TIME_VIEW_STARTED_AGO" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Started Ago"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開始時間"
+          }
+        }
+      }
+    },
     "BLOCK_LIVE_TIME_VIEW_TIME_STARTED" : {
       "comment" : "Block Live Time View",
       "localizations" : {
@@ -332,6 +349,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "プラットフォーム"
+          }
+        }
+      }
+    },
+    "BLOCK_UPCOMING_TIME_VIEW_STARTING_IN" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starting In"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "開始時間"
           }
         }
       }
@@ -2997,9 +3031,6 @@
           }
         }
       }
-    },
-    "Test notification" : {
-
     },
     "TESTING" : {
 

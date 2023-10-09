@@ -24,8 +24,7 @@ enum Generation: Int, CaseIterable, Codable, Hashable {
     case id2ndGen
     case id3rdGen
     case enMyth
-    case projectHope
-    case enCouncil
+    case enPromise
     case enAdvent
     case devIsReGloss
     case stars1stGen
@@ -197,9 +196,9 @@ enum TalentEnum: String, Codable {
     case ina = "UCMwGHR0BTZuLsmjY_NT5Pwg"
     case gura = "UCoSrY_IQQVpmIRZ9Xf-y93g"
     case ame = "UCyl1z3jo3XHR1riLFKG5UAg"
-    // MARK: - Project: HOPE
+    
+    // MARK: - EN Promise
     case irys = "UC8rcEBzJSleTkf_-agPM20g"
-    // MARK: - EN Council
     case ceres = "UCO_aKKYxn4tvrqPjcTzZ6EQ"
     case kronii = "UCmbs8T6MWqUHP1tIQvSgKrg"
     case mumei = "UC3n5uGu18FoCy23ggWWp8tA"
@@ -234,9 +233,7 @@ enum TalentEnum: String, Codable {
     case rio = "UCdfMHxjcCc2HSd9qFvfJgjg"
     // MARK: - holostars English -TEMPUS-
     case altare = "UCyxtGMdWlURZ30WSnEjDOQw"
-    case vesper = "UCDRWSO281bIHYVi-OV3iFYA"
     case syrios = "UC2hx0xVkMoHGWijwr_lA01w"
-    case dezmond = "UC7MMNHR-kf9EN1rXiesMTMw"
     case gavis = "UCHP4f7G2dWD4qib7BMatGAw"
     case machina = "UC060r4zABV18vcahAWR1n7w"
     case banzoin = "UC7gxU6NXjKF1LrgOddPzgTw"
@@ -569,7 +566,6 @@ enum TalentEnum: String, Codable {
     case suu = "UCeqIMtLuGc3YgwkhEaG8oDg"
     
     // MARK: - sinkirow
-    case ribon = "UC6HjtF2rHZO8gAsX5FXF-Kg"
     case tsukimi = "UCTEZGNJDqv-isWSPRsEhnRA"
     case yukino = "UCoFEbNyIRUS26-hf2AucwFw"
     case lie = "UCxLgvntienV0kwNLxrbcmyQ"
@@ -748,14 +744,12 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .gura: Talent(id: TalentEnum.gura.rawValue, names: [.en: "Gawr Gura", .ja: "がうる・ぐら"], inGeneration: Generation.enMyth),
     .ame: Talent(id: TalentEnum.ame.rawValue, names: [.en: "Watson Amelia", .ja: "ワトソン・アメリア"], inGeneration: Generation.enMyth),
     
-    // MARK: - Project: HOPE
-    .irys: Talent(id: TalentEnum.irys.rawValue, names: [.en: "IRyS", .ja: "アイリス"], inGeneration: Generation.projectHope),
-    
-    // MARK: - EN Council
-    .ceres: Talent(id: TalentEnum.ceres.rawValue, names: [.en: "Ceres Fauna", .ja: "セレス・ファウナ"], inGeneration: Generation.enCouncil),
-    .kronii: Talent(id: TalentEnum.kronii.rawValue, names: [.en: "Ouro Kronii", .ja: "オーロ・クロニー"], inGeneration: Generation.enCouncil),
-    .mumei: Talent(id: TalentEnum.mumei.rawValue, names: [.en: "Nanashi Mumei", .ja: "七詩ムメイ"], inGeneration: Generation.enCouncil),
-    .baelz: Talent(id: TalentEnum.baelz.rawValue, names: [.en: "Hakos Baelz", .ja: "ハコス・ベールズ"], inGeneration: Generation.enCouncil),
+    // MARK: - EN Promise
+    .irys: Talent(id: TalentEnum.irys.rawValue, names: [.en: "IRyS", .ja: "アイリス"], inGeneration: Generation.enPromise),
+    .ceres: Talent(id: TalentEnum.ceres.rawValue, names: [.en: "Ceres Fauna", .ja: "セレス・ファウナ"], inGeneration: Generation.enPromise),
+    .kronii: Talent(id: TalentEnum.kronii.rawValue, names: [.en: "Ouro Kronii", .ja: "オーロ・クロニー"], inGeneration: Generation.enPromise),
+    .mumei: Talent(id: TalentEnum.mumei.rawValue, names: [.en: "Nanashi Mumei", .ja: "七詩ムメイ"], inGeneration: Generation.enPromise),
+    .baelz: Talent(id: TalentEnum.baelz.rawValue, names: [.en: "Hakos Baelz", .ja: "ハコス・ベールズ"], inGeneration: Generation.enPromise),
     
     // MARK: - EN Advent
     .shiori: Talent(id: TalentEnum.shiori.rawValue, names: [.en: "Shiori Novella", .ja: "シオリ・ノヴェラ"], inGeneration: Generation.enAdvent),
@@ -793,9 +787,7 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     
     // MARK: - holostars TEMPUS
     .altare: Talent(id: TalentEnum.altare.rawValue, names: [.en: "Regis Altare", .ja: "リージス・アルテア"], inGeneration: Generation.tempus),
-    .vesper: Talent(id: TalentEnum.vesper.rawValue, names: [.en: "Noir Vesper", .ja: "ノワール・ヴェスパー"], inGeneration: Generation.tempus),
     .syrios: Talent(id: TalentEnum.syrios.rawValue, names: [.en: "Axel Syrios", .ja: "アクセル・シリオス"], inGeneration: Generation.tempus),
-    .dezmond: Talent(id: TalentEnum.dezmond.rawValue, names: [.en: "Magni Dezmond", .ja: "マグニ・デズモンド"], inGeneration: Generation.tempus),
     .gavis: Talent(id: TalentEnum.gavis.rawValue, names: [.en: "Gavis Bettel", .ja: "ガビス・ベッテル"], inGeneration: Generation.tempus),
     .machina: Talent(id: TalentEnum.machina.rawValue, names: [.en: "Machina X Flayon", .ja: "マキナ・X・フレオン"], inGeneration: Generation.tempus),
     .banzoin: Talent(id: TalentEnum.banzoin.rawValue, names: [.en: "Banzoin Hakka", .ja: "万象院ハッカ"], inGeneration: Generation.tempus),
@@ -1128,7 +1120,6 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .suu: Talent(id: TalentEnum.suu.rawValue, names: [.en: "Usuwa Suu", .ja: "稀羽すう"], inGeneration: Generation.kaleidscope),
     
     // MARK: - sinkirow
-    .ribon: Talent(id: TalentEnum.ribon.rawValue, names: [.en: "Himekuma Ribon", .ja: "姫熊りぼん"], inGeneration: Generation.sinkirow),
     .tsukimi: Talent(id: TalentEnum.tsukimi.rawValue, names: [.en: "Marumochi Tsukimi", .ja: "丸餅つきみ"], inGeneration: Generation.sinkirow),
     .yukino: Talent(id: TalentEnum.yukino.rawValue, names: [.en: "Nekono Yukino", .ja: "猫乃ユキノ"], inGeneration: Generation.sinkirow),
     .lie: Talent(id: TalentEnum.lie.rawValue, names: [.en: "Kulaku Lie", .ja: "九楽ライ"], inGeneration: Generation.sinkirow),
@@ -1243,15 +1234,14 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .id2ndGen: GenerationGroup(id: .id2ndGen, names: [.en: "ID 2nd Gen", .ja: "ID 2期生"], members: [.ollie, .anya, .reine], agency: .hololive),
     .id3rdGen: GenerationGroup(id: .id3rdGen, names: [.en: "ID 3rd Gen", .ja: "ID 3期生"], members: [.zeta, .kaela, .kobo], agency: .hololive),
     .enMyth: GenerationGroup(id: .enMyth, names: [.en: "hololive English -Myth-", .ja: "hololive English -Myth-"], members: [.mori, .kiara, .ina, .gura, .ame], agency: .hololive),
-    .projectHope: GenerationGroup(id: .projectHope, names: [.en: "Project: HOPE", .ja: "Project: HOPE"], members: [.irys], agency: .hololive),
-    .enCouncil: GenerationGroup(id: .enCouncil, names: [.en: "hololive English -Council-", .ja: "hololive English -Council-"], members: [.ceres, .kronii, .mumei, .baelz], agency: .hololive),
+    .enPromise: GenerationGroup(id: .enPromise, names: [.en: "hololive English -Promise-", .ja: "hololive English -Promise-"], members: [.irys, .ceres, .kronii, .mumei, .baelz], agency: .hololive),
     .enAdvent: GenerationGroup(id: .enAdvent, names: [.en: "hololive English -Advent-", .ja: "hololive English -Advent-"], members: [.shiori, .koseki, .nerissa, .fuwamoco], agency: .hololive),
     .devIsReGloss: GenerationGroup(id: .devIsReGloss, names: [.en: "hololive DEV_IS ReGLOSS", .ja: "hololive DEV_IS ReGLOSS"], members: [.hiodoshi, .otonose, .ichijou, .juufuutei, .hajime], agency: .hololive),
     .stars1stGen: GenerationGroup(id: .stars1stGen, names: [.en: "holostars 1st Gen", .ja: "ホロスターズ 1期生"], members: [.miyabi, .izuru, .arurandeisu, .rikka], agency: .hololive),
     .stars2ndGen: GenerationGroup(id: .stars2ndGen, names: [.en: "holostars 2nd Gen", .ja: "ホロスターズ 2期生"], members: [.astel, .temma, .roberu], agency: .hololive),
     .stars3rdGen: GenerationGroup(id: .stars3rdGen, names: [.en: "holostars 3nd Gen", .ja: "ホロスターズ 3期生"], members: [.shien, .oga], agency: .hololive),
     .uproar: GenerationGroup(id: .uproar, names: [.en: "holostars UPROAR!!", .ja: "ホロスターズ アップロー!!"], members: [.fuma, .uyu, .gamma, .rio], agency: .hololive),
-    .tempus: GenerationGroup(id: .tempus, names: [.en: "HOLOSTARS English -TEMPUS-", .ja: "HOLOSTARS English -TEMPUS-"], members: [.altare, .dezmond, .syrios, .vesper, .gavis, .machina, .banzoin, .josuiji], agency: .hololive),
+    .tempus: GenerationGroup(id: .tempus, names: [.en: "HOLOSTARS English -TEMPUS-", .ja: "HOLOSTARS English -TEMPUS-"], members: [.altare, .syrios, .gavis, .machina, .banzoin, .josuiji], agency: .hololive),
     .hololiveOfficial: GenerationGroup(id: .hololiveOfficial, names: [.en: "Hololive Official Channels", .ja: "ホロライブ公式チャンネル"], members: [.hololive, .hololiveEN, .hololiveID, .holostars, .midnight, .holostarsEN], agency: .hololive),
 
     // MARK: - Nijisanji
@@ -1315,7 +1305,7 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     // MARK: - Re:AcT
     .reAliz: GenerationGroup(id: .reAliz, names: [.en: "ReAliz", .ja: "ReAliz"], members: [.leona, .mia, .rose, .lisa], agency: .react),
     .kaleidscope: GenerationGroup(id: .kaleidscope, names: [.en: "kaleidscope", .ja: "kaleidscope"], members: [.yuno, .hanabasami, .mari, .suu], agency: .react),
-    .sinkirow: GenerationGroup(id: .sinkirow, names: [.en: "sinkirow", .ja: "sinkirow"], members: [.ribon, .tsukimi, .yukino, .lie], agency: .react),
+    .sinkirow: GenerationGroup(id: .sinkirow, names: [.en: "sinkirow", .ja: "sinkirow"], members: [.tsukimi, .yukino, .lie], agency: .react),
     .parfait: GenerationGroup(id: .parfait, names: [.en: "Parfait", .ja: "Parfait"], members: [.kanau, .hano, .aria], agency: .react),
     .reMixx: GenerationGroup(id: .reMixx, names: [.en: "Re:Mixx", .ja: "Re:Mixx"], members: [.syuka, .creil, .nemu, .taran], agency: .react),
     .reactOfficial: GenerationGroup(id: .reactOfficial, names: [.en: "Re:AcT Official Channels", .ja: "Re:AcT公式チャンネル"], members: [.reactOfficial], agency: .react),

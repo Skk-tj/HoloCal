@@ -24,7 +24,7 @@ struct BlockLiveTimeView: View {
                 BlockVideoInfoView(iconName: "clock", primaryText: {
                     Text(liveTime, style: .relative)
                 }, secondaryText: {
-                    Text("BLOCK_LIVE_TIME_VIEW_TIME_STARTED")
+                    Text("BLOCK_LIVE_TIME_VIEW_STARTED_AGO")
                 })
             }
         } else {
@@ -37,10 +37,14 @@ struct BlockLiveTimeView: View {
     }
 }
 
-struct BlockLiveTimeView_Previews: PreviewProvider {
-    static var previews: some View {
-        BlockLiveTimeView(liveTime: Date() - 120, isShowingAbsoluteTime: true)
-        BlockLiveTimeView(liveTime: Date() - 120, isShowingAbsoluteTime: false)
-        BlockLiveTimeView(liveTime: nil)
-    }
+#Preview {
+    BlockLiveTimeView(liveTime: Date() - 120, isShowingAbsoluteTime: true)
+}
+
+#Preview {
+    BlockLiveTimeView(liveTime: Date() - 120, isShowingAbsoluteTime: false)
+}
+
+#Preview {
+    BlockLiveTimeView(liveTime: nil)
 }

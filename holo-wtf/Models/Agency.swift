@@ -28,7 +28,7 @@ struct Agency: Identifiable, Hashable, Vtuberable {
 
 let agencyEnumToAgency = [
     AgencyEnum.hololive: Agency(id: AgencyEnum.hololive, names: [.en: "Hololive", .ja: "ホロライブ"], icon: "arrowtriangle.right.fill"),
-    AgencyEnum.nijisanji: Agency(id: AgencyEnum.nijisanji, names: [.en: "Nijisanji", .ja: "にじさんじ"], icon: "dot.radiowaves.right"),
+    AgencyEnum.nijisanji: Agency(id: AgencyEnum.nijisanji, names: [.en: "Nijisanji", .ja: "にじさんじ"], icon: "rainbow"),
     AgencyEnum.react: Agency(id: AgencyEnum.react, names: [.en: "Re:AcT", .ja: "Re:AcT"], icon: "r.square"),
     AgencyEnum.nanashiInc: Agency(id: AgencyEnum.nanashiInc, names: [.en: "774 inc.", .ja: "774 inc."], icon: "7.circle"),
     AgencyEnum.noriPro: Agency(id: AgencyEnum.noriPro, names: [.en: "Nori Pro", .ja: "のりプロ"], icon: "sun.max.fill"),
