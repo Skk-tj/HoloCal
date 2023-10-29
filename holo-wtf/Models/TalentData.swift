@@ -466,7 +466,6 @@ enum TalentEnum: String, Codable {
     case reza = "UC5yckZliCkuaEFbqzLBD7hQ" // Reza Avanluna
     
     // MARK: - ID Sixth Wave: 6WS
-    case hyona = "UCIBj1-d71vKjRftiauF50pg" // Hyona Elatiora
     case xia = "UCoJ0Ct-jdas4cLPpSp06gZg" // Xia Ekavira
     case mika = "UCahgMxSIQ2zIRrPKhM6Mjvg" // Mika Melatika
     
@@ -582,7 +581,7 @@ enum TalentEnum: String, Codable {
     case aria = "UC5XQhzMH08PgWa4Zp02Gcsw"
     
     // MARK: - Re:Mixx
-    case syuka = "UCY5jwnUvdsrsfqsMQWHau-w"
+    // case syuka = "UCY5jwnUvdsrsfqsMQWHau-w"
     case creil = "UCIueYPQm6sk8oaKxq0hSjyQ"
     case nemu = "UCi6nuuHhOj_usxkjlcHdRXw"
     case taran = "UCShDuyxe-cDewxtcPbBmi_Q"
@@ -1025,7 +1024,6 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .reza: Talent(id: TalentEnum.reza.rawValue, names: [.en: "Reza Avanluna", .ja: "レザ アファンルナ"], inGeneration: Generation.id5thWave),
 
     // MARK: - ID Sixth Wave: 6WS
-    .hyona: Talent(id: TalentEnum.hyona.rawValue, names: [.en: "Hyona Elatiora", .ja: "ヒョナ エラティオラ"], inGeneration: Generation.id6thWave),
     .xia: Talent(id: TalentEnum.xia.rawValue, names: [.en: "Xia Ekavira", .ja: "シア エカフィラ"], inGeneration: Generation.id6thWave),
     .mika: Talent(id: TalentEnum.mika.rawValue, names: [.en: "Mika Melatika", .ja: "ミカ メラティカ"], inGeneration: Generation.id6thWave),
     
@@ -1141,7 +1139,7 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .aria: Talent(id: TalentEnum.aria.rawValue, names: [.en: "Tsukushi Aria", .ja: "月紫アリア"], inGeneration: Generation.parfait),
     
     // MARK: - Re:Mixx
-    .syuka: Talent(id: TalentEnum.syuka.rawValue, names: [.en: "Syuka Bisui", .ja: "美睡シュカ"], inGeneration: Generation.reMixx),
+    // .syuka: Talent(id: TalentEnum.syuka.rawValue, names: [.en: "Syuka Bisui", .ja: "美睡シュカ"], inGeneration: Generation.reMixx),
     .creil: Talent(id: TalentEnum.creil.rawValue, names: [.en: "Coucourua Creil", .ja: "ククルア・クレイユ"], inGeneration: Generation.reMixx),
     .nemu: Talent(id: TalentEnum.nemu.rawValue, names: [.en: "Nemu Otogi", .ja: "音伽ねむ"], inGeneration: Generation.reMixx),
     .taran: Talent(id: TalentEnum.taran.rawValue, names: [.en: "Taran Mikoshi", .ja: "神輿たらん"], inGeneration: Generation.reMixx),
@@ -1296,7 +1294,7 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .id3rdWave: GenerationGroup(id: .id3rdWave, names: [.en: "ID 3rd Wave", .ja: "ID 3期生"], members: [.layla], agency: .nijisanji),
     .id4thWave: GenerationGroup(id: .id4thWave, names: [.en: "ID 4th Wave", .ja: "ID 4期生"], members: [.etna, .bonnivier], agency: .nijisanji),
     .id5thWave: GenerationGroup(id: .id5thWave, names: [.en: "ID 5th Wave", .ja: "ID 5期生"], members: [.nagisa, .derem, .reza], agency: .nijisanji),
-    .id6thWave: GenerationGroup(id: .id6thWave, names: [.en: "ID 6th Wave", .ja: "ID 6期生"], members: [.hyona, .xia, .mika], agency: .nijisanji),
+    .id6thWave: GenerationGroup(id: .id6thWave, names: [.en: "ID 6th Wave", .ja: "ID 6期生"], members: [.xia, .mika], agency: .nijisanji),
     .kr1stWave: GenerationGroup(id: .kr1stWave, names: [.en: "KR 1st Wave", .ja: "KR 1期生"], members: [.minSuha, .gaon], agency: .nijisanji),
     .kr2ndWave: GenerationGroup(id: .kr2ndWave, names: [.en: "KR 2nd Wave", .ja: "KR 2期生"], members: [.soNagi], agency: .nijisanji),
     .kr3rdWave: GenerationGroup(id: .kr3rdWave, names: [.en: "KR 3rd Wave", .ja: "KR 3期生"], members: [.akiraRay, .leeRoha], agency: .nijisanji),
@@ -1319,7 +1317,7 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .kaleidscope: GenerationGroup(id: .kaleidscope, names: [.en: "kaleidscope", .ja: "kaleidscope"], members: [.yuno, .hanabasami, .suu], agency: .react),
     .sinkirow: GenerationGroup(id: .sinkirow, names: [.en: "sinkirow", .ja: "sinkirow"], members: [.tsukimi, .yukino, .lie], agency: .react),
     .parfait: GenerationGroup(id: .parfait, names: [.en: "Parfait", .ja: "Parfait"], members: [.kanau, .hano, .aria], agency: .react),
-    .reMixx: GenerationGroup(id: .reMixx, names: [.en: "Re:Mixx", .ja: "Re:Mixx"], members: [.syuka, .creil, .nemu, .taran], agency: .react),
+    .reMixx: GenerationGroup(id: .reMixx, names: [.en: "Re:Mixx", .ja: "Re:Mixx"], members: [.creil, .nemu, .taran], agency: .react),
     .reactOfficial: GenerationGroup(id: .reactOfficial, names: [.en: "Re:AcT Official Channels", .ja: "Re:AcT公式チャンネル"], members: [.reactOfficial], agency: .react),
     
     // MARK: - 774 inc
