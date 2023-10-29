@@ -90,6 +90,7 @@ enum Generation: Int, CaseIterable, Codable, Hashable {
     case en6thWave
     case en7thWave
     case en8thWave
+    case en9thWave
     case nijisanjiOfficial
     
     // MARK: - Re:AcT
@@ -540,6 +541,11 @@ enum TalentEnum: String, Codable {
     case bringer = "UCpYf6C9QsP_BRf97vLuXlIA"
     case bandage = "UCK9l6rTwU3hiSZijIMq51Gw"
     
+    // MARK: - EN October 2023
+    case clawmark = "UCdh-YF2gTzqDNu0VU9lwPPw"
+    case brightshield = "UChTA8kHyInr2rKZ2aBv5ULw"
+    case nakasato = "UCwqtK-m6954_aHEvOYtZpyQ"
+    
     // MARK: - Official/Other Channels
     case nijisanji = "UCX7YkU9nEeaoZbkVLVajcMg" // Nijisanji
     case nijisanjiID = "UCbLgcjfsUaCUgJh9SVit8kw" // NIJISANJI ID Official
@@ -562,7 +568,7 @@ enum TalentEnum: String, Codable {
     // MARK: - kaleidscope
     case yuno = "UCJQMHCFjVZOVRYafR6gY04Q"
     case hanabasami = "UC4OeUf_KfYRrwksschtRYow"
-    case mari = "UCfiK42sBHraMBK6eNWtsy7A"
+    // case mari = "UCfiK42sBHraMBK6eNWtsy7A"
     case suu = "UCeqIMtLuGc3YgwkhEaG8oDg"
     
     // MARK: - sinkirow
@@ -1093,6 +1099,11 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .wilson: Talent(id: TalentEnum.wilson.rawValue, names: [.en: "Yu Q. Wilson", .ja: "ユウ Q ウィルソン"], inGeneration: Generation.en8thWave),
     .bringer: Talent(id: TalentEnum.bringer.rawValue, names: [.en: "Vantacrow Bringer", .ja: "ベンタクロウ ブリンガー"], inGeneration: Generation.en8thWave),
     .bandage: Talent(id: TalentEnum.bandage.rawValue, names: [.en: "Vezalius Bandage", .ja: "ヴェザリウス バンデージ"], inGeneration: Generation.en8thWave),
+    
+    // MARK: - EN October 2023
+    .clawmark: Talent(id: TalentEnum.clawmark.rawValue, names: [.en: "Claude Clawmark", .ja: "クロード クローマーク"], inGeneration: Generation.en9thWave),
+    .brightshield: Talent(id: TalentEnum.brightshield.rawValue, names: [.en: "Victoria Brightshield", .ja: "ヴィクトリア ブライトシールド"], inGeneration: Generation.en9thWave),
+    .nakasato: Talent(id: TalentEnum.nakasato.rawValue, names: [.en: "Kunai Nakasato", .ja: "中里苦無"], inGeneration: Generation.en9thWave),
 
     // MARK: - Official/Other Channels
     .nijisanji: Talent(id: TalentEnum.nijisanji.rawValue, names: [.en: "Nijisanji", .ja: "にじさんじ"], inGeneration: Generation.nijisanjiOfficial),
@@ -1116,7 +1127,7 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     // MARK: - kaleidscope
     .yuno: Talent(id: TalentEnum.yuno.rawValue, names: [.en: "Usami Yuno", .ja: "宇佐美ユノ"], inGeneration: Generation.kaleidscope),
     .hanabasami: Talent(id: TalentEnum.hanabasami.rawValue, names: [.en: "Hanabasami Kyo", .ja: "花鋏キョウ"], inGeneration: Generation.kaleidscope),
-    .mari: Talent(id: TalentEnum.mari.rawValue, names: [.en: "Kashiko Mari", .ja: "かしこまり"], inGeneration: Generation.kaleidscope),
+    // .mari: Talent(id: TalentEnum.mari.rawValue, names: [.en: "Kashiko Mari", .ja: "かしこまり"], inGeneration: Generation.kaleidscope),
     .suu: Talent(id: TalentEnum.suu.rawValue, names: [.en: "Usuwa Suu", .ja: "稀羽すう"], inGeneration: Generation.kaleidscope),
     
     // MARK: - sinkirow
@@ -1300,11 +1311,12 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .en6thWave: GenerationGroup(id: .en6thWave, names: [.en: "EN 6th Wave: ILUNA", .ja: "EN 第6弾「ILUNA」"], members: [.kyo, .maria, .aster, .aia, .ren, .scarle], agency: .nijisanji),
     .en7thWave: GenerationGroup(id: .en7thWave, names: [.en: "EN 7th Wave: XSOLEIL", .ja: "EN 第7弾「XSOLEIL」"], members: [.doppio, .meloco, .hex, .kotoka, .ver], agency: .nijisanji),
     .en8thWave: GenerationGroup(id: .en8thWave, names: [.en: "EN 8th Wave: Krisis", .ja: "EN 第8弾「Krisis」"], members: [.wilson, .bringer, .bandage], agency: .nijisanji),
+    .en9thWave: GenerationGroup(id: .en9thWave, names: [.en: "EN October 2023", .ja: "EN 2023年10月"], members: [.clawmark, .brightshield, .nakasato], agency: .nijisanji),
     .nijisanjiOfficial: GenerationGroup(id: .nijisanjiOfficial, names: [.en: "Nijisanji Official Channels", .ja: "にじさんじ公式チャンネル"], members: [.nijisanji, .nijisanjiID, .nijisanjiEN, .virtual, .voltacation, .luxiem, .rofmao, .nornis, .chronoir], agency: .nijisanji),
     
     // MARK: - Re:AcT
     .reAliz: GenerationGroup(id: .reAliz, names: [.en: "ReAliz", .ja: "ReAliz"], members: [.leona, .mia, .rose, .lisa], agency: .react),
-    .kaleidscope: GenerationGroup(id: .kaleidscope, names: [.en: "kaleidscope", .ja: "kaleidscope"], members: [.yuno, .hanabasami, .mari, .suu], agency: .react),
+    .kaleidscope: GenerationGroup(id: .kaleidscope, names: [.en: "kaleidscope", .ja: "kaleidscope"], members: [.yuno, .hanabasami, .suu], agency: .react),
     .sinkirow: GenerationGroup(id: .sinkirow, names: [.en: "sinkirow", .ja: "sinkirow"], members: [.tsukimi, .yukino, .lie], agency: .react),
     .parfait: GenerationGroup(id: .parfait, names: [.en: "Parfait", .ja: "Parfait"], members: [.kanau, .hano, .aria], agency: .react),
     .reMixx: GenerationGroup(id: .reMixx, names: [.en: "Re:Mixx", .ja: "Re:Mixx"], members: [.syuka, .creil, .nemu, .taran], agency: .react),

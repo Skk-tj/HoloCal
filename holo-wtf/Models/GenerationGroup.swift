@@ -87,6 +87,7 @@ let agencyEnumToGenerations: [AgencyEnum: [Generation]] = [
         .en6thWave,
         .en7thWave,
         .en8thWave,
+        .en9thWave,
         .nijisanjiOfficial
     ],
     .react: [
