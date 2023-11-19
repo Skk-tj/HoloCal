@@ -32,6 +32,7 @@ enum Generation: Int, CaseIterable, Codable, Hashable {
     case stars3rdGen
     case uproar
     case tempus
+    case armis
     case hololiveOfficial
     
     // MARK: - Nijisanji
@@ -239,6 +240,11 @@ enum TalentEnum: String, Codable {
     case machina = "UC060r4zABV18vcahAWR1n7w"
     case banzoin = "UC7gxU6NXjKF1LrgOddPzgTw"
     case josuiji = "UCMqGG8BRAiI1lJfKOpETM_w"
+    // MARK: - holostars English -ARMIS-
+    case rexford = "UCTVSOgYuSWmNAt-lnJPkEEw"
+    case goldbullet = "UCJv02SHZgav7Mv3V0kBOR8Q"
+    case octavio = "UCLk1hcmxg8rJ3Nm1_GvxTRA"
+    case ruze = "UCajbFh6e_R8QZdHAMbbi4rQ"
     // MARK: - Official Channels
     case hololive = "UCJFZiqLMntJufDCHc6bQixg"
     case hololiveEN = "UCotXwY6s8pWmuWd_snKYjhg"
@@ -798,6 +804,12 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .banzoin: Talent(id: TalentEnum.banzoin.rawValue, names: [.en: "Banzoin Hakka", .ja: "万象院ハッカ"], inGeneration: Generation.tempus),
     .josuiji: Talent(id: TalentEnum.josuiji.rawValue, names: [.en: "Josuiji Shinri", .ja: "定水寺シンリ"], inGeneration: Generation.tempus),
     
+    // MARK: - holostars English -ARMIS-
+    .rexford: Talent(id: TalentEnum.rexford.rawValue, names: [.en: "Jurard T Rexford", .ja: "ジュラルド・ティー・レクスフォード"], inGeneration: Generation.armis),
+    .goldbullet: Talent(id: TalentEnum.goldbullet.rawValue, names: [.en: "Goldbullet", .ja: "ゴールドブレット"], inGeneration: Generation.armis),
+    .octavio: Talent(id: TalentEnum.octavio.rawValue, names: [.en: "Octavio", .ja: "オクタビオ"], inGeneration: Generation.armis),
+    .ruze: Talent(id: TalentEnum.ruze.rawValue, names: [.en: "Crimzon Ruze", .ja: "クリムゾン・ルーズ"], inGeneration: Generation.armis),
+    
     // MARK: - Official Channels
     .hololive: Talent(id: TalentEnum.hololive.rawValue, names: [.en: "hololive Official Channel", .ja: "ホロライブ公式チャンネル"], inGeneration: Generation.hololiveOfficial),
     .hololiveEN: Talent(id: TalentEnum.hololiveEN.rawValue, names: [.en: "hololive English Official Channel", .ja: "hololive English 公式チャンネル"], inGeneration: Generation.hololiveOfficial),
@@ -1250,7 +1262,8 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .stars2ndGen: GenerationGroup(id: .stars2ndGen, names: [.en: "holostars 2nd Gen", .ja: "ホロスターズ 2期生"], members: [.astel, .temma, .roberu], agency: .hololive),
     .stars3rdGen: GenerationGroup(id: .stars3rdGen, names: [.en: "holostars 3nd Gen", .ja: "ホロスターズ 3期生"], members: [.shien, .oga], agency: .hololive),
     .uproar: GenerationGroup(id: .uproar, names: [.en: "holostars UPROAR!!", .ja: "ホロスターズ アップロー!!"], members: [.fuma, .uyu, .gamma, .rio], agency: .hololive),
-    .tempus: GenerationGroup(id: .tempus, names: [.en: "HOLOSTARS English -TEMPUS-", .ja: "HOLOSTARS English -TEMPUS-"], members: [.altare, .syrios, .gavis, .machina, .banzoin, .josuiji], agency: .hololive),
+    .tempus: GenerationGroup(id: .tempus, names: [.en: "HOLOSTARS English -TEMPUS-", .ja: "ホロスターズEnglish -TEMPUS-"], members: [.altare, .syrios, .gavis, .machina, .banzoin, .josuiji], agency: .hololive),
+    .armis: GenerationGroup(id: .armis, names: [.en: "HOLOSTARS English -ARMIS-", .ja: "ホロスターズEnglish -ARMIS-"], members: [.rexford, .goldbullet, .octavio, .ruze], agency: .hololive),
     .hololiveOfficial: GenerationGroup(id: .hololiveOfficial, names: [.en: "Hololive Official Channels", .ja: "ホロライブ公式チャンネル"], members: [.hololive, .hololiveEN, .hololiveID, .holostars, .midnight, .holostarsEN], agency: .hololive),
 
     // MARK: - Nijisanji

@@ -29,6 +29,7 @@ let agencyEnumToGenerations: [AgencyEnum: [Generation]] = [
         .stars3rdGen,
         .uproar,
         .tempus,
+        .armis,
         .hololiveOfficial
     ],
     .nijisanji: [
