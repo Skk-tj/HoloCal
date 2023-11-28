@@ -68,6 +68,7 @@ let agencyEnumToGenerations: [AgencyEnum: [Generation]] = [
         .wave2023Jan16,
         .wave2023Mar30,
         .wave2023Apr26,
+        .wave2023Nov21,
         .id1stWave,
         .id2ndWave,
         .id3rdWave,

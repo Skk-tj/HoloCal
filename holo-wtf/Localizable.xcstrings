@@ -580,7 +580,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Twitterリンク"
+            "value" : "Xリンク"
           }
         }
       }
@@ -3032,9 +3032,6 @@
         }
       }
     },
-    "Test notification" : {
-
-    },
     "TESTING" : {
 
     },
@@ -3388,13 +3385,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Open Twitter profile"
+            "value" : "Open X profile"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Twitter プロフィール"
+            "value" : "X プロフィール"
           }
         }
       }

@@ -21,7 +21,7 @@ This App does not use Cookies.
 
 ## Links to Other Sites
 
-This App may contain links to other sites such as YouTube and Twitter. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by us. Therefore, W3 strongly advise you to review the Privacy Policy of these websites. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.
+This App may contain links to other sites such as YouTube and X (formerly Twitter). If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by us. Therefore, W3 strongly advise you to review the Privacy Policy of these websites. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.
 
 ## Children’s Privacy
 

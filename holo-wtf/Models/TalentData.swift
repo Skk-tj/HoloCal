@@ -71,6 +71,7 @@ enum Generation: Int, CaseIterable, Codable, Hashable {
     case wave2023Jan16
     case wave2023Mar30
     case wave2023Apr26
+    case wave2023Nov21
     case id1stWave
     case id2ndWave
     case id3rdWave
@@ -452,6 +453,11 @@ enum TalentEnum: String, Codable {
     case rou = "UC6WFKwYptsxVue56Lx218vg"
     case raiInami = "UCz89MGFBrAqwJ5xMr5weSuA"
     
+    // MARK: 2023 Wave: Nov 21
+    case totoTachitsute = "UCnbJ8LTbHrsRgqkxwJXCU8w"
+    case ruri = "UC7_MFM9b8hp5kuTSpa8WyOQ"
+    case kestrel = "UCFtyinR2ZdvKK_Xgy07qXUg"
+    
     // MARK: - ID First Wave: 3setBBQ
     case hana = "UCpJtk0myFr5WnyfsmnInP-w" // Hana Macchia
     
@@ -472,7 +478,6 @@ enum TalentEnum: String, Codable {
     case reza = "UC5yckZliCkuaEFbqzLBD7hQ" // Reza Avanluna
     
     // MARK: - ID Sixth Wave: 6WS
-    case xia = "UCoJ0Ct-jdas4cLPpSp06gZg" // Xia Ekavira
     case mika = "UCahgMxSIQ2zIRrPKhM6Mjvg" // Mika Melatika
     
     // MARK: - KR First Wave
@@ -672,6 +677,7 @@ enum TalentEnum: String, Codable {
     case ramune = "UC61OwuYOVuKkpKnid-43Twg"
     case met = "UCzUNASdzI4PV5SlqtYwAkKQ"
     case yumenoAkari = "UCS5l_Y0oMVTjEos2LuyeSZQ"
+    case kuromu = "UCX4WL24YEOUYd7qDsFSLDOw"
     
     // MARK: - Vspo Official Channel
     case vspoOfficial = "UCuI5XaO-6VkOEhHao6ij7JA"
@@ -1015,6 +1021,11 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .kagetsu: Talent(id: TalentEnum.kagetsu.rawValue, names: [.en: "Murakumo Kagetsu", .ja: "叢雲カゲツ"], inGeneration: Generation.wave2023Apr26),
     .rou: Talent(id: TalentEnum.mana.rawValue, names: [.en: "Koyanagi Rou", .ja: "小柳ロウ"], inGeneration: Generation.wave2023Apr26),
     .raiInami: Talent(id: TalentEnum.raiInami.rawValue, names: [.en: "Inami Rai", .ja: "伊波ライ"], inGeneration: Generation.wave2023Apr26),
+    
+    // MARK: 2023 Wave: Nov 21
+    .totoTachitsute: Talent(id: TalentEnum.totoTachitsute.rawValue, names: [.en: "Tachitsute Toto", .ja: "立伝都々"], inGeneration: Generation.wave2023Nov21),
+    .ruri: Talent(id: TalentEnum.ruri.rawValue, names: [.en: "Shioriha Ruri", .ja: "栞葉るり"], inGeneration: Generation.wave2023Nov21),
+    .kestrel: Talent(id: TalentEnum.kestrel.rawValue, names: [.en: "Milan Kestrel", .ja: "ミラン・ケストレル"], inGeneration: Generation.wave2023Nov21),
 
     // MARK: - ID First Wave: 3setBBQ
     .hana: Talent(id: TalentEnum.hana.rawValue, names: [.en: "Hana Macchia", .ja: "ハナ マキア"], inGeneration: Generation.id1stWave),
@@ -1036,7 +1047,6 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .reza: Talent(id: TalentEnum.reza.rawValue, names: [.en: "Reza Avanluna", .ja: "レザ アファンルナ"], inGeneration: Generation.id5thWave),
 
     // MARK: - ID Sixth Wave: 6WS
-    .xia: Talent(id: TalentEnum.xia.rawValue, names: [.en: "Xia Ekavira", .ja: "シア エカフィラ"], inGeneration: Generation.id6thWave),
     .mika: Talent(id: TalentEnum.mika.rawValue, names: [.en: "Mika Melatika", .ja: "ミカ メラティカ"], inGeneration: Generation.id6thWave),
     
     // MARK: - KR First Wave
@@ -1236,6 +1246,7 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .ramune: Talent(id: TalentEnum.ramune.rawValue, names: [.en: "Shiranami Ramune", .ja: "白波らむね"], inGeneration: .vspo),
     .met: Talent(id: TalentEnum.met.rawValue, names: [.en: "Komori Met", .ja: "小森めと"], inGeneration: .vspo),
     .yumenoAkari: Talent(id: TalentEnum.yumenoAkari.rawValue, names: [.en: "Yumeno Akari", .ja: "夢野あかり"], inGeneration: .vspo),
+    .kuromu: Talent(id: TalentEnum.kuromu.rawValue, names: [.en: "Yano Kuromu", .ja: "夜乃くろむ"], inGeneration: .vspo),
     
     // MARK: - Vspo Official Channel
     .vspoOfficial: Talent(id: TalentEnum.vspoOfficial.rawValue, names: [.en: "VSpo Official Channel", .ja: "ぶいすぽっ! 公式チャンネル"], inGeneration: .vspoOfficial)
@@ -1302,12 +1313,13 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .wave2023Jan16: GenerationGroup(id: .wave2023Jan16, names: [.en: "2023 Wave: January 16", .ja: "2023年01月16日デビュー"], members: [.koshimizu, .shishido, .kaburaiki, .igarashi, .ishigami, .sophia, .kuramochi], agency: .nijisanji),
     .wave2023Mar30: GenerationGroup(id: .wave2023Mar30, names: [.en: "2023 Wave: March 30", .ja: "2023年03月30日デビュー"], members: [.ittetsu, .wen, .rito, .mana], agency: .nijisanji),
     .wave2023Apr26: GenerationGroup(id: .wave2023Apr26, names: [.en: "2023 Wave: April 26", .ja: "2023年04月26日デビュー"], members: [.sho, .kagetsu, .rou, .raiInami], agency: .nijisanji),
+    .wave2023Nov21: GenerationGroup(id: .wave2023Apr26, names: [.en: "2023 Wave: November 21", .ja: "2023年11月21日デビュー"], members: [.totoTachitsute, .ruri, .kestrel], agency: .nijisanji),
     .id1stWave: GenerationGroup(id: .id1stWave, names: [.en: "ID 1st Wave", .ja: "ID 1期生"], members: [.hana], agency: .nijisanji),
     .id2ndWave: GenerationGroup(id: .id2ndWave, names: [.en: "ID 2nd Wave", .ja: "ID 2期生"], members: [.rai, .riksa], agency: .nijisanji),
     .id3rdWave: GenerationGroup(id: .id3rdWave, names: [.en: "ID 3rd Wave", .ja: "ID 3期生"], members: [.layla], agency: .nijisanji),
     .id4thWave: GenerationGroup(id: .id4thWave, names: [.en: "ID 4th Wave", .ja: "ID 4期生"], members: [.etna, .bonnivier], agency: .nijisanji),
     .id5thWave: GenerationGroup(id: .id5thWave, names: [.en: "ID 5th Wave", .ja: "ID 5期生"], members: [.nagisa, .derem, .reza], agency: .nijisanji),
-    .id6thWave: GenerationGroup(id: .id6thWave, names: [.en: "ID 6th Wave", .ja: "ID 6期生"], members: [.xia, .mika], agency: .nijisanji),
+    .id6thWave: GenerationGroup(id: .id6thWave, names: [.en: "ID 6th Wave", .ja: "ID 6期生"], members: [.mika], agency: .nijisanji),
     .kr1stWave: GenerationGroup(id: .kr1stWave, names: [.en: "KR 1st Wave", .ja: "KR 1期生"], members: [.minSuha, .gaon], agency: .nijisanji),
     .kr2ndWave: GenerationGroup(id: .kr2ndWave, names: [.en: "KR 2nd Wave", .ja: "KR 2期生"], members: [.soNagi], agency: .nijisanji),
     .kr3rdWave: GenerationGroup(id: .kr3rdWave, names: [.en: "KR 3rd Wave", .ja: "KR 3期生"], members: [.akiraRay, .leeRoha], agency: .nijisanji),
@@ -1346,7 +1358,7 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .lupinus: GenerationGroup(id: .lupinus, names: [.en: "Lupinus Virtual Games", .ja: "Lupinus Virtual Games"], members: [.uruha, .toto, .sumire, .nazuna], agency: .vspo),
     .iris: GenerationGroup(id: .iris, names: [.en: "Iris Black Games", .ja: "Iris Black Games"], members: [.noa, .hinano, .renKisaragi], agency: .vspo),
     .cattleya: GenerationGroup(id: .cattleya, names: [.en: "Cattleya Regina Games", .ja: "Cattleya Regina Games"], members: [.mimi, .sena, .risa], agency: .vspo),
-    .vspo: GenerationGroup(id: .vspo, names: [.en: "VSpo", .ja: "ぶいすぽ"], members: [.qpi, .beni, .ema, .runa, .tsuna, .ramune, .met, .yumenoAkari], agency: .vspo),
+    .vspo: GenerationGroup(id: .vspo, names: [.en: "VSpo", .ja: "ぶいすぽ"], members: [.qpi, .beni, .ema, .runa, .tsuna, .ramune, .met, .yumenoAkari, .kuromu], agency: .vspo),
     .vspoOfficial: GenerationGroup(id: .vspoOfficial, names: [.en: "VSpo Official Channel", .ja: "ぶいすぽっ! 公式チャンネル"], members: [.vspoOfficial], agency: .vspo),
     
     // Need to change this once indies are implemented
