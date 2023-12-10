@@ -38,7 +38,7 @@ struct StopUpdateView: View {
             }
             .padding(.bottom)
             
-            Text("HoloCal will no longer be available on the App Store after March 24, 2024. However, this app will continue to function. Learn more.")
+            Text("HoloCal will no longer be available on the App Store after March 24, 2024. However, this app will continue to function. [Learn more.](https://github.com/Skk-tj/HoloCal/blob/main/FINAL.md)")
         }
         .padding()
         .background(.thickMaterial)
