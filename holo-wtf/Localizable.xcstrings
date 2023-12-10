@@ -4,6 +4,9 @@
     "" : {
 
     },
+    "**HoloCal will no longer be updated after March 24, 2024**" : {
+
+    },
     "%@" : {
 
     },
@@ -723,6 +726,9 @@
       }
     },
     "HoloCal is proudly open-source at GitHub" : {
+
+    },
+    "HoloCal will no longer be available on the App Store after March 24, 2024. However, this app will continue to function. Learn more." : {
 
     },
     "INTENT_AGENCY" : {
@@ -3031,6 +3037,9 @@
           }
         }
       }
+    },
+    "Test notification" : {
+
     },
     "TESTING" : {
 

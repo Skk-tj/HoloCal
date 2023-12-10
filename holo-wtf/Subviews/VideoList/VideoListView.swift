@@ -10,6 +10,7 @@ import SwiftUI
 /// The view that represents a general list of videos.
 struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     @AppStorage(UserDefaultKeys.isShowingDSTReminder) var isShowingDSTReminder = false
+    @AppStorage(UserDefaultKeys.isShowingStopUpdate) var isShowingStopUpdate = true
     
     @EnvironmentObject var viewModel: VideoViewModel
     @EnvironmentObject var appDelegate: AppDelegate
@@ -27,6 +28,10 @@ struct VideoListView<VideoContent: View, DataStatusContent: View>: View {
     var body: some View {
         ScrollViewReader { proxy in
             List {
+                if isShowingStopUpdate {
+                    StopUpdateView()
+                }
+                
                 if let nextDSTTransition = TimeZone.current.nextDaylightSavingTimeTransition {
                     if let days = Calendar.current.dateComponents([.day], from: Date(), to: nextDSTTransition).day {
                         if isShowingDSTReminder {

@@ -216,6 +216,7 @@
 		F07D891928834FBB008D3057 /* DSTReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07D891828834FBB008D3057 /* DSTReminderView.swift */; };
 		F080A04F27F95D9E00DBC08D /* TalentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A04E27F95D9E00DBC08D /* TalentData.swift */; };
 		F080A05127F993DC00DBC08D /* ManageFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A05027F993DC00DBC08D /* ManageFavoriteView.swift */; };
+		F081762F2B251C3F007B2393 /* StopUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081762E2B251C3F007B2393 /* StopUpdateView.swift */; };
 		F084632C29E67702004279B4 /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = F084632B29E67702004279B4 /* Sentry */; };
 		F084633929E6813E004279B4 /* VideoFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */; };
 		F084633A29E6813E004279B4 /* VideoFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */; };
@@ -613,6 +614,7 @@
 		F07D891828834FBB008D3057 /* DSTReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSTReminderView.swift; sourceTree = "<group>"; };
 		F080A04E27F95D9E00DBC08D /* TalentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalentData.swift; sourceTree = "<group>"; };
 		F080A05027F993DC00DBC08D /* ManageFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageFavoriteView.swift; sourceTree = "<group>"; };
+		F081762E2B251C3F007B2393 /* StopUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopUpdateView.swift; sourceTree = "<group>"; };
 		F0900E182A2C8C1F00C5505C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0900E1A2A30413B00C5505C /* VideoStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoStackView.swift; sourceTree = "<group>"; };
 		F09049AF29F647490033B121 /* TextRollingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRollingView.swift; sourceTree = "<group>"; };
@@ -999,6 +1001,7 @@
 				F0CA6EA728D794320028CB11 /* LiveCollabListView.swift */,
 				F07D891828834FBB008D3057 /* DSTReminderView.swift */,
 				F0F40972293D6F46001C4F48 /* MultiLanguageNameView.swift */,
+				F081762E2B251C3F007B2393 /* StopUpdateView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -1405,7 +1408,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0C657C52771F47C004AF802 /* Build configuration list for PBXNativeTarget "holo-wtf" */;
 			buildPhases = (
-				F0DC615929D960BB009D1051 /* Run swiftlint */,
 				F0C657B32771F47C004AF802 /* Sources */,
 				F0C657B42771F47C004AF802 /* Frameworks */,
 				F0C657B52771F47C004AF802 /* Resources */,
@@ -1571,28 +1573,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		F0DC615929D960BB009D1051 /* Run swiftlint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run swiftlint";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F01EB30029D17043001A17AF /* Sources */ = {
@@ -1843,6 +1823,7 @@
 				F01DAA712990E19900052514 /* BlockPlatformView.swift in Sources */,
 				F009024027EE57BA00E343B0 /* LinkedVideoView.swift in Sources */,
 				F022905129C66429002ACB0A /* PhoneTabView.swift in Sources */,
+				F081762F2B251C3F007B2393 /* StopUpdateView.swift in Sources */,
 				F009024627EE6A9F00E343B0 /* VideoContextMenu.swift in Sources */,
 				F0DC617229DA2077009D1051 /* VideoCellView.swift in Sources */,
 				F080A04F27F95D9E00DBC08D /* TalentData.swift in Sources */,
