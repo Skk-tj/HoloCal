@@ -10,9 +10,18 @@ import SwiftUI
 struct SettingsWatchView: View {
     @AppStorage(UserDefaultKeys.upcomingLookAhead) var hoursLookAhead: Int = 48
     @AppStorage(UserDefaultKeys.pastLimit) var pastLimit: PastLimit = .limit25
+    @AppStorage(UserDefaultKeys.holodexApiKey) var holodexApiKey: String = ""
     
     var body: some View {
         Form {
+            Section(content: {
+                SecureField("Holodex API Key", text: $holodexApiKey)
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
+            }, footer: {
+                Text("An API key from Holodex is required for this app. Tap on the field, go to your iPhone, tap on the \"Apple Watch Keyboard\" notification, and paste your API key.")
+            })
+            
             Section(header: Text("SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER")) {
                 Picker("SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT", selection: $hoursLookAhead) {
                     ForEach([12, 24, 48, 72, 96, 120], id: \.self) {

@@ -12,7 +12,7 @@ struct SettingsFormView: View {
     @AppStorage(UserDefaultKeys.pastLimit) var pastLimit: PastLimit = .limit25
     @AppStorage(UserDefaultKeys.dstDays) var dstDays: Int = 5
     @AppStorage(UserDefaultKeys.searchSuggestionLanguage) var searchSuggestionLanguage: NameLanguage = Locale.current.language.languageCode?.identifier == "en" ? .en : .ja
-    @AppStorage("holodexApiKey") var holodexApiKey: String = ""
+    @AppStorage(UserDefaultKeys.holodexApiKey) var holodexApiKey: String = ""
     
     var body: some View {
         Form {
