@@ -217,12 +217,10 @@
 		F080A04F27F95D9E00DBC08D /* TalentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A04E27F95D9E00DBC08D /* TalentData.swift */; };
 		F080A05127F993DC00DBC08D /* ManageFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F080A05027F993DC00DBC08D /* ManageFavoriteView.swift */; };
 		F081762F2B251C3F007B2393 /* StopUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081762E2B251C3F007B2393 /* StopUpdateView.swift */; };
-		F084632C29E67702004279B4 /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = F084632B29E67702004279B4 /* Sentry */; };
 		F084633929E6813E004279B4 /* VideoFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */; };
 		F084633A29E6813E004279B4 /* VideoFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1DD282FA5E600E2A6FF /* VideoFetchService.swift */; };
 		F0900E192A2C8C1F00C5505C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0900E182A2C8C1F00C5505C /* AppDelegate.swift */; };
 		F0900E1B2A30413B00C5505C /* VideoStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0900E1A2A30413B00C5505C /* VideoStackView.swift */; };
-		F09049B029F647490033B121 /* TextRollingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09049AF29F647490033B121 /* TextRollingView.swift */; };
 		F093D1BF282C32D000E2A6FF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F093D1BE282C32D000E2A6FF /* WidgetKit.framework */; };
 		F093D1C1282C32D000E2A6FF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F093D1C0282C32D000E2A6FF /* SwiftUI.framework */; };
 		F093D1C4282C32D000E2A6FF /* HoloCalWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F093D1C3282C32D000E2A6FF /* HoloCalWidgetBundle.swift */; };
@@ -617,7 +615,6 @@
 		F081762E2B251C3F007B2393 /* StopUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopUpdateView.swift; sourceTree = "<group>"; };
 		F0900E182A2C8C1F00C5505C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0900E1A2A30413B00C5505C /* VideoStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoStackView.swift; sourceTree = "<group>"; };
-		F09049AF29F647490033B121 /* TextRollingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRollingView.swift; sourceTree = "<group>"; };
 		F093D1BC282C32D000E2A6FF /* holo-wtf-widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "holo-wtf-widgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F093D1BE282C32D000E2A6FF /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		F093D1C0282C32D000E2A6FF /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -751,7 +748,6 @@
 				F04D149928DD82E500750B71 /* Collections in Frameworks */,
 				F04D149628DD82DA00750B71 /* Algorithms in Frameworks */,
 				F04D149B28DD82E500750B71 /* OrderedCollections in Frameworks */,
-				F084632C29E67702004279B4 /* Sentry in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1229,7 +1225,6 @@
 				F0B2AE512AB945EE00887C32 /* Localizable.xcstrings */,
 				F0204DB927E925220083750F /* PRIVACY-POLICY.md */,
 				F0ED2AF4280B606400683E6C /* .gitignore */,
-				F09049AF29F647490033B121 /* TextRollingView.swift */,
 			);
 			path = "holo-wtf";
 			sourceTree = "<group>";
@@ -1426,7 +1421,6 @@
 				F04D149528DD82DA00750B71 /* Algorithms */,
 				F04D149828DD82E500750B71 /* Collections */,
 				F04D149A28DD82E500750B71 /* OrderedCollections */,
-				F084632B29E67702004279B4 /* Sentry */,
 			);
 			productName = "holo-wtf";
 			productReference = F0C657B72771F47C004AF802 /* HoloCal.app */;
@@ -1502,7 +1496,6 @@
 			packageReferences = (
 				F04D149428DD82DA00750B71 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 				F04D149728DD82E500750B71 /* XCRemoteSwiftPackageReference "swift-collections" */,
-				F084632A29E67702004279B4 /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
 			);
 			productRefGroup = F0C657B82771F47C004AF802 /* Products */;
 			projectDirPath = "";
@@ -1813,7 +1806,6 @@
 				F09400E92A134D1100DAE43E /* NotificationUtil.swift in Sources */,
 				F02211A9292E1E4B009EC2CC /* PaneViewChannelInfoView.swift in Sources */,
 				F0CEE36429BE006600AFB565 /* AgencyNavigationView.swift in Sources */,
-				F09049B029F647490033B121 /* TextRollingView.swift in Sources */,
 				F022119C292B6CF5009EC2CC /* SingleAgencyItemView.swift in Sources */,
 				F0EB53B0281290490024E089 /* PaneViewButtonRowView.swift in Sources */,
 				F020C8B82A1AE5DD00471F2C /* GenerationOrderListUtil.swift in Sources */,
@@ -2263,7 +2255,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 261;
+				CURRENT_PROJECT_VERSION = 262;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -2283,7 +2275,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 2.7.5;
+				MARKETING_VERSION = 2.7.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2333,7 +2325,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 261;
+				CURRENT_PROJECT_VERSION = 262;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2347,7 +2339,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 2.7.5;
+				MARKETING_VERSION = 2.7.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2603,14 +2595,6 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		F084632A29E67702004279B4 /* XCRemoteSwiftPackageReference "sentry-cocoa" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/getsentry/sentry-cocoa";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2673,11 +2657,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F04D149428DD82DA00750B71 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
 			productName = Algorithms;
-		};
-		F084632B29E67702004279B4 /* Sentry */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F084632A29E67702004279B4 /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
-			productName = Sentry;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

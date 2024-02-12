@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Sentry
 
 @main
 struct MainApp: App {
@@ -24,19 +23,6 @@ struct MainApp: App {
     
     // swiftlint:disable function_body_length
     init() {
-        if let sentryDsn = Bundle.main.object(forInfoDictionaryKey: "SENTRY_DSN") as? String {
-            SentrySDK.start { options in
-                options.dsn = sentryDsn
-#if DEBUG
-                options.environment = "Debug"
-                options.tracesSampleRate = 1.0
-#else
-                options.environment = "Release"
-                options.tracesSampleRate = 0.5
-#endif
-            }
-        }
-        
         // MARK: - Setup DST Warning
         let tz = TimeZone.current
         

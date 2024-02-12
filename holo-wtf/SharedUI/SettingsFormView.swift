@@ -12,9 +12,18 @@ struct SettingsFormView: View {
     @AppStorage(UserDefaultKeys.pastLimit) var pastLimit: PastLimit = .limit25
     @AppStorage(UserDefaultKeys.dstDays) var dstDays: Int = 5
     @AppStorage(UserDefaultKeys.searchSuggestionLanguage) var searchSuggestionLanguage: NameLanguage = Locale.current.language.languageCode?.identifier == "en" ? .en : .ja
+    @AppStorage("holodexApiKey") var holodexApiKey: String = ""
     
     var body: some View {
         Form {
+            Section(content: {
+                SecureField("Holodex API Key", text: $holodexApiKey)
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
+            }, footer: {
+                Text("An API key from Holodex is required for this app. [Login to Holodex to get an API key](https://holodex.net/login)")
+            })
+            
             Section(header: Text("SETTINGS_UPCOMING_SCHEDULE_SECTION_HEADER")) {
                 Picker("SETTINGS_UPCOMING_SCHEDULE_HOURS_TEXT", selection: $hoursLookAhead) {
                     ForEach([12, 24, 48, 72, 96, 120], id: \.self) {
@@ -77,15 +86,9 @@ struct SettingsFormView: View {
             Section(header: Text("SETTINGS_ABOUT_SECTION_HEADER"), footer: Text("HoloCal \(Bundle.main.appVersionLong) (\(Bundle.main.appBuild)) \nCodename: \(Bundle.main.codeName)")) {
                 Link("SETTINGS_ABOUT_BUG_REPORT", destination: URL(string: "https://github.com/Skk-tj/HoloCal/issues")!)
                 
-                Link("SETTINGS_BETA_TESTING", destination: URL(string: "https://testflight.apple.com/join/uxxMYkU3")!)
-                
                 Link(destination: URL(string: "https://me.skk-tj.live/holocal-support")!, label: {
                     Text("SETTINGS_SUPPORT_PAGE")
                 })
-                
-                Link(destination: URL(string: "https://discord.gg/WZ2aHZyer2")!) {
-                    Text("SETTINGS_DISCORD_SERVER")
-                }
                 
                 NavigationLink("SETTINGS_SPECIAL_THANKS") {
                     SpecialThanksView()

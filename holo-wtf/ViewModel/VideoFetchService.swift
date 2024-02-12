@@ -7,9 +7,6 @@
 
 import Foundation
 import OSLog
-#if canImport(Sentry) && os(iOS)
-import Sentry
-#endif
 
 enum VideoFetchServiceError: LocalizedError {
     case apiUrlError
@@ -71,7 +68,7 @@ func getVideos(from url: String) async throws -> [LiveVideo] {
         throw VideoFetchServiceError.apiUrlError
     }
     
-    guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "HOLODEX_API_KEY") as? String else {
+    guard let apiKey = (Bundle.main.object(forInfoDictionaryKey: "HOLODEX_API_KEY") as? String ?? getApiKeyFromUserDefaults()) else {
         logger.critical("API Key is not valid")
         throw VideoFetchServiceError.apiUrlError
     }
@@ -103,9 +100,6 @@ func getVideos(from url: String) async throws -> [LiveVideo] {
     } catch {
         logger.error("Network request failed when trying to get live data from API. This is likely a serialization error.")
         logger.error("Error is: \(error.localizedDescription)")
-#if canImport(Sentry) && os(iOS)
-        SentrySDK.capture(error: error as NSError)
-#endif
         
         throw VideoFetchServiceError.other(error as NSError)
     }
@@ -146,9 +140,6 @@ func getTwitterId(for channel: Channel) async throws -> String? {
     } catch {
         logger.error("Network request failed when trying to get channel twitter data from API. This is likely a serialization error.")
         logger.error("Error is: \(error.localizedDescription)")
-#if canImport(Sentry) && os(iOS)
-        SentrySDK.capture(error: error as NSError)
-#endif
         
         throw VideoFetchServiceError.other(error as NSError)
     }

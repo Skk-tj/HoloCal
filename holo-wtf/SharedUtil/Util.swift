@@ -36,6 +36,10 @@ func getPastLimitFromUserDefaults() -> PastLimit {
     return PastLimit(rawValue: theInt) ?? PastLimit.limit25
 }
 
+func getApiKeyFromUserDefaults() -> String? {
+    return UserDefaults.standard.string(forKey: UserDefaultKeys.holodexApiKey)
+}
+
 func getFavouritesFromUserDefaults(groupName: String? = nil) -> [String] {
     if let groupName {
         if let defaults = UserDefaults(suiteName: groupName) {
@@ -107,6 +111,7 @@ enum UserDefaultKeys {
     static let pastLimit = "pastLimit"
     static let searchSuggestionLanguage = "searchSuggestionLanguage"
     static let isShowingStopUpdate = "isShowingStopUpdate"
+    static let holodexApiKey = "holodexApiKey"
 }
 
 enum UserActivityKeys {

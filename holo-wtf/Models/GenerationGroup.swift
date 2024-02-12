@@ -74,7 +74,6 @@ let agencyEnumToGenerations: [AgencyEnum: [Generation]] = [
         .id3rdWave,
         .id4thWave,
         .id5thWave,
-        .id6thWave,
         .kr1stWave,
         .kr2ndWave,
         .kr3rdWave,
