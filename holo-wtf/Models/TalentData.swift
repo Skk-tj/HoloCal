@@ -524,7 +524,6 @@ enum TalentEnum: String, Codable {
     case fulgur = "UCGhqxhovNfaPBpxfCruy9EA" // Fulgur Ovid
     
     // MARK: - EN Sixth Wave: ILUNA
-    case kyo = "UCsb-1aJgiJXJH2feV-zlZRw" // Kyo Kaneko
     case maria = "UCwaS8_S7kMiKA3izlTWHbQg" // Maria Marionette
     case aster = "UCpzxZW5kghGnO5TmAFJQAVw" // Aster Arcadia
     case aia = "UCN68LoM3khS4gdBMiWJO8WA" // Aia Amare
@@ -1081,7 +1080,6 @@ let talentEnumToTalent: [TalentEnum: Talent] = [
     .fulgur: Talent(id: TalentEnum.fulgur.rawValue, names: [.en: "Fulgur Ovid", .ja: "ファルガー・オーヴィド"], inGeneration: Generation.en5thWave),
 
     // MARK: - EN Sixth Wave: ILUNA
-    .kyo: Talent(id: TalentEnum.kyo.rawValue, names: [.en: "Kyo Kaneko", .ja: "金子 鏡"], inGeneration: Generation.en6thWave),
     .maria: Talent(id: TalentEnum.maria.rawValue, names: [.en: "Maria Marionette", .ja: "マリア マリオネット"], inGeneration: Generation.en6thWave),
     .aster: Talent(id: TalentEnum.aster.rawValue, names: [.en: "Aster Arcadia", .ja: "アスター アルカディア"], inGeneration: Generation.en6thWave),
     .aia: Talent(id: TalentEnum.aia.rawValue, names: [.en: "Aia Amare", .ja: "アイア アマレ"], inGeneration: Generation.en6thWave),
@@ -1304,7 +1302,7 @@ let talentsByGeneration: OrderedDictionary<Generation, GenerationGroup> = [
     .en3rdWave: GenerationGroup(id: .en3rdWave, names: [.en: "EN 3rd Wave: Ethyria", .ja: "EN 第3弾「Ethyria」"], members: [.millie, .enna, .reimu], agency: .nijisanji),
     .en4thWave: GenerationGroup(id: .en4thWave, names: [.en: "EN 4th Wave: Luxiem", .ja: "EN 第4弾「Luxiem」"], members: [.luca, .shu, .ike, .vox], agency: .nijisanji),
     .en5thWave: GenerationGroup(id: .en5thWave, names: [.en: "EN 5th Wave: Noctyx", .ja: "EN 第5弾「Noctyx」"], members: [.sonny, .uki, .alban, .fulgur], agency: .nijisanji),
-    .en6thWave: GenerationGroup(id: .en6thWave, names: [.en: "EN 6th Wave: ILUNA", .ja: "EN 第6弾「ILUNA」"], members: [.kyo, .maria, .aster, .aia, .ren, .scarle], agency: .nijisanji),
+    .en6thWave: GenerationGroup(id: .en6thWave, names: [.en: "EN 6th Wave: ILUNA", .ja: "EN 第6弾「ILUNA」"], members: [.maria, .aster, .aia, .ren, .scarle], agency: .nijisanji),
     .en7thWave: GenerationGroup(id: .en7thWave, names: [.en: "EN 7th Wave: XSOLEIL", .ja: "EN 第7弾「XSOLEIL」"], members: [.doppio, .meloco, .hex, .kotoka, .ver], agency: .nijisanji),
     .en8thWave: GenerationGroup(id: .en8thWave, names: [.en: "EN 8th Wave: Krisis", .ja: "EN 第8弾「Krisis」"], members: [.wilson, .bringer, .bandage], agency: .nijisanji),
     .en9thWave: GenerationGroup(id: .en9thWave, names: [.en: "EN October 2023", .ja: "EN 2023年10月"], members: [.clawmark, .brightshield, .nakasato], agency: .nijisanji),
