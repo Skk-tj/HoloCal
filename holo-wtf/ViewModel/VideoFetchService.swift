@@ -12,6 +12,7 @@ enum VideoFetchServiceError: LocalizedError {
     case apiUrlError
     case other(NSError)
     case network(Int)
+    case apiKey
     
     var errorDescription: String? {
         switch self {
@@ -21,6 +22,8 @@ enum VideoFetchServiceError: LocalizedError {
             return theError.localizedDescription
         case .network(let int):
             return "Network error \(int)"
+        case .apiKey:
+            return "You must provide a valid API key to HoloDex."
         }
     }
 }
@@ -68,14 +71,14 @@ func getVideos(from url: String) async throws -> [LiveVideo] {
         throw VideoFetchServiceError.apiUrlError
     }
     
-    guard let apiKey = (Bundle.main.object(forInfoDictionaryKey: "HOLODEX_API_KEY") as? String ?? getApiKeyFromUserDefaults()) else {
+    guard let apiKey = getApiKeyFromUserDefaults() else {
         logger.critical("API Key is not valid")
-        throw VideoFetchServiceError.apiUrlError
+        throw VideoFetchServiceError.apiKey
     }
     
     guard !apiKey.isEmpty else {
         logger.critical("API Key is empty")
-        throw VideoFetchServiceError.apiUrlError
+        throw VideoFetchServiceError.apiKey
     }
     
     let headers = ["Content-Type": "application/json", "X-APIKEY": apiKey]
@@ -89,6 +92,10 @@ func getVideos(from url: String) async throws -> [LiveVideo] {
         let (data, response) = try await URLSession.shared.data(for: request)
         
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+            if (response as? HTTPURLResponse)?.statusCode == 401 {
+                throw VideoFetchServiceError.apiKey
+            }
+            
             throw VideoFetchServiceError.network((response as? HTTPURLResponse)?.statusCode ?? 0)
         }
         
@@ -113,9 +120,14 @@ func getTwitterId(for channel: Channel) async throws -> String? {
         throw VideoFetchServiceError.apiUrlError
     }
     
-    guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "HOLODEX_API_KEY") as? String else {
+    guard let apiKey = getApiKeyFromUserDefaults() else {
         logger.critical("API Key is not valid")
-        throw VideoFetchServiceError.apiUrlError
+        throw VideoFetchServiceError.apiKey
+    }
+    
+    guard !apiKey.isEmpty else {
+        logger.critical("API Key is empty")
+        throw VideoFetchServiceError.apiKey
     }
     
     let headers = ["Content-Type": "application/json", "X-APIKEY": apiKey]
@@ -129,6 +141,10 @@ func getTwitterId(for channel: Channel) async throws -> String? {
         let (data, response) = try await URLSession.shared.data(for: request)
         
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
+            if (response as? HTTPURLResponse)?.statusCode == 401 {
+                throw VideoFetchServiceError.apiKey
+            }
+            
             throw VideoFetchServiceError.network((response as? HTTPURLResponse)?.statusCode ?? 0)
         }
         

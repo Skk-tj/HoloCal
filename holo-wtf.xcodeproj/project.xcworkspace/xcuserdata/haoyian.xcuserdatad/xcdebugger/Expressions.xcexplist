@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "closure #1 in DataStatusIndicatorView.body.getter:DataStatusIndicatorView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "error.errorDescription">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

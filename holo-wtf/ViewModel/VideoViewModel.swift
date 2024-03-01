@@ -83,6 +83,9 @@ class VideoViewModel: ObservableObject {
         } catch VideoFetchServiceError.network(let networkCode) {
             self.dataStatus = .fail
             self.error = VideoFetchServiceError.network(networkCode)
+        } catch VideoFetchServiceError.apiKey {
+            self.dataStatus = .fail
+            self.error = VideoFetchServiceError.apiKey
         } catch {
             self.dataStatus = .fail
         }
@@ -107,6 +110,9 @@ class VideoViewModel: ObservableObject {
         } catch VideoFetchServiceError.network(let networkCode) {
             self.dataStatus = .fail
             self.error = VideoFetchServiceError.network(networkCode)
+        } catch VideoFetchServiceError.apiKey {
+            self.dataStatus = .fail
+            self.error = VideoFetchServiceError.apiKey
         } catch {
             self.dataStatus = .fail
         }

@@ -9,10 +9,6 @@ import Foundation
 import EventKit
 import SwiftUI
 
-#if canImport(Sentry)
-import Sentry
-#endif
-
 func getRelativeTimeString(for date: Date) -> String {
     let formatter = RelativeDateTimeFormatter()
     formatter.unitsStyle = .abbreviated
@@ -37,7 +33,11 @@ func getPastLimitFromUserDefaults() -> PastLimit {
 }
 
 func getApiKeyFromUserDefaults() -> String? {
-    return UserDefaults.standard.string(forKey: UserDefaultKeys.holodexApiKey)
+    guard let defaults = UserDefaults(suiteName: "group.io.skk-tj.holo-wtf.ios") else {
+        return nil
+    }
+    
+    return defaults.string(forKey: UserDefaultKeys.holodexApiKey)
 }
 
 func getFavouritesFromUserDefaults(groupName: String? = nil) -> [String] {
