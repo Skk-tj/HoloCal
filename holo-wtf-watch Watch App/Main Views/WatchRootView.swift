@@ -25,10 +25,6 @@ struct WatchRootView: View {
                     Label("ROOT_VIEW_PAST", systemImage: "clock.arrow.circlepath")
                 }
                 
-                NavigationLink(value: Tabs.concerts) {
-                    Label("ROOT_VIEW_CONCERTS", systemImage: "music.mic")
-                }
-                
                 NavigationLink(value: Tabs.settings) {
                     Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
                 }
@@ -81,8 +77,6 @@ struct WatchRootView: View {
                             VideoFavouritesWatchView(videoType: .past)
                         }
                     }
-                case .concerts:
-                    ConcertsWatchView()
                 case .settings:
                     SettingsWatchView()
                 }

@@ -32,14 +32,6 @@ struct PhoneTabView: View {
                 .tag(Tabs.past)
             
             NavigationStack {
-                ConcertsView()
-            }
-            .tabItem {
-                Label("ROOT_VIEW_CONCERTS", systemImage: "music.mic")
-            }
-            .tag(Tabs.concerts)
-            
-            NavigationStack {
                 SettingsFormView()
             }
             .tabItem {

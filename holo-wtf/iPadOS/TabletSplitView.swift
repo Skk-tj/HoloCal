@@ -64,10 +64,6 @@ struct TabletSplitView: View {
                     Label("ROOT_VIEW_PAST", systemImage: "clock.arrow.circlepath")
                 }
                 
-                NavigationLink(value: Views.concerts) {
-                    Label("ROOT_VIEW_CONCERTS", systemImage: "music.mic")
-                }
-                
                 NavigationLink(value: Views.settings) {
                     Label("ROOT_VIEW_SETTINGS", systemImage: "gear")
                 }
@@ -163,8 +159,6 @@ struct TabletSplitView: View {
                 } else {
                     viewSelection = .past(.hololive)
                 }
-            case .concerts:
-                viewSelection = .concerts
             case .settings:
                 viewSelection = .settings
             }
